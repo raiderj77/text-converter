@@ -81,6 +81,7 @@ function Card(props: {
           Copy
         </button>
       </div>
+
       <div className="p-4">
         <pre className="whitespace-pre-wrap break-words text-sm leading-6">
           {props.value || ""}
@@ -170,11 +171,14 @@ export default function Page() {
       { label: "camelCase", value: camel },
       { label: "PascalCase", value: pascal },
       { label: "snake_case", value: snake },
-      { label: "kebab-case", value: kebab },
+      { label: "kebab-case (for URLs)", value: kebab },
       { label: "aLtErNaTiNg", value: alternating },
-      { label: "slug", value: slug },
+      { label: "slug (url-friendly)", value: slug },
     ];
   }, [text]);
+
+  const common = outputs.slice(0, 4);
+  const dev = outputs.slice(4);
 
   async function doCopy(label: string, value: string) {
     await copyToClipboard(value || "");
@@ -194,7 +198,7 @@ export default function Page() {
         isDark ? "bg-neutral-950 text-neutral-100" : "bg-neutral-50 text-neutral-900"
       )}
     >
-      <div className="mx-auto max-w-6xl px-4 py-10">
+      <div className="mx-auto max-w-6xl px-4 py-8">
         <div className="flex items-start justify-between gap-4">
           <div>
             <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
@@ -224,6 +228,7 @@ export default function Page() {
             >
               {isDark ? "Light" : "Dark"}
             </button>
+
             <button
               type="button"
               className={cx(
@@ -270,16 +275,48 @@ export default function Page() {
           </div>
         </div>
 
-        <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-          {outputs.map((o) => (
-            <Card
-              key={o.label}
-              label={o.label}
-              value={o.value}
-              mode={mode}
-              onCopy={() => doCopy(o.label, o.value)}
-            />
-          ))}
+        <div className="mt-6">
+          <div
+            className={cx(
+              "text-xs uppercase tracking-wide",
+              isDark ? "text-neutral-400" : "text-neutral-500"
+            )}
+          >
+            Common
+          </div>
+
+          <div className="mt-2 grid grid-cols-1 md:grid-cols-2 gap-3">
+            {common.map((o) => (
+              <Card
+                key={o.label}
+                label={o.label}
+                value={o.value}
+                mode={mode}
+                onCopy={() => doCopy(o.label, o.value)}
+              />
+            ))}
+          </div>
+
+          <div
+            className={cx(
+              "mt-6 text-xs uppercase tracking-wide",
+              isDark ? "text-neutral-400" : "text-neutral-500"
+            )}
+          >
+            Developer and other formats
+          </div>
+
+          <div className="mt-2 grid grid-cols-1 md:grid-cols-2 gap-3">
+            {dev.map((o) => (
+              <Card
+                key={o.label}
+                label={o.label}
+                value={o.value}
+                mode={mode}
+                onCopy={() => doCopy(o.label, o.value)}
+              />
+            ))}
+          </div>
         </div>
 
         <div
@@ -294,10 +331,10 @@ export default function Page() {
               isDark ? "border-white/10" : "border-black/5"
             )}
           >
-            Ad slot
+            Support this tool
           </div>
           <div className={cx("p-4 text-sm", isDark ? "text-neutral-300" : "text-neutral-600")}>
-            Place one clean banner here after AdSense approval.
+            Ads appear here after approval.
           </div>
         </div>
       </div>
