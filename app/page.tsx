@@ -63,7 +63,7 @@ function Card(props: {
     >
       <div
         className={cx(
-          "flex items-center justify-between px-4 py-3 border-b",
+          "flex items-center justify-between px-3 py-2 border-b",
           isDark ? "border-white/10" : "border-black/5"
         )}
       >
@@ -82,7 +82,7 @@ function Card(props: {
         </button>
       </div>
 
-      <div className="p-4">
+      <div className="p-3">
         <pre className="whitespace-pre-wrap break-words text-sm leading-6">
           {props.value || ""}
         </pre>
@@ -194,11 +194,11 @@ export default function Page() {
   return (
     <main
       className={cx(
-        "min-h-screen",
+        "min-h-screen pb-16",
         isDark ? "bg-neutral-950 text-neutral-100" : "bg-neutral-50 text-neutral-900"
       )}
     >
-      <div className="mx-auto max-w-6xl px-4 py-8">
+      <div className="mx-auto max-w-6xl px-4 py-5">
         <div className="flex items-start justify-between gap-4">
           <div>
             <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
@@ -206,12 +206,11 @@ export default function Page() {
             </h1>
             <p
               className={cx(
-                "mt-2 text-sm",
+                "mt-1 text-sm",
                 isDark ? "text-neutral-300" : "text-neutral-600"
               )}
             >
-              Type once. Get every case instantly. Ctrl or Cmd plus K focuses the
-              box. Ctrl or Cmd plus L toggles theme.
+              Type once. Ctrl or Cmd plus K focuses input. Ctrl or Cmd plus L toggles theme.
             </p>
           </div>
 
@@ -246,27 +245,27 @@ export default function Page() {
 
         <div
           className={cx(
-            "mt-6 rounded-2xl border shadow-sm",
+            "mt-4 rounded-2xl border shadow-sm",
             isDark ? "bg-neutral-900 border-white/10" : "bg-white border-black/10"
           )}
         >
           <div
             className={cx(
-              "px-4 py-3 border-b text-sm font-semibold",
+              "px-3 py-2 border-b text-sm font-semibold",
               isDark ? "border-white/10" : "border-black/5"
             )}
           >
             Input
           </div>
-          <div className="p-4">
+          <div className="p-3">
             <textarea
               ref={inputRef}
               value={text}
               onChange={(e) => setText(e.target.value)}
-              rows={6}
+              rows={4}
               placeholder="Paste or type text here..."
               className={cx(
-                "w-full resize-y rounded-2xl border px-4 py-3 text-sm leading-6 outline-none",
+                "w-full resize-y rounded-2xl border px-3 py-2 text-sm leading-6 outline-none",
                 isDark
                   ? "border-white/10 bg-neutral-950 focus:ring-2 focus:ring-white/10"
                   : "border-black/10 bg-neutral-50 focus:ring-2 focus:ring-black/10"
@@ -275,7 +274,7 @@ export default function Page() {
           </div>
         </div>
 
-        <div className="mt-6">
+        <div className="mt-4">
           <div
             className={cx(
               "text-xs uppercase tracking-wide",
@@ -285,7 +284,7 @@ export default function Page() {
             Common
           </div>
 
-          <div className="mt-2 grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div className="mt-2 grid grid-cols-1 md:grid-cols-2 gap-2">
             {common.map((o) => (
               <Card
                 key={o.label}
@@ -299,14 +298,14 @@ export default function Page() {
 
           <div
             className={cx(
-              "mt-6 text-xs uppercase tracking-wide",
+              "mt-4 text-xs uppercase tracking-wide",
               isDark ? "text-neutral-400" : "text-neutral-500"
             )}
           >
             Developer and other formats
           </div>
 
-          <div className="mt-2 grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div className="mt-2 grid grid-cols-1 md:grid-cols-2 gap-2">
             {dev.map((o) => (
               <Card
                 key={o.label}
@@ -318,29 +317,31 @@ export default function Page() {
             ))}
           </div>
         </div>
+      </div>
 
-        <div
-          className={cx(
-            "mt-8 rounded-2xl border shadow-sm",
-            isDark ? "bg-neutral-900 border-white/10" : "bg-white border-black/10"
-          )}
-        >
-          <div
-            className={cx(
-              "px-4 py-3 border-b text-sm font-semibold",
-              isDark ? "border-white/10" : "border-black/5"
-            )}
-          >
+      <div
+        className={cx(
+          "fixed bottom-0 left-0 right-0 border-t",
+          isDark ? "bg-neutral-950 border-white/10" : "bg-neutral-50 border-black/10"
+        )}
+      >
+        <div className="mx-auto max-w-6xl px-4 py-2 flex items-center justify-between gap-3">
+          <div className={cx("text-xs", isDark ? "text-neutral-300" : "text-neutral-600")}>
             Support this tool
           </div>
-          <div className={cx("p-4 text-sm", isDark ? "text-neutral-300" : "text-neutral-600")}>
-            Ads appear here after approval.
+          <div
+            className={cx(
+              "text-xs px-3 py-1 rounded-xl border",
+              isDark ? "border-white/10 text-neutral-300" : "border-black/10 text-neutral-600"
+            )}
+          >
+            Ad goes here
           </div>
         </div>
       </div>
 
       {toast ? (
-        <div className="fixed bottom-4 left-1/2 -translate-x-1/2 rounded-2xl bg-neutral-900 text-white px-4 py-2 text-sm shadow-lg">
+        <div className="fixed bottom-14 left-1/2 -translate-x-1/2 rounded-2xl bg-neutral-900 text-white px-4 py-2 text-sm shadow-lg">
           {toast}
         </div>
       ) : null}
