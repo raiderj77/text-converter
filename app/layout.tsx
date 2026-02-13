@@ -22,7 +22,8 @@ export default function RootLayout({
           <a href="/about">About</a> {" | "}
           <a href="/privacy">Privacy</a> {" | "}
           <a href="/terms">Terms</a> {" | "}
-          <a href="/learn">Learn</a>
+          <a href="/learn">Learn</a> {" | "}
+          <a href="/blog">Blog</a>
         </footer>
       </body>
     </html>
