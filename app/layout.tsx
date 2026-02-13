@@ -26,7 +26,14 @@ gtag('config', 'G-JQHRPJ9YLF');
           }}
         ></script>
       </head>
-      <body>{children}</body>
+     <body>
+  {children}
+
+  <footer style={{ maxWidth: 900, margin: "0 auto", padding: 24, fontSize: 14, opacity: 0.8 }}>
+    <a href="/privacy" style={{ marginRight: 12 }}>Privacy</a>
+    <a href="/terms">Terms</a>
+  </footer>
+</body>
     </html>
   );
 }
