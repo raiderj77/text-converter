@@ -4,10 +4,9 @@ export default function Head() {
       <title>Text Case Converter</title>
       <meta
         name="description"
-        content="Convert text to uppercase, lowercase, title case, camelCase, snake_case, and more instantly."
+        content="Convert text to uppercase, lowercase, title case, sentence case, camelCase, snake_case, kebab-case, and slug."
       />
 
-      {/* Google tag (gtag.js) */}
       <script
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-JQHRPJ9YLF"
@@ -15,11 +14,11 @@ export default function Head() {
       <script
         dangerouslySetInnerHTML={{
           __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-JQHRPJ9YLF');
-          `,
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JQHRPJ9YLF');
+          `.trim(),
         }}
       />
     </>
