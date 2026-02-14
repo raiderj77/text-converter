@@ -12,6 +12,13 @@ export const metadata: Metadata = {
   title: tool.title,
   description: tool.description,
   alternates: { canonical: pageUrl },
+  keywords: [
+    "lorem ipsum generator", "placeholder text generator", "dummy text generator",
+    "lorem ipsum", "generate lorem ipsum", "filler text generator",
+    "lorem ipsum paragraphs", "lorem ipsum words", "lorem ipsum sentences",
+    "placeholder text for design", "lipsum generator", "random text generator",
+    "lorem ipsum for web design", "dummy text for mockups", "sample text generator",
+  ],
   openGraph: {
     title: tool.title,
     description: tool.description,

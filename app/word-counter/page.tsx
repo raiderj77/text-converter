@@ -12,6 +12,14 @@ export const metadata: Metadata = {
   title: tool.title,
   description: tool.description,
   alternates: { canonical: pageUrl },
+  keywords: [
+    "word counter", "character counter", "word count tool",
+    "count words online", "character count online", "sentence counter",
+    "paragraph counter", "reading time calculator", "speaking time calculator",
+    "keyword density checker", "word counter for essays",
+    "twitter character counter", "instagram character limit",
+    "seo word counter", "word count checker", "online word counter free",
+  ],
   openGraph: {
     title: tool.title,
     description: tool.description,

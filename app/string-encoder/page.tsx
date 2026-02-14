@@ -12,6 +12,14 @@ export const metadata: Metadata = {
   title: tool.title,
   description: tool.description,
   alternates: { canonical: pageUrl },
+  keywords: [
+    "base64 encoder", "base64 decoder", "url encoder", "url decoder",
+    "html entity encoder", "html entity decoder", "string encoder online",
+    "base64 encode online", "base64 decode online", "url encode online",
+    "percent encoding", "encode decode string", "hex encoder",
+    "binary to text", "text to binary", "unicode escape online",
+    "encode special characters", "decode url string",
+  ],
   openGraph: {
     title: tool.title,
     description: tool.description,

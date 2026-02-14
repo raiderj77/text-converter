@@ -12,6 +12,13 @@ export const metadata: Metadata = {
   title: tool.title,
   description: tool.description,
   alternates: { canonical: pageUrl },
+  keywords: [
+    "duplicate line remover", "remove duplicate lines", "deduplicate text",
+    "remove duplicates from list", "unique lines", "duplicate remover online",
+    "remove duplicate emails", "deduplicate list online", "delete duplicate lines",
+    "unique line filter", "remove repeated lines", "text deduplication tool",
+    "remove duplicate rows", "clean duplicate entries", "sort and deduplicate",
+  ],
   openGraph: {
     title: tool.title,
     description: tool.description,

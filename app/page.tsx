@@ -12,6 +12,14 @@ export const metadata: Metadata = {
   title: tool.title,
   description: tool.description,
   alternates: { canonical: SITE_URL },
+  keywords: [
+    "text case converter", "uppercase converter", "lowercase converter",
+    "title case converter", "sentence case converter", "camelCase converter",
+    "PascalCase converter", "snake_case converter", "kebab-case converter",
+    "text to uppercase", "text to lowercase", "convert text case online",
+    "change text case", "toggle case", "capitalize text online",
+    "URL slug generator", "text formatter", "case changer online free",
+  ],
   openGraph: {
     title: tool.title,
     description: tool.description,

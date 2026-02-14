@@ -12,6 +12,14 @@ export const metadata: Metadata = {
   title: tool.title,
   description: tool.description,
   alternates: { canonical: pageUrl },
+  keywords: [
+    "text cleaner", "remove extra spaces", "remove line breaks",
+    "clean text online", "remove whitespace", "remove tabs from text",
+    "clean text from pdf", "remove trailing spaces", "strip whitespace online",
+    "remove non-breaking spaces", "fix text formatting", "clean pasted text",
+    "remove smart quotes", "remove invisible characters", "text cleanup tool",
+    "normalize whitespace", "remove blank lines online",
+  ],
   openGraph: {
     title: tool.title,
     description: tool.description,
