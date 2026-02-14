@@ -9,8 +9,6 @@ export type BlogPost = {
   related: string[];
 };
 
-export const SITE_URL = "https://text-case-converter-beta.vercel.app";
-
 export const posts: BlogPost[] = [
   {
     slug: "uppercase-converter",

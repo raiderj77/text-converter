@@ -1,4 +1,72 @@
 import "./globals.css";
+import type { Metadata, Viewport } from "next";
+import { SITE_NAME, SITE_DESCRIPTION, SITE_URL, GA_ID } from "@/lib/config";
+import { ThemeProvider } from "@/components/layout/theme-provider";
+import { Nav } from "@/components/layout/nav";
+import { Footer } from "@/components/layout/footer";
+import { OrganizationSchema } from "@/components/seo/schema";
+
+/**
+ * Root metadata — applies to every page unless overridden.
+ * Individual pages can export their own `metadata` to override these.
+ */
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: `${SITE_NAME} — Free Online Text Tools`,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  keywords: [
+    "text case converter",
+    "uppercase converter",
+    "lowercase converter",
+    "title case converter",
+    "camelCase converter",
+    "snake_case converter",
+    "word counter",
+    "text tools",
+    "free online tools",
+  ],
+  authors: [{ name: SITE_NAME }],
+  creator: SITE_NAME,
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: `${SITE_NAME} — Free Online Text Tools`,
+    description: SITE_DESCRIPTION,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE_NAME} — Free Online Text Tools`,
+    description: SITE_DESCRIPTION,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
+  alternates: {
+    canonical: SITE_URL,
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#fafafa" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
+  ],
+};
 
 export default function RootLayout({
   children,
@@ -6,55 +74,33 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+        {/* Google Analytics */}
         <script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-JQHRPJ9YLF"
-        ></script>
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-JQHRPJ9YLF', {
-  cookie_domain: 'none',
-  cookie_flags: 'SameSite=Lax;Secure'
-});
+gtag('config', '${GA_ID}');
             `.trim(),
           }}
-        ></script>
-      </head>
-      <body>
-        {children}
+        />
 
-        <footer
-          style={{
-            maxWidth: 900,
-            margin: "0 auto",
-            padding: 24,
-            fontSize: 14,
-            opacity: 0.8,
-          }}
-        >
-          <a href="/" style={{ marginRight: 12 }}>
-            Home
-          </a>
-          <a href="/about" style={{ marginRight: 12 }}>
-            About
-          </a>
-          <a href="/contact" style={{ marginRight: 12 }}>
-            Contact
-          </a>
-          <a href="/privacy" style={{ marginRight: 12 }}>
-            Privacy
-          </a>
-          <a href="/terms">Terms</a>
-        </footer>
+        {/* Site-wide Organization schema */}
+        <OrganizationSchema />
+      </head>
+      <body className="min-h-screen flex flex-col">
+        <ThemeProvider>
+          <Nav />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
