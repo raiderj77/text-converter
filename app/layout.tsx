@@ -57,6 +57,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: SITE_URL,
   },
+  manifest: "/manifest.json",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export const viewport: Viewport = {
@@ -76,6 +81,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* PWA */}
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="FlipMyCase" />
+
         {/* Google Analytics */}
         <script
           async
@@ -88,6 +101,19 @@ window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', '${GA_ID}');
+            `.trim(),
+          }}
+        />
+
+        {/* Register Service Worker */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js');
+  });
+}
             `.trim(),
           }}
         />
