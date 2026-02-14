@@ -95,11 +95,11 @@ export const tools: Tool[] = [
     slug: "json-formatter",
     name: "JSON Formatter",
     shortName: "JSON",
-    title: "Free JSON Formatter & Validator — Pretty Print JSON Online",
+    title: "Free JSON Formatter, Validator & Beautifier — Pretty Print, Minify, Fix JSON Online",
     description:
-      "Format, validate, and pretty-print JSON instantly. Syntax highlighting, error detection. Free, no signup.",
+      "Format, validate, beautify, and minify JSON online. Tree view, error line numbers, fix broken JSON, export to CSV. Free JSON lint with no signup.",
     emoji: "{ }",
-    live: false,
+    live: true,
   },
   {
     slug: "text-diff",
