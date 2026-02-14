@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getToolBySlug, buildUrl } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
 import { LoremIpsumTool } from "@/components/tools/lorem-ipsum";
+import { AdSlot } from "@/components/ui/ad-slot";
 
 const tool = getToolBySlug("lorem-ipsum-generator")!;
 const pageUrl = buildUrl("/lorem-ipsum-generator");
@@ -93,6 +94,8 @@ export default function LoremIpsumPage() {
         </div>
 
         {/* ========== SEO CONTENT ========== */}
+
+        <AdSlot slot="after-tool" page="lorem-ipsum" />
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
@@ -185,6 +188,8 @@ export default function LoremIpsumPage() {
           </div>
         </section>
 
+        <AdSlot slot="mid-content" page="lorem-ipsum" />
+
         {/* FAQ */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
@@ -202,6 +207,8 @@ export default function LoremIpsumPage() {
             ))}
           </div>
         </section>
+
+        <AdSlot slot="before-footer" page="lorem-ipsum" />
 
         {/* Internal linking */}
         <section className="mt-10">

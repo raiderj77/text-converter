@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getToolBySlug, buildUrl } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
 import { TextCleanerTool } from "@/components/tools/text-cleaner";
+import { AdSlot } from "@/components/ui/ad-slot";
 
 const tool = getToolBySlug("text-cleaner")!;
 const pageUrl = buildUrl("/text-cleaner");
@@ -93,6 +94,8 @@ export default function TextCleanerPage() {
         </div>
 
         {/* ========== SEO CONTENT ========== */}
+
+        <AdSlot slot="after-tool" page="text-cleaner" />
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
@@ -207,6 +210,8 @@ export default function TextCleanerPage() {
           </div>
         </section>
 
+        <AdSlot slot="mid-content" page="text-cleaner" />
+
         {/* FAQ */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
@@ -224,6 +229,8 @@ export default function TextCleanerPage() {
             ))}
           </div>
         </section>
+
+        <AdSlot slot="before-footer" page="text-cleaner" />
 
         {/* Internal linking */}
         <section className="mt-10">

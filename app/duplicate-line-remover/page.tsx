@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getToolBySlug, buildUrl } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
 import { DuplicateRemoverTool } from "@/components/tools/duplicate-remover";
+import { AdSlot } from "@/components/ui/ad-slot";
 
 const tool = getToolBySlug("duplicate-line-remover")!;
 const pageUrl = buildUrl("/duplicate-line-remover");
@@ -93,6 +94,8 @@ export default function DuplicateRemoverPage() {
         </div>
 
         {/* ========== SEO CONTENT ========== */}
+
+        <AdSlot slot="after-tool" page="duplicate-remover" />
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
@@ -196,6 +199,8 @@ export default function DuplicateRemoverPage() {
           </div>
         </section>
 
+        <AdSlot slot="mid-content" page="duplicate-remover" />
+
         {/* FAQ */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
@@ -213,6 +218,8 @@ export default function DuplicateRemoverPage() {
             ))}
           </div>
         </section>
+
+        <AdSlot slot="before-footer" page="duplicate-remover" />
 
         {/* Internal linking */}
         <section className="mt-10">

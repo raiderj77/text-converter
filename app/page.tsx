@@ -4,6 +4,7 @@ import { SITE_URL, getToolBySlug } from "@/lib/config";
 import { conversions } from "@/lib/conversions";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
 import { CaseConverterTool } from "@/components/tools/case-converter";
+import { AdSlot } from "@/components/ui/ad-slot";
 
 const tool = getToolBySlug("")!;
 
@@ -91,6 +92,8 @@ export default function HomePage() {
         {/* ========== SEO CONTENT BELOW ========== */}
         {/* Everything below is server-rendered HTML that Google indexes directly */}
 
+        <AdSlot slot="after-tool" page="home" />
+
         {/* How to use */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
@@ -165,6 +168,8 @@ export default function HomePage() {
           </div>
         </section>
 
+        <AdSlot slot="mid-content" page="home" />
+
         {/* FAQ — visible content that matches the JSON-LD schema */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
@@ -182,6 +187,8 @@ export default function HomePage() {
             ))}
           </div>
         </section>
+
+        <AdSlot slot="before-footer" page="home" />
 
         {/* Internal linking — critical for SEO authority flow */}
         <section className="mt-10">

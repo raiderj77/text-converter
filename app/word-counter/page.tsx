@@ -3,6 +3,7 @@ import Link from "next/link";
 import { SITE_URL, getToolBySlug, buildUrl } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
 import { WordCounterTool } from "@/components/tools/word-counter";
+import { AdSlot } from "@/components/ui/ad-slot";
 
 const tool = getToolBySlug("word-counter")!;
 const pageUrl = buildUrl("/word-counter");
@@ -93,6 +94,8 @@ export default function WordCounterPage() {
         </div>
 
         {/* ========== SEO CONTENT ========== */}
+
+        <AdSlot slot="after-tool" page="word-counter" />
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
@@ -213,6 +216,8 @@ export default function WordCounterPage() {
           </div>
         </section>
 
+        <AdSlot slot="mid-content" page="word-counter" />
+
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
             Common Word Count References
@@ -263,6 +268,8 @@ export default function WordCounterPage() {
             ))}
           </div>
         </section>
+
+        <AdSlot slot="before-footer" page="word-counter" />
 
         {/* Internal linking */}
         <section className="mt-10">
