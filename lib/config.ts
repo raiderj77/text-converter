@@ -79,7 +79,7 @@ export const tools: Tool[] = [
     description:
       "Remove duplicate lines from text instantly. Paste a list, get unique lines. Free, no signup.",
     emoji: "🗑️",
-    live: false,
+    live: true,
   },
   {
     slug: "string-encoder",
