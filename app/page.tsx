@@ -133,6 +133,39 @@ function Card(props: {
   );
 }
 
+function SectionCard(props: {
+  mode: Mode;
+  title: string;
+  description?: string;
+  children: React.ReactNode;
+}) {
+  const isDark = props.mode === "dark";
+
+  return (
+    <section
+      className={cx(
+        "mt-6 rounded-2xl border shadow-sm",
+        isDark ? "bg-neutral-900 border-white/10" : "bg-white border-black/10"
+      )}
+    >
+      <div
+        className={cx(
+          "px-4 py-3 border-b",
+          isDark ? "border-white/10" : "border-black/5"
+        )}
+      >
+        <h2 className="text-base sm:text-lg font-semibold">{props.title}</h2>
+        {props.description ? (
+          <p className={cx("mt-1 text-sm", isDark ? "text-neutral-300" : "text-neutral-600")}>
+            {props.description}
+          </p>
+        ) : null}
+      </div>
+      <div className="p-4">{props.children}</div>
+    </section>
+  );
+}
+
 export default function Page() {
   const [text, setText] = useState("");
   const [mode, setMode] = useState<Mode>("dark");
@@ -206,6 +239,11 @@ export default function Page() {
     inputRef.current?.focus();
   }
 
+  const exampleInput = "hello world from TEXT case converter";
+  const exampleOutputTitle = toTitleCase(exampleInput);
+  const exampleOutputSnake = toSnake(exampleInput);
+  const exampleOutputSlug = toSlug(exampleInput);
+
   return (
     <main
       className={cx(
@@ -220,7 +258,7 @@ export default function Page() {
               Text Case Converter
             </h1>
             <p className={cx("mt-1 text-sm", isDark ? "text-neutral-300" : "text-neutral-600")}>
-              Type once. Ctrl or Cmd plus K focuses input. Ctrl or Cmd plus L toggles theme.
+              Paste text once. Copy clean formats fast. Ctrl or Cmd plus K focuses input. Ctrl or Cmd plus L toggles theme.
             </p>
           </div>
 
@@ -313,73 +351,221 @@ export default function Page() {
             ))}
           </div>
 
-          <section className="mt-8 rounded-2xl border border-white/10 bg-neutral-900 p-5">
+          <SectionCard
+            mode={mode}
+            title="How to use this tool"
+            description="One paste. Multiple outputs. One-click copy."
+          >
+            <div className="grid gap-4 lg:grid-cols-2">
+              <div
+                className={cx(
+                  "rounded-2xl border p-4",
+                  isDark ? "border-white/10 bg-neutral-950" : "border-black/10 bg-neutral-50"
+                )}
+              >
+                <h3 className="text-sm font-semibold">Example input</h3>
+                <div className={cx("mt-2 text-sm", isDark ? "text-neutral-200" : "text-neutral-700")}>
+                  Paste:
+                </div>
+                <pre
+                  className={cx(
+                    "mt-2 rounded-2xl border px-3 py-2 text-sm whitespace-pre-wrap break-words",
+                    isDark ? "border-white/10 bg-neutral-900" : "border-black/10 bg-white"
+                  )}
+                >
+                  {exampleInput}
+                </pre>
+              </div>
+
+              <div
+                className={cx(
+                  "rounded-2xl border p-4",
+                  isDark ? "border-white/10 bg-neutral-950" : "border-black/10 bg-neutral-50"
+                )}
+              >
+                <h3 className="text-sm font-semibold">Example outputs</h3>
+                <div className="mt-3 grid gap-2">
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <div className={cx("text-xs uppercase tracking-wide", isDark ? "text-neutral-400" : "text-neutral-500")}>
+                        Title Case
+                      </div>
+                      <div className={cx("mt-1 text-sm", isDark ? "text-neutral-200" : "text-neutral-700")}>
+                        {exampleOutputTitle}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <div className={cx("text-xs uppercase tracking-wide", isDark ? "text-neutral-400" : "text-neutral-500")}>
+                        snake_case
+                      </div>
+                      <div className={cx("mt-1 text-sm", isDark ? "text-neutral-200" : "text-neutral-700")}>
+                        {exampleOutputSnake}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <div className={cx("text-xs uppercase tracking-wide", isDark ? "text-neutral-400" : "text-neutral-500")}>
+                        slug
+                      </div>
+                      <div className={cx("mt-1 text-sm", isDark ? "text-neutral-200" : "text-neutral-700")}>
+                        {exampleOutputSlug}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className={cx("mt-4 text-sm", isDark ? "text-neutral-300" : "text-neutral-600")}>
+                  Tips: Ctrl or Cmd plus K focuses input. Copy buttons live on every output card.
+                </div>
+              </div>
+            </div>
+          </SectionCard>
+
+          <section
+            className={cx(
+              "mt-6 rounded-2xl border p-5",
+              isDark ? "border-white/10 bg-neutral-900" : "border-black/10 bg-white"
+            )}
+          >
             <div className="flex items-start justify-between gap-4">
               <div>
                 <h2 className="text-lg font-semibold">Learn the formats</h2>
-                <p className="mt-1 text-sm text-neutral-300">
-                  Fast explanations. Real use cases. No filler.
+                <p className={cx("mt-1 text-sm", isDark ? "text-neutral-300" : "text-neutral-600")}>
+                  Short explanations and use cases.
                 </p>
               </div>
               <a
                 href="/learn"
-                className="rounded-xl border border-white/10 px-3 py-2 text-sm hover:bg-white/10"
+                className={cx(
+                  "rounded-xl border px-3 py-2 text-sm",
+                  isDark ? "border-white/10 hover:bg-white/10" : "border-black/10 hover:bg-black/5"
+                )}
               >
                 Open Learn
               </a>
             </div>
 
             <div className="mt-4 grid gap-4 lg:grid-cols-2">
-              <div className="rounded-2xl border border-white/10 bg-neutral-950 p-4">
+              <div
+                className={cx(
+                  "rounded-2xl border p-4",
+                  isDark ? "border-white/10 bg-neutral-950" : "border-black/10 bg-neutral-50"
+                )}
+              >
                 <h3 className="text-sm font-semibold">Common writing cases</h3>
-                <p className="mt-2 text-sm text-neutral-300">
-                  Use these for docs, headings, and readability.
+                <p className={cx("mt-2 text-sm", isDark ? "text-neutral-300" : "text-neutral-600")}>
+                  Headings, documents, and readability.
                 </p>
 
-                <ul className="mt-3 space-y-2 text-sm text-neutral-200">
+                <ul className={cx("mt-3 space-y-2 text-sm", isDark ? "text-neutral-200" : "text-neutral-700")}>
                   <li><span className="font-semibold">UPPERCASE</span> for labels and emphasis.</li>
                   <li><span className="font-semibold">lowercase</span> for normalization.</li>
-                  <li><span className="font-semibold">Title Case</span> for headings and blog titles.</li>
+                  <li><span className="font-semibold">Title Case</span> for headings and titles.</li>
                   <li><span className="font-semibold">Sentence case</span> for normal writing.</li>
                 </ul>
               </div>
 
-              <div className="rounded-2xl border border-white/10 bg-neutral-950 p-4">
+              <div
+                className={cx(
+                  "rounded-2xl border p-4",
+                  isDark ? "border-white/10 bg-neutral-950" : "border-black/10 bg-neutral-50"
+                )}
+              >
                 <h3 className="text-sm font-semibold">Developer formats</h3>
-                <p className="mt-2 text-sm text-neutral-300">
-                  Use these for variables, file names, and URLs.
+                <p className={cx("mt-2 text-sm", isDark ? "text-neutral-300" : "text-neutral-600")}>
+                  Variables, file names, and URLs.
                 </p>
 
-                <ul className="mt-3 space-y-2 text-sm text-neutral-200">
+                <ul className={cx("mt-3 space-y-2 text-sm", isDark ? "text-neutral-200" : "text-neutral-700")}>
                   <li><span className="font-semibold">camelCase</span> for JavaScript variables.</li>
                   <li><span className="font-semibold">PascalCase</span> for components and classes.</li>
                   <li><span className="font-semibold">snake_case</span> for Python and databases.</li>
                   <li><span className="font-semibold">kebab-case</span> for URLs and file paths.</li>
-                  <li><span className="font-semibold">slug</span> for URL friendly page names.</li>
+                  <li><span className="font-semibold">slug</span> for URL-friendly page names.</li>
                 </ul>
               </div>
             </div>
 
-            <div className="mt-4 rounded-2xl border border-white/10 bg-neutral-950 p-4">
-              <h3 className="text-sm font-semibold">Why this tool is useful</h3>
-              <div className="mt-2 grid gap-2 text-sm text-neutral-200 lg:grid-cols-2">
-                <p>Paste once. Get every format instantly.</p>
-                <p>Copy clean output with one click.</p>
-                <p>Stop manual edits that create mistakes.</p>
-                <p>Create URL slugs fast for posts and products.</p>
+            <div
+              className={cx(
+                "mt-4 rounded-2xl border p-4",
+                isDark ? "border-white/10 bg-neutral-950" : "border-black/10 bg-neutral-50"
+              )}
+            >
+              <h3 className="text-sm font-semibold">Why it saves time</h3>
+              <div className={cx("mt-2 grid gap-2 text-sm lg:grid-cols-2", isDark ? "text-neutral-200" : "text-neutral-700")}>
+                <p>Paste once. Outputs update instantly.</p>
+                <p>Copy output with one click.</p>
+                <p>Fewer manual edits and fewer mistakes.</p>
+                <p>Fast slugs for posts and products.</p>
               </div>
 
-              <div className="mt-3 text-sm text-neutral-300">
-                Want examples and explanations for each format?
-                <a className="underline ml-1" href="/learn">Read the guide</a>.
+              <div className={cx("mt-3 text-sm", isDark ? "text-neutral-300" : "text-neutral-600")}>
+                For deeper examples, open the Learn page.
               </div>
-            </div>
-
-            <div className="mt-4 text-xs text-neutral-400">
-              Keywords covered naturally: online text case converter free, convert text to uppercase,
-              lowercase, title case, sentence case, camelCase, snake_case, kebab-case, and slug generator.
             </div>
           </section>
+
+          <SectionCard
+            mode={mode}
+            title="FAQ"
+            description="Quick answers to common questions."
+          >
+            <div className="grid gap-4 lg:grid-cols-2">
+              <div
+                className={cx(
+                  "rounded-2xl border p-4",
+                  isDark ? "border-white/10 bg-neutral-950" : "border-black/10 bg-neutral-50"
+                )}
+              >
+                <h3 className="text-sm font-semibold">Does this tool store my text?</h3>
+                <p className={cx("mt-2 text-sm", isDark ? "text-neutral-300" : "text-neutral-600")}>
+                  The page processes text in your browser. The tool saves input locally so refresh does not wipe it.
+                </p>
+              </div>
+
+              <div
+                className={cx(
+                  "rounded-2xl border p-4",
+                  isDark ? "border-white/10 bg-neutral-950" : "border-black/10 bg-neutral-50"
+                )}
+              >
+                <h3 className="text-sm font-semibold">Why does sentence case only change the first letter?</h3>
+                <p className={cx("mt-2 text-sm", isDark ? "text-neutral-300" : "text-neutral-600")}>
+                  Sentence case here standardizes the start of the text. For multi-sentence punctuation rules, use a writing tool.
+                </p>
+              </div>
+
+              <div
+                className={cx(
+                  "rounded-2xl border p-4",
+                  isDark ? "border-white/10 bg-neutral-950" : "border-black/10 bg-neutral-50"
+                )}
+              >
+                <h3 className="text-sm font-semibold">What is a slug?</h3>
+                <p className={cx("mt-2 text-sm", isDark ? "text-neutral-300" : "text-neutral-600")}>
+                  A slug is the URL-safe part of a page address. It uses lowercase letters, numbers, and hyphens.
+                </p>
+              </div>
+
+              <div
+                className={cx(
+                  "rounded-2xl border p-4",
+                  isDark ? "border-white/10 bg-neutral-950" : "border-black/10 bg-neutral-50"
+                )}
+              >
+                <h3 className="text-sm font-semibold">Why do camelCase and PascalCase drop symbols?</h3>
+                <p className={cx("mt-2 text-sm", isDark ? "text-neutral-300" : "text-neutral-600")}>
+                  Those formats target identifiers. Symbols and extra separators get removed so the result stays valid for code.
+                </p>
+              </div>
+            </div>
+          </SectionCard>
         </div>
       </div>
 
