@@ -13,11 +13,12 @@ export const metadata: Metadata = {
   description: tool.description,
   alternates: { canonical: pageUrl },
   keywords: [
-    "text diff", "compare two texts", "diff checker online", "text comparison tool",
-    "find differences between two texts", "online diff tool", "compare text files",
-    "side by side text comparison", "text diff online free", "diff two strings",
-    "compare documents online", "line by line comparison", "code diff online",
-    "file comparison tool", "compare paragraphs online", "text difference finder",
+    "text diff", "diff checker", "compare two texts", "text comparison tool",
+    "find differences between two texts", "online diff tool", "side by side text comparison",
+    "word level diff", "compare text files online", "text diff online free",
+    "code diff checker", "compare documents online", "line by line comparison",
+    "text difference finder", "compare paragraphs", "unified diff viewer",
+    "file comparison tool free", "diff two strings online",
   ],
   openGraph: {
     title: tool.title,
@@ -31,52 +32,62 @@ const faqItems = [
   {
     question: "How do I compare two texts online?",
     answer:
-      "Paste your original text in the left box and the modified text in the right box. The tool instantly highlights additions in green and deletions in red. Unchanged lines are shown in the default color.",
+      "Paste the original text in the left box and the modified text in the right box. Differences appear instantly — additions in green, deletions in red, unchanged lines in the default color. No button click needed; the comparison runs as you type.",
   },
   {
-    question: "What types of differences does this tool detect?",
+    question: "What is word-level highlighting?",
     answer:
-      "The tool performs a line-by-line comparison and detects three types of changes: additions (lines present only in the modified text), deletions (lines present only in the original text), and unchanged lines (identical in both texts).",
+      "Most free diff tools only highlight entire lines as added or removed. Our tool goes further — when a line has been modified (not fully replaced), it highlights the specific words that changed within that line. This makes it easy to spot a single word change inside a long paragraph.",
   },
   {
-    question: "Can I ignore case differences when comparing?",
+    question: "What is the difference between side-by-side and inline view?",
     answer:
-      "Yes. Enable the 'Ignore case' option to treat uppercase and lowercase letters as equal. This is useful when comparing text where capitalization has changed but the content is the same.",
+      "Side-by-side (split) view shows the original and modified text in two columns so you can compare them in parallel. Inline (unified) view shows everything in a single column with + and - markers, similar to git diff output. Use side-by-side for visual comparison and inline for copying.",
   },
   {
-    question: "Can I ignore whitespace differences?",
+    question: "What does 'Focus changes' do?",
     answer:
-      "Yes. Enable the 'Ignore whitespace' option to collapse multiple spaces, tabs, and leading/trailing whitespace before comparing. This is useful for comparing code or formatted text where indentation has changed.",
+      "The 'Focus changes' option collapses consecutive unchanged lines into a single row showing '··· N unchanged lines ···'. This lets you skip straight to the parts that actually changed, which is especially useful when comparing large files with small edits.",
+  },
+  {
+    question: "Can I navigate between differences?",
+    answer:
+      "Yes. Use the Prev/Next buttons in the stats bar to jump between changes. The counter shows which difference you are viewing and the total count. The view scrolls to center each difference on screen.",
+  },
+  {
+    question: "Can I ignore case and whitespace differences?",
+    answer:
+      "Yes. 'Ignore case' treats uppercase and lowercase letters as equal. 'Ignore whitespace' collapses multiple spaces, tabs, and leading/trailing whitespace. Both options are useful when comparing code after reformatting or text with inconsistent capitalization.",
+  },
+  {
+    question: "What is the similarity percentage?",
+    answer:
+      "The similarity score shows what fraction of lines are identical between the two texts. 100% means the texts are identical. A low similarity (under 30%) suggests the texts are too different for meaningful line-by-line comparison.",
+  },
+  {
+    question: "Can I use this to compare code?",
+    answer:
+      "Yes. This tool works with any plain text including source code in any programming language, configuration files (JSON, YAML, TOML, .env), SQL queries, HTML, CSS, Markdown, and CSV data. Use 'Ignore whitespace' when comparing code with different indentation.",
   },
   {
     question: "Can I copy the diff output?",
     answer:
-      "Yes. Click the 'Copy Diff' button to copy the entire diff in a standard unified format with + for additions, - for deletions, and spaces for unchanged lines. You can paste this into emails, pull requests, or documentation.",
-  },
-  {
-    question: "What is a diff or text comparison?",
-    answer:
-      "A diff (short for difference) is a comparison between two versions of text that shows exactly what changed. It is commonly used in software development to review code changes, in editing to track document revisions, and in data processing to verify updates.",
-  },
-  {
-    question: "Can I compare code with this tool?",
-    answer:
-      "Yes. This tool works with any plain text including source code, configuration files, CSV data, JSON, HTML, Markdown, and more. Use the 'Ignore whitespace' option when comparing code with different indentation styles.",
+      "Yes. Click 'Copy Diff' to copy the entire comparison in unified diff format with + for additions, - for deletions, and spaces for unchanged lines. This format is compatible with patch files, code reviews, and documentation.",
   },
   {
     question: "Is my text sent to a server?",
     answer:
-      "No. All comparison processing happens entirely in your browser using JavaScript. Your text never leaves your device. Nothing is logged, stored, or transmitted.",
+      "No. All processing runs entirely in your browser using JavaScript. Your text never leaves your device. Nothing is logged, stored, or transmitted to any server. The source code is open for verification.",
   },
   {
-    question: "How large can the texts be?",
+    question: "How does this compare to Diffchecker?",
     answer:
-      "The tool handles texts up to several thousand lines without issues. All processing runs in your browser, so performance depends on your device. For very large files (10,000+ lines), a desktop browser will perform best.",
+      "Diffchecker is a popular diff tool, but many of its best features — word-level diff, merge, collapsible sections — require a paid Pro subscription. Our tool provides word-level highlighting, side-by-side and inline views, focus mode, similarity scoring, and diff navigation completely free with no account required.",
   },
   {
-    question: "What is the difference between line-level and word-level diff?",
+    question: "What algorithm does this tool use?",
     answer:
-      "Line-level diff compares entire lines and marks them as added, removed, or unchanged. Word-level diff goes further by highlighting the specific words that changed within a line. This tool uses line-level diff for clarity and speed.",
+      "The tool uses a Longest Common Subsequence (LCS) algorithm for line-level comparison, the same foundational approach used by git diff and the Unix diff utility. It then runs a second LCS pass at the word level within modified lines for granular highlighting.",
   },
 ];
 
@@ -86,7 +97,7 @@ export default function TextDiffPage() {
   return (
     <>
       <WebAppSchema
-        name="Free Text Diff — Compare Two Texts Online"
+        name="Free Text Diff — Compare Two Texts Side by Side Online"
         description={tool.description}
         url={pageUrl}
       />
@@ -100,12 +111,13 @@ export default function TextDiffPage() {
 
       <div className="mx-auto max-w-6xl px-4 py-6">
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
-          Free Text Diff — Compare Two Texts Online
+          Free Text Diff — Compare Two Texts Side by Side Online
         </h1>
         <p className="mt-2 text-sm text-neutral-400">
-          Compare two blocks of text and instantly see every difference highlighted.
-          Additions shown in green, deletions in red. Ignore case and whitespace.
-          Copy the diff output. Free, no signup, runs entirely in your browser.
+          Compare two blocks of text and instantly see every difference highlighted with
+          word-level precision. Side-by-side and inline views. Collapse unchanged lines to
+          focus on changes. Navigate between diffs. Ignore case and whitespace. Copy unified
+          diff output. Free, no signup, 100% client-side.
         </p>
 
         <div className="mt-4">
@@ -114,6 +126,36 @@ export default function TextDiffPage() {
 
         <AdSlot slot="after-tool" page="text-diff" />
 
+        {/* Feature grid — what competitors charge for */}
+        <section className="mt-10">
+          <h2 className="text-lg sm:text-xl font-semibold">
+            Everything You Need — Free, No Pro Plan Required
+          </h2>
+          <p className="mt-2 text-sm text-neutral-400">
+            Other diff checkers lock their best features behind paid plans. We give you everything
+            for free, right in your browser.
+          </p>
+          <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {[
+              { emoji: "🔤", title: "Word-Level Highlighting", desc: "See exactly which words changed within each modified line — not just the whole line turning red or green." },
+              { emoji: "↔️", title: "Side-by-Side & Inline Views", desc: "Toggle between split (parallel columns) and unified (single column with +/- markers) views instantly." },
+              { emoji: "🔢", title: "Line Numbers", desc: "Every line in the original and modified text is numbered so you can reference exact positions." },
+              { emoji: "🎯", title: "Focus Mode", desc: "Collapse unchanged lines to jump straight to the changes. Essential for large files with small edits." },
+              { emoji: "📊", title: "Similarity Score", desc: "See what percentage of lines match between your two texts at a glance." },
+              { emoji: "⬆️⬇️", title: "Diff Navigation", desc: "Prev/Next buttons jump between changes with a counter showing your position." },
+              { emoji: "🔠", title: "Ignore Case & Whitespace", desc: "Filter out capitalization and spacing differences to focus on real content changes." },
+              { emoji: "📋", title: "Copy Unified Diff", desc: "Export the comparison in standard unified diff format — paste into PRs, docs, or emails." },
+              { emoji: "🔒", title: "100% Private", desc: "All processing in your browser. No uploads, no server, no tracking. Your text never leaves your device." },
+            ].map((f) => (
+              <div key={f.title} className="rounded-xl border border-white/10 bg-neutral-900 p-4">
+                <div className="text-lg mb-1">{f.emoji}</div>
+                <h3 className="text-sm font-semibold">{f.title}</h3>
+                <p className="mt-1 text-xs text-neutral-400">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Compare Two Texts Online
@@ -121,66 +163,74 @@ export default function TextDiffPage() {
           <div className="mt-3 text-sm text-neutral-400 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Paste your original text</strong> in
-              the left box. This is the "before" version — the baseline you are comparing
-              against.
+              the left box. This is the &ldquo;before&rdquo; version — the baseline you are comparing
+              against. The line count updates as you type.
             </p>
             <p>
               <strong className="text-neutral-200">2. Paste your modified text</strong> in
-              the right box. This is the "after" version — the updated content you want to
-              check for changes.
+              the right box. This is the &ldquo;after&rdquo; version with your changes. The diff
+              output updates instantly.
             </p>
             <p>
-              <strong className="text-neutral-200">3. Review the diff output.</strong> Lines
-              added to the modified text appear in green with a + symbol. Lines removed from
-              the original appear in red with a - symbol. Unchanged lines are shown normally.
+              <strong className="text-neutral-200">3. Review the highlighted differences.</strong> Green
+              = added, red = removed. Within modified lines, changed words are highlighted
+              with a stronger background so you can spot the exact edit.
             </p>
             <p>
-              <strong className="text-neutral-200">4. Adjust comparison options.</strong> Toggle
-              "Ignore case" to treat uppercase and lowercase as equal. Toggle "Ignore whitespace"
-              to ignore spacing and indentation changes.
+              <strong className="text-neutral-200">4. Switch views.</strong> Use &ldquo;Side by Side&rdquo;
+              for visual comparison or &ldquo;Inline&rdquo; for unified diff format. Enable &ldquo;Focus
+              changes&rdquo; to collapse unchanged regions.
             </p>
             <p>
-              <strong className="text-neutral-200">5. Copy or swap.</strong> Click "Copy Diff"
-              to copy the output in unified diff format. Click "Swap" to reverse original
-              and modified texts.
+              <strong className="text-neutral-200">5. Navigate and copy.</strong> Use Prev/Next
+              to jump between changes. Click &ldquo;Copy Diff&rdquo; to export in unified format.
+              Click &ldquo;Swap&rdquo; to reverse the comparison direction.
             </p>
           </div>
         </section>
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            When to Use a Text Diff Tool
+            When to Use a Text Diff Checker
           </h2>
           <div className="mt-3 text-sm text-neutral-400 space-y-2">
             <p>
-              <strong className="text-neutral-200">Code review:</strong> Compare two versions
-              of a file to see exactly what changed before committing. Works with JavaScript,
-              Python, HTML, CSS, JSON, YAML, and any programming language.
+              <strong className="text-neutral-200">Code review:</strong> Compare two versions of a source
+              file to see exactly what changed before committing. Works with JavaScript, Python, TypeScript,
+              Rust, Go, HTML, CSS, SQL, and every other language.
             </p>
             <p>
-              <strong className="text-neutral-200">Document editing:</strong> Track changes
-              between drafts of articles, contracts, emails, or reports. Spot every addition
-              and deletion without reading both versions word by word.
+              <strong className="text-neutral-200">Document editing:</strong> Track changes between
+              drafts of articles, contracts, emails, reports, or README files. Spot every addition and
+              deletion without reading both versions word by word.
             </p>
             <p>
-              <strong className="text-neutral-200">Data validation:</strong> Compare CSV
-              exports, database dumps, or API responses to verify that data updates are
-              correct and no unexpected changes slipped through.
+              <strong className="text-neutral-200">Configuration debugging:</strong> Compare config files
+              (.env, nginx.conf, tsconfig.json, docker-compose.yml) between environments to find the one
+              setting that differs between staging and production.
             </p>
             <p>
-              <strong className="text-neutral-200">Configuration debugging:</strong> Compare
-              config files (nginx.conf, .env, tsconfig.json) between environments to find
-              the setting that is different between staging and production.
+              <strong className="text-neutral-200">API response validation:</strong> Compare JSON or XML
+              responses from different API versions or environments to verify that changes are expected
+              and nothing unexpected slipped through.
             </p>
             <p>
-              <strong className="text-neutral-200">SEO and content:</strong> Compare meta
-              descriptions, title tags, or page copy before and after edits. Verify that
-              only the intended changes were made.
+              <strong className="text-neutral-200">Database migrations:</strong> Compare SQL schema dumps
+              before and after a migration to verify that only intended columns and indexes were changed.
             </p>
             <p>
-              <strong className="text-neutral-200">Translation verification:</strong> Compare
-              the original and translated text side by side to check that no paragraphs
-              were accidentally skipped or duplicated.
+              <strong className="text-neutral-200">SEO and content updates:</strong> Compare meta titles,
+              descriptions, H1 tags, or page copy before and after edits to verify that only intended
+              changes shipped.
+            </p>
+            <p>
+              <strong className="text-neutral-200">Translation QA:</strong> Compare original and translated
+              text side by side to check that no paragraphs were skipped, duplicated, or mistranslated.
+            </p>
+            <p>
+              <strong className="text-neutral-200">Merge conflict resolution:</strong> Paste the two
+              conflicting versions to see all differences, decide which changes to keep, and copy the
+              resolved output.
             </p>
           </div>
         </section>
@@ -193,10 +243,7 @@ export default function TextDiffPage() {
           </h2>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
             {faqItems.map((faq) => (
-              <div
-                key={faq.question}
-                className="rounded-xl border border-white/10 bg-neutral-900 p-4"
-              >
+              <div key={faq.question} className="rounded-xl border border-white/10 bg-neutral-900 p-4">
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
                 <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
               </div>
@@ -209,16 +256,11 @@ export default function TextDiffPage() {
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
           <p className="mt-2 text-sm text-neutral-400">
-            Compare text here, then use our other tools to clean, convert, format, or
-            encode it.
+            Compare text here, then clean, convert, format, or encode it with our other free tools.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             {tools.map((t) => (
-              <Link
-                key={t.slug}
-                href={t.slug === "" ? "/" : `/${t.slug}`}
-                className="rounded-xl border border-white/10 px-3 py-2 text-sm hover:bg-white/5 transition-colors"
-              >
+              <Link key={t.slug} href={t.slug === "" ? "/" : `/${t.slug}`} className="rounded-xl border border-white/10 px-3 py-2 text-sm hover:bg-white/5 transition-colors">
                 {t.emoji} {t.name}
               </Link>
             ))}
