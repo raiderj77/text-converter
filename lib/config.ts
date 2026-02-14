@@ -59,7 +59,7 @@ export const tools: Tool[] = [
     description:
       "Clean up messy text instantly. Remove extra spaces, line breaks, tabs, and trailing whitespace. Free, no signup.",
     emoji: "🧹",
-    live: false,
+    live: true,
   },
   {
     slug: "lorem-ipsum-generator",
