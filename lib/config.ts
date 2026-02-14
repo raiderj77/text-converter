@@ -89,7 +89,7 @@ export const tools: Tool[] = [
     description:
       "Encode and decode strings: Base64, URL encoding, HTML entities. Free, instant, no signup.",
     emoji: "🔐",
-    live: false,
+    live: true,
   },
   {
     slug: "json-formatter",
