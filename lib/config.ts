@@ -69,7 +69,7 @@ export const tools: Tool[] = [
     description:
       "Generate customizable Lorem Ipsum placeholder text by paragraphs, sentences, or words. Free, no signup.",
     emoji: "📝",
-    live: false,
+    live: true,
   },
   {
     slug: "duplicate-line-remover",
