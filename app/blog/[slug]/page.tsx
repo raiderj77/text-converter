@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { SITE_URL, getPostBySlug, posts } from "@/lib/blog";
+import { getPostBySlug, posts } from "@/lib/blog";
+import { SITE_URL } from "@/lib/config";
 import { notFound } from "next/navigation";
 
 type ParamsPromise = Promise<{ slug: string }>;
