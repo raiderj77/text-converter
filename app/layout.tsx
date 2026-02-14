@@ -21,19 +21,41 @@ export default function RootLayout({
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-JQHRPJ9YLF');
+gtag('config', 'G-JQHRPJ9YLF', {
+  cookie_domain: 'none',
+  cookie_flags: 'SameSite=Lax;Secure'
+});
             `.trim(),
           }}
         ></script>
       </head>
-     <body>
-  {children}
+      <body>
+        {children}
 
-  <footer style={{ maxWidth: 900, margin: "0 auto", padding: 24, fontSize: 14, opacity: 0.8 }}>
-    <a href="/privacy" style={{ marginRight: 12 }}>Privacy</a>
-    <a href="/terms">Terms</a>
-  </footer>
-</body>
+        <footer
+          style={{
+            maxWidth: 900,
+            margin: "0 auto",
+            padding: 24,
+            fontSize: 14,
+            opacity: 0.8,
+          }}
+        >
+          <a href="/" style={{ marginRight: 12 }}>
+            Home
+          </a>
+          <a href="/about" style={{ marginRight: 12 }}>
+            About
+          </a>
+          <a href="/contact" style={{ marginRight: 12 }}>
+            Contact
+          </a>
+          <a href="/privacy" style={{ marginRight: 12 }}>
+            Privacy
+          </a>
+          <a href="/terms">Terms</a>
+        </footer>
+      </body>
     </html>
   );
 }
