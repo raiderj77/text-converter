@@ -121,6 +121,26 @@ export const tools: Tool[] = [
     emoji: "🔑",
     live: true,
   },
+  {
+    slug: "regex-tester",
+    name: "Regex Tester",
+    shortName: "Regex",
+    title: "Free Regex Tester — Test Regular Expressions Online, Match & Replace with Highlighting",
+    description:
+      "Test regular expressions with real-time match highlighting, capture groups, replace mode, and flag toggles. Supports JavaScript regex. Free, no signup, runs in your browser.",
+    emoji: "⚙️",
+    live: true,
+  },
+  {
+    slug: "hash-generator",
+    name: "Hash Generator",
+    shortName: "Hash",
+    title: "Free Hash Generator — MD5, SHA-1, SHA-256, SHA-512 Online Checksum Calculator",
+    description:
+      "Generate MD5, SHA-1, SHA-256, SHA-512 hashes from text or files instantly. Compare hashes, HMAC mode, bulk hashing. Free, no signup, runs in your browser.",
+    emoji: "#️⃣",
+    live: true,
+  },
 ];
 
 /** Get only tools that are live (shown in nav) */
