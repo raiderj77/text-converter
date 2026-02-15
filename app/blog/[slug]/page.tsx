@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getPostBySlug, posts } from "@/lib/blog";
+import { getAllSlugs, getAllPosts, getPost } from "@/lib/blog-md";
 import { SITE_URL, getLiveTools } from "@/lib/config";
 import { notFound } from "next/navigation";
 import { AdSlot } from "@/components/ui/ad-slot";
@@ -11,18 +11,19 @@ function cx(...parts: Array<string | false | null | undefined>) {
 }
 
 export async function generateStaticParams() {
-  return posts.map((post) => ({ slug: post.slug }));
+  return getAllSlugs().map((slug) => ({ slug }));
 }
 
 export async function generateMetadata(props: { params: ParamsPromise }) {
   const { slug } = await props.params;
-  const post = getPostBySlug(slug);
+  const post = await getPost(slug);
 
   if (!post) return {};
 
   return {
     title: post.title,
     description: post.description,
+    keywords: post.keywords,
     alternates: {
       canonical: `${SITE_URL}/blog/${post.slug}`,
     },
@@ -47,12 +48,19 @@ function buildFaqSchema(faq: Array<{ question: string; answer: string }>) {
   };
 }
 
-function buildArticleSchema(title: string, description: string, url: string) {
+function buildArticleSchema(
+  title: string,
+  description: string,
+  url: string,
+  date: string
+) {
   return {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: title,
     description,
+    datePublished: date,
+    dateModified: date,
     mainEntityOfPage: url,
     publisher: {
       "@type": "Organization",
@@ -64,21 +72,34 @@ function buildArticleSchema(title: string, description: string, url: string) {
 
 export default async function BlogPostPage(props: { params: ParamsPromise }) {
   const { slug } = await props.params;
-  const post = getPostBySlug(slug);
+  const post = await getPost(slug);
 
   if (!post) return notFound();
 
   const url = `${SITE_URL}/blog/${post.slug}`;
   const faqSchema = buildFaqSchema(post.faq);
-  const articleSchema = buildArticleSchema(post.title, post.description, url);
+  const articleSchema = buildArticleSchema(
+    post.title,
+    post.description,
+    url,
+    post.date
+  );
   const tools = getLiveTools();
+  const allPosts = getAllPosts();
 
-  const related =
-    post.related && post.related.length
-      ? post.related
-          .map((s) => posts.find((p) => p.slug === s))
-          .filter(Boolean)
-      : posts.filter((p) => p.slug !== post.slug).slice(0, 6);
+  // Related posts: use explicit list, or fall back to latest posts
+  const related = post.related.length
+    ? post.related
+        .map((s) => allPosts.find((p) => p.slug === s))
+        .filter(Boolean)
+    : allPosts.filter((p) => p.slug !== post.slug).slice(0, 4);
+
+  // Find the linked tool for CTA
+  const linkedTool = tools.find((t) =>
+    post.toolSlug !== undefined
+      ? t.slug === post.toolSlug
+      : false
+  );
 
   return (
     <>
@@ -94,9 +115,13 @@ export default async function BlogPostPage(props: { params: ParamsPromise }) {
       <div className="mx-auto max-w-6xl px-4 py-8">
         {/* Breadcrumb */}
         <div className="text-sm text-neutral-400">
-          <Link href="/" className="hover:text-neutral-200">Home</Link>
+          <Link href="/" className="hover:text-neutral-200">
+            Home
+          </Link>
           <span className="mx-2 text-neutral-600">/</span>
-          <Link href="/blog" className="hover:text-neutral-200">Blog</Link>
+          <Link href="/blog" className="hover:text-neutral-200">
+            Guides
+          </Link>
           <span className="mx-2 text-neutral-600">/</span>
           <span className="text-neutral-300">{post.title}</span>
         </div>
@@ -105,60 +130,87 @@ export default async function BlogPostPage(props: { params: ParamsPromise }) {
           {/* Main content */}
           <div>
             <article className="rounded-2xl border border-white/10 bg-neutral-900 p-6">
-              <div className="text-xs uppercase tracking-wide text-neutral-400">
-                Guide
+              <div className="flex items-center gap-3 text-xs text-neutral-400">
+                <span className="uppercase tracking-wide">Guide</span>
+                {post.date && (
+                  <>
+                    <span className="text-neutral-600">·</span>
+                    <time dateTime={post.date}>
+                      {new Date(post.date).toLocaleDateString("en-US", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })}
+                    </time>
+                  </>
+                )}
               </div>
 
-              <div className="mt-3 space-y-4">
-                <div
-                  className={cx(
-                    "text-neutral-100",
-                    "[&>h1]:text-2xl [&>h1]:sm:text-3xl [&>h1]:font-bold [&>h1]:tracking-tight",
-                    "[&>h2]:mt-7 [&>h2]:text-lg [&>h2]:font-semibold",
-                    "[&>h3]:mt-5 [&>h3]:text-base [&>h3]:font-semibold",
-                    "[&>p]:text-sm [&>p]:text-neutral-200 [&>p]:leading-7",
-                    "[&>ul]:pl-5 [&>ul]:text-sm [&>ul]:text-neutral-200 [&>ul]:space-y-2 [&>ul]:list-disc",
-                    "[&>ol]:pl-5 [&>ol]:text-sm [&>ol]:text-neutral-200 [&>ol]:space-y-2 [&>ol]:list-decimal",
-                    "[&>a]:underline"
-                  )}
-                >
-                  {post.content}
-                </div>
-              </div>
+              <div
+                className={cx(
+                  "mt-3 text-neutral-100",
+                  "prose prose-invert prose-sm max-w-none",
+                  "[&>h1]:text-2xl [&>h1]:sm:text-3xl [&>h1]:font-bold [&>h1]:tracking-tight",
+                  "[&>h2]:mt-7 [&>h2]:text-lg [&>h2]:font-semibold",
+                  "[&>h3]:mt-5 [&>h3]:text-base [&>h3]:font-semibold",
+                  "[&>p]:text-sm [&>p]:text-neutral-200 [&>p]:leading-7",
+                  "[&>ul]:pl-5 [&>ul]:text-sm [&>ul]:text-neutral-200 [&>ul]:space-y-2 [&>ul]:list-disc",
+                  "[&>ol]:pl-5 [&>ol]:text-sm [&>ol]:text-neutral-200 [&>ol]:space-y-2 [&>ol]:list-decimal",
+                  "[&>table]:text-sm [&>table]:w-full [&>table]:border-collapse",
+                  "[&_th]:text-left [&_th]:text-neutral-300 [&_th]:border-b [&_th]:border-white/10 [&_th]:py-2 [&_th]:px-3",
+                  "[&_td]:text-neutral-300 [&_td]:border-b [&_td]:border-white/5 [&_td]:py-2 [&_td]:px-3",
+                  "[&>pre]:bg-neutral-950 [&>pre]:rounded-xl [&>pre]:p-4 [&>pre]:text-sm [&>pre]:overflow-x-auto",
+                  "[&_code]:text-emerald-400 [&_code]:text-xs",
+                  "[&>blockquote]:border-l-2 [&>blockquote]:border-emerald-500 [&>blockquote]:pl-4 [&>blockquote]:text-neutral-300",
+                  "[&>a]:underline [&_a]:text-emerald-400 [&_a]:underline"
+                )}
+                dangerouslySetInnerHTML={{ __html: post.contentHtml }}
+              />
             </article>
 
             {/* CTA to tool */}
-            <div className="mt-4 rounded-2xl border border-white/10 bg-neutral-900 p-4">
-              <div className="text-sm font-semibold">Use the converter</div>
-              <p className="mt-1 text-sm text-neutral-400">
-                Paste your text once. Copy the format you need.
-              </p>
-              <div className="mt-3">
-                <Link
-                  href="/"
-                  className="inline-block rounded-xl border border-white/10 px-3 py-2 text-sm hover:bg-white/10 transition-colors"
-                >
-                  Open the tool
-                </Link>
+            {linkedTool && (
+              <div className="mt-4 rounded-2xl border border-white/10 bg-neutral-900 p-4">
+                <div className="text-sm font-semibold">
+                  {linkedTool.emoji} Try {linkedTool.name}
+                </div>
+                <p className="mt-1 text-sm text-neutral-400">
+                  Free, no signup, runs in your browser. Try it now.
+                </p>
+                <div className="mt-3">
+                  <Link
+                    href={linkedTool.slug === "" ? "/" : `/${linkedTool.slug}`}
+                    className="inline-block rounded-xl border border-white/10 px-3 py-2 text-sm hover:bg-white/10 transition-colors"
+                  >
+                    Open {linkedTool.name} →
+                  </Link>
+                </div>
               </div>
-            </div>
+            )}
 
             <AdSlot slot="after-tool" page={`blog-${slug}`} />
 
             {/* FAQ */}
-            <section className="mt-4 rounded-2xl border border-white/10 bg-neutral-900 p-5">
-              <h2 className="text-lg font-semibold">FAQ</h2>
-              <div className="mt-4 space-y-3">
-                {post.faq.map((f) => (
-                  <div key={f.question} className="rounded-xl border border-white/10 bg-neutral-950 p-4">
-                    <h3 className="text-sm font-semibold">{f.question}</h3>
-                    <p className="mt-2 text-sm text-neutral-400 leading-7">
-                      {f.answer}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </section>
+            {post.faq.length > 0 && (
+              <section className="mt-4 rounded-2xl border border-white/10 bg-neutral-900 p-5">
+                <h2 className="text-lg font-semibold">
+                  Frequently Asked Questions
+                </h2>
+                <div className="mt-4 space-y-3">
+                  {post.faq.map((f) => (
+                    <div
+                      key={f.question}
+                      className="rounded-xl border border-white/10 bg-neutral-950 p-4"
+                    >
+                      <h3 className="text-sm font-semibold">{f.question}</h3>
+                      <p className="mt-2 text-sm text-neutral-400 leading-7">
+                        {f.answer}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
 
             <AdSlot slot="mid-content" page={`blog-${slug}`} />
 
@@ -202,7 +254,10 @@ export default async function BlogPostPage(props: { params: ParamsPromise }) {
                 ))}
               </div>
               <div className="mt-4">
-                <Link href="/blog" className="text-sm text-neutral-400 hover:text-neutral-200">
+                <Link
+                  href="/blog"
+                  className="text-sm text-neutral-400 hover:text-neutral-200"
+                >
                   ← All guides
                 </Link>
               </div>

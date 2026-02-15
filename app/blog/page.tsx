@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { posts } from "@/lib/blog";
+import { getAllPosts } from "@/lib/blog-md";
 import { getLiveTools, buildUrl } from "@/lib/config";
 import { BreadcrumbSchema } from "@/components/seo/schema";
 import { AdSlot } from "@/components/ui/ad-slot";
@@ -8,21 +8,21 @@ import { AdSlot } from "@/components/ui/ad-slot";
 const pageUrl = buildUrl("/blog");
 
 export const metadata: Metadata = {
-  title: "Text Case Guides & Blog",
+  title: "Free Text Tool Guides — Tutorials, Tips & How-Tos",
   description:
-    "Practical guides for uppercase, lowercase, Title Case, camelCase, snake_case, kebab-case, URL slugs, and more. Learn when to use each format with examples.",
+    "Practical guides for text conversion, word counting, JSON formatting, text diffing, password generation, and more. Learn how to use every FlipMyCase tool with examples.",
   alternates: { canonical: pageUrl },
   openGraph: {
-    title: "Text Case Guides & Blog | FlipMyCase",
+    title: "Free Text Tool Guides — Tutorials, Tips & How-Tos | FlipMyCase",
     description:
-      "Practical guides for every text case format. Learn when to use each with examples.",
+      "Practical guides for every text tool. Learn when and how to use each with examples.",
     url: pageUrl,
     type: "website",
   },
 };
 
 export default function BlogIndex() {
-  const items = posts.slice().sort((a, b) => a.title.localeCompare(b.title));
+  const allPosts = getAllPosts();
   const tools = getLiveTools();
 
   return (
@@ -30,34 +30,38 @@ export default function BlogIndex() {
       <BreadcrumbSchema
         items={[
           { name: "Home", href: "/" },
-          { name: "Blog", href: "/blog" },
+          { name: "Guides", href: "/blog" },
         ]}
       />
 
       <div className="mx-auto max-w-6xl px-4 py-8">
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
-          Text Case Guides
+          Guides & Tutorials
         </h1>
         <p className="mt-2 text-sm text-neutral-400">
-          Practical guides for every text format. Learn when to use uppercase, Title Case,
-          camelCase, snake_case, and more — with real examples and best practices.
+          Practical guides for every text tool. Learn when and how to use each
+          with real-world examples, keyboard shortcuts, and best practices.
         </p>
 
-        {/* Featured guides */}
+        {/* Featured guides (latest 4) */}
         <div className="mt-6">
           <div className="text-xs uppercase tracking-wide text-neutral-400">
-            Start here
+            Latest
           </div>
           <div className="mt-2 grid grid-cols-1 md:grid-cols-2 gap-2">
-            {items.slice(0, 6).map((p) => (
+            {allPosts.slice(0, 4).map((p) => (
               <Link
                 key={p.slug}
                 href={`/blog/${p.slug}`}
                 className="rounded-2xl border border-white/10 bg-neutral-900 p-4 hover:bg-white/5 transition-colors"
               >
                 <div className="text-sm font-semibold">{p.title}</div>
-                <div className="mt-2 text-sm text-neutral-400">{p.description}</div>
-                <div className="mt-3 text-xs text-neutral-500">Read guide →</div>
+                <div className="mt-2 text-sm text-neutral-400">
+                  {p.description}
+                </div>
+                <div className="mt-3 text-xs text-neutral-500">
+                  Read guide →
+                </div>
               </Link>
             ))}
           </div>
@@ -71,14 +75,16 @@ export default function BlogIndex() {
             All guides
           </div>
           <div className="mt-2 grid grid-cols-1 md:grid-cols-2 gap-2">
-            {items.map((p) => (
+            {allPosts.map((p) => (
               <Link
                 key={p.slug}
                 href={`/blog/${p.slug}`}
                 className="rounded-2xl border border-white/10 bg-neutral-900 p-4 hover:bg-white/5 transition-colors"
               >
                 <div className="text-sm font-semibold">{p.title}</div>
-                <div className="mt-2 text-sm text-neutral-400">{p.description}</div>
+                <div className="mt-2 text-sm text-neutral-400">
+                  {p.description}
+                </div>
               </Link>
             ))}
           </div>
@@ -90,7 +96,8 @@ export default function BlogIndex() {
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Free Text Tools</h2>
           <p className="mt-2 text-sm text-neutral-400">
-            Read the guides, then use the tools. All free, no signup, runs in your browser.
+            Read the guides, then use the tools. All free, no signup, runs in
+            your browser.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             {tools.map((t) => (

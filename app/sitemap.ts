@@ -1,10 +1,10 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL, tools } from "@/lib/config";
+import { getAllPosts } from "@/lib/blog-md";
 
 /**
  * Auto-generated sitemap.
- * Includes: all tools, blog index, static pages.
- * Blog posts will be added here once we move to markdown-based blog.
+ * Includes: all live tools, all blog posts, static pages.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -19,9 +19,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: tool.slug === "" ? 1.0 : 0.9,
     }));
 
+  // Blog posts
+  const blogPosts: MetadataRoute.Sitemap = getAllPosts().map((post) => ({
+    url: `${SITE_URL}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  // Blog index
+  const blogIndex: MetadataRoute.Sitemap = [
+    {
+      url: `${SITE_URL}/blog`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    },
+  ];
+
   // Static pages
   const staticPages: MetadataRoute.Sitemap = [
-    "blog",
     "learn",
     "about",
     "contact",
@@ -31,16 +48,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${SITE_URL}/${page}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
-    priority: page === "blog" ? 0.8 : 0.3,
+    priority: 0.3,
   }));
 
-  // TODO: Add blog post URLs dynamically once markdown blog is live
-  // const blogPosts = getAllPosts().map(post => ({
-  //   url: `${SITE_URL}/blog/${post.slug}`,
-  //   lastModified: new Date(post.date),
-  //   changeFrequency: "monthly" as const,
-  //   priority: 0.7,
-  // }));
-
-  return [...toolPages, ...staticPages];
+  return [...toolPages, ...blogIndex, ...blogPosts, ...staticPages];
 }
