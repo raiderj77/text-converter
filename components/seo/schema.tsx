@@ -99,12 +99,17 @@ export function BreadcrumbSchema({
       data={{
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
-        itemListElement: items.map((item, i) => ({
-          "@type": "ListItem",
-          position: i + 1,
-          name: item.name,
-          item: `${SITE_URL}${item.href}`,
-        })),
+        itemListElement: items.map((item, i) => {
+          const entry: Record<string, unknown> = {
+            "@type": "ListItem",
+            position: i + 1,
+            name: item.name,
+          };
+          if (i < items.length - 1) {
+            entry.item = `${SITE_URL}${item.href}`;
+          }
+          return entry;
+        }),
       }}
     />
   );
