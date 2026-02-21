@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/layout/theme-provider";
 import { Nav } from "@/components/layout/nav";
 import { Footer } from "@/components/layout/footer";
 import { OrganizationSchema } from "@/components/seo/schema";
+import { CookieConsent } from "@/components/ui/cookie-consent";
 
 /**
  * Root metadata — applies to every page unless overridden.
@@ -89,7 +90,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="FlipMyCase" />
 
-        {/* Google Analytics */}
+        {/* Google Analytics with Consent Mode v2 */}
         <script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
@@ -99,8 +100,19 @@ export default function RootLayout({
             __html: `
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  analytics_storage: 'denied',
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  wait_for_update: 500
+});
 gtag('js', new Date());
-gtag('config', '${GA_ID}');
+gtag('config', '${GA_ID}', {
+  anonymize_ip: true,
+  allow_google_signals: false,
+  allow_ad_personalization_signals: false
+});
             `.trim(),
           }}
         />
@@ -126,6 +138,7 @@ if ('serviceWorker' in navigator) {
           <Nav />
           <main className="flex-1">{children}</main>
           <Footer />
+          <CookieConsent />
         </ThemeProvider>
       </body>
     </html>

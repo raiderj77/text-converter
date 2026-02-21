@@ -93,7 +93,7 @@ export function Footer() {
               Legal
             </div>
             <div className="space-y-2">
-              {["About", "Contact", "Privacy", "Terms"].map((page) => (
+              {["About", "Contact", "Privacy", "Terms", "Cookies", "Accessibility"].map((page) => (
                 <Link
                   key={page}
                   href={`/${page.toLowerCase()}`}
