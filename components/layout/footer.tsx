@@ -126,6 +126,7 @@ export function Footer() {
           </div>
         </div>
       </div>
+    <div className="mt-4 text-center"><p className="text-xs text-neutral-400">More Free Tools: <a href="https://creatorrevenuecalculator.com" className="hover:underline">Creator Revenue Calculator</a> · <a href="https://fibertools.app" className="hover:underline">FiberTools</a> · <a href="https://mindchecktools.com" className="hover:underline">MindCheck Tools</a></p></div>
     </footer>
   );
 }
