@@ -161,6 +161,26 @@ export const tools: Tool[] = [
     emoji: "↔️",
     live: true,
   },
+  {
+    slug: "toggle-case-converter",
+    name: "Toggle Case Converter",
+    shortName: "Toggle",
+    title: "Free Toggle Case Converter — tOgGlE cAsE Text Online",
+    description:
+      "Convert text to toggle case (alternating lowercase/uppercase starting with lowercase). Perfect for memes, social media, and creative text formatting. Free, no signup.",
+    emoji: "🔀",
+    live: true,
+  },
+  {
+    slug: "spongebob-case-converter",
+    name: "SpongeBob Case Converter",
+    shortName: "SpongeBob",
+    title: "Free SpongeBob Case Converter — sPoNgEbOb CaSe Text Online",
+    description:
+      "Convert text to SpongeBob case (random-looking alternating uppercase/lowercase). Create meme text, ironic posts, and attention-grabbing content. Free, no signup.",
+    emoji: "🧽",
+    live: true,
+  },
 ];
 
 /** Get only tools that are live (shown in nav) */
