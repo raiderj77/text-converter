@@ -141,6 +141,26 @@ export const tools: Tool[] = [
     emoji: "#️⃣",
     live: true,
   },
+  {
+    slug: "toggle-case-converter",
+    name: "Toggle Case",
+    shortName: "Toggle",
+    title: "Free Toggle Case Converter — sPoNgEbOb Text, Alternating Caps, Mocking SpongeBob Meme Generator Online",
+    description:
+      "Convert text to toggle case (alternating caps) instantly. Create sPoNgEbOb text, mocking SpongeBob meme text, and alternating uppercase/lowercase letters. Free, no signup, runs in your browser.",
+    emoji: "🔄",
+    live: true,
+  },
+  {
+    slug: "snake-kebab-converter",
+    name: "Snake vs Kebab",
+    shortName: "Snake/Kebab",
+    title: "Free Snake_case vs Kebab-case Converter — Compare, Convert & Choose Between Underscores & Hyphens Online",
+    description:
+      "Convert text between snake_case and kebab-case instantly. Compare both formats side by side, see examples, and choose the right naming convention for your code. Free, no signup, runs in your browser.",
+    emoji: "🐍",
+    live: true,
+  },
 ];
 
 /** Get only tools that are live (shown in nav) */
