@@ -9,24 +9,24 @@ const tool = getToolBySlug("toggle-case-converter")!;
 const pageUrl = buildUrl("/toggle-case-converter");
 
 export const metadata: Metadata = {
-  title: tool.title,
-  description: tool.description,
+  title: "Toggle Case Converter Online — Free tOgGlE cAsE Text Generator for Memes & Social Media",
+  description: "Create attention-grabbing toggle case text for memes, social media, and creative projects. Convert text to alternating lowercase/uppercase instantly. No signup required.",
   alternates: { canonical: pageUrl },
   keywords: [
-    "toggle case converter", "toggle case", "alternating case converter",
-    "tOgGlE cAsE", "text toggle case", "toggle text online",
-    "alternating uppercase lowercase", "meme text generator",
-    "social media text formatter", "funny text converter",
-    "text case alternator", "online toggle case tool",
-    "free toggle case converter", "text formatting tool",
-    "creative text case", "attention grabbing text",
-    "text case changer", "toggle case generator",
-    "alternating text case", "text style converter",
-    "toggle case for memes", "toggle case for social media",
+    "toggle case converter", "toggle case generator", "alternating case converter",
+    "tOgGlE cAsE", "text toggle case", "toggle text online free",
+    "alternating uppercase lowercase", "meme text generator online",
+    "social media text formatter", "funny text converter tool",
+    "text case alternator", "online toggle case converter",
+    "free toggle case tool", "text formatting generator",
+    "creative text case maker", "attention grabbing text creator",
+    "text case changer online", "toggle case for memes generator",
+    "toggle case for social media posts", "viral text formatter",
+    "alternating text case converter", "text style generator",
   ],
   openGraph: {
-    title: tool.title,
-    description: tool.description,
+    title: "Toggle Case Converter Online — Free tOgGlE cAsE Text Generator",
+    description: "Generate toggle case text for memes, social media, and creative projects instantly. No signup required.",
     url: pageUrl,
     type: "website",
   },
@@ -93,11 +93,12 @@ export default function ToggleCaseConverterPage() {
 
       <div className="mx-auto max-w-6xl px-4 py-6">
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
-          Free Toggle Case Converter
+          Toggle Case Converter — Create tOgGlE cAsE Text Instantly
         </h1>
         <p className="mt-2 text-sm text-neutral-400">
-          Convert text to toggle case (tOgGlE cAsE) instantly. Alternating lowercase/uppercase starting with lowercase.
-          Perfect for memes, social media, and creative text formatting. Free, no signup.
+          Generate attention-grabbing toggle case text perfect for memes, social media posts, and creative projects.
+          Our free converter alternates lowercase and uppercase letters starting with lowercase. No signup, works right in your browser.
+          Try our <Link href="/spongebob-case-converter" className="text-blue-400 hover:text-blue-300">SpongeBob case converter</Link> for meme-style text too.
         </p>
 
         <div className="mt-4">
@@ -110,64 +111,66 @@ export default function ToggleCaseConverterPage() {
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            How to Convert Text to Toggle Case
+            How to Create Toggle Case Text in Seconds
           </h2>
           <div className="mt-3 text-sm text-neutral-400 space-y-2">
             <p>
-              <strong className="text-neutral-200">1. Paste or type your text</strong> into the input box.
-              Use the example buttons for quick demos or try famous quotes and meme phrases to see toggle case in action.
+              <strong className="text-neutral-200">1. Paste or type your text</strong> into the input box above.
+              Try famous quotes, meme phrases, or your own social media captions to see the transformation instantly.
+              The example buttons give you a head start with popular toggle case templates.
             </p>
             <p>
-              <strong className="text-neutral-200">2. Choose conversion options.</strong> Select toggle case mode
-              for the classic lowercase-first alternating pattern. The tool processes text instantly as you type.
+              <strong className="text-neutral-200">2. Watch the magic happen.</strong> Select toggle case mode for
+              the classic lowercase-first alternating pattern (tOgGlE). Your text converts in real-time as you type—
+              no submit button needed. Experiment with different phrases to find the perfect rhythm.
             </p>
             <p>
-              <strong className="text-neutral-200">3. Copy and use your toggle case text.</strong> The output updates
-              in real-time. Use the copy button or swap button to move converted text back to input for further
-              transformations. Try the other case conversion buttons for additional formatting options.
+              <strong className="text-neutral-200">3. Copy and paste your transformed text.</strong> The output updates
+              instantly. Use the copy button for quick sharing, or swap text between boxes to try different variations.
+              Explore our other case options like <Link href="/spongebob-case-converter" className="text-blue-400 hover:text-blue-300">SpongeBob case</Link> or <Link href="/" className="text-blue-400 hover:text-blue-300">alternating case</Link> for more creative possibilities.
             </p>
             <p>
-              <strong className="text-neutral-200">4. Share or save your text.</strong> Toggle case works on all
-              major social platforms, messaging apps, and document editors. Save common toggle case phrases for
-              quick reuse in memes and online interactions.
+              <strong className="text-neutral-200">4. Share across platforms.</strong> Toggle case works everywhere—
+              Instagram, Twitter, TikTok, Facebook, Discord, and all major messaging apps. Save your favorite toggle
+              case phrases for quick reuse in memes, comments, and online banter.
             </p>
           </div>
         </section>
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            When to Use Toggle Case
+            Perfect Uses for Toggle Case Text
           </h2>
           <div className="mt-3 text-sm text-neutral-400 space-y-2">
             <p>
-              <strong className="text-neutral-200">Social media and memes:</strong> Create attention-grabbing
-              captions, ironic comments, or meme text. Toggle case adds visual interest and can make your posts
-              stand out in crowded feeds. Popular on Twitter, Instagram, TikTok, and Discord.
+              <strong className="text-neutral-200">Social media and meme culture:</strong> Craft attention-grabbing
+              captions, ironic comments, or viral meme text. Toggle case adds visual punch that cuts through
+              crowded feeds on Twitter, Instagram, TikTok, and Discord. It signals playful, informal communication.
             </p>
             <p>
-              <strong className="text-neutral-200">Gaming and usernames:</strong> Generate unique gamer tags,
-              character names, or clan tags with toggle case. Many gaming platforms support toggle case in usernames,
-              making your profile more distinctive and memorable.
+              <strong className="text-neutral-200">Gaming identities and usernames:</strong> Generate distinctive
+              gamer tags, character names, or clan tags that stand out. Many gaming platforms fully support toggle
+              case in usernames, giving your profile instant recognizability in leaderboards and chat.
             </p>
             <p>
-              <strong className="text-neutral-200">Creative writing:</strong> Use toggle case for stylistic effects
-              in poetry, experimental fiction, or digital art. The alternating pattern can represent duality,
-              confusion, or technological themes in creative works.
+              <strong className="text-neutral-200">Creative writing and digital art:</strong> Employ toggle case for
+              stylistic effects in poetry, experimental fiction, or multimedia projects. The alternating pattern
+              visually represents duality, technological themes, or cognitive dissonance in artistic works.
             </p>
             <p>
-              <strong className="text-neutral-200">Marketing and branding:</strong> Create eye-catching headlines,
-              call-to-action buttons, or promotional text. Toggle case can make ordinary text feel more dynamic
-              and engaging, especially for younger audiences.
+              <strong className="text-neutral-200">Youth-focused marketing:</strong> Create eye-catching headlines,
+              call-to-action buttons, or promotional copy that resonates with younger demographics. Toggle case
+              injects energy and modernity into otherwise conventional text.
             </p>
             <p>
-              <strong className="text-neutral-200">Education and presentations:</strong> Use toggle case to highlight
-              key terms, create memorable slide titles, or make educational content more engaging. The visual
-              pattern helps with information retention and attention.
+              <strong className="text-neutral-200">Educational engagement:</strong> Highlight key terminology,
+              create memorable slide titles, or make learning materials more visually dynamic. The alternating
+              pattern aids information retention by breaking visual monotony.
             </p>
             <p>
-              <strong className="text-neutral-200">Coding and development:</strong> While not standard for production
-              code, toggle case can be used for creative variable names in personal projects, game jams, or
-              experimental programming. Some developers use it for placeholder text or example code.
+              <strong className="text-neutral-200">Creative coding and prototyping:</strong> While not for production
+              code, toggle case works wonderfully for creative variable names in personal projects, game jams, or
+              experimental programming. Developers often use it for placeholder text, example code, or conceptual projects.
             </p>
           </div>
         </section>

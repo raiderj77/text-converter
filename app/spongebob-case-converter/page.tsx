@@ -9,21 +9,22 @@ const tool = getToolBySlug("spongebob-case-converter")!;
 const pageUrl = buildUrl("/spongebob-case-converter");
 
 export const metadata: Metadata = {
-  title: tool.title,
-  description: tool.description,
+  title: "SpongeBob Case Generator — Free sPoNgEbOb Mocking Text Converter for Memes",
+  description: "Generate SpongeBob mocking text for sarcastic posts, ironic comments, and viral memes. Convert any text to sPoNgEbOb case instantly. Perfect for social media banter and attention-grabbing content.",
   alternates: { canonical: pageUrl },
   keywords: [
-    "spongebob case converter", "spongebob case", "mocking spongebob text",
-    "sPoNgEbOb cAsE", "spongebob meme text", "meme text generator",
-    "alternating case meme", "mock text generator", "ironic text converter",
-    "spongebob mocking text", "online meme maker", "text formatter for memes",
-    "social media meme text", "funny text converter", "attention grabbing text",
-    "viral text generator", "meme caption maker", "spongebob sarcasm text",
-    "text case for jokes", "online text meme converter", "free spongebob case tool",
+    "spongebob case converter", "spongebob case generator", "mocking spongebob text maker",
+    "sPoNgEbOb cAsE", "spongebob meme text generator", "meme text converter online",
+    "alternating case meme creator", "mock text generator free", "ironic text converter tool",
+    "spongebob mocking text maker", "online meme maker text", "text formatter for memes free",
+    "social media meme text generator", "funny text converter online", "attention grabbing text creator",
+    "viral text generator free", "meme caption maker online", "spongebob sarcasm text converter",
+    "text case for jokes generator", "online text meme converter free", "free spongebob case tool",
+    "mocking spongebob meme generator", "spongebob squarepants text", "sarcastic text converter",
   ],
   openGraph: {
-    title: tool.title,
-    description: tool.description,
+    title: "SpongeBob Case Generator — Free sPoNgEbOb Mocking Text Converter",
+    description: "Create SpongeBob mocking text for memes and social media instantly. No signup required.",
     url: pageUrl,
     type: "website",
   },
@@ -90,11 +91,12 @@ export default function SpongeBobCaseConverterPage() {
 
       <div className="mx-auto max-w-6xl px-4 py-6">
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
-          Free SpongeBob Case Converter
+          SpongeBob Case Generator — Create Mocking sPoNgEbOb Text
         </h1>
         <p className="mt-2 text-sm text-neutral-400">
-          Convert text to SpongeBob case (sPoNgEbOb CaSe) instantly. Create mocking SpongeBob meme text for sarcastic
-          posts, ironic comments, and viral memes. Free, no signup.
+          Generate authentic SpongeBob mocking text (sPoNgEbOb CaSe) for sarcastic posts, ironic comments, and viral memes.
+          Our free converter creates that distinctive random-looking alternating case from the classic meme. No signup,
+          works instantly. Also try our <Link href="/toggle-case-converter" className="text-blue-400 hover:text-blue-300">toggle case converter</Link> for more text styles.
         </p>
 
         <div className="mt-4">
@@ -104,6 +106,29 @@ export default function SpongeBobCaseConverterPage() {
         {/* ========== SEO CONTENT ========== */}
 
         <AdSlot slot="after-tool" page="spongebob-case-converter" />
+
+        <section className="mt-10">
+          <h2 className="text-lg sm:text-xl font-semibold">
+            The Mocking SpongeBob Meme: A Brief History
+          </h2>
+          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+            <p>
+              The "Mocking SpongeBob" meme originated from a 2017 episode of <em>SpongeBob SquarePants</em> titled
+              "Little Yellow Book." In the scene, SpongeBob mockingly repeats something Patrick says while making
+              an exaggerated facial expression.
+            </p>
+            <p>
+              The meme format exploded online when paired with alternating case text (sPoNgEbOb cAsE) to convey
+              sarcastic repetition or mockery. The distinctive text style became inseparable from the meme itself,
+              creating a visual shorthand for irony across social media platforms.
+            </p>
+            <p>
+              Today, SpongeBob case text works even without the accompanying image—the alternating capitalization
+              alone signals playful mockery to internet-savvy audiences. It's become a staple of online communication,
+              especially among millennials and Gen Z who grew up with the show.
+            </p>
+          </div>
+        </section>
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
