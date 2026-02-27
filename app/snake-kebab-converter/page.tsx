@@ -9,21 +9,21 @@ const tool = getToolBySlug("snake-kebab-converter")!;
 const pageUrl = buildUrl("/snake-kebab-converter");
 
 export const metadata: Metadata = {
-  title: tool.title,
-  description: tool.description,
+  title: "Snake_case vs Kebab-case Converter: Naming Convention Tool",
+  description: "Convert between snake_case and kebab-case instantly. Compare naming conventions, generate proper code formatting, and learn when to use each style. Free online tool.",
   alternates: { canonical: pageUrl },
   keywords: [
-    "snake_case vs kebab-case", "snake case converter", "kebab case converter",
-    "snake_case to kebab-case", "underscore to hyphen converter", "naming convention converter",
-    "snake case kebab case difference", "programming naming conventions", "code style converter",
-    "snake_case generator", "kebab-case generator", "url slug converter",
-    "python naming convention", "javascript naming convention", "css class name converter",
-    "database column naming", "api endpoint naming", "file naming convention",
-    "snake case examples", "kebab case examples", "naming convention best practices",
+    "snake_case vs kebab-case converter", "snake case converter online", "kebab case converter tool",
+    "snake_case to kebab-case converter", "underscore to hyphen converter", "naming convention converter",
+    "snake case kebab case difference tool", "programming naming conventions converter", "code style converter online",
+    "snake_case generator free", "kebab-case generator tool", "url slug converter online",
+    "python naming convention converter", "javascript naming convention tool", "css class name converter",
+    "database column naming converter", "api endpoint naming tool", "file naming convention converter",
+    "snake case examples generator", "kebab case examples tool", "naming convention best practices guide",
   ],
   openGraph: {
-    title: tool.title,
-    description: tool.description,
+    title: "Snake_case vs Kebab-case Converter: Naming Convention Tool",
+    description: "Convert between snake_case and kebab-case instantly. Compare naming conventions, generate proper code formatting, and learn when to use each style.",
     url: pageUrl,
     type: "website",
   },
@@ -90,12 +90,12 @@ export default function SnakeKebabConverterPage() {
 
       <div className="mx-auto max-w-6xl px-4 py-6">
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
-          Free Snake_case vs Kebab-case Converter
+          Snake_case vs Kebab-case Converter: Naming Convention Tool
         </h1>
         <p className="mt-2 text-sm text-neutral-400">
-          Convert text between snake_case and kebab-case instantly. Compare both formats side by side,
-          see examples, and choose the right naming convention for your code. Free, no signup,
-          works entirely in your browser.
+          Convert between snake_case and kebab-case instantly. Compare naming conventions side by side,
+          view practical examples, and select the appropriate format for your code. Free tool,
+          no signup required, works entirely in your browser.
         </p>
 
         <div className="mt-4">

@@ -9,20 +9,20 @@ const tool = getToolBySlug("toggle-case-converter")!;
 const pageUrl = buildUrl("/toggle-case-converter");
 
 export const metadata: Metadata = {
-  title: tool.title,
-  description: tool.description,
+  title: "Toggle Case Converter: Alternating Caps & SpongeBob Text Generator",
+  description: "Free toggle case converter for alternating uppercase/lowercase text. Create SpongeBob meme text, mocking text, and alternating caps instantly. No signup required.",
   alternates: { canonical: pageUrl },
   keywords: [
-    "toggle case converter", "alternating caps", "sPoNgEbOb text", "mocking sponge bob",
-    "alternating uppercase lowercase", "toggle case generator", "alternating case converter",
-    "spongebob meme text", "mock text generator", "alternating text converter",
-    "toggle case online", "alternating caps converter", "spongebob case",
-    "alternating letter case", "toggle text case", "alternating case maker",
-    "fun text converter", "meme text generator", "alternating caps online",
+    "toggle case converter", "alternating caps converter", "sPoNgEbOb text generator", "mocking sponge bob text",
+    "alternating uppercase lowercase", "toggle case generator", "alternating case converter online",
+    "spongebob meme text maker", "mock text generator", "alternating text converter free",
+    "toggle case online tool", "alternating caps maker", "spongebob case converter",
+    "alternating letter case tool", "toggle text case free", "alternating case generator",
+    "fun text converter online", "meme text generator tool", "alternating caps online converter",
   ],
   openGraph: {
-    title: tool.title,
-    description: tool.description,
+    title: "Toggle Case Converter: Alternating Caps & SpongeBob Text Generator",
+    description: "Free toggle case converter for alternating uppercase/lowercase text. Create SpongeBob meme text, mocking text, and alternating caps instantly.",
     url: pageUrl,
     type: "website",
   },
@@ -89,12 +89,12 @@ export default function ToggleCaseConverterPage() {
 
       <div className="mx-auto max-w-6xl px-4 py-6">
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
-          Free Toggle Case Converter
+          Toggle Case Converter: Alternating Caps & SpongeBob Text Generator
         </h1>
         <p className="mt-2 text-sm text-neutral-400">
-          Convert text to toggle case (alternating caps) instantly. Create sPoNgEbOb text,
-          mocking SpongeBob meme text, and alternating uppercase/lowercase letters. Free,
-          no signup, works entirely in your browser.
+          Convert text to toggle case (alternating caps) instantly. Generate sPoNgEbOb text,
+          create mocking SpongeBob meme text, and produce alternating uppercase/lowercase letters.
+          Free tool, no signup required, works entirely in your browser.
         </p>
 
         <div className="mt-4">
