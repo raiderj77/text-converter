@@ -1,45 +1,19 @@
-"use client";
-
-import { useEffect, useRef } from "react";
-
-declare global {
-  interface Window {
-    adsbygoogle: Record<string, unknown>[];
-  }
-}
+/**
+ * Ad slot marker component.
+ *
+ * Currently using AdSense Auto Ads — Google automatically places ads
+ * via the script in layout.tsx. These markers reserve spacing so
+ * auto-placed ads have natural insertion points.
+ *
+ * When you create manual ad units in AdSense, replace this with
+ * <ins class="adsbygoogle"> elements using the numeric slot IDs.
+ */
 
 type AdSlotProps = {
   slot: "after-tool" | "mid-content" | "before-footer";
-  /** Page identifier for unique ad unit IDs, e.g. "home", "word-counter" */
   page?: string;
 };
 
 export function AdSlot({ slot, page = "default" }: AdSlotProps) {
-  const id = `ad-${page}-${slot}`;
-  const pushed = useRef(false);
-
-  useEffect(() => {
-    if (pushed.current) return;
-    try {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-      pushed.current = true;
-    } catch {
-      // AdSense not loaded (e.g. ad blocker)
-    }
-  }, []);
-
-  return (
-    <div className="my-8" id={id}>
-      <div className="mx-auto max-w-3xl">
-        <ins
-          className="adsbygoogle"
-          style={{ display: "block" }}
-          data-ad-client="ca-pub-7171402107622932"
-          data-ad-slot={id}
-          data-ad-format="auto"
-          data-full-width-responsive="true"
-        />
-      </div>
-    </div>
-  );
+  return <div className="my-8" id={`ad-${page}-${slot}`} />;
 }
