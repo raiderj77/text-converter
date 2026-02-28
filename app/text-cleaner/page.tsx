@@ -4,6 +4,7 @@ import { getToolBySlug, buildUrl } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
 import { TextCleanerTool } from "@/components/tools/text-cleaner";
 import { AdSlot } from "@/components/ui/ad-slot";
+import { ToolActions } from "@/components/ui/tool-actions";
 
 const tool = getToolBySlug("text-cleaner")!;
 const pageUrl = buildUrl("/text-cleaner");
@@ -96,6 +97,10 @@ export default function TextCleanerPage() {
           whitespace, smart quotes, and invisible characters. Free, no signup, works entirely
           in your browser.
         </p>
+
+        <div className="mt-3">
+          <ToolActions />
+        </div>
 
         <div className="mt-4">
           <TextCleanerTool />

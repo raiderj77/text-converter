@@ -125,8 +125,18 @@ export function Footer() {
             All processing happens in your browser. Your text never leaves your device.
           </div>
         </div>
+
+        <div className="mt-4 text-center">
+          <p className={cx("text-xs", isDark ? "text-neutral-400" : "text-neutral-500")}>
+            More Free Tools:{" "}
+            <a href="https://creatorrevenuecalculator.com" className="hover:underline">Creator Revenue Calculator</a>
+            {" · "}
+            <a href="https://fibertools.app" className="hover:underline">FiberTools</a>
+            {" · "}
+            <a href="https://mindchecktools.com" className="hover:underline">MindCheck Tools</a>
+          </p>
+        </div>
       </div>
-    <div className="mt-4 text-center"><p className="text-xs text-neutral-400">More Free Tools: <a href="https://creatorrevenuecalculator.com" className="hover:underline">Creator Revenue Calculator</a> · <a href="https://fibertools.app" className="hover:underline">FiberTools</a> · <a href="https://mindchecktools.com" className="hover:underline">MindCheck Tools</a></p></div>
     </footer>
   );
 }

@@ -4,6 +4,7 @@ import { getToolBySlug, buildUrl, getLiveTools } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
 import { HashGeneratorTool } from "@/components/tools/hash-generator";
 import { AdSlot } from "@/components/ui/ad-slot";
+import { ToolActions } from "@/components/ui/tool-actions";
 
 const tool = getToolBySlug("hash-generator")!;
 const pageUrl = buildUrl("/hash-generator");
@@ -120,6 +121,10 @@ export default function HashGeneratorPage() {
           key, and toggle between uppercase and lowercase output. Free, no signup, everything
           runs in your browser.
         </p>
+
+        <div className="mt-3">
+          <ToolActions />
+        </div>
 
         <div className="mt-4">
           <HashGeneratorTool />

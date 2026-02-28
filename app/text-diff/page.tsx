@@ -4,6 +4,7 @@ import { getToolBySlug, buildUrl, getLiveTools } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
 import { TextDiffTool } from "@/components/tools/text-diff";
 import { AdSlot } from "@/components/ui/ad-slot";
+import { ToolActions } from "@/components/ui/tool-actions";
 
 const tool = getToolBySlug("text-diff")!;
 const pageUrl = buildUrl("/text-diff");
@@ -119,6 +120,10 @@ export default function TextDiffPage() {
           focus on changes. Navigate between diffs. Ignore case and whitespace. Copy unified
           diff output. Free, no signup, 100% client-side.
         </p>
+
+        <div className="mt-3">
+          <ToolActions />
+        </div>
 
         <div className="mt-4">
           <TextDiffTool />

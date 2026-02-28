@@ -1,0 +1,33 @@
+# FlipMyCase — Free Online Text Tools
+> https://flipmycase.com
+
+FlipMyCase is a suite of free, browser-based text tools. All processing happens client-side — no text is sent to any server. No signup required.
+
+## Tools
+
+- [Case Converter](https://flipmycase.com): Convert text between UPPERCASE, lowercase, Title Case, Sentence case, camelCase, PascalCase, snake_case, kebab-case, CONSTANT_CASE, dot.case, alternating case, inverse case, and URL slugs.
+- [Word Counter](https://flipmycase.com/word-counter): Count words, characters, sentences, paragraphs, and lines. Reading time, speaking time, keyword density, and social media character limits.
+- [Text Cleaner](https://flipmycase.com/text-cleaner): Remove extra spaces, line breaks, tabs, smart quotes, non-breaking spaces, and zero-width characters from messy text.
+- [Lorem Ipsum Generator](https://flipmycase.com/lorem-ipsum-generator): Generate placeholder text by paragraphs, sentences, or words for design mockups and templates.
+- [Duplicate Line Remover](https://flipmycase.com/duplicate-line-remover): Remove duplicate lines from lists. Case-insensitive matching, sorting, and stats.
+- [String Encoder](https://flipmycase.com/string-encoder): Encode and decode strings with Base64, URL encoding, HTML entities, Unicode escape, hexadecimal, and binary.
+- [JSON Formatter](https://flipmycase.com/json-formatter): Format, validate, beautify, and minify JSON. Tree view, error reporting, fix broken JSON, export to CSV.
+- [Text Diff](https://flipmycase.com/text-diff): Compare two blocks of text side by side. Line-by-line and word-level diff with highlighted additions and deletions.
+- [Password Generator](https://flipmycase.com/password-generator): Generate strong random passwords with customizable length, character sets, and exclusions. Strength meter included.
+- [Regex Tester](https://flipmycase.com/regex-tester): Test regular expressions with real-time match highlighting, capture groups, replace mode, and flag toggles.
+- [Hash Generator](https://flipmycase.com/hash-generator): Generate MD5, SHA-1, SHA-256, SHA-512 hashes from text or files. Compare hashes, HMAC mode, bulk hashing.
+- [Toggle Case Converter](https://flipmycase.com/toggle-case-converter): Convert text to toggle case (alternating caps) for sPoNgEbOb mocking text and alternating uppercase/lowercase.
+- [Snake vs Kebab Converter](https://flipmycase.com/snake-kebab-converter): Convert between snake_case and kebab-case. Side-by-side comparison with naming convention guidance.
+- [Underscore Guide](https://flipmycase.com/underscore-conventions): Guide to underscore conventions in programming — _private, __dunder, snake_case, and trailing underscores.
+- [All Caps Guide](https://flipmycase.com/all-caps-guide): When ALL CAPS is rude vs necessary — guide to uppercase usage in emails, social media, coding, and professional communication.
+- [Text Sorter](https://flipmycase.com/text-sorter): Sort text lines alphabetically, numerically, by length, or shuffle randomly. Remove duplicates and customize sorting options.
+- [Text Reverser](https://flipmycase.com/text-reverser): Reverse text by characters (backwards), words, lines, or mirror text. Preserve spacing and punctuation.
+- [SpongeBob Case Converter](https://flipmycase.com/spongebob-case-converter): Convert text to SpongeBob case (random-looking alternating uppercase/lowercase) for meme text and ironic posts.
+
+## Blog
+
+Guides and articles about text formatting, naming conventions, and developer tools are available at https://flipmycase.com/blog.
+
+## Contact
+
+https://flipmycase.com/contact

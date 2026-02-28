@@ -4,6 +4,7 @@ import { getToolBySlug, buildUrl } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
 import { SnakeKebabConverterTool } from "@/components/tools/snake-kebab-converter";
 import { AdSlot } from "@/components/ui/ad-slot";
+import { ToolActions } from "@/components/ui/tool-actions";
 
 const tool = getToolBySlug("snake-kebab-converter")!;
 const pageUrl = buildUrl("/snake-kebab-converter");
@@ -97,6 +98,10 @@ export default function SnakeKebabConverterPage() {
           view practical examples, and select the appropriate format for your code. Free tool,
           no signup required, works entirely in your browser.
         </p>
+
+        <div className="mt-3">
+          <ToolActions />
+        </div>
 
         <div className="mt-4">
           <SnakeKebabConverterTool />

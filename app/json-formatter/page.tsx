@@ -4,6 +4,7 @@ import { getToolBySlug, buildUrl } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
 import { JsonFormatterTool } from "@/components/tools/json-formatter";
 import { AdSlot } from "@/components/ui/ad-slot";
+import { ToolActions } from "@/components/ui/tool-actions";
 
 const tool = getToolBySlug("json-formatter")!;
 const pageUrl = buildUrl("/json-formatter");
@@ -127,6 +128,10 @@ export default function JsonFormatterPage() {
           Explore data with a collapsible tree view. Export JSON to CSV. See exact error line
           numbers. All free, no signup, no ads — runs entirely in your browser.
         </p>
+
+        <div className="mt-3">
+          <ToolActions />
+        </div>
 
         <div className="mt-4">
           <JsonFormatterTool />

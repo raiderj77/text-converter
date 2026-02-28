@@ -130,6 +130,13 @@ if ('serviceWorker' in navigator) {
           }}
         />
 
+        {/* Google AdSense */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7171402107622932"
+          crossOrigin="anonymous"
+        />
+
         {/* Site-wide Organization schema */}
         <OrganizationSchema />
       </head>

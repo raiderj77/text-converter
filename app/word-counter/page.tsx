@@ -4,6 +4,7 @@ import { SITE_URL, getToolBySlug, buildUrl } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
 import { WordCounterTool } from "@/components/tools/word-counter";
 import { AdSlot } from "@/components/ui/ad-slot";
+import { ToolActions } from "@/components/ui/tool-actions";
 
 const tool = getToolBySlug("word-counter")!;
 const pageUrl = buildUrl("/word-counter");
@@ -96,6 +97,10 @@ export default function WordCounterPage() {
           speaking time, social media limits, and keyword density. Free, no signup, works
           entirely in your browser.
         </p>
+
+        <div className="mt-3">
+          <ToolActions />
+        </div>
 
         <div className="mt-4">
           <WordCounterTool />

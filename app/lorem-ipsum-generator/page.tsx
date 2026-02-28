@@ -4,6 +4,7 @@ import { getToolBySlug, buildUrl } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
 import { LoremIpsumTool } from "@/components/tools/lorem-ipsum";
 import { AdSlot } from "@/components/ui/ad-slot";
+import { ToolActions } from "@/components/ui/tool-actions";
 
 const tool = getToolBySlug("lorem-ipsum-generator")!;
 const pageUrl = buildUrl("/lorem-ipsum-generator");
@@ -95,6 +96,10 @@ export default function LoremIpsumPage() {
           words. Perfect for designers, developers, and content creators. Free, no signup,
           works entirely in your browser.
         </p>
+
+        <div className="mt-3">
+          <ToolActions />
+        </div>
 
         <div className="mt-4">
           <LoremIpsumTool />

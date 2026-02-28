@@ -4,6 +4,7 @@ import { getToolBySlug, buildUrl, getLiveTools } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
 import { PasswordGeneratorTool } from "@/components/tools/password-generator";
 import { AdSlot } from "@/components/ui/ad-slot";
+import { ToolActions } from "@/components/ui/tool-actions";
 
 const tool = getToolBySlug("password-generator")!;
 const pageUrl = buildUrl("/password-generator");
@@ -121,6 +122,10 @@ export default function PasswordGeneratorPage() {
           Generate up to 25 at once with session history. Free, no signup, nothing leaves
           your browser.
         </p>
+
+        <div className="mt-3">
+          <ToolActions />
+        </div>
 
         <div className="mt-4">
           <PasswordGeneratorTool />

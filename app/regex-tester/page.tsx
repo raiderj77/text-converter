@@ -4,6 +4,7 @@ import { getToolBySlug, buildUrl, getLiveTools } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
 import { RegexTesterTool } from "@/components/tools/regex-tester";
 import { AdSlot } from "@/components/ui/ad-slot";
+import { ToolActions } from "@/components/ui/tool-actions";
 
 const tool = getToolBySlug("regex-tester")!;
 const pageUrl = buildUrl("/regex-tester");
@@ -120,6 +121,10 @@ export default function RegexTesterPage() {
           JavaScript&apos;s native RegExp engine — what you see here is exactly what
           runs in your code. Free, no signup, works offline.
         </p>
+
+        <div className="mt-3">
+          <ToolActions />
+        </div>
 
         <div className="mt-4">
           <RegexTesterTool />

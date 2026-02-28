@@ -4,6 +4,7 @@ import { getToolBySlug, buildUrl } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
 import { UnderscoreConventionsTool } from "@/components/tools/underscore-conventions";
 import { AdSlot } from "@/components/ui/ad-slot";
+import { ToolActions } from "@/components/ui/tool-actions";
 
 const tool = getToolBySlug("underscore-conventions")!;
 const pageUrl = buildUrl("/underscore-conventions");
@@ -97,6 +98,10 @@ export default function UnderscoreConventionsPage() {
           snake_case naming, trailing underscores, and language-specific patterns. Learn when and why
           programmers use underscores with real code examples.
         </p>
+
+        <div className="mt-3">
+          <ToolActions />
+        </div>
 
         <div className="mt-4">
           <UnderscoreConventionsTool />

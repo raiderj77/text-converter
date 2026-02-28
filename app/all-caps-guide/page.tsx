@@ -4,6 +4,7 @@ import { getToolBySlug, buildUrl } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
 import { AllCapsGuideTool } from "@/components/tools/all-caps-guide";
 import { AdSlot } from "@/components/ui/ad-slot";
+import { ToolActions } from "@/components/ui/tool-actions";
 
 const tool = getToolBySlug("all-caps-guide")!;
 const pageUrl = buildUrl("/all-caps-guide");
@@ -97,6 +98,10 @@ export default function AllCapsGuidePage() {
           coding, and design. Learn when ALL CAPS is appropriate vs when it's considered shouting,
           with real-world examples and best practices.
         </p>
+
+        <div className="mt-3">
+          <ToolActions />
+        </div>
 
         <div className="mt-4">
           <AllCapsGuideTool />

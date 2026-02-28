@@ -4,6 +4,7 @@ import { getToolBySlug, buildUrl } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
 import { StringEncoderTool } from "@/components/tools/string-encoder";
 import { AdSlot } from "@/components/ui/ad-slot";
+import { ToolActions } from "@/components/ui/tool-actions";
 
 const tool = getToolBySlug("string-encoder")!;
 const pageUrl = buildUrl("/string-encoder");
@@ -96,6 +97,10 @@ export default function StringEncoderPage() {
           Unicode escape, hexadecimal, and binary. Switch between encode and decode with one
           click. Free, no signup, works entirely in your browser.
         </p>
+
+        <div className="mt-3">
+          <ToolActions />
+        </div>
 
         <div className="mt-4">
           <StringEncoderTool />

@@ -181,6 +181,36 @@ export const tools: Tool[] = [
     emoji: "🔠",
     live: true,
   },
+  {
+    slug: "text-sorter",
+    name: "Text Sorter",
+    shortName: "Sort",
+    title: "Free Text Sorter — Sort Lines Alphabetically, Numerically, or Randomly Online",
+    description:
+      "Sort text lines alphabetically (A-Z or Z-A), numerically (ascending or descending), or shuffle randomly. Remove duplicates, reverse order, and customize sorting options. Free, no signup.",
+    emoji: "📊",
+    live: true,
+  },
+  {
+    slug: "text-reverser",
+    name: "Text Reverser",
+    shortName: "Reverse",
+    title: "Free Text Reverser — Reverse Characters, Words, or Lines Online",
+    description:
+      "Reverse text in multiple ways: reverse characters (backwards text), reverse word order, reverse lines, or mirror text. Perfect for coding, puzzles, and creative writing. Free, no signup.",
+    emoji: "↔️",
+    live: true,
+  },
+  {
+    slug: "spongebob-case-converter",
+    name: "SpongeBob Case",
+    shortName: "SpongeBob",
+    title: "Free SpongeBob Case Converter — sPoNgEbOb CaSe Text Online",
+    description:
+      "Convert text to SpongeBob case (random-looking alternating uppercase/lowercase). Create meme text, ironic posts, and attention-grabbing content. Free, no signup.",
+    emoji: "🧽",
+    live: true,
+  },
 ];
 
 /** Get only tools that are live (shown in nav) */

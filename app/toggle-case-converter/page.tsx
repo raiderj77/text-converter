@@ -4,6 +4,7 @@ import { getToolBySlug, buildUrl } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
 import { ToggleCaseConverterTool } from "@/components/tools/toggle-case-converter";
 import { AdSlot } from "@/components/ui/ad-slot";
+import { ToolActions } from "@/components/ui/tool-actions";
 
 const tool = getToolBySlug("toggle-case-converter")!;
 const pageUrl = buildUrl("/toggle-case-converter");
@@ -95,7 +96,12 @@ export default function ToggleCaseConverterPage() {
           Convert text to toggle case (alternating caps) instantly. Generate sPoNgEbOb text,
           create mocking SpongeBob meme text, and produce alternating uppercase/lowercase letters.
           Free tool, no signup required, works entirely in your browser.
+          Try our <Link href="/spongebob-case-converter" className="text-blue-400 hover:text-blue-300">SpongeBob case converter</Link> for meme-style text too.
         </p>
+
+        <div className="mt-3">
+          <ToolActions />
+        </div>
 
         <div className="mt-4">
           <ToggleCaseConverterTool />
@@ -114,13 +120,13 @@ export default function ToggleCaseConverterPage() {
               <strong className="text-neutral-200">Toggle case</strong>, also known as{" "}
               <strong>alternating caps</strong> or <strong>sPoNgEbOb case</strong>, is a text
               style where letters alternate between uppercase and lowercase. The classic
-              example is "hElLo wOrLd" — starting with lowercase, then uppercase, then
+              example is &quot;hElLo wOrLd&quot; — starting with lowercase, then uppercase, then
               lowercase, and so on.
             </p>
             <p>
               This style gained popularity through the{" "}
-              <strong>mocking SpongeBob meme</strong> (also called "Mocking SpongeBob" or
-              "sarcastic SpongeBob"), where text is written in alternating caps to convey
+              <strong>mocking SpongeBob meme</strong> (also called &quot;Mocking SpongeBob&quot; or
+              &quot;sarcastic SpongeBob&quot;), where text is written in alternating caps to convey
               sarcasm, mockery, or playful teasing. The meme typically uses the lowercase
               start pattern to match how the SpongeBob character appears in the meme.
             </p>
@@ -150,8 +156,8 @@ export default function ToggleCaseConverterPage() {
             </p>
             <p>
               <strong className="text-neutral-200">3. Copy the converted text</strong> with
-              one click. Use the "Copy" button below each output format, or click "Apply to
-              Input" to replace your original text with the toggle case version for further
+              one click. Use the &quot;Copy&quot; button below each output format, or click &quot;Apply to
+              Input&quot; to replace your original text with the toggle case version for further
               editing.
             </p>
             <p>
@@ -285,28 +291,34 @@ export default function ToggleCaseConverterPage() {
               🔄 Case Converter
             </Link>
             <Link
+              href="/spongebob-case-converter"
+              className="rounded-xl border border-white/10 px-3 py-2 text-sm hover:bg-white/5 transition-colors"
+            >
+              🧽 SpongeBob Case
+            </Link>
+            <Link
               href="/snake-kebab-converter"
               className="rounded-xl border border-white/10 px-3 py-2 text-sm hover:bg-white/5 transition-colors"
             >
               🐍 Snake vs Kebab
             </Link>
             <Link
+              href="/text-sorter"
+              className="rounded-xl border border-white/10 px-3 py-2 text-sm hover:bg-white/5 transition-colors"
+            >
+              📊 Text Sorter
+            </Link>
+            <Link
+              href="/text-reverser"
+              className="rounded-xl border border-white/10 px-3 py-2 text-sm hover:bg-white/5 transition-colors"
+            >
+              ↔️ Text Reverser
+            </Link>
+            <Link
               href="/word-counter"
               className="rounded-xl border border-white/10 px-3 py-2 text-sm hover:bg-white/5 transition-colors"
             >
               📊 Word Counter
-            </Link>
-            <Link
-              href="/text-cleaner"
-              className="rounded-xl border border-white/10 px-3 py-2 text-sm hover:bg-white/5 transition-colors"
-            >
-              🧹 Text Cleaner
-            </Link>
-            <Link
-              href="/duplicate-line-remover"
-              className="rounded-xl border border-white/10 px-3 py-2 text-sm hover:bg-white/5 transition-colors"
-            >
-              🗑️ Duplicate Remover
             </Link>
           </div>
         </section>

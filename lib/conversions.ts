@@ -52,6 +52,49 @@ export function toAlternatingCase(input: string): string {
   return out;
 }
 
+export function toToggleCase(input: string): string {
+  let out = "";
+  let uppercase = false;
+  for (const ch of input) {
+    if (/[a-z]/i.test(ch)) {
+      out += uppercase ? ch.toUpperCase() : ch.toLowerCase();
+      uppercase = !uppercase;
+    } else {
+      out += ch;
+    }
+  }
+  return out;
+}
+
+export function toSpongeBobCase(input: string): string {
+  let out = "";
+  // Seed for pseudo-random but deterministic output
+  let seed = 0;
+  for (const ch of input) {
+    if (/[a-z]/i.test(ch)) {
+      // Simple deterministic "random" based on position
+      seed = (seed + 1) * 31;
+      const random = Math.abs(Math.sin(seed)) * 100;
+      out += random % 2 < 1 ? ch.toUpperCase() : ch.toLowerCase();
+    } else {
+      out += ch;
+    }
+  }
+  return out;
+}
+
+export function toRandomCase(input: string): string {
+  let out = "";
+  for (const ch of input) {
+    if (/[a-z]/i.test(ch)) {
+      out += Math.random() < 0.5 ? ch.toUpperCase() : ch.toLowerCase();
+    } else {
+      out += ch;
+    }
+  }
+  return out;
+}
+
 export function toInverseCase(input: string): string {
   let out = "";
   for (const ch of input) {
@@ -220,6 +263,27 @@ export const conversions: Conversion[] = [
     fn: toAlternatingCase,
     category: "other",
     description: "Alternates between lowercase and uppercase letters.",
+  },
+  {
+    id: "toggle",
+    label: "tOgGlE cAsE",
+    fn: toToggleCase,
+    category: "other",
+    description: "Starts with lowercase, alternates each letter (toggle style).",
+  },
+  {
+    id: "spongebob",
+    label: "sPoNgEbOb CaSe",
+    fn: toSpongeBobCase,
+    category: "other",
+    description: "Random-looking alternating case like the SpongeBob meme.",
+  },
+  {
+    id: "random",
+    label: "rAnDoM cAsE",
+    fn: toRandomCase,
+    category: "other",
+    description: "Truly random uppercase/lowercase for each letter.",
   },
   {
     id: "inverse",

@@ -4,6 +4,7 @@ import { getToolBySlug, buildUrl } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
 import { DuplicateRemoverTool } from "@/components/tools/duplicate-remover";
 import { AdSlot } from "@/components/ui/ad-slot";
+import { ToolActions } from "@/components/ui/tool-actions";
 
 const tool = getToolBySlug("duplicate-line-remover")!;
 const pageUrl = buildUrl("/duplicate-line-remover");
@@ -95,6 +96,10 @@ export default function DuplicateRemoverPage() {
           with one click. Supports case-insensitive matching, sorting, and whitespace
           trimming. Free, no signup, works entirely in your browser.
         </p>
+
+        <div className="mt-3">
+          <ToolActions />
+        </div>
 
         <div className="mt-4">
           <DuplicateRemoverTool />

@@ -5,6 +5,7 @@ import { conversions } from "@/lib/conversions";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
 import { CaseConverterTool } from "@/components/tools/case-converter";
 import { AdSlot } from "@/components/ui/ad-slot";
+import { ToolActions } from "@/components/ui/tool-actions";
 
 const tool = getToolBySlug("")!;
 
@@ -91,6 +92,10 @@ export default function HomePage() {
           Paste text once. See every format instantly. Copy with one click. No signup, no limits,
           works entirely in your browser.
         </p>
+
+        <div className="mt-3">
+          <ToolActions />
+        </div>
 
         {/* Interactive tool — client component */}
         <div className="mt-4">

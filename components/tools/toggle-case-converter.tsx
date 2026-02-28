@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { cx } from "@/lib/utils";
-import { toAlternatingCase, toInverseCase } from "@/lib/conversions";
+import { toInverseCase } from "@/lib/conversions";
 import { useTheme } from "@/components/layout/theme-provider";
 
 export function ToggleCaseConverterTool() {
@@ -38,10 +38,10 @@ export function ToggleCaseConverterTool() {
 
   const toggleCase = useMemo(() => {
     if (!text.trim()) return "";
-    
+
     let result = "";
     let flip = startWithUpper;
-    
+
     for (const ch of text) {
       if (/[a-z]/i.test(ch)) {
         result += flip ? ch.toUpperCase() : ch.toLowerCase();
@@ -64,7 +64,7 @@ export function ToggleCaseConverterTool() {
       await navigator.clipboard.writeText(content);
       setToast(`Copied ${label} to clipboard`);
       setTimeout(() => setToast(""), 2000);
-    } catch (err) {
+    } catch {
       setToast("Failed to copy");
       setTimeout(() => setToast(""), 2000);
     }
@@ -177,8 +177,8 @@ export function ToggleCaseConverterTool() {
           </label>
         </div>
         <p className="mt-2 text-xs text-neutral-400">
-          When "Continue sequence through spaces" is enabled, the alternating pattern continues
-          across spaces (e.g., "hElLo wOrLd"). When disabled, each word starts fresh (e.g., "hElLo WoRlD").
+          When &quot;Continue sequence through spaces&quot; is enabled, the alternating pattern continues
+          across spaces (e.g., &quot;hElLo wOrLd&quot;). When disabled, each word starts fresh (e.g., &quot;hElLo WoRlD&quot;).
         </p>
       </div>
 
