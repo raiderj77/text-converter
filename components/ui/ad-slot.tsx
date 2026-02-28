@@ -7,6 +7,8 @@
  *
  * When you create manual ad units in AdSense, replace this with
  * <ins class="adsbygoogle"> elements using the numeric slot IDs.
+ *
+ * AdSense account: ca-pub-7171402107622932
  */
 
 type AdSlotProps = {
