@@ -161,6 +161,26 @@ export const tools: Tool[] = [
     emoji: "🐍",
     live: true,
   },
+  {
+    slug: "underscore-conventions",
+    name: "Underscore Guide",
+    shortName: "Underscore",
+    title: "Why Programmers Use Underscores in Variable Names — Complete Guide to _private, __dunder & snake_case",
+    description:
+      "Learn why programmers use underscores in variable names. Complete guide to _private, __dunder, snake_case, and trailing underscores. Examples for Python, JavaScript, and other languages. Free online guide.",
+    emoji: "📘",
+    live: true,
+  },
+  {
+    slug: "all-caps-guide",
+    name: "All Caps Guide",
+    shortName: "All Caps",
+    title: "All Caps in Writing: When It's Rude vs Necessary — Complete Guide to UPPERCASE Usage",
+    description:
+      "Learn when ALL CAPS is rude vs necessary in writing. Complete guide to uppercase usage in emails, social media, coding, and professional communication. Free online guide with examples.",
+    emoji: "🔠",
+    live: true,
+  },
 ];
 
 /** Get only tools that are live (shown in nav) */
