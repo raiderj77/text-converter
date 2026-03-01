@@ -211,6 +211,15 @@ export const tools: Tool[] = [
     emoji: "🧽",
     live: true,
   },
+  {
+    slug: "slug-generator",
+    name: "Slug Generator",
+    shortName: "Slug",
+    title: "Free URL Slug Generator — SEO-Friendly Slugs from Any Text Online",
+    description: "Convert any title or text into clean, SEO-friendly URL slugs instantly. Free, no signup.",
+    emoji: "🔗",
+    live: true,
+  },
 ];
 
 /** Get only tools that are live (shown in nav) */

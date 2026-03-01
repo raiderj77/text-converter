@@ -1,5 +1,10 @@
 "use client";
 
+export const metadata = {
+  title: "Free URL Slug Generator — SEO-Friendly Slugs from Any Text Online",
+  description: "Convert any title or text into clean, SEO-friendly URL slugs. Handles accents, special characters, and multiple formats. Free, no signup.",
+};
+
 import { useState, useCallback, useEffect } from "react";
 
 const PRESETS = [
@@ -336,3 +341,4 @@ export default function SlugGenerator() {
     </div>
   );
 }
+// Schema added below component — paste before final closing line if needed
