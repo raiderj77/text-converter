@@ -11,7 +11,7 @@ const PRESETS = [
   { label: "Constant", separator: "_", lowercase: false, maxLength: 100, uppercase: true },
 ];
 
-function generateSlug(text, options = {}) {
+function generateSlug(text: string, options: any = {}) {
   const { separator = "-", lowercase = true, uppercase = false, maxLength = 80 } = options;
   
   let slug = text
@@ -33,7 +33,7 @@ function generateSlug(text, options = {}) {
   return slug;
 }
 
-function getTextStats(text) {
+function getTextStats(text: string) {
   if (!text.trim()) return { chars: 0, charsNoSpace: 0, words: 0, sentences: 0, paragraphs: 0, readingTime: "0 sec" };
   const chars = text.length;
   const charsNoSpace = text.replace(/\s/g, "").length;
@@ -46,7 +46,7 @@ function getTextStats(text) {
   return { chars, charsNoSpace, words, sentences, paragraphs, readingTime };
 }
 
-function CopyButton({ text, label = "Copy" }) {
+function CopyButton({ text, label = "Copy" }: { text: string; label?: string }) {
   const [copied, setCopied] = useState(false);
   const handleCopy = async () => {
     if (!text) return;
@@ -82,7 +82,7 @@ function CopyButton({ text, label = "Copy" }) {
   );
 }
 
-function StatBox({ label, value }) {
+function StatBox({ label, value }: { label: string; value: string | number }) {
   return (
     <div className="bg-slate-800/80 rounded-xl p-4 border border-slate-700/50 text-center">
       <div className="text-2xl font-bold text-emerald-400 font-mono">{value}</div>
