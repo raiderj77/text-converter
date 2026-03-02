@@ -1,16 +1,16 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { cx } from "@/lib/utils";
 import { toSpongeBobCase, toToggleCase, toRandomCase } from "@/lib/conversions";
+import { useTheme } from "@/components/layout/theme-provider";
 
 type CaseMode = "spongebob" | "toggle" | "random";
 
 export function SpongeBobCaseConverterTool() {
+  const { isDark } = useTheme();
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
   const [mode, setMode] = useState<CaseMode>("spongebob");
-  const [preserveFormatting, setPreserveFormatting] = useState(true);
 
   // Conversion functions
   const convertText = () => {
@@ -40,7 +40,7 @@ export function SpongeBobCaseConverterTool() {
   useEffect(() => {
     const timeout = setTimeout(convertText, 300);
     return () => clearTimeout(timeout);
-  }, [input, mode, preserveFormatting]);
+  }, [input, mode]);
 
   const handleSpongeBobExample = () => {
     const example = `how original
@@ -225,20 +225,6 @@ Meme culture`;
             </div>
           </div>
           
-          <div className="space-y-2">
-            <label className="text-xs font-medium">Options</label>
-            <div className="flex gap-2">
-              <label className="flex items-center gap-2 cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={preserveFormatting}
-                  onChange={(e) => setPreserveFormatting(e.target.checked)}
-                  className="rounded border-white/10 bg-neutral-800"
-                />
-                <span className="text-sm">Preserve line breaks</span>
-              </label>
-            </div>
-          </div>
         </div>
       </div>
 

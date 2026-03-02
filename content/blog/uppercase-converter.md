@@ -17,7 +17,7 @@ faq:
     answer: "Google treats uppercase and lowercase identically for search rankings. However, ALL CAPS in meta titles often appears spammy to users, potentially hurting your click-through rates. Use uppercase strategically, not excessively."
   - question: "Can I uppercase text in Excel?"
     answer: "Absolutely. Use the =UPPER(A1) formula in Excel. For bulk conversions or when working outside spreadsheets, paste your text into FlipMyCase and copy the transformed result back—much faster for large datasets."
-related: ["lowercase-converter", "title-case-converter", "word-counter-guide", "text-cleaner"]
+related: ["lowercase-converter", "title-case-converter", "word-counter-guide", "text-cleaner-guide"]
 ---
 
 # How to Convert Text to Uppercase Online

@@ -52,19 +52,7 @@ export function toAlternatingCase(input: string): string {
   return out;
 }
 
-export function toToggleCase(input: string): string {
-  let out = "";
-  let uppercase = false;
-  for (const ch of input) {
-    if (/[a-z]/i.test(ch)) {
-      out += uppercase ? ch.toUpperCase() : ch.toLowerCase();
-      uppercase = !uppercase;
-    } else {
-      out += ch;
-    }
-  }
-  return out;
-}
+export const toToggleCase = toAlternatingCase;
 
 export function toSpongeBobCase(input: string): string {
   let out = "";

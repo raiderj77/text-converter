@@ -4,22 +4,6 @@ description: "Learn how to convert text to snake_case and kebab-case formats. St
 date: "2026-02-27"
 keywords: ["how to convert text to snake_case", "convert text to kebab-case", "snake_case converter guide", "kebab-case formatting tutorial", "naming conventions converter", "underscore vs hyphen converter", "programming text formatting", "URL slug converter", "file naming conventions", "code style formatting"]
 toolSlug: "snake-kebab-converter"
-jsonLd:
-  "@context": "https://schema.org"
-  "@type": "Article"
-  headline: "How to Convert Text to Snake_case and Kebab-case: Complete Naming Convention Guide"
-  description: "Learn how to convert text to snake_case and kebab-case formats. Step-by-step guide with online tools, code examples, and best practices for programming, URLs, and file naming."
-  datePublished: "2026-02-27"
-  dateModified: "2026-02-27"
-  author:
-    "@type": "Organization"
-    name: "FlipMyCase"
-  publisher:
-    "@type": "Organization"
-    name: "FlipMyCase"
-  mainEntityOfPage:
-    "@type": "WebPage"
-    "@id": "https://flipmycase.com/blog/how-to-convert-text-to-snake-case-kebab-case"
 faq:
   - question: "What's the quickest way to convert text to snake_case?"
     answer: "Use FlipMyCase's free Snake_case/Kebab-case Converter. Just paste your text, select 'snake_case' from the conversion options, and get instant results. No signup or installation required."
@@ -37,7 +21,7 @@ faq:
     answer: "For acronyms like 'URL' or 'API', the convention is to treat them as single words. 'ConvertURLToSlug' becomes 'convert_url_to_slug' (not 'convert_u_r_l_to_slug'). Our converter handles this automatically."
   - question: "Can I batch convert multiple files to snake_case?"
     answer: "For multiple files, use command-line tools like rename (Linux/macOS) or PowerShell (Windows). For code files, consider using IDE refactoring tools or writing Python/Node.js scripts to automate the conversion process."
-related: ["snake-kebab-converter", "underscore-conventions", "toggle-case-converter", "word-counter-guide"]
+related: ["how-to-convert-text-to-different-formats", "how-to-convert-text-to-uppercase", "uppercase-converter", "word-counter-guide"]
 ---
 
 # How to Convert Text to Snake_case and Kebab-case: Complete Naming Convention Guide
@@ -418,6 +402,7 @@ def to_snake_case_preserve_caps(text):
 text = "convertHTMLToPDF"
 result = to_snake_case_preserve_caps(text)
 # Result: "convert_HTML_To_PDF" (preserves HTML capitalization)
+```
 
 ### Handling International Text
 For multilingual applications, consider Unicode-aware conversion:

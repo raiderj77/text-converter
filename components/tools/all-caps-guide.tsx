@@ -111,7 +111,6 @@ export function AllCapsGuideTool() {
   const [inputText, setInputText] = useState("This is important information");
   const [convertedExamples, setConvertedExamples] = useState<ContextExample[]>(initialExamples);
   const [copiedType, setCopiedType] = useState<ContextType | null>(null);
-  const [selectedContext, setSelectedContext] = useState<ContextType>("email");
   const [analysisResult, setAnalysisResult] = useState({
     score: 0,
     recommendation: "Analyzing...",

@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { cx } from "@/lib/utils";
-import { toInverseCase } from "@/lib/conversions";
+import { toInverseCase, toSpongeBobCase } from "@/lib/conversions";
 import { useTheme } from "@/components/layout/theme-provider";
 
 export function ToggleCaseConverterTool() {
@@ -58,6 +58,7 @@ export function ToggleCaseConverterTool() {
   }, [text, startWithUpper, includeSpaces]);
 
   const inverseCase = useMemo(() => toInverseCase(text), [text]);
+  const spongebobCase = useMemo(() => toSpongeBobCase(text), [text]);
 
   const copyToClipboard = async (content: string, label: string) => {
     try {
@@ -99,8 +100,8 @@ export function ToggleCaseConverterTool() {
     {
       id: "spongebob",
       label: "sPoNgEbOb Case",
-      value: toggleCase,
-      description: "Mocking SpongeBob meme text (starts lowercase)",
+      value: spongebobCase,
+      description: "Mocking SpongeBob meme text (pseudo-random alternation)",
       emoji: "🧽",
     },
   ];

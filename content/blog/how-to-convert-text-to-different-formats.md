@@ -4,22 +4,6 @@ description: "Complete guide to converting text formats. Learn uppercase, lowerc
 date: "2026-02-23"
 keywords: ["convert text to uppercase", "text to lowercase converter", "title case formatting guide", "sentence case conversion", "text formatting tutorial", "case conversion tools", "uppercase lowercase conversion", "text format converter online", "how to change text case", "text case converter"]
 toolSlug: ""
-jsonLd:
-  "@context": "https://schema.org"
-  "@type": "Article"
-  headline: "Text Conversion Guide: Uppercase, Lowercase, Title Case & Advanced Formats"
-  description: "Complete guide to converting text formats. Learn uppercase, lowercase, title case, and sentence case conversion using online tools, software, and code examples."
-  datePublished: "2026-02-23"
-  dateModified: "2026-02-23"
-  author:
-    "@type": "Organization"
-    name: "FlipMyCase"
-  publisher:
-    "@type": "Organization"
-    name: "FlipMyCase"
-  mainEntityOfPage:
-    "@type": "WebPage"
-    "@id": "https://flipmycase.com/blog/how-to-convert-text-to-different-formats"
 faq:
   - question: "What's the quickest way to convert text to uppercase?"
     answer: "Use FlipMyCase's free Case Converter. Just paste your text and select 'UPPERCASE' from the conversion options. It works instantly in any browser with no signup required."
