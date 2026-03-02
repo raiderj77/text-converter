@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const metadata = {
   title: "Accessibility Statement",
   description:
@@ -45,7 +47,7 @@ export default function AccessibilityPage() {
         We welcome your feedback on the accessibility of FlipMyCase. If you encounter any barriers or have suggestions for improvement, please contact us:
       </p>
       <ul>
-        <li>Via our <a href="/contact">Contact page</a></li>
+        <li>Via our <Link href="/contact">Contact page</Link></li>
         <li>By email (if provided on the contact page)</li>
       </ul>
       <p>
