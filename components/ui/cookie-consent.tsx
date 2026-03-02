@@ -56,7 +56,10 @@ export function CookieConsent() {
     if (typeof document === "undefined") return null;
     const value = `; ${document.cookie}`;
     const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop()?.split(";").shift() || null;
+    if (parts.length === 2) {
+      const raw = parts.pop()?.split(";").shift() || null;
+      return raw ? decodeURIComponent(raw) : null;
+    }
     return null;
   };
 
@@ -65,7 +68,8 @@ export function CookieConsent() {
     const date = new Date();
     date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
     const expires = `expires=${date.toUTCString()}`;
-    document.cookie = `${name}=${value}; ${expires}; path=/; SameSite=Lax`;
+    const secure = location.protocol === "https:" ? "; Secure" : "";
+    document.cookie = `${name}=${encodeURIComponent(value)}; ${expires}; path=/; SameSite=Lax${secure}`;
   };
 
   const handleAcceptAll = () => {
@@ -111,6 +115,16 @@ export function CookieConsent() {
     }));
   };
 
+  // Expose a global function to re-open the consent banner (GDPR requirement)
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      (window as Window & { reopenCookieConsent?: () => void }).reopenCookieConsent = () => {
+        setIsVisible(true);
+        setShowDetails(true);
+      };
+    }
+  }, []);
+
   if (!isVisible) return null;
 
   return (
@@ -123,7 +137,7 @@ export function CookieConsent() {
             </h3>
             <p className="text-sm text-neutral-600 dark:text-neutral-400">
               We use cookies and similar technologies to help our site work, to understand how it is used, and to personalize content and ads. By clicking "Accept All", you agree to the use of all cookies. You can manage your preferences at any time via our{" "}
-              <Link href="/cookies" className="text-sage-600 dark:text-sage-400 hover:underline">
+              <Link href="/cookies" className="text-emerald-600 dark:text-emerald-400 hover:underline">
                 Cookie Policy
               </Link>
               .
@@ -138,7 +152,7 @@ export function CookieConsent() {
                   </div>
                   <div className="flex items-center">
                     <span className="text-sm text-neutral-500 dark:text-neutral-400 mr-2">Always on</span>
-                    <div className="w-10 h-6 bg-sage-600 rounded-full flex items-center justify-center">
+                    <div className="w-10 h-6 bg-emerald-600 rounded-full flex items-center justify-center">
                       <span className="text-xs text-white">✓</span>
                     </div>
                   </div>
@@ -150,8 +164,11 @@ export function CookieConsent() {
                     <p className="text-xs text-neutral-500 dark:text-neutral-400">Help us improve the site</p>
                   </div>
                   <button
+                    role="switch"
+                    aria-checked={preferences.analytics}
+                    aria-label="Analytics cookies"
                     onClick={() => togglePreference("analytics")}
-                    className={`w-10 h-6 rounded-full transition-colors ${preferences.analytics ? "bg-sage-600" : "bg-neutral-300 dark:bg-neutral-700"}`}
+                    className={`w-10 h-6 rounded-full transition-colors ${preferences.analytics ? "bg-emerald-600" : "bg-neutral-300 dark:bg-neutral-700"}`}
                   >
                     <div className={`w-4 h-4 bg-white rounded-full transform transition-transform ${preferences.analytics ? "translate-x-5" : "translate-x-1"}`} />
                   </button>
@@ -163,8 +180,11 @@ export function CookieConsent() {
                     <p className="text-xs text-neutral-500 dark:text-neutral-400">Personalize ads and measure effectiveness</p>
                   </div>
                   <button
+                    role="switch"
+                    aria-checked={preferences.advertising}
+                    aria-label="Advertising cookies"
                     onClick={() => togglePreference("advertising")}
-                    className={`w-10 h-6 rounded-full transition-colors ${preferences.advertising ? "bg-sage-600" : "bg-neutral-300 dark:bg-neutral-700"}`}
+                    className={`w-10 h-6 rounded-full transition-colors ${preferences.advertising ? "bg-emerald-600" : "bg-neutral-300 dark:bg-neutral-700"}`}
                   >
                     <div className={`w-4 h-4 bg-white rounded-full transform transition-transform ${preferences.advertising ? "translate-x-5" : "translate-x-1"}`} />
                   </button>
@@ -174,7 +194,7 @@ export function CookieConsent() {
             
             <button
               onClick={() => setShowDetails(!showDetails)}
-              className="mt-2 text-sm text-sage-600 dark:text-sage-400 hover:underline"
+              className="mt-2 text-sm text-emerald-600 dark:text-emerald-400 hover:underline"
             >
               {showDetails ? "Hide details" : "Show details"}
             </button>
@@ -195,7 +215,7 @@ export function CookieConsent() {
             </button>
             <button
               onClick={handleAcceptAll}
-              className="px-4 py-2 text-sm font-medium bg-sage-600 text-white hover:bg-sage-700 rounded-lg transition-colors"
+              className="px-4 py-2 text-sm font-medium bg-emerald-600 text-white hover:bg-emerald-700 rounded-lg transition-colors"
             >
               Accept All
             </button>
@@ -203,5 +223,21 @@ export function CookieConsent() {
         </div>
       </div>
     </div>
+  );
+}
+
+export function ManageCookiePreferences() {
+  return (
+    <p style={{ marginTop: 16 }}>
+      <button
+        onClick={() => {
+          const win = window as Window & { reopenCookieConsent?: () => void };
+          win.reopenCookieConsent?.();
+        }}
+        className="text-emerald-600 dark:text-emerald-400 hover:underline font-medium"
+      >
+        Manage Cookie Preferences
+      </button>
+    </p>
   );
 }

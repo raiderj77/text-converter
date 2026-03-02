@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { ManageCookiePreferences } from "@/components/ui/cookie-consent";
+
 export const metadata = {
   title: "Cookie Policy",
   description:
@@ -58,6 +61,8 @@ export default function CookiesPage() {
         <li><strong>Opt-Out Tools:</strong> You can opt out of personalized advertising by visiting <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer">YourAdChoices</a> or <a href="https://youradchoices.com/" target="_blank" rel="noopener noreferrer">NAI Consumer Opt-Out</a>.</li>
       </ul>
 
+      <ManageCookiePreferences />
+
       <h2>Third-party cookies</h2>
       <p>
         We use third-party services that may set their own cookies:
@@ -82,7 +87,7 @@ export default function CookiesPage() {
 
       <h2>Contact us</h2>
       <p>
-        If you have any questions about this Cookie Policy, please contact us through our <a href="/contact">Contact page</a>.
+        If you have any questions about this Cookie Policy, please contact us through our <Link href="/contact">Contact page</Link>.
       </p>
 
       <p><strong>Last updated:</strong> 2026-02-20</p>
