@@ -10,8 +10,8 @@ const tool = getToolBySlug("toggle-case-converter")!;
 const pageUrl = buildUrl("/toggle-case-converter");
 
 export const metadata: Metadata = {
-  title: "Toggle Case Converter: Alternating Caps & SpongeBob Text Generator",
-  description: "Free toggle case converter for alternating uppercase/lowercase text. Create SpongeBob meme text, mocking text, and alternating caps instantly. No signup required.",
+  title: tool.title,
+  description: tool.description,
   alternates: { canonical: pageUrl },
   keywords: [
     "toggle case converter", "alternating caps converter", "sPoNgEbOb text generator", "mocking sponge bob text",
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
     "fun text converter online", "meme text generator tool", "alternating caps online converter",
   ],
   openGraph: {
-    title: "Toggle Case Converter: Alternating Caps & SpongeBob Text Generator",
-    description: "Free toggle case converter for alternating uppercase/lowercase text. Create SpongeBob meme text, mocking text, and alternating caps instantly.",
+    title: tool.title,
+    description: tool.description,
     url: pageUrl,
     type: "website",
   },

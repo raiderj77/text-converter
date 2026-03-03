@@ -10,8 +10,8 @@ const tool = getToolBySlug("spongebob-case-converter")!;
 const pageUrl = buildUrl("/spongebob-case-converter");
 
 export const metadata: Metadata = {
-  title: "SpongeBob Case Generator — Free sPoNgEbOb Mocking Text Converter for Memes",
-  description: "Generate SpongeBob mocking text for sarcastic posts, ironic comments, and viral memes. Convert any text to sPoNgEbOb case instantly. Perfect for social media banter and attention-grabbing content.",
+  title: tool.title,
+  description: tool.description,
   alternates: { canonical: pageUrl },
   keywords: [
     "spongebob case converter", "spongebob case generator", "mocking spongebob text maker",
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
     "mocking spongebob meme generator", "spongebob squarepants text", "sarcastic text converter",
   ],
   openGraph: {
-    title: "SpongeBob Case Generator — Free sPoNgEbOb Mocking Text Converter",
-    description: "Create SpongeBob mocking text for memes and social media instantly. No signup required.",
+    title: tool.title,
+    description: tool.description,
     url: pageUrl,
     type: "website",
   },

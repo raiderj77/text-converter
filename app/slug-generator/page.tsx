@@ -1,17 +1,20 @@
 import type { Metadata } from "next";
-import { SITE_URL } from "@/lib/config";
+import { getToolBySlug, buildUrl } from "@/lib/config";
 import { SlugGeneratorTool } from "@/components/tools/slug-generator";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
 
+const tool = getToolBySlug("slug-generator")!;
+const pageUrl = buildUrl("/slug-generator");
+
 export const metadata: Metadata = {
-  title: "Free URL Slug Generator — SEO-Friendly Slugs from Any Text Online",
-  description: "Convert any title or text into clean, SEO-friendly URL slugs instantly. Supports URL, filename, CSS class, Python variable, and constant formats. Free, no signup.",
-  alternates: { canonical: `${SITE_URL}/slug-generator` },
+  title: tool.title,
+  description: tool.description,
+  alternates: { canonical: pageUrl },
   keywords: ["url slug generator", "slug generator online", "seo slug", "url slug maker", "title to slug converter"],
   openGraph: {
-    title: "Free URL Slug Generator — SEO-Friendly Slugs from Any Text Online",
-    description: "Convert any title or text into clean, SEO-friendly URL slugs instantly. Free, no signup.",
-    url: `${SITE_URL}/slug-generator`,
+    title: tool.title,
+    description: tool.description,
+    url: pageUrl,
     type: "website",
   },
 };
@@ -28,7 +31,7 @@ const faqItems = [
 export default function SlugGeneratorPage() {
   return (
     <>
-      <WebAppSchema name="Free URL Slug Generator" description="Convert any title or text into clean, SEO-friendly URL slugs instantly." url={`${SITE_URL}/slug-generator`} />
+      <WebAppSchema name="Free URL Slug Generator" description={tool.description} url={pageUrl} />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "Slug Generator", href: "/slug-generator" }]} />
 

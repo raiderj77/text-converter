@@ -36,7 +36,7 @@ export function WebAppSchema({
     <JsonLd
       data={{
         "@context": "https://schema.org",
-        "@type": "WebApplication",
+        "@type": "SoftwareApplication",
         name,
         description,
         url,

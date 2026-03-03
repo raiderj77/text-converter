@@ -10,8 +10,8 @@ const tool = getToolBySlug("underscore-conventions")!;
 const pageUrl = buildUrl("/underscore-conventions");
 
 export const metadata: Metadata = {
-  title: "Why Programmers Use Underscores in Variable Names — Complete Guide to _private, __dunder & snake_case",
-  description: "Learn why programmers use underscores in variable names. Complete guide to _private, __dunder, snake_case, and trailing underscores. Examples for Python, JavaScript, and other languages. Free online guide.",
+  title: tool.title,
+  description: tool.description,
   alternates: { canonical: pageUrl },
   keywords: [
     "why programmers use underscores", "underscore in variable names", "_private variable meaning",
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
     "code style underscore rules", "underscore best practices programming",
   ],
   openGraph: {
-    title: "Why Programmers Use Underscores in Variable Names — Complete Guide to _private, __dunder & snake_case",
-    description: "Learn why programmers use underscores in variable names. Complete guide to _private, __dunder, snake_case, and trailing underscores. Examples for Python, JavaScript, and other languages.",
+    title: tool.title,
+    description: tool.description,
     url: pageUrl,
     type: "website",
   },

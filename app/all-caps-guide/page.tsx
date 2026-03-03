@@ -10,8 +10,8 @@ const tool = getToolBySlug("all-caps-guide")!;
 const pageUrl = buildUrl("/all-caps-guide");
 
 export const metadata: Metadata = {
-  title: "All Caps in Writing: When It's Rude vs Necessary — Complete Guide to UPPERCASE Usage",
-  description: "Learn when ALL CAPS is rude vs necessary in writing. Complete guide to uppercase usage in emails, social media, coding, and professional communication. Free online guide with examples.",
+  title: tool.title,
+  description: tool.description,
   alternates: { canonical: pageUrl },
   keywords: [
     "all caps rude or necessary", "when to use all caps writing", "uppercase writing etiquette",
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
     "all caps in design", "typography all caps usage",
   ],
   openGraph: {
-    title: "All Caps in Writing: When It's Rude vs Necessary — Complete Guide to UPPERCASE Usage",
-    description: "Learn when ALL CAPS is rude vs necessary in writing. Complete guide to uppercase usage in emails, social media, coding, and professional communication. Free online guide with examples.",
+    title: tool.title,
+    description: tool.description,
     url: pageUrl,
     type: "website",
   },

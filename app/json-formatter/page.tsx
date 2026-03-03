@@ -10,14 +10,12 @@ const tool = getToolBySlug("json-formatter")!;
 const pageUrl = buildUrl("/json-formatter");
 
 export const metadata: Metadata = {
-  title: "Free JSON Formatter, Validator & Beautifier — Pretty Print JSON Online",
-  description:
-    "Format, validate, beautify, and minify JSON online. Tree view, error line numbers, fix broken JSON, export to CSV. Free JSON lint with no signup. Runs in your browser.",
+  title: tool.title,
+  description: tool.description,
   alternates: { canonical: pageUrl },
   openGraph: {
-    title: "Free JSON Formatter, Validator & Beautifier Online",
-    description:
-      "Format, validate, and beautify JSON instantly. Tree view, fix broken JSON, export CSV. No ads, no signup.",
+    title: tool.title,
+    description: tool.description,
     url: pageUrl,
     type: "website",
   },

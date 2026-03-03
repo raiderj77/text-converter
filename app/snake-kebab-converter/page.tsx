@@ -10,8 +10,8 @@ const tool = getToolBySlug("snake-kebab-converter")!;
 const pageUrl = buildUrl("/snake-kebab-converter");
 
 export const metadata: Metadata = {
-  title: "Snake_case vs Kebab-case Converter: Naming Convention Tool",
-  description: "Convert between snake_case and kebab-case instantly. Compare naming conventions, generate proper code formatting, and learn when to use each style. Free online tool.",
+  title: tool.title,
+  description: tool.description,
   alternates: { canonical: pageUrl },
   keywords: [
     "snake_case vs kebab-case converter", "snake case converter online", "kebab case converter tool",
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
     "snake case examples generator", "kebab case examples tool", "naming convention best practices guide",
   ],
   openGraph: {
-    title: "Snake_case vs Kebab-case Converter: Naming Convention Tool",
-    description: "Convert between snake_case and kebab-case instantly. Compare naming conventions, generate proper code formatting, and learn when to use each style.",
+    title: tool.title,
+    description: tool.description,
     url: pageUrl,
     type: "website",
   },
