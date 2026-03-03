@@ -1,89 +1,64 @@
-# CLAUDE.md — flipmycase.com
+# CLAUDE.md - flipmycase.com
+# Claude Code reads this automatically. Follow every instruction.
 
-## Project Overview
-Text conversion and formatting utilities. Free browser-based tools for case conversion, text formatting, and developer text utilities. No sign-up, no tracking — everything runs in the browser.
+## IDENTITY
+This is the flipmycase.com codebase. Text conversion utilities.
+Developer-focused: clean, fast, minimal.
 
-**Live URL:** https://flipmycase.com
-**GitHub:** raiderj77/text-converter
-**Local path:** ~/text-case-converter/
-**Hosting:** Vercel (auto-deploys when you push to main)
+## BEFORE DOING ANYTHING
+1. Read this entire file first.
+2. Read EMPIRE_BUILD_STANDARDS.md before deploying anything.
+3. Show Jason a plan. Wait for approval.
+4. Explain everything step-by-step as if Jason is 5 years old.
 
-## Tech Stack
-- Next.js (App Router)
-- TypeScript
-- Tailwind CSS
-- No database — all tools run client-side
-- Dark mode support (ThemeProvider)
-- CookieConsent component already implemented
-- OrganizationSchema already implemented
+## REPO STRUCTURE
 
-## Project Structure
-```
-app/                        # Pages (App Router)
-├── layout.tsx             # Root layout with Nav, Footer, CookieConsent
-├── (tool pages)
-components/
-├── layout/
-│   └── footer.tsx         # Footer with cross-site links
-├── (other components)
-content/                    # Content files
-lib/                        # Utilities
-types/                      # TypeScript types
-```
+### Tier 1: Read First
+- CLAUDE.md (this file)
+- EMPIRE_BUILD_STANDARDS.md (quality gate)
+- src/config/ (centralized tool config - auto-populates nav, footer, sitemap)
+- src/app/layout.tsx (root layout, metadata, AdSense)
 
-## Tools Already Built
-- Text case converters: uppercase, lowercase, title case, sentence case
-- (More may exist — check app/ directory for full list)
+### Tier 2: Read When Relevant
+- src/app/tools/ (case converters, slug generator, text sorter, text reverser)
+- src/app/components/ (shared UI, cookie consent, ad units)
+- public/ (static assets, llms.txt, robots.txt, sitemap)
 
-## Milton Branch Audit (Completed)
-All 7 agent/* branches have been audited and cleaned up:
-- 5 were already merged into main — branches deleted
-- 1 (flipmycase-new-tools) was a destructive rollback — deleted without merging
-- 1 (add-cookie-compliance) was fixed and merged — cookie consent, cookie policy, accessibility statement
-- Inherited bugs fixed: broken code blocks, wrong related slugs, dead frontmatter, duplicate functions, missing ARIA, broken Tailwind colors
+### Tier 3: Never Read Unless Asked
+- node_modules/, .next/, .git/, .env files
 
-## SEO Requirements
-- Every tool page needs: optimized title tag (<60 chars), meta description (<155 chars), H1 with target keyword
-- Every tool page needs SoftwareApplication JSON-LD schema
-- FAQPage schema on each tool page
-- Internal links between related tools
-- pSEO opportunity: "[format A] to [format B] converter" pages — dozens from format combinations
-- Target developer and writer audiences
+## TECH STACK
+- Next.js App Router with TypeScript and Tailwind CSS
+- Hosted on Vercel (auto-deploys on push to main)
+- Same config-driven pattern as mindchecktools
+- Cookie consent banner: GDPR compliant with ARIA accessibility
+- Cross-site footer links to other portfolio sites
 
-## Competitive Landscape
-- Main competitor: convertcase.net (20 years old, dominant, ugly design)
-- Our advantage: modern design, faster UX, mobile-friendly, no-login required
-- Blue ocean: AI-powered text tools (grammar fixer, passive-to-active voice, readability improver)
-- Blue ocean: developer-specific tools (JSON formatter, regex tester, base64 encoder)
+## COMPLIANCE
+- Cookie consent required on all pages (already implemented)
+- Privacy policy must be linked in footer
+- AdSense integrated, awaiting approval
+- No personal name on any public page
 
-## Footer Cross-Links
-Footer already includes links to other portfolio sites:
-- creatorrevenuecalculator.com
-- fibertools.app
-- mindchecktools.com
+## WORKFLOW (Baby Steps)
+1. AUDIT: Read code, report findings
+2. PLAN: Show plan, wait for approval
+3. EXECUTE: One change at a time
+4. REVIEW: Show result
+5. STANDARDS CHECK: Verify EMPIRE_BUILD_STANDARDS.md
+6. DEPLOY: Push only after approval
+7. VERIFY: Check live site
 
-## Monetization
-- AdSense display ads (high volume, lower CPM $3-5)
-- Potential: developer tool affiliate links (Semrush, Ahrefs)
-- Strategy: volume play — the more tools, the more keyword coverage, the more traffic
+## CURRENT STATUS
+- Tools live: case converters, slug generator, text sorter, text reverser
+- AdSense integrated, awaiting approval
+- Cookie consent and accessibility statement done
+- GSC: 1 click, 89 impressions, 1.1% CTR, position 27.3
+- All branches merged, repo clean
 
-## Git Workflow
-1. Work on feature branches
-2. Branch naming: feature/[description] or fix/[description]
-3. Show Jason the diff before merging
-4. Push to main = auto-deploy to Vercel
-5. Test locally with `npm run dev` before pushing
-
-## Communication Style
-Jason needs ALL instructions explained step-by-step like he is 5 years old. Never assume he knows how to do something.
-
-## Current GSC Data (March 2026)
-- 1 click, 89 impressions, 1.1% CTR, avg position 27.3
-- Top queries: "word limit count" (6 imp), "word count" (3 imp)
-- Problem: Very low CTR — title tags may not match search intent
-
-## Current Priorities
-1. Add SoftwareApplication schema to each tool page
-2. Improve title tags and meta descriptions
-3. Implement AdSense
-4. Expand into developer tools (JSON, regex, base64, etc.)
+## DO NOT
+- Push without approval
+- Delete files without asking
+- Build before auditing
+- Skip the plan step
+- Ignore EMPIRE_BUILD_STANDARDS.md
