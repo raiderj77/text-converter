@@ -40,8 +40,8 @@ export function WebAppSchema({
         name,
         description,
         url,
-        applicationCategory: "UtilityApplication",
-        operatingSystem: "All",
+        applicationCategory: "DeveloperApplication",
+        operatingSystem: "Web",
         offers: {
           "@type": "Offer",
           price: "0",
