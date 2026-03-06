@@ -221,6 +221,16 @@ export const tools: Tool[] = [
     emoji: "🔗",
     live: true,
   },
+  {
+    slug: "number-base-converter",
+    name: "Number Base Converter",
+    shortName: "Base Conv",
+    title: "Free Number Base Converter — Binary, Hex, Octal, Decimal",
+    description:
+      "Convert between binary, octal, decimal & hexadecimal instantly. ASCII text to binary/hex mode included. Free online tool — no signup required.",
+    emoji: "🔢",
+    live: true,
+  },
 ];
 
 /** Get only tools that are live (shown in nav) */
