@@ -222,6 +222,16 @@ export const tools: Tool[] = [
     live: true,
   },
   {
+    slug: "csv-to-json",
+    name: "CSV to JSON",
+    shortName: "CSV/JSON",
+    title: "Free CSV to JSON Converter — Bidirectional Online",
+    description:
+      "Convert CSV to JSON and JSON to CSV instantly. Auto-detect delimiters, first row as headers, pretty print or minified. Free online tool — no signup required.",
+    emoji: "📋",
+    live: true,
+  },
+  {
     slug: "unix-timestamp-converter",
     name: "Unix Timestamp",
     shortName: "Timestamp",
