@@ -222,6 +222,16 @@ export const tools: Tool[] = [
     live: true,
   },
   {
+    slug: "uuid-generator",
+    name: "UUID Generator",
+    shortName: "UUID",
+    title: "Free UUID Generator — Generate v4 GUIDs Online",
+    description:
+      "Generate random UUID v4 identifiers instantly. Bulk generate up to 100, uppercase or lowercase, with or without hyphens. Free online tool — no signup required.",
+    emoji: "🆔",
+    live: true,
+  },
+  {
     slug: "number-base-converter",
     name: "Number Base Converter",
     shortName: "Base Conv",
