@@ -222,6 +222,16 @@ export const tools: Tool[] = [
     live: true,
   },
   {
+    slug: "xml-formatter",
+    name: "XML Formatter",
+    shortName: "XML",
+    title: "Free XML Formatter & Validator — Beautify Online",
+    description:
+      "Format, beautify & minify XML online with error detection. Choose 2/4 spaces or tabs for indentation. Free online tool — no signup required.",
+    emoji: "📄",
+    live: true,
+  },
+  {
     slug: "csv-to-json",
     name: "CSV to JSON",
     shortName: "CSV/JSON",
