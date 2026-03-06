@@ -222,6 +222,16 @@ export const tools: Tool[] = [
     live: true,
   },
   {
+    slug: "unix-timestamp-converter",
+    name: "Unix Timestamp",
+    shortName: "Timestamp",
+    title: "Free Unix Timestamp Converter — Epoch Time Online",
+    description:
+      "Convert Unix timestamps to human dates and dates to timestamps instantly. Live clock, seconds & milliseconds support. Free online tool — no signup required.",
+    emoji: "🕐",
+    live: true,
+  },
+  {
     slug: "uuid-generator",
     name: "UUID Generator",
     shortName: "UUID",
