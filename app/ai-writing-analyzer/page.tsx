@@ -78,6 +78,7 @@ export default function AiWritingAnalyzerPage() {
         name="Free AI Writing Pattern Analyzer"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -99,6 +100,7 @@ export default function AiWritingAnalyzerPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           AI Writing Pattern Analyzer
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Analyze statistical writing patterns in any text. See sentence uniformity,
           vocabulary diversity, transition word density, repeated phrases, and more.

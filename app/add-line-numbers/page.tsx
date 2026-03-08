@@ -69,6 +69,7 @@ export default function AddLineNumbersPage() {
         name="Free Add Line Numbers Tool"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -90,6 +91,7 @@ export default function AddLineNumbersPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Add Line Numbers to Text — Free Online
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Add or remove line numbers from any text instantly. Customize the starting number,
           separator style, and zero padding. Free, no signup, works entirely in your browser.

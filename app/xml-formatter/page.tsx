@@ -76,6 +76,7 @@ export default function XmlFormatterPage() {
         name="Free XML Formatter & Validator"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -97,6 +98,7 @@ export default function XmlFormatterPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free XML Formatter &amp; Validator
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Format, beautify, and minify XML online with instant validation. Choose between
           2 spaces, 4 spaces, or tabs for indentation. Errors are detected and displayed

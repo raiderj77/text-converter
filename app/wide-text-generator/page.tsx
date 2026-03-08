@@ -69,6 +69,7 @@ export default function WideTextGeneratorPage() {
         name="Free Wide Text Generator"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -82,6 +83,7 @@ export default function WideTextGeneratorPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Wide Text Generator &mdash; Vaporwave Aesthetic
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Convert regular text to fullwidth vaporwave characters (&#65335;&#65353;&#65348;&#65349;{"\u3000"}&#65332;&#65349;&#65368;&#65364;) you can copy and paste anywhere.
           Free aesthetic text generator, no signup.

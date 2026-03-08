@@ -101,6 +101,7 @@ export default function TextDiffPage() {
         name="Free Text Diff — Compare Two Texts Side by Side Online"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -114,6 +115,7 @@ export default function TextDiffPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Text Diff — Compare Two Texts Side by Side Online
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Compare two blocks of text and instantly see every difference highlighted with
           word-level precision. Side-by-side and inline views. Collapse unchanged lines to

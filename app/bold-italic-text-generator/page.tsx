@@ -73,6 +73,7 @@ export default function BoldItalicTextGeneratorPage() {
         name="Free Bold Italic Text Generator"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -86,6 +87,7 @@ export default function BoldItalicTextGeneratorPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Bold Italic Text Generator
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Generate bold italic Unicode text (𝑩𝒐𝒍𝒅 𝑰𝒕𝒂𝒍𝒊𝒄) you can copy and paste anywhere.
           Works on Instagram, Twitter, Facebook, and more. Free, no signup, browser-only.

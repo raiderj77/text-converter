@@ -79,6 +79,7 @@ export default function WordCounterPage() {
         name="Free Word Counter"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -92,6 +93,7 @@ export default function WordCounterPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Word Counter
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Count words, characters, sentences, and paragraphs instantly. See reading time,
           speaking time, social media limits, and keyword density. Free, no signup, works

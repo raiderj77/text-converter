@@ -69,6 +69,7 @@ export default function ExtractEmailsPage() {
         name="Free Extract Emails Tool"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -90,6 +91,7 @@ export default function ExtractEmailsPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Extract Email Addresses from Text — Free Tool
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Extract all email addresses from any text instantly. Deduplicate, sort alphabetically,
           and copy as a newline or comma-separated list. Free, no signup, works in your browser.

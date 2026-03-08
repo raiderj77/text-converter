@@ -69,6 +69,7 @@ export default function BubbleTextGeneratorPage() {
         name="Free Bubble Text Generator"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -82,6 +83,7 @@ export default function BubbleTextGeneratorPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Bubble Text Generator
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Convert regular text to circled Unicode bubble letters (Ⓑⓤⓑⓑⓛⓔ) you can copy and paste
           anywhere. Toggle between empty and filled circle styles. Free, no signup.

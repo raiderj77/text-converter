@@ -68,6 +68,7 @@ export default function SmartQuotesConverterPage() {
         name="Free Smart Quotes Converter"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -89,6 +90,7 @@ export default function SmartQuotesConverterPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Smart Quotes Converter
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Convert curly (smart) quotes to straight quotes, or straight quotes to
           typographic curly quotes. Em dash and en dash conversion included. Free,

@@ -44,7 +44,7 @@ export const tools: Tool[] = [
     slug: "",
     name: "Case Converter",
     shortName: "Case",
-    title: "Free Text Case Converter — Uppercase, Lowercase & More",
+    title: "Text Case Converter — camelCase, snake_case, Title Case & More | Free",
     description:
       "Convert text to UPPERCASE, lowercase, Title Case, camelCase, snake_case & more instantly. Free online tool — no signup required.",
     emoji: "🔄",
@@ -55,7 +55,7 @@ export const tools: Tool[] = [
     slug: "word-counter",
     name: "Word Counter",
     shortName: "Words",
-    title: "Free Word Counter — Characters, Sentences & More",
+    title: "Word Counter & Character Count — Free Online Tool | FlipMyCase",
     description:
       "Count words, characters, sentences, paragraphs & reading time. Keyword density included. Free online word counter — no signup.",
     emoji: "📊",
@@ -66,7 +66,7 @@ export const tools: Tool[] = [
     slug: "text-cleaner",
     name: "Text Cleaner",
     shortName: "Clean",
-    title: "Free Text Cleaner — Remove Spaces & Line Breaks",
+    title: "Text Cleaner — Remove Spaces & Line Breaks Free",
     description:
       "Remove extra spaces, line breaks, tabs & hidden characters from messy text. Free online cleaner — no signup required.",
     emoji: "🧹",
@@ -77,7 +77,7 @@ export const tools: Tool[] = [
     slug: "lorem-ipsum-generator",
     name: "Lorem Ipsum",
     shortName: "Lorem",
-    title: "Free Lorem Ipsum Generator — Placeholder Text Online",
+    title: "Lorem Ipsum Generator — Placeholder Text Free",
     description:
       "Generate placeholder text in 5 styles: Lorem Ipsum, Hipster, Office, Pirate & Cat Ipsum. Free online placeholder text generator — no signup required.",
     emoji: "📝",
@@ -88,7 +88,7 @@ export const tools: Tool[] = [
     slug: "duplicate-line-remover",
     name: "Duplicate Remover",
     shortName: "Dedup",
-    title: "Free Duplicate Line Remover — Deduplicate Lists",
+    title: "Duplicate Line Remover — Deduplicate Lists Free",
     description:
       "Remove duplicate lines from any list instantly. Case-insensitive matching, sorting & stats included. Free online tool — no signup.",
     emoji: "🗑️",
@@ -99,7 +99,7 @@ export const tools: Tool[] = [
     slug: "string-encoder",
     name: "String Encoder",
     shortName: "Encode",
-    title: "Free String Encoder & Decoder — Base64, URL & More",
+    title: "String Encoder & Decoder — Base64, URL & More Free",
     description:
       "Encode & decode Base64, URL, HTML entities, hex & binary strings instantly. Free online tool — no signup required.",
     emoji: "🔐",
@@ -110,7 +110,7 @@ export const tools: Tool[] = [
     slug: "json-formatter",
     name: "JSON Formatter",
     shortName: "JSON",
-    title: "Free JSON Formatter & Validator — Beautify Online",
+    title: "JSON Formatter & Validator — Pretty Print or Minify JSON Free",
     description:
       "Format, validate, beautify & minify JSON online. Tree view, error detection & CSV export. Free tool — no signup required.",
     emoji: "{ }",
@@ -121,7 +121,7 @@ export const tools: Tool[] = [
     slug: "text-diff",
     name: "Text Diff",
     shortName: "Diff",
-    title: "Free Text Diff — Compare Two Texts Side by Side",
+    title: "Text Diff — Compare Two Texts Side by Side Free",
     description:
       "Compare two texts side by side with additions, deletions & changes highlighted. Free online diff tool — no signup required.",
     emoji: "🔍",
@@ -132,7 +132,7 @@ export const tools: Tool[] = [
     slug: "password-generator",
     name: "Password Generator",
     shortName: "Password",
-    title: "Free Password Generator — Strong & Secure Online",
+    title: "Password Generator — Strong & Secure Free Online",
     description:
       "Generate strong random passwords with custom length, symbols & exclusions. Strength meter included. Free — no signup required.",
     emoji: "🔑",
@@ -143,7 +143,7 @@ export const tools: Tool[] = [
     slug: "regex-tester",
     name: "Regex Tester",
     shortName: "Regex",
-    title: "Free Regex Tester — Test Regular Expressions Online",
+    title: "Regex Tester Online — Test Regular Expressions Free | FlipMyCase",
     description:
       "Test regular expressions with real-time highlighting, capture groups & replace mode. Free online regex tool — no signup.",
     emoji: "⚙️",
@@ -154,7 +154,7 @@ export const tools: Tool[] = [
     slug: "hash-generator",
     name: "Hash Generator",
     shortName: "Hash",
-    title: "Free Hash Generator — MD5, SHA-256, SHA-512 Online",
+    title: "Hash Generator — MD5, SHA-256, SHA-512 Free Online | FlipMyCase",
     description:
       "Generate MD5, SHA-1, SHA-256 & SHA-512 hashes from text or files instantly. Free online tool — no signup required.",
     emoji: "#️⃣",
@@ -165,7 +165,7 @@ export const tools: Tool[] = [
     slug: "toggle-case-converter",
     name: "Toggle Case",
     shortName: "Toggle",
-    title: "Free Toggle Case Converter — Alternating Caps Online",
+    title: "Toggle Case Converter — Alternating Caps Free",
     description:
       "Convert text to alternating caps (tOgGlE cAsE) for mocking memes & SpongeBob text. Free online tool — no signup required.",
     emoji: "🔄",
@@ -176,7 +176,7 @@ export const tools: Tool[] = [
     slug: "snake-kebab-converter",
     name: "Snake vs Kebab",
     shortName: "Snake/Kebab",
-    title: "Free Snake_case to Kebab-case Converter Online",
+    title: "Snake_case to Kebab-case Converter — Free Online",
     description:
       "Convert between snake_case and kebab-case instantly. Compare naming conventions side by side. Free online tool — no signup required.",
     emoji: "🐍",
@@ -187,7 +187,7 @@ export const tools: Tool[] = [
     slug: "underscore-conventions",
     name: "Underscore Guide",
     shortName: "Underscore",
-    title: "Free Underscore Guide — _private, __dunder & snake_case",
+    title: "Underscore Guide — _private, __dunder & snake_case",
     description:
       "Why do programmers use underscores? Guide to _private, __dunder, snake_case & more with Python & JavaScript examples. Free — no signup.",
     emoji: "📘",
@@ -198,7 +198,7 @@ export const tools: Tool[] = [
     slug: "all-caps-guide",
     name: "All Caps Guide",
     shortName: "All Caps",
-    title: "Free All Caps Guide — When UPPERCASE Is Rude vs OK",
+    title: "All Caps Guide — When UPPERCASE Is Rude vs OK",
     description:
       "When is ALL CAPS rude vs necessary? Guide to uppercase in emails, social media & code. Free instantly — no signup required.",
     emoji: "🔠",
@@ -209,7 +209,7 @@ export const tools: Tool[] = [
     slug: "text-sorter",
     name: "Text Sorter",
     shortName: "Sort",
-    title: "Free Text Sorter — Sort Lines Alphabetically Online",
+    title: "Text Sorter — Sort Lines Alphabetically Free",
     description:
       "Sort text lines alphabetically, numerically, or randomly. Remove duplicates & reverse order. Free online tool — no signup required.",
     emoji: "📊",
@@ -220,7 +220,7 @@ export const tools: Tool[] = [
     slug: "text-reverser",
     name: "Text Reverser",
     shortName: "Reverse",
-    title: "Free Text Reverser — Reverse Text Online Instantly",
+    title: "Text Reverser — Reverse Text Online Free",
     description:
       "Reverse characters, words, or lines of text instantly. Create backwards & mirror text. Free online tool — no signup required.",
     emoji: "↔️",
@@ -231,7 +231,7 @@ export const tools: Tool[] = [
     slug: "spongebob-case-converter",
     name: "SpongeBob Case",
     shortName: "SpongeBob",
-    title: "Free SpongeBob Case Converter — sPoNgEbOb Text",
+    title: "SpongeBob Case Converter — sPoNgEbOb Text Free",
     description:
       "Convert text to sPoNgEbOb mocking case for memes & social media. Create viral sarcastic text instantly. Free — no signup required.",
     emoji: "🧽",
@@ -242,7 +242,7 @@ export const tools: Tool[] = [
     slug: "slug-generator",
     name: "Slug Generator",
     shortName: "Slug",
-    title: "Free URL Slug Generator — SEO-Friendly Slugs Online",
+    title: "URL Slug Generator — SEO-Friendly Slugs Free",
     description:
       "Convert any title into a clean, SEO-friendly URL slug instantly. Multiple formats supported. Free online tool — no signup required.",
     emoji: "🔗",
@@ -253,7 +253,7 @@ export const tools: Tool[] = [
     slug: "yaml-formatter",
     name: "YAML Formatter",
     shortName: "YAML",
-    title: "Free YAML Formatter & Validator — YAML to JSON Online",
+    title: "YAML Formatter & Validator — YAML to JSON Free",
     description:
       "Format, validate & convert YAML online. YAML to JSON and JSON to YAML conversion included. Free online tool — no signup required.",
     emoji: "📝",
@@ -264,7 +264,7 @@ export const tools: Tool[] = [
     slug: "xml-formatter",
     name: "XML Formatter",
     shortName: "XML",
-    title: "Free XML Formatter & Validator — Beautify Online",
+    title: "XML Formatter & Validator — Beautify Free Online",
     description:
       "Format, beautify & minify XML online with error detection. Choose 2/4 spaces or tabs for indentation. Free online tool — no signup required.",
     emoji: "📄",
@@ -275,7 +275,7 @@ export const tools: Tool[] = [
     slug: "csv-to-json",
     name: "CSV to JSON",
     shortName: "CSV/JSON",
-    title: "Free CSV to JSON Converter — Bidirectional Online",
+    title: "CSV to JSON Converter — Bidirectional Free Online",
     description:
       "Convert CSV to JSON and JSON to CSV instantly. Auto-detect delimiters, first row as headers, pretty print or minified. Free online tool — no signup required.",
     emoji: "📋",
@@ -286,7 +286,7 @@ export const tools: Tool[] = [
     slug: "unix-timestamp-converter",
     name: "Unix Timestamp",
     shortName: "Timestamp",
-    title: "Free Unix Timestamp Converter — Epoch Time Online",
+    title: "Unix Timestamp Converter — Epoch Time Free Online",
     description:
       "Convert Unix timestamps to human dates and dates to timestamps instantly. Live clock, seconds & milliseconds support. Free online tool — no signup required.",
     emoji: "🕐",
@@ -297,7 +297,7 @@ export const tools: Tool[] = [
     slug: "uuid-generator",
     name: "UUID Generator",
     shortName: "UUID",
-    title: "Free UUID Generator — Generate v4 GUIDs Online",
+    title: "UUID Generator — Generate v4 GUIDs Free Online",
     description:
       "Generate random UUID v4 identifiers instantly. Bulk generate up to 100, uppercase or lowercase, with or without hyphens. Free online tool — no signup required.",
     emoji: "🆔",
@@ -308,7 +308,7 @@ export const tools: Tool[] = [
     slug: "number-base-converter",
     name: "Number Base Converter",
     shortName: "Base Conv",
-    title: "Free Number Base Converter — Binary, Hex, Octal, Decimal",
+    title: "Number Base Converter — Binary, Hex, Octal Free",
     description:
       "Convert between binary, octal, decimal & hexadecimal instantly. ASCII text to binary/hex mode included. Free online tool — no signup required.",
     emoji: "🔢",

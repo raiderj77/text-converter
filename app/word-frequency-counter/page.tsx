@@ -77,6 +77,7 @@ export default function WordFrequencyCounterPage() {
         name="Free Word Frequency Counter"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -98,6 +99,7 @@ export default function WordFrequencyCounterPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Word Frequency Counter — Analyze Text Online Free
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Count word frequencies, analyze bigrams and trigrams, generate a word cloud,
           and export results as CSV. Free, no signup, runs entirely in your browser.

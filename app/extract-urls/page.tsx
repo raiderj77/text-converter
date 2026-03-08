@@ -71,6 +71,7 @@ export default function ExtractUrlsPage() {
         name="Extract URLs from Text — Free Online Tool"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -84,6 +85,7 @@ export default function ExtractUrlsPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Extract URLs from Text — Free Online Tool
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Paste any text and instantly extract every URL. Deduplicate results, see a
           domain breakdown, and copy as a clean list. Free, no signup, 100%

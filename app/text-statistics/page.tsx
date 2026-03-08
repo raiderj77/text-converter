@@ -77,6 +77,7 @@ export default function TextStatisticsPage() {
         name="Free Text Statistics Dashboard"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -98,6 +99,7 @@ export default function TextStatisticsPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Text Statistics Dashboard — Free Online
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Comprehensive text analysis with word counts, vocabulary richness, lexical
           density, sentence structure, reading time, word frequency charts, bigrams,

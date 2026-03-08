@@ -70,6 +70,7 @@ export default function BoldTextGeneratorPage() {
         name="Free Bold Text Generator"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -83,6 +84,7 @@ export default function BoldTextGeneratorPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Bold Text Generator — Copy &amp; Paste Free
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Generate bold Unicode text you can copy and paste anywhere. Choose between serif bold
           or sans-serif bold styles. Works on Instagram, Twitter, Facebook, bios, and more.

@@ -70,6 +70,7 @@ export default function ItalicTextGeneratorPage() {
         name="Free Italic Text Generator"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -83,6 +84,7 @@ export default function ItalicTextGeneratorPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Italic Text Generator — Copy & Paste Free
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Convert regular text into 𝘪𝘵𝘢𝘭𝘪𝘤 Unicode characters you can copy and paste anywhere.
           Works on Instagram, Twitter/X, Facebook, Discord, and more. Free, no signup, runs entirely

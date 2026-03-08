@@ -77,6 +77,7 @@ export default function CronExpressionBuilderPage() {
         name="Free Cron Expression Builder"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -98,6 +99,7 @@ export default function CronExpressionBuilderPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Cron Expression Builder
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Build cron expressions visually with an interactive builder. Choose
           presets or configure each field individually with specific values,

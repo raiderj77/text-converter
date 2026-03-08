@@ -79,6 +79,7 @@ export default function ToggleCaseConverterPage() {
         name="Free Toggle Case Converter"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -92,6 +93,7 @@ export default function ToggleCaseConverterPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Toggle Case Converter: Alternating Caps & SpongeBob Text Generator
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Convert text to toggle case (alternating caps) instantly. Generate sPoNgEbOb text,
           create mocking SpongeBob meme text, and produce alternating uppercase/lowercase letters.

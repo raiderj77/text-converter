@@ -69,6 +69,7 @@ export default function RemoveEmptyLinesPage() {
         name="Free Remove Empty Lines Tool"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -90,6 +91,7 @@ export default function RemoveEmptyLinesPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Remove Empty Lines — Clean Text Online Free
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Remove blank and empty lines from any text instantly. Option to strip whitespace-only
           lines too. Free, no signup, works entirely in your browser.

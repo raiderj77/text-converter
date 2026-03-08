@@ -78,6 +78,7 @@ export default function ReadabilityAnalyzerPage() {
         name="Free Readability Score Analyzer"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -99,6 +100,7 @@ export default function ReadabilityAnalyzerPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Readability Score Analyzer — Free Online
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Check the readability of any text with 7 proven formulas: Flesch Reading
           Ease, Flesch-Kincaid, Gunning Fog, Coleman-Liau, SMOG, ARI, and

@@ -78,6 +78,7 @@ export default function DuplicateRemoverPage() {
         name="Free Duplicate Line Remover"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -91,6 +92,7 @@ export default function DuplicateRemoverPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Duplicate Line Remover
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Remove duplicate lines from any list instantly. Paste your text, get unique lines
           with one click. Supports case-insensitive matching, sorting, and whitespace

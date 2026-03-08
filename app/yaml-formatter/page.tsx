@@ -77,6 +77,7 @@ export default function YamlFormatterPage() {
         name="Free YAML Formatter & Validator"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -98,6 +99,7 @@ export default function YamlFormatterPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free YAML Formatter &amp; Validator
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Format, validate, and convert YAML online. Includes YAML to JSON and JSON to
           YAML conversion, minification, and instant error detection. Free, no signup,

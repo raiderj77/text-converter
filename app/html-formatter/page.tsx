@@ -76,6 +76,7 @@ export default function HtmlFormatterPage() {
         name="Free HTML Formatter & Beautifier"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -97,6 +98,7 @@ export default function HtmlFormatterPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free HTML Formatter &amp; Beautifier
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Format, beautify, and minify HTML online with customizable indentation.
           Void elements like &lt;br&gt;, &lt;img&gt;, and &lt;input&gt; are handled

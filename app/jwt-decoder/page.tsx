@@ -77,6 +77,7 @@ export default function JwtDecoderPage() {
         name="Free JWT Decoder"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -98,6 +99,7 @@ export default function JwtDecoderPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free JWT Decoder
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Paste a JSON Web Token to instantly decode the header and payload.
           See the algorithm, token type, issued time, and expiration status

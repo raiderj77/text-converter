@@ -80,6 +80,7 @@ export default function TextSorterPage() {
         name="Free Text Sorter"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -93,6 +94,7 @@ export default function TextSorterPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Text Sorter
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Sort text lines alphabetically, numerically, by length, or randomly shuffle. Remove duplicates,
           handle empty lines, and customize sorting options. Free, no signup, works entirely in your browser.

@@ -74,6 +74,7 @@ export default function RandomNumberGeneratorPage() {
         name="Free Random Number Generator"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -95,6 +96,7 @@ export default function RandomNumberGeneratorPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Random Number Generator
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Generate random numbers with custom min/max ranges. Bulk mode generates up to 1,000
           numbers at once with optional no-duplicates and sorting. Includes a dice roller for

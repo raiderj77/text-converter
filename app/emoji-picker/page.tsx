@@ -77,6 +77,7 @@ export default function EmojiPickerPage() {
         name="Free Emoji Picker"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -98,6 +99,7 @@ export default function EmojiPickerPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Emoji Picker
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Search and copy emojis by name or category. See Unicode code points
           and shortcodes for every emoji. Click to copy. Free, no signup,

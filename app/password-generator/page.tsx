@@ -102,6 +102,7 @@ export default function PasswordGeneratorPage() {
         name="Free Password Generator — Passwords, Passphrases & PINs"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -115,6 +116,7 @@ export default function PasswordGeneratorPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Password Generator — Strong Passwords, Passphrases &amp; PINs
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Generate strong, random passwords using cryptographic randomness. Create random
           passwords with customizable character sets, memorable passphrases from random

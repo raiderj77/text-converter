@@ -81,6 +81,7 @@ export default function SpongeBobCaseConverterPage() {
         name="Free SpongeBob Case Converter"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -94,6 +95,7 @@ export default function SpongeBobCaseConverterPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           SpongeBob Case Generator — Create Mocking sPoNgEbOb Text
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Generate authentic SpongeBob mocking text (sPoNgEbOb CaSe) for sarcastic posts, ironic comments, and viral memes.
           Our free converter creates that distinctive random-looking alternating case from the classic meme. No signup,

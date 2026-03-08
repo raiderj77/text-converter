@@ -80,6 +80,7 @@ export default function AllCapsGuidePage() {
         name="All Caps Usage Guide"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -93,6 +94,7 @@ export default function AllCapsGuidePage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           All Caps in Writing: When It's Rude vs Necessary
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Complete guide to uppercase usage in digital communication, professional writing,
           coding, and design. Learn when ALL CAPS is appropriate vs when it's considered shouting,

@@ -78,6 +78,7 @@ export default function BinaryTextConverterPage() {
         name="Free Binary Text Converter"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -99,6 +100,7 @@ export default function BinaryTextConverterPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Binary Text Converter
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Convert text to binary and binary back to text instantly. See a per-character
           breakdown with decimal and binary codes. Choose 7-bit or 8-bit mode, space-separated

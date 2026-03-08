@@ -79,6 +79,7 @@ export default function PigLatinConverterPage() {
         name="Free Pig Latin Translator"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -100,6 +101,7 @@ export default function PigLatinConverterPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Pig Latin Translator
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Convert English text to Pig Latin and back. Consonant clusters, punctuation, and
           capitalization are all handled automatically. Free, no signup, works in your browser.

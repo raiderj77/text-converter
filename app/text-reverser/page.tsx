@@ -80,6 +80,7 @@ export default function TextReverserPage() {
         name="Free Text Reverser"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -93,6 +94,7 @@ export default function TextReverserPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Text Reverser
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Reverse text in multiple ways: characters (backwards), words, lines, or mirror text. Preserve spacing,
           line breaks, and punctuation. Perfect for coding, puzzles, and creative writing. Free, no signup.

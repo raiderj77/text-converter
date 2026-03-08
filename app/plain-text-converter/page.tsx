@@ -69,6 +69,7 @@ export default function PlainTextConverterPage() {
         name="Free Plain Text Converter"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -82,6 +83,7 @@ export default function PlainTextConverterPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Plain Text Converter
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Strip formatting, remove HTML tags, convert smart quotes and dashes to plain text.
           Free online tool — no signup required. Works entirely in your browser.

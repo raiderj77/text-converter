@@ -74,6 +74,7 @@ export default function RomanNumeralConverterPage() {
         name="Free Roman Numeral Converter"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -95,6 +96,7 @@ export default function RomanNumeralConverterPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Roman Numeral Converter
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Convert numbers to Roman numerals and Roman numerals back to numbers.
           Date mode for years, interactive reference table. Supports 1 to 3,999.

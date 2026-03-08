@@ -71,6 +71,7 @@ export default function RemoveHtmlTagsPage() {
         name="Remove HTML Tags — Strip Tags Online Free"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -84,6 +85,7 @@ export default function RemoveHtmlTagsPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Remove HTML Tags — Strip Tags Online Free
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Strip all HTML and XML tags from any text. Optionally keep specific tags,
           and decode HTML entities automatically. Free, no signup, 100% client-side.

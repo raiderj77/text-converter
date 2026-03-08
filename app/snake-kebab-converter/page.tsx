@@ -80,6 +80,7 @@ export default function SnakeKebabConverterPage() {
         name="Free Snake_case vs Kebab-case Converter"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -93,6 +94,7 @@ export default function SnakeKebabConverterPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Snake_case vs Kebab-case Converter: Naming Convention Tool
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Convert between snake_case and kebab-case instantly. Compare naming conventions side by side,
           view practical examples, and select the appropriate format for your code. Free tool,

@@ -77,6 +77,7 @@ export default function CsvToJsonPage() {
         name="Free CSV to JSON Converter"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -98,6 +99,7 @@ export default function CsvToJsonPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free CSV to JSON Converter
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Convert between CSV and JSON formats instantly. Auto-detects delimiters (comma,
           tab, semicolon, pipe), supports first row as headers, and offers pretty print or

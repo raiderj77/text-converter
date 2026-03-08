@@ -27,10 +27,12 @@ export function WebAppSchema({
   name,
   description,
   url,
+  dateModified,
 }: {
   name: string;
   description: string;
   url: string;
+  dateModified?: string;
 }) {
   return (
     <JsonLd
@@ -52,6 +54,7 @@ export function WebAppSchema({
           "@type": "CreativeWork",
           url: `${SITE_URL}/learn`,
         },
+        ...(dateModified && { dateModified }),
       }}
     />
   );
@@ -164,7 +167,8 @@ export function OrganizationSchema() {
         name: SITE_NAME,
         url: SITE_URL,
         description:
-          "Free online text tools. Convert case, count words, clean text, and more.",
+          "Free browser-based text tools for developers and writers. No signup, no limits.",
+        sameAs: [],
       }}
     />
   );

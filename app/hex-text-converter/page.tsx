@@ -78,6 +78,7 @@ export default function HexTextConverterPage() {
         name="Free Hex Text Converter"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -99,6 +100,7 @@ export default function HexTextConverterPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Hex Text Converter
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Convert text to hexadecimal and hex back to text instantly. See a per-character
           breakdown with decimal and hex codes. Toggle the 0x prefix and choose space-separated

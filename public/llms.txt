@@ -1,33 +1,106 @@
 # FlipMyCase — Free Online Text Tools
+
 > https://flipmycase.com
 
-FlipMyCase is a suite of free, browser-based text tools. All processing happens client-side — no text is sent to any server. No signup required.
+FlipMyCase is a suite of free, browser-based text tools for developers and writers. All processing happens client-side — no text is sent to any server. No signup required, no limits.
 
 ## Tools
 
+### Text Case & Formatting
 - [Case Converter](https://flipmycase.com): Convert text between UPPERCASE, lowercase, Title Case, Sentence case, camelCase, PascalCase, snake_case, kebab-case, CONSTANT_CASE, dot.case, alternating case, inverse case, and URL slugs.
-- [Word Counter](https://flipmycase.com/word-counter): Count words, characters, sentences, paragraphs, and lines. Reading time, speaking time, keyword density, and social media character limits.
 - [Text Cleaner](https://flipmycase.com/text-cleaner): Remove extra spaces, line breaks, tabs, smart quotes, non-breaking spaces, and zero-width characters from messy text.
-- [Lorem Ipsum Generator](https://flipmycase.com/lorem-ipsum-generator): Generate placeholder text by paragraphs, sentences, or words for design mockups and templates.
-- [Duplicate Line Remover](https://flipmycase.com/duplicate-line-remover): Remove duplicate lines from lists. Case-insensitive matching, sorting, and stats.
-- [String Encoder](https://flipmycase.com/string-encoder): Encode and decode strings with Base64, URL encoding, HTML entities, Unicode escape, hexadecimal, and binary.
-- [JSON Formatter](https://flipmycase.com/json-formatter): Format, validate, beautify, and minify JSON. Tree view, error reporting, fix broken JSON, export to CSV.
-- [Text Diff](https://flipmycase.com/text-diff): Compare two blocks of text side by side. Line-by-line and word-level diff with highlighted additions and deletions.
-- [Password Generator](https://flipmycase.com/password-generator): Generate strong random passwords with customizable length, character sets, and exclusions. Strength meter included.
-- [Regex Tester](https://flipmycase.com/regex-tester): Test regular expressions with real-time match highlighting, capture groups, replace mode, and flag toggles.
-- [Hash Generator](https://flipmycase.com/hash-generator): Generate MD5, SHA-1, SHA-256, SHA-512 hashes from text or files. Compare hashes, HMAC mode, bulk hashing.
-- [Toggle Case Converter](https://flipmycase.com/toggle-case-converter): Convert text to toggle case (alternating caps) for sPoNgEbOb mocking text and alternating uppercase/lowercase.
-- [Snake vs Kebab Converter](https://flipmycase.com/snake-kebab-converter): Convert between snake_case and kebab-case. Side-by-side comparison with naming convention guidance.
-- [Underscore Guide](https://flipmycase.com/underscore-conventions): Guide to underscore conventions in programming — _private, __dunder, snake_case, and trailing underscores.
-- [All Caps Guide](https://flipmycase.com/all-caps-guide): When ALL CAPS is rude vs necessary — guide to uppercase usage in emails, social media, coding, and professional communication.
-- [Text Sorter](https://flipmycase.com/text-sorter): Sort text lines alphabetically, numerically, by length, or shuffle randomly. Remove duplicates and customize sorting options.
-- [Text Reverser](https://flipmycase.com/text-reverser): Reverse text by characters (backwards), words, lines, or mirror text. Preserve spacing and punctuation.
-- [SpongeBob Case Converter](https://flipmycase.com/spongebob-case-converter): Convert text to SpongeBob case (random-looking alternating uppercase/lowercase) for meme text and ironic posts.
+- [Toggle Case Converter](https://flipmycase.com/toggle-case-converter): Convert text to alternating caps (tOgGlE cAsE) for mocking memes and alternating uppercase/lowercase.
+- [SpongeBob Case Converter](https://flipmycase.com/spongebob-case-converter): Convert text to sPoNgEbOb mocking case for memes and social media.
+- [Snake vs Kebab Converter](https://flipmycase.com/snake-kebab-converter): Convert between snake_case and kebab-case with side-by-side comparison.
+- [Text Sorter](https://flipmycase.com/text-sorter): Sort text lines alphabetically, numerically, by length, or shuffle randomly.
+- [Text Reverser](https://flipmycase.com/text-reverser): Reverse text by characters, words, lines, or mirror text.
+- [Duplicate Line Remover](https://flipmycase.com/duplicate-line-remover): Remove duplicate lines from lists with case-insensitive matching and sorting.
+- [Text Repeater](https://flipmycase.com/text-repeater): Repeat any text up to 1000 times with custom separators.
+- [Plain Text Converter](https://flipmycase.com/plain-text-converter): Strip formatting, remove HTML tags, convert smart quotes and dashes to plain text.
+- [Add Line Numbers](https://flipmycase.com/add-line-numbers): Add or remove line numbers from text with custom start numbers and separators.
+- [Find & Replace](https://flipmycase.com/find-and-replace): Find and replace text with regex support, case matching, and whole word options.
+- [Add Prefix/Suffix](https://flipmycase.com/add-prefix-suffix): Add prefix or suffix to every line of text.
+- [Remove Line Breaks](https://flipmycase.com/remove-line-breaks): Remove line breaks and join lines with spaces, commas, or custom separators.
+- [Remove Empty Lines](https://flipmycase.com/remove-empty-lines): Remove blank and empty lines from text.
+- [Extract Emails](https://flipmycase.com/extract-emails): Extract all email addresses from any text block.
+- [Extract URLs](https://flipmycase.com/extract-urls): Extract all URLs from any text block with deduplication and domain breakdown.
+- [Remove HTML Tags](https://flipmycase.com/remove-html-tags): Strip HTML and XML tags from text, keep specific tags, decode entities.
+- [Text to List](https://flipmycase.com/text-to-list): Convert paragraphs to bullet points, numbered lists, HTML or Markdown lists.
+- [List to Text](https://flipmycase.com/list-to-text): Convert bulleted or numbered lists to flowing text.
+- [Smart Quotes Converter](https://flipmycase.com/smart-quotes-converter): Convert curly quotes to straight or straight to typographic quotes.
+
+### Font Styles
+- [Bold Text Generator](https://flipmycase.com/bold-text-generator): Generate bold Unicode text you can copy and paste anywhere.
+- [Italic Text Generator](https://flipmycase.com/italic-text-generator): Generate italic Unicode text you can copy and paste anywhere.
+- [Bold Italic Text Generator](https://flipmycase.com/bold-italic-text-generator): Generate bold italic Unicode text you can copy and paste.
+- [Strikethrough Text Generator](https://flipmycase.com/strikethrough-text-generator): Generate strikethrough Unicode text you can copy and paste.
+- [Underline Text Generator](https://flipmycase.com/underline-text-generator): Generate underlined Unicode text you can copy and paste.
+- [Superscript Generator](https://flipmycase.com/superscript-generator): Generate superscript Unicode text you can copy and paste.
+- [Subscript Generator](https://flipmycase.com/subscript-generator): Generate subscript Unicode text with numbers and available letters.
+- [Small Caps Generator](https://flipmycase.com/small-caps-generator): Generate small caps Unicode text you can copy and paste.
+- [Upside Down Text Generator](https://flipmycase.com/upside-down-text-generator): Generate upside down text you can copy and paste.
+- [Fancy Text Generator](https://flipmycase.com/fancy-text-generator): Generate 12+ Unicode text styles including bold, italic, bubble, upside down, and more.
+- [Bubble Text Generator](https://flipmycase.com/bubble-text-generator): Generate bubble/circled Unicode text you can copy and paste.
+- [Wide Text Generator](https://flipmycase.com/wide-text-generator): Generate fullwidth vaporwave text you can copy and paste.
+
+### Developer & Code Tools
+- [JSON Formatter](https://flipmycase.com/json-formatter): Format, validate, beautify, and minify JSON with tree view and error detection.
+- [Regex Tester](https://flipmycase.com/regex-tester): Test regular expressions with real-time highlighting, capture groups, and replace mode.
+- [Hash Generator](https://flipmycase.com/hash-generator): Generate MD5, SHA-1, SHA-256, SHA-512 hashes from text or files.
+- [Slug Generator](https://flipmycase.com/slug-generator): Convert any title into a clean, SEO-friendly URL slug.
+- [YAML Formatter](https://flipmycase.com/yaml-formatter): Format, validate, and convert YAML with JSON bidirectional conversion.
+- [XML Formatter](https://flipmycase.com/xml-formatter): Format, beautify, and minify XML with error detection.
+- [CSV to JSON](https://flipmycase.com/csv-to-json): Convert CSV to JSON and JSON to CSV with auto-detect delimiters.
+- [Markdown Preview](https://flipmycase.com/markdown-preview): Write Markdown and see a live rendered preview with HTML export.
+- [SQL Formatter](https://flipmycase.com/sql-formatter): Format SQL with uppercase keywords, proper indentation, and minification.
+- [HTML to Markdown](https://flipmycase.com/html-to-markdown): Convert HTML to Markdown and Markdown to HTML bidirectionally.
+- [Cron Expression Builder](https://flipmycase.com/cron-expression-builder): Build cron expressions visually with presets and next execution times.
+- [JWT Decoder](https://flipmycase.com/jwt-decoder): Decode JWT tokens to see header and payload with expiration status.
+- [CSS Formatter](https://flipmycase.com/css-formatter): Format, beautify, and minify CSS with indent and comment options.
+- [HTML Formatter](https://flipmycase.com/html-formatter): Format, beautify, and minify HTML with customizable indentation.
+- [JavaScript Formatter](https://flipmycase.com/javascript-formatter): Format, beautify, and minify JavaScript with indent options.
+
+### Analysis & Counting
+- [Word Counter](https://flipmycase.com/word-counter): Count words, characters, sentences, paragraphs, and reading time with keyword density.
+- [Text Diff](https://flipmycase.com/text-diff): Compare two texts side by side with highlighted additions and deletions.
+- [Word Frequency Counter](https://flipmycase.com/word-frequency-counter): Count word frequency, analyze bigrams and trigrams, generate word clouds.
+- [AI Writing Analyzer](https://flipmycase.com/ai-writing-analyzer): Analyze statistical writing patterns including sentence uniformity and vocabulary diversity.
+- [Readability Analyzer](https://flipmycase.com/readability-analyzer): Check readability with Flesch-Kincaid, Gunning Fog, SMOG, and more.
+- [Text Statistics](https://flipmycase.com/text-statistics): Analyze text with word frequency, vocabulary richness, lexical density, and more.
+- [Line Counter](https://flipmycase.com/line-counter): Count total lines, empty lines, and non-empty lines with length stats.
+
+### Encoding & Conversion
+- [String Encoder](https://flipmycase.com/string-encoder): Encode and decode Base64, URL, HTML entities, hex, and binary strings.
+- [Number Base Converter](https://flipmycase.com/number-base-converter): Convert between binary, octal, decimal, and hexadecimal.
+- [Color Code Converter](https://flipmycase.com/color-code-converter): Convert between HEX, RGB, HSL, and CMYK color codes with WCAG contrast checker.
+- [Morse Code Translator](https://flipmycase.com/morse-code-translator): Translate text to Morse code and back with audio playback.
+- [ROT13 Cipher](https://flipmycase.com/rot13-encoder-decoder): Encode and decode ROT13, ROT5, ROT47, and custom Caesar ciphers.
+- [Binary Text Converter](https://flipmycase.com/binary-text-converter): Convert text to binary and binary to text with per-character breakdown.
+- [Hex Text Converter](https://flipmycase.com/hex-text-converter): Convert text to hexadecimal and hex to text with per-character breakdown.
+- [NATO Phonetic Alphabet](https://flipmycase.com/nato-phonetic-alphabet): Convert text to NATO phonetic alphabet with full reference table.
+- [Pig Latin Converter](https://flipmycase.com/pig-latin-converter): Convert English to Pig Latin and back, preserving punctuation.
+
+### Generators
+- [Password Generator](https://flipmycase.com/password-generator): Generate strong random passwords with custom length and character sets.
+- [Lorem Ipsum Generator](https://flipmycase.com/lorem-ipsum-generator): Generate placeholder text in 5 styles including Lorem Ipsum, Hipster, and Pirate.
+- [Unix Timestamp Converter](https://flipmycase.com/unix-timestamp-converter): Convert Unix timestamps to human dates and dates to timestamps.
+- [UUID Generator](https://flipmycase.com/uuid-generator): Generate random UUID v4 identifiers with bulk mode.
+- [Random Number Generator](https://flipmycase.com/random-number-generator): Generate random numbers with custom ranges, bulk mode, and dice roller.
+- [Roman Numeral Converter](https://flipmycase.com/roman-numeral-converter): Convert numbers to Roman numerals and back with date mode.
+- [QR Code Generator](https://flipmycase.com/qr-code-generator): Generate QR codes for URLs, text, email, phone, and WiFi.
+- [Emoji Picker](https://flipmycase.com/emoji-picker): Search and copy emojis by name or category with code points.
+- [Unicode Lookup](https://flipmycase.com/unicode-lookup): Search and copy Unicode characters by name or category.
+
+### Guides
+- [Underscore Guide](https://flipmycase.com/underscore-conventions): Guide to underscore conventions in programming — _private, __dunder, snake_case.
+- [All Caps Guide](https://flipmycase.com/all-caps-guide): When ALL CAPS is rude vs necessary in emails, social media, and code.
 
 ## Blog
 
-Guides and articles about text formatting, naming conventions, and developer tools are available at https://flipmycase.com/blog.
+Guides and articles about text formatting, naming conventions, and developer tools: https://flipmycase.com/blog
 
-## Contact
+## About
 
-https://flipmycase.com/contact
+- [All Tools](https://flipmycase.com/tools)
+- [Contact](https://flipmycase.com/contact)
+- [Privacy Policy](https://flipmycase.com/privacy)

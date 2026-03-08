@@ -78,6 +78,7 @@ export default function MorseCodeTranslatorPage() {
         name="Free Morse Code Translator"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -99,6 +100,7 @@ export default function MorseCodeTranslatorPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Morse Code Translator
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Translate text to Morse code and decode Morse code back to text. Listen to your
           message with audio playback, adjust speed, and explore the full reference chart.

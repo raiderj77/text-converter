@@ -73,6 +73,7 @@ export default function UnderlineTextGeneratorPage() {
         name="Free Underline Text Generator"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -86,6 +87,7 @@ export default function UnderlineTextGeneratorPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Underline Text Generator — Copy & Paste
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Generate underlined Unicode text (T̲e̲x̲t̲) you can copy and paste anywhere — social media,
           messaging apps, bios, and more. Free, no signup, works entirely in your browser.

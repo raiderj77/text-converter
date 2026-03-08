@@ -80,6 +80,7 @@ export default function UnderscoreConventionsPage() {
         name="Underscore Conventions Guide"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -93,6 +94,7 @@ export default function UnderscoreConventionsPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Why Programmers Use Underscores in Variable Names
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Complete guide to underscore conventions in programming: _private variables, __dunder methods,
           snake_case naming, trailing underscores, and language-specific patterns. Learn when and why

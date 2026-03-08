@@ -79,6 +79,7 @@ export default function StringEncoderPage() {
         name="Free String Encoder & Decoder"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -92,6 +93,7 @@ export default function StringEncoderPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free String Encoder &amp; Decoder
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Encode and decode strings instantly. Supports Base64, URL encoding, HTML entities,
           Unicode escape, hexadecimal, and binary. Switch between encode and decode with one

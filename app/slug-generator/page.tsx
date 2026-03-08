@@ -31,12 +31,13 @@ const faqItems = [
 export default function SlugGeneratorPage() {
   return (
     <>
-      <WebAppSchema name="Free URL Slug Generator" description={tool.description} url={pageUrl} />
+      <WebAppSchema name="Free URL Slug Generator" description={tool.description} url={pageUrl} dateModified="2026-03-07" />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "Slug Generator", href: "/slug-generator" }]} />
 
       <div className="mx-auto max-w-6xl px-4 py-6">
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">Free URL Slug Generator</h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">Convert any title or text into a clean, SEO-friendly URL slug instantly. Handles accents, special characters, and multiple formats. No signup, works entirely in your browser.</p>
 
         <div className="mt-6"><SlugGeneratorTool /></div>

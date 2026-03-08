@@ -76,6 +76,7 @@ export default function CssFormatterPage() {
         name="Free CSS Formatter & Minifier"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -97,6 +98,7 @@ export default function CssFormatterPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free CSS Formatter &amp; Minifier
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Format, beautify, and minify CSS online. Choose your indent style, preserve
           or remove comments, and get clean output instantly. Free, no signup, works

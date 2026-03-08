@@ -77,6 +77,7 @@ export default function UuidGeneratorPage() {
         name="Free UUID Generator"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -98,6 +99,7 @@ export default function UuidGeneratorPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free UUID/GUID Generator
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Generate random UUID v4 identifiers instantly. Bulk generate up to 100 at once
           with options for uppercase, lowercase, and with or without hyphens. Free, no

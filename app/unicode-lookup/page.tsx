@@ -73,6 +73,7 @@ export default function UnicodeLookupPage() {
         name="Free Unicode Character Lookup"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -94,6 +95,7 @@ export default function UnicodeLookupPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Unicode Character Lookup
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Search and copy Unicode characters by name or category. See code points,
           HTML entities, and CSS content values. Click any character to copy it.

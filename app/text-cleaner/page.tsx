@@ -79,6 +79,7 @@ export default function TextCleanerPage() {
         name="Free Text Cleaner"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -92,6 +93,7 @@ export default function TextCleanerPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Text Cleaner
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Clean up messy text in one click. Remove extra spaces, blank lines, tabs, trailing
           whitespace, smart quotes, and invisible characters. Free, no signup, works entirely

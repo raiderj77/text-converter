@@ -78,6 +78,7 @@ export default function NumberBaseConverterPage() {
         name="Free Number Base Converter"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -99,6 +100,7 @@ export default function NumberBaseConverterPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Number Base Converter
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Convert between binary, octal, decimal, and hexadecimal instantly. Switch to
           ASCII text mode to see each character&apos;s code in all four bases. Free, no signup,

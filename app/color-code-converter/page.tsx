@@ -73,6 +73,7 @@ export default function ColorCodeConverterPage() {
         name="Free Color Code Converter"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -94,6 +95,7 @@ export default function ColorCodeConverterPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Color Code Converter
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Convert between HEX, RGB, HSL, and CMYK color formats instantly. Use the built-in
           color picker, live swatch preview, and WCAG contrast checker. Free, no signup,

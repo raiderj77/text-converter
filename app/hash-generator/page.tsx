@@ -101,6 +101,7 @@ export default function HashGeneratorPage() {
         name="Free Hash Generator — MD5, SHA-1, SHA-256, SHA-512 Online"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -114,6 +115,7 @@ export default function HashGeneratorPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Hash Generator — MD5, SHA-1, SHA-256, SHA-512 Online
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Generate MD5, SHA-1, SHA-256, SHA-384, and SHA-512 hashes from text or files
           instantly. All five algorithms run simultaneously — see every hash at once.

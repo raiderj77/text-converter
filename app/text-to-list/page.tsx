@@ -71,6 +71,7 @@ export default function TextToListPage() {
         name="Text to List Converter — Free Online Tool"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -84,6 +85,7 @@ export default function TextToListPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Text to List Converter — Free Online Tool
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Convert paragraphs into bullet points, numbered lists, HTML lists, or
           Markdown lists. Split by line, sentence, comma, or custom delimiter.

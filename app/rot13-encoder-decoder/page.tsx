@@ -77,6 +77,7 @@ export default function Rot13EncoderDecoderPage() {
         name="Free ROT13 Encoder Decoder"
         description={tool.description}
         url={pageUrl}
+        dateModified="2026-03-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -98,6 +99,7 @@ export default function Rot13EncoderDecoderPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free ROT13 Encoder &amp; Decoder
         </h1>
+        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="mt-2 text-sm text-neutral-400">
           Encode and decode text using ROT13, ROT5, ROT47, or a custom Caesar cipher with
           any rotation from 1 to 25. Free, no signup, runs entirely in your browser.
