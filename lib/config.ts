@@ -589,6 +589,15 @@ export const tools: Tool[] = [
     emoji: "⚡",
     live: true,
   },
+  { slug: "remove-line-breaks", name: "Remove Lines", shortName: "Rm Lines", title: "Remove Line Breaks — Join Lines Online Free", description: "Remove line breaks and join lines with spaces, commas or custom separators. Preserve paragraph breaks option. Free — no signup.", emoji: "↩️", live: true },
+  { slug: "remove-empty-lines", name: "Remove Empty Lines", shortName: "Rm Empty", title: "Remove Empty Lines — Clean Text Online Free", description: "Remove blank and empty lines from text. Option to strip whitespace-only lines too. Free online tool — no signup required.", emoji: "🧹", live: true },
+  { slug: "extract-emails", name: "Extract Emails", shortName: "Emails", title: "Extract Email Addresses from Text — Free Tool", description: "Extract all email addresses from any text. Deduplicate, sort & copy as list. Free online email extractor — no signup required.", emoji: "📧", live: true },
+  { slug: "extract-urls", name: "Extract URLs", shortName: "URLs", title: "Extract URLs from Text — Free Online Tool", description: "Extract all URLs from any text block. Deduplicate, domain breakdown & copy as list. Free online URL extractor — no signup.", emoji: "🔗", live: true },
+  { slug: "remove-html-tags", name: "Remove HTML", shortName: "Rm HTML", title: "Remove HTML Tags — Strip Tags Online Free", description: "Strip HTML and XML tags from text. Keep specific tags, decode entities. Free online HTML tag remover — no signup required.", emoji: "🏷️", live: true },
+  { slug: "text-to-list", name: "Text to List", shortName: "To List", title: "Text to List Converter — Free Online Tool", description: "Convert paragraphs to bullet points, numbered lists, HTML or Markdown lists. Free online text to list converter — no signup.", emoji: "📋", live: true },
+  { slug: "list-to-text", name: "List to Text", shortName: "To Text", title: "List to Text Converter — Remove Bullets Free", description: "Convert bulleted or numbered lists to flowing text. Auto-strips bullets, numbers & dashes. Free online tool — no signup required.", emoji: "📝", live: true },
+  { slug: "roman-numeral-converter", name: "Roman Numerals", shortName: "Roman", title: "Roman Numeral Converter — Free Online Tool", description: "Convert numbers to Roman numerals and back. Date mode, reference table. Free online Roman numeral converter — no signup.", emoji: "🏛️", live: true },
+  { slug: "qr-code-generator", name: "QR Code", shortName: "QR Code", title: "QR Code Generator — Create QR Codes Free", description: "Generate QR codes for URLs, text, email, phone & WiFi. Download as PNG. Free online QR code generator — no signup required.", emoji: "📱", live: true },
 ];
 
 /** Get only tools that are live (shown in nav) */
