@@ -511,6 +511,50 @@ export const tools: Tool[] = [
     emoji: "Ｗ",
     live: true,
   },
+  {
+    slug: "color-code-converter",
+    name: "Color Converter",
+    shortName: "Color",
+    title: "Color Code Converter — HEX RGB HSL Free",
+    description:
+      "Convert between HEX, RGB, HSL & CMYK color codes. Contrast checker with WCAG pass/fail. Free online color converter — no signup.",
+    emoji: "🎨",
+    live: true,
+  },
+  {
+    slug: "random-number-generator",
+    name: "Random Number",
+    shortName: "Random",
+    title: "Random Number Generator — Dice Roller Free",
+    description:
+      "Generate random numbers with custom ranges. Bulk mode, no duplicates & dice roller. Free online random number generator — no signup.",
+    emoji: "🎲",
+    live: true,
+  },
+  { slug: "morse-code-translator", name: "Morse Code", shortName: "Morse", title: "Morse Code Translator — Encode & Decode Free", description: "Translate text to Morse code and back. Audio playback, speed control & reference chart. Free online Morse code translator — no signup.", emoji: "📡", live: true },
+  { slug: "rot13-encoder-decoder", name: "ROT13 Cipher", shortName: "ROT13", title: "ROT13 Encoder Decoder — Caesar Cipher Free", description: "Encode and decode ROT13, ROT5, ROT47 & custom Caesar ciphers. Free online cipher tool — no signup required.", emoji: "🔓", live: true },
+  {
+    slug: "binary-text-converter",
+    name: "Binary Text",
+    shortName: "Binary",
+    title: "Binary Text Converter — Text to Binary Free",
+    description:
+      "Convert text to binary and binary to text. Per-character breakdown table. Free online binary converter — no signup required.",
+    emoji: "0️⃣",
+    live: true,
+  },
+  {
+    slug: "hex-text-converter",
+    name: "Hex Text",
+    shortName: "Hex",
+    title: "Hex Text Converter — Text to Hex Free",
+    description:
+      "Convert text to hexadecimal and hex to text. Per-character breakdown table. Free online hex converter — no signup required.",
+    emoji: "🔣",
+    live: true,
+  },
+  { slug: "nato-phonetic-alphabet", name: "NATO Phonetic", shortName: "NATO", title: "NATO Phonetic Alphabet Converter — Free Tool", description: "Convert text to NATO phonetic alphabet (Alpha, Bravo, Charlie). Full reference table included. Free — no signup required.", emoji: "🎖️", live: true },
+  { slug: "pig-latin-converter", name: "Pig Latin", shortName: "Pig Latin", title: "Pig Latin Translator — Convert Text Free", description: "Convert English to Pig Latin and back. Preserves punctuation & capitalization. Free online Pig Latin translator — no signup.", emoji: "🐷", live: true },
 ];
 
 /** Get only tools that are live (shown in nav) */
