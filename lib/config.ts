@@ -281,6 +281,16 @@ export const tools: Tool[] = [
     emoji: "🔢",
     live: true,
   },
+  {
+    slug: "markdown-preview",
+    name: "Markdown Preview",
+    shortName: "Markdown",
+    title: "Markdown Preview — Live Editor Online Free",
+    description:
+      "Write Markdown and see a live rendered preview. Copy HTML or download as .html. Supports tables, code blocks, lists & more. Free — no signup required.",
+    emoji: "📖",
+    live: true,
+  },
 ];
 
 /** Get only tools that are live (shown in nav) */
