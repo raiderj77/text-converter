@@ -291,6 +291,16 @@ export const tools: Tool[] = [
     emoji: "📖",
     live: true,
   },
+  {
+    slug: "ai-writing-analyzer",
+    name: "AI Writing Analyzer",
+    shortName: "AI Analyzer",
+    title: "AI Writing Pattern Analyzer — Free Online Tool",
+    description:
+      "Analyze statistical writing patterns in any text. Check sentence uniformity, vocabulary diversity & filler phrases. Free, private, browser-only.",
+    emoji: "🤖",
+    live: true,
+  },
 ];
 
 /** Get only tools that are live (shown in nav) */
