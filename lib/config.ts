@@ -555,6 +555,40 @@ export const tools: Tool[] = [
   },
   { slug: "nato-phonetic-alphabet", name: "NATO Phonetic", shortName: "NATO", title: "NATO Phonetic Alphabet Converter — Free Tool", description: "Convert text to NATO phonetic alphabet (Alpha, Bravo, Charlie). Full reference table included. Free — no signup required.", emoji: "🎖️", live: true },
   { slug: "pig-latin-converter", name: "Pig Latin", shortName: "Pig Latin", title: "Pig Latin Translator — Convert Text Free", description: "Convert English to Pig Latin and back. Preserves punctuation & capitalization. Free online Pig Latin translator — no signup.", emoji: "🐷", live: true },
+  { slug: "sql-formatter", name: "SQL Formatter", shortName: "SQL", title: "SQL Formatter & Beautifier — Free Online", description: "Format SQL with uppercase keywords, proper indentation & minification. Free online SQL formatter — no signup required.", emoji: "🗄️", live: true },
+  { slug: "html-to-markdown", name: "HTML↔Markdown", shortName: "HTML/MD", title: "HTML to Markdown Converter — Free Online", description: "Convert HTML to Markdown and Markdown to HTML. Handles headings, lists, links, code & tables. Free online converter — no signup.", emoji: "📝", live: true },
+  { slug: "cron-expression-builder", name: "Cron Builder", shortName: "Cron", title: "Cron Expression Builder — Generator Free", description: "Build cron expressions visually with presets, natural language descriptions & next execution times. Free online cron generator — no signup.", emoji: "⏰", live: true },
+  { slug: "jwt-decoder", name: "JWT Decoder", shortName: "JWT", title: "JWT Decoder — Decode JWT Tokens Free", description: "Decode JWT tokens to see header and payload. Expiration status, issued time & algorithm. Free online JWT decoder — no signup.", emoji: "🔑", live: true },
+  {
+    slug: "css-formatter",
+    name: "CSS Formatter",
+    shortName: "CSS",
+    title: "CSS Formatter & Minifier — Beautify Free",
+    description:
+      "Format, beautify & minify CSS online. Choose indent style, preserve or remove comments. Free online CSS formatter — no signup.",
+    emoji: "🎨",
+    live: true,
+  },
+  {
+    slug: "html-formatter",
+    name: "HTML Formatter",
+    shortName: "HTML",
+    title: "HTML Formatter & Beautifier — Free Online",
+    description:
+      "Format, beautify & minify HTML online. Proper indentation with customizable spacing. Free online HTML formatter — no signup.",
+    emoji: "🌐",
+    live: true,
+  },
+  {
+    slug: "javascript-formatter",
+    name: "JS Formatter",
+    shortName: "JS",
+    title: "JavaScript Formatter & Minifier — Free Online",
+    description:
+      "Format, beautify & minify JavaScript online. Basic code formatting with indent options. Free online JS formatter — no signup.",
+    emoji: "⚡",
+    live: true,
+  },
 ];
 
 /** Get only tools that are live (shown in nav) */
