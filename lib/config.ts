@@ -301,6 +301,16 @@ export const tools: Tool[] = [
     emoji: "🤖",
     live: true,
   },
+  {
+    slug: "readability-analyzer",
+    name: "Readability Analyzer",
+    shortName: "Readability",
+    title: "Readability Score Analyzer — Free Online Tool",
+    description:
+      "Check readability with Flesch-Kincaid, Gunning Fog, SMOG, Coleman-Liau, ARI & Dale-Chall. Instant grade level & sentence analysis. Free — no signup.",
+    emoji: "📚",
+    live: true,
+  },
 ];
 
 /** Get only tools that are live (shown in nav) */
