@@ -391,6 +391,126 @@ export const tools: Tool[] = [
     emoji: "➕",
     live: true,
   },
+  {
+    slug: "bold-text-generator",
+    name: "Bold Text",
+    shortName: "Bold",
+    title: "Bold Text Generator — Copy & Paste Free",
+    description:
+      "Generate bold Unicode text (𝗕𝗼𝗹𝗱) you can copy and paste anywhere. Works on social media, bios & more. Free — no signup required.",
+    emoji: "𝗕",
+    live: true,
+  },
+  {
+    slug: "bold-italic-text-generator",
+    name: "Bold Italic",
+    shortName: "Bold Italic",
+    title: "Bold Italic Text Generator — Copy & Paste Free",
+    description:
+      "Generate bold italic Unicode text (𝘽𝙤𝙡𝙙 𝙄𝙩𝙖𝙡𝙞𝙘) you can copy and paste. Works on social media & bios. Free — no signup required.",
+    emoji: "𝘽",
+    live: true,
+  },
+  {
+    slug: "italic-text-generator",
+    name: "Italic Text",
+    shortName: "Italic",
+    title: "Italic Text Generator — Copy & Paste Free",
+    description:
+      "Generate italic Unicode text (𝘐𝘵𝘢𝘭𝘪𝘤) you can copy and paste anywhere. Works on social media & bios. Free — no signup required.",
+    emoji: "𝘐",
+    live: true,
+  },
+  {
+    slug: "superscript-generator",
+    name: "Superscript",
+    shortName: "Super",
+    title: "Superscript Text Generator — Copy & Paste Free",
+    description:
+      "Generate superscript Unicode text (ˢᵘᵖᵉʳˢᶜʳⁱᵖᵗ) you can copy and paste. Free online superscript generator — no signup required.",
+    emoji: "ˢ",
+    live: true,
+  },
+  {
+    slug: "strikethrough-text-generator",
+    name: "Strikethrough",
+    shortName: "Strike",
+    title: "Strikethrough Text Generator — Copy & Paste Free",
+    description:
+      "Generate strikethrough Unicode text (T̶e̶x̶t̶) you can copy and paste anywhere. Free online strikethrough generator — no signup required.",
+    emoji: "T̶",
+    live: true,
+  },
+  {
+    slug: "underline-text-generator",
+    name: "Underline Text",
+    shortName: "Underline",
+    title: "Underline Text Generator — Copy & Paste Free",
+    description:
+      "Generate underlined Unicode text (T̲e̲x̲t̲) you can copy and paste anywhere. Free online underline text generator — no signup required.",
+    emoji: "T̲",
+    live: true,
+  },
+  {
+    slug: "upside-down-text-generator",
+    name: "Upside Down",
+    shortName: "Upside Down",
+    title: "Upside Down Text Generator — Copy & Paste Free",
+    description:
+      "Generate upside down text (ʇxǝʇ uʍop ǝpᴉsdn) you can copy and paste. Free online upside down text generator — no signup required.",
+    emoji: "🙃",
+    live: true,
+  },
+  {
+    slug: "small-caps-generator",
+    name: "Small Caps",
+    shortName: "Small Caps",
+    title: "Small Caps Generator — Copy & Paste Free",
+    description:
+      "Generate small caps Unicode text (Sᴍᴀʟʟ Cᴀᴘꜱ) you can copy and paste anywhere. Free online small caps generator — no signup required.",
+    emoji: "ꜱᴄ",
+    live: true,
+  },
+  {
+    slug: "subscript-generator",
+    name: "Subscript",
+    shortName: "Sub",
+    title: "Subscript Text Generator — Copy & Paste Free",
+    description:
+      "Generate subscript Unicode text with numbers and available letters. Free online subscript generator — no signup required.",
+    emoji: "₂",
+    live: true,
+  },
+  {
+    slug: "fancy-text-generator",
+    name: "Fancy Text",
+    shortName: "Fancy",
+    title: "Fancy Text Generator — Cool Fonts Copy & Paste",
+    description:
+      "Generate 12+ Unicode text styles instantly. Bold, italic, bubble, upside down & more. Copy and paste anywhere. Free — no signup required.",
+    emoji: "✨",
+    live: true,
+  },
+  {
+    slug: "bubble-text-generator",
+    name: "Bubble Text",
+    shortName: "Bubble",
+    title: "Bubble Text Generator — Copy & Paste Free",
+    description:
+      "Generate bubble/circled Unicode text (Ⓑⓤⓑⓑⓛⓔ) you can copy and paste. Free online bubble text generator — no signup required.",
+    emoji: "Ⓑ",
+    live: true,
+  },
+  {
+    slug: "wide-text-generator",
+    name: "Wide Text",
+    shortName: "Wide",
+    title: "Wide Text Generator — Vaporwave Aesthetic Free",
+    description:
+      "Generate fullwidth vaporwave text (Ｗｉｄｅ　Ｔｅｘｔ) you can copy and paste. Free aesthetic text generator — no signup required.",
+    emoji: "Ｗ",
+    live: true,
+  },
 ];
 
 /** Get only tools that are live (shown in nav) */
