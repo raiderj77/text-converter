@@ -1,0 +1,16 @@
+name: IndexNow Submit
+on:
+  push:
+    branches: [main]
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Submit sitemap URLs to IndexNow
+        run: |
+          URLS=$(curl -s https://flipmycase.com/sitemap.xml | grep -oP '(?<=<loc>)[^<]+')
+          JSON=$(echo "$URLS" | jq -R -s -c 'split("\n") | map(select(length > 0))')
+          curl -X POST https://flipmycase.com/api/indexnow \
+            -H "Content-Type: application/json" \
+            -d "{\"urls\":$JSON}"
