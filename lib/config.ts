@@ -67,7 +67,7 @@ export const tools: Tool[] = [
     shortName: "Lorem",
     title: "Free Lorem Ipsum Generator — Placeholder Text Online",
     description:
-      "Generate Lorem Ipsum placeholder text by paragraphs, sentences, or words. Great for mockups & templates. Free — no signup required.",
+      "Generate placeholder text in 5 styles: Lorem Ipsum, Hipster, Office, Pirate & Cat Ipsum. Free online placeholder text generator — no signup required.",
     emoji: "📝",
     live: true,
   },
@@ -598,6 +598,9 @@ export const tools: Tool[] = [
   { slug: "list-to-text", name: "List to Text", shortName: "To Text", title: "List to Text Converter — Remove Bullets Free", description: "Convert bulleted or numbered lists to flowing text. Auto-strips bullets, numbers & dashes. Free online tool — no signup required.", emoji: "📝", live: true },
   { slug: "roman-numeral-converter", name: "Roman Numerals", shortName: "Roman", title: "Roman Numeral Converter — Free Online Tool", description: "Convert numbers to Roman numerals and back. Date mode, reference table. Free online Roman numeral converter — no signup.", emoji: "🏛️", live: true },
   { slug: "qr-code-generator", name: "QR Code", shortName: "QR Code", title: "QR Code Generator — Create QR Codes Free", description: "Generate QR codes for URLs, text, email, phone & WiFi. Download as PNG. Free online QR code generator — no signup required.", emoji: "📱", live: true },
+  { slug: "emoji-picker", name: "Emoji Picker", shortName: "Emoji", title: "Emoji Picker — Copy & Paste Emojis Free", description: "Search and copy emojis by name or category. Code points & shortcodes shown. Free online emoji picker — no signup required.", emoji: "😀", live: true },
+  { slug: "smart-quotes-converter", name: "Smart Quotes", shortName: "Quotes", title: "Smart Quotes Converter — Curly to Straight Free", description: "Convert curly quotes to straight or straight to typographic quotes. Em dash conversion included. Free — no signup required.", emoji: "❝", live: true },
+  { slug: "unicode-lookup", name: "Unicode Lookup", shortName: "Unicode", title: "Unicode Character Lookup — Symbol Finder Free", description: "Search and copy Unicode characters by name or category. Code points, HTML entities & CSS values. Free — no signup required.", emoji: "🔍", live: true },
 ];
 
 /** Get only tools that are live (shown in nav) */
