@@ -222,6 +222,16 @@ export const tools: Tool[] = [
     live: true,
   },
   {
+    slug: "yaml-formatter",
+    name: "YAML Formatter",
+    shortName: "YAML",
+    title: "Free YAML Formatter & Validator — YAML to JSON Online",
+    description:
+      "Format, validate & convert YAML online. YAML to JSON and JSON to YAML conversion included. Free online tool — no signup required.",
+    emoji: "📝",
+    live: true,
+  },
+  {
     slug: "xml-formatter",
     name: "XML Formatter",
     shortName: "XML",
