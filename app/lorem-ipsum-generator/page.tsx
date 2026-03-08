@@ -19,6 +19,8 @@ export const metadata: Metadata = {
     "lorem ipsum paragraphs", "lorem ipsum words", "lorem ipsum sentences",
     "placeholder text for design", "lipsum generator", "random text generator",
     "lorem ipsum for web design", "dummy text for mockups", "sample text generator",
+    "hipster ipsum", "office ipsum", "pirate ipsum", "cat ipsum",
+    "funny placeholder text", "alternative lorem ipsum",
   ],
   openGraph: {
     title: tool.title,
@@ -35,6 +37,11 @@ const faqItems = [
       "Lorem Ipsum is placeholder text used in design and publishing since the 1500s. It resembles Latin but is intentionally scrambled so it does not distract from the visual layout. Designers use it to fill space in mockups, prototypes, and templates before real content is ready.",
   },
   {
+    question: "What content styles are available?",
+    answer:
+      "This generator offers 5 styles: Classic Lorem Ipsum (traditional Latin-like text), Hipster Ipsum (artisan, craft beer, avocado toast vocabulary), Office Ipsum (corporate buzzwords like synergy, leverage, and pivot), Pirate Ipsum (nautical slang and seafaring terms), and Cat Ipsum (cat behaviors, sounds, and feline antics). Each style generates unique placeholder text with its own word pool.",
+  },
+  {
     question: "Why use Lorem Ipsum instead of real text?",
     answer:
       "Real text draws attention to the content itself rather than the design. Lorem Ipsum lets designers, clients, and developers evaluate layout, typography, and spacing without being distracted by readable words. It also avoids the bias of using draft content that might be mistaken for final copy.",
@@ -42,22 +49,27 @@ const faqItems = [
   {
     question: "Can I generate a specific number of words?",
     answer:
-      "Yes. Switch the mode to 'words' and set the exact number you need. The generator supports up to 500 words in a single generation. You can also generate by paragraphs (up to 20) or sentences (up to 50).",
+      "Yes. Switch the mode to 'words' and set the exact number you need. The generator supports up to 500 words in a single generation. You can also generate by paragraphs (up to 20) or sentences (up to 50). All 5 content styles support all three modes.",
+  },
+  {
+    question: "When should I use a fun style instead of classic Lorem Ipsum?",
+    answer:
+      "Fun styles like Hipster, Office, Pirate, and Cat Ipsum are great for internal mockups, team presentations, or when you want to add humor to design reviews. Classic Lorem Ipsum is best for client-facing deliverables where neutral placeholder text is preferred.",
   },
   {
     question: "Is this real Latin?",
     answer:
-      "No. Lorem Ipsum is derived from a passage by Cicero written in 45 BC, but the text has been altered and scrambled over centuries. The words resemble Latin but many are not actual Latin words. The purpose is visual similarity, not linguistic accuracy.",
+      "No. Classic Lorem Ipsum is derived from a passage by Cicero written in 45 BC, but the text has been altered and scrambled over centuries. The words resemble Latin but many are not actual Latin words. The other styles (Hipster, Office, Pirate, Cat) use English words themed to their style.",
   },
   {
     question: "Does the classic opening always start the same way?",
     answer:
-      "When the 'Start with classic Lorem ipsum' option is enabled, the text always begins with 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' This is the traditional opening used since the 1960s. You can disable this option for fully randomized text.",
+      "Each style has its own signature opener. Classic starts with 'Lorem ipsum dolor sit amet,' while Hipster, Office, Pirate, and Cat each have a themed opening line. You can disable the opener checkbox for fully randomized text in any style.",
   },
   {
     question: "Can I use this generated text commercially?",
     answer:
-      "Yes. Lorem Ipsum is in the public domain and has no copyright restrictions. You can use the generated placeholder text in any project, commercial or personal, without attribution.",
+      "Yes. All generated placeholder text is free to use in any project, commercial or personal, without attribution. The text is randomly assembled from word pools and has no copyright restrictions.",
   },
   {
     question: "How many words are in a typical paragraph?",
@@ -92,9 +104,10 @@ export default function LoremIpsumPage() {
           Free Lorem Ipsum Generator
         </h1>
         <p className="mt-2 text-sm text-neutral-400">
-          Generate customizable Lorem Ipsum placeholder text by paragraphs, sentences, or
-          words. Perfect for designers, developers, and content creators. Free, no signup,
-          works entirely in your browser.
+          Generate placeholder text in 5 unique styles: Classic Lorem Ipsum, Hipster Ipsum,
+          Office Ipsum, Pirate Ipsum, and Cat Ipsum. Choose paragraphs, sentences, or words.
+          Perfect for designers, developers, and content creators. Free, no signup, works
+          entirely in your browser.
         </p>
 
         <div className="mt-3">
@@ -115,23 +128,28 @@ export default function LoremIpsumPage() {
           </h2>
           <div className="mt-3 text-sm text-neutral-400 space-y-2">
             <p>
-              <strong className="text-neutral-200">1. Choose your mode.</strong> Generate by
+              <strong className="text-neutral-200">1. Pick a content style.</strong> Choose from
+              Classic Lorem Ipsum, Hipster, Office, Pirate, or Cat Ipsum. Each style has its
+              own themed word pool and signature opener.
+            </p>
+            <p>
+              <strong className="text-neutral-200">2. Choose your mode.</strong> Generate by
               paragraphs, sentences, or exact word count. Paragraphs are best for filling page
               layouts. Sentences work for headlines and short blocks. Word count gives you
               precise control.
             </p>
             <p>
-              <strong className="text-neutral-200">2. Set the amount.</strong> Use the slider
+              <strong className="text-neutral-200">3. Set the amount.</strong> Use the slider
               or type a number. Generate up to 20 paragraphs, 50 sentences, or 500 words at a
               time.
             </p>
             <p>
-              <strong className="text-neutral-200">3. Click Regenerate</strong> to get a new
+              <strong className="text-neutral-200">4. Click Regenerate</strong> to get a new
               random variation. Each generation produces different text while maintaining the
-              Lorem Ipsum style.
+              selected style.
             </p>
             <p>
-              <strong className="text-neutral-200">4. Copy with one click.</strong> The
+              <strong className="text-neutral-200">5. Copy with one click.</strong> The
               generated text is ready to paste into Figma, Sketch, Adobe XD, HTML, WordPress,
               or any other tool.
             </p>

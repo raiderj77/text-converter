@@ -5,67 +5,184 @@ import { cx, formatNumber } from "@/lib/utils";
 import { useTheme } from "@/components/layout/theme-provider";
 
 /**
- * Standard Lorem Ipsum corpus broken into words.
- * We generate text by randomly assembling from this pool,
- * starting with the classic "Lorem ipsum dolor sit amet..." opener.
+ * Content style definitions.
+ * Each style has a word pool and an optional classic opener.
  */
-const LOREM_WORDS = [
-  "lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit",
-  "sed", "do", "eiusmod", "tempor", "incididunt", "ut", "labore", "et", "dolore",
-  "magna", "aliqua", "enim", "ad", "minim", "veniam", "quis", "nostrud",
-  "exercitation", "ullamco", "laboris", "nisi", "aliquip", "ex", "ea", "commodo",
-  "consequat", "duis", "aute", "irure", "in", "reprehenderit", "voluptate",
-  "velit", "esse", "cillum", "fugiat", "nulla", "pariatur", "excepteur", "sint",
-  "occaecat", "cupidatat", "non", "proident", "sunt", "culpa", "qui", "officia",
-  "deserunt", "mollit", "anim", "id", "est", "laborum", "ac", "accumsan",
-  "aliquet", "ante", "arcu", "at", "auctor", "augue", "bibendum", "blandit",
-  "condimentum", "congue", "consequat", "cras", "curabitur", "cursus",
-  "dapibus", "diam", "dictum", "dignissim", "donec", "efficitur", "egestas",
-  "elementum", "eleifend", "eros", "etiam", "eu", "euismod", "facilisi",
-  "faucibus", "felis", "fermentum", "finibus", "fringilla", "fusce",
-  "gravida", "habitant", "hendrerit", "iaculis", "imperdiet", "integer",
-  "interdum", "justo", "lacinia", "lacus", "laoreet", "lectus", "leo",
-  "libero", "ligula", "lobortis", "luctus", "maecenas", "massa", "mattis",
-  "mauris", "maximus", "metus", "mi", "morbi", "nam", "nec", "neque",
-  "nibh", "nunc", "odio", "orci", "ornare", "pellentesque", "pharetra",
-  "placerat", "porta", "posuere", "potenti", "praesent", "pretium", "proin",
-  "pulvinar", "purus", "quam", "quisque", "rhoncus", "risus", "rutrum",
-  "sagittis", "sapien", "scelerisque", "semper", "senectus", "sodales",
-  "sollicitudin", "suscipit", "suspendisse", "tellus", "tincidunt", "tortor",
-  "tristique", "turpis", "ultrices", "ultricies", "urna", "varius",
-  "vehicula", "vel", "vestibulum", "vitae", "vivamus", "viverra", "volutpat",
-  "vulputate",
+type ContentStyle = {
+  id: string;
+  label: string;
+  words: string[];
+  opener: string;
+};
+
+const STYLES: ContentStyle[] = [
+  {
+    id: "lorem",
+    label: "Classic Lorem",
+    opener: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    words: [
+      "lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit",
+      "sed", "do", "eiusmod", "tempor", "incididunt", "ut", "labore", "et", "dolore",
+      "magna", "aliqua", "enim", "ad", "minim", "veniam", "quis", "nostrud",
+      "exercitation", "ullamco", "laboris", "nisi", "aliquip", "ex", "ea", "commodo",
+      "consequat", "duis", "aute", "irure", "in", "reprehenderit", "voluptate",
+      "velit", "esse", "cillum", "fugiat", "nulla", "pariatur", "excepteur", "sint",
+      "occaecat", "cupidatat", "non", "proident", "sunt", "culpa", "qui", "officia",
+      "deserunt", "mollit", "anim", "id", "est", "laborum", "ac", "accumsan",
+      "aliquet", "ante", "arcu", "at", "auctor", "augue", "bibendum", "blandit",
+      "condimentum", "congue", "consequat", "cras", "curabitur", "cursus",
+      "dapibus", "diam", "dictum", "dignissim", "donec", "efficitur", "egestas",
+      "elementum", "eleifend", "eros", "etiam", "eu", "euismod", "facilisi",
+      "faucibus", "felis", "fermentum", "finibus", "fringilla", "fusce",
+      "gravida", "habitant", "hendrerit", "iaculis", "imperdiet", "integer",
+      "interdum", "justo", "lacinia", "lacus", "laoreet", "lectus", "leo",
+      "libero", "ligula", "lobortis", "luctus", "maecenas", "massa", "mattis",
+      "mauris", "maximus", "metus", "mi", "morbi", "nam", "nec", "neque",
+      "nibh", "nunc", "odio", "orci", "ornare", "pellentesque", "pharetra",
+      "placerat", "porta", "posuere", "potenti", "praesent", "pretium", "proin",
+      "pulvinar", "purus", "quam", "quisque", "rhoncus", "risus", "rutrum",
+      "sagittis", "sapien", "scelerisque", "semper", "senectus", "sodales",
+      "sollicitudin", "suscipit", "suspendisse", "tellus", "tincidunt", "tortor",
+      "tristique", "turpis", "ultrices", "ultricies", "urna", "varius",
+      "vehicula", "vel", "vestibulum", "vitae", "vivamus", "viverra", "volutpat",
+      "vulputate",
+    ],
+  },
+  {
+    id: "hipster",
+    label: "Hipster",
+    opener: "Craft beer artisan pour-over, sustainable single-origin coffee aesthetic.",
+    words: [
+      "artisan", "craft", "beer", "pour-over", "sustainable", "single-origin", "coffee",
+      "aesthetic", "vinyl", "fixie", "kombucha", "avocado", "toast", "brunch",
+      "organic", "farm-to-table", "cold-pressed", "juice", "matcha", "latte",
+      "sourdough", "fermented", "kimchi", "sriracha", "umami", "truffle",
+      "micro-batch", "small-batch", "handcrafted", "bespoke", "curated", "vintage",
+      "retro", "thrift", "upcycled", "reclaimed", "edison", "bulb", "exposed",
+      "brick", "minimalist", "industrial", "loft", "coworking", "nomad",
+      "bushwick", "williamsburg", "shoreditch", "portland", "brooklyn",
+      "typewriter", "polaroid", "letterpress", "screenprint", "zine",
+      "taxidermy", "terrarium", "succulent", "macrame", "wabi-sabi",
+      "hygge", "kinfolk", "slow-living", "mindful", "intentional",
+      "ethically-sourced", "fair-trade", "locally-grown", "pasture-raised",
+      "gluten-free", "plant-based", "adaptogenic", "probiotic", "superfood",
+      "acai", "goji", "turmeric", "oat-milk", "almond-butter",
+      "flannel", "beanie", "raw-denim", "selvage", "heritage",
+      "gastropub", "speakeasy", "mixology", "bitters", "infused",
+      "charcuterie", "artisanal", "foraged", "heirloom", "seasonal",
+      "beard", "mustache", "man-bun", "tattooed", "pierced",
+      "conscious", "authentic", "narrative", "storytelling", "curation",
+      "vegan", "cruelty-free", "biodegradable", "compostable", "zero-waste",
+    ],
+  },
+  {
+    id: "office",
+    label: "Office",
+    opener: "Let's circle back on the synergy deliverables and leverage our core competencies.",
+    words: [
+      "synergy", "leverage", "pivot", "disrupt", "scalable", "bandwidth", "paradigm",
+      "stakeholder", "deliverables", "action-items", "circle-back", "deep-dive",
+      "low-hanging-fruit", "move-the-needle", "drill-down", "take-offline",
+      "core-competency", "best-practice", "value-add", "touch-base",
+      "alignment", "optics", "cadence", "runway", "north-star",
+      "ecosystem", "pipeline", "vertical", "horizontal", "cross-functional",
+      "boil-the-ocean", "bleeding-edge", "thought-leader", "game-changer",
+      "proactive", "holistic", "robust", "granular", "agile",
+      "sprint", "standup", "retro", "backlog", "velocity",
+      "KPI", "OKR", "ROI", "SLA", "EOD",
+      "ping", "loop-in", "sync", "async", "slack",
+      "deck", "one-pager", "whiteboard", "brainstorm", "ideate",
+      "unpack", "double-click", "peel-back", "net-net", "bottom-line",
+      "tiger-team", "war-room", "all-hands", "town-hall", "skip-level",
+      "empower", "champion", "evangelize", "socialize", "operationalize",
+      "optimize", "streamline", "onboard", "ramp-up", "offboard",
+      "buy-in", "pushback", "blockers", "headwinds", "tailwinds",
+      "guardrails", "table-stakes", "secret-sauce", "special-sauce", "wheelhouse",
+      "capacity", "bandwidth", "throughput", "bottleneck", "workaround",
+      "right-size", "future-proof", "sunset", "deprecate", "greenfield",
+      "silo", "swim-lane", "parking-lot", "boilerplate", "template",
+    ],
+  },
+  {
+    id: "pirate",
+    label: "Pirate",
+    opener: "Ahoy matey, hoist the sails and set course for the seven seas, ye scallywag!",
+    words: [
+      "ahoy", "matey", "avast", "ye", "scallywag", "buccaneer", "corsair",
+      "plunder", "pillage", "booty", "treasure", "doubloons", "pieces-of-eight",
+      "galleon", "brigantine", "frigate", "sloop", "schooner", "vessel",
+      "anchor", "bow", "stern", "port", "starboard", "mast", "rigging",
+      "sail", "jib", "mainsail", "crow's-nest", "quarterdeck", "gangplank",
+      "plank", "barnacle", "bilge", "brig", "fo'c'sle", "hull", "keel",
+      "cannon", "cutlass", "musket", "flintlock", "broadside", "cannonball",
+      "jolly-roger", "skull-and-crossbones", "black-flag", "colors", "ensign",
+      "captain", "first-mate", "bosun", "helmsman", "swashbuckler",
+      "privateer", "freebooter", "sea-dog", "landlubber", "scurvy",
+      "grog", "rum", "tankard", "galley", "hardtack", "weevils",
+      "kraken", "siren", "mermaid", "leviathan", "davy-jones",
+      "maroon", "keelhaul", "walk-the-plank", "mutiny", "parley",
+      "shiver-me-timbers", "yo-ho-ho", "arrr", "blimey", "aye-aye",
+      "compass", "sextant", "spyglass", "chart", "horizon",
+      "island", "cove", "lagoon", "reef", "whirlpool",
+      "typhoon", "squall", "tempest", "doldrums", "trade-winds",
+      "loot", "bounty", "ransom", "swag", "haul",
+      "harbor", "port", "dock", "pier", "jetty",
+    ],
+  },
+  {
+    id: "cat",
+    label: "Cat",
+    opener: "Meow purr purr knock things off the table, then nap in a sunbeam all afternoon.",
+    words: [
+      "meow", "purr", "hiss", "chirp", "trill", "yowl", "mrow", "mew",
+      "nap", "sleep", "snooze", "doze", "loaf", "stretch", "yawn", "curl-up",
+      "pounce", "stalk", "hunt", "swat", "bat", "chase", "ambush", "attack",
+      "sunbeam", "windowsill", "cardboard-box", "paper-bag", "laundry-basket",
+      "keyboard", "laptop", "warm-spot", "radiator", "blanket-fort",
+      "scratch", "knead", "biscuits", "claw", "sharpen", "shred",
+      "catnip", "treats", "kibble", "wet-food", "tuna", "salmon", "chicken",
+      "whiskers", "toe-beans", "belly", "floof", "tail", "ears", "nose-boop",
+      "litter-box", "hairball", "groom", "lick", "bathe", "flick",
+      "zoomies", "midnight-zoomies", "sprint", "dash", "parkour", "leap",
+      "knock-over", "push-off-table", "ignore", "judge", "stare", "glare",
+      "headbutt", "rub", "nuzzle", "cuddle", "snuggle", "purrito",
+      "laser-pointer", "feather-toy", "string", "crinkle-ball", "mouse-toy",
+      "cattitude", "sass", "diva", "demanding", "regal", "majestic",
+      "tabby", "calico", "tuxedo", "siamese", "persian", "sphinx",
+      "kitten", "kitty", "fluffball", "furbaby", "chonk", "smol",
+      "sit-on-face", "3am-concert", "bread-loaf", "sploot", "blep",
+      "zoom", "scatter", "tumble", "wrestle", "hide", "disappear",
+    ],
+  },
 ];
 
-const CLASSIC_OPENER = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
-
-function randomWord(): string {
-  return LOREM_WORDS[Math.floor(Math.random() * LOREM_WORDS.length)];
+function randomWordFromPool(words: string[]): string {
+  return words[Math.floor(Math.random() * words.length)];
 }
 
 function capitalize(s: string): string {
   return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
-function generateSentence(minWords: number = 6, maxWords: number = 16): string {
+function generateSentence(words: string[], minWords: number = 6, maxWords: number = 16): string {
   const len = minWords + Math.floor(Math.random() * (maxWords - minWords + 1));
-  const words: string[] = [];
+  const result: string[] = [];
   for (let i = 0; i < len; i++) {
-    words.push(randomWord());
+    result.push(randomWordFromPool(words));
   }
   // Add a comma somewhere in longer sentences
   if (len > 8) {
     const commaPos = 3 + Math.floor(Math.random() * (len - 6));
-    words[commaPos] = words[commaPos] + ",";
+    result[commaPos] = result[commaPos] + ",";
   }
-  return capitalize(words.join(" ")) + ".";
+  return capitalize(result.join(" ")) + ".";
 }
 
-function generateParagraph(minSentences: number = 4, maxSentences: number = 8): string {
+function generateParagraph(words: string[], minSentences: number = 4, maxSentences: number = 8): string {
   const len = minSentences + Math.floor(Math.random() * (maxSentences - minSentences + 1));
   const sentences: string[] = [];
   for (let i = 0; i < len; i++) {
-    sentences.push(generateSentence());
+    sentences.push(generateSentence(words));
   }
   return sentences.join(" ");
 }
@@ -73,66 +190,71 @@ function generateParagraph(minSentences: number = 4, maxSentences: number = 8): 
 type GenMode = "paragraphs" | "sentences" | "words";
 
 function generateText(
+  style: ContentStyle,
   mode: GenMode,
   count: number,
-  startWithLorem: boolean
+  startWithOpener: boolean
 ): string {
   if (count <= 0) return "";
 
+  const { words, opener } = style;
+
   if (mode === "words") {
-    const words: string[] = [];
+    const result: string[] = [];
     for (let i = 0; i < count; i++) {
-      words.push(randomWord());
+      result.push(randomWordFromPool(words));
     }
-    let result = words.join(" ");
-    if (startWithLorem) {
-      // Replace first few words with the classic opener words
-      const openerWords = ["lorem", "ipsum", "dolor", "sit", "amet"];
+    let text = result.join(" ");
+    if (startWithOpener) {
+      const openerWords = opener.replace(/[.,!?]/g, "").toLowerCase().split(/\s+/);
       const replaceCount = Math.min(openerWords.length, count);
-      const resultWords = result.split(" ");
+      const textWords = text.split(" ");
       for (let i = 0; i < replaceCount; i++) {
-        resultWords[i] = openerWords[i];
+        textWords[i] = openerWords[i];
       }
-      result = resultWords.join(" ");
+      text = textWords.join(" ");
     }
-    return capitalize(result) + ".";
+    return capitalize(text) + ".";
   }
 
   if (mode === "sentences") {
     const sentences: string[] = [];
     for (let i = 0; i < count; i++) {
-      sentences.push(generateSentence());
+      sentences.push(generateSentence(words));
     }
-    let result = sentences.join(" ");
-    if (startWithLorem) {
-      result = CLASSIC_OPENER + " " + sentences.slice(1).join(" ");
+    let text = sentences.join(" ");
+    if (startWithOpener) {
+      text = opener + " " + sentences.slice(1).join(" ");
     }
-    return result;
+    return text;
   }
 
   // paragraphs
   const paragraphs: string[] = [];
   for (let i = 0; i < count; i++) {
-    paragraphs.push(generateParagraph());
+    paragraphs.push(generateParagraph(words));
   }
-  if (startWithLorem) {
-    paragraphs[0] = CLASSIC_OPENER + " " + paragraphs[0].split(". ").slice(1).join(". ");
+  if (startWithOpener) {
+    paragraphs[0] = opener + " " + paragraphs[0].split(". ").slice(1).join(". ");
   }
   return paragraphs.join("\n\n");
 }
 
 export function LoremIpsumTool() {
   const { isDark } = useTheme();
+  const [styleId, setStyleId] = useState("lorem");
   const [mode, setMode] = useState<GenMode>("paragraphs");
   const [count, setCount] = useState(5);
-  const [startWithLorem, setStartWithLorem] = useState(true);
+  const [startWithOpener, setStartWithOpener] = useState(true);
   const [toast, setToast] = useState("");
   const [seed, setSeed] = useState(0);
 
+  const activeStyle = STYLES.find((s) => s.id === styleId) || STYLES[0];
+
   const output = useMemo(
-    () => generateText(mode, count, startWithLorem),
+    () => generateText(activeStyle, mode, count, startWithOpener),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [mode, count, startWithLorem, seed]
+    [styleId, mode, count, startWithOpener, seed]
   );
 
   // Stats
@@ -171,6 +293,42 @@ export function LoremIpsumTool() {
           <div className="text-sm font-semibold">Generator Settings</div>
         </div>
         <div className="p-4 space-y-4">
+          {/* Style selector */}
+          <div>
+            <div
+              className={cx(
+                "text-xs uppercase tracking-wide mb-2",
+                isDark ? "text-neutral-400" : "text-neutral-500"
+              )}
+            >
+              Content Style
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {STYLES.map((s) => (
+                <button
+                  key={s.id}
+                  type="button"
+                  onClick={() => {
+                    setStyleId(s.id);
+                    setSeed((prev) => prev + 1);
+                  }}
+                  className={cx(
+                    "rounded-xl px-4 py-2 text-sm border transition-colors",
+                    styleId === s.id
+                      ? isDark
+                        ? "border-emerald-500/40 bg-emerald-500/10 font-semibold"
+                        : "border-emerald-500/40 bg-emerald-50 font-semibold"
+                      : isDark
+                        ? "border-white/10 hover:bg-white/5"
+                        : "border-black/10 hover:bg-black/5"
+                  )}
+                >
+                  {s.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
           {/* Mode selector */}
           <div>
             <div
@@ -247,21 +405,21 @@ export function LoremIpsumTool() {
             </div>
           </div>
 
-          {/* Start with Lorem */}
+          {/* Start with opener */}
           <div className="flex items-center gap-3">
             <button
               type="button"
-              onClick={() => setStartWithLorem(!startWithLorem)}
+              onClick={() => setStartWithOpener(!startWithOpener)}
               className={cx(
                 "w-5 h-5 rounded border flex items-center justify-center text-xs shrink-0",
-                startWithLorem
+                startWithOpener
                   ? "bg-emerald-500 border-emerald-500 text-white"
                   : isDark
                     ? "border-white/20"
                     : "border-black/20"
               )}
             >
-              {startWithLorem ? "✓" : ""}
+              {startWithOpener ? "\u2713" : ""}
             </button>
             <div
               className={cx(
@@ -269,7 +427,7 @@ export function LoremIpsumTool() {
                 isDark ? "text-neutral-200" : "text-neutral-700"
               )}
             >
-              Start with classic "Lorem ipsum dolor sit amet..."
+              Start with classic opener
             </div>
           </div>
 
@@ -361,7 +519,7 @@ export function LoremIpsumTool() {
           isDark ? "text-neutral-500" : "text-neutral-400"
         )}
       >
-        Ctrl/⌘ + L toggles theme
+        Ctrl/Cmd + L toggles theme
       </div>
 
       {/* Toast */}
