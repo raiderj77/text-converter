@@ -101,7 +101,7 @@ export default function NatoPhoneticAlphabetPage() {
           Free NATO Phonetic Alphabet Converter
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Convert any text to the NATO phonetic alphabet (Alpha, Bravo, Charlie...). Numbers
           supported. Full A-Z and 0-9 reference table included. Free, no signup, works in your browser.
         </p>
@@ -122,7 +122,7 @@ export default function NatoPhoneticAlphabetPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Use the NATO Phonetic Alphabet Converter
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Enter your text.</strong> Type or paste
               any text, word, name, or code into the input field. Letters and numbers are
@@ -150,7 +150,7 @@ export default function NatoPhoneticAlphabetPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             A Brief History of the NATO Phonetic Alphabet
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               The need for a standardized spelling alphabet arose in the early days of radio
               communication when static, noise, and accent differences made it difficult to
@@ -207,7 +207,7 @@ export default function NatoPhoneticAlphabetPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -218,7 +218,7 @@ export default function NatoPhoneticAlphabetPage() {
         {/* Related Tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Convert text to NATO phonetic alphabet here, then try our other text transformation tools.
           </p>
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">

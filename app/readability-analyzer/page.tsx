@@ -101,7 +101,7 @@ export default function ReadabilityAnalyzerPage() {
           Readability Score Analyzer — Free Online
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Check the readability of any text with 7 proven formulas: Flesch Reading
           Ease, Flesch-Kincaid, Gunning Fog, Coleman-Liau, SMOG, ARI, and
           Dale-Chall. See grade level, audience recommendations, and per-sentence
@@ -122,7 +122,7 @@ export default function ReadabilityAnalyzerPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Check Readability Online
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Paste your text.</strong> Copy at
               least 30 words into the input area. Longer texts (200+ words) produce
@@ -150,7 +150,7 @@ export default function ReadabilityAnalyzerPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Why Readability Matters
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               Readability determines whether your audience actually reads and
               understands your content. Studies consistently show that simpler
@@ -204,7 +204,7 @@ export default function ReadabilityAnalyzerPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -214,7 +214,7 @@ export default function ReadabilityAnalyzerPage() {
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Check readability here, then explore our other writing analysis tools.
           </p>
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">

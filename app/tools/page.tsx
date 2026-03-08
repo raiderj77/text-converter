@@ -75,7 +75,7 @@ export default function ToolsPage() {
           All Free Text Tools
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           {totalTools} free browser-based tools for developers and writers. No signup, no
           limits — everything runs in your browser.
         </p>
@@ -83,7 +83,7 @@ export default function ToolsPage() {
         {directoryGroups.map((group) => (
           <section key={group.label} className="mt-10">
             <h2 className="text-lg sm:text-xl font-semibold">{group.label}</h2>
-            <p className="mt-1 text-sm text-neutral-400">{group.description}</p>
+            <p className="mt-1 text-sm text-neutral-300">{group.description}</p>
             <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {group.tools.map((tool) => {
                 const href = tool.slug === "" ? "/" : `/${tool.slug}`;

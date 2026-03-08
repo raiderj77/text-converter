@@ -99,7 +99,7 @@ export default function HtmlFormatterPage() {
           Free HTML Formatter &amp; Beautifier
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Format, beautify, and minify HTML online with customizable indentation.
           Void elements like &lt;br&gt;, &lt;img&gt;, and &lt;input&gt; are handled
           correctly. Free, no signup, works entirely in your browser.
@@ -121,7 +121,7 @@ export default function HtmlFormatterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Format HTML Online
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Choose your mode.</strong> Click
               Format / Beautify to add proper indentation based on tag nesting, or
@@ -148,7 +148,7 @@ export default function HtmlFormatterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Why Clean HTML Formatting Matters
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               HTML is the structural backbone of every web page. Whether you are building
               a simple landing page or a complex web application, the quality of your HTML
@@ -201,7 +201,7 @@ export default function HtmlFormatterPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -212,7 +212,7 @@ export default function HtmlFormatterPage() {
         {/* Related Tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Format HTML here, then use our other formatters for CSS, JavaScript, JSON, and XML.
           </p>
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">

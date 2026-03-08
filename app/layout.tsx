@@ -1,5 +1,6 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { SITE_NAME, SITE_DESCRIPTION, SITE_URL, GA_ID } from "@/lib/config";
 import { ThemeProvider } from "@/components/layout/theme-provider";
 import { Nav } from "@/components/layout/nav";
@@ -38,11 +39,13 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: `${SITE_NAME} — Free Online Text Tools`,
     description: SITE_DESCRIPTION,
+    images: [{ url: `${SITE_URL}/opengraph-image`, width: 1200, height: 630, alt: `${SITE_NAME} — Free Online Text Tools` }],
   },
   twitter: {
     card: "summary_large_image",
     title: `${SITE_NAME} — Free Online Text Tools`,
     description: SITE_DESCRIPTION,
+    images: [`${SITE_URL}/twitter-image`],
   },
   robots: {
     index: true,
@@ -90,11 +93,13 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="FlipMyCase" />
 
-        {/* Google Analytics with Consent Mode v2 */}
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-        />
+        {/* Preconnect hints for third-party scripts */}
+        <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+
+        {/* Consent Mode v2 defaults — must run before GA loads */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -106,12 +111,6 @@ gtag('consent', 'default', {
   ad_user_data: 'denied',
   ad_personalization: 'denied',
   wait_for_update: 500
-});
-gtag('js', new Date());
-gtag('config', '${GA_ID}', {
-  anonymize_ip: true,
-  allow_google_signals: false,
-  allow_ad_personalization_signals: false
 });
             `.trim(),
           }}
@@ -130,23 +129,43 @@ if ('serviceWorker' in navigator) {
           }}
         />
 
-        {/* Google AdSense */}
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7171402107622932"
-          crossOrigin="anonymous"
-        />
-
         {/* Site-wide Organization schema */}
         <OrganizationSchema />
       </head>
       <body className="min-h-screen flex flex-col">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-white focus:text-black focus:rounded focus:shadow-lg focus:text-sm"
+        >
+          Skip to content
+        </a>
         <ThemeProvider>
           <Nav />
-          <main className="flex-1">{children}</main>
+          <main id="main-content" className="flex-1">{children}</main>
           <Footer />
           <CookieConsent />
         </ThemeProvider>
+
+        {/* Google Analytics — deferred to after interactive */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga-config" strategy="afterInteractive">
+          {`gtag('js', new Date());
+gtag('config', '${GA_ID}', {
+  anonymize_ip: true,
+  allow_google_signals: false,
+  allow_ad_personalization_signals: false
+});`}
+        </Script>
+
+        {/* Google AdSense — lazy loaded */}
+        <Script
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7171402107622932"
+          crossOrigin="anonymous"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );

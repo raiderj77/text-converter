@@ -102,7 +102,7 @@ export default function PigLatinConverterPage() {
           Free Pig Latin Translator
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Convert English text to Pig Latin and back. Consonant clusters, punctuation, and
           capitalization are all handled automatically. Free, no signup, works in your browser.
         </p>
@@ -123,7 +123,7 @@ export default function PigLatinConverterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Use the Pig Latin Translator
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Choose your direction.</strong> Select
               &quot;English to Pig Latin&quot; to convert normal text, or &quot;Pig Latin to English&quot; to
@@ -149,7 +149,7 @@ export default function PigLatinConverterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             The Fascinating History of Pig Latin
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               Pig Latin is one of the most enduring language games in English-speaking
               culture. The earliest known reference to a Pig Latin-like language game
@@ -207,7 +207,7 @@ export default function PigLatinConverterPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -218,7 +218,7 @@ export default function PigLatinConverterPage() {
         {/* Related Tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Translate text to Pig Latin here, then try our other fun text transformation tools.
           </p>
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">

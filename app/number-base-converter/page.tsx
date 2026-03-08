@@ -101,7 +101,7 @@ export default function NumberBaseConverterPage() {
           Free Number Base Converter
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Convert between binary, octal, decimal, and hexadecimal instantly. Switch to
           ASCII text mode to see each character&apos;s code in all four bases. Free, no signup,
           works entirely in your browser.
@@ -123,7 +123,7 @@ export default function NumberBaseConverterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Convert Number Bases Online
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Choose your mode.</strong> Use Number
               Mode to convert a single number between bases. Use ASCII Text Mode to see the
@@ -151,7 +151,7 @@ export default function NumberBaseConverterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Understanding Number Systems in Computing
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               Every number system uses a set of digits and a base (also called radix) that
               determines how values increase at each position. The decimal system you use
@@ -206,7 +206,7 @@ export default function NumberBaseConverterPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -217,7 +217,7 @@ export default function NumberBaseConverterPage() {
         {/* Related Tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Convert number bases here, then use our other developer tools for encoding,
             hashing, and formatting.
           </p>

@@ -101,7 +101,7 @@ export default function MorseCodeTranslatorPage() {
           Free Morse Code Translator
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Translate text to Morse code and decode Morse code back to text. Listen to your
           message with audio playback, adjust speed, and explore the full reference chart.
           Free, no signup, works entirely in your browser.
@@ -123,7 +123,7 @@ export default function MorseCodeTranslatorPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Use the Morse Code Translator
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Choose your direction.</strong> Click
               &quot;Text to Morse&quot; to encode a message, or &quot;Morse to Text&quot; to decode
@@ -151,7 +151,7 @@ export default function MorseCodeTranslatorPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             The History and Science of Morse Code
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               Morse code was developed in the 1830s and 1840s by Samuel Morse and Alfred Vail
               for use with the electric telegraph. It was one of the first systems to encode
@@ -211,7 +211,7 @@ export default function MorseCodeTranslatorPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -222,7 +222,7 @@ export default function MorseCodeTranslatorPage() {
         {/* Related Tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Translate Morse code here, then explore our other encoding and text conversion tools.
           </p>
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">

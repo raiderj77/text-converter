@@ -84,7 +84,7 @@ export default function SubscriptGeneratorPage() {
           Subscript Text Generator
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Convert regular text to Unicode subscript characters you can copy and paste anywhere.
           Perfect for chemical formulas, math notation, and stylistic text. Free, no signup.
         </p>
@@ -105,7 +105,7 @@ export default function SubscriptGeneratorPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Use the Subscript Generator
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Type or paste your text</strong> into the input
               box on the left. The subscript conversion happens live as you type — no submit button
@@ -133,7 +133,7 @@ export default function SubscriptGeneratorPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Understanding Unicode Subscript Characters
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">What makes subscript text special:</strong>{" "}
               Unlike HTML &lt;sub&gt; tags that only work in browsers, Unicode subscript characters are
@@ -231,7 +231,7 @@ export default function SubscriptGeneratorPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -240,7 +240,7 @@ export default function SubscriptGeneratorPage() {
         {/* Internal linking */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             FlipMyCase offers a suite of free browser-based text tools. Generate subscript text
             here, then explore more Unicode and text conversion tools.
           </p>

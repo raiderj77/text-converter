@@ -92,7 +92,7 @@ export default function AddLineNumbersPage() {
           Add Line Numbers to Text — Free Online
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Add or remove line numbers from any text instantly. Customize the starting number,
           separator style, and zero padding. Free, no signup, works entirely in your browser.
         </p>
@@ -113,7 +113,7 @@ export default function AddLineNumbersPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Add Line Numbers to Text Online
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Paste your text</strong> into the input
               area. The tool accepts any plain text: code snippets, legal documents, poetry,
@@ -142,7 +142,7 @@ export default function AddLineNumbersPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Why Add Line Numbers to Text?
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               Line numbers are essential for referencing specific parts of a document.
               Whether you are reviewing code, editing legal contracts, discussing poetry
@@ -198,7 +198,7 @@ export default function AddLineNumbersPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -209,7 +209,7 @@ export default function AddLineNumbersPage() {
         {/* Related Tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Add line numbers here, then use our other tools for additional text processing.
           </p>
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">

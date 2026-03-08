@@ -95,7 +95,7 @@ export default function UnderscoreConventionsPage() {
           Why Programmers Use Underscores in Variable Names
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Complete guide to underscore conventions in programming: _private variables, __dunder methods,
           snake_case naming, trailing underscores, and language-specific patterns. Learn when and why
           programmers use underscores with real code examples.
@@ -117,7 +117,7 @@ export default function UnderscoreConventionsPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             The 5 Types of Underscore Usage in Programming
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Single underscore prefix (`_variable`)</strong> —
               Conventionally indicates 'protected' or 'internal use only' variables. In Python, names
@@ -241,7 +241,7 @@ export default function UnderscoreConventionsPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Real-World Examples of Underscore Usage
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">Python class with all underscore types:</strong>
             </p>
@@ -289,7 +289,7 @@ class UserAccount {
           <h2 className="text-lg sm:text-xl font-semibold">
             Best Practices for Using Underscores
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">Follow the language's dominant convention.</strong>
               Python uses snake_case and `_private`. JavaScript uses camelCase and `#private`.
@@ -330,7 +330,7 @@ class UserAccount {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -341,7 +341,7 @@ class UserAccount {
         {/* Internal linking */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Learn about underscore conventions here, then use our other tools for text conversion,
             cleaning, and analysis.
           </p>

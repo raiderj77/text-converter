@@ -99,7 +99,7 @@ export default function CssFormatterPage() {
           Free CSS Formatter &amp; Minifier
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Format, beautify, and minify CSS online. Choose your indent style, preserve
           or remove comments, and get clean output instantly. Free, no signup, works
           entirely in your browser.
@@ -121,7 +121,7 @@ export default function CssFormatterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Format CSS Online
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Choose your mode.</strong> Click
               Format / Beautify to add proper indentation, or Minify to compress CSS
@@ -153,7 +153,7 @@ export default function CssFormatterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Why CSS Formatting Matters for Development
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               CSS formatting is one of those small practices that has an outsized impact
               on development speed. Well-formatted stylesheets are easier to scan, debug,
@@ -208,7 +208,7 @@ export default function CssFormatterPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -219,7 +219,7 @@ export default function CssFormatterPage() {
         {/* Related Tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Format CSS here, then use our other formatters for HTML, JavaScript, JSON, and more.
           </p>
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">

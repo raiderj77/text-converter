@@ -84,7 +84,7 @@ export default function WideTextGeneratorPage() {
           Wide Text Generator &mdash; Vaporwave Aesthetic
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Convert regular text to fullwidth vaporwave characters (&#65335;&#65353;&#65348;&#65349;{"\u3000"}&#65332;&#65349;&#65368;&#65364;) you can copy and paste anywhere.
           Free aesthetic text generator, no signup.
         </p>
@@ -105,7 +105,7 @@ export default function WideTextGeneratorPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Use the Wide Text Generator
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Type or paste your text</strong> into the input
               box on the left. The fullwidth conversion happens live as you type — no submit button
@@ -132,7 +132,7 @@ export default function WideTextGeneratorPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Understanding Fullwidth Unicode and Vaporwave Text
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">What is fullwidth text:</strong> Fullwidth
               characters occupy the same width as East Asian (CJK) characters — exactly twice the
@@ -237,7 +237,7 @@ export default function WideTextGeneratorPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -246,7 +246,7 @@ export default function WideTextGeneratorPage() {
         {/* Internal linking */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             FlipMyCase offers a suite of free browser-based text tools. Generate wide/vaporwave text
             here, then explore more Unicode and text styling tools.
           </p>

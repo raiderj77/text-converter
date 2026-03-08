@@ -100,7 +100,7 @@ export default function CsvToJsonPage() {
           Free CSV to JSON Converter
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Convert between CSV and JSON formats instantly. Auto-detects delimiters (comma,
           tab, semicolon, pipe), supports first row as headers, and offers pretty print or
           minified output. Bidirectional — works both ways. Free, no signup, processes
@@ -123,7 +123,7 @@ export default function CsvToJsonPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Convert CSV to JSON Online
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Choose your direction.</strong> Click
               CSV to JSON to convert spreadsheet data into JSON, or JSON to CSV to
@@ -152,7 +152,7 @@ export default function CsvToJsonPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             CSV and JSON: When to Use Each Format
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               CSV and JSON are two of the most common data exchange formats in software
               development, yet they serve different purposes and have distinct strengths.
@@ -208,7 +208,7 @@ export default function CsvToJsonPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -219,7 +219,7 @@ export default function CsvToJsonPage() {
         {/* Related Tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Convert data formats here, then use our other developer tools for formatting,
             encoding, and text manipulation.
           </p>

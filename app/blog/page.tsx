@@ -38,7 +38,7 @@ export default function BlogIndex() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Guides & Tutorials
         </h1>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Practical guides for every text tool. Learn when and how to use each
           with real-world examples, keyboard shortcuts, and best practices.
         </p>
@@ -56,7 +56,7 @@ export default function BlogIndex() {
                 className="rounded-2xl border border-white/10 bg-neutral-900 p-4 hover:bg-white/5 transition-colors"
               >
                 <div className="text-sm font-semibold">{p.title}</div>
-                <div className="mt-2 text-sm text-neutral-400">
+                <div className="mt-2 text-sm text-neutral-300">
                   {p.description}
                 </div>
                 <div className="mt-3 text-xs text-neutral-500">
@@ -82,7 +82,7 @@ export default function BlogIndex() {
                 className="rounded-2xl border border-white/10 bg-neutral-900 p-4 hover:bg-white/5 transition-colors"
               >
                 <div className="text-sm font-semibold">{p.title}</div>
-                <div className="mt-2 text-sm text-neutral-400">
+                <div className="mt-2 text-sm text-neutral-300">
                   {p.description}
                 </div>
               </Link>
@@ -95,7 +95,7 @@ export default function BlogIndex() {
         {/* Tools cross-links */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Free Text Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Read the guides, then use the tools. All free, no signup, runs in
             your browser.
           </p>

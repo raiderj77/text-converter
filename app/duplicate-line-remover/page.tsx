@@ -93,7 +93,7 @@ export default function DuplicateRemoverPage() {
           Free Duplicate Line Remover
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Remove duplicate lines from any list instantly. Paste your text, get unique lines
           with one click. Supports case-insensitive matching, sorting, and whitespace
           trimming. Free, no signup, works entirely in your browser.
@@ -115,7 +115,7 @@ export default function DuplicateRemoverPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Remove Duplicate Lines Online
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Paste your list</strong> into the input
               box above with one item per line. The tool works with any text: email addresses,
@@ -138,7 +138,7 @@ export default function DuplicateRemoverPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             When to Use a Duplicate Remover
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">Email lists:</strong> Clean up mailing
               lists by removing duplicate email addresses before importing into Mailchimp,
@@ -227,7 +227,7 @@ export default function DuplicateRemoverPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -238,7 +238,7 @@ export default function DuplicateRemoverPage() {
         {/* Internal linking */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Deduplicate your list here, then use our other tools to convert case, count
             words, clean up formatting, or generate placeholder text.
           </p>

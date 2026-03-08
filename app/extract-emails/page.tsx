@@ -92,7 +92,7 @@ export default function ExtractEmailsPage() {
           Extract Email Addresses from Text — Free Tool
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Extract all email addresses from any text instantly. Deduplicate, sort alphabetically,
           and copy as a newline or comma-separated list. Free, no signup, works in your browser.
         </p>
@@ -113,7 +113,7 @@ export default function ExtractEmailsPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Extract Emails from Text Online
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Paste your text</strong> into the input
               area. The tool accepts any text — emails, documents, web page content, CSV files,
@@ -141,7 +141,7 @@ export default function ExtractEmailsPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Why Extract Emails from Text?
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               Email addresses are scattered throughout documents, web pages, spreadsheets,
               and message threads. Manually picking them out is tedious and error-prone,
@@ -197,7 +197,7 @@ export default function ExtractEmailsPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -208,7 +208,7 @@ export default function ExtractEmailsPage() {
         {/* Related Tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Extract emails here, then use our other tools for additional text processing.
           </p>
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">

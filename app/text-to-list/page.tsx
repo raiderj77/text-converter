@@ -86,7 +86,7 @@ export default function TextToListPage() {
           Text to List Converter — Free Online Tool
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Convert paragraphs into bullet points, numbered lists, HTML lists, or
           Markdown lists. Split by line, sentence, comma, or custom delimiter.
           Free, no signup, 100% client-side.
@@ -107,7 +107,7 @@ export default function TextToListPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Use the Text to List Converter
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Paste your text.</strong> Drop
               your paragraph, data, or any text into the input box. It can be
@@ -136,7 +136,7 @@ export default function TextToListPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Why Convert Text to Lists?
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">Better readability:</strong>{" "}
               Dense paragraphs are harder to scan than structured lists. Research
@@ -202,7 +202,7 @@ export default function TextToListPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -213,7 +213,7 @@ export default function TextToListPage() {
         {/* Related Tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Convert text to lists here, then sort, clean, format, or number your
             content with our other free tools.
           </p>
@@ -240,7 +240,7 @@ export default function TextToListPage() {
         {/* All tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Convert text to lists here, then use our other free tools to convert,
             format, encode, or analyze your content.
           </p>

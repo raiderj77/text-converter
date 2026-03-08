@@ -100,7 +100,7 @@ export default function EmojiPickerPage() {
           Free Emoji Picker
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Search and copy emojis by name or category. See Unicode code points
           and shortcodes for every emoji. Click to copy. Free, no signup,
           works entirely in your browser.
@@ -122,7 +122,7 @@ export default function EmojiPickerPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Use the Emoji Picker
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Browse or search.</strong> Use
               the category tabs to browse emojis by group (Smileys, People, Animals,
@@ -151,7 +151,7 @@ export default function EmojiPickerPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How Emojis Work Under the Hood
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               Emojis are not images. They are Unicode characters, just like letters
               and numbers. When you type the letter &quot;A,&quot; your device looks up the
@@ -217,7 +217,7 @@ export default function EmojiPickerPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -228,7 +228,7 @@ export default function EmojiPickerPage() {
         {/* Related Tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Copy emojis here, then explore our other text and Unicode tools.
           </p>
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">

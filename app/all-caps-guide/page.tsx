@@ -95,7 +95,7 @@ export default function AllCapsGuidePage() {
           All Caps in Writing: When It's Rude vs Necessary
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Complete guide to uppercase usage in digital communication, professional writing,
           coding, and design. Learn when ALL CAPS is appropriate vs when it's considered shouting,
           with real-world examples and best practices.
@@ -117,7 +117,7 @@ export default function AllCapsGuidePage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             The Psychology of ALL CAPS: Why We Read It as Shouting
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">Visual dominance:</strong> Uppercase letters
               occupy more vertical space and have uniform height, making them visually dominant
@@ -295,7 +295,7 @@ export default function AllCapsGuidePage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Accessibility Considerations for ALL CAPS
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">Screen reader behavior:</strong> Some screen
               readers announce "capitals" before reading all caps text, while others may spell
@@ -335,7 +335,7 @@ export default function AllCapsGuidePage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -346,7 +346,7 @@ export default function AllCapsGuidePage() {
         {/* Internal linking */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Learn about all caps usage here, then use our other tools for text conversion,
             cleaning, and analysis.
           </p>

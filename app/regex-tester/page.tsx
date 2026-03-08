@@ -116,7 +116,7 @@ export default function RegexTesterPage() {
           Free Regex Tester — Match, Replace &amp; Debug Regular Expressions Online
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Test regular expressions with real-time match highlighting, capture group
           display, replace mode, and flag toggles. Built-in presets for emails, URLs,
           IPs, and more. Quick reference sidebar for instant syntax lookup. Uses
@@ -139,7 +139,7 @@ export default function RegexTesterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Everything You Need to Build &amp; Test Regex Patterns
           </h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             A complete regex development environment in your browser — no installs, no
             accounts, no distractions.
           </p>
@@ -165,7 +165,7 @@ export default function RegexTesterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Use the Regex Tester
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Enter your pattern.</strong> Type a regex
               in the pattern field. The delimiters / / are shown automatically — just type the
@@ -198,7 +198,7 @@ export default function RegexTesterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Common Regex Use Cases
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">Form validation:</strong> Test email, phone,
               URL, and date patterns before adding them to your form validation code. See edge
@@ -237,7 +237,7 @@ export default function RegexTesterPage() {
             {faqItems.map((faq) => (
               <div key={faq.question} className="rounded-xl border border-white/10 bg-neutral-900 p-4">
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -247,7 +247,7 @@ export default function RegexTesterPage() {
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Developer Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Test regex here, then encode strings, format JSON, compare text, generate
             passwords, and more with our other free tools.
           </p>

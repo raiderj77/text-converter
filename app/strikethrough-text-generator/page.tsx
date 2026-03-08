@@ -88,7 +88,7 @@ export default function StrikethroughTextGeneratorPage() {
           Strikethrough Text Generator — Copy & Paste
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Generate strikethrough Unicode text (T̶e̶x̶t̶) you can copy and paste anywhere — social
           media, messaging apps, changelogs, and more. Free, no signup, works entirely in your browser.
         </p>
@@ -109,7 +109,7 @@ export default function StrikethroughTextGeneratorPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Use the Strikethrough Text Generator
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Type or paste your text</strong> into the
               input box on the left. Enter any text you want to strike through — a single word, a
@@ -137,7 +137,7 @@ export default function StrikethroughTextGeneratorPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Why Use Strikethrough Text?
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">Show corrections transparently.</strong>{" "}
               Strikethrough text is the standard way to indicate deleted or corrected content.
@@ -239,7 +239,7 @@ export default function StrikethroughTextGeneratorPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -248,7 +248,7 @@ export default function StrikethroughTextGeneratorPage() {
         {/* Internal linking */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             FlipMyCase offers a suite of free browser-based text tools. Generate strikethrough text
             here, then explore other Unicode text effects and formatting tools.
           </p>

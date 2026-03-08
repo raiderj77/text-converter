@@ -55,7 +55,7 @@ export const tools: Tool[] = [
     slug: "word-counter",
     name: "Word Counter",
     shortName: "Words",
-    title: "Word Counter & Character Count — Free Online Tool | FlipMyCase",
+    title: "Word Counter & Character Count — Free Online Tool",
     description:
       "Count words, characters, sentences, paragraphs & reading time. Keyword density included. Free online word counter — no signup.",
     emoji: "📊",
@@ -143,7 +143,7 @@ export const tools: Tool[] = [
     slug: "regex-tester",
     name: "Regex Tester",
     shortName: "Regex",
-    title: "Regex Tester Online — Test Regular Expressions Free | FlipMyCase",
+    title: "Regex Tester Online — Test Regular Expressions Free",
     description:
       "Test regular expressions with real-time highlighting, capture groups & replace mode. Free online regex tool — no signup.",
     emoji: "⚙️",
@@ -154,7 +154,7 @@ export const tools: Tool[] = [
     slug: "hash-generator",
     name: "Hash Generator",
     shortName: "Hash",
-    title: "Hash Generator — MD5, SHA-256, SHA-512 Free Online | FlipMyCase",
+    title: "Hash Generator — MD5, SHA-256, SHA-512 Free Online",
     description:
       "Generate MD5, SHA-1, SHA-256 & SHA-512 hashes from text or files instantly. Free online tool — no signup required.",
     emoji: "#️⃣",

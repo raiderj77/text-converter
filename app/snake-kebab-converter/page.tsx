@@ -95,7 +95,7 @@ export default function SnakeKebabConverterPage() {
           Snake_case vs Kebab-case Converter: Naming Convention Tool
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Convert between snake_case and kebab-case instantly. Compare naming conventions side by side,
           view practical examples, and select the appropriate format for your code. Free tool,
           no signup required, works entirely in your browser.
@@ -117,7 +117,7 @@ export default function SnakeKebabConverterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Snake_case vs Kebab-case: Which Should You Use?
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">snake_case</strong> (with underscores) and{" "}
               <strong>kebab-case</strong> (with hyphens) are two of the most common separator-based
@@ -142,7 +142,7 @@ export default function SnakeKebabConverterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             When to Use Snake_case (Underscores)
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">Python programming:</strong> The official
               Python style guide (PEP 8) recommends snake_case for variable names, function names,
@@ -176,7 +176,7 @@ export default function SnakeKebabConverterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             When to Use Kebab-case (Hyphens)
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">URLs and URL slugs:</strong> Hyphens are
               URL-safe and recommended by Google for SEO. Example:{" "}
@@ -288,7 +288,7 @@ export default function SnakeKebabConverterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Best Practices for Choosing Naming Conventions
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Follow the language/framework conventions.</strong>
               When in Rome, do as the Romans do. If you're writing Python, use snake_case. If you're
@@ -329,7 +329,7 @@ export default function SnakeKebabConverterPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -340,7 +340,7 @@ export default function SnakeKebabConverterPage() {
         {/* Internal linking */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Convert between naming conventions here, then use our other tools for different
             case styles, text cleaning, or code formatting.
           </p>

@@ -96,7 +96,7 @@ export default function FancyTextGeneratorPage() {
           Fancy Text Generator — Cool Fonts Copy &amp; Paste
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Type your text once and instantly see it in 12+ Unicode styles. Bold, italic,
           bubble, upside down, monospace, and more. Copy any style and paste it anywhere.
           Free, no signup required.
@@ -118,7 +118,7 @@ export default function FancyTextGeneratorPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Use the Fancy Text Generator
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Type or paste your text</strong> into
               the input box at the top. The tool accepts any text including letters,
@@ -146,7 +146,7 @@ export default function FancyTextGeneratorPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Understanding Unicode Text Styles
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">What is Unicode text styling?</strong>{" "}
               Unicode is the universal character encoding standard that defines over
@@ -255,7 +255,7 @@ export default function FancyTextGeneratorPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -264,7 +264,7 @@ export default function FancyTextGeneratorPage() {
         {/* Internal linking */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             FlipMyCase offers a suite of free browser-based text tools. Generate fancy text
             here, then explore individual style tools and other text utilities.
           </p>

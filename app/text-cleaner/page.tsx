@@ -94,7 +94,7 @@ export default function TextCleanerPage() {
           Free Text Cleaner
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Clean up messy text in one click. Remove extra spaces, blank lines, tabs, trailing
           whitespace, smart quotes, and invisible characters. Free, no signup, works entirely
           in your browser.
@@ -116,7 +116,7 @@ export default function TextCleanerPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Clean Text Online
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Paste your messy text</strong> into the
               input box above. The tool accepts text of any length copied from PDFs, Word
@@ -189,7 +189,7 @@ export default function TextCleanerPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             When to Use a Text Cleaner
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">Copying from PDFs:</strong> PDF text
               extraction often introduces extra spaces between words, line breaks at column
@@ -239,7 +239,7 @@ export default function TextCleanerPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -250,7 +250,7 @@ export default function TextCleanerPage() {
         {/* Internal linking */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Clean your text here, then convert the case with our converter or check the word
             count. All tools are free and process text in your browser.
           </p>

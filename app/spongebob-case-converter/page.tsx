@@ -96,7 +96,7 @@ export default function SpongeBobCaseConverterPage() {
           SpongeBob Case Generator — Create Mocking sPoNgEbOb Text
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Generate authentic SpongeBob mocking text (sPoNgEbOb CaSe) for sarcastic posts, ironic comments, and viral memes.
           Our free converter creates that distinctive random-looking alternating case from the classic meme. No signup,
           works instantly. Also try our <Link href="/toggle-case-converter" className="text-blue-400 hover:text-blue-300">toggle case converter</Link> for more text styles.
@@ -118,7 +118,7 @@ export default function SpongeBobCaseConverterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             The Mocking SpongeBob Meme: A Brief History
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               The "Mocking SpongeBob" meme originated from a 2017 episode of <em>SpongeBob SquarePants</em> titled
               "Little Yellow Book." In the scene, SpongeBob mockingly repeats something Patrick says while making
@@ -141,7 +141,7 @@ export default function SpongeBobCaseConverterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Create SpongeBob Case Text
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Paste or type your text</strong> into the input box.
               Use the example buttons for classic SpongeBob meme phrases or try your own sarcastic remarks.
@@ -168,7 +168,7 @@ export default function SpongeBobCaseConverterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             When to Use SpongeBob Case
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">Memes and viral content:</strong> Create Mocking SpongeBob
               memes, sarcastic image captions, or ironic social media posts. SpongeBob case instantly signals
@@ -259,7 +259,7 @@ export default function SpongeBobCaseConverterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Tips for Using SpongeBob Case Effectively
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">Know the meme:</strong> SpongeBob case references a specific
               meme format. Use it when you want to convey sarcasm, mockery, or ironic praise. It may confuse
@@ -307,7 +307,7 @@ export default function SpongeBobCaseConverterPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -316,7 +316,7 @@ export default function SpongeBobCaseConverterPage() {
         {/* Internal linking */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             FlipMyCase offers a suite of free browser-based text tools. Create SpongeBob case text here, then use
             other tools for additional transformations.
           </p>

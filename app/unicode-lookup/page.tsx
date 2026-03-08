@@ -96,7 +96,7 @@ export default function UnicodeLookupPage() {
           Free Unicode Character Lookup
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Search and copy Unicode characters by name or category. See code points,
           HTML entities, and CSS content values. Click any character to copy it.
           Free, no signup, works entirely in your browser.
@@ -118,7 +118,7 @@ export default function UnicodeLookupPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Use Unicode Lookup
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Search or browse.</strong> Type a
               character name in the search box (e.g., &quot;check mark&quot;, &quot;arrow&quot;,
@@ -147,7 +147,7 @@ export default function UnicodeLookupPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             A Developer&#39;s Guide to Unicode Characters
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               Unicode is the backbone of modern text handling. Before Unicode, dozens of
               competing character encoding standards (ASCII, ISO-8859, Windows-1252, Shift-JIS)
@@ -209,7 +209,7 @@ export default function UnicodeLookupPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -220,7 +220,7 @@ export default function UnicodeLookupPage() {
         {/* Related Tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Look up Unicode characters here, then explore our other text tools.
           </p>
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">

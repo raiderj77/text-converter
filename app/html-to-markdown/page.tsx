@@ -100,7 +100,7 @@ export default function HtmlToMarkdownPage() {
           Free HTML to Markdown Converter
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Convert HTML to Markdown and Markdown to HTML with bidirectional tabs.
           Handles headings, bold, italic, links, images, lists, code blocks, tables,
           and blockquotes. Free, no signup, works entirely in your browser.
@@ -122,7 +122,7 @@ export default function HtmlToMarkdownPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Convert HTML and Markdown
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Choose your direction.</strong> Click
               HTML → Markdown to convert HTML source code into Markdown syntax, or
@@ -150,7 +150,7 @@ export default function HtmlToMarkdownPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Understanding HTML and Markdown Conversion
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               HTML and Markdown are two of the most common text markup formats on
               the web. HTML (HyperText Markup Language) is the foundation of every
@@ -211,7 +211,7 @@ export default function HtmlToMarkdownPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -222,7 +222,7 @@ export default function HtmlToMarkdownPage() {
         {/* Related Tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Convert HTML and Markdown here, then use our other tools for formatting and encoding.
           </p>
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">

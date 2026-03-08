@@ -35,6 +35,7 @@ export function Card({ label, value, onCopy }: CardProps) {
           )}
           onClick={onCopy}
           type="button"
+          aria-label={`Copy ${label} to clipboard`}
         >
           Copy
         </button>

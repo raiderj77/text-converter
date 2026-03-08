@@ -99,7 +99,7 @@ export default function XmlFormatterPage() {
           Free XML Formatter &amp; Validator
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Format, beautify, and minify XML online with instant validation. Choose between
           2 spaces, 4 spaces, or tabs for indentation. Errors are detected and displayed
           with details. Free, no signup, works entirely in your browser.
@@ -121,7 +121,7 @@ export default function XmlFormatterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Format XML Online
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Choose your mode.</strong> Click
               Format / Beautify to add proper indentation, or Minify to compress XML
@@ -149,7 +149,7 @@ export default function XmlFormatterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             XML Formatting and Validation in Development
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               XML (eXtensible Markup Language) has been a cornerstone of data exchange
               since its introduction by the W3C in 1998. While JSON has become the
@@ -203,7 +203,7 @@ export default function XmlFormatterPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -214,7 +214,7 @@ export default function XmlFormatterPage() {
         {/* Related Tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Format XML here, then use our other tools for JSON, CSV, and data encoding.
           </p>
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">

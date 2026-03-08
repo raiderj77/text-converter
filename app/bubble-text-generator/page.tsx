@@ -84,7 +84,7 @@ export default function BubbleTextGeneratorPage() {
           Bubble Text Generator
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Convert regular text to circled Unicode bubble letters (Ⓑⓤⓑⓑⓛⓔ) you can copy and paste
           anywhere. Toggle between empty and filled circle styles. Free, no signup.
         </p>
@@ -105,7 +105,7 @@ export default function BubbleTextGeneratorPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Use the Bubble Text Generator
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Choose your style</strong> — click Empty
               Circles for outlined bubble letters (Ⓐⓑⓒ) or Filled Circles for negative/filled
@@ -133,7 +133,7 @@ export default function BubbleTextGeneratorPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Understanding Bubble / Circled Unicode Text
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">How bubble text works:</strong> Bubble text
               uses the Unicode &quot;Enclosed Alphanumerics&quot; block (U+2460-U+24FF) which
@@ -234,7 +234,7 @@ export default function BubbleTextGeneratorPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -243,7 +243,7 @@ export default function BubbleTextGeneratorPage() {
         {/* Internal linking */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             FlipMyCase offers a suite of free browser-based text tools. Generate bubble text
             here, then explore more Unicode and text styling tools.
           </p>

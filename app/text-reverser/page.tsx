@@ -95,7 +95,7 @@ export default function TextReverserPage() {
           Free Text Reverser
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Reverse text in multiple ways: characters (backwards), words, lines, or mirror text. Preserve spacing,
           line breaks, and punctuation. Perfect for coding, puzzles, and creative writing. Free, no signup.
         </p>
@@ -116,7 +116,7 @@ export default function TextReverserPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Reverse Text Online
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Paste or type your text</strong> into the input box.
               Use the example buttons for quick demos or the palindrome examples for classic symmetrical text.
@@ -143,7 +143,7 @@ export default function TextReverserPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             When to Use a Text Reverser
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">Programming and development:</strong> Test string
               manipulation functions, debug reversal algorithms, or prepare test data. Reverse text to check
@@ -225,7 +225,7 @@ export default function TextReverserPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Fun with Reversed Text
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">Create secret messages:</strong> Write normal text, reverse
               it, and share with friends to decode. Add a clue like 'read backwards' for easy puzzles or leave
@@ -273,7 +273,7 @@ export default function TextReverserPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -282,7 +282,7 @@ export default function TextReverserPage() {
         {/* Internal linking */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             FlipMyCase offers a suite of free browser-based text tools. Reverse text here, then use other tools
             for additional transformations.
           </p>

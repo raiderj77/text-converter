@@ -100,7 +100,7 @@ export default function Rot13EncoderDecoderPage() {
           Free ROT13 Encoder &amp; Decoder
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Encode and decode text using ROT13, ROT5, ROT47, or a custom Caesar cipher with
           any rotation from 1 to 25. Free, no signup, runs entirely in your browser.
         </p>
@@ -121,7 +121,7 @@ export default function Rot13EncoderDecoderPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Use the ROT13 Cipher Tool
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Choose your cipher mode.</strong> Select
               ROT13 for standard letter rotation, ROT5 for digits only, ROT47 for all printable
@@ -148,7 +148,7 @@ export default function Rot13EncoderDecoderPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             The History and Uses of Rotation Ciphers
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               Rotation ciphers are among the oldest known encryption techniques. The Caesar
               cipher, named after Julius Caesar, dates back to the first century BC. Caesar
@@ -202,7 +202,7 @@ export default function Rot13EncoderDecoderPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -213,7 +213,7 @@ export default function Rot13EncoderDecoderPage() {
         {/* Related Tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Encode text with ROT13, then explore our other encoding, hashing, and text tools.
           </p>
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">

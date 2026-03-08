@@ -116,7 +116,7 @@ export default function TextDiffPage() {
           Free Text Diff — Compare Two Texts Side by Side Online
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Compare two blocks of text and instantly see every difference highlighted with
           word-level precision. Side-by-side and inline views. Collapse unchanged lines to
           focus on changes. Navigate between diffs. Ignore case and whitespace. Copy unified
@@ -138,7 +138,7 @@ export default function TextDiffPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Everything You Need — Free, No Pro Plan Required
           </h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Other diff checkers lock their best features behind paid plans. We give you everything
             for free, right in your browser.
           </p>
@@ -167,7 +167,7 @@ export default function TextDiffPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Compare Two Texts Online
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Paste your original text</strong> in
               the left box. This is the &ldquo;before&rdquo; version — the baseline you are comparing
@@ -200,7 +200,7 @@ export default function TextDiffPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             When to Use a Text Diff Checker
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">Code review:</strong> Compare two versions of a source
               file to see exactly what changed before committing. Works with JavaScript, Python, TypeScript,
@@ -252,7 +252,7 @@ export default function TextDiffPage() {
             {faqItems.map((faq) => (
               <div key={faq.question} className="rounded-xl border border-white/10 bg-neutral-900 p-4">
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -262,7 +262,7 @@ export default function TextDiffPage() {
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Compare text here, then clean, convert, format, or encode it with our other free tools.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">

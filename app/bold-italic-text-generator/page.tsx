@@ -88,7 +88,7 @@ export default function BoldItalicTextGeneratorPage() {
           Bold Italic Text Generator
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Generate bold italic Unicode text (𝑩𝒐𝒍𝒅 𝑰𝒕𝒂𝒍𝒊𝒄) you can copy and paste anywhere.
           Works on Instagram, Twitter, Facebook, and more. Free, no signup, browser-only.
         </p>
@@ -109,7 +109,7 @@ export default function BoldItalicTextGeneratorPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Use the Bold Italic Text Generator
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Type or paste your text</strong> into the
               input box on the left. The tool accepts any text: words, sentences, paragraphs, or
@@ -137,7 +137,7 @@ export default function BoldItalicTextGeneratorPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             What Is Unicode Bold Italic Text?
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">Unicode mathematical symbols:</strong> The
               Unicode standard includes a set of characters called Mathematical Alphanumeric
@@ -242,7 +242,7 @@ export default function BoldItalicTextGeneratorPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -251,7 +251,7 @@ export default function BoldItalicTextGeneratorPage() {
         {/* Internal linking */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             FlipMyCase offers a full suite of free browser-based text tools. Generate bold italic
             text here, then explore other converters and formatters.
           </p>

@@ -94,7 +94,7 @@ export default function ToggleCaseConverterPage() {
           Toggle Case Converter: Alternating Caps & SpongeBob Text Generator
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Convert text to toggle case (alternating caps) instantly. Generate sPoNgEbOb text,
           create mocking SpongeBob meme text, and produce alternating uppercase/lowercase letters.
           Free tool, no signup required, works entirely in your browser.
@@ -117,7 +117,7 @@ export default function ToggleCaseConverterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             What Is Toggle Case (Alternating Caps)?
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">Toggle case</strong>, also known as{" "}
               <strong>alternating caps</strong> or <strong>sPoNgEbOb case</strong>, is a text
@@ -144,7 +144,7 @@ export default function ToggleCaseConverterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Use the Toggle Case Converter
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Paste your text</strong> into the input
               box above. You can type directly or paste from any source — emails, documents,
@@ -224,7 +224,7 @@ export default function ToggleCaseConverterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Creative Uses for Toggle Case Text
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">Social media memes:</strong> Create
               mocking SpongeBob-style text for Twitter, Instagram, or TikTok. The alternating
@@ -270,7 +270,7 @@ export default function ToggleCaseConverterPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -281,7 +281,7 @@ export default function ToggleCaseConverterPage() {
         {/* Internal linking */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Convert to toggle case here, then use our other tools for different case styles,
             text cleaning, or word counting.
           </p>

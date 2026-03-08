@@ -123,7 +123,7 @@ export default function JsonFormatterPage() {
           Free JSON Formatter, Validator &amp; Beautifier
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Format, validate, beautify, and minify JSON online. Fix broken JSON automatically.
           Explore data with a collapsible tree view. Export JSON to CSV. See exact error line
           numbers. All free, no signup, no ads — runs entirely in your browser.
@@ -146,7 +146,7 @@ export default function JsonFormatterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Format and Validate JSON Online
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Paste your JSON</strong> into the input
               box. Paste raw API responses, minified config files, or any JSON string. The
@@ -180,7 +180,7 @@ export default function JsonFormatterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Everything You Need in One JSON Tool
           </h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Most developers use 3-4 different tools to work with JSON. This one does it all.
           </p>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -234,7 +234,7 @@ export default function JsonFormatterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             When to Use a JSON Formatter
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">Debugging API responses:</strong> Paste
               raw JSON from Postman, curl, browser DevTools, or server logs. Format it
@@ -341,7 +341,7 @@ export default function JsonFormatterPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -352,7 +352,7 @@ export default function JsonFormatterPage() {
         {/* Internal linking */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Developer Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Format JSON here, then use our other tools to encode strings, convert text case,
             clean text, count words, or remove duplicates.
           </p>

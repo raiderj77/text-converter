@@ -100,7 +100,7 @@ export default function WordFrequencyCounterPage() {
           Word Frequency Counter — Analyze Text Online Free
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Count word frequencies, analyze bigrams and trigrams, generate a word cloud,
           and export results as CSV. Free, no signup, runs entirely in your browser.
         </p>
@@ -119,7 +119,7 @@ export default function WordFrequencyCounterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Use the Word Frequency Counter
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Paste your text.</strong> Copy any
               text — an essay, article, webpage content, or document — into the input area.
@@ -151,7 +151,7 @@ export default function WordFrequencyCounterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Understanding Word Frequency Analysis
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               Word frequency analysis is a foundational technique in computational
               linguistics and text mining. By counting how often each word appears in
@@ -210,7 +210,7 @@ export default function WordFrequencyCounterPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -220,7 +220,7 @@ export default function WordFrequencyCounterPage() {
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Analyze word frequencies here, then explore our other text analysis tools.
           </p>
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">

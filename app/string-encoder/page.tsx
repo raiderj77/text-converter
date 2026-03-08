@@ -94,7 +94,7 @@ export default function StringEncoderPage() {
           Free String Encoder &amp; Decoder
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Encode and decode strings instantly. Supports Base64, URL encoding, HTML entities,
           Unicode escape, hexadecimal, and binary. Switch between encode and decode with one
           click. Free, no signup, works entirely in your browser.
@@ -116,7 +116,7 @@ export default function StringEncoderPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Encode and Decode Strings Online
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Choose encode or decode.</strong> Click
               the Encode button to convert plain text into an encoded format. Click Decode to
@@ -190,7 +190,7 @@ export default function StringEncoderPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             When to Use String Encoding
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">Web development:</strong> Encode user
               input for safe inclusion in URLs, HTML, and JavaScript. Prevent XSS
@@ -233,7 +233,7 @@ export default function StringEncoderPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -244,7 +244,7 @@ export default function StringEncoderPage() {
         {/* Internal linking */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Encode strings here, then use our other tools to convert case, count words, clean
             text, or remove duplicates.
           </p>

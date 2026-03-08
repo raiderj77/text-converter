@@ -100,7 +100,7 @@ export default function MarkdownPreviewPage() {
           Markdown Preview — Live Editor Online
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Write Markdown and see a live rendered preview side by side. Supports
           headings, bold, italic, code blocks, tables, lists, links, images, and
           more. Copy the HTML output or download as an .html file. Free, no
@@ -123,7 +123,7 @@ export default function MarkdownPreviewPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Preview Markdown Online
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Type or paste Markdown.</strong> Enter
               your Markdown text in the left editor pane. The syntax is simple:
@@ -146,7 +146,7 @@ export default function MarkdownPreviewPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Why Use a Markdown Preview Tool?
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               Markdown has become the universal language for technical writing.
               GitHub, GitLab, Stack Overflow, Reddit, Discord, and countless
@@ -200,7 +200,7 @@ export default function MarkdownPreviewPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -211,7 +211,7 @@ export default function MarkdownPreviewPage() {
         {/* Related Tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Preview Markdown here, then use our other tools for formatting and conversion.
           </p>
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">

@@ -47,7 +47,7 @@ function Ex(props: { label: string; useFor: string; example: string; notes?: str
   return (
     <div className="rounded-2xl border border-white/10 bg-neutral-900 p-4">
       <div className="text-sm font-semibold">{props.label}</div>
-      <div className="mt-2 text-sm text-neutral-400">{props.useFor}</div>
+      <div className="mt-2 text-sm text-neutral-300">{props.useFor}</div>
       <div className="mt-3 rounded-xl border border-white/10 bg-neutral-950 px-3 py-2 text-sm font-mono break-words">
         {props.example}
       </div>
@@ -75,7 +75,7 @@ export default function LearnPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Learn Text Case Styles
         </h1>
-        <p className="mt-3 text-sm text-neutral-400">
+        <p className="mt-3 text-sm text-neutral-300">
           Text casing shows up everywhere — headings, emails, spreadsheets, code variables,
           file names, and URLs. This guide explains what each case is, where it is used, and
           how to avoid common mistakes.
@@ -87,14 +87,14 @@ export default function LearnPage() {
           <div className="mt-3 grid gap-3">
             <div className="rounded-2xl border border-white/10 bg-neutral-900 p-4">
               <div className="text-sm font-semibold">Case</div>
-              <p className="mt-2 text-sm text-neutral-400">
+              <p className="mt-2 text-sm text-neutral-300">
                 A case style is a consistent way to format letters, word boundaries, and
                 separators. The goal is clarity and consistency.
               </p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-neutral-900 p-4">
               <div className="text-sm font-semibold">Separators</div>
-              <p className="mt-2 text-sm text-neutral-400">
+              <p className="mt-2 text-sm text-neutral-300">
                 Some formats use separators like underscores or hyphens. Others remove
                 separators and use capital letters to mark word boundaries.
               </p>
@@ -107,7 +107,7 @@ export default function LearnPage() {
         {/* Common writing cases */}
         <section className="mt-8">
           <h2 className="text-xl font-semibold">Common Writing Cases</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Use these formats for documents, emails, headings, and general readability.
           </p>
           <div className="mt-4 grid grid-cols-1 gap-3">
@@ -141,7 +141,7 @@ export default function LearnPage() {
         {/* Developer cases */}
         <section className="mt-8">
           <h2 className="text-xl font-semibold">Developer Cases</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             These formats are used for variables, file names, URLs, and code.
           </p>
           <div className="mt-4 grid grid-cols-1 gap-3">
@@ -199,7 +199,7 @@ export default function LearnPage() {
             {faqItems.map((faq) => (
               <div key={faq.question} className="rounded-2xl border border-white/10 bg-neutral-900 p-4">
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -208,7 +208,7 @@ export default function LearnPage() {
         {/* Why a converter helps */}
         <section className="mt-8">
           <h2 className="text-xl font-semibold">Why a Converter Saves Time</h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>Paste text once and see every format instantly. No manual retyping.</p>
             <p>Copy output with one click. Fewer manual edits means fewer mistakes.</p>
             <p>Normalize messy text from PDFs, spreadsheets, and emails in seconds.</p>
@@ -219,7 +219,7 @@ export default function LearnPage() {
         {/* Tools cross-links */}
         <section className="mt-10">
           <h2 className="text-xl font-semibold">Try the Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             All tools are free, require no signup, and process text entirely in your browser.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">

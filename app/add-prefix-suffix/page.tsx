@@ -88,7 +88,7 @@ export default function AddPrefixSuffixPage() {
           Add Prefix & Suffix to Each Line
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Add a prefix, suffix, or both to every line of text. Use preset buttons for quotes, parentheses,
           HTML li tags, bullet points, and commas. Free, no signup, works entirely in your browser.
         </p>
@@ -109,7 +109,7 @@ export default function AddPrefixSuffixPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Add Prefix and Suffix to Text
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Paste your text</strong> into the input box with one
               item per line. The tool accepts any text: names, URLs, file paths, code snippets, or plain
@@ -137,7 +137,7 @@ export default function AddPrefixSuffixPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             When to Use a Prefix/Suffix Tool
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">Programming and development:</strong> Wrap variable
               names in quotes to build SQL IN clauses, add commas to create CSV data, or prepend indentation
@@ -221,7 +221,7 @@ export default function AddPrefixSuffixPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Tips for Power Users
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">Chain with other tools:</strong> Use the Text Sorter
               to alphabetize your list first, then add prefixes and suffixes. Or use the Duplicate Remover
@@ -270,7 +270,7 @@ export default function AddPrefixSuffixPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -279,7 +279,7 @@ export default function AddPrefixSuffixPage() {
         {/* Internal linking */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             FlipMyCase offers a suite of free browser-based text tools. Add prefixes and suffixes here,
             then use other tools for additional text processing.
           </p>

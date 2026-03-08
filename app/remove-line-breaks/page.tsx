@@ -92,7 +92,7 @@ export default function RemoveLineBreaksPage() {
           Remove Line Breaks — Join Lines Online Free
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Remove line breaks and join lines with spaces, commas, or any custom separator.
           Preserve paragraph breaks when needed. Free, no signup, works in your browser.
         </p>
@@ -113,7 +113,7 @@ export default function RemoveLineBreaksPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Remove Line Breaks from Text Online
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Paste your text</strong> into the input
               area. The tool handles text from any source — PDFs, emails, terminal output,
@@ -141,7 +141,7 @@ export default function RemoveLineBreaksPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Why Remove Line Breaks from Text?
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               Line breaks are one of the most common sources of messy text. When you copy text
               from PDFs, emails, or terminal output, each visual line often ends with a hard
@@ -196,7 +196,7 @@ export default function RemoveLineBreaksPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -207,7 +207,7 @@ export default function RemoveLineBreaksPage() {
         {/* Related Tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Remove line breaks here, then use our other tools for additional text processing.
           </p>
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">

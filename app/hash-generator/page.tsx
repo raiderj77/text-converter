@@ -116,7 +116,7 @@ export default function HashGeneratorPage() {
           Free Hash Generator — MD5, SHA-1, SHA-256, SHA-512 Online
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Generate MD5, SHA-1, SHA-256, SHA-384, and SHA-512 hashes from text or files
           instantly. All five algorithms run simultaneously — see every hash at once.
           Compare hashes to verify file integrity, generate HMAC signatures with a secret
@@ -139,7 +139,7 @@ export default function HashGeneratorPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Five Algorithms, One Tool — All Hashes at Once
           </h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             No need to switch between tools or run each algorithm separately. Type or paste
             text and get all five hashes instantly.
           </p>
@@ -165,7 +165,7 @@ export default function HashGeneratorPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Use the Hash Generator
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Enter text or drop a file.</strong> Type
               or paste text into the input field — hashes generate in real time as you type.
@@ -193,7 +193,7 @@ export default function HashGeneratorPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Hash Algorithm Comparison
           </h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Each algorithm produces a different length output. Longer hashes provide more
             collision resistance but are slower to compute.
           </p>
@@ -222,7 +222,7 @@ export default function HashGeneratorPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             When to Use a Hash Generator
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">Verifying downloads:</strong> Software publishers
               provide SHA-256 checksums for their downloads. Generate the hash of your downloaded
@@ -262,7 +262,7 @@ export default function HashGeneratorPage() {
             {faqItems.map((faq) => (
               <div key={faq.question} className="rounded-xl border border-white/10 bg-neutral-900 p-4">
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -272,7 +272,7 @@ export default function HashGeneratorPage() {
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Developer Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Generate hashes here, then encode strings, test regex, format JSON, compare
             text, and more with our other free tools.
           </p>

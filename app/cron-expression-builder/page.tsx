@@ -100,7 +100,7 @@ export default function CronExpressionBuilderPage() {
           Free Cron Expression Builder
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Build cron expressions visually with an interactive builder. Choose
           presets or configure each field individually with specific values,
           ranges, and step intervals. See a natural language description and the
@@ -124,7 +124,7 @@ export default function CronExpressionBuilderPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Build Cron Expressions Online
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Start with a preset.</strong> Click
               any preset button like &quot;Daily at Midnight&quot; or &quot;Every Weekday&quot; to
@@ -153,7 +153,7 @@ export default function CronExpressionBuilderPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Understanding Cron Expressions for Task Scheduling
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               Cron is the time-based job scheduler that has been part of Unix
               and Linux systems since the 1970s. Despite its age, cron remains
@@ -215,7 +215,7 @@ export default function CronExpressionBuilderPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -226,7 +226,7 @@ export default function CronExpressionBuilderPage() {
         {/* Related Tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Build cron schedules here, then use our other developer tools for
             timestamps, encoding, and formatting.
           </p>

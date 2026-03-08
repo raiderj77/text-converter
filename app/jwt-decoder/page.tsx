@@ -100,7 +100,7 @@ export default function JwtDecoderPage() {
           Free JWT Decoder
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Paste a JSON Web Token to instantly decode the header and payload.
           See the algorithm, token type, issued time, and expiration status
           with color-coded indicators. Free, no signup, works entirely in your
@@ -123,7 +123,7 @@ export default function JwtDecoderPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Decode JWT Tokens Online
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Paste your JWT.</strong> Copy
               the full JWT string (three dot-separated parts) from your
@@ -155,7 +155,7 @@ export default function JwtDecoderPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Understanding JSON Web Tokens in Web Development
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               JSON Web Tokens have become the dominant standard for
               authentication and authorization in modern web applications.
@@ -221,7 +221,7 @@ export default function JwtDecoderPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -232,7 +232,7 @@ export default function JwtDecoderPage() {
         {/* Related Tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Decode JWTs here, then use our other developer tools for encoding,
             hashing, and data formatting.
           </p>

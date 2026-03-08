@@ -298,7 +298,7 @@ export function Nav() {
                   "shrink-0 w-9 h-9 rounded-xl flex items-center justify-center text-sm border transition-colors",
                   isDark ? "border-white/10 hover:bg-white/10" : "border-black/10 hover:bg-black/5"
                 )}
-                aria-label="Toggle theme"
+                aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
               >
                 {isDark ? "☀️" : "🌙"}
               </button>

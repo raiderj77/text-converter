@@ -85,7 +85,7 @@ export default function ItalicTextGeneratorPage() {
           Italic Text Generator — Copy & Paste Free
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Convert regular text into 𝘪𝘵𝘢𝘭𝘪𝘤 Unicode characters you can copy and paste anywhere.
           Works on Instagram, Twitter/X, Facebook, Discord, and more. Free, no signup, runs entirely
           in your browser.
@@ -107,7 +107,7 @@ export default function ItalicTextGeneratorPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Use the Italic Text Generator
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Type or paste your text</strong> into the
               input box on the left. The tool accepts any text including letters, numbers,
@@ -134,7 +134,7 @@ export default function ItalicTextGeneratorPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             What Is Unicode Italic Text?
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               Unicode italic text uses characters from the Mathematical Alphanumeric Symbols block
               (U+1D400-U+1D7FF) in the Unicode standard. Unlike regular italic formatting that
@@ -243,7 +243,7 @@ export default function ItalicTextGeneratorPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -252,7 +252,7 @@ export default function ItalicTextGeneratorPage() {
         {/* Internal linking */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             FlipMyCase offers a suite of free browser-based text tools. Generate italic text here,
             then explore other tools for case conversion, text formatting, and more.
           </p>

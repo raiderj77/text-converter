@@ -94,7 +94,7 @@ export default function WordCounterPage() {
           Free Word Counter
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Count words, characters, sentences, and paragraphs instantly. See reading time,
           speaking time, social media limits, and keyword density. Free, no signup, works
           entirely in your browser.
@@ -116,7 +116,7 @@ export default function WordCounterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Count Words Online
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Paste or type your text</strong> into
               the input box above. The tool accepts any length of text including entire
@@ -197,7 +197,7 @@ export default function WordCounterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             When to Use a Word Counter
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">Academic writing:</strong> Essays,
               research papers, and dissertations often have strict word count requirements.
@@ -237,7 +237,7 @@ export default function WordCounterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Common Word Count References
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">Twitter/X post:</strong> 280 characters
               maximum. Shorter tweets (under 100 characters) tend to get more engagement.
@@ -278,7 +278,7 @@ export default function WordCounterPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -289,7 +289,7 @@ export default function WordCounterPage() {
         {/* Internal linking */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             FlipMyCase offers a suite of free browser-based text tools. Count words here,
             then convert text case with our case converter.
           </p>

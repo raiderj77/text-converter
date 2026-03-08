@@ -86,7 +86,7 @@ export default function ExtractUrlsPage() {
           Extract URLs from Text — Free Online Tool
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Paste any text and instantly extract every URL. Deduplicate results, see a
           domain breakdown, and copy as a clean list. Free, no signup, 100%
           client-side.
@@ -107,7 +107,7 @@ export default function ExtractUrlsPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Use the URL Extractor
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Paste your text.</strong> Drop
               any text containing URLs into the input box — emails, HTML source,
@@ -141,7 +141,7 @@ export default function ExtractUrlsPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Why Extract URLs from Text?
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">SEO auditing:</strong> When
               reviewing a web page or blog post, extracting all URLs helps you
@@ -202,7 +202,7 @@ export default function ExtractUrlsPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -213,7 +213,7 @@ export default function ExtractUrlsPage() {
         {/* Related Tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Extract URLs here, then clean, format, or analyze your content with
             our other free tools.
           </p>
@@ -240,7 +240,7 @@ export default function ExtractUrlsPage() {
         {/* All tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Extract URLs here, then use our other free tools to convert, format,
             encode, or analyze your content.
           </p>

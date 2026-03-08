@@ -117,7 +117,7 @@ export default function PasswordGeneratorPage() {
           Free Password Generator — Strong Passwords, Passphrases &amp; PINs
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Generate strong, random passwords using cryptographic randomness. Create random
           passwords with customizable character sets, memorable passphrases from random
           words, or numeric PINs. See real-time strength rating and crack time estimate.
@@ -140,7 +140,7 @@ export default function PasswordGeneratorPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Three Generators in One — Passwords, Passphrases &amp; PINs
           </h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Most generators only do random character strings. We give you three modes
             optimized for different use cases, all powered by the same cryptographic engine.
           </p>
@@ -198,7 +198,7 @@ export default function PasswordGeneratorPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Generate a Strong Password
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Choose your mode.</strong> Use Password
               for maximum entropy, Passphrase for memorability, or PIN for numeric-only codes.
@@ -225,7 +225,7 @@ export default function PasswordGeneratorPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Password Strength Guide
           </h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Entropy increases with length and character pool size. Here is the approximate
             entropy and crack time for passwords using all four character sets (~92 characters)
             at 10 billion guesses per second:
@@ -254,7 +254,7 @@ export default function PasswordGeneratorPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             When to Use a Password Generator
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">Every new account:</strong> Generate a unique
               random password for each signup. Never reuse passwords — if one site is breached,
@@ -299,7 +299,7 @@ export default function PasswordGeneratorPage() {
             {faqItems.map((faq) => (
               <div key={faq.question} className="rounded-xl border border-white/10 bg-neutral-900 p-4">
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -309,7 +309,7 @@ export default function PasswordGeneratorPage() {
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Generate passwords here, then encode strings, format JSON, compare text, and more
             with our other free tools.
           </p>

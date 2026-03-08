@@ -101,7 +101,7 @@ export default function BinaryTextConverterPage() {
           Free Binary Text Converter
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Convert text to binary and binary back to text instantly. See a per-character
           breakdown with decimal and binary codes. Choose 7-bit or 8-bit mode, space-separated
           or continuous output. Free, no signup, works entirely in your browser.
@@ -123,7 +123,7 @@ export default function BinaryTextConverterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Convert Text to Binary Online
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Choose your direction.</strong> Select
               &quot;Text to Binary&quot; to convert readable text into binary code, or &quot;Binary
@@ -152,7 +152,7 @@ export default function BinaryTextConverterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Understanding Binary Encoding and Text Representation
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               Binary is the most fundamental number system in computing. Every digital device,
               from smartphones to supercomputers, processes information as sequences of binary
@@ -210,7 +210,7 @@ export default function BinaryTextConverterPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -221,7 +221,7 @@ export default function BinaryTextConverterPage() {
         {/* Related Tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Convert text to binary here, then explore our other encoding and conversion tools.
           </p>
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">

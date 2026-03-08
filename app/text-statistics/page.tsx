@@ -100,7 +100,7 @@ export default function TextStatisticsPage() {
           Text Statistics Dashboard — Free Online
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Comprehensive text analysis with word counts, vocabulary richness, lexical
           density, sentence structure, reading time, word frequency charts, bigrams,
           trigrams, and more. Export a full report. Free, no signup, browser-only.
@@ -120,7 +120,7 @@ export default function TextStatisticsPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Analyze Text Statistics
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Paste your text.</strong> Copy any
               text into the input area. The dashboard updates instantly with every
@@ -147,7 +147,7 @@ export default function TextStatisticsPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Understanding Text Analysis Metrics
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               Text statistics give writers, editors, and researchers quantifiable
               insight into writing style and structure. While word count is the
@@ -198,7 +198,7 @@ export default function TextStatisticsPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -208,7 +208,7 @@ export default function TextStatisticsPage() {
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Analyze text statistics here, then use our other writing tools.
           </p>
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">

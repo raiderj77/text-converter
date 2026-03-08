@@ -88,7 +88,7 @@ export default function FindAndReplacePage() {
           Find and Replace Text Online — Free Tool
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Find and replace text with live match highlighting, regex support, case-sensitive
           matching, and whole-word options. See every match highlighted before you replace.
           Undo any replacement instantly. Free, no signup, 100% client-side.
@@ -109,7 +109,7 @@ export default function FindAndReplacePage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Use the Find and Replace Tool
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Paste your text.</strong> Drop your text
               into the input box. The word and character count updates as you type. Your text is
@@ -143,7 +143,7 @@ export default function FindAndReplacePage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             When to Use Find and Replace
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">Editing documents:</strong> Rename a character
               in a story, update a company name across a contract, or fix a repeated typo in an
@@ -206,7 +206,7 @@ export default function FindAndReplacePage() {
             {faqItems.map((faq) => (
               <div key={faq.question} className="rounded-xl border border-white/10 bg-neutral-900 p-4">
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -217,7 +217,7 @@ export default function FindAndReplacePage() {
         {/* Related Tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Find and replace text here, then clean, compare, test patterns, or deduplicate
             with our other free tools.
           </p>
@@ -244,7 +244,7 @@ export default function FindAndReplacePage() {
         {/* All tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Find and replace text here, then use our other free tools to convert, format,
             encode, or analyze your content.
           </p>

@@ -38,13 +38,13 @@ export default function SlugGeneratorPage() {
       <div className="mx-auto max-w-6xl px-4 py-6">
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">Free URL Slug Generator</h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">Convert any title or text into a clean, SEO-friendly URL slug instantly. Handles accents, special characters, and multiple formats. No signup, works entirely in your browser.</p>
+        <p className="mt-2 text-sm text-neutral-300">Convert any title or text into a clean, SEO-friendly URL slug instantly. Handles accents, special characters, and multiple formats. No signup, works entirely in your browser.</p>
 
         <div className="mt-6"><SlugGeneratorTool /></div>
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">How to Generate a URL Slug</h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p><strong className="text-neutral-200">1. Paste your title or text</strong> into the input box above. The tool works with blog post titles, product names, headings, or any text you want to turn into a URL.</p>
             <p><strong className="text-neutral-200">2. Choose your format.</strong> Select URL Slug for web addresses, File Name for downloads, CSS Class for stylesheets, Python Variable for code, or Constant for environment variables.</p>
             <p><strong className="text-neutral-200">3. Copy the result.</strong> Click the Copy button to copy your slug to the clipboard. The tool shows a live URL preview and warns you if your slug is too long for SEO.</p>
@@ -74,7 +74,7 @@ export default function SlugGeneratorPage() {
             {faqItems.map((faq) => (
               <div key={faq.question} className="rounded-xl border border-white/10 bg-neutral-900 p-4">
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>

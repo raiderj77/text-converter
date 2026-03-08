@@ -100,7 +100,7 @@ export default function UuidGeneratorPage() {
           Free UUID/GUID Generator
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Generate random UUID v4 identifiers instantly. Bulk generate up to 100 at once
           with options for uppercase, lowercase, and with or without hyphens. Free, no
           signup, powered by the Web Crypto API in your browser.
@@ -122,7 +122,7 @@ export default function UuidGeneratorPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Generate UUIDs Online
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Set the quantity.</strong> Enter how
               many UUIDs you need, from 1 to 100. The default is 1 for quick single-use
@@ -148,7 +148,7 @@ export default function UuidGeneratorPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Understanding UUIDs in Software Development
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               UUIDs (Universally Unique Identifiers) solve a fundamental problem in software
               engineering: how to create unique identifiers without a central authority. In
@@ -207,7 +207,7 @@ export default function UuidGeneratorPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -218,7 +218,7 @@ export default function UuidGeneratorPage() {
         {/* Related Tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Generate UUIDs here, then use our other developer tools for hashing, encoding,
             and password generation.
           </p>

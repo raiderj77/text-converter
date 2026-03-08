@@ -105,7 +105,7 @@ export default function LoremIpsumPage() {
           Free Lorem Ipsum Generator
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Generate placeholder text in 5 unique styles: Classic Lorem Ipsum, Hipster Ipsum,
           Office Ipsum, Pirate Ipsum, and Cat Ipsum. Choose paragraphs, sentences, or words.
           Perfect for designers, developers, and content creators. Free, no signup, works
@@ -128,7 +128,7 @@ export default function LoremIpsumPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Generate Lorem Ipsum Text
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Pick a content style.</strong> Choose from
               Classic Lorem Ipsum, Hipster, Office, Pirate, or Cat Ipsum. Each style has its
@@ -162,7 +162,7 @@ export default function LoremIpsumPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             When to Use Lorem Ipsum
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">Web design mockups:</strong> Fill page
               layouts in Figma, Sketch, or Adobe XD to show clients how the final site will
@@ -199,7 +199,7 @@ export default function LoremIpsumPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             The History of Lorem Ipsum
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               Lorem Ipsum has been the standard placeholder text since the 1500s when an
               unknown printer scrambled a passage from Cicero's "De Finibus Bonorum et
@@ -234,7 +234,7 @@ export default function LoremIpsumPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -245,7 +245,7 @@ export default function LoremIpsumPage() {
         {/* Internal linking */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Generate placeholder text here, then use our other tools to convert case, count
             words, or clean up formatting. All tools are free and run in your browser.
           </p>

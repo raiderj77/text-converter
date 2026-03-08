@@ -84,7 +84,7 @@ export default function SuperscriptGeneratorPage() {
           Superscript Text Generator
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Convert regular text to Unicode superscript characters (ˢᵘᵖᵉʳˢᶜʳⁱᵖᵗ) you can copy and paste
           anywhere. Free, no signup, works entirely in your browser.
         </p>
@@ -105,7 +105,7 @@ export default function SuperscriptGeneratorPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Use the Superscript Generator
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Type or paste your text</strong> into the input
               box on the left. The superscript conversion happens live as you type — there is no
@@ -133,7 +133,7 @@ export default function SuperscriptGeneratorPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Understanding Unicode Superscript Characters
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">What makes superscript text special:</strong>{" "}
               Unlike HTML &lt;sup&gt; tags that only work on web pages, Unicode superscript characters
@@ -235,7 +235,7 @@ export default function SuperscriptGeneratorPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -244,7 +244,7 @@ export default function SuperscriptGeneratorPage() {
         {/* Internal linking */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             FlipMyCase offers a suite of free browser-based text tools. Generate superscript text
             here, then explore more Unicode and text conversion tools.
           </p>

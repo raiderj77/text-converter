@@ -97,7 +97,7 @@ export default function RandomNumberGeneratorPage() {
           Free Random Number Generator
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Generate random numbers with custom min/max ranges. Bulk mode generates up to 1,000
           numbers at once with optional no-duplicates and sorting. Includes a dice roller for
           d4, d6, d8, d10, d12, and d20. Free, no signup, works entirely in your browser.
@@ -119,7 +119,7 @@ export default function RandomNumberGeneratorPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Generate Random Numbers Online
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Set your range.</strong> Enter a minimum
               and maximum value. The generator will produce numbers within this range (inclusive).
@@ -148,7 +148,7 @@ export default function RandomNumberGeneratorPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Understanding Randomness and Where It Matters
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               Random numbers are fundamental to many areas of computing, science, and everyday
               life. From shuffling a playlist to running Monte Carlo simulations, the ability
@@ -207,7 +207,7 @@ export default function RandomNumberGeneratorPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -218,7 +218,7 @@ export default function RandomNumberGeneratorPage() {
         {/* Related Tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Generate random numbers here, then explore our other utility tools.
           </p>
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">

@@ -92,7 +92,7 @@ export default function RemoveEmptyLinesPage() {
           Remove Empty Lines — Clean Text Online Free
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Remove blank and empty lines from any text instantly. Option to strip whitespace-only
           lines too. Free, no signup, works entirely in your browser.
         </p>
@@ -113,7 +113,7 @@ export default function RemoveEmptyLinesPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Remove Empty Lines from Text Online
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Paste your text</strong> into the input
               area. The tool accepts any plain text — code, logs, documents, data files, or
@@ -142,7 +142,7 @@ export default function RemoveEmptyLinesPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Why Remove Empty Lines from Text?
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               Empty lines accumulate in text for many reasons. Copy-pasting between
               applications, converting document formats, exporting from databases, or editing
@@ -199,7 +199,7 @@ export default function RemoveEmptyLinesPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -210,7 +210,7 @@ export default function RemoveEmptyLinesPage() {
         {/* Related Tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Remove empty lines here, then use our other tools for additional text processing.
           </p>
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">

@@ -91,7 +91,7 @@ export default function SmartQuotesConverterPage() {
           Free Smart Quotes Converter
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Convert curly (smart) quotes to straight quotes, or straight quotes to
           typographic curly quotes. Em dash and en dash conversion included. Free,
           no signup, works entirely in your browser.
@@ -113,7 +113,7 @@ export default function SmartQuotesConverterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Convert Smart Quotes
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Choose your mode.</strong> Select
               &quot;Straighten&quot; to convert curly/smart quotes to straight ASCII quotes,
@@ -141,7 +141,7 @@ export default function SmartQuotesConverterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Understanding Typographic Quotes and Dashes
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               Typography has a rich history of using different punctuation marks for different
               purposes. In the era of typewriters, a single key served double duty for both
@@ -202,7 +202,7 @@ export default function SmartQuotesConverterPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -213,7 +213,7 @@ export default function SmartQuotesConverterPage() {
         {/* Related Tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Convert quotes here, then explore our other text processing tools.
           </p>
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">

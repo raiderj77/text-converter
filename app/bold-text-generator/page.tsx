@@ -85,7 +85,7 @@ export default function BoldTextGeneratorPage() {
           Bold Text Generator — Copy &amp; Paste Free
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Generate bold Unicode text you can copy and paste anywhere. Choose between serif bold
           or sans-serif bold styles. Works on Instagram, Twitter, Facebook, bios, and more.
           Free — no signup required.
@@ -107,7 +107,7 @@ export default function BoldTextGeneratorPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Use the Bold Text Generator
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Type or paste your text</strong> into the
               input box. The tool accepts any text including letters, numbers, spaces, and
@@ -136,7 +136,7 @@ export default function BoldTextGeneratorPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             What Is Unicode Bold Text?
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">Unicode bold text is not formatting — it is
               a set of distinct characters.</strong> The Unicode standard includes separate code
@@ -242,7 +242,7 @@ export default function BoldTextGeneratorPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -251,7 +251,7 @@ export default function BoldTextGeneratorPage() {
         {/* Related tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             FlipMyCase offers a suite of free browser-based text tools. Generate bold text here,
             then explore other text conversion and formatting tools.
           </p>

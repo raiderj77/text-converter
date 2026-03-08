@@ -100,7 +100,7 @@ export default function UnixTimestampConverterPage() {
           Free Unix Timestamp Converter
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Convert Unix timestamps to human-readable dates and dates back to timestamps.
           Live clock showing the current epoch time, with support for both seconds and
           milliseconds. Shows UTC, local time, and ISO 8601 formats. Free, no signup,
@@ -123,7 +123,7 @@ export default function UnixTimestampConverterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Convert Unix Timestamps Online
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Choose your unit.</strong> Select
               whether your timestamp is in seconds (10 digits, standard Unix time) or
@@ -151,7 +151,7 @@ export default function UnixTimestampConverterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Understanding Unix Time and Epoch Timestamps
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               Unix time is the system most computers use to track time internally. Rather
               than storing dates as complex strings with years, months, days, and timezones,
@@ -208,7 +208,7 @@ export default function UnixTimestampConverterPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -219,7 +219,7 @@ export default function UnixTimestampConverterPage() {
         {/* Related Tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Convert timestamps here, then use our other developer tools for encoding,
             formatting, and data conversion.
           </p>

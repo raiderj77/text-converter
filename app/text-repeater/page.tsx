@@ -84,7 +84,7 @@ export default function TextRepeaterPage() {
           Free Text Repeater
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Repeat any text up to 1,000 times with custom separators. Number repetitions,
           preview output, and copy with one click. Free, no signup, works entirely in your browser.
         </p>
@@ -105,7 +105,7 @@ export default function TextRepeaterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Use the Text Repeater
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Enter your text.</strong> Type or paste
               the text you want to repeat into the input field. It can be a single word, a
@@ -133,7 +133,7 @@ export default function TextRepeaterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             When to Use a Text Repeater
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">Software testing:</strong> Generate
               repetitive test data to stress test input fields, databases, APIs, and text
@@ -178,7 +178,7 @@ export default function TextRepeaterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Tips for Effective Text Repetition
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">Use custom separators for structured data.</strong>{" "}
               Need comma-separated values? Set the separator to comma. Building a JSON array?
@@ -218,7 +218,7 @@ export default function TextRepeaterPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -229,7 +229,7 @@ export default function TextRepeaterPage() {
         {/* Internal linking */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Repeat text here, then use our other tools to clean, sort, deduplicate, or generate
             placeholder content. All tools are free and run in your browser.
           </p>

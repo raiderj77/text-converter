@@ -100,7 +100,7 @@ export default function LineCounterPage() {
           Line Counter — Count Lines of Text Online Free
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Count total lines, non-empty lines, empty lines, and whitespace-only lines.
           See average line length, longest and shortest lines, and a visual line length
           distribution. Number your lines with one click. Free, no signup, browser-only.
@@ -120,7 +120,7 @@ export default function LineCounterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Use the Line Counter
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Paste your text.</strong> Copy any
               text — code, logs, CSV data, prose — into the input area. Line counts
@@ -153,7 +153,7 @@ export default function LineCounterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Why Line Counting Matters
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               Line counting is one of the most fundamental text analysis operations,
               yet it comes up constantly in software development, data processing,
@@ -212,7 +212,7 @@ export default function LineCounterPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -222,7 +222,7 @@ export default function LineCounterPage() {
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Count lines here, then use our other text analysis tools.
           </p>
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">

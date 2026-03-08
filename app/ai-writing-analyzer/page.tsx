@@ -101,7 +101,7 @@ export default function AiWritingAnalyzerPage() {
           AI Writing Pattern Analyzer
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Analyze statistical writing patterns in any text. See sentence uniformity,
           vocabulary diversity, transition word density, repeated phrases, and more.
           Color-coded dashboard shows how each metric compares to typical AI and
@@ -124,7 +124,7 @@ export default function AiWritingAnalyzerPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Analyze Writing Patterns
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Paste your text.</strong> Copy at
               least 100 words into the input area. For more reliable results, use 300+
@@ -153,7 +153,7 @@ export default function AiWritingAnalyzerPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Understanding Writing Pattern Analysis
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               Statistical writing analysis examines measurable properties of text —
               sentence structure, word choice diversity, phrase repetition, and
@@ -208,7 +208,7 @@ export default function AiWritingAnalyzerPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -219,7 +219,7 @@ export default function AiWritingAnalyzerPage() {
         {/* Related Tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Analyze writing patterns here, then explore our other text analysis tools.
           </p>
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">

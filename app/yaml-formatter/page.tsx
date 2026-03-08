@@ -100,7 +100,7 @@ export default function YamlFormatterPage() {
           Free YAML Formatter &amp; Validator
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Format, validate, and convert YAML online. Includes YAML to JSON and JSON to
           YAML conversion, minification, and instant error detection. Free, no signup,
           works entirely in your browser.
@@ -122,7 +122,7 @@ export default function YamlFormatterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Format and Validate YAML Online
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Choose your mode.</strong> Format
               YAML to clean up indentation, Minify to compress, YAML to JSON for
@@ -150,7 +150,7 @@ export default function YamlFormatterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             YAML in Modern Development Workflows
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               YAML has become the default configuration language for modern DevOps and
               cloud-native development. Its emphasis on human readability makes it ideal
@@ -206,7 +206,7 @@ export default function YamlFormatterPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -217,7 +217,7 @@ export default function YamlFormatterPage() {
         {/* Related Tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Format YAML here, then use our other tools for JSON, XML, CSV, and data
             conversion.
           </p>

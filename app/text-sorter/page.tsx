@@ -95,7 +95,7 @@ export default function TextSorterPage() {
           Free Text Sorter
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Sort text lines alphabetically, numerically, by length, or randomly shuffle. Remove duplicates,
           handle empty lines, and customize sorting options. Free, no signup, works entirely in your browser.
         </p>
@@ -116,7 +116,7 @@ export default function TextSorterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Sort Text Online
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Paste your list</strong> with one item per line.
               The tool accepts any text: names, email addresses, keywords, numbers, or mixed content.
@@ -144,7 +144,7 @@ export default function TextSorterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             When to Use a Text Sorter
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">Data cleaning:</strong> Sort and deduplicate email lists,
               contact databases, keyword research, or survey responses. Remove duplicates to create clean
@@ -226,7 +226,7 @@ export default function TextSorterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Common Sorting Scenarios
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">Email list deduplication:</strong> Paste raw email addresses
               (one per line), enable 'Remove duplicates' and 'Ignore case', sort A-Z. Result: clean, unique,
@@ -274,7 +274,7 @@ export default function TextSorterPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -283,7 +283,7 @@ export default function TextSorterPage() {
         {/* Internal linking */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             FlipMyCase offers a suite of free browser-based text tools. Sort lists here, then use other tools
             for additional text processing.
           </p>

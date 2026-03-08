@@ -84,7 +84,7 @@ export default function PlainTextConverterPage() {
           Free Plain Text Converter
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Strip formatting, remove HTML tags, convert smart quotes and dashes to plain text.
           Free online tool — no signup required. Works entirely in your browser.
         </p>
@@ -105,7 +105,7 @@ export default function PlainTextConverterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Convert Text to Plain Text
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Paste your formatted text</strong> into the
               input box above. The tool accepts text copied from websites, Word documents, Google
@@ -128,7 +128,7 @@ export default function PlainTextConverterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Why You Need a Plain Text Converter
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               Every time you copy text from a website, email, or document, invisible formatting
               comes along for the ride. HTML tags hide in clipboard data. Word processors inject
@@ -183,7 +183,7 @@ export default function PlainTextConverterPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -194,7 +194,7 @@ export default function PlainTextConverterPage() {
         {/* Internal linking */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Convert your text to plain format here, then use our other tools to clean, compare,
             encode, or convert it further. All tools are free and process text in your browser.
           </p>

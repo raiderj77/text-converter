@@ -96,7 +96,7 @@ export default function QrCodeGeneratorPage() {
           Free QR Code Generator
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Generate QR codes for URLs, text, email, phone numbers, and WiFi credentials.
           Choose size and error correction level. Download as PNG. Free, no signup,
           works entirely in your browser.
@@ -118,7 +118,7 @@ export default function QrCodeGeneratorPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Generate a QR Code
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Choose your content type.</strong> Select
               URL, Text, Email, Phone, or WiFi depending on what you want to encode.
@@ -147,7 +147,7 @@ export default function QrCodeGeneratorPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Understanding QR Codes
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               QR codes (Quick Response codes) were invented in 1994 by Denso Wave, a
               subsidiary of Toyota, to track automotive parts during manufacturing. Unlike
@@ -211,7 +211,7 @@ export default function QrCodeGeneratorPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -222,7 +222,7 @@ export default function QrCodeGeneratorPage() {
         {/* Related Tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Generate QR codes here, then explore our other utility tools.
           </p>
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">

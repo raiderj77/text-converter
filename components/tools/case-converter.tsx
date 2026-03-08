@@ -109,6 +109,7 @@ export function CaseConverterTool() {
                   : "border-black/10 hover:bg-black/5"
               )}
               onClick={clearAll}
+              aria-label="Clear input text"
             >
               Clear
             </button>

@@ -86,7 +86,7 @@ export default function RemoveHtmlTagsPage() {
           Remove HTML Tags — Strip Tags Online Free
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Strip all HTML and XML tags from any text. Optionally keep specific tags,
           and decode HTML entities automatically. Free, no signup, 100% client-side.
         </p>
@@ -106,7 +106,7 @@ export default function RemoveHtmlTagsPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Use the HTML Tag Remover
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Paste your HTML.</strong> Drop
               HTML source code, rich text, or any markup-containing text into the
@@ -135,7 +135,7 @@ export default function RemoveHtmlTagsPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             When to Strip HTML Tags
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">Content extraction:</strong>{" "}
               When copying text from web pages, the clipboard often includes HTML
@@ -196,7 +196,7 @@ export default function RemoveHtmlTagsPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -207,7 +207,7 @@ export default function RemoveHtmlTagsPage() {
         {/* Related Tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Strip HTML tags here, then clean, format, or convert your content with
             our other free tools.
           </p>
@@ -234,7 +234,7 @@ export default function RemoveHtmlTagsPage() {
         {/* All tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Strip HTML here, then use our other free tools to convert, format,
             encode, or analyze your content.
           </p>

@@ -114,7 +114,7 @@ export default async function BlogPostPage(props: { params: ParamsPromise }) {
 
       <div className="mx-auto max-w-6xl px-4 py-8">
         {/* Breadcrumb */}
-        <div className="text-sm text-neutral-400">
+        <div className="text-sm text-neutral-300">
           <Link href="/" className="hover:text-neutral-200">
             Home
           </Link>
@@ -174,7 +174,7 @@ export default async function BlogPostPage(props: { params: ParamsPromise }) {
                 <div className="text-sm font-semibold">
                   {linkedTool.emoji} Try {linkedTool.name}
                 </div>
-                <p className="mt-1 text-sm text-neutral-400">
+                <p className="mt-1 text-sm text-neutral-300">
                   Free, no signup, runs in your browser. Try it now.
                 </p>
                 <div className="mt-3">
@@ -203,7 +203,7 @@ export default async function BlogPostPage(props: { params: ParamsPromise }) {
                       className="rounded-xl border border-white/10 bg-neutral-950 p-4"
                     >
                       <h3 className="text-sm font-semibold">{f.question}</h3>
-                      <p className="mt-2 text-sm text-neutral-400 leading-7">
+                      <p className="mt-2 text-sm text-neutral-300 leading-7">
                         {f.answer}
                       </p>
                     </div>
@@ -256,7 +256,7 @@ export default async function BlogPostPage(props: { params: ParamsPromise }) {
               <div className="mt-4">
                 <Link
                   href="/blog"
-                  className="text-sm text-neutral-400 hover:text-neutral-200"
+                  className="text-sm text-neutral-300 hover:text-neutral-200"
                 >
                   ← All guides
                 </Link>

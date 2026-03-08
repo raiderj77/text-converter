@@ -101,7 +101,7 @@ export default function HexTextConverterPage() {
           Free Hex Text Converter
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-400">
+        <p className="mt-2 text-sm text-neutral-300">
           Convert text to hexadecimal and hex back to text instantly. See a per-character
           breakdown with decimal and hex codes. Toggle the 0x prefix and choose space-separated
           or continuous output. Free, no signup, works entirely in your browser.
@@ -123,7 +123,7 @@ export default function HexTextConverterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Convert Text to Hex Online
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Choose your direction.</strong> Select
               &quot;Text to Hex&quot; to convert readable text into hexadecimal codes, or &quot;Hex
@@ -152,7 +152,7 @@ export default function HexTextConverterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Hexadecimal in Computing: Why Developers Use Hex
           </h2>
-          <div className="mt-3 text-sm text-neutral-400 space-y-2">
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               Hexadecimal (base 16) is one of the most important number systems in computing.
               While computers operate in binary, hex provides a human-friendly way to represent
@@ -210,7 +210,7 @@ export default function HexTextConverterPage() {
                 className="rounded-xl border border-white/10 bg-neutral-900 p-4"
               >
                 <h3 className="text-sm font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{faq.answer}</p>
+                <p className="mt-2 text-sm text-neutral-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -221,7 +221,7 @@ export default function HexTextConverterPage() {
         {/* Related Tools */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Convert text to hex here, then explore our other encoding and conversion tools.
           </p>
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
