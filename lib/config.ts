@@ -292,6 +292,16 @@ export const tools: Tool[] = [
     live: true,
   },
   {
+    slug: "word-frequency-counter",
+    name: "Word Frequency",
+    shortName: "Frequency",
+    title: "Word Frequency Counter — Analyze Text Online Free",
+    description:
+      "Count word frequency, analyze bigrams & trigrams, generate word clouds. Export as CSV. Free online word frequency counter — no signup required.",
+    emoji: "📊",
+    live: true,
+  },
+  {
     slug: "ai-writing-analyzer",
     name: "AI Writing Analyzer",
     shortName: "AI Analyzer",
@@ -319,6 +329,66 @@ export const tools: Tool[] = [
     description:
       "Analyze text with word frequency, vocabulary richness, lexical density, sentence structure, bigrams, trigrams & more. Export reports. Free — no signup.",
     emoji: "📈",
+    live: true,
+  },
+  {
+    slug: "line-counter",
+    name: "Line Counter",
+    shortName: "Lines",
+    title: "Line Counter — Count Lines of Text Online Free",
+    description:
+      "Count total lines, empty lines & non-empty lines. See line length stats and distribution. Free online line counter — no signup required.",
+    emoji: "📏",
+    live: true,
+  },
+  {
+    slug: "text-repeater",
+    name: "Text Repeater",
+    shortName: "Repeat",
+    title: "Text Repeater — Repeat Text Online Free",
+    description:
+      "Repeat any text up to 1000 times with custom separators. Number repetitions, preview output. Free online text repeater — no signup required.",
+    emoji: "🔁",
+    live: true,
+  },
+  {
+    slug: "plain-text-converter",
+    name: "Plain Text",
+    shortName: "Plain",
+    title: "Plain Text Converter — Strip Formatting Free",
+    description:
+      "Strip formatting, remove HTML tags, convert smart quotes & dashes to plain text. Free online plain text converter — no signup required.",
+    emoji: "📄",
+    live: true,
+  },
+  {
+    slug: "add-line-numbers",
+    name: "Add Line Numbers",
+    shortName: "Line #s",
+    title: "Add Line Numbers to Text — Free Online Tool",
+    description:
+      "Add or remove line numbers from text. Custom start number, separators & zero padding. Free online tool — no signup required.",
+    emoji: "🔢",
+    live: true,
+  },
+  {
+    slug: "find-and-replace",
+    name: "Find & Replace",
+    shortName: "Find/Replace",
+    title: "Find and Replace Text Online — Free Tool",
+    description:
+      "Find and replace text with regex support, case matching & whole word options. Highlight matches live. Free online find and replace — no signup.",
+    emoji: "🔎",
+    live: true,
+  },
+  {
+    slug: "add-prefix-suffix",
+    name: "Add Prefix/Suffix",
+    shortName: "Prefix",
+    title: "Add Prefix & Suffix to Each Line — Free Tool",
+    description:
+      "Add prefix or suffix to every line of text. Preset buttons for quotes, parentheses, HTML li & more. Free online tool — no signup required.",
+    emoji: "➕",
     live: true,
   },
 ];
