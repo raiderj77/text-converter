@@ -20,6 +20,14 @@ export const GA_ID = "G-JQHRPJ9YLF";
  * Tool registry. Every tool in the suite is defined here.
  * Nav, sitemap, internal linking, and schema all read from this.
  */
+export type ToolCategory =
+  | "Text Tools"
+  | "Analysis"
+  | "Font Styles"
+  | "Developer"
+  | "Encoding"
+  | "Generators";
+
 export type Tool = {
   slug: string;       // URL path segment (e.g. "" for homepage, "word-counter" for /word-counter)
   name: string;       // Display name in nav
@@ -28,6 +36,7 @@ export type Tool = {
   description: string; // SEO meta description
   emoji: string;      // Visual identifier in nav
   live: boolean;      // Only show in nav when true
+  category: ToolCategory; // Navigation category grouping
 };
 
 export const tools: Tool[] = [
@@ -39,6 +48,7 @@ export const tools: Tool[] = [
     description:
       "Convert text to UPPERCASE, lowercase, Title Case, camelCase, snake_case & more instantly. Free online tool — no signup required.",
     emoji: "🔄",
+    category: "Text Tools",
     live: true,
   },
   {
@@ -49,6 +59,7 @@ export const tools: Tool[] = [
     description:
       "Count words, characters, sentences, paragraphs & reading time. Keyword density included. Free online word counter — no signup.",
     emoji: "📊",
+    category: "Analysis",
     live: true,
   },
   {
@@ -59,6 +70,7 @@ export const tools: Tool[] = [
     description:
       "Remove extra spaces, line breaks, tabs & hidden characters from messy text. Free online cleaner — no signup required.",
     emoji: "🧹",
+    category: "Text Tools",
     live: true,
   },
   {
@@ -69,6 +81,7 @@ export const tools: Tool[] = [
     description:
       "Generate placeholder text in 5 styles: Lorem Ipsum, Hipster, Office, Pirate & Cat Ipsum. Free online placeholder text generator — no signup required.",
     emoji: "📝",
+    category: "Generators",
     live: true,
   },
   {
@@ -79,6 +92,7 @@ export const tools: Tool[] = [
     description:
       "Remove duplicate lines from any list instantly. Case-insensitive matching, sorting & stats included. Free online tool — no signup.",
     emoji: "🗑️",
+    category: "Text Tools",
     live: true,
   },
   {
@@ -89,6 +103,7 @@ export const tools: Tool[] = [
     description:
       "Encode & decode Base64, URL, HTML entities, hex & binary strings instantly. Free online tool — no signup required.",
     emoji: "🔐",
+    category: "Encoding",
     live: true,
   },
   {
@@ -99,6 +114,7 @@ export const tools: Tool[] = [
     description:
       "Format, validate, beautify & minify JSON online. Tree view, error detection & CSV export. Free tool — no signup required.",
     emoji: "{ }",
+    category: "Developer",
     live: true,
   },
   {
@@ -109,6 +125,7 @@ export const tools: Tool[] = [
     description:
       "Compare two texts side by side with additions, deletions & changes highlighted. Free online diff tool — no signup required.",
     emoji: "🔍",
+    category: "Analysis",
     live: true,
   },
   {
@@ -119,6 +136,7 @@ export const tools: Tool[] = [
     description:
       "Generate strong random passwords with custom length, symbols & exclusions. Strength meter included. Free — no signup required.",
     emoji: "🔑",
+    category: "Generators",
     live: true,
   },
   {
@@ -129,6 +147,7 @@ export const tools: Tool[] = [
     description:
       "Test regular expressions with real-time highlighting, capture groups & replace mode. Free online regex tool — no signup.",
     emoji: "⚙️",
+    category: "Developer",
     live: true,
   },
   {
@@ -139,6 +158,7 @@ export const tools: Tool[] = [
     description:
       "Generate MD5, SHA-1, SHA-256 & SHA-512 hashes from text or files instantly. Free online tool — no signup required.",
     emoji: "#️⃣",
+    category: "Developer",
     live: true,
   },
   {
@@ -149,6 +169,7 @@ export const tools: Tool[] = [
     description:
       "Convert text to alternating caps (tOgGlE cAsE) for mocking memes & SpongeBob text. Free online tool — no signup required.",
     emoji: "🔄",
+    category: "Text Tools",
     live: true,
   },
   {
@@ -159,6 +180,7 @@ export const tools: Tool[] = [
     description:
       "Convert between snake_case and kebab-case instantly. Compare naming conventions side by side. Free online tool — no signup required.",
     emoji: "🐍",
+    category: "Text Tools",
     live: true,
   },
   {
@@ -169,6 +191,7 @@ export const tools: Tool[] = [
     description:
       "Why do programmers use underscores? Guide to _private, __dunder, snake_case & more with Python & JavaScript examples. Free — no signup.",
     emoji: "📘",
+    category: "Generators",
     live: true,
   },
   {
@@ -179,6 +202,7 @@ export const tools: Tool[] = [
     description:
       "When is ALL CAPS rude vs necessary? Guide to uppercase in emails, social media & code. Free instantly — no signup required.",
     emoji: "🔠",
+    category: "Generators",
     live: true,
   },
   {
@@ -189,6 +213,7 @@ export const tools: Tool[] = [
     description:
       "Sort text lines alphabetically, numerically, or randomly. Remove duplicates & reverse order. Free online tool — no signup required.",
     emoji: "📊",
+    category: "Text Tools",
     live: true,
   },
   {
@@ -199,6 +224,7 @@ export const tools: Tool[] = [
     description:
       "Reverse characters, words, or lines of text instantly. Create backwards & mirror text. Free online tool — no signup required.",
     emoji: "↔️",
+    category: "Text Tools",
     live: true,
   },
   {
@@ -209,6 +235,7 @@ export const tools: Tool[] = [
     description:
       "Convert text to sPoNgEbOb mocking case for memes & social media. Create viral sarcastic text instantly. Free — no signup required.",
     emoji: "🧽",
+    category: "Text Tools",
     live: true,
   },
   {
@@ -219,6 +246,7 @@ export const tools: Tool[] = [
     description:
       "Convert any title into a clean, SEO-friendly URL slug instantly. Multiple formats supported. Free online tool — no signup required.",
     emoji: "🔗",
+    category: "Developer",
     live: true,
   },
   {
@@ -229,6 +257,7 @@ export const tools: Tool[] = [
     description:
       "Format, validate & convert YAML online. YAML to JSON and JSON to YAML conversion included. Free online tool — no signup required.",
     emoji: "📝",
+    category: "Developer",
     live: true,
   },
   {
@@ -239,6 +268,7 @@ export const tools: Tool[] = [
     description:
       "Format, beautify & minify XML online with error detection. Choose 2/4 spaces or tabs for indentation. Free online tool — no signup required.",
     emoji: "📄",
+    category: "Developer",
     live: true,
   },
   {
@@ -249,6 +279,7 @@ export const tools: Tool[] = [
     description:
       "Convert CSV to JSON and JSON to CSV instantly. Auto-detect delimiters, first row as headers, pretty print or minified. Free online tool — no signup required.",
     emoji: "📋",
+    category: "Developer",
     live: true,
   },
   {
@@ -259,6 +290,7 @@ export const tools: Tool[] = [
     description:
       "Convert Unix timestamps to human dates and dates to timestamps instantly. Live clock, seconds & milliseconds support. Free online tool — no signup required.",
     emoji: "🕐",
+    category: "Generators",
     live: true,
   },
   {
@@ -269,6 +301,7 @@ export const tools: Tool[] = [
     description:
       "Generate random UUID v4 identifiers instantly. Bulk generate up to 100, uppercase or lowercase, with or without hyphens. Free online tool — no signup required.",
     emoji: "🆔",
+    category: "Generators",
     live: true,
   },
   {
@@ -279,6 +312,7 @@ export const tools: Tool[] = [
     description:
       "Convert between binary, octal, decimal & hexadecimal instantly. ASCII text to binary/hex mode included. Free online tool — no signup required.",
     emoji: "🔢",
+    category: "Encoding",
     live: true,
   },
   {
@@ -289,6 +323,7 @@ export const tools: Tool[] = [
     description:
       "Write Markdown and see a live rendered preview. Copy HTML or download as .html. Supports tables, code blocks, lists & more. Free — no signup required.",
     emoji: "📖",
+    category: "Developer",
     live: true,
   },
   {
@@ -299,6 +334,7 @@ export const tools: Tool[] = [
     description:
       "Count word frequency, analyze bigrams & trigrams, generate word clouds. Export as CSV. Free online word frequency counter — no signup required.",
     emoji: "📊",
+    category: "Analysis",
     live: true,
   },
   {
@@ -309,6 +345,7 @@ export const tools: Tool[] = [
     description:
       "Analyze statistical writing patterns in any text. Check sentence uniformity, vocabulary diversity & filler phrases. Free, private, browser-only.",
     emoji: "🤖",
+    category: "Analysis",
     live: true,
   },
   {
@@ -319,6 +356,7 @@ export const tools: Tool[] = [
     description:
       "Check readability with Flesch-Kincaid, Gunning Fog, SMOG, Coleman-Liau, ARI & Dale-Chall. Instant grade level & sentence analysis. Free — no signup.",
     emoji: "📚",
+    category: "Analysis",
     live: true,
   },
   {
@@ -329,6 +367,7 @@ export const tools: Tool[] = [
     description:
       "Analyze text with word frequency, vocabulary richness, lexical density, sentence structure, bigrams, trigrams & more. Export reports. Free — no signup.",
     emoji: "📈",
+    category: "Analysis",
     live: true,
   },
   {
@@ -339,6 +378,7 @@ export const tools: Tool[] = [
     description:
       "Count total lines, empty lines & non-empty lines. See line length stats and distribution. Free online line counter — no signup required.",
     emoji: "📏",
+    category: "Analysis",
     live: true,
   },
   {
@@ -349,6 +389,7 @@ export const tools: Tool[] = [
     description:
       "Repeat any text up to 1000 times with custom separators. Number repetitions, preview output. Free online text repeater — no signup required.",
     emoji: "🔁",
+    category: "Text Tools",
     live: true,
   },
   {
@@ -359,6 +400,7 @@ export const tools: Tool[] = [
     description:
       "Strip formatting, remove HTML tags, convert smart quotes & dashes to plain text. Free online plain text converter — no signup required.",
     emoji: "📄",
+    category: "Text Tools",
     live: true,
   },
   {
@@ -369,6 +411,7 @@ export const tools: Tool[] = [
     description:
       "Add or remove line numbers from text. Custom start number, separators & zero padding. Free online tool — no signup required.",
     emoji: "🔢",
+    category: "Text Tools",
     live: true,
   },
   {
@@ -379,6 +422,7 @@ export const tools: Tool[] = [
     description:
       "Find and replace text with regex support, case matching & whole word options. Highlight matches live. Free online find and replace — no signup.",
     emoji: "🔎",
+    category: "Text Tools",
     live: true,
   },
   {
@@ -389,6 +433,7 @@ export const tools: Tool[] = [
     description:
       "Add prefix or suffix to every line of text. Preset buttons for quotes, parentheses, HTML li & more. Free online tool — no signup required.",
     emoji: "➕",
+    category: "Text Tools",
     live: true,
   },
   {
@@ -399,6 +444,7 @@ export const tools: Tool[] = [
     description:
       "Generate bold Unicode text (𝗕𝗼𝗹𝗱) you can copy and paste anywhere. Works on social media, bios & more. Free — no signup required.",
     emoji: "𝗕",
+    category: "Font Styles",
     live: true,
   },
   {
@@ -409,6 +455,7 @@ export const tools: Tool[] = [
     description:
       "Generate bold italic Unicode text (𝘽𝙤𝙡𝙙 𝙄𝙩𝙖𝙡𝙞𝙘) you can copy and paste. Works on social media & bios. Free — no signup required.",
     emoji: "𝘽",
+    category: "Font Styles",
     live: true,
   },
   {
@@ -419,6 +466,7 @@ export const tools: Tool[] = [
     description:
       "Generate italic Unicode text (𝘐𝘵𝘢𝘭𝘪𝘤) you can copy and paste anywhere. Works on social media & bios. Free — no signup required.",
     emoji: "𝘐",
+    category: "Font Styles",
     live: true,
   },
   {
@@ -429,6 +477,7 @@ export const tools: Tool[] = [
     description:
       "Generate superscript Unicode text (ˢᵘᵖᵉʳˢᶜʳⁱᵖᵗ) you can copy and paste. Free online superscript generator — no signup required.",
     emoji: "ˢ",
+    category: "Font Styles",
     live: true,
   },
   {
@@ -439,6 +488,7 @@ export const tools: Tool[] = [
     description:
       "Generate strikethrough Unicode text (T̶e̶x̶t̶) you can copy and paste anywhere. Free online strikethrough generator — no signup required.",
     emoji: "T̶",
+    category: "Font Styles",
     live: true,
   },
   {
@@ -449,6 +499,7 @@ export const tools: Tool[] = [
     description:
       "Generate underlined Unicode text (T̲e̲x̲t̲) you can copy and paste anywhere. Free online underline text generator — no signup required.",
     emoji: "T̲",
+    category: "Font Styles",
     live: true,
   },
   {
@@ -459,6 +510,7 @@ export const tools: Tool[] = [
     description:
       "Generate upside down text (ʇxǝʇ uʍop ǝpᴉsdn) you can copy and paste. Free online upside down text generator — no signup required.",
     emoji: "🙃",
+    category: "Font Styles",
     live: true,
   },
   {
@@ -469,6 +521,7 @@ export const tools: Tool[] = [
     description:
       "Generate small caps Unicode text (Sᴍᴀʟʟ Cᴀᴘꜱ) you can copy and paste anywhere. Free online small caps generator — no signup required.",
     emoji: "ꜱᴄ",
+    category: "Font Styles",
     live: true,
   },
   {
@@ -479,6 +532,7 @@ export const tools: Tool[] = [
     description:
       "Generate subscript Unicode text with numbers and available letters. Free online subscript generator — no signup required.",
     emoji: "₂",
+    category: "Font Styles",
     live: true,
   },
   {
@@ -489,6 +543,7 @@ export const tools: Tool[] = [
     description:
       "Generate 12+ Unicode text styles instantly. Bold, italic, bubble, upside down & more. Copy and paste anywhere. Free — no signup required.",
     emoji: "✨",
+    category: "Font Styles",
     live: true,
   },
   {
@@ -499,6 +554,7 @@ export const tools: Tool[] = [
     description:
       "Generate bubble/circled Unicode text (Ⓑⓤⓑⓑⓛⓔ) you can copy and paste. Free online bubble text generator — no signup required.",
     emoji: "Ⓑ",
+    category: "Font Styles",
     live: true,
   },
   {
@@ -509,6 +565,7 @@ export const tools: Tool[] = [
     description:
       "Generate fullwidth vaporwave text (Ｗｉｄｅ　Ｔｅｘｔ) you can copy and paste. Free aesthetic text generator — no signup required.",
     emoji: "Ｗ",
+    category: "Font Styles",
     live: true,
   },
   {
@@ -519,6 +576,7 @@ export const tools: Tool[] = [
     description:
       "Convert between HEX, RGB, HSL & CMYK color codes. Contrast checker with WCAG pass/fail. Free online color converter — no signup.",
     emoji: "🎨",
+    category: "Encoding",
     live: true,
   },
   {
@@ -529,10 +587,13 @@ export const tools: Tool[] = [
     description:
       "Generate random numbers with custom ranges. Bulk mode, no duplicates & dice roller. Free online random number generator — no signup.",
     emoji: "🎲",
+    category: "Generators",
     live: true,
   },
-  { slug: "morse-code-translator", name: "Morse Code", shortName: "Morse", title: "Morse Code Translator — Encode & Decode Free", description: "Translate text to Morse code and back. Audio playback, speed control & reference chart. Free online Morse code translator — no signup.", emoji: "📡", live: true },
-  { slug: "rot13-encoder-decoder", name: "ROT13 Cipher", shortName: "ROT13", title: "ROT13 Encoder Decoder — Caesar Cipher Free", description: "Encode and decode ROT13, ROT5, ROT47 & custom Caesar ciphers. Free online cipher tool — no signup required.", emoji: "🔓", live: true },
+  { slug: "morse-code-translator", name: "Morse Code", shortName: "Morse", title: "Morse Code Translator — Encode & Decode Free", description: "Translate text to Morse code and back. Audio playback, speed control & reference chart. Free online Morse code translator — no signup.", emoji: "📡", category: "Encoding",
+    live: true },
+  { slug: "rot13-encoder-decoder", name: "ROT13 Cipher", shortName: "ROT13", title: "ROT13 Encoder Decoder — Caesar Cipher Free", description: "Encode and decode ROT13, ROT5, ROT47 & custom Caesar ciphers. Free online cipher tool — no signup required.", emoji: "🔓", category: "Encoding",
+    live: true },
   {
     slug: "binary-text-converter",
     name: "Binary Text",
@@ -541,6 +602,7 @@ export const tools: Tool[] = [
     description:
       "Convert text to binary and binary to text. Per-character breakdown table. Free online binary converter — no signup required.",
     emoji: "0️⃣",
+    category: "Encoding",
     live: true,
   },
   {
@@ -551,14 +613,21 @@ export const tools: Tool[] = [
     description:
       "Convert text to hexadecimal and hex to text. Per-character breakdown table. Free online hex converter — no signup required.",
     emoji: "🔣",
+    category: "Encoding",
     live: true,
   },
-  { slug: "nato-phonetic-alphabet", name: "NATO Phonetic", shortName: "NATO", title: "NATO Phonetic Alphabet Converter — Free Tool", description: "Convert text to NATO phonetic alphabet (Alpha, Bravo, Charlie). Full reference table included. Free — no signup required.", emoji: "🎖️", live: true },
-  { slug: "pig-latin-converter", name: "Pig Latin", shortName: "Pig Latin", title: "Pig Latin Translator — Convert Text Free", description: "Convert English to Pig Latin and back. Preserves punctuation & capitalization. Free online Pig Latin translator — no signup.", emoji: "🐷", live: true },
-  { slug: "sql-formatter", name: "SQL Formatter", shortName: "SQL", title: "SQL Formatter & Beautifier — Free Online", description: "Format SQL with uppercase keywords, proper indentation & minification. Free online SQL formatter — no signup required.", emoji: "🗄️", live: true },
-  { slug: "html-to-markdown", name: "HTML↔Markdown", shortName: "HTML/MD", title: "HTML to Markdown Converter — Free Online", description: "Convert HTML to Markdown and Markdown to HTML. Handles headings, lists, links, code & tables. Free online converter — no signup.", emoji: "📝", live: true },
-  { slug: "cron-expression-builder", name: "Cron Builder", shortName: "Cron", title: "Cron Expression Builder — Generator Free", description: "Build cron expressions visually with presets, natural language descriptions & next execution times. Free online cron generator — no signup.", emoji: "⏰", live: true },
-  { slug: "jwt-decoder", name: "JWT Decoder", shortName: "JWT", title: "JWT Decoder — Decode JWT Tokens Free", description: "Decode JWT tokens to see header and payload. Expiration status, issued time & algorithm. Free online JWT decoder — no signup.", emoji: "🔑", live: true },
+  { slug: "nato-phonetic-alphabet", name: "NATO Phonetic", shortName: "NATO", title: "NATO Phonetic Alphabet Converter — Free Tool", description: "Convert text to NATO phonetic alphabet (Alpha, Bravo, Charlie). Full reference table included. Free — no signup required.", emoji: "🎖️", category: "Encoding",
+    live: true },
+  { slug: "pig-latin-converter", name: "Pig Latin", shortName: "Pig Latin", title: "Pig Latin Translator — Convert Text Free", description: "Convert English to Pig Latin and back. Preserves punctuation & capitalization. Free online Pig Latin translator — no signup.", emoji: "🐷", category: "Encoding",
+    live: true },
+  { slug: "sql-formatter", name: "SQL Formatter", shortName: "SQL", title: "SQL Formatter & Beautifier — Free Online", description: "Format SQL with uppercase keywords, proper indentation & minification. Free online SQL formatter — no signup required.", emoji: "🗄️", category: "Developer",
+    live: true },
+  { slug: "html-to-markdown", name: "HTML↔Markdown", shortName: "HTML/MD", title: "HTML to Markdown Converter — Free Online", description: "Convert HTML to Markdown and Markdown to HTML. Handles headings, lists, links, code & tables. Free online converter — no signup.", emoji: "📝", category: "Developer",
+    live: true },
+  { slug: "cron-expression-builder", name: "Cron Builder", shortName: "Cron", title: "Cron Expression Builder — Generator Free", description: "Build cron expressions visually with presets, natural language descriptions & next execution times. Free online cron generator — no signup.", emoji: "⏰", category: "Developer",
+    live: true },
+  { slug: "jwt-decoder", name: "JWT Decoder", shortName: "JWT", title: "JWT Decoder — Decode JWT Tokens Free", description: "Decode JWT tokens to see header and payload. Expiration status, issued time & algorithm. Free online JWT decoder — no signup.", emoji: "🔑", category: "Developer",
+    live: true },
   {
     slug: "css-formatter",
     name: "CSS Formatter",
@@ -567,6 +636,7 @@ export const tools: Tool[] = [
     description:
       "Format, beautify & minify CSS online. Choose indent style, preserve or remove comments. Free online CSS formatter — no signup.",
     emoji: "🎨",
+    category: "Developer",
     live: true,
   },
   {
@@ -577,6 +647,7 @@ export const tools: Tool[] = [
     description:
       "Format, beautify & minify HTML online. Proper indentation with customizable spacing. Free online HTML formatter — no signup.",
     emoji: "🌐",
+    category: "Developer",
     live: true,
   },
   {
@@ -587,25 +658,57 @@ export const tools: Tool[] = [
     description:
       "Format, beautify & minify JavaScript online. Basic code formatting with indent options. Free online JS formatter — no signup.",
     emoji: "⚡",
+    category: "Developer",
     live: true,
   },
-  { slug: "remove-line-breaks", name: "Remove Lines", shortName: "Rm Lines", title: "Remove Line Breaks — Join Lines Online Free", description: "Remove line breaks and join lines with spaces, commas or custom separators. Preserve paragraph breaks option. Free — no signup.", emoji: "↩️", live: true },
-  { slug: "remove-empty-lines", name: "Remove Empty Lines", shortName: "Rm Empty", title: "Remove Empty Lines — Clean Text Online Free", description: "Remove blank and empty lines from text. Option to strip whitespace-only lines too. Free online tool — no signup required.", emoji: "🧹", live: true },
-  { slug: "extract-emails", name: "Extract Emails", shortName: "Emails", title: "Extract Email Addresses from Text — Free Tool", description: "Extract all email addresses from any text. Deduplicate, sort & copy as list. Free online email extractor — no signup required.", emoji: "📧", live: true },
-  { slug: "extract-urls", name: "Extract URLs", shortName: "URLs", title: "Extract URLs from Text — Free Online Tool", description: "Extract all URLs from any text block. Deduplicate, domain breakdown & copy as list. Free online URL extractor — no signup.", emoji: "🔗", live: true },
-  { slug: "remove-html-tags", name: "Remove HTML", shortName: "Rm HTML", title: "Remove HTML Tags — Strip Tags Online Free", description: "Strip HTML and XML tags from text. Keep specific tags, decode entities. Free online HTML tag remover — no signup required.", emoji: "🏷️", live: true },
-  { slug: "text-to-list", name: "Text to List", shortName: "To List", title: "Text to List Converter — Free Online Tool", description: "Convert paragraphs to bullet points, numbered lists, HTML or Markdown lists. Free online text to list converter — no signup.", emoji: "📋", live: true },
-  { slug: "list-to-text", name: "List to Text", shortName: "To Text", title: "List to Text Converter — Remove Bullets Free", description: "Convert bulleted or numbered lists to flowing text. Auto-strips bullets, numbers & dashes. Free online tool — no signup required.", emoji: "📝", live: true },
-  { slug: "roman-numeral-converter", name: "Roman Numerals", shortName: "Roman", title: "Roman Numeral Converter — Free Online Tool", description: "Convert numbers to Roman numerals and back. Date mode, reference table. Free online Roman numeral converter — no signup.", emoji: "🏛️", live: true },
-  { slug: "qr-code-generator", name: "QR Code", shortName: "QR Code", title: "QR Code Generator — Create QR Codes Free", description: "Generate QR codes for URLs, text, email, phone & WiFi. Download as PNG. Free online QR code generator — no signup required.", emoji: "📱", live: true },
-  { slug: "emoji-picker", name: "Emoji Picker", shortName: "Emoji", title: "Emoji Picker — Copy & Paste Emojis Free", description: "Search and copy emojis by name or category. Code points & shortcodes shown. Free online emoji picker — no signup required.", emoji: "😀", live: true },
-  { slug: "smart-quotes-converter", name: "Smart Quotes", shortName: "Quotes", title: "Smart Quotes Converter — Curly to Straight Free", description: "Convert curly quotes to straight or straight to typographic quotes. Em dash conversion included. Free — no signup required.", emoji: "❝", live: true },
-  { slug: "unicode-lookup", name: "Unicode Lookup", shortName: "Unicode", title: "Unicode Character Lookup — Symbol Finder Free", description: "Search and copy Unicode characters by name or category. Code points, HTML entities & CSS values. Free — no signup required.", emoji: "🔍", live: true },
+  { slug: "remove-line-breaks", name: "Remove Lines", shortName: "Rm Lines", title: "Remove Line Breaks — Join Lines Online Free", description: "Remove line breaks and join lines with spaces, commas or custom separators. Preserve paragraph breaks option. Free — no signup.", emoji: "↩️", category: "Text Tools",
+    live: true },
+  { slug: "remove-empty-lines", name: "Remove Empty Lines", shortName: "Rm Empty", title: "Remove Empty Lines — Clean Text Online Free", description: "Remove blank and empty lines from text. Option to strip whitespace-only lines too. Free online tool — no signup required.", emoji: "🧹", category: "Text Tools",
+    live: true },
+  { slug: "extract-emails", name: "Extract Emails", shortName: "Emails", title: "Extract Email Addresses from Text — Free Tool", description: "Extract all email addresses from any text. Deduplicate, sort & copy as list. Free online email extractor — no signup required.", emoji: "📧", category: "Text Tools",
+    live: true },
+  { slug: "extract-urls", name: "Extract URLs", shortName: "URLs", title: "Extract URLs from Text — Free Online Tool", description: "Extract all URLs from any text block. Deduplicate, domain breakdown & copy as list. Free online URL extractor — no signup.", emoji: "🔗", category: "Text Tools",
+    live: true },
+  { slug: "remove-html-tags", name: "Remove HTML", shortName: "Rm HTML", title: "Remove HTML Tags — Strip Tags Online Free", description: "Strip HTML and XML tags from text. Keep specific tags, decode entities. Free online HTML tag remover — no signup required.", emoji: "🏷️", category: "Text Tools",
+    live: true },
+  { slug: "text-to-list", name: "Text to List", shortName: "To List", title: "Text to List Converter — Free Online Tool", description: "Convert paragraphs to bullet points, numbered lists, HTML or Markdown lists. Free online text to list converter — no signup.", emoji: "📋", category: "Text Tools",
+    live: true },
+  { slug: "list-to-text", name: "List to Text", shortName: "To Text", title: "List to Text Converter — Remove Bullets Free", description: "Convert bulleted or numbered lists to flowing text. Auto-strips bullets, numbers & dashes. Free online tool — no signup required.", emoji: "📝", category: "Text Tools",
+    live: true },
+  { slug: "roman-numeral-converter", name: "Roman Numerals", shortName: "Roman", title: "Roman Numeral Converter — Free Online Tool", description: "Convert numbers to Roman numerals and back. Date mode, reference table. Free online Roman numeral converter — no signup.", emoji: "🏛️", category: "Generators",
+    live: true },
+  { slug: "qr-code-generator", name: "QR Code", shortName: "QR Code", title: "QR Code Generator — Create QR Codes Free", description: "Generate QR codes for URLs, text, email, phone & WiFi. Download as PNG. Free online QR code generator — no signup required.", emoji: "📱", category: "Generators",
+    live: true },
+  { slug: "emoji-picker", name: "Emoji Picker", shortName: "Emoji", title: "Emoji Picker — Copy & Paste Emojis Free", description: "Search and copy emojis by name or category. Code points & shortcodes shown. Free online emoji picker — no signup required.", emoji: "😀", category: "Generators",
+    live: true },
+  { slug: "smart-quotes-converter", name: "Smart Quotes", shortName: "Quotes", title: "Smart Quotes Converter — Curly to Straight Free", description: "Convert curly quotes to straight or straight to typographic quotes. Em dash conversion included. Free — no signup required.", emoji: "❝", category: "Text Tools",
+    live: true },
+  { slug: "unicode-lookup", name: "Unicode Lookup", shortName: "Unicode", title: "Unicode Character Lookup — Symbol Finder Free", description: "Search and copy Unicode characters by name or category. Code points, HTML entities & CSS values. Free — no signup required.", emoji: "🔍", category: "Generators",
+    live: true },
+];
+
+/** Category display order and emoji labels */
+export const TOOL_CATEGORIES: { name: ToolCategory; emoji: string }[] = [
+  { name: "Text Tools", emoji: "📝" },
+  { name: "Analysis", emoji: "📊" },
+  { name: "Font Styles", emoji: "✨" },
+  { name: "Developer", emoji: "⚡" },
+  { name: "Encoding", emoji: "🔐" },
+  { name: "Generators", emoji: "🎲" },
 ];
 
 /** Get only tools that are live (shown in nav) */
 export function getLiveTools() {
   return tools.filter((t) => t.live);
+}
+
+/** Get live tools grouped by category (in display order) */
+export function getToolsByCategory() {
+  const live = getLiveTools();
+  return TOOL_CATEGORIES.map((cat) => ({
+    ...cat,
+    tools: live.filter((t) => t.category === cat.name),
+  }));
 }
 
 /** Get a tool by its slug */
