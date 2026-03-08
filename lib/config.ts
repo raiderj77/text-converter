@@ -311,6 +311,16 @@ export const tools: Tool[] = [
     emoji: "📚",
     live: true,
   },
+  {
+    slug: "text-statistics",
+    name: "Text Statistics",
+    shortName: "Stats",
+    title: "Text Statistics Dashboard — Free Online Tool",
+    description:
+      "Analyze text with word frequency, vocabulary richness, lexical density, sentence structure, bigrams, trigrams & more. Export reports. Free — no signup.",
+    emoji: "📈",
+    live: true,
+  },
 ];
 
 /** Get only tools that are live (shown in nav) */
