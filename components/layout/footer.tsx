@@ -94,6 +94,10 @@ export function Footer() {
             <a href="https://fibertools.app" className="hover:underline">FiberTools</a>
             {" · "}
             <a href="https://mindchecktools.com" className="hover:underline">MindCheck Tools</a>
+            {" · "}
+            <a href="https://contractextract.com" className="hover:underline">ContractExtract</a>
+            {" · "}
+            <a href="https://medicalbillreader.com" className="hover:underline">Medical Bill Reader</a>
           </p>
         </div>
       </div>

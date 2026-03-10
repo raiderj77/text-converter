@@ -33,6 +33,11 @@ export default function AboutPage() {
         helps improve performance and usability.
       </p>
 
+      <h2>Who built this</h2>
+      <p>
+        Built by an experienced web developer.
+      </p>
+
       <h2>Feedback</h2>
       <p>
         If you want a new format added or you found a bug, use the Contact page and include a small example
