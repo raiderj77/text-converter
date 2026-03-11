@@ -13,11 +13,35 @@ export default function PrivacyPage() {
         This website provides an online text case conversion tool. Your privacy matters.
       </p>
 
-      <h2>Personal Information</h2>
+      <h2>Information We Collect</h2>
+      <p>
+        No account is required to use this site. We do not request names, email
+        addresses, or other personal identifiers. All text conversions are
+        processed entirely in your browser and are never transmitted to or
+        stored on our servers.
+      </p>
+      <p>
+        Through third-party services, the following categories of data may be
+        automatically collected when you visit this site:
+      </p>
       <ul>
-        <li>No account is required to use this site.</li>
-        <li>We do not request names, email addresses, or other personal identifiers.</li>
-        <li>Your input text is processed in your browser and is not stored on our servers.</li>
+        <li>
+          <strong>Device and browser information</strong> — browser type,
+          operating system, screen resolution, and language preferences.
+        </li>
+        <li>
+          <strong>IP address</strong> — collected by analytics and advertising
+          services; may be used to derive approximate (city-level) location.
+        </li>
+        <li>
+          <strong>Usage data</strong> — pages visited, time on page, click
+          patterns, and referral URLs.
+        </li>
+        <li>
+          <strong>Cookies and similar technologies</strong> — small text files
+          stored on your device by analytics and advertising partners to
+          remember preferences, measure performance, and personalize ads.
+        </li>
       </ul>
 
       <h2>Local Storage</h2>
@@ -44,10 +68,39 @@ export default function PrivacyPage() {
         visiting Google’s privacy documentation.
       </p>
 
-      <h2>Third Party Services</h2>
+      <h2>Third-Party Services</h2>
+      <p>The following third-party services may receive data collected on this site:</p>
+      <ul>
+        <li>
+          <strong>Google Analytics</strong> — collects anonymized usage and
+          traffic data (page views, device type, approximate location).
+        </li>
+        <li>
+          <strong>Google AdSense</strong> — collects device, cookie, and
+          browsing data to deliver and measure advertisements.
+        </li>
+        <li>
+          <strong>Microsoft Clarity</strong> — collects session replay and
+          heatmap data (clicks, scrolls, mouse movements) for UX analysis. No
+          keystrokes within text input fields are captured.
+        </li>
+      </ul>
+      <p>Each service operates under its own privacy policy.</p>
+
+      <h2>Data Retention</h2>
       <p>
-        Third party services used by this website may include Google Analytics and
-        Google AdSense. Each service operates under its own privacy policy.
+        Because text conversions happen entirely in your browser, we retain no
+        user-submitted content. Data collected by third-party services is
+        retained according to their own policies:
+      </p>
+      <ul>
+        <li>Google Analytics data is retained for up to 14 months.</li>
+        <li>Google AdSense cookie data is retained for up to 13 months.</li>
+        <li>Microsoft Clarity session data is retained for up to 30 days.</li>
+      </ul>
+      <p>
+        Local storage data (such as theme preference) remains on your device
+        until you clear your browser data.
       </p>
 
       <h2>Data Security</h2>
@@ -57,6 +110,81 @@ export default function PrivacyPage() {
         data collection.
       </p>
 
+      <h2>Your Privacy Rights</h2>
+      <p>
+        Depending on your jurisdiction, you may have the following rights
+        regarding your personal information:
+      </p>
+      <ul>
+        <li>
+          <strong>Right to Know / Access</strong> — request a copy of the
+          personal information we have collected about you.
+        </li>
+        <li>
+          <strong>Right to Delete</strong> — request deletion of your personal
+          information.
+        </li>
+        <li>
+          <strong>Right to Correct</strong> — request correction of inaccurate
+          personal information.
+        </li>
+        <li>
+          <strong>Right to Opt-Out</strong> — opt out of the sale or sharing of
+          your personal information.
+        </li>
+        <li>
+          <strong>Right to Limit Use of Sensitive Data</strong> — restrict how
+          sensitive personal information is used.
+        </li>
+        <li>
+          <strong>Right to Non-Discrimination</strong> — exercise any of these
+          rights without receiving discriminatory treatment.
+        </li>
+      </ul>
+      <p>
+        To exercise any of these rights, please contact us using the
+        information in the Contact section below.
+      </p>
+
+      <h2>Do Not Sell or Share My Personal Information</h2>
+      <p>
+        We do not sell your personal information in the traditional sense.
+        However, under the California Consumer Privacy Act (CCPA) and similar
+        state laws, the use of advertising cookies by third-party ad networks
+        (such as Google AdSense) may be considered a &ldquo;sale&rdquo; or
+        &ldquo;sharing&rdquo; of personal information.
+      </p>
+      <p>
+        You can opt out of personalized advertising by adjusting your cookie
+        preferences via our cookie consent banner, or by using the{" "}
+        <a
+          href="https://optout.aboutads.info/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Digital Advertising Alliance opt-out tool
+        </a>
+        .
+      </p>
+
+      <h2>Global Privacy Control (GPC)</h2>
+      <p>
+        We honor Global Privacy Control (GPC) signals. If your browser sends a
+        GPC signal, we treat it as a valid opt-out request for the sale or
+        sharing of your personal information under applicable state privacy
+        laws.
+      </p>
+
+      <h2>Sensitive Personal Information</h2>
+      <p>
+        This site does not collect, process, or store sensitive personal
+        information as defined under the CCPA (effective January 2026),
+        including but not limited to: mental or physical health data, biometric
+        or genetic data, precise geolocation, citizenship or immigration
+        status, Social Security numbers, financial account credentials, racial
+        or ethnic origin, religious beliefs, or sexual orientation.
+      </p>
+
       <h2>Changes to This Policy</h2>
       <p>
         This Privacy Policy may be updated periodically. Updates will be posted on this page.
@@ -64,10 +192,12 @@ export default function PrivacyPage() {
 
       <h2>Contact</h2>
       <p>
-        For questions about this Privacy Policy, contact the site owner via the Contact page.
+        For questions about this Privacy Policy or to exercise your privacy
+        rights, please email us at{" "}
+        <a href="mailto:privacy@flipmycase.com">privacy@flipmycase.com</a>.
       </p>
 
-      <p>Last updated: 2026-02-13</p>
+      <p>Last updated: 2026-03-11</p>
     </main>
   );
 }
