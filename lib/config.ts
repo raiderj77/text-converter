@@ -206,6 +206,39 @@ export const tools: Tool[] = [
     live: true,
   },
   {
+    slug: "camelcase-vs-snake-case",
+    name: "camelCase vs snake_case",
+    shortName: "Case Compare",
+    title: "camelCase vs snake_case vs kebab-case — Which to Use (2026)",
+    description:
+      "When to use camelCase, snake_case, or kebab-case in programming. Language conventions, examples, and a free converter tool.",
+    emoji: "⚖️",
+    category: "Generators",
+    live: true,
+  },
+  {
+    slug: "text-tools-for-developers",
+    name: "Developer Tools",
+    shortName: "Dev Tools",
+    title: "Text Tools for Developers: Free Browser Tools (2026)",
+    description:
+      "Free browser-based text tools for developers. JSON formatter, regex tester, hash generator, UUID, JWT decoder, and 20+ more. No signup required.",
+    emoji: "💻",
+    category: "Developer",
+    live: true,
+  },
+  {
+    slug: "json-vs-yaml-vs-xml",
+    name: "JSON vs YAML vs XML",
+    shortName: "Format Compare",
+    title: "JSON vs YAML vs XML: Differences & When to Use Each (2026)",
+    description:
+      "JSON vs YAML vs XML comparison — syntax differences, use cases, performance, and when to choose each format for your project.",
+    emoji: "📊",
+    category: "Developer",
+    live: true,
+  },
+  {
     slug: "text-sorter",
     name: "Text Sorter",
     shortName: "Sort",

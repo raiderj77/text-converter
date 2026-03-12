@@ -226,6 +226,14 @@ A: CONSTANT_CASE (also called SCREAMING_SNAKE_CASE) uses all uppercase letters w
 
 - [All Caps Guide](https://flipmycase.com/all-caps-guide): When ALL CAPS is rude vs necessary — covers uppercase usage rules in emails, social media, code, legal documents, and professional communication.
 
+### Comparison Guides
+
+- [camelCase vs snake_case vs kebab-case](https://flipmycase.com/camelcase-vs-snake-case): Comprehensive comparison of the three most common naming conventions in programming. Covers when to use camelCase (JavaScript, Java, TypeScript), snake_case (Python, Ruby, SQL), and kebab-case (CSS, URLs, HTML attributes). Includes a language-by-language convention table and FAQ on readability, PascalCase, and mixing conventions.
+
+- [Text Tools for Developers](https://flipmycase.com/text-tools-for-developers): Curated directory of 20+ free browser-based developer tools organized by category: code formatters (JSON, CSS, HTML, SQL, XML, YAML), encoding tools (Base64, hex, binary, ROT13), developer utilities (hash generator, regex tester, UUID, JWT decoder, cron builder), and data conversion tools (CSV to JSON, HTML to Markdown, text diff). All tools run client-side with no data transmitted.
+
+- [JSON vs YAML vs XML](https://flipmycase.com/json-vs-yaml-vs-xml): Side-by-side comparison of JSON, YAML, and XML data formats. Covers syntax examples, use cases (APIs vs config files vs enterprise systems), pros and cons of each format, parse speed, file size, comment support, and schema validation. Includes a decision guide for choosing the right format.
+
 ---
 
 ## Blog Posts

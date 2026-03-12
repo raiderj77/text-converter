@@ -9,9 +9,19 @@ import { getAllPosts } from "@/lib/blog-md";
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
-  // Tool pages
+  // Content slugs handled separately with different priority
+  const contentSlugSet = new Set([
+    "learn",
+    "all-caps-guide",
+    "underscore-conventions",
+    "camelcase-vs-snake-case",
+    "text-tools-for-developers",
+    "json-vs-yaml-vs-xml",
+  ]);
+
+  // Tool pages (exclude content pages handled below)
   const toolPages: MetadataRoute.Sitemap = tools
-    .filter((t) => t.live)
+    .filter((t) => t.live && !contentSlugSet.has(t.slug))
     .map((tool) => ({
       url: tool.slug === "" ? SITE_URL : `${SITE_URL}/${tool.slug}`,
       lastModified: now,
@@ -37,16 +47,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // Content pages (educational — higher priority)
-  const contentPages: MetadataRoute.Sitemap = [
+  // Content pages (educational/comparison — explicit priority)
+  const contentSlugs = [
     "learn",
     "all-caps-guide",
     "underscore-conventions",
-  ].map((page) => ({
+    "camelcase-vs-snake-case",
+    "text-tools-for-developers",
+    "json-vs-yaml-vs-xml",
+  ];
+  const contentPages: MetadataRoute.Sitemap = contentSlugs.map((page) => ({
     url: `${SITE_URL}/${page}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
-    priority: 0.7,
+    priority: 0.75,
   }));
 
   // Legal/info pages

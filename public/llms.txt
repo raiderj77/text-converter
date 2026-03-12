@@ -95,6 +95,11 @@ FlipMyCase is a suite of free, browser-based text tools for developers and write
 - [Underscore Guide](https://flipmycase.com/underscore-conventions): Guide to underscore conventions in programming — _private, __dunder, snake_case.
 - [All Caps Guide](https://flipmycase.com/all-caps-guide): When ALL CAPS is rude vs necessary in emails, social media, and code.
 
+## Comparison Guides
+- [camelCase vs snake_case vs kebab-case](https://flipmycase.com/camelcase-vs-snake-case): When to use each naming convention in programming, with language-specific examples and a comparison table.
+- [Text Tools for Developers](https://flipmycase.com/text-tools-for-developers): Directory of 20+ free browser-based developer tools — JSON formatter, regex tester, hash generator, UUID, JWT decoder, and more.
+- [JSON vs YAML vs XML](https://flipmycase.com/json-vs-yaml-vs-xml): Syntax differences, use cases, and performance comparison to help you choose the right data format.
+
 ## Blog
 
 Guides and articles about text formatting, naming conventions, and developer tools: https://flipmycase.com/blog
