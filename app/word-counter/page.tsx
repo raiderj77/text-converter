@@ -112,6 +112,15 @@ export default function WordCounterPage() {
 
         <AdSlot slot="after-tool" page="word-counter" />
 
+        <div className="mt-4 rounded-xl border border-white/10 bg-neutral-900/50 px-4 py-3">
+          <Link
+            href="/blog/word-counter-guide"
+            className="text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors"
+          >
+            📖 Full Guide: Free Word Counter — Count Words, Characters, Sentences, and Reading Time →
+          </Link>
+        </div>
+
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Count Words Online

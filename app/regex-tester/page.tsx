@@ -133,6 +133,14 @@ export default function RegexTesterPage() {
         </div>
 
         <AdSlot slot="after-tool" page="regex-tester" />
+        <div className="mt-4 rounded-xl border border-white/10 bg-neutral-900/50 px-4 py-3">
+          <Link
+            href="/blog/regex-tester-guide"
+            className="text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors"
+          >
+            📖 Full Guide: Regex Tester Online — How to Test Regular Expressions →
+          </Link>
+        </div>
 
         {/* Feature grid */}
         <section className="mt-10">

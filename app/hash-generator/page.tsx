@@ -133,6 +133,14 @@ export default function HashGeneratorPage() {
         </div>
 
         <AdSlot slot="after-tool" page="hash-generator" />
+        <div className="mt-4 rounded-xl border border-white/10 bg-neutral-900/50 px-4 py-3">
+          <Link
+            href="/blog/hash-generator-guide"
+            className="text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors"
+          >
+            📖 Full Guide: Hash Generator — How to Generate MD5, SHA-256, SHA-512 Hashes Online →
+          </Link>
+        </div>
 
         {/* Feature grid */}
         <section className="mt-10">

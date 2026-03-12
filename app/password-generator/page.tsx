@@ -134,6 +134,14 @@ export default function PasswordGeneratorPage() {
         </div>
 
         <AdSlot slot="after-tool" page="password-generator" />
+        <div className="mt-4 rounded-xl border border-white/10 bg-neutral-900/50 px-4 py-3">
+          <Link
+            href="/blog/password-generator-guide"
+            className="text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors"
+          >
+            📖 Full Guide: Password Generator — Strong Passwords, Passphrases, and PINs →
+          </Link>
+        </div>
 
         {/* Feature grid */}
         <section className="mt-10">

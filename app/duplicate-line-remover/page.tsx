@@ -111,6 +111,15 @@ export default function DuplicateRemoverPage() {
 
         <AdSlot slot="after-tool" page="duplicate-remover" />
 
+        <div className="mt-4 rounded-xl border border-white/10 bg-neutral-900/50 px-4 py-3">
+          <Link
+            href="/blog/duplicate-remover-guide"
+            className="text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors"
+          >
+            📖 Full Guide: How to Remove Duplicate Lines from Text Online →
+          </Link>
+        </div>
+
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Remove Duplicate Lines Online

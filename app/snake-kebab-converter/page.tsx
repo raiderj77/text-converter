@@ -112,6 +112,14 @@ export default function SnakeKebabConverterPage() {
         {/* ========== SEO CONTENT ========== */}
 
         <AdSlot slot="after-tool" page="snake-kebab-converter" />
+        <div className="mt-4 rounded-xl border border-white/10 bg-neutral-900/50 px-4 py-3">
+          <Link
+            href="/blog/how-to-convert-text-to-snake-case-kebab-case"
+            className="text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors"
+          >
+            📖 Full Guide: How to Convert Text to Snake_case and Kebab-case →
+          </Link>
+        </div>
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">

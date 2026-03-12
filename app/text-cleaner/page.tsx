@@ -112,6 +112,15 @@ export default function TextCleanerPage() {
 
         <AdSlot slot="after-tool" page="text-cleaner" />
 
+        <div className="mt-4 rounded-xl border border-white/10 bg-neutral-900/50 px-4 py-3">
+          <Link
+            href="/blog/text-cleaner-guide"
+            className="text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors"
+          >
+            📖 Full Guide: How to Clean and Format Text Online →
+          </Link>
+        </div>
+
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Clean Text Online

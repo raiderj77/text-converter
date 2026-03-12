@@ -141,6 +141,15 @@ export default function JsonFormatterPage() {
 
         <AdSlot slot="after-tool" page="json-formatter" />
 
+        <div className="mt-4 rounded-xl border border-white/10 bg-neutral-900/50 px-4 py-3">
+          <Link
+            href="/blog/json-formatter-guide"
+            className="text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors"
+          >
+            📖 Full Guide: JSON Formatter and Validator — Pretty Print, Minify, and Fix JSON Online →
+          </Link>
+        </div>
+
         {/* Section 1: How to — targets "how to format json online", "how to validate json", "how to pretty print json" */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">

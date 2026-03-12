@@ -124,6 +124,15 @@ export default function LoremIpsumPage() {
 
         <AdSlot slot="after-tool" page="lorem-ipsum" />
 
+        <div className="mt-4 rounded-xl border border-white/10 bg-neutral-900/50 px-4 py-3">
+          <Link
+            href="/blog/lorem-ipsum-guide"
+            className="text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors"
+          >
+            📖 Full Guide: Lorem Ipsum Generator — Free Placeholder Text for Designers and Developers →
+          </Link>
+        </div>
+
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
             How to Generate Lorem Ipsum Text

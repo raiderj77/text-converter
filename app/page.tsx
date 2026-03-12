@@ -110,6 +110,40 @@ export default function HomePage() {
 
         <AdSlot slot="after-tool" page="home" />
 
+        <div className="mt-4 rounded-xl border border-white/10 bg-neutral-900/50 px-4 py-3 space-y-2">
+          <p className="text-xs font-semibold text-neutral-400 uppercase tracking-wide">In-Depth Guides</p>
+          <Link
+            href="/blog/how-to-convert-text-to-different-formats"
+            className="block text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors"
+          >
+            📖 Text Conversion Guide: Uppercase, Lowercase, Title Case &amp; Advanced Formats →
+          </Link>
+          <Link
+            href="/blog/how-to-convert-text-to-uppercase"
+            className="block text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors"
+          >
+            📖 How to Convert Text to Uppercase: Quick &amp; Easy Methods →
+          </Link>
+          <Link
+            href="/blog/uppercase-converter"
+            className="block text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors"
+          >
+            📖 How to Convert Text to Uppercase Online (Free Tool + Guide) →
+          </Link>
+          <Link
+            href="/blog/lowercase-converter"
+            className="block text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors"
+          >
+            📖 How to Convert Text to Lowercase Online (Free Tool + Guide) →
+          </Link>
+          <Link
+            href="/blog/title-case-converter"
+            className="block text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors"
+          >
+            📖 Title Case Converter — Rules, Examples, and Free Online Tool →
+          </Link>
+        </div>
+
         {/* How to use */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
