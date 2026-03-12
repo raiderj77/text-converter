@@ -155,6 +155,33 @@ export function ArticleSchema({
 }
 
 /**
+ * WebSite schema — for the homepage.
+ * Enables sitelinks searchbox in Google results.
+ */
+export function WebSiteSchema() {
+  return (
+    <JsonLd
+      data={{
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: SITE_NAME,
+        url: SITE_URL,
+        description:
+          "Free online text conversion and formatting tools",
+        potentialAction: {
+          "@type": "SearchAction",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: `${SITE_URL}/tools?q={search_term_string}`,
+          },
+          "query-input": "required name=search_term_string",
+        },
+      }}
+    />
+  );
+}
+
+/**
  * Organization schema — for the site-wide identity.
  * Added once in the root layout.
  */

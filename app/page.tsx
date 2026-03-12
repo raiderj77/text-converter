@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL, getToolBySlug } from "@/lib/config";
 import { conversions } from "@/lib/conversions";
-import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
+import { WebAppSchema, WebSiteSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
 import { CaseConverterTool } from "@/components/tools/case-converter";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
@@ -83,6 +83,7 @@ export default function HomePage() {
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema items={[{ name: "Home", href: "/" }]} />
+      <WebSiteSchema />
 
       <div className="mx-auto max-w-6xl px-4 py-6">
         {/* H1 — visible to Google in the HTML source, no JS required */}
