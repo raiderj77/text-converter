@@ -1,3 +1,5 @@
+import { BreadcrumbSchema } from "@/components/seo/schema";
+
 export const metadata = {
   title: "About",
   description: "About the Text Case Converter tool and how it handles your text.",
@@ -5,8 +7,10 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <main style={{ maxWidth: 900, margin: "0 auto", padding: 24, lineHeight: 1.7 }}>
-      <h1>About</h1>
+    <>
+      <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "About", href: "/about" }]} />
+      <main style={{ maxWidth: 900, margin: "0 auto", padding: 24, lineHeight: 1.7 }}>
+        <h1>About</h1>
 
       <p>
         Text Case Converter is a utility site built to save you time. You paste text once and instantly get
@@ -44,7 +48,8 @@ export default function AboutPage() {
         input and the output you expected.
       </p>
 
-      <p style={{ marginTop: 24, opacity: 0.8 }}>Last updated: 2026-02-13</p>
-    </main>
+        <p style={{ marginTop: 24, opacity: 0.8 }}>Last updated: 2026-02-13</p>
+      </main>
+    </>
   );
 }

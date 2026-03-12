@@ -1,3 +1,5 @@
+import { BreadcrumbSchema } from "@/components/seo/schema";
+
 export const metadata = {
   title: "Contact",
   description: "Contact the site owner with feedback or bug reports.",
@@ -5,8 +7,10 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <main style={{ maxWidth: 900, margin: "0 auto", padding: 24, lineHeight: 1.7 }}>
-      <h1>Contact</h1>
+    <>
+      <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "Contact", href: "/contact" }]} />
+      <main style={{ maxWidth: 900, margin: "0 auto", padding: 24, lineHeight: 1.7 }}>
+        <h1>Contact</h1>
 
       <p>
         Use this page to send feedback, request a new format, or report a bug. Include a small example
@@ -34,7 +38,8 @@ export default function ContactPage() {
         text is private, replace it with a similar example that shows the same formatting problem.
       </p>
 
-      <p style={{ marginTop: 24, opacity: 0.8 }}>Last updated: 2026-02-13</p>
-    </main>
+        <p style={{ marginTop: 24, opacity: 0.8 }}>Last updated: 2026-02-13</p>
+      </main>
+    </>
   );
 }

@@ -1,3 +1,5 @@
+import { BreadcrumbSchema } from "@/components/seo/schema";
+
 export const metadata = {
   title: "Privacy Policy",
   description:
@@ -6,8 +8,10 @@ export const metadata = {
 
 export default function PrivacyPage() {
   return (
-    <main style={{ maxWidth: 800, margin: "0 auto", padding: 24, lineHeight: 1.6 }}>
-      <h1>Privacy Policy</h1>
+    <>
+      <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "Privacy Policy", href: "/privacy" }]} />
+      <main style={{ maxWidth: 800, margin: "0 auto", padding: 24, lineHeight: 1.6 }}>
+        <h1>Privacy Policy</h1>
 
       <p>
         This website provides an online text case conversion tool. Your privacy matters.
@@ -197,7 +201,8 @@ export default function PrivacyPage() {
         <a href="mailto:privacy@flipmycase.com">privacy@flipmycase.com</a>.
       </p>
 
-      <p>Last updated: 2026-03-11</p>
-    </main>
+        <p>Last updated: 2026-03-11</p>
+      </main>
+    </>
   );
 }

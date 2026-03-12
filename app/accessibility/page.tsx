@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BreadcrumbSchema } from "@/components/seo/schema";
 
 export const metadata = {
   title: "Accessibility Statement",
@@ -8,8 +9,10 @@ export const metadata = {
 
 export default function AccessibilityPage() {
   return (
-    <main style={{ maxWidth: 800, margin: "0 auto", padding: 24, lineHeight: 1.6 }}>
-      <h1>Accessibility Statement</h1>
+    <>
+      <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "Accessibility", href: "/accessibility" }]} />
+      <main style={{ maxWidth: 800, margin: "0 auto", padding: 24, lineHeight: 1.6 }}>
+        <h1>Accessibility Statement</h1>
 
       <p>
         FlipMyCase is committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone and applying the relevant accessibility standards.
@@ -84,9 +87,10 @@ export default function AccessibilityPage() {
       </p>
 
       <h2>Date</h2>
-      <p>
-        This statement was created on February 20, 2026.
-      </p>
-    </main>
+        <p>
+          This statement was created on February 20, 2026.
+        </p>
+      </main>
+    </>
   );
 }

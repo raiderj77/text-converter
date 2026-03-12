@@ -1,3 +1,5 @@
+import { BreadcrumbSchema } from "@/components/seo/schema";
+
 export const metadata = {
   title: "Terms of Service",
   description:
@@ -6,8 +8,10 @@ export const metadata = {
 
 export default function TermsPage() {
   return (
-    <main style={{ maxWidth: 800, margin: "0 auto", padding: 24, lineHeight: 1.6 }}>
-      <h1>Terms of Service</h1>
+    <>
+      <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "Terms of Service", href: "/terms" }]} />
+      <main style={{ maxWidth: 800, margin: "0 auto", padding: 24, lineHeight: 1.6 }}>
+        <h1>Terms of Service</h1>
 
       <p>
         By accessing and using this website, you agree to these Terms of Service.
@@ -50,7 +54,8 @@ export default function TermsPage() {
         Questions about these Terms of Service may be directed through the Contact page.
       </p>
 
-      <p>Last updated: 2026-02-13</p>
-    </main>
+        <p>Last updated: 2026-02-13</p>
+      </main>
+    </>
   );
 }
