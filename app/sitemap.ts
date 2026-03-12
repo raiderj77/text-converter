@@ -37,9 +37,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // Static pages
-  const staticPages: MetadataRoute.Sitemap = [
+  // Content pages (educational — higher priority)
+  const contentPages: MetadataRoute.Sitemap = [
     "learn",
+    "all-caps-guide",
+    "underscore-conventions",
+  ].map((page) => ({
+    url: `${SITE_URL}/${page}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  // Legal/info pages
+  const legalPages: MetadataRoute.Sitemap = [
     "about",
     "contact",
     "privacy",
@@ -53,5 +64,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.3,
   }));
 
-  return [...toolPages, ...blogIndex, ...blogPosts, ...staticPages];
+  return [...toolPages, ...blogIndex, ...blogPosts, ...contentPages, ...legalPages];
 }
