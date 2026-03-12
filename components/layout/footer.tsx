@@ -98,6 +98,8 @@ export function Footer() {
             <a href="https://contractextract.com" className="hover:underline">ContractExtract</a>
             {" · "}
             <a href="https://medicalbillreader.com" className="hover:underline">Medical Bill Reader</a>
+            {" · "}
+            <a href="https://524tracker.com" className="hover:underline">524 Tracker</a>
           </p>
         </div>
       </div>
