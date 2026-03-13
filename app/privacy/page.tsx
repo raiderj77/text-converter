@@ -150,44 +150,68 @@ export default function PrivacyPage() {
         information in the Contact section below.
       </p>
 
-      <h2>Do Not Sell or Share My Personal Information</h2>
-      <p>
-        We do not sell your personal information in the traditional sense.
-        However, under the California Consumer Privacy Act (CCPA) and similar
-        state laws, the use of advertising cookies by third-party ad networks
-        (such as Google AdSense) may be considered a &ldquo;sale&rdquo; or
-        &ldquo;sharing&rdquo; of personal information.
-      </p>
-      <p>
-        You can opt out of personalized advertising by adjusting your cookie
-        preferences via our cookie consent banner, or by using the{" "}
-        <a
-          href="https://optout.aboutads.info/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Digital Advertising Alliance opt-out tool
-        </a>
-        .
-      </p>
+      <section id="california-privacy" aria-labelledby="california-heading">
+        <h2 id="california-heading">California Privacy Rights (CCPA/CPRA)</h2>
 
-      <h2>Global Privacy Control (GPC)</h2>
-      <p>
-        We honor Global Privacy Control (GPC) signals. If your browser sends a
-        GPC signal, we treat it as a valid opt-out request for the sale or
-        sharing of your personal information under applicable state privacy
-        laws.
-      </p>
+        <p>
+          If you are a California resident, the California Consumer Privacy Act (CCPA) as amended
+          by the California Privacy Rights Act (CPRA) grants you specific rights regarding your
+          personal information. These rights are effective as of January 1, 2026.
+        </p>
 
-      <h2>Sensitive Personal Information</h2>
-      <p>
-        This site does not collect, process, or store sensitive personal
-        information as defined under the CCPA (effective January 2026),
-        including but not limited to: mental or physical health data, biometric
-        or genetic data, precise geolocation, citizenship or immigration
-        status, Social Security numbers, financial account credentials, racial
-        or ethnic origin, religious beliefs, or sexual orientation.
-      </p>
+        <h3>Information We Collect</h3>
+        <p>In the past 12 months we have collected the following categories of personal information:</p>
+        <ul>
+          <li><strong>Identifiers:</strong> IP address, browser type, and device identifiers collected via analytics and advertising.</li>
+          <li><strong>Internet or network activity:</strong> Pages visited, text conversion tool usage, time on site.</li>
+          <li><strong>Inferred data:</strong> Interests inferred from browsing behavior via advertising partners.</li>
+        </ul>
+
+        <h3>Sensitive Personal Information</h3>
+        <p>
+          As of January 1, 2026, California law defines an expanded category of sensitive personal
+          information. <strong>FlipMyCase does not collect sensitive personal information.</strong>
+          Text entered into our conversion tools is processed entirely in your browser and is never
+          transmitted to our servers or any third party.
+        </p>
+
+        <h3>Data Minimization</h3>
+        <p>
+          We collect only the minimum personal information necessary to operate this service.
+          We do not collect personal information beyond what is reasonably necessary and
+          proportionate to the purposes disclosed in this policy.
+        </p>
+
+        <h3>How We Use Your Information</h3>
+        <ul>
+          <li>To display advertising through Google AdSense</li>
+          <li>To analyze site traffic and improve tool performance via analytics</li>
+          <li>To maintain site security and prevent fraud</li>
+        </ul>
+        <p>We do not sell your personal information. Sharing data with advertising partners may constitute &ldquo;sharing&rdquo; under CPRA — you may opt out using the methods below.</p>
+
+        <h3>Your Rights as a California Resident</h3>
+        <ul>
+          <li><strong>Right to Know:</strong> Request disclosure of personal information collected in the past 12 months.</li>
+          <li><strong>Right to Delete:</strong> Request deletion of personal information we have collected.</li>
+          <li><strong>Right to Correct:</strong> Request correction of inaccurate personal information.</li>
+          <li><strong>Right to Opt-Out:</strong> Opt out of sharing your personal information for advertising. We honor Global Privacy Control (GPC) signals automatically.</li>
+          <li><strong>Right to Non-Discrimination:</strong> We will not discriminate against you for exercising any of these rights.</li>
+        </ul>
+
+        <h3>Do Not Sell or Share My Personal Information</h3>
+        <p>
+          To opt out of sharing for advertising purposes, use a{' '}
+          <a href="https://globalprivacycontrol.org/" rel="noopener noreferrer">Global Privacy Control (GPC)</a>-enabled
+          browser, or contact us via the <a href="/contact">Contact page</a>.
+        </p>
+
+        <h3>How to Submit a Request</h3>
+        <p>Contact us via the <a href="/contact">Contact page</a>. We will respond within 45 days.</p>
+
+        <h3>Data Retention</h3>
+        <p>Analytics data is retained for 26 months. Server logs are retained for 90 days. Text entered into tools is never stored beyond your browser session.</p>
+      </section>
 
       <h2>Changes to This Policy</h2>
       <p>
@@ -201,7 +225,7 @@ export default function PrivacyPage() {
         <a href="mailto:privacy@flipmycase.com">privacy@flipmycase.com</a>.
       </p>
 
-        <p>Last updated: 2026-03-11</p>
+        <p>Effective Date: January 1, 2026 | Last Reviewed: March 2026</p>
       </main>
     </>
   );
