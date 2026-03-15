@@ -213,6 +213,45 @@ export default function PrivacyPage() {
         <p>Analytics data is retained for 26 months. Server logs are retained for 90 days. Text entered into tools is never stored beyond your browser session.</p>
       </section>
 
+      <section id="state-privacy" aria-labelledby="state-heading">
+        <h2 id="state-heading">Additional U.S. State Privacy Rights</h2>
+        <p>
+          Residents of the following states have privacy rights similar to California&apos;s CCPA/CPRA.
+          To exercise your rights, contact us via the <a href="/contact">Contact page</a>.
+          We will respond within the timeframe required by your state&apos;s law.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>State</th>
+              <th>Law</th>
+              <th>Effective</th>
+              <th>Key Rights</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Colorado</td><td>CPA</td><td>Jul 2023</td><td>Access, delete, correct, opt-out, portability</td></tr>
+            <tr><td>Connecticut</td><td>CTDPA</td><td>Jul 2023</td><td>Access, delete, correct, opt-out, portability</td></tr>
+            <tr><td>Virginia</td><td>VCDPA</td><td>Jan 2023</td><td>Access, delete, correct, opt-out</td></tr>
+            <tr><td>Texas</td><td>TDPSA</td><td>Jul 2024</td><td>Access, delete, correct, opt-out</td></tr>
+            <tr><td>Florida</td><td>FDBR</td><td>Jul 2024</td><td>Access, delete, correct, opt-out</td></tr>
+            <tr><td>Montana</td><td>MTCPA</td><td>Oct 2024</td><td>Access, delete, correct, opt-out</td></tr>
+            <tr><td>Oregon</td><td>OCPA</td><td>Jul 2024</td><td>Access, delete, correct, opt-out, portability</td></tr>
+            <tr><td>Tennessee</td><td>TIPA</td><td>Jul 2025</td><td>Access, delete, correct, opt-out</td></tr>
+            <tr><td>Minnesota</td><td>MNDPA</td><td>Jul 2025</td><td>Access, delete, correct, opt-out, portability</td></tr>
+            <tr><td>Maryland</td><td>MODPA</td><td>Oct 2025</td><td>Access, delete, correct, opt-out; bans sale of sensitive data</td></tr>
+            <tr><td>Indiana</td><td>IDCPA</td><td>Jan 2026</td><td>Access, delete, correct, opt-out</td></tr>
+            <tr><td>Kentucky</td><td>KYCPA</td><td>Jan 2026</td><td>Access, delete, correct, opt-out</td></tr>
+            <tr><td>Rhode Island</td><td>RIDPA</td><td>Jan 2026</td><td>Access, delete, correct, opt-out</td></tr>
+          </tbody>
+        </table>
+        <p style={{ marginTop: '1rem' }}>
+          We honor Global Privacy Control (GPC) signals from all states that require it.
+          We do not sell personal information to third parties. We do not engage in targeted
+          advertising using sensitive personal information.
+        </p>
+      </section>
+
       <h2>Changes to This Policy</h2>
       <p>
         This Privacy Policy may be updated periodically. Updates will be posted on this page.
