@@ -123,10 +123,8 @@ export default function JsonFormatterPage() {
           Free JSON Formatter, Validator &amp; Beautifier
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Format, validate, beautify, and minify JSON online. Fix broken JSON automatically.
-          Explore data with a collapsible tree view. Export JSON to CSV. See exact error line
-          numbers. All free, no signup, no ads — runs entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A JSON formatter and validator beautifies minified JSON and checks for syntax errors. Paste your JSON below to format it with proper indentation and validate its structure.
         </p>
 
         <div className="mt-3">

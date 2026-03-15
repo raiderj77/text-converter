@@ -99,10 +99,8 @@ export default function HtmlFormatterPage() {
           Free HTML Formatter &amp; Beautifier
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Format, beautify, and minify HTML online with customizable indentation.
-          Void elements like &lt;br&gt;, &lt;img&gt;, and &lt;input&gt; are handled
-          correctly. Free, no signup, works entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          An HTML formatter and beautifier formats HTML with proper indentation and tag structure, or minifies it for production. Paste your HTML below to format, beautify, or minify it instantly.
         </p>
 
         <div className="mt-3">

@@ -85,10 +85,8 @@ export default function BoldTextGeneratorPage() {
           Bold Text Generator — Copy &amp; Paste Free
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Generate bold Unicode text you can copy and paste anywhere. Choose between serif bold
-          or sans-serif bold styles. Works on Instagram, Twitter, Facebook, bios, and more.
-          Free — no signup required.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A bold text generator converts regular text into Unicode bold characters that can be copied and pasted anywhere. Type your text below to generate bold text you can use on social media and bios.
         </p>
 
         <div className="mt-3">

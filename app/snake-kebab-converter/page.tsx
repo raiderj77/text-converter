@@ -95,10 +95,8 @@ export default function SnakeKebabConverterPage() {
           Snake_case vs Kebab-case Converter: Naming Convention Tool
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Convert between snake_case and kebab-case instantly. Compare naming conventions side by side,
-          view practical examples, and select the appropriate format for your code. Free tool,
-          no signup required, works entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A snake_case to kebab-case converter transforms text between underscore and hyphen naming conventions. Paste your text below to convert between snake_case and kebab-case instantly.
         </p>
 
         <div className="mt-3">

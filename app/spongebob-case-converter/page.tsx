@@ -96,10 +96,8 @@ export default function SpongeBobCaseConverterPage() {
           SpongeBob Case Generator — Create Mocking sPoNgEbOb Text
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Generate authentic SpongeBob mocking text (sPoNgEbOb CaSe) for sarcastic posts, ironic comments, and viral memes.
-          Our free converter creates that distinctive random-looking alternating case from the classic meme. No signup,
-          works instantly. Also try our <Link href="/toggle-case-converter" className="text-blue-400 hover:text-blue-300">toggle case converter</Link> for more text styles.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A SpongeBob case converter transforms text into alternating caps (sPoNgEbOb CaSe) for mocking memes and sarcastic social media posts. Paste your text below to create mocking text instantly.
         </p>
 
         <div className="mt-3">

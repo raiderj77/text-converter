@@ -102,9 +102,8 @@ export default function PigLatinConverterPage() {
           Free Pig Latin Translator
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Convert English text to Pig Latin and back. Consonant clusters, punctuation, and
-          capitalization are all handled automatically. Free, no signup, works in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A Pig Latin translator converts English text to Pig Latin and Pig Latin back to English. Enter your text below to translate to Pig Latin instantly with preserved punctuation and capitalization.
         </p>
 
         <div className="mt-3">

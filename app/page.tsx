@@ -91,9 +91,8 @@ export default function HomePage() {
           Free Text Case Converter
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Paste text once. See every format instantly. Copy with one click. No signup, no limits,
-          works entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          FlipMyCase is a free online text converter with 73+ text transformation tools including case converters, text cleaners, encoders, generators, and formatters. Select any tool below to transform your text instantly — no signup required.
         </p>
 
         <div className="mt-3">

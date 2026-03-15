@@ -84,9 +84,8 @@ export default function BubbleTextGeneratorPage() {
           Bubble Text Generator
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Convert regular text to circled Unicode bubble letters (Ⓑⓤⓑⓑⓛⓔ) you can copy and paste
-          anywhere. Toggle between empty and filled circle styles. Free, no signup.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A bubble text generator converts regular text into circled Unicode characters. Type your text below to generate bubble text you can copy and paste anywhere.
         </p>
 
         <div className="mt-3">

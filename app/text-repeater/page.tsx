@@ -84,9 +84,8 @@ export default function TextRepeaterPage() {
           Free Text Repeater
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Repeat any text up to 1,000 times with custom separators. Number repetitions,
-          preview output, and copy with one click. Free, no signup, works entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A text repeater duplicates any text a specified number of times with custom separators between repetitions. Enter your text and repeat count below to generate repeated text instantly.
         </p>
 
         <div className="mt-3">

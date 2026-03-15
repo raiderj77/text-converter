@@ -101,10 +101,8 @@ export default function NumberBaseConverterPage() {
           Free Number Base Converter
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Convert between binary, octal, decimal, and hexadecimal instantly. Switch to
-          ASCII text mode to see each character&apos;s code in all four bases. Free, no signup,
-          works entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A number base converter transforms values between binary, octal, decimal, and hexadecimal number systems. Enter a number below and select the base to convert instantly.
         </p>
 
         <div className="mt-3">

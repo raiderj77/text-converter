@@ -84,9 +84,8 @@ export default function PlainTextConverterPage() {
           Free Plain Text Converter
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Strip formatting, remove HTML tags, convert smart quotes and dashes to plain text.
-          Free online tool — no signup required. Works entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A plain text converter strips all formatting, HTML tags, smart quotes, and special characters from rich text. Paste your formatted text below to get clean plain text instantly.
         </p>
 
         <div className="mt-3">

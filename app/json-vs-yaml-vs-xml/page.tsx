@@ -373,9 +373,8 @@ skills:
           <h2 className="text-lg sm:text-xl font-semibold">
             Related Free Tools
           </h2>
-          <p className="mt-2 text-sm text-neutral-300">
-            Format, validate, and convert JSON, YAML, XML, and more with our free
-            browser-based tools.
+          <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+            This guide compares JSON, YAML, and XML data formats, covering syntax differences, use cases, and performance. Read on to learn which format is best for your project.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link

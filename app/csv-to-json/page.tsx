@@ -100,11 +100,8 @@ export default function CsvToJsonPage() {
           Free CSV to JSON Converter
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Convert between CSV and JSON formats instantly. Auto-detects delimiters (comma,
-          tab, semicolon, pipe), supports first row as headers, and offers pretty print or
-          minified output. Bidirectional — works both ways. Free, no signup, processes
-          entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A CSV to JSON converter transforms comma-separated data into JSON format and vice versa. Paste your CSV or JSON below to convert between formats instantly.
         </p>
 
         <div className="mt-3">

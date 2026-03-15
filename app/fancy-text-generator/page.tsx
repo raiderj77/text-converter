@@ -96,10 +96,8 @@ export default function FancyTextGeneratorPage() {
           Fancy Text Generator — Cool Fonts Copy &amp; Paste
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Type your text once and instantly see it in 12+ Unicode styles. Bold, italic,
-          bubble, upside down, monospace, and more. Copy any style and paste it anywhere.
-          Free, no signup required.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A fancy text generator transforms plain text into 12+ Unicode font styles including bold, italic, script, bubble, and more. Type your text below to see all available styles and copy any of them instantly.
         </p>
 
         <div className="mt-3">

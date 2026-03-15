@@ -117,12 +117,8 @@ export default function PasswordGeneratorPage() {
           Free Password Generator — Strong Passwords, Passphrases &amp; PINs
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Generate strong, random passwords using cryptographic randomness. Create random
-          passwords with customizable character sets, memorable passphrases from random
-          words, or numeric PINs. See real-time strength rating and crack time estimate.
-          Generate up to 25 at once with session history. Free, no signup, nothing leaves
-          your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A password generator creates secure, random passwords with customizable length, character sets, and complexity. Set your requirements below and click generate to create a strong password instantly.
         </p>
 
         <div className="mt-3">

@@ -100,12 +100,8 @@ export default function CronExpressionBuilderPage() {
           Free Cron Expression Builder
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Build cron expressions visually with an interactive builder. Choose
-          presets or configure each field individually with specific values,
-          ranges, and step intervals. See a natural language description and the
-          next 5 execution times instantly. Free, no signup, works entirely in
-          your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A cron expression builder helps you create and understand cron schedule expressions with a visual interface. Select your schedule parameters below to generate a cron expression with natural language description.
         </p>
 
         <div className="mt-3">

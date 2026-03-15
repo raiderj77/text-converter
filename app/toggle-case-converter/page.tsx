@@ -94,11 +94,8 @@ export default function ToggleCaseConverterPage() {
           Toggle Case Converter: Alternating Caps & SpongeBob Text Generator
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Convert text to toggle case (alternating caps) instantly. Generate sPoNgEbOb text,
-          create mocking SpongeBob meme text, and produce alternating uppercase/lowercase letters.
-          Free tool, no signup required, works entirely in your browser.
-          Try our <Link href="/spongebob-case-converter" className="text-blue-400 hover:text-blue-300">SpongeBob case converter</Link> for meme-style text too.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A toggle case converter transforms text into alternating uppercase and lowercase letters (tOgGlE cAsE). Paste your text below to create alternating caps text instantly.
         </p>
 
         <div className="mt-3">

@@ -38,7 +38,9 @@ export default function SlugGeneratorPage() {
       <div className="mx-auto max-w-6xl px-4 py-6">
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">Free URL Slug Generator</h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">Convert any title or text into a clean, SEO-friendly URL slug instantly. Handles accents, special characters, and multiple formats. No signup, works entirely in your browser.</p>
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A URL slug generator converts any title or phrase into a clean, SEO-friendly URL slug. Enter your text below to generate a lowercase, hyphenated slug instantly.
+        </p>
 
         <div className="mt-6"><SlugGeneratorTool /></div>
 

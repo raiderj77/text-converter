@@ -99,10 +99,8 @@ export default function CssFormatterPage() {
           Free CSS Formatter &amp; Minifier
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Format, beautify, and minify CSS online. Choose your indent style, preserve
-          or remove comments, and get clean output instantly. Free, no signup, works
-          entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A CSS formatter and beautifier formats CSS with proper indentation and structure, or minifies it for production. Paste your CSS below to format, beautify, or minify it instantly.
         </p>
 
         <div className="mt-3">

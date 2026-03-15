@@ -101,10 +101,8 @@ export default function BinaryTextConverterPage() {
           Free Binary Text Converter
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Convert text to binary and binary back to text instantly. See a per-character
-          breakdown with decimal and binary codes. Choose 7-bit or 8-bit mode, space-separated
-          or continuous output. Free, no signup, works entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A binary text converter transforms text into binary code and binary back into readable text. Enter your text or binary string below to convert instantly with a per-character breakdown.
         </p>
 
         <div className="mt-3">

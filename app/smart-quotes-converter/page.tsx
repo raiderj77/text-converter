@@ -91,10 +91,8 @@ export default function SmartQuotesConverterPage() {
           Free Smart Quotes Converter
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Convert curly (smart) quotes to straight quotes, or straight quotes to
-          typographic curly quotes. Em dash and en dash conversion included. Free,
-          no signup, works entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A smart quotes converter transforms curly typographic quotes into straight quotes or straight quotes into curly ones. Paste your text below to convert quote styles instantly.
         </p>
 
         <div className="mt-3">

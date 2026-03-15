@@ -88,9 +88,8 @@ export default function AddPrefixSuffixPage() {
           Add Prefix & Suffix to Each Line
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Add a prefix, suffix, or both to every line of text. Use preset buttons for quotes, parentheses,
-          HTML li tags, bullet points, and commas. Free, no signup, works entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A prefix and suffix tool adds custom text to the beginning or end of every line. Paste your text below and enter your prefix or suffix to transform all lines instantly.
         </p>
 
         <div className="mt-3">

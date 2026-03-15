@@ -81,11 +81,8 @@ export default function CamelCaseVsSnakeCasePage() {
           camelCase vs snake_case vs kebab-case: Which to Use
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          camelCase is standard in JavaScript, Java, TypeScript, and Swift. snake_case is standard in
-          Python, Ruby, PHP, and SQL. kebab-case is standard in CSS, URLs, HTML attributes, and npm
-          package names. The right choice is almost always determined by the language or framework you
-          are using — follow the community convention for consistency.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          This guide compares camelCase, snake_case, and kebab-case naming conventions and explains which to use in each programming language. Read on to learn the conventions and try the free converter tool.
         </p>
 
         {/* ========== SEO CONTENT ========== */}

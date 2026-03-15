@@ -84,9 +84,8 @@ export default function SubscriptGeneratorPage() {
           Subscript Text Generator
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Convert regular text to Unicode subscript characters you can copy and paste anywhere.
-          Perfect for chemical formulas, math notation, and stylistic text. Free, no signup.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A subscript text generator converts numbers and available letters into Unicode subscript characters. Type your text below to generate subscript text you can copy and paste anywhere.
         </p>
 
         <div className="mt-3">

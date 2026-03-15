@@ -116,11 +116,8 @@ export default function TextDiffPage() {
           Free Text Diff — Compare Two Texts Side by Side Online
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Compare two blocks of text and instantly see every difference highlighted with
-          word-level precision. Side-by-side and inline views. Collapse unchanged lines to
-          focus on changes. Navigate between diffs. Ignore case and whitespace. Copy unified
-          diff output. Free, no signup, 100% client-side.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A text diff tool compares two blocks of text and highlights the differences between them. Paste your original and modified text to see exactly what changed.
         </p>
 
         <div className="mt-3">

@@ -100,9 +100,8 @@ export default function WordFrequencyCounterPage() {
           Word Frequency Counter — Analyze Text Online Free
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Count word frequencies, analyze bigrams and trigrams, generate a word cloud,
-          and export results as CSV. Free, no signup, runs entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A word frequency counter analyzes text to show how often each word appears, with bigram and trigram analysis. Paste your text below to see word frequency statistics instantly.
         </p>
 
         <div className="mt-3">

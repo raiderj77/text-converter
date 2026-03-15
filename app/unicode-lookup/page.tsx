@@ -96,10 +96,8 @@ export default function UnicodeLookupPage() {
           Free Unicode Character Lookup
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Search and copy Unicode characters by name or category. See code points,
-          HTML entities, and CSS content values. Click any character to copy it.
-          Free, no signup, works entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A Unicode character lookup tool lets you search for any Unicode symbol by name, category, or code point. Search below to find, preview, and copy any Unicode character instantly.
         </p>
 
         <div className="mt-3">

@@ -94,10 +94,8 @@ export default function TextCleanerPage() {
           Free Text Cleaner
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Clean up messy text in one click. Remove extra spaces, blank lines, tabs, trailing
-          whitespace, smart quotes, and invisible characters. Free, no signup, works entirely
-          in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A text cleaner removes extra spaces, line breaks, special characters, and formatting from any text. Paste your text below to clean and normalize it instantly.
         </p>
 
         <div className="mt-3">

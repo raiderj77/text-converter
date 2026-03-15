@@ -101,10 +101,8 @@ export default function MorseCodeTranslatorPage() {
           Free Morse Code Translator
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Translate text to Morse code and decode Morse code back to text. Listen to your
-          message with audio playback, adjust speed, and explore the full reference chart.
-          Free, no signup, works entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A Morse code translator converts text to Morse code and Morse code back to text with audio playback. Enter your text or Morse code below to translate instantly.
         </p>
 
         <div className="mt-3">

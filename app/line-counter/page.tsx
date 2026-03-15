@@ -100,10 +100,8 @@ export default function LineCounterPage() {
           Line Counter — Count Lines of Text Online Free
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Count total lines, non-empty lines, empty lines, and whitespace-only lines.
-          See average line length, longest and shortest lines, and a visual line length
-          distribution. Number your lines with one click. Free, no signup, browser-only.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A line counter counts the total number of lines, empty lines, and non-empty lines in any block of text. Paste your text below to get line count statistics instantly.
         </p>
 
         <div className="mt-3">

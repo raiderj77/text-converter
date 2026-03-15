@@ -94,10 +94,8 @@ export default function WordCounterPage() {
           Free Word Counter
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Count words, characters, sentences, and paragraphs instantly. See reading time,
-          speaking time, social media limits, and keyword density. Free, no signup, works
-          entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A word counter instantly counts the number of words, characters, sentences, and paragraphs in any text. Paste or type your text below to get an instant word count with detailed statistics.
         </p>
 
         <div className="mt-3">

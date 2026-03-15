@@ -97,10 +97,8 @@ export default function RandomNumberGeneratorPage() {
           Free Random Number Generator
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Generate random numbers with custom min/max ranges. Bulk mode generates up to 1,000
-          numbers at once with optional no-duplicates and sorting. Includes a dice roller for
-          d4, d6, d8, d10, d12, and d20. Free, no signup, works entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A random number generator creates random numbers within a custom range with options for bulk generation and no duplicates. Set your range and count below to generate random numbers instantly.
         </p>
 
         <div className="mt-3">

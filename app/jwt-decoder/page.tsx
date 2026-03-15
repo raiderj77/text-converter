@@ -100,11 +100,8 @@ export default function JwtDecoderPage() {
           Free JWT Decoder
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Paste a JSON Web Token to instantly decode the header and payload.
-          See the algorithm, token type, issued time, and expiration status
-          with color-coded indicators. Free, no signup, works entirely in your
-          browser. This tool decodes only and does not verify signatures.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A JWT decoder parses JSON Web Tokens to reveal the header and payload data, including expiration status. Paste your JWT below to decode and inspect its contents instantly.
         </p>
 
         <div className="mt-3">

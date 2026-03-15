@@ -95,10 +95,8 @@ export default function UnderscoreConventionsPage() {
           Why Programmers Use Underscores in Variable Names
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Complete guide to underscore conventions in programming: _private variables, __dunder methods,
-          snake_case naming, trailing underscores, and language-specific patterns. Learn when and why
-          programmers use underscores with real code examples.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          This guide explains how underscores are used in programming for naming conventions like _private, __dunder, and snake_case. Read on to understand when and why developers use underscores in code.
         </p>
 
         <div className="mt-3">

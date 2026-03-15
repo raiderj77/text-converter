@@ -100,10 +100,8 @@ export default function HtmlToMarkdownPage() {
           Free HTML to Markdown Converter
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Convert HTML to Markdown and Markdown to HTML with bidirectional tabs.
-          Handles headings, bold, italic, links, images, lists, code blocks, tables,
-          and blockquotes. Free, no signup, works entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          An HTML to Markdown converter transforms HTML into clean Markdown and Markdown back into HTML. Paste your HTML or Markdown below to convert between formats instantly.
         </p>
 
         <div className="mt-3">

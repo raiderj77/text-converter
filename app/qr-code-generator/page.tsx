@@ -96,10 +96,8 @@ export default function QrCodeGeneratorPage() {
           Free QR Code Generator
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Generate QR codes for URLs, text, email, phone numbers, and WiFi credentials.
-          Choose size and error correction level. Download as PNG. Free, no signup,
-          works entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A QR code generator creates scannable QR codes for URLs, text, email, phone numbers, and WiFi networks. Enter your content below and download the QR code as a PNG image.
         </p>
 
         <div className="mt-3">

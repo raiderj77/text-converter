@@ -116,12 +116,8 @@ export default function HashGeneratorPage() {
           Free Hash Generator — MD5, SHA-1, SHA-256, SHA-512 Online
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Generate MD5, SHA-1, SHA-256, SHA-384, and SHA-512 hashes from text or files
-          instantly. All five algorithms run simultaneously — see every hash at once.
-          Compare hashes to verify file integrity, generate HMAC signatures with a secret
-          key, and toggle between uppercase and lowercase output. Free, no signup, everything
-          runs in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A hash generator creates MD5, SHA-1, SHA-256, and SHA-512 cryptographic hashes from any text or file. Enter your text below and select a hash algorithm to generate the hash instantly.
         </p>
 
         <div className="mt-3">

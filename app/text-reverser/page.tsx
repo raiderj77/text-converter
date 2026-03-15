@@ -95,9 +95,8 @@ export default function TextReverserPage() {
           Free Text Reverser
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Reverse text in multiple ways: characters (backwards), words, lines, or mirror text. Preserve spacing,
-          line breaks, and punctuation. Perfect for coding, puzzles, and creative writing. Free, no signup.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A text reverser flips characters, words, or lines of text backwards to create mirrored or reversed text. Paste your text below to reverse it instantly.
         </p>
 
         <div className="mt-3">

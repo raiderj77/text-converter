@@ -88,12 +88,8 @@ export default function TextToolsForDevelopersPage() {
           Free Text Tools for Developers
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          FlipMyCase offers 20+ free browser-based tools built specifically for developer
-          workflows — from JSON, CSS, SQL, and YAML formatters to hash generators, regex
-          testers, UUID generators, JWT decoders, and encoding converters. All tools run
-          client-side with no data transmitted to any server. No signup, no rate limits,
-          works on any OS with a modern browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          This page lists free browser-based text tools built for developers, including JSON formatter, regex tester, hash generator, and 20+ more utilities. Browse the tools below and start using them instantly — no signup required.
         </p>
 
         {/* ========== Code Formatting Tools ========== */}

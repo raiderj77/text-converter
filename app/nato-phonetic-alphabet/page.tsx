@@ -101,9 +101,8 @@ export default function NatoPhoneticAlphabetPage() {
           Free NATO Phonetic Alphabet Converter
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Convert any text to the NATO phonetic alphabet (Alpha, Bravo, Charlie...). Numbers
-          supported. Full A-Z and 0-9 reference table included. Free, no signup, works in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A NATO phonetic alphabet converter spells out text using the military alphabet (Alpha, Bravo, Charlie). Enter your text below to convert it to NATO phonetic spelling instantly.
         </p>
 
         <div className="mt-3">

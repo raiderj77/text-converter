@@ -92,10 +92,8 @@ export default function ListToTextPage() {
           Free List to Text Converter
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Convert bulleted or numbered lists into flowing prose. Auto-strips bullets,
-          numbers, and dashes. Join items with spaces, commas, or a custom separator.
-          Free, no signup, works entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A list to text converter removes bullets, numbers, and list markers to create flowing paragraph text. Paste your list below to convert it to plain text instantly.
         </p>
 
         <div className="mt-3">

@@ -100,11 +100,8 @@ export default function MarkdownPreviewPage() {
           Markdown Preview — Live Editor Online
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Write Markdown and see a live rendered preview side by side. Supports
-          headings, bold, italic, code blocks, tables, lists, links, images, and
-          more. Copy the HTML output or download as an .html file. Free, no
-          signup, works entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A Markdown preview editor lets you write Markdown and see a live rendered preview side by side. Type or paste your Markdown below to see it rendered instantly.
         </p>
 
         <div className="mt-3">

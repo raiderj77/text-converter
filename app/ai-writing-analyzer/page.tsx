@@ -101,11 +101,8 @@ export default function AiWritingAnalyzerPage() {
           AI Writing Pattern Analyzer
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Analyze statistical writing patterns in any text. See sentence uniformity,
-          vocabulary diversity, transition word density, repeated phrases, and more.
-          Color-coded dashboard shows how each metric compares to typical AI and
-          human writing ranges. Free, private, runs entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          An AI writing pattern analyzer examines text for statistical patterns common in AI-generated content, including sentence uniformity and vocabulary diversity. Paste your text below to analyze its writing patterns instantly.
         </p>
 
         <div className="mt-3">

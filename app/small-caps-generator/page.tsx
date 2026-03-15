@@ -88,9 +88,8 @@ export default function SmallCapsGeneratorPage() {
           Small Caps Generator — Copy & Paste
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Generate small caps Unicode text (Sᴍᴀʟʟ Cᴀᴘꜱ) you can copy and paste anywhere — social
-          media, messaging apps, design projects, and more. Free, no signup, works entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A small caps generator converts lowercase letters into Unicode small capital letters. Type your text below to generate small caps text you can copy and paste anywhere.
         </p>
 
         <div className="mt-3">

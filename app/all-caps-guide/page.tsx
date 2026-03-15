@@ -95,10 +95,8 @@ export default function AllCapsGuidePage() {
           All Caps in Writing: When It's Rude vs Necessary
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Complete guide to uppercase usage in digital communication, professional writing,
-          coding, and design. Learn when ALL CAPS is appropriate vs when it's considered shouting,
-          with real-world examples and best practices.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          This guide explains when ALL CAPS text is appropriate in emails, social media, and code, and when it can come across as rude. Read on to learn the etiquette and best practices for uppercase text.
         </p>
 
         <div className="mt-3">

@@ -100,11 +100,8 @@ export default function UnixTimestampConverterPage() {
           Free Unix Timestamp Converter
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Convert Unix timestamps to human-readable dates and dates back to timestamps.
-          Live clock showing the current epoch time, with support for both seconds and
-          milliseconds. Shows UTC, local time, and ISO 8601 formats. Free, no signup,
-          works entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A Unix timestamp converter transforms epoch time to human-readable dates and dates to Unix timestamps. Enter a timestamp or date below to convert instantly.
         </p>
 
         <div className="mt-3">

@@ -99,10 +99,8 @@ export default function XmlFormatterPage() {
           Free XML Formatter &amp; Validator
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Format, beautify, and minify XML online with instant validation. Choose between
-          2 spaces, 4 spaces, or tabs for indentation. Errors are detected and displayed
-          with details. Free, no signup, works entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          An XML formatter and validator beautifies XML with proper indentation and checks for well-formedness. Paste your XML below to format, validate, or minify it instantly.
         </p>
 
         <div className="mt-3">

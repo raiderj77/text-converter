@@ -105,11 +105,8 @@ export default function LoremIpsumPage() {
           Free Lorem Ipsum Generator
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Generate placeholder text in 5 unique styles: Classic Lorem Ipsum, Hipster Ipsum,
-          Office Ipsum, Pirate Ipsum, and Cat Ipsum. Choose paragraphs, sentences, or words.
-          Perfect for designers, developers, and content creators. Free, no signup, works
-          entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A Lorem Ipsum generator creates placeholder text for design mockups, wireframes, and development projects. Choose your paragraph count and click generate to get instant dummy text.
         </p>
 
         <div className="mt-3">

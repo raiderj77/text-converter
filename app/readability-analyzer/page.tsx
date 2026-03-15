@@ -101,11 +101,8 @@ export default function ReadabilityAnalyzerPage() {
           Readability Score Analyzer — Free Online
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Check the readability of any text with 7 proven formulas: Flesch Reading
-          Ease, Flesch-Kincaid, Gunning Fog, Coleman-Liau, SMOG, ARI, and
-          Dale-Chall. See grade level, audience recommendations, and per-sentence
-          difficulty. Free, no signup, browser-only.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A readability analyzer calculates reading level scores using Flesch-Kincaid, Gunning Fog, SMOG, and other formulas. Paste your text below to check its readability grade level instantly.
         </p>
 
         <div className="mt-3">

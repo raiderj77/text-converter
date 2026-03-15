@@ -100,10 +100,8 @@ export default function SqlFormatterPage() {
           Free SQL Formatter &amp; Beautifier
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Format SQL queries with uppercase keywords, proper indentation, and clause
-          separation. Minify SQL to remove all extra whitespace. Free, no signup,
-          works entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          An SQL formatter and beautifier formats SQL queries with proper indentation, uppercase keywords, and readable structure. Paste your SQL below to format or minify it instantly.
         </p>
 
         <div className="mt-3">

@@ -100,10 +100,8 @@ export default function TextStatisticsPage() {
           Text Statistics Dashboard — Free Online
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Comprehensive text analysis with word counts, vocabulary richness, lexical
-          density, sentence structure, reading time, word frequency charts, bigrams,
-          trigrams, and more. Export a full report. Free, no signup, browser-only.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A text statistics dashboard provides detailed analysis of any text, including word frequency, vocabulary richness, lexical density, and sentence structure. Paste your text below to see comprehensive text statistics instantly.
         </p>
 
         <div className="mt-3">

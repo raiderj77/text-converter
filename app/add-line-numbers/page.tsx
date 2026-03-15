@@ -92,9 +92,8 @@ export default function AddLineNumbersPage() {
           Add Line Numbers to Text — Free Online
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Add or remove line numbers from any text instantly. Customize the starting number,
-          separator style, and zero padding. Free, no signup, works entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A line number tool adds or removes sequential numbers at the beginning of each line of text. Paste your text below and configure the numbering format to add line numbers instantly.
         </p>
 
         <div className="mt-3">

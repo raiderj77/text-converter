@@ -100,10 +100,8 @@ export default function YamlFormatterPage() {
           Free YAML Formatter &amp; Validator
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Format, validate, and convert YAML online. Includes YAML to JSON and JSON to
-          YAML conversion, minification, and instant error detection. Free, no signup,
-          works entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A YAML formatter and validator beautifies YAML with proper indentation and checks for syntax errors. Paste your YAML below to format it and convert between YAML and JSON.
         </p>
 
         <div className="mt-3">

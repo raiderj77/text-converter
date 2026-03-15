@@ -95,9 +95,8 @@ export default function TextSorterPage() {
           Free Text Sorter
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Sort text lines alphabetically, numerically, by length, or randomly shuffle. Remove duplicates,
-          handle empty lines, and customize sorting options. Free, no signup, works entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A text sorter arranges lines of text in alphabetical, numerical, or random order with options to remove duplicates and reverse the sort. Paste your text below to sort it instantly.
         </p>
 
         <div className="mt-3">

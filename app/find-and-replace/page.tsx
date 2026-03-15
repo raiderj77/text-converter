@@ -88,10 +88,8 @@ export default function FindAndReplacePage() {
           Find and Replace Text Online — Free Tool
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Find and replace text with live match highlighting, regex support, case-sensitive
-          matching, and whole-word options. See every match highlighted before you replace.
-          Undo any replacement instantly. Free, no signup, 100% client-side.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A find and replace tool searches for text patterns and replaces them with new text, with support for regex and case matching. Enter your text and search pattern below to find and replace matches instantly.
         </p>
 
         <div className="mt-3">

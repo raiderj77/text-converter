@@ -94,10 +94,8 @@ export default function StringEncoderPage() {
           Free String Encoder &amp; Decoder
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Encode and decode strings instantly. Supports Base64, URL encoding, HTML entities,
-          Unicode escape, hexadecimal, and binary. Switch between encode and decode with one
-          click. Free, no signup, works entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A string encoder converts text to and from URL encoding, Base64, HTML entities, and other encoding formats. Paste your string below and select the encoding type to convert instantly.
         </p>
 
         <div className="mt-3">

@@ -92,9 +92,8 @@ export default function ExtractEmailsPage() {
           Extract Email Addresses from Text — Free Tool
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Extract all email addresses from any text instantly. Deduplicate, sort alphabetically,
-          and copy as a newline or comma-separated list. Free, no signup, works in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          An email extractor finds and pulls all email addresses from any block of text. Paste your text below to extract, deduplicate, and copy all email addresses instantly.
         </p>
 
         <div className="mt-3">

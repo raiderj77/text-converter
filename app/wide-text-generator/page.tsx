@@ -84,9 +84,8 @@ export default function WideTextGeneratorPage() {
           Wide Text Generator &mdash; Vaporwave Aesthetic
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Convert regular text to fullwidth vaporwave characters (&#65335;&#65353;&#65348;&#65349;{"\u3000"}&#65332;&#65349;&#65368;&#65364;) you can copy and paste anywhere.
-          Free aesthetic text generator, no signup.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A wide text generator converts regular text into fullwidth characters for a vaporwave aesthetic. Type your text below to generate wide text you can copy and paste anywhere.
         </p>
 
         <div className="mt-3">

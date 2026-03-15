@@ -92,9 +92,8 @@ export default function RemoveEmptyLinesPage() {
           Remove Empty Lines — Clean Text Online Free
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Remove blank and empty lines from any text instantly. Option to strip whitespace-only
-          lines too. Free, no signup, works entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          An empty line remover strips blank lines and whitespace-only lines from any block of text. Paste your text below to remove empty lines and clean up your text instantly.
         </p>
 
         <div className="mt-3">

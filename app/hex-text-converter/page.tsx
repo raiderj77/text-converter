@@ -101,10 +101,8 @@ export default function HexTextConverterPage() {
           Free Hex Text Converter
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Convert text to hexadecimal and hex back to text instantly. See a per-character
-          breakdown with decimal and hex codes. Toggle the 0x prefix and choose space-separated
-          or continuous output. Free, no signup, works entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A hex text converter transforms text into hexadecimal representation and hex back into readable text. Enter your text or hex string below to convert instantly with a per-character breakdown.
         </p>
 
         <div className="mt-3">

@@ -99,10 +99,8 @@ export default function JavascriptFormatterPage() {
           Free JavaScript Formatter &amp; Minifier
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Format, beautify, and minify JavaScript online. Basic regex-based formatting
-          with customizable indentation. Comments are removed during minification and
-          string literals are preserved. Free, no signup, works entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A JavaScript formatter and beautifier formats JS code with proper indentation, or minifies it for production. Paste your JavaScript below to format, beautify, or minify it instantly.
         </p>
 
         <div className="mt-3">

@@ -97,10 +97,8 @@ export default function RomanNumeralConverterPage() {
           Free Roman Numeral Converter
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Convert numbers to Roman numerals and Roman numerals back to numbers.
-          Date mode for years, interactive reference table. Supports 1 to 3,999.
-          Free, no signup, works entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A Roman numeral converter transforms numbers into Roman numerals (I, V, X, L, C, D, M) and back. Enter a number or Roman numeral below to convert instantly.
         </p>
 
         <div className="mt-3">

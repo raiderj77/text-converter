@@ -85,10 +85,8 @@ export default function ItalicTextGeneratorPage() {
           Italic Text Generator — Copy & Paste Free
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Convert regular text into 𝘪𝘵𝘢𝘭𝘪𝘤 Unicode characters you can copy and paste anywhere.
-          Works on Instagram, Twitter/X, Facebook, Discord, and more. Free, no signup, runs entirely
-          in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          An italic text generator converts regular text into Unicode italic characters that can be copied and pasted anywhere. Type your text below to generate italic text you can use on social media and bios.
         </p>
 
         <div className="mt-3">

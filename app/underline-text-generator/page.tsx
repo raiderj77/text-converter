@@ -88,9 +88,8 @@ export default function UnderlineTextGeneratorPage() {
           Underline Text Generator — Copy & Paste
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Generate underlined Unicode text (T̲e̲x̲t̲) you can copy and paste anywhere — social media,
-          messaging apps, bios, and more. Free, no signup, works entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          An underline text generator adds a line under your text using Unicode combining characters. Type your text below to generate underlined text you can copy and paste anywhere.
         </p>
 
         <div className="mt-3">

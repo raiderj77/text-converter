@@ -86,10 +86,8 @@ export default function TextToListPage() {
           Text to List Converter — Free Online Tool
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Convert paragraphs into bullet points, numbered lists, HTML lists, or
-          Markdown lists. Split by line, sentence, comma, or custom delimiter.
-          Free, no signup, 100% client-side.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A text to list converter transforms paragraphs and sentences into bullet points, numbered lists, or Markdown lists. Paste your text below to convert it to a formatted list instantly.
         </p>
 
         <div className="mt-3">

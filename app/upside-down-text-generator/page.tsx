@@ -85,10 +85,8 @@ export default function UpsideDownTextGeneratorPage() {
           Upside Down Text Generator
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Type or paste any text and instantly generate an upside-down version using Unicode
-          characters. Copy and paste anywhere — social media, messages, bios, and more.
-          Free, no signup required.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          An upside down text generator flips your text vertically using special Unicode characters. Type your text below to generate upside down text you can copy and paste anywhere.
         </p>
 
         <div className="mt-3">

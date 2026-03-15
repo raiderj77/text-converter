@@ -92,9 +92,8 @@ export default function RemoveLineBreaksPage() {
           Remove Line Breaks — Join Lines Online Free
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Remove line breaks and join lines with spaces, commas, or any custom separator.
-          Preserve paragraph breaks when needed. Free, no signup, works in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A line break remover joins multiple lines of text into a single line using spaces, commas, or custom separators. Paste your text below to remove line breaks and join lines instantly.
         </p>
 
         <div className="mt-3">

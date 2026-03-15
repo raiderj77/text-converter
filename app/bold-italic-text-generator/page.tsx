@@ -88,9 +88,8 @@ export default function BoldItalicTextGeneratorPage() {
           Bold Italic Text Generator
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Generate bold italic Unicode text (𝑩𝒐𝒍𝒅 𝑰𝒕𝒂𝒍𝒊𝒄) you can copy and paste anywhere.
-          Works on Instagram, Twitter, Facebook, and more. Free, no signup, browser-only.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A bold italic text generator converts regular text into Unicode bold italic characters that can be copied and pasted anywhere. Type your text below to generate bold italic text for social media and bios.
         </p>
 
         <div className="mt-3">

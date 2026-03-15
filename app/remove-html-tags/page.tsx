@@ -86,9 +86,8 @@ export default function RemoveHtmlTagsPage() {
           Remove HTML Tags — Strip Tags Online Free
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Strip all HTML and XML tags from any text. Optionally keep specific tags,
-          and decode HTML entities automatically. Free, no signup, 100% client-side.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          An HTML tag remover strips all HTML and XML tags from text while preserving the readable content. Paste your HTML below to remove tags and get clean plain text instantly.
         </p>
 
         <div className="mt-3">

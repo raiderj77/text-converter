@@ -100,9 +100,8 @@ export default function Rot13EncoderDecoderPage() {
           Free ROT13 Encoder &amp; Decoder
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Encode and decode text using ROT13, ROT5, ROT47, or a custom Caesar cipher with
-          any rotation from 1 to 25. Free, no signup, runs entirely in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A ROT13 encoder and decoder applies Caesar cipher rotation to text, with support for ROT5, ROT47, and custom shifts. Enter your text below to encode or decode with ROT13 instantly.
         </p>
 
         <div className="mt-3">

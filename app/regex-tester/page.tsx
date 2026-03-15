@@ -116,12 +116,8 @@ export default function RegexTesterPage() {
           Free Regex Tester — Match, Replace &amp; Debug Regular Expressions Online
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Test regular expressions with real-time match highlighting, capture group
-          display, replace mode, and flag toggles. Built-in presets for emails, URLs,
-          IPs, and more. Quick reference sidebar for instant syntax lookup. Uses
-          JavaScript&apos;s native RegExp engine — what you see here is exactly what
-          runs in your code. Free, no signup, works offline.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A regex tester lets you write, test, and debug regular expressions against sample text in real time. Enter your pattern and test string below to see matches highlighted instantly.
         </p>
 
         <div className="mt-3">

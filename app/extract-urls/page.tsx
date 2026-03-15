@@ -86,10 +86,8 @@ export default function ExtractUrlsPage() {
           Extract URLs from Text — Free Online Tool
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Paste any text and instantly extract every URL. Deduplicate results, see a
-          domain breakdown, and copy as a clean list. Free, no signup, 100%
-          client-side.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A URL extractor finds and pulls all web addresses from any block of text. Paste your text below to extract, deduplicate, and copy all URLs instantly.
         </p>
 
         <div className="mt-3">

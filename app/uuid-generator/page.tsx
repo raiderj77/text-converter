@@ -100,10 +100,8 @@ export default function UuidGeneratorPage() {
           Free UUID/GUID Generator
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
-        <p className="mt-2 text-sm text-neutral-300">
-          Generate random UUID v4 identifiers instantly. Bulk generate up to 100 at once
-          with options for uppercase, lowercase, and with or without hyphens. Free, no
-          signup, powered by the Web Crypto API in your browser.
+        <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
+          A UUID generator creates random v4 universally unique identifiers for use in databases, APIs, and applications. Click generate to create one or more UUIDs instantly.
         </p>
 
         <div className="mt-3">
