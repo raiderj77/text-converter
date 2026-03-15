@@ -124,7 +124,7 @@ export default function JsonFormatterPage() {
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
-          A JSON formatter and validator beautifies minified JSON and checks for syntax errors. Paste your JSON below to format it with proper indentation and validate its structure.
+          A JSON formatter instantly beautifies minified JSON and validates syntax errors. Paste your JSON below to format it with proper indentation and check its structure.
         </p>
 
         <div className="mt-3">

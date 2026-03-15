@@ -101,7 +101,7 @@ export default function YamlFormatterPage() {
         </h1>
         <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
-          A YAML formatter and validator beautifies YAML with proper indentation and checks for syntax errors. Paste your YAML below to format it and convert between YAML and JSON.
+          A YAML formatter instantly validates and beautifies YAML files with proper indentation. Paste your YAML below to format it and convert between YAML and JSON.
         </p>
 
         <div className="mt-3">
