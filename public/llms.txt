@@ -100,9 +100,66 @@ FlipMyCase is a suite of free, browser-based text tools for developers and write
 - [Text Tools for Developers](https://flipmycase.com/text-tools-for-developers): Directory of 20+ free browser-based developer tools — JSON formatter, regex tester, hash generator, UUID, JWT decoder, and more.
 - [JSON vs YAML vs XML](https://flipmycase.com/json-vs-yaml-vs-xml): Syntax differences, use cases, and performance comparison to help you choose the right data format.
 
-## Blog
+## Blog Guides
 
-Guides and articles about text formatting, naming conventions, and developer tools: https://flipmycase.com/blog
+In-depth guides with code examples covering every tool on the site:
+
+- [Text Conversion Guide: Uppercase, Lowercase, Title Case & Advanced Formats](https://flipmycase.com/blog/how-to-convert-text-to-different-formats)
+- [How to Convert Text to Uppercase: Quick & Easy Methods](https://flipmycase.com/blog/how-to-convert-text-to-uppercase)
+- [How to Convert Text to Uppercase Online (Free Tool + Guide)](https://flipmycase.com/blog/uppercase-converter)
+- [How to Convert Text to Lowercase Online (Free Tool + Guide)](https://flipmycase.com/blog/lowercase-converter)
+- [Title Case Converter — Rules, Examples, and Free Online Tool](https://flipmycase.com/blog/title-case-converter)
+- [How to Convert Text to Snake_case and Kebab-case](https://flipmycase.com/blog/how-to-convert-text-to-snake-case-kebab-case)
+- [How to Clean and Format Text Online](https://flipmycase.com/blog/text-cleaner-guide)
+- [How to Remove Duplicate Lines from Text Online](https://flipmycase.com/blog/duplicate-remover-guide)
+- [How to Compare Two Texts and Find Differences Online](https://flipmycase.com/blog/text-diff-guide)
+- [Free Word Counter — Count Words, Characters, Sentences, and Reading Time](https://flipmycase.com/blog/word-counter-guide)
+- [Word Frequency Counter — How to Count Word Occurrences in Text Online](https://flipmycase.com/blog/word-frequency-counter-guide)
+- [Readability Analyzer — How to Check Reading Level and Text Complexity](https://flipmycase.com/blog/readability-analyzer-guide)
+- [Text Statistics — How to Analyze Character, Word, and Sentence Metrics](https://flipmycase.com/blog/text-statistics-guide)
+- [Text Sorter — How to Sort Lines Alphabetically Online](https://flipmycase.com/blog/text-sorter-guide)
+- [Text Reverser — How to Reverse Text, Words, and Lines Online](https://flipmycase.com/blog/text-reverser-guide)
+- [Find and Replace — How to Search and Replace Text Online](https://flipmycase.com/blog/find-and-replace-guide)
+- [Remove Line Breaks — How to Join Lines and Remove Newlines](https://flipmycase.com/blog/remove-line-breaks-guide)
+- [Remove Empty Lines — How to Delete Blank Lines from Text](https://flipmycase.com/blog/remove-empty-lines-guide)
+- [Remove HTML Tags — How to Strip HTML from Text Online](https://flipmycase.com/blog/remove-html-tags-guide)
+- [Add Line Numbers — How to Number Lines of Text Online](https://flipmycase.com/blog/add-line-numbers-guide)
+- [Line Counter — How to Count Lines in Text Online](https://flipmycase.com/blog/line-counter-guide)
+- [Extract Emails — How to Pull Email Addresses from Text](https://flipmycase.com/blog/extract-emails-guide)
+- [Extract URLs — How to Pull All Links from Text](https://flipmycase.com/blog/extract-urls-guide)
+- [Plain Text Converter — How to Convert Rich Text to Plain Text](https://flipmycase.com/blog/plain-text-converter-guide)
+- [Smart Quotes Converter — How to Convert Curly Quotes to Straight Quotes](https://flipmycase.com/blog/smart-quotes-converter-guide)
+- [Slug Generator — How to Create URL-Friendly Slugs Online](https://flipmycase.com/blog/slug-generator-guide)
+- [AI Writing Analyzer — How to Detect AI-Generated Text](https://flipmycase.com/blog/ai-writing-analyzer-guide)
+- [JSON Formatter and Validator — Pretty Print, Minify, and Fix JSON](https://flipmycase.com/blog/json-formatter-guide)
+- [YAML Formatter and Validator — Format, Validate, and Fix YAML](https://flipmycase.com/blog/yaml-formatter-guide)
+- [XML Formatter — How to Format, Validate, and Beautify XML](https://flipmycase.com/blog/xml-formatter-guide)
+- [SQL Formatter — How to Format and Beautify SQL Queries](https://flipmycase.com/blog/sql-formatter-guide)
+- [CSS Formatter and Beautifier — Format, Minify, and Clean CSS](https://flipmycase.com/blog/css-formatter-guide)
+- [HTML Formatter — How to Format and Beautify HTML Code](https://flipmycase.com/blog/html-formatter-guide)
+- [JavaScript Formatter — How to Format and Beautify JS Code](https://flipmycase.com/blog/javascript-formatter-guide)
+- [HTML to Markdown Converter — How to Convert HTML to Markdown](https://flipmycase.com/blog/html-to-markdown-guide)
+- [Markdown Preview — How to Preview and Render Markdown](https://flipmycase.com/blog/markdown-preview-guide)
+- [CSV to JSON Converter — How to Convert CSV Data to JSON](https://flipmycase.com/blog/csv-to-json-guide)
+- [Regex Tester — How to Test Regular Expressions Online](https://flipmycase.com/blog/regex-tester-guide)
+- [Hash Generator — How to Generate MD5, SHA-256, SHA-512 Hashes](https://flipmycase.com/blog/hash-generator-guide)
+- [JWT Decoder — How to Decode and Inspect JSON Web Tokens](https://flipmycase.com/blog/jwt-decoder-guide)
+- [Base64, URL, and HTML Encoder/Decoder — Free Online String Encoding Tool](https://flipmycase.com/blog/string-encoder-guide)
+- [Password Generator — Strong Passwords, Passphrases, and PINs](https://flipmycase.com/blog/password-generator-guide)
+- [Lorem Ipsum Generator — Free Placeholder Text for Designers](https://flipmycase.com/blog/lorem-ipsum-guide)
+- [UUID Generator — How to Generate UUIDs (v4) Online and in Code](https://flipmycase.com/blog/uuid-generator-guide)
+- [Unix Timestamp Converter — Convert Epoch Time to Dates](https://flipmycase.com/blog/unix-timestamp-guide)
+- [Cron Expression Builder — How to Write and Test Cron Schedules](https://flipmycase.com/blog/cron-expression-guide)
+- [Random Number Generator — How to Generate Random Numbers](https://flipmycase.com/blog/random-number-generator-guide)
+- [QR Code Generator — How to Create QR Codes Online for Free](https://flipmycase.com/blog/qr-code-generator-guide)
+- [Color Code Converter — Convert Between HEX, RGB, HSL](https://flipmycase.com/blog/color-code-converter-guide)
+- [Number Base Converter — Convert Binary, Octal, Decimal, Hex](https://flipmycase.com/blog/number-base-converter-guide)
+- [Binary Text Converter — Encode and Decode Text to Binary](https://flipmycase.com/blog/binary-text-converter-guide)
+- [Hex Text Converter — Encode and Decode Text to Hexadecimal](https://flipmycase.com/blog/hex-text-converter-guide)
+- [Morse Code Translator — How to Convert Text to Morse Code](https://flipmycase.com/blog/morse-code-guide)
+- [ROT13 Encoder/Decoder — How to Encode and Decode ROT13 Cipher](https://flipmycase.com/blog/rot13-guide)
+- [Roman Numeral Converter — Convert Between Roman and Arabic Numbers](https://flipmycase.com/blog/roman-numeral-converter-guide)
+- [Unicode Lookup — How to Search and Find Unicode Characters](https://flipmycase.com/blog/unicode-lookup-guide)
 
 ## About
 
