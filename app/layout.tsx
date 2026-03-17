@@ -62,6 +62,7 @@ export const metadata: Metadata = {
     canonical: SITE_URL,
   },
   verification: {
+    google: "IsORzVfj_Gdxpqo1OjGqr7LpWKxBqlQN3XoTGabG_KI",
     other: {
       "msvalidate.01": "C4C9B6256BDEDED169E4DE01CA953390",
     },
