@@ -30,122 +30,118 @@ export default function AboutPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">About FlipMyCase</h1>
         <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
 
-        {/* Section 1 — What FlipMyCase is */}
+        <div className="mt-3 text-sm text-neutral-300 space-y-3">
+          <p>
+            FlipMyCase is a free suite of 73+ browser-based text transformation tools built for
+            developers, writers, content creators, and anyone who works with text for a living.
+          </p>
+          <p>
+            Every tool on this site does one thing: takes text you paste in and instantly gives you
+            back what you need — reformatted, cleaned, encoded, analyzed, or generated — with a
+            single click. No signup. No account. No text sent to a server. Everything runs in your
+            browser.
+          </p>
+        </div>
+
         <section className="mt-8">
-          <h2 className="text-lg sm:text-xl font-semibold">What Is FlipMyCase?</h2>
+          <h2 className="text-lg sm:text-xl font-semibold">Why FlipMyCase Exists</h2>
           <div className="mt-3 text-sm text-neutral-300 space-y-3">
             <p>
-              FlipMyCase is a free, no-signup suite of text conversion and formatting tools built for
-              developers, writers, and content creators. The site currently offers 73+ tools covering
-              case conversion, code formatting, text encoding, data analysis, and more.
+              Most text tools online are either buried inside bloated productivity apps you have to
+              pay for, scattered across five different websites, or so poorly designed that finding
+              the right option takes longer than just doing it manually.
             </p>
             <p>
-              Every tool runs entirely in your browser. No text is ever sent to a server, stored in a
-              database, or logged anywhere. You can verify this by using any tool while completely
-              offline — once the page loads, no network connection is required for processing.
+              FlipMyCase was built to fix that. One site, every common text operation, fast and free.
             </p>
             <p>
-              The core case converter supports uppercase, lowercase, Title Case, Sentence case,
-              camelCase, PascalCase, snake_case, kebab-case, CONSTANT_CASE, dot.case, alternating
-              case, inverse case, and URL slug format. Beyond case conversion, you will find JSON,
-              CSS, HTML, SQL, XML, and YAML formatters, a regex tester, hash generators, encoding
-              tools, readability analyzers, and dozens of other utilities.
+              The suite covers case conversion (UPPERCASE, lowercase, Title Case, camelCase,
+              snake_case, kebab-case, and a dozen others), text cleaning, encoding and decoding,
+              developer formatters (JSON, YAML, XML, SQL, CSS, HTML, JavaScript), analysis tools
+              (word counter, readability, text diff, AI writing analyzer), and generators (Lorem
+              Ipsum, password, UUID, QR code, and more).
             </p>
           </div>
         </section>
 
-        {/* Section 2 — Who we built this for */}
         <section className="mt-8">
-          <h2 className="text-lg sm:text-xl font-semibold">Who We Built This For</h2>
+          <h2 className="text-lg sm:text-xl font-semibold">How Your Text Is Handled</h2>
           <div className="mt-3 text-sm text-neutral-300 space-y-3">
             <p>
-              <strong className="text-neutral-200">Developers</strong> who need quick code formatting
-              and encoding tools without leaving the browser — JSON validation, regex testing, hash
-              generation, JWT decoding, UUID generation, Base64 encoding, and cron expression building.
+              All processing happens in your browser using JavaScript. Your text is never sent to a
+              server, never logged, and never stored anywhere outside your own device. The site uses
+              localStorage to preserve your input across page refreshes — that data stays on your
+              machine.
             </p>
             <p>
-              <strong className="text-neutral-200">Writers and editors</strong> who need case
-              conversion, word counts, readability scores, text cleanup, and duplicate removal to
-              polish drafts before publishing.
-            </p>
-            <p>
-              <strong className="text-neutral-200">Social media managers</strong> who need fancy
-              Unicode text styles, bold and italic generators, strikethrough text, bubble text, and
-              character counters for platform-specific limits.
-            </p>
-            <p>
-              <strong className="text-neutral-200">Students and professionals</strong> who need quick
-              data conversion between formats — CSV to JSON, HTML to Markdown, binary to text, hex
-              encoding, and number base conversion.
+              FlipMyCase uses standard analytics (page views, device types, traffic sources) to
+              understand how tools are being used and improve them over time. No personally
+              identifiable information is collected.
             </p>
           </div>
         </section>
 
-        {/* Section 3 — Editorial approach */}
         <section className="mt-8">
-          <h2 className="text-lg sm:text-xl font-semibold">Our Editorial Approach</h2>
+          <h2 className="text-lg sm:text-xl font-semibold">Who Built This</h2>
           <div className="mt-3 text-sm text-neutral-300 space-y-3">
             <p>
-              Every tool page on FlipMyCase includes educational content that explains what the tool
-              does, when you should use it, and how the underlying technology works. We do not publish
-              thin pages with just a text box and a button — each page is a complete resource with
-              frequently asked questions, use-case examples, and links to related tools.
+              FlipMyCase is an independent tool site built and maintained by an experienced web
+              developer. It launched in 2024 and is actively updated — new tools are added based on
+              what people actually search for and request.
             </p>
             <p>
-              For developer tools, we verify technical accuracy against official specifications.
-              Regex syntax follows the ECMAScript standard. Hash algorithms match the Web Crypto API
-              output. Encoding tools conform to RFC 4648 (Base64), RFC 3986 (URL encoding), and
-              the HTML Living Standard (HTML entities). JSON formatting follows ECMA-404.
-            </p>
-            <p>
-              Written and maintained by an experienced web developer with over 10 years of experience
-              building developer tools and web applications.
-            </p>
-          </div>
-        </section>
-
-        {/* Section 4 — Privacy commitment */}
-        <section className="mt-8">
-          <h2 className="text-lg sm:text-xl font-semibold">Privacy Commitment</h2>
-          <div className="mt-3 text-sm text-neutral-300 space-y-3">
-            <p>
-              All text processing on FlipMyCase is client-side JavaScript. We do not log, store, or
-              transmit any text you enter into our tools. Your input stays in your browser tab and is
-              never sent over the network.
-            </p>
-            <p>
-              The site uses Google Analytics for aggregate traffic trends and Google AdSense for
-              non-intrusive advertising. Both are configured with Google Consent Mode v2 and respect
-              Global Privacy Control (GPC) signals. No personally identifiable text content is ever
-              collected by any analytics or advertising service.
-            </p>
-            <p>
-              For full details, see our{" "}
-              <Link href="/privacy" className="text-blue-400 hover:text-blue-300 transition-colors">
-                Privacy Policy
-              </Link>.
-            </p>
-          </div>
-        </section>
-
-        {/* Section 5 — Suggest a tool */}
-        <section className="mt-8">
-          <h2 className="text-lg sm:text-xl font-semibold">Suggest a Tool or Report a Bug</h2>
-          <div className="mt-3 text-sm text-neutral-300 space-y-3">
-            <p>
-              FlipMyCase is actively developed. If you have an idea for a new tool, found a bug, or
-              want to suggest an improvement, we would like to hear from you. Visit
-              our{" "}
+              If you have a feature request, found a bug, or want a format that isn{"'"}t here yet,
+              use the{" "}
               <Link href="/contact" className="text-blue-400 hover:text-blue-300 transition-colors">
                 Contact page
-              </Link>{" "}
-              for instructions on submitting feedback through GitHub Issues. Include a small example
-              input and the output you expected so we can reproduce and fix the issue quickly.
+              </Link>
+              . Include an example input and the output you expected.
             </p>
           </div>
         </section>
 
-        <p className="mt-8 text-xs text-neutral-500">Last updated: March 11, 2026</p>
+        <section className="mt-8">
+          <h2 className="text-lg sm:text-xl font-semibold">The Tools</h2>
+          <div className="mt-3 text-sm text-neutral-300 space-y-3">
+            <p>FlipMyCase currently includes 73+ tools across six categories:</p>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>
+                <strong className="text-neutral-200">Text &amp; Case</strong> — case converters,
+                text cleaners, sorters, reversers, and line tools
+              </li>
+              <li>
+                <strong className="text-neutral-200">Analysis</strong> — word counter, readability
+                analyzer, text diff, word frequency, AI writing detector
+              </li>
+              <li>
+                <strong className="text-neutral-200">Font Styles</strong> — bold, italic,
+                strikethrough, small caps, bubble text, wide text, and Unicode styles
+              </li>
+              <li>
+                <strong className="text-neutral-200">Developer</strong> — JSON, YAML, XML, SQL, CSS,
+                HTML, and JavaScript formatters; regex tester; hash generator; JWT decoder; cron
+                builder
+              </li>
+              <li>
+                <strong className="text-neutral-200">Encoding</strong> — Base64, URL encoding, HTML
+                entities, binary, hex, Morse code, ROT13, NATO phonetic
+              </li>
+              <li>
+                <strong className="text-neutral-200">Generators</strong> — Lorem ipsum, password
+                generator, UUID, QR code, Unix timestamp, Roman numerals, emoji picker
+              </li>
+            </ul>
+            <p>All tools are free with no usage limits.</p>
+          </div>
+        </section>
+
+        <p className="mt-8 text-xs text-neutral-500">
+          For full privacy details, see our{" "}
+          <Link href="/privacy" className="text-blue-400 hover:text-blue-300 transition-colors">
+            Privacy Policy
+          </Link>
+          .
+        </p>
       </main>
     </>
   );
