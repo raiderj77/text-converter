@@ -74,7 +74,7 @@ export default function ToolsPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           All Free Text Tools
         </h1>
-        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
+        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="mt-2 text-sm text-neutral-300">
           {totalTools} free browser-based tools for developers and writers. No signup, no
           limits — everything runs in your browser.

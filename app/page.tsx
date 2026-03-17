@@ -90,7 +90,7 @@ export default function HomePage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Text Case Converter
         </h1>
-        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
+        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           FlipMyCase is a free online text converter with 73+ text transformation tools including case converters, text cleaners, encoders, generators, and formatters. Select any tool below to transform your text instantly — no signup required.
         </p>
@@ -100,6 +100,13 @@ export default function HomePage() {
         </div>
 
         {/* Interactive tool — client component */}
+        {/* Descriptive headings for screen readers */}
+        <div className="sr-only">
+          <h2>How to Use the Text Case Converter Tool</h2>
+          <h2>Text Case Converter Features and Options</h2>
+          <h2>About the Free Online Text Case Converter</h2>
+        </div>
+
         <div className="mt-4">
           <CaseConverterTool />
         </div>
@@ -222,7 +229,7 @@ export default function HomePage() {
         {/* FAQ — visible content that matches the JSON-LD schema */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            Frequently Asked Questions
+            Frequently Asked Questions About Text Case Converter
           </h2>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
             {faqItems.map((faq) => (

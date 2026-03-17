@@ -83,7 +83,7 @@ export default function JsonVsYamlVsXmlPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           JSON vs YAML vs XML: Which Format Should You Use?
         </h1>
-        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
+        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
 
         <div className="mt-3 rounded-xl border border-white/10 bg-neutral-900 p-4 text-sm text-neutral-300">
           <p>
@@ -102,7 +102,7 @@ export default function JsonVsYamlVsXmlPage() {
         {/* ========== What Is JSON? ========== */}
 
         <section className="mt-10">
-          <h2 className="text-lg sm:text-xl font-semibold">What Is JSON?</h2>
+          <h2 className="text-lg sm:text-xl font-semibold">What Is JSON Data Format?</h2>
           <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               JSON (JavaScript Object Notation) is a lightweight data interchange
@@ -141,7 +141,7 @@ export default function JsonVsYamlVsXmlPage() {
         {/* ========== What Is YAML? ========== */}
 
         <section className="mt-10">
-          <h2 className="text-lg sm:text-xl font-semibold">What Is YAML?</h2>
+          <h2 className="text-lg sm:text-xl font-semibold">What Is YAML Data Format?</h2>
           <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               YAML (YAML Ain&apos;t Markup Language) is a human-friendly data
@@ -182,7 +182,7 @@ skills:
         {/* ========== What Is XML? ========== */}
 
         <section className="mt-10">
-          <h2 className="text-lg sm:text-xl font-semibold">What Is XML?</h2>
+          <h2 className="text-lg sm:text-xl font-semibold">What Is XML Data Format?</h2>
           <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               XML (eXtensible Markup Language) is a markup language that defines
@@ -350,7 +350,7 @@ skills:
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            Frequently Asked Questions
+            Frequently Asked Questions About JSON Vs YAML Vs XML
           </h2>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
             {faqItems.map((faq) => (
@@ -371,7 +371,7 @@ skills:
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            Related Free Tools
+            Related Free Developer Tools
           </h2>
           <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
             This guide compares JSON, YAML, and XML data formats, covering syntax differences, use cases, and performance. Read on to learn which format is best for your project.

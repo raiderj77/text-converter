@@ -91,7 +91,7 @@ export default function AddLineNumbersPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Add Line Numbers to Text — Free Online
         </h1>
-        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
+        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A line number tool adds or removes sequential numbers at the beginning of each line of text. Paste your text below and configure the numbering format to add line numbers instantly.
         </p>
@@ -99,6 +99,19 @@ export default function AddLineNumbersPage() {
         <div className="mt-3">
           <ToolActions />
         </div>
+
+        {/* Descriptive headings for screen readers */}
+
+        <div className="sr-only">
+
+          <h2>How to Use the Add Line Numbers Tool</h2>
+
+          <h2>Add Line Numbers Features and Options</h2>
+
+          <h2>About the Free Online Add Line Numbers</h2>
+
+        </div>
+
 
         <div className="mt-4">
           <AddLineNumbersTool />
@@ -188,7 +201,7 @@ export default function AddLineNumbersPage() {
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            Frequently Asked Questions
+            Frequently Asked Questions About Add Line Numbers
           </h2>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
             {faqItems.map((faq) => (
@@ -207,7 +220,7 @@ export default function AddLineNumbersPage() {
 
         {/* Related Tools */}
         <section className="mt-10">
-          <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
+          <h2 className="text-lg sm:text-xl font-semibold">Related Free Online Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
             Add line numbers here, then use our other tools for additional text processing.
           </p>

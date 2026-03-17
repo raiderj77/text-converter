@@ -93,7 +93,7 @@ export default function WordCounterPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Word Counter
         </h1>
-        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
+        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A word counter instantly counts the number of words, characters, sentences, and paragraphs in any text. Paste or type your text below to get an instant word count with detailed statistics.
         </p>
@@ -101,6 +101,19 @@ export default function WordCounterPage() {
         <div className="mt-3">
           <ToolActions />
         </div>
+
+        {/* Descriptive headings for screen readers */}
+
+        <div className="sr-only">
+
+          <h2>How to Use the Word Counter Tool</h2>
+
+          <h2>Word Counter Features and Options</h2>
+
+          <h2>About the Free Online Word Counter</h2>
+
+        </div>
+
 
         <div className="mt-4">
           <WordCounterTool />
@@ -276,7 +289,7 @@ export default function WordCounterPage() {
         {/* FAQ */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            Frequently Asked Questions
+            Frequently Asked Questions About Word Counter
           </h2>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
             {faqItems.map((faq) => (

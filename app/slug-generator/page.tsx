@@ -37,10 +37,17 @@ export default function SlugGeneratorPage() {
 
       <div className="mx-auto max-w-6xl px-4 py-6">
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">Free URL Slug Generator</h1>
-        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
+        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A URL slug generator converts any title or phrase into a clean, SEO-friendly URL slug. Enter your text below to generate a lowercase, hyphenated slug instantly.
         </p>
+
+        {/* Descriptive headings for screen readers */}
+        <div className="sr-only">
+          <h2>How to Use the Slug Generator Tool</h2>
+          <h2>Slug Generator Features and Options</h2>
+          <h2>About the Free Online Slug Generator</h2>
+        </div>
 
         <div className="mt-6"><SlugGeneratorTool /></div>
 
@@ -71,7 +78,7 @@ export default function SlugGeneratorPage() {
         </section>
 
         <section className="mt-10">
-          <h2 className="text-lg sm:text-xl font-semibold">Frequently Asked Questions</h2>
+          <h2 className="text-lg sm:text-xl font-semibold">Frequently Asked Questions About Slug Generator</h2>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
             {faqItems.map((faq) => (
               <div key={faq.question} className="rounded-xl border border-white/10 bg-neutral-900 p-4">

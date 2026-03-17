@@ -83,7 +83,7 @@ export default function BubbleTextGeneratorPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Bubble Text Generator
         </h1>
-        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
+        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A bubble text generator converts regular text into circled Unicode characters. Type your text below to generate bubble text you can copy and paste anywhere.
         </p>
@@ -91,6 +91,19 @@ export default function BubbleTextGeneratorPage() {
         <div className="mt-3">
           <ToolActions />
         </div>
+
+        {/* Descriptive headings for screen readers */}
+
+        <div className="sr-only">
+
+          <h2>How to Use the Bubble Text Generator Tool</h2>
+
+          <h2>Bubble Text Generator Features and Options</h2>
+
+          <h2>About the Free Online Bubble Text Generator</h2>
+
+        </div>
+
 
         <div className="mt-4">
           <BubbleTextGeneratorTool />
@@ -224,7 +237,7 @@ export default function BubbleTextGeneratorPage() {
         {/* FAQ */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            Frequently Asked Questions
+            Frequently Asked Questions About Bubble Text Generator
           </h2>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
             {faqItems.map((faq) => (

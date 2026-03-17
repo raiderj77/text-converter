@@ -99,7 +99,7 @@ export default function TextStatisticsPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Text Statistics Dashboard — Free Online
         </h1>
-        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
+        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A text statistics dashboard provides detailed analysis of any text, including word frequency, vocabulary richness, lexical density, and sentence structure. Paste your text below to see comprehensive text statistics instantly.
         </p>
@@ -107,6 +107,19 @@ export default function TextStatisticsPage() {
         <div className="mt-3">
           <ToolActions />
         </div>
+
+        {/* Descriptive headings for screen readers */}
+
+        <div className="sr-only">
+
+          <h2>How to Use the Text Statistics Tool</h2>
+
+          <h2>Text Statistics Features and Options</h2>
+
+          <h2>About the Free Online Text Statistics</h2>
+
+        </div>
+
 
         <div className="mt-4">
           <TextStatisticsTool />
@@ -187,7 +200,7 @@ export default function TextStatisticsPage() {
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            Frequently Asked Questions
+            Frequently Asked Questions About Text Statistics
           </h2>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
             {faqItems.map((faq) => (
@@ -205,7 +218,7 @@ export default function TextStatisticsPage() {
         <AdSlot slot="before-footer" page="text-statistics" />
 
         <section className="mt-10">
-          <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
+          <h2 className="text-lg sm:text-xl font-semibold">Related Free Online Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
             Analyze text statistics here, then use our other writing tools.
           </p>

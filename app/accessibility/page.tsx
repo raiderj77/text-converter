@@ -13,6 +13,7 @@ export default function AccessibilityPage() {
       <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "Accessibility", href: "/accessibility" }]} />
       <main style={{ maxWidth: 800, margin: "0 auto", padding: 24, lineHeight: 1.6 }}>
         <h1>Accessibility Statement</h1>
+        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
 
       <p>
         FlipMyCase is committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone and applying the relevant accessibility standards.

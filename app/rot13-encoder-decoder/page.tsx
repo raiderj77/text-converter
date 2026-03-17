@@ -99,7 +99,7 @@ export default function Rot13EncoderDecoderPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free ROT13 Encoder &amp; Decoder
         </h1>
-        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
+        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A ROT13 encoder and decoder applies Caesar cipher rotation to text, with support for ROT5, ROT47, and custom shifts. Enter your text below to encode or decode with ROT13 instantly.
         </p>
@@ -107,6 +107,19 @@ export default function Rot13EncoderDecoderPage() {
         <div className="mt-3">
           <ToolActions />
         </div>
+
+        {/* Descriptive headings for screen readers */}
+
+        <div className="sr-only">
+
+          <h2>How to Use the ROT13 Encoder Decoder Tool</h2>
+
+          <h2>ROT13 Encoder Decoder Features and Options</h2>
+
+          <h2>About the Free Online ROT13 Encoder Decoder</h2>
+
+        </div>
+
 
         <div className="mt-4">
           <Rot13EncoderDecoderTool />
@@ -192,7 +205,7 @@ export default function Rot13EncoderDecoderPage() {
         {/* FAQ */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            Frequently Asked Questions
+            Frequently Asked Questions About ROT13 Encoder Decoder
           </h2>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
             {faqItems.map((faq) => (
@@ -211,7 +224,7 @@ export default function Rot13EncoderDecoderPage() {
 
         {/* Related Tools */}
         <section className="mt-10">
-          <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
+          <h2 className="text-lg sm:text-xl font-semibold">Related Free Online Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
             Encode text with ROT13, then explore our other encoding, hashing, and text tools.
           </p>

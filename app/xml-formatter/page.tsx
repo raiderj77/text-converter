@@ -98,7 +98,7 @@ export default function XmlFormatterPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free XML Formatter &amp; Validator
         </h1>
-        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
+        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           An XML formatter and validator beautifies XML with proper indentation and checks for well-formedness. Paste your XML below to format, validate, or minify it instantly.
         </p>
@@ -106,6 +106,19 @@ export default function XmlFormatterPage() {
         <div className="mt-3">
           <ToolActions />
         </div>
+
+        {/* Descriptive headings for screen readers */}
+
+        <div className="sr-only">
+
+          <h2>How to Use the XML Formatter Tool</h2>
+
+          <h2>XML Formatter Features and Options</h2>
+
+          <h2>About the Free Online XML Formatter</h2>
+
+        </div>
+
 
         <div className="mt-4">
           <XmlFormatterTool />
@@ -192,7 +205,7 @@ export default function XmlFormatterPage() {
         {/* FAQ */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            Frequently Asked Questions
+            Frequently Asked Questions About XML Formatter
           </h2>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
             {faqItems.map((faq) => (
@@ -211,7 +224,7 @@ export default function XmlFormatterPage() {
 
         {/* Related Tools */}
         <section className="mt-10">
-          <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
+          <h2 className="text-lg sm:text-xl font-semibold">Related Free Online Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
             Format XML here, then use our other tools for JSON, CSV, and data encoding.
           </p>

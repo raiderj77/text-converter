@@ -99,7 +99,7 @@ export default function SqlFormatterPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free SQL Formatter &amp; Beautifier
         </h1>
-        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
+        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           An SQL formatter and beautifier formats SQL queries with proper indentation, uppercase keywords, and readable structure. Paste your SQL below to format or minify it instantly.
         </p>
@@ -107,6 +107,19 @@ export default function SqlFormatterPage() {
         <div className="mt-3">
           <ToolActions />
         </div>
+
+        {/* Descriptive headings for screen readers */}
+
+        <div className="sr-only">
+
+          <h2>How to Use the SQL Formatter Tool</h2>
+
+          <h2>SQL Formatter Features and Options</h2>
+
+          <h2>About the Free Online SQL Formatter</h2>
+
+        </div>
+
 
         <div className="mt-4">
           <SqlFormatterTool />
@@ -196,7 +209,7 @@ export default function SqlFormatterPage() {
         {/* FAQ */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            Frequently Asked Questions
+            Frequently Asked Questions About SQL Formatter
           </h2>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
             {faqItems.map((faq) => (
@@ -215,7 +228,7 @@ export default function SqlFormatterPage() {
 
         {/* Related Tools */}
         <section className="mt-10">
-          <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
+          <h2 className="text-lg sm:text-xl font-semibold">Related Free Online Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
             Format SQL here, then use our other tools for JSON, XML, and data conversion.
           </p>

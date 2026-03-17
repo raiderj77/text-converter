@@ -93,7 +93,7 @@ export default function TextCleanerPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Text Cleaner
         </h1>
-        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
+        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A text cleaner removes extra spaces, line breaks, special characters, and formatting from any text. Paste your text below to clean and normalize it instantly.
         </p>
@@ -101,6 +101,19 @@ export default function TextCleanerPage() {
         <div className="mt-3">
           <ToolActions />
         </div>
+
+        {/* Descriptive headings for screen readers */}
+
+        <div className="sr-only">
+
+          <h2>How to Use the Text Cleaner Tool</h2>
+
+          <h2>Text Cleaner Features and Options</h2>
+
+          <h2>About the Free Online Text Cleaner</h2>
+
+        </div>
+
 
         <div className="mt-4">
           <TextCleanerTool />
@@ -237,7 +250,7 @@ export default function TextCleanerPage() {
         {/* FAQ */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            Frequently Asked Questions
+            Frequently Asked Questions About Text Cleaner
           </h2>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
             {faqItems.map((faq) => (

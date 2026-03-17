@@ -80,7 +80,7 @@ export default function CamelCaseVsSnakeCasePage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           camelCase vs snake_case vs kebab-case: Which to Use
         </h1>
-        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
+        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           This guide compares camelCase, snake_case, and kebab-case naming conventions and explains which to use in each programming language. Read on to learn the conventions and try the free converter tool.
         </p>
@@ -90,7 +90,7 @@ export default function CamelCaseVsSnakeCasePage() {
         <AdSlot slot="after-tool" page="camelcase-vs-snake-case" />
 
         <section className="mt-10">
-          <h2 className="text-lg sm:text-xl font-semibold">What Is camelCase?</h2>
+          <h2 className="text-lg sm:text-xl font-semibold">What Is the camelCase Convention?</h2>
           <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               camelCase joins words with no spaces, capitalizing each new word except the first
@@ -117,7 +117,7 @@ export default function CamelCaseVsSnakeCasePage() {
         </section>
 
         <section className="mt-10">
-          <h2 className="text-lg sm:text-xl font-semibold">What Is snake_case?</h2>
+          <h2 className="text-lg sm:text-xl font-semibold">What Is the snake_case Convention?</h2>
           <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               snake_case joins words with underscores, all lowercase (e.g.,{" "}
@@ -142,7 +142,7 @@ export default function CamelCaseVsSnakeCasePage() {
         </section>
 
         <section className="mt-10">
-          <h2 className="text-lg sm:text-xl font-semibold">What Is kebab-case?</h2>
+          <h2 className="text-lg sm:text-xl font-semibold">What Is the kebab-case Convention?</h2>
           <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               kebab-case joins words with hyphens, all lowercase (e.g.,{" "}
@@ -240,7 +240,7 @@ export default function CamelCaseVsSnakeCasePage() {
         <AdSlot slot="mid-content" page="camelcase-vs-snake-case" />
 
         <section className="mt-10">
-          <h2 className="text-lg sm:text-xl font-semibold">Converting Between Cases</h2>
+          <h2 className="text-lg sm:text-xl font-semibold">Converting Between Different Case Styles</h2>
           <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               Switching between naming conventions is common when working across languages or APIs.
@@ -268,7 +268,7 @@ export default function CamelCaseVsSnakeCasePage() {
         {/* FAQ */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            Frequently Asked Questions
+            Frequently Asked Questions About Camelcase Vs Snake Case
           </h2>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
             {faqItems.map((faq) => (

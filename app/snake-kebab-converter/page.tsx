@@ -94,7 +94,7 @@ export default function SnakeKebabConverterPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Snake_case vs Kebab-case Converter: Naming Convention Tool
         </h1>
-        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
+        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A snake_case to kebab-case converter transforms text between underscore and hyphen naming conventions. Paste your text below to convert between snake_case and kebab-case instantly.
         </p>
@@ -102,6 +102,19 @@ export default function SnakeKebabConverterPage() {
         <div className="mt-3">
           <ToolActions />
         </div>
+
+        {/* Descriptive headings for screen readers */}
+
+        <div className="sr-only">
+
+          <h2>How to Use the Snake Kebab Converter Tool</h2>
+
+          <h2>Snake Kebab Converter Features and Options</h2>
+
+          <h2>About the Free Online Snake Kebab Converter</h2>
+
+        </div>
+
 
         <div className="mt-4">
           <SnakeKebabConverterTool />
@@ -326,7 +339,7 @@ export default function SnakeKebabConverterPage() {
         {/* FAQ */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            Frequently Asked Questions
+            Frequently Asked Questions About Snake Kebab Converter
           </h2>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
             {faqItems.map((faq) => (

@@ -87,7 +87,7 @@ export default function StrikethroughTextGeneratorPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Strikethrough Text Generator — Copy & Paste
         </h1>
-        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
+        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A strikethrough text generator adds a line through your text using Unicode combining characters. Type your text below to generate strikethrough text you can copy and paste anywhere.
         </p>
@@ -95,6 +95,19 @@ export default function StrikethroughTextGeneratorPage() {
         <div className="mt-3">
           <ToolActions />
         </div>
+
+        {/* Descriptive headings for screen readers */}
+
+        <div className="sr-only">
+
+          <h2>How to Use the Strikethrough Text Generator Tool</h2>
+
+          <h2>Strikethrough Text Generator Features and Options</h2>
+
+          <h2>About the Free Online Strikethrough Text Generator</h2>
+
+        </div>
+
 
         <div className="mt-4">
           <StrikethroughTextGeneratorTool />
@@ -229,7 +242,7 @@ export default function StrikethroughTextGeneratorPage() {
         {/* FAQ */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            Frequently Asked Questions
+            Frequently Asked Questions About Strikethrough Text Generator
           </h2>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
             {faqItems.map((faq) => (

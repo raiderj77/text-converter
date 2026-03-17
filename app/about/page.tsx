@@ -28,7 +28,7 @@ export default function AboutPage() {
       <OrganizationSchema />
       <main className="mx-auto max-w-3xl px-4 py-8" style={{ lineHeight: 1.7 }}>
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">About FlipMyCase</h1>
-        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
+        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
 
         {/* Section 1 — What FlipMyCase is */}
         <section className="mt-8">

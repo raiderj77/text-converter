@@ -38,7 +38,7 @@ export default function ContactPage() {
         text is private, replace it with a similar example that shows the same formatting problem.
       </p>
 
-        <p style={{ marginTop: 24, opacity: 0.8 }}>Last updated: 2026-02-13</p>
+        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
       </main>
     </>
   );

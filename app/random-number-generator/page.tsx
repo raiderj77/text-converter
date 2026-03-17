@@ -96,7 +96,7 @@ export default function RandomNumberGeneratorPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Random Number Generator
         </h1>
-        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
+        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A random number generator creates random numbers within a custom range with options for bulk generation and no duplicates. Set your range and count below to generate random numbers instantly.
         </p>
@@ -104,6 +104,19 @@ export default function RandomNumberGeneratorPage() {
         <div className="mt-3">
           <ToolActions />
         </div>
+
+        {/* Descriptive headings for screen readers */}
+
+        <div className="sr-only">
+
+          <h2>How to Use the Random Number Generator Tool</h2>
+
+          <h2>Random Number Generator Features and Options</h2>
+
+          <h2>About the Free Online Random Number Generator</h2>
+
+        </div>
+
 
         <div className="mt-4">
           <RandomNumberGeneratorTool />
@@ -196,7 +209,7 @@ export default function RandomNumberGeneratorPage() {
         {/* FAQ */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            Frequently Asked Questions
+            Frequently Asked Questions About Random Number Generator
           </h2>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
             {faqItems.map((faq) => (
@@ -215,7 +228,7 @@ export default function RandomNumberGeneratorPage() {
 
         {/* Related Tools */}
         <section className="mt-10">
-          <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
+          <h2 className="text-lg sm:text-xl font-semibold">Related Free Online Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
             Generate random numbers here, then explore our other utility tools.
           </p>

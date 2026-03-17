@@ -87,7 +87,7 @@ export default function AddPrefixSuffixPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Add Prefix & Suffix to Each Line
         </h1>
-        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
+        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A prefix and suffix tool adds custom text to the beginning or end of every line. Paste your text below and enter your prefix or suffix to transform all lines instantly.
         </p>
@@ -95,6 +95,19 @@ export default function AddPrefixSuffixPage() {
         <div className="mt-3">
           <ToolActions />
         </div>
+
+        {/* Descriptive headings for screen readers */}
+
+        <div className="sr-only">
+
+          <h2>How to Use the Add Prefix Suffix Tool</h2>
+
+          <h2>Add Prefix Suffix Features and Options</h2>
+
+          <h2>About the Free Online Add Prefix Suffix</h2>
+
+        </div>
+
 
         <div className="mt-4">
           <AddPrefixSuffixTool />
@@ -176,7 +189,7 @@ export default function AddPrefixSuffixPage() {
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            Common Prefix/Suffix Patterns
+            Common Prefix and Suffix Patterns
           </h2>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
             {[
@@ -260,7 +273,7 @@ export default function AddPrefixSuffixPage() {
         {/* FAQ */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            Frequently Asked Questions
+            Frequently Asked Questions About Add Prefix Suffix
           </h2>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
             {faqItems.map((faq) => (

@@ -116,7 +116,7 @@ export default function PasswordGeneratorPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Password Generator — Strong Passwords, Passphrases &amp; PINs
         </h1>
-        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
+        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A password generator creates secure, random passwords with customizable length, character sets, and complexity. Set your requirements below and click generate to create a strong password instantly.
         </p>
@@ -124,6 +124,19 @@ export default function PasswordGeneratorPage() {
         <div className="mt-3">
           <ToolActions />
         </div>
+
+        {/* Descriptive headings for screen readers */}
+
+        <div className="sr-only">
+
+          <h2>How to Use the Password Generator Tool</h2>
+
+          <h2>Password Generator Features and Options</h2>
+
+          <h2>About the Free Online Password Generator</h2>
+
+        </div>
+
 
         <div className="mt-4">
           <PasswordGeneratorTool />
@@ -227,7 +240,7 @@ export default function PasswordGeneratorPage() {
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            Password Strength Guide
+            Password Strength Assessment Guide
           </h2>
           <p className="mt-2 text-sm text-neutral-300">
             Entropy increases with length and character pool size. Here is the approximate
@@ -297,7 +310,7 @@ export default function PasswordGeneratorPage() {
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            Frequently Asked Questions
+            Frequently Asked Questions About Password Generator
           </h2>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
             {faqItems.map((faq) => (
@@ -312,7 +325,7 @@ export default function PasswordGeneratorPage() {
         <AdSlot slot="before-footer" page="password-generator" />
 
         <section className="mt-10">
-          <h2 className="text-lg sm:text-xl font-semibold">More Free Tools</h2>
+          <h2 className="text-lg sm:text-xl font-semibold">More Free Online Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
             Generate passwords here, then encode strings, format JSON, compare text, and more
             with our other free tools.

@@ -93,7 +93,7 @@ export default function ToggleCaseConverterPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Toggle Case Converter: Alternating Caps & SpongeBob Text Generator
         </h1>
-        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
+        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A toggle case converter transforms text into alternating uppercase and lowercase letters (tOgGlE cAsE). Paste your text below to create alternating caps text instantly.
         </p>
@@ -101,6 +101,19 @@ export default function ToggleCaseConverterPage() {
         <div className="mt-3">
           <ToolActions />
         </div>
+
+        {/* Descriptive headings for screen readers */}
+
+        <div className="sr-only">
+
+          <h2>How to Use the Toggle Case Converter Tool</h2>
+
+          <h2>Toggle Case Converter Features and Options</h2>
+
+          <h2>About the Free Online Toggle Case Converter</h2>
+
+        </div>
+
 
         <div className="mt-4">
           <ToggleCaseConverterTool />
@@ -258,7 +271,7 @@ export default function ToggleCaseConverterPage() {
         {/* FAQ */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            Frequently Asked Questions
+            Frequently Asked Questions About Toggle Case Converter
           </h2>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
             {faqItems.map((faq) => (

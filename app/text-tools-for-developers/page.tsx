@@ -87,7 +87,7 @@ export default function TextToolsForDevelopersPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Text Tools for Developers
         </h1>
-        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
+        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           This page lists free browser-based text tools built for developers, including JSON formatter, regex tester, hash generator, and 20+ more utilities. Browse the tools below and start using them instantly — no signup required.
         </p>
@@ -95,7 +95,7 @@ export default function TextToolsForDevelopersPage() {
         {/* ========== Code Formatting Tools ========== */}
 
         <section className="mt-10">
-          <h2 className="text-lg sm:text-xl font-semibold">Code Formatting Tools</h2>
+          <h2 className="text-lg sm:text-xl font-semibold">Free Code Formatting Tools</h2>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link
               href="/json-formatter"
@@ -250,7 +250,7 @@ export default function TextToolsForDevelopersPage() {
         {/* ========== Developer Utility Tools ========== */}
 
         <section className="mt-10">
-          <h2 className="text-lg sm:text-xl font-semibold">Developer Utility Tools</h2>
+          <h2 className="text-lg sm:text-xl font-semibold">Free Developer Utility Tools</h2>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link
               href="/hash-generator"
@@ -357,7 +357,7 @@ export default function TextToolsForDevelopersPage() {
         {/* ========== Data Tools ========== */}
 
         <section className="mt-10">
-          <h2 className="text-lg sm:text-xl font-semibold">Data Tools</h2>
+          <h2 className="text-lg sm:text-xl font-semibold">Developer Data Conversion Tools</h2>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link
               href="/csv-to-json"
@@ -396,7 +396,7 @@ export default function TextToolsForDevelopersPage() {
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            Why Browser-Based Tools?
+            Why Use Browser-Based Developer Tools?
           </h2>
           <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
@@ -426,7 +426,7 @@ export default function TextToolsForDevelopersPage() {
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            Frequently Asked Questions
+            Frequently Asked Questions About Text Tools For Developers
           </h2>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
             {faqItems.map((faq) => (

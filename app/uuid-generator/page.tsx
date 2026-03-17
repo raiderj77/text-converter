@@ -99,7 +99,7 @@ export default function UuidGeneratorPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free UUID/GUID Generator
         </h1>
-        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
+        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A UUID generator creates random v4 universally unique identifiers for use in databases, APIs, and applications. Click generate to create one or more UUIDs instantly.
         </p>
@@ -107,6 +107,19 @@ export default function UuidGeneratorPage() {
         <div className="mt-3">
           <ToolActions />
         </div>
+
+        {/* Descriptive headings for screen readers */}
+
+        <div className="sr-only">
+
+          <h2>How to Use the UUID Generator Tool</h2>
+
+          <h2>UUID Generator Features and Options</h2>
+
+          <h2>About the Free Online UUID Generator</h2>
+
+        </div>
+
 
         <div className="mt-4">
           <UuidGeneratorTool />
@@ -196,7 +209,7 @@ export default function UuidGeneratorPage() {
         {/* FAQ */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            Frequently Asked Questions
+            Frequently Asked Questions About UUID Generator
           </h2>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
             {faqItems.map((faq) => (
@@ -215,7 +228,7 @@ export default function UuidGeneratorPage() {
 
         {/* Related Tools */}
         <section className="mt-10">
-          <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
+          <h2 className="text-lg sm:text-xl font-semibold">Related Free Online Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
             Generate UUIDs here, then use our other developer tools for hashing, encoding,
             and password generation.

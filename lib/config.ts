@@ -44,7 +44,7 @@ export const tools: Tool[] = [
     slug: "",
     name: "Case Converter",
     shortName: "Case",
-    title: "Text Case Converter — camelCase, snake_case, Title Case & More | Free",
+    title: "Free Online Text Case Converter",
     description:
       "Convert text to UPPERCASE, lowercase, Title Case, camelCase, snake_case & more instantly. Free online tool — no signup required.",
     emoji: "🔄",
@@ -55,7 +55,7 @@ export const tools: Tool[] = [
     slug: "word-counter",
     name: "Word Counter",
     shortName: "Words",
-    title: "Word Counter & Character Count — Free Online Tool",
+    title: "Free Word & Character Counter",
     description:
       "Count words, characters, sentences, paragraphs & reading time. Keyword density included. Free online word counter — no signup.",
     emoji: "📊",
@@ -99,7 +99,7 @@ export const tools: Tool[] = [
     slug: "string-encoder",
     name: "String Encoder",
     shortName: "Encode",
-    title: "String Encoder & Decoder — Base64, URL & More Free",
+    title: "String Encoder & Decoder — Free",
     description:
       "Encode & decode Base64, URL, HTML entities, hex & binary strings instantly. Free online tool — no signup required.",
     emoji: "🔐",
@@ -110,7 +110,7 @@ export const tools: Tool[] = [
     slug: "json-formatter",
     name: "JSON Formatter",
     shortName: "JSON",
-    title: "JSON Formatter & Validator — Pretty Print or Minify JSON Free",
+    title: "JSON Formatter & Validator — Free",
     description:
       "Format, validate, beautify & minify JSON online. Tree view, error detection & CSV export. Free tool — no signup required.",
     emoji: "{ }",

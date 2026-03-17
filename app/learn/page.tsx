@@ -75,6 +75,7 @@ export default function LearnPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Learn Text Case Styles
         </h1>
+        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="mt-3 text-sm text-neutral-300">
           Text casing shows up everywhere — headings, emails, spreadsheets, code variables,
           file names, and URLs. This guide explains what each case is, where it is used, and

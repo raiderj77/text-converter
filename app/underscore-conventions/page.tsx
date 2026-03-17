@@ -94,7 +94,7 @@ export default function UnderscoreConventionsPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Why Programmers Use Underscores in Variable Names
         </h1>
-        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
+        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           This guide explains how underscores are used in programming for naming conventions like _private, __dunder, and snake_case. Read on to understand when and why developers use underscores in code.
         </p>
@@ -102,6 +102,19 @@ export default function UnderscoreConventionsPage() {
         <div className="mt-3">
           <ToolActions />
         </div>
+
+        {/* Descriptive headings for screen readers */}
+
+        <div className="sr-only">
+
+          <h2>How to Use the Underscore Conventions Tool</h2>
+
+          <h2>Underscore Conventions Features and Options</h2>
+
+          <h2>About the Free Online Underscore Conventions</h2>
+
+        </div>
+
 
         <div className="mt-4">
           <UnderscoreConventionsTool />
@@ -151,7 +164,7 @@ export default function UnderscoreConventionsPage() {
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            Language-Specific Underscore Conventions
+            Language-Specific Underscore Naming Conventions
           </h2>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
             {[
@@ -319,7 +332,7 @@ class UserAccount {
         {/* FAQ */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            Frequently Asked Questions
+            Frequently Asked Questions About Underscore Conventions
           </h2>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
             {faqItems.map((faq) => (

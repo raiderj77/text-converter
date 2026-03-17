@@ -99,7 +99,7 @@ export default function MarkdownPreviewPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Markdown Preview — Live Editor Online
         </h1>
-        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
+        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A Markdown preview editor lets you write Markdown and see a live rendered preview side by side. Type or paste your Markdown below to see it rendered instantly.
         </p>
@@ -107,6 +107,19 @@ export default function MarkdownPreviewPage() {
         <div className="mt-3">
           <ToolActions />
         </div>
+
+        {/* Descriptive headings for screen readers */}
+
+        <div className="sr-only">
+
+          <h2>How to Use the Markdown Preview Tool</h2>
+
+          <h2>Markdown Preview Features and Options</h2>
+
+          <h2>About the Free Online Markdown Preview</h2>
+
+        </div>
+
 
         <div className="mt-4">
           <MarkdownPreviewTool />
@@ -188,7 +201,7 @@ export default function MarkdownPreviewPage() {
         {/* FAQ */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            Frequently Asked Questions
+            Frequently Asked Questions About Markdown Preview
           </h2>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
             {faqItems.map((faq) => (
@@ -207,7 +220,7 @@ export default function MarkdownPreviewPage() {
 
         {/* Related Tools */}
         <section className="mt-10">
-          <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
+          <h2 className="text-lg sm:text-xl font-semibold">Related Free Online Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
             Preview Markdown here, then use our other tools for formatting and conversion.
           </p>

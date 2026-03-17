@@ -99,7 +99,7 @@ export default function EmojiPickerPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Emoji Picker
         </h1>
-        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
+        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           An emoji picker lets you search, browse, and copy emojis by name or category with code points and shortcodes. Search or browse below to find and copy any emoji instantly.
         </p>
@@ -107,6 +107,19 @@ export default function EmojiPickerPage() {
         <div className="mt-3">
           <ToolActions />
         </div>
+
+        {/* Descriptive headings for screen readers */}
+
+        <div className="sr-only">
+
+          <h2>How to Use the Emoji Picker Tool</h2>
+
+          <h2>Emoji Picker Features and Options</h2>
+
+          <h2>About the Free Online Emoji Picker</h2>
+
+        </div>
+
 
         <div className="mt-4">
           <EmojiPickerTool />
@@ -206,7 +219,7 @@ export default function EmojiPickerPage() {
         {/* FAQ */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            Frequently Asked Questions
+            Frequently Asked Questions About Emoji Picker
           </h2>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
             {faqItems.map((faq) => (
@@ -225,7 +238,7 @@ export default function EmojiPickerPage() {
 
         {/* Related Tools */}
         <section className="mt-10">
-          <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
+          <h2 className="text-lg sm:text-xl font-semibold">Related Free Online Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
             Copy emojis here, then explore our other text and Unicode tools.
           </p>

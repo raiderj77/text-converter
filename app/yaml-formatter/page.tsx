@@ -99,7 +99,7 @@ export default function YamlFormatterPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free YAML Formatter &amp; Validator
         </h1>
-        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
+        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A YAML formatter instantly validates and beautifies YAML files with proper indentation. Paste your YAML below to format it and convert between YAML and JSON.
         </p>
@@ -107,6 +107,19 @@ export default function YamlFormatterPage() {
         <div className="mt-3">
           <ToolActions />
         </div>
+
+        {/* Descriptive headings for screen readers */}
+
+        <div className="sr-only">
+
+          <h2>How to Use the YAML Formatter Tool</h2>
+
+          <h2>YAML Formatter Features and Options</h2>
+
+          <h2>About the Free Online YAML Formatter</h2>
+
+        </div>
+
 
         <div className="mt-4">
           <YamlFormatterTool />
@@ -195,7 +208,7 @@ export default function YamlFormatterPage() {
         {/* FAQ */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            Frequently Asked Questions
+            Frequently Asked Questions About YAML Formatter
           </h2>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
             {faqItems.map((faq) => (
@@ -214,7 +227,7 @@ export default function YamlFormatterPage() {
 
         {/* Related Tools */}
         <section className="mt-10">
-          <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
+          <h2 className="text-lg sm:text-xl font-semibold">Related Free Online Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
             Format YAML here, then use our other tools for JSON, XML, CSV, and data
             conversion.

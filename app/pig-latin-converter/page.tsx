@@ -101,7 +101,7 @@ export default function PigLatinConverterPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Pig Latin Translator
         </h1>
-        <p className="mt-1 text-xs text-neutral-500">Last updated: March 2026</p>
+        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A Pig Latin translator converts English text to Pig Latin and Pig Latin back to English. Enter your text below to translate to Pig Latin instantly with preserved punctuation and capitalization.
         </p>
@@ -109,6 +109,19 @@ export default function PigLatinConverterPage() {
         <div className="mt-3">
           <ToolActions />
         </div>
+
+        {/* Descriptive headings for screen readers */}
+
+        <div className="sr-only">
+
+          <h2>How to Use the Pig Latin Converter Tool</h2>
+
+          <h2>Pig Latin Converter Features and Options</h2>
+
+          <h2>About the Free Online Pig Latin Converter</h2>
+
+        </div>
+
 
         <div className="mt-4">
           <PigLatinConverterTool />
@@ -197,7 +210,7 @@ export default function PigLatinConverterPage() {
         {/* FAQ */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            Frequently Asked Questions
+            Frequently Asked Questions About Pig Latin Converter
           </h2>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
             {faqItems.map((faq) => (
@@ -216,7 +229,7 @@ export default function PigLatinConverterPage() {
 
         {/* Related Tools */}
         <section className="mt-10">
-          <h2 className="text-lg sm:text-xl font-semibold">Related Tools</h2>
+          <h2 className="text-lg sm:text-xl font-semibold">Related Free Online Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
             Translate text to Pig Latin here, then try our other fun text transformation tools.
           </p>
