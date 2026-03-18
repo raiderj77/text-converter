@@ -141,6 +141,8 @@ func main() {
 
 **Educational content.** Teachers creating worksheets, study guides, and social media educational content need subscript for chemical equations and math notation without specialized typesetting software.
 
+**Phonetic transcription and IPA notation.** Linguists and language researchers use subscript characters in phonetic transcription work. The International Phonetic Alphabet (IPA) employs subscript diacritics and modifiers to indicate specific articulatory details — for example, subscript markers can denote voicelessness, dental articulation, or other phonetic features. When sharing IPA transcriptions in plain text environments like emails, forums, or messaging apps, Unicode subscript characters provide a way to represent these notations without specialized phonetics software.
+
 ## Common Mistakes and Gotchas
 
 Not all letters have subscript Unicode forms. Only a, e, h, i, j, k, l, m, n, o, p, r, s, t, u, v, and x have subscript equivalents. Letters like b, c, d, f, g, q, w, y, z have no subscript Unicode character and pass through as regular-sized text, breaking the visual consistency.

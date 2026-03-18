@@ -162,6 +162,17 @@ Spaces between bytes are a convention, not part of the data. Binary `01001000 01
 
 Binary is base 2, not base 10. The string "10" in binary is 2 in decimal, not ten. This seems obvious but causes errors when forgetting to specify the base in parsing functions like `parseInt('10', 2)`.
 
+## Frequently Asked Questions
+
+**What is binary text?**
+Binary text is the representation of characters using binary digits (0s and 1s). Each character in text is converted to its binary equivalent using a character encoding standard like ASCII or UTF-8. For example, the letter "A" is represented as 01000001 in binary, corresponding to its ASCII value of 65.
+
+**How many bits per character in binary encoding?**
+Standard ASCII characters use 7 bits, but are typically stored as 8 bits (one byte) with a leading zero. UTF-8 encoding uses 1 to 4 bytes per character depending on the character. Basic Latin characters use one byte, while characters from other scripts and special symbols require two to four bytes.
+
+**Can I convert emoji to binary?**
+Yes, emoji can be converted to binary, but they require more bits than standard ASCII characters. Emoji are encoded in UTF-8 using 4 bytes (32 bits) per character. For example, a simple smiley face emoji translates to a 32-bit binary sequence. Our binary converter handles full Unicode including emoji.
+
 ## Conclusion
 
 Binary text conversion is the foundation for understanding how computers store and process text. Whether you are studying computer science, debugging encoding issues, or working with low-level data, seeing the binary representation of text illuminates how digital systems actually work.

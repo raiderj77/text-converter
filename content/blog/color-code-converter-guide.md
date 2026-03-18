@@ -212,6 +212,17 @@ Alpha channel handling varies by format. RGBA uses 0-1 for alpha (`rgba(59, 130,
 
 HSL hue wraps around at 360°. A hue of 370° is equivalent to 10°. This is useful for generating analogous color schemes (add ±30° for adjacent colors) but can confuse calculations that do not handle the wraparound.
 
+## Frequently Asked Questions
+
+**What is the difference between HEX and RGB?**
+HEX and RGB represent the same color information in different formats. HEX uses a six-character hexadecimal string (like #3B82F6), while RGB uses three decimal values from 0 to 255 (like rgb(59, 130, 246)). HEX is more compact for CSS, while RGB is easier to read and manipulate programmatically.
+
+**How do I convert HEX to HSL?**
+Converting HEX to HSL requires two steps. First, convert HEX to RGB by parsing each two-character pair into decimal values. Then convert RGB to HSL by calculating the hue from the RGB ratios, saturation from the difference between maximum and minimum channel values, and lightness from their average.
+
+**What is WCAG contrast ratio?**
+WCAG contrast ratio measures the luminance difference between foreground text and background colors on a scale from 1:1 to 21:1. Level AA requires a minimum ratio of 4.5:1 for normal text and 3:1 for large text. Level AAA requires 7:1 for normal text. Higher ratios ensure better readability for all users.
+
 ## Conclusion
 
 Color code conversion bridges the gap between design tools, CSS, and programming environments. Whether you are converting brand HEX colors to HSL for palette generation, translating Figma exports to CSS values, or calculating accessibility contrast, reliable conversion is essential.

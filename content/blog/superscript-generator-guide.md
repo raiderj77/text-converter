@@ -158,6 +158,16 @@ Superscript text may render at slightly different sizes across fonts and platfor
 
 For complex math notation (fractions, integrals, matrices), Unicode superscript is insufficient. Use LaTeX, MathML, or the [Superscript Generator](/superscript-generator) for simple exponents and switch to proper math typesetting for complex expressions.
 
+## Tips for Working with Superscript
+
+**Check font compatibility before committing to superscript letters.** Superscript digits (⁰¹²³⁴⁵⁶⁷⁸⁹) render reliably across virtually all modern fonts and platforms. Superscript letters, however, are drawn from several different Unicode blocks — some from the Phonetic Extensions block, others from Spacing Modifier Letters — and may render inconsistently. System fonts on Windows, macOS, iOS, and Android generally handle them well, but custom web fonts or niche operating systems may display fallback glyphs or blank boxes. Always preview superscript text on your target platform before publishing.
+
+**Combine superscript with other Unicode styles for creative effects.** You can mix superscript with bold, italic, or strikethrough Unicode characters in the same message. For example, a bold title followed by a superscript footnote marker creates clear visual hierarchy: "𝗜𝗺𝗽𝗼𝗿𝘁𝗮𝗻𝘁 𝗙𝗶𝗻𝗱𝗶𝗻𝗴¹" reads naturally and looks polished. Use the [Fancy Text Generator](/fancy-text-generator) alongside the [Superscript Generator](/superscript-generator) to layer styles effectively.
+
+**Know when to use HTML sup tags versus Unicode superscript.** If you are writing content for a web page where HTML is rendered, the `<sup>` tag is preferable — it is semantically correct, accessible to screen readers, and works with every letter and number. Unicode superscript is the right choice when you are writing in plain text environments where HTML is not interpreted: social media bios, text messages, forum posts, email subject lines, and file names. A good rule of thumb is to use HTML `<sup>` for web content and Unicode superscript for everything else.
+
+**Be mindful of accessibility.** Screen readers may announce Unicode superscript characters by their full Unicode name rather than their intended value. For instance, "x²" might be read as "x superscript two" or "x modifier letter small two" depending on the assistive technology. If your audience includes screen reader users, provide the plain text equivalent nearby or use HTML sup tags where possible.
+
 ## Conclusion
 
 Superscript text is essential for mathematical notation, footnotes, ordinal indicators, and scientific communication. Unicode superscript characters provide this in any text field.

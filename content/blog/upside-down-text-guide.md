@@ -156,6 +156,10 @@ func main() {
 
 **Creative usernames.** Flipped display names are memorable and distinctive in gaming, Discord servers, and forum profiles.
 
+**Brand differentiation.** Marketing teams use flipped text in social media campaigns to break patterns and stop the scroll. A product announcement written upside down forces readers to pause and engage — even if just to decode the message. This technique works particularly well for teaser campaigns, limited-time offers, and playful brand voices that want to stand out in crowded feeds.
+
+**Educational engagement.** Teachers use upside down text to create interactive classroom activities. Spelling quizzes where students must decode flipped words, vocabulary games that challenge students to read inverted sentences, and reward messages written upside down all add a layer of fun to learning. The novelty factor keeps students engaged while still reinforcing language skills.
+
 ## Common Mistakes and Gotchas
 
 Not every letter has a perfect upside-down equivalent. Some mappings are approximate — "b" maps to "q" which is not a true 180-degree rotation but the closest available character. The result is recognizable but not pixel-perfect.

@@ -159,6 +159,8 @@ Some italic characters have known Unicode exceptions. The lowercase "h" in Mathe
 
 String operations treat Unicode italic characters as different from regular letters. Searching for "Hello" will not find "𝐻𝑒𝑙𝑙𝑜". Sorting, filtering, and comparison all fail unless you normalize the text first.
 
+Mixing italic Unicode characters with emoji disrupts the visual flow. Emoji render at standard size and orientation regardless of surrounding text style, so a sentence like "𝘓𝘰𝘷𝘦 𝘵𝘩𝘪𝘴 🎉 𝘴𝘰 𝘮𝘶𝘤𝘩" creates a jarring break where the emoji sits at full size between the smaller italic characters. If you want a clean italic look, place emoji at the beginning or end of the text rather than inline, or separate them with line breaks.
+
 ## Conclusion
 
 Italic Unicode text adds elegance and emphasis to platforms that strip formatting. Whether you are styling a bio, quoting a title, or writing creative captions, italic characters persist wherever they are pasted.

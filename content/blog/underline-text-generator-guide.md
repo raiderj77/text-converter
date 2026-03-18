@@ -148,6 +148,8 @@ func main() {
 
 **Combining with other styles.** Layer underline with bold or italic Unicode for maximum emphasis. Bold + underline creates strong visual weight for key phrases.
 
+**Email subject lines and newsletter headers.** Many email clients strip HTML formatting from subject lines, and some newsletter platforms render headers as plain text in preview panes. Unicode underlined text lets you add visual emphasis to subject lines like "D̲o̲n̲'̲t̲ ̲M̲i̲s̲s̲ ̲T̲h̲i̲s̲" that stands out in a crowded inbox. This technique is especially useful for marketing emails where the subject line determines open rates and no HTML formatting is available.
+
 ## Common Mistakes and Gotchas
 
 Combining characters double the string length. "Hello" (5 chars) becomes "H̲e̲l̲l̲o̲" (10 chars — 5 letters + 5 combining underlines). This matters for character-limited platforms. Check counts with the [Word Counter](/word-counter).

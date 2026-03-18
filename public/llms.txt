@@ -2,7 +2,7 @@
 
 > https://flipmycase.com
 
-FlipMyCase is a suite of 77 free, browser-based text tools for developers and writers, with 77 in-depth blog guides. All processing happens client-side — no text is sent to any server. No signup required, no limits.
+FlipMyCase is a suite of 77 free, browser-based text tools for developers and writers, with 87 in-depth blog guides. All processing happens client-side — no text is sent to any server. No signup required, no limits.
 
 ## Tools
 
@@ -100,7 +100,7 @@ FlipMyCase is a suite of 77 free, browser-based text tools for developers and wr
 - [Text Tools for Developers](https://flipmycase.com/text-tools-for-developers): Directory of 20+ free browser-based developer tools — JSON formatter, regex tester, hash generator, UUID, JWT decoder, and more.
 - [JSON vs YAML vs XML](https://flipmycase.com/json-vs-yaml-vs-xml): Syntax differences, use cases, and performance comparison to help you choose the right data format.
 
-## Blog Guides (77 posts)
+## Blog Guides (87 posts)
 
 In-depth guides with code examples covering every tool on the site: https://flipmycase.com/blog
 
@@ -192,6 +192,18 @@ In-depth guides with code examples covering every tool on the site: https://flip
 - [Roman Numeral Converter — Roman to Arabic Numbers](https://flipmycase.com/blog/roman-numeral-converter-guide): Bidirectional conversion with validation.
 - [QR Code Generator — Create QR Codes for Free](https://flipmycase.com/blog/qr-code-generator-guide): URL, WiFi, and vCard QR code generation.
 - [Emoji Picker — Search, Browse, and Copy Emojis](https://flipmycase.com/blog/emoji-picker-guide): Unicode emoji search with code points.
+
+### Naming Convention & Case Style Guides
+- [camelCase Naming Convention — When and How to Use It](https://flipmycase.com/blog/camelcase-naming-convention-guide): Rules, real-world examples, and language-specific conventions for camelCase.
+- [PascalCase — The Naming Convention for Classes and Components](https://flipmycase.com/blog/pascal-case-guide): PascalCase rules for classes, React components, C# methods, and TypeScript types.
+- [Sentence Case Rules — When to Capitalize Only the First Word](https://flipmycase.com/blog/sentence-case-rules-guide): Sentence case rules, UI guidelines, and comparison with title case.
+- [CONSTANT_CASE (Screaming Snake Case) — All-Caps Underscored Names](https://flipmycase.com/blog/constant-case-screaming-snake-case-guide): When to use CONSTANT_CASE for constants, environment variables, and enums.
+- [Naming Conventions in Programming — The Complete Guide](https://flipmycase.com/blog/naming-conventions-programming-guide): camelCase, snake_case, kebab-case, PascalCase, CONSTANT_CASE — which languages use which.
+- [How to Convert Text Case in JavaScript and Python](https://flipmycase.com/blog/text-case-javascript-python-guide): Built-in methods, custom functions, and edge cases for case conversion in code.
+- [Text Formatting for Social Media — Bold, Italic, and Special Characters](https://flipmycase.com/blog/text-formatting-social-media-guide): Unicode text formatting for Twitter, Instagram, LinkedIn, and more.
+- [How Unicode Text Styles Work — Bold, Italic, Strikethrough, and Beyond](https://flipmycase.com/blog/unicode-text-styles-guide): Mathematical Alphanumeric Symbols, combining characters, and limitations.
+- [Text Formatting for Copywriters — Capitalization and Readability](https://flipmycase.com/blog/copywriting-text-formatting-guide): How case style affects CTR, brand perception, and email deliverability.
+- [Regex for Text Manipulation — Essential Patterns for Developers](https://flipmycase.com/blog/regex-for-text-manipulation-guide): Email extraction, case conversion, whitespace cleanup, and date reformatting patterns.
 
 ## About
 

@@ -173,6 +173,17 @@ Vendor prefixes create long property lists. Formatting does not remove or add ve
 
 Formatting does not validate CSS. A beautifully indented rule with `colr: red;` (typo) is still broken CSS. Use a linter (stylelint) alongside formatting to catch actual errors. The [CSS Formatter](/css-formatter) makes the visual structure clear, but does not replace validation.
 
+## Frequently Asked Questions
+
+**Should I minify CSS for production?**
+Yes, minifying CSS for production is a best practice that reduces file size by removing whitespace, comments, and unnecessary characters. Minified CSS loads faster, improving page performance and Core Web Vitals scores. Use build tools like PostCSS, cssnano, or your bundler's built-in minification. Keep unminified source files for development and debugging.
+
+**How do I format CSS online?**
+Paste your CSS code into an online CSS formatter tool, select your preferred indentation style, and click format. The tool restructures your CSS with consistent indentation, line breaks between rules, and proper spacing around selectors and properties. FlipMyCase's CSS Formatter handles this instantly in your browser with no server upload required.
+
+**What is CSS beautification?**
+CSS beautification is the process of reformatting compressed or poorly formatted CSS into a clean, readable structure. It adds consistent indentation, places each property on its own line, adds spaces after colons and before opening braces, and organizes rules for readability. Beautified CSS is easier to read, debug, and maintain during development.
+
 ## Conclusion
 
 CSS formatting transforms messy stylesheets into readable, maintainable code. Whether you are debugging minified production CSS, standardizing team codestyle, or preparing documentation examples, consistent formatting saves time and reduces errors.

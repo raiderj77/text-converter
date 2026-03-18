@@ -160,6 +160,17 @@ Environment variables are not loaded in cron. Your crontab job runs with a minim
 
 Output goes nowhere by default. If a cron job fails, you will not see the error unless you redirect output. Always append `>> /var/log/job.log 2>&1` to capture both stdout and stderr.
 
+## Frequently Asked Questions
+
+**What is a cron expression?**
+A cron expression is a string of five fields separated by spaces that defines a schedule for recurring tasks. The fields represent minute, hour, day of month, month, and day of week, in that order. Cron expressions are used in Unix/Linux systems, cloud platforms like AWS, and CI/CD tools to automate task execution at specific intervals.
+
+**How do I run a cron job every 5 minutes?**
+To run a cron job every 5 minutes, use the expression `*/5 * * * *`. The `*/5` in the minute field means "every 5th minute." The asterisks in the remaining fields mean "every hour, every day of the month, every month, and every day of the week," so the job runs continuously at five-minute intervals.
+
+**What is the difference between * and ? in cron expressions?**
+The asterisk (*) means "every possible value" for a field. The question mark (?) means "no specific value" and is only used in the day-of-month and day-of-week fields in extended cron formats like Quartz. It resolves ambiguity when you specify one day field but want the other to be unrestricted.
+
 ## Conclusion
 
 Cron expressions are the universal standard for scheduling recurring tasks across Linux, AWS, Kubernetes, and CI/CD systems. The five-field syntax is powerful but easy to get wrong, especially with day-of-week/month interactions and timezone differences.
