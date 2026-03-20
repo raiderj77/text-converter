@@ -1,3 +1,11 @@
+---
+title: "Sentence Case Rules — When to Capitalize Only the First Word"
+description: "Learn sentence case capitalization rules for UI copy, email subjects, and blog headings. Covers when to capitalize only the first word, proper noun exceptions, and how sentence case differs from title case."
+date: "2026-03-18"
+keywords: ["sentence case rules", "sentence case capitalization", "sentence case vs title case", "when to use sentence case", "UI capitalization rules", "sentence case proper nouns", "sentence case converter", "headline sentence case", "sentence case examples", "lowercase capitalization rules"]
+toolSlug: "sentence-case"
+---
+
 # Sentence Case Rules — When to Capitalize Only the First Word
 
 Sentence case is the default capitalization style for modern digital interfaces. Google, Apple, and Microsoft all recommend it for buttons, menus, and labels. If you write UI copy, email subjects, or blog subheadings, you need to know exactly when sentence case applies and how it differs from title case.

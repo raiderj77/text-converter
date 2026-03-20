@@ -1,3 +1,11 @@
+---
+title: "How Unicode Text Styles Work — Bold, Italic, Strikethrough, and Beyond"
+description: "Understand how Unicode text styles work: bold, italic, strikethrough, and decorative alphabets using Mathematical Alphanumeric Symbols. Learn why styled Unicode characters work in plain-text environments."
+date: "2026-03-18"
+keywords: ["Unicode text styles", "Unicode bold italic", "Unicode strikethrough", "Mathematical Alphanumeric Symbols", "Unicode styled text", "Unicode text generator", "plain text formatting", "Unicode decorative text", "Unicode character styles", "Unicode text converter"]
+toolSlug: "bold-italic-text"
+---
+
 # How Unicode Text Styles Work — Bold, Italic, Strikethrough, and Beyond
 
 Unicode contains over 150,000 characters, including complete styled alphabets that look like formatted text but are actually distinct characters. This is how tools generate bold, italic, and decorative text that works in plain-text environments where HTML and CSS have no effect.

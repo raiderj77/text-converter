@@ -1,3 +1,11 @@
+---
+title: "Text Formatting for Social Media — Bold, Italic, and Special Characters That Work Everywhere"
+description: "Learn how to use Unicode bold, italic, and styled text on social media platforms. Generate formatted text that works on Twitter, Instagram, LinkedIn, and Facebook without any special permissions."
+date: "2026-03-18"
+keywords: ["social media text formatting", "Unicode bold text", "Instagram bold text", "Twitter formatted text", "Unicode italic text", "social media special characters", "bold text generator", "styled text social media", "Unicode text formatting", "Facebook bold text"]
+toolSlug: "bold-italic-text"
+---
+
 # Text Formatting for Social Media — Bold, Italic, and Special Characters That Work Everywhere
 
 Most social media platforms strip HTML and rich text formatting from posts. But Unicode mathematical symbols let you use bold, italic, and styled text anywhere — no special permissions, no markdown support needed. The characters themselves carry the styling.

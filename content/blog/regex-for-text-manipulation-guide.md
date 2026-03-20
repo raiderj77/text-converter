@@ -1,8 +1,9 @@
 ---
 title: "Regex for Text Manipulation — Essential Patterns Every Developer Should Know"
 date: "2026-03-18"
-summary: "Master the regex patterns that handle 90% of text manipulation tasks: email extraction, URL matching, whitespace cleanup, case conversion, HTML stripping, and data reformatting. Practical examples with before/after results."
+description: "Master the regex patterns that handle 90% of text manipulation tasks: email extraction, URL matching, whitespace cleanup, case conversion, HTML stripping, and data reformatting. Practical examples with before/after results."
 keywords: ["regex text manipulation", "regex patterns for developers", "regex email extraction", "regex whitespace cleanup", "regex case conversion", "camelCase to snake_case regex", "regex remove HTML tags", "regex find and replace", "common regex patterns", "regex text processing", "regex cleanup patterns", "regex data extraction", "regex tutorial practical", "text manipulation regex examples", "regex cheat sheet developers"]
+toolSlug: "regex-tester"
 ---
 
 # Regex for Text Manipulation — Essential Patterns Every Developer Should Know

@@ -1,3 +1,11 @@
+---
+title: "PascalCase — The Naming Convention for Classes, Components, and Types"
+description: "Complete guide to PascalCase naming convention: rules, usage for classes, React components, and TypeScript types, comparison with camelCase, and when PascalCase is required."
+date: "2026-03-18"
+keywords: ["PascalCase naming convention", "PascalCase guide", "PascalCase vs camelCase", "PascalCase classes", "PascalCase React components", "UpperCamelCase", "PascalCase TypeScript", "PascalCase examples", "PascalCase converter", "class naming convention"]
+toolSlug: "pascal-case"
+---
+
 # PascalCase — The Naming Convention for Classes, Components, and Types
 
 PascalCase is what you reach for when naming the important things in code — classes, components, interfaces, and types. Every major programming language uses it for at least one category of identifier, and getting it wrong in a code review is an easy way to look like you haven't read the style guide.

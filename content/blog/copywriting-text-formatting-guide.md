@@ -1,3 +1,11 @@
+---
+title: "Text Formatting for Copywriters — Capitalization, Case Styles, and Readability"
+description: "Master capitalization rules for copywriting: title case, sentence case, and ALL CAPS. Learn how case styles affect click-through rates, brand perception, and readability across headlines, emails, and CTAs."
+date: "2026-03-18"
+keywords: ["copywriting text formatting", "headline capitalization rules", "title case vs sentence case", "text case for copywriters", "capitalization style guide", "headline case rules", "email subject line capitalization", "CTA text formatting", "brand voice capitalization", "readability text case"]
+toolSlug: "title-case"
+---
+
 # Text Formatting for Copywriters — Capitalization, Case Styles, and Readability
 
 The case style you choose for a headline, button, or email subject line changes how people respond to it. Title case, sentence case, and ALL CAPS each send a different signal to readers — about tone, professionalism, and urgency. Getting this right is not a minor detail. It directly affects click-through rates, brand perception, and whether your copy gets read or ignored.

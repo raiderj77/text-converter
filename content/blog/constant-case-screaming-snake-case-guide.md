@@ -1,3 +1,11 @@
+---
+title: "CONSTANT_CASE (Screaming Snake Case) — When to Use All-Caps Underscored Names"
+description: "Complete guide to CONSTANT_CASE (SCREAMING_SNAKE_CASE): when to use all-caps underscored names for constants, environment variables, and configuration values across programming languages."
+date: "2026-03-18"
+keywords: ["CONSTANT_CASE guide", "SCREAMING_SNAKE_CASE", "UPPER_SNAKE_CASE", "constant naming convention", "environment variable naming", "all caps variable names", "constant case converter", "screaming snake case examples", "immutable variable naming", "configuration constant naming"]
+toolSlug: "constant-case"
+---
+
 # CONSTANT_CASE (Screaming Snake Case) — When to Use All-Caps Underscored Names
 
 CONSTANT_CASE tells every developer who reads your code the same thing: this value does not change. It is the universal signal for constants, environment variables, and configuration values across nearly every programming language.

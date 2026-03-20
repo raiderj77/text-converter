@@ -1,3 +1,11 @@
+---
+title: "camelCase Naming Convention — When and How to Use It"
+description: "Complete guide to camelCase naming convention: rules, usage in JavaScript, Java, and TypeScript, comparison with PascalCase and snake_case, and when to use camelCase in your code."
+date: "2026-03-18"
+keywords: ["camelCase naming convention", "camelCase rules", "camelCase JavaScript", "camelCase vs PascalCase", "camelCase vs snake_case", "camelCase examples", "variable naming camelCase", "camelCase converter", "camelCase best practices", "JavaScript naming convention"]
+toolSlug: "camel-case"
+---
+
 # camelCase Naming Convention — When and How to Use It
 
 Naming conventions prevent arguments in code reviews and make codebases readable at a glance. camelCase is the most widely used convention in web development, and getting it right matters more than most developers realize.
