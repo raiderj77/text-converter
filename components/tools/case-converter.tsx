@@ -9,6 +9,7 @@ import {
   getOtherConversions,
 } from "@/lib/conversions";
 import { Card } from "@/components/ui/card";
+import EmailCapture from "@/components/ui/email-capture";
 import { useTheme } from "@/components/layout/theme-provider";
 
 export function CaseConverterTool() {
@@ -196,6 +197,18 @@ export function CaseConverterTool() {
             />
           ))}
         </div>
+      </div>
+
+      {/* Email capture */}
+      <div className="mt-6">
+        <EmailCapture
+          headline="Get 10 free text formatting templates"
+          subtext="Useful for social bios, invitations, gaming usernames, and more"
+          buttonText="Get Free Templates"
+          source="flipmycase-results"
+          leadMagnet="text-formatting-templates"
+          variant="banner"
+        />
       </div>
 
       {/* Keyboard shortcut hint */}
