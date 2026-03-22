@@ -79,7 +79,7 @@ export function Footer() {
           )}
         >
           <div className={cx("text-xs", isDark ? "text-neutral-400" : "text-neutral-500")}>
-            &copy; {new Date().getFullYear()} {SITE_NAME}. Free text tools. No signup required.
+            &copy; {new Date().getFullYear()} Your Friendly Developer. All rights reserved.
           </div>
           <div className={cx("text-xs", isDark ? "text-neutral-400" : "text-neutral-500")}>
             All processing happens in your browser. Your text never leaves your device.

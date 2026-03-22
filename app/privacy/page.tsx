@@ -3,7 +3,7 @@ import { BreadcrumbSchema } from "@/components/seo/schema";
 export const metadata = {
   title: "Privacy Policy",
   description:
-    "Privacy Policy for Text Case Converter explaining analytics, cookies, and data handling.",
+    "Privacy Policy for FlipMyCase explaining analytics, cookies, and data handling.",
 };
 
 export default function PrivacyPage() {
