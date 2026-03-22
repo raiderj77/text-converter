@@ -4,6 +4,15 @@ description: "Master capitalization rules for copywriting: title case, sentence 
 date: "2026-03-18"
 keywords: ["copywriting text formatting", "headline capitalization rules", "title case vs sentence case", "text case for copywriters", "capitalization style guide", "headline case rules", "email subject line capitalization", "CTA text formatting", "brand voice capitalization", "readability text case"]
 toolSlug: "title-case"
+faq:
+  - question: "Should email subject lines be title case or sentence case?"
+    answer: "It depends on the email type. Title case works well for newsletters and formal announcements because it looks polished and published. Sentence case performs better for personal outreach and conversational campaigns because it mimics how people actually write to each other. Test both with your audience and let open-rate data guide the decision."
+  - question: "Does ALL CAPS hurt email deliverability?"
+    answer: "Yes. Spam filters use all-caps text as a negative signal, and subject lines written entirely in uppercase are more likely to land in spam or promotions folders. Even when they reach the inbox, all-caps subjects trigger reader skepticism. Use capitalization strategically on one or two words for emphasis rather than the entire line."
+  - question: "What capitalization style do most brands use for buttons?"
+    answer: "Most major tech companies and SaaS brands use sentence case for buttons and interface labels. Google, Apple, and Microsoft all recommend sentence case in their design systems. It reads more naturally and feels less formal than title case. However, some e-commerce and direct-response brands use ALL CAPS on primary CTAs to create urgency."
+  - question: "How do I quickly convert headline case styles?"
+    answer: "Use a free online tool like FlipMyCase to paste your text and convert it instantly between title case, sentence case, uppercase, lowercase, and other styles. This is faster and more accurate than reformatting manually, especially when you need to process multiple headlines or compare how the same text looks in different case styles."
 ---
 
 # Text Formatting for Copywriters — Capitalization, Case Styles, and Readability

@@ -4,6 +4,15 @@ date: "2026-03-18"
 description: "Master the regex patterns that handle 90% of text manipulation tasks: email extraction, URL matching, whitespace cleanup, case conversion, HTML stripping, and data reformatting. Practical examples with before/after results."
 keywords: ["regex text manipulation", "regex patterns for developers", "regex email extraction", "regex whitespace cleanup", "regex case conversion", "camelCase to snake_case regex", "regex remove HTML tags", "regex find and replace", "common regex patterns", "regex text processing", "regex cleanup patterns", "regex data extraction", "regex tutorial practical", "text manipulation regex examples", "regex cheat sheet developers"]
 toolSlug: "regex-tester"
+faq:
+  - question: "What is the regex to extract all email addresses from text?"
+    answer: "Use [a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,} with the global flag. This matches standard email formats including subdomains and plus-addressing. In JavaScript, use text.match(/pattern/g) to get an array of all matches."
+  - question: "How do I convert camelCase to snake_case with regex?"
+    answer: "Match uppercase letters with ([A-Z]) and replace with _$1, then lowercase the result. In JavaScript: str.replace(/([A-Z])/g, '_$1').toLowerCase(). This inserts an underscore before each capital letter and converts everything to lowercase."
+  - question: "Can regex handle Unicode text?"
+    answer: "Yes, but you need the Unicode flag. In JavaScript, use the u flag and Unicode property escapes like \\p{Letter} to match letters from any script. Without the u flag, patterns like \\w only match ASCII word characters. Python's re module handles Unicode by default."
+  - question: "How do I test regex patterns before using them in code?"
+    answer: "Use an interactive regex tester with real-time highlighting. The FlipMyCase Regex Tester shows matches as you type, displays capture groups, and lets you test replacements. Paste your actual data into the test area, not just a simple example, since edge cases in real data are where patterns break."
 ---
 
 # Regex for Text Manipulation — Essential Patterns Every Developer Should Know

@@ -4,6 +4,15 @@ description: "Learn how to use Unicode bold, italic, and styled text on social m
 date: "2026-03-18"
 keywords: ["social media text formatting", "Unicode bold text", "Instagram bold text", "Twitter formatted text", "Unicode italic text", "social media special characters", "bold text generator", "styled text social media", "Unicode text formatting", "Facebook bold text"]
 toolSlug: "bold-italic-text"
+faq:
+  - question: "How do I make text bold on Instagram?"
+    answer: "Instagram has no built-in bold formatting for bios or captions. You need to use a Unicode text generator to create bold characters that you can paste into Instagram. Go to a tool like FlipMyCase, type your text, select the bold style, and copy the output. The bold characters are actual Unicode code points, not formatting, so they persist anywhere."
+  - question: "Does Unicode formatted text affect SEO?"
+    answer: "Unicode mathematical characters are technically different code points than regular letters, so search engines may not treat them as equivalent. A page title using Unicode bold characters might not rank for the plain-text version of those keywords. Use Unicode formatting only in social media posts and bios — never in website titles, meta descriptions, or headings where search visibility matters."
+  - question: "Are Unicode text styles accessible to screen readers?"
+    answer: "Most screen readers struggle with Unicode mathematical symbols. Instead of reading text naturally, a screen reader might announce each character by its full Unicode name or skip the text entirely. Avoid using Unicode styled text for essential information. Use it for decorative emphasis only, and ensure the same content is available in regular text elsewhere."
+  - question: "Which social platforms support Unicode text formatting?"
+    answer: "Twitter/X, Instagram, LinkedIn, Facebook, YouTube, and TikTok all support Unicode text to varying degrees. Bold and italic Unicode characters work reliably on all major platforms. More exotic styles like script, fraktur, and double-struck may render inconsistently across devices. Discord and Slack support native Markdown formatting, making Unicode less necessary on those platforms."
 ---
 
 # Text Formatting for Social Media — Bold, Italic, and Special Characters That Work Everywhere

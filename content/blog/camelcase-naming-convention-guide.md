@@ -4,6 +4,15 @@ description: "Complete guide to camelCase naming convention: rules, usage in Jav
 date: "2026-03-18"
 keywords: ["camelCase naming convention", "camelCase rules", "camelCase JavaScript", "camelCase vs PascalCase", "camelCase vs snake_case", "camelCase examples", "variable naming camelCase", "camelCase converter", "camelCase best practices", "JavaScript naming convention"]
 toolSlug: "camel-case"
+faq:
+  - question: "What is the difference between camelCase and PascalCase?"
+    answer: "camelCase starts with a lowercase letter (firstName, getUserData), while PascalCase starts with an uppercase letter (FirstName, GetUserData). camelCase is used for variables and functions in most languages. PascalCase is reserved for class names, React components, TypeScript interfaces, and C# methods."
+  - question: "Which programming languages use camelCase?"
+    answer: "JavaScript, TypeScript, Java, and C# all use camelCase as the standard for variable and function names. Swift and Kotlin follow the same pattern. Python and Ruby prefer snake_case instead. CSS uses kebab-case for class names and properties."
+  - question: "Should acronyms be fully capitalized in camelCase?"
+    answer: "Most modern style guides recommend treating acronyms as regular words — getHttpResponse rather than getHTTPResponse. Fully capitalized acronyms make word boundaries harder to identify. Google, Airbnb, and Microsoft style guides all favor the lowercase-acronym approach for better readability."
+  - question: "How do I convert text to camelCase automatically?"
+    answer: "Use an online tool like FlipMyCase to paste any text and instantly convert it to camelCase. For programmatic conversion, JavaScript has no built-in method, but libraries like Lodash provide _.camelCase(). In your IDE, extensions like \"Change Case\" for VS Code can convert selected text between naming conventions with a keyboard shortcut."
 ---
 
 # camelCase Naming Convention — When and How to Use It

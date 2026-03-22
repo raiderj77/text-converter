@@ -4,6 +4,15 @@ description: "Complete guide to CONSTANT_CASE (SCREAMING_SNAKE_CASE): when to us
 date: "2026-03-18"
 keywords: ["CONSTANT_CASE guide", "SCREAMING_SNAKE_CASE", "UPPER_SNAKE_CASE", "constant naming convention", "environment variable naming", "all caps variable names", "constant case converter", "screaming snake case examples", "immutable variable naming", "configuration constant naming"]
 toolSlug: "constant-case"
+faq:
+  - question: "What is the difference between CONSTANT_CASE and snake_case?"
+    answer: "Both use underscores to separate words. The difference is letter casing: CONSTANT_CASE uses all uppercase letters (MAX_RETRIES), while snake_case uses all lowercase (max_retries). CONSTANT_CASE signals an immutable value — a configuration constant, enum member, or environment variable. snake_case signals a regular variable or function."
+  - question: "Should all constants use SCREAMING_SNAKE_CASE?"
+    answer: "No. Reserve CONSTANT_CASE for module-level or global values that represent fixed configuration: MAX_RETRIES, API_TIMEOUT, DEFAULT_LOCALE. Local const bindings in JavaScript or final variables in a Java method should use camelCase because they are scoped values, not application-wide constants."
+  - question: "Why are environment variables in CONSTANT_CASE?"
+    answer: "Environment variables adopted CONSTANT_CASE from Unix conventions established in the 1970s. Shell variables were uppercase by convention, and system variables like PATH, HOME, and USER set the standard. When application configuration moved to environment variables, the convention carried over. Today it is universal across Linux, macOS, Windows, Docker, and every cloud platform."
+  - question: "How do I convert text to CONSTANT_CASE?"
+    answer: "Use FlipMyCase to convert any text to CONSTANT_CASE with one click. The tool accepts plain English, camelCase, kebab-case, or any format and produces clean SCREAMING_SNAKE_CASE output. For programmatic conversion, split on word boundaries, uppercase each segment, and join with underscores."
 ---
 
 # CONSTANT_CASE (Screaming Snake Case) — When to Use All-Caps Underscored Names

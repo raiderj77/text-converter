@@ -3,6 +3,15 @@ title: "Regex Tester Online — How to Test Regular Expressions with Real-Time H
 date: "2025-02-14"
 summary: "Learn how to test, debug, and build regular expressions online with real-time match highlighting, capture groups, replace mode, and a built-in cheat sheet. Free regex tester for JavaScript, Python, and more."
 keywords: ["regex tester online", "regular expression tester", "regex match highlighter", "regex replace online", "javascript regex tester", "regex capture groups", "regex cheat sheet", "regex101 alternative", "regex debugger", "regex validator", "test regular expression online", "regex pattern tester", "regex playground free", "regex builder tool", "regex tutorial for beginners"]
+faq:
+  - question: "What regex flavor does the tester use?"
+    answer: "The FlipMyCase Regex Tester uses JavaScript's native RegExp engine, which is the same engine used in all modern browsers and Node.js. JavaScript regex supports capture groups, named groups, lookahead, lookbehind (in modern engines), and Unicode properties. Patterns written here work directly in your JavaScript code."
+  - question: "How do I match across multiple lines?"
+    answer: "By default, ^ and $ match the start and end of the entire string. Enable the Multiline flag (m) to make them match the start and end of each line. To make . match newlines, use the [\\s\\S] pattern (JavaScript) or enable the Dotall flag where supported."
+  - question: "Can I use the tester for Python regex?"
+    answer: "Python's re module is very similar to JavaScript regex. Most patterns transfer directly. The main differences are that Python uses raw strings (r'pattern') to avoid double-escaping, and Python supports the re.VERBOSE flag for commented patterns. Test your core pattern in the Regex Tester and adjust syntax details for Python."
+  - question: "How do I debug a regex that does not match?"
+    answer: "Start with a simpler pattern and add complexity gradually. Check whether the flags are correct (global, multiline), whether the input has hidden characters, and whether the regex flavor supports the syntax you are using."
 ---
 
 # Regex Tester Online — Test Regular Expressions with Real-Time Highlighting

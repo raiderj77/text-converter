@@ -3,6 +3,15 @@ title: "Hash Generator — How to Generate MD5, SHA-256, SHA-512 Hashes and Veri
 date: "2025-02-14"
 summary: "Learn how to generate MD5, SHA-1, SHA-256, SHA-384, and SHA-512 hashes from text or files. Verify download integrity with checksums, generate HMAC signatures, and compare hashes — all in your browser."
 keywords: ["hash generator online", "md5 hash generator", "sha256 hash generator", "sha512 hash generator", "file checksum calculator", "checksum generator online", "hmac generator", "hmac sha256 online", "verify file checksum", "md5 checksum tool", "sha1 hash online", "hash compare tool", "text to hash converter", "file integrity checker", "hash calculator free"]
+faq:
+  - question: "What is the difference between MD5, SHA-256, and SHA-512?"
+    answer: "MD5 produces a 128-bit (32 hex character) hash and is fast but cryptographically broken. SHA-256 produces a 256-bit (64 hex character) hash and is the current industry standard for security applications. SHA-512 produces a 512-bit (128 hex character) hash and offers even more collision resistance. Use SHA-256 unless you have a specific reason to choose otherwise."
+  - question: "What is HMAC and how is it different from a regular hash?"
+    answer: "HMAC (Hash-based Message Authentication Code) combines a secret key with the hash function. A regular hash only proves data integrity — anyone can compute it. HMAC adds authentication: only someone who knows the secret key can produce the correct hash. This is why APIs use HMAC for webhook signatures."
+  - question: "Can I hash large files in the browser?"
+    answer: "Yes. The Hash Generator uses the Web Crypto API to hash files entirely in your browser. Modern browsers handle files of several hundred megabytes in seconds. For very large files (1 GB+), there may be a brief delay, but no data is ever uploaded."
+  - question: "Is my data sent to a server?"
+    answer: "No. All hashing runs entirely in your browser. Text uses the Web Crypto API for SHA algorithms and a JavaScript implementation for MD5. Files are read locally and processed without any network request. The tool works offline as a PWA."
 ---
 
 # Hash Generator — How to Generate MD5, SHA-256, SHA-512 Hashes Online

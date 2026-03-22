@@ -4,6 +4,15 @@ description: "Complete guide to PascalCase naming convention: rules, usage for c
 date: "2026-03-18"
 keywords: ["PascalCase naming convention", "PascalCase guide", "PascalCase vs camelCase", "PascalCase classes", "PascalCase React components", "UpperCamelCase", "PascalCase TypeScript", "PascalCase examples", "PascalCase converter", "class naming convention"]
 toolSlug: "pascal-case"
+faq:
+  - question: "What is the difference between PascalCase and camelCase?"
+    answer: "PascalCase capitalizes the first letter of every word including the first (UserProfile), while camelCase leaves the first word lowercase (userProfile). In most languages, PascalCase is reserved for classes, types, and components, while camelCase is used for variables, functions, and parameters."
+  - question: "Why is it called PascalCase?"
+    answer: "The convention is named after the Pascal programming language, created by Niklaus Wirth in 1970. Pascal used this capitalization style for type and program names. The term \"PascalCase\" became widespread in the 1990s as developers needed a way to distinguish it from camelCase. Some style guides call it UpperCamelCase instead."
+  - question: "Which languages use PascalCase for function names?"
+    answer: "C# uses PascalCase for all public methods and properties — this is the most notable language where functions are PascalCase. Go uses PascalCase for any exported (public) function or variable. Most other languages — JavaScript, Python, Java, Ruby — reserve PascalCase for class and type names only."
+  - question: "How do I convert text to PascalCase?"
+    answer: "Use FlipMyCase to paste any text and convert it to PascalCase instantly. The tool handles snake_case, kebab-case, camelCase, and plain English input. For programmatic conversion, Lodash provides _.upperFirst(_.camelCase(str)) in JavaScript. In Python, you can split on underscores or spaces and capitalize each word."
 ---
 
 # PascalCase — The Naming Convention for Classes, Components, and Types

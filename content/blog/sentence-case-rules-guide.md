@@ -4,6 +4,15 @@ description: "Learn sentence case capitalization rules for UI copy, email subjec
 date: "2026-03-18"
 keywords: ["sentence case rules", "sentence case capitalization", "sentence case vs title case", "when to use sentence case", "UI capitalization rules", "sentence case proper nouns", "sentence case converter", "headline sentence case", "sentence case examples", "lowercase capitalization rules"]
 toolSlug: "sentence-case"
+faq:
+  - question: "What is the difference between sentence case and title case?"
+    answer: "Sentence case capitalizes only the first word and proper nouns (\"How to write better code\"), while title case capitalizes most words (\"How to Write Better Code\"). Sentence case reads like natural prose. Title case emphasizes importance and formality. Most modern UI guidelines prefer sentence case for interface elements, while title case remains common in article headlines and book titles."
+  - question: "Should I use sentence case for headlines?"
+    answer: "It depends on your publication's style guide and brand voice. Sentence case headlines feel more conversational and approachable — common in tech blogs and SaaS products. Title case headlines feel more authoritative and traditional — standard in news publications and academic journals. Many sites use title case for the main title and sentence case for all subheadings."
+  - question: "Do proper nouns stay capitalized in sentence case?"
+    answer: "Yes, always. Proper nouns retain their standard capitalization regardless of case style. Brand names, product names, and place names stay capitalized. Acronyms like API, URL, HTML, and CSS also keep their conventional uppercase styling in sentence case."
+  - question: "How do I convert text to sentence case?"
+    answer: "Use FlipMyCase to paste any text and convert it to sentence case with one click. The tool handles bulk conversion across multiple lines. For programmatic conversion, most languages lack a built-in sentence case method, but you can lowercase the string and then capitalize the first character. Preserving proper nouns requires either a dictionary or manual review."
 ---
 
 # Sentence Case Rules — When to Capitalize Only the First Word
