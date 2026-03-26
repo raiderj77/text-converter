@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { TextSorterTool } from "@/components/tools/text-sorter";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("text-sorter")!;
 const pageUrl = buildUrl("/text-sorter");
@@ -98,6 +99,8 @@ export default function TextSorterPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A text sorter arranges lines of text in alphabetical, numerical, or random order with options to remove duplicates and reverse the sort. Paste your text below to sort it instantly.
         </p>
+
+        <ToolAnswerBlock slug="text-sorter" />
 
         <div className="mt-3">
           <ToolActions />

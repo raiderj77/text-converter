@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { AddPrefixSuffixTool } from "@/components/tools/add-prefix-suffix";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("add-prefix-suffix")!;
 const pageUrl = buildUrl("/add-prefix-suffix");
@@ -91,6 +92,8 @@ export default function AddPrefixSuffixPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A prefix and suffix tool adds custom text to the beginning or end of every line. Paste your text below and enter your prefix or suffix to transform all lines instantly.
         </p>
+
+        <ToolAnswerBlock slug="add-prefix-suffix" />
 
         <div className="mt-3">
           <ToolActions />

@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { CssFormatterTool } from "@/components/tools/css-formatter";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("css-formatter")!;
 const pageUrl = buildUrl("/css-formatter");
@@ -102,6 +103,8 @@ export default function CssFormatterPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A CSS formatter and beautifier formats CSS with proper indentation and structure, or minifies it for production. Paste your CSS below to format, beautify, or minify it instantly.
         </p>
+
+        <ToolAnswerBlock slug="css-formatter" />
 
         <div className="mt-3">
           <ToolActions />

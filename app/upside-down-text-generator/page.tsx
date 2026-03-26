@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { UpsideDownTextGeneratorTool } from "@/components/tools/upside-down-text-generator";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("upside-down-text-generator")!;
 const pageUrl = buildUrl("/upside-down-text-generator");
@@ -88,6 +89,8 @@ export default function UpsideDownTextGeneratorPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           An upside down text generator flips your text vertically using special Unicode characters. Type your text below to generate upside down text you can copy and paste anywhere.
         </p>
+
+        <ToolAnswerBlock slug="upside-down-text-generator" />
 
         <div className="mt-3">
           <ToolActions />

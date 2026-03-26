@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { LoremIpsumTool } from "@/components/tools/lorem-ipsum";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("lorem-ipsum-generator")!;
 const pageUrl = buildUrl("/lorem-ipsum-generator");
@@ -108,6 +109,8 @@ export default function LoremIpsumPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A Lorem Ipsum generator creates placeholder text for design mockups, wireframes, and development projects. Choose your paragraph count and click generate to get instant dummy text.
         </p>
+
+        <ToolAnswerBlock slug="lorem-ipsum-generator" />
 
         <div className="mt-3">
           <ToolActions />

@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { UnderscoreConventionsTool } from "@/components/tools/underscore-conventions";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("underscore-conventions")!;
 const pageUrl = buildUrl("/underscore-conventions");
@@ -98,6 +99,8 @@ export default function UnderscoreConventionsPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           This guide explains how underscores are used in programming for naming conventions like _private, __dunder, and snake_case. Read on to understand when and why developers use underscores in code.
         </p>
+
+        <ToolAnswerBlock slug="underscore-conventions" />
 
         <div className="mt-3">
           <ToolActions />

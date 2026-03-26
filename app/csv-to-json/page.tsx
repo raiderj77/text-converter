@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { CsvToJsonConverterTool } from "@/components/tools/csv-to-json-converter";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("csv-to-json")!;
 const pageUrl = buildUrl("/csv-to-json");
@@ -103,6 +104,8 @@ export default function CsvToJsonPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A CSV to JSON converter transforms comma-separated data into JSON format and vice versa. Paste your CSV or JSON below to convert between formats instantly.
         </p>
+
+        <ToolAnswerBlock slug="csv-to-json" />
 
         <div className="mt-3">
           <ToolActions />

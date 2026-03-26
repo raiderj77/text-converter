@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { NumberBaseConverterTool } from "@/components/tools/number-base-converter";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("number-base-converter")!;
 const pageUrl = buildUrl("/number-base-converter");
@@ -104,6 +105,8 @@ export default function NumberBaseConverterPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A number base converter transforms values between binary, octal, decimal, and hexadecimal number systems. Enter a number below and select the base to convert instantly.
         </p>
+
+        <ToolAnswerBlock slug="number-base-converter" />
 
         <div className="mt-3">
           <ToolActions />

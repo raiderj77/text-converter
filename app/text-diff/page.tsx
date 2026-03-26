@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { TextDiffTool } from "@/components/tools/text-diff";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("text-diff")!;
 const pageUrl = buildUrl("/text-diff");
@@ -119,6 +120,8 @@ export default function TextDiffPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A text diff tool compares two blocks of text and highlights the differences between them. Paste your original and modified text to see exactly what changed.
         </p>
+
+        <ToolAnswerBlock slug="text-diff" />
 
         <div className="mt-3">
           <ToolActions />

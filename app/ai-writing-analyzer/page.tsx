@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { AiWritingAnalyzerTool } from "@/components/tools/ai-writing-analyzer";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("ai-writing-analyzer")!;
 const pageUrl = buildUrl("/ai-writing-analyzer");
@@ -104,6 +105,8 @@ export default function AiWritingAnalyzerPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           An AI writing pattern analyzer examines text for statistical patterns common in AI-generated content, including sentence uniformity and vocabulary diversity. Paste your text below to analyze its writing patterns instantly.
         </p>
+
+        <ToolAnswerBlock slug="ai-writing-analyzer" />
 
         <div className="mt-3">
           <ToolActions />

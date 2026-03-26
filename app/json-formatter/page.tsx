@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { JsonFormatterTool } from "@/components/tools/json-formatter";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("json-formatter")!;
 const pageUrl = buildUrl("/json-formatter");
@@ -126,6 +127,8 @@ export default function JsonFormatterPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A JSON formatter instantly beautifies minified JSON and validates syntax errors. Paste your JSON below to format it with proper indentation and check its structure.
         </p>
+
+        <ToolAnswerBlock slug="json-formatter" />
 
         <div className="mt-3">
           <ToolActions />

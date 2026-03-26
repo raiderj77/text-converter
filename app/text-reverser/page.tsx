@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { TextReverserTool } from "@/components/tools/text-reverser";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("text-reverser")!;
 const pageUrl = buildUrl("/text-reverser");
@@ -98,6 +99,8 @@ export default function TextReverserPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A text reverser flips characters, words, or lines of text backwards to create mirrored or reversed text. Paste your text below to reverse it instantly.
         </p>
+
+        <ToolAnswerBlock slug="text-reverser" />
 
         <div className="mt-3">
           <ToolActions />

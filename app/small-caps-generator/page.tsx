@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { SmallCapsGeneratorTool } from "@/components/tools/small-caps-generator";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("small-caps-generator")!;
 const pageUrl = buildUrl("/small-caps-generator");
@@ -91,6 +92,8 @@ export default function SmallCapsGeneratorPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A small caps generator converts lowercase letters into Unicode small capital letters. Type your text below to generate small caps text you can copy and paste anywhere.
         </p>
+
+        <ToolAnswerBlock slug="small-caps-generator" />
 
         <div className="mt-3">
           <ToolActions />

@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { CronExpressionBuilderTool } from "@/components/tools/cron-expression-builder";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("cron-expression-builder")!;
 const pageUrl = buildUrl("/cron-expression-builder");
@@ -103,6 +104,8 @@ export default function CronExpressionBuilderPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A cron expression builder helps you create and understand cron schedule expressions with a visual interface. Select your schedule parameters below to generate a cron expression with natural language description.
         </p>
+
+        <ToolAnswerBlock slug="cron-expression-builder" />
 
         <div className="mt-3">
           <ToolActions />

@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { PasswordGeneratorTool } from "@/components/tools/password-generator";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("password-generator")!;
 const pageUrl = buildUrl("/password-generator");
@@ -120,6 +121,8 @@ export default function PasswordGeneratorPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A password generator creates secure, random passwords with customizable length, character sets, and complexity. Set your requirements below and click generate to create a strong password instantly.
         </p>
+
+        <ToolAnswerBlock slug="password-generator" />
 
         <div className="mt-3">
           <ToolActions />

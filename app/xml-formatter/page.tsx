@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { XmlFormatterTool } from "@/components/tools/xml-formatter";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("xml-formatter")!;
 const pageUrl = buildUrl("/xml-formatter");
@@ -102,6 +103,8 @@ export default function XmlFormatterPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           An XML formatter and validator beautifies XML with proper indentation and checks for well-formedness. Paste your XML below to format, validate, or minify it instantly.
         </p>
+
+        <ToolAnswerBlock slug="xml-formatter" />
 
         <div className="mt-3">
           <ToolActions />

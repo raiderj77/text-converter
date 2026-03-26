@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { AddLineNumbersTool } from "@/components/tools/add-line-numbers";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("add-line-numbers")!;
 const pageUrl = buildUrl("/add-line-numbers");
@@ -95,6 +96,8 @@ export default function AddLineNumbersPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A line number tool adds or removes sequential numbers at the beginning of each line of text. Paste your text below and configure the numbering format to add line numbers instantly.
         </p>
+
+        <ToolAnswerBlock slug="add-line-numbers" />
 
         <div className="mt-3">
           <ToolActions />

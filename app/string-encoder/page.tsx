@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { StringEncoderTool } from "@/components/tools/string-encoder";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("string-encoder")!;
 const pageUrl = buildUrl("/string-encoder");
@@ -97,6 +98,8 @@ export default function StringEncoderPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A string encoder converts text to and from URL encoding, Base64, HTML entities, and other encoding formats. Paste your string below and select the encoding type to convert instantly.
         </p>
+
+        <ToolAnswerBlock slug="string-encoder" />
 
         <div className="mt-3">
           <ToolActions />

@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { RemoveHtmlTagsTool } from "@/components/tools/remove-html-tags";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("remove-html-tags")!;
 const pageUrl = buildUrl("/remove-html-tags");
@@ -89,6 +90,8 @@ export default function RemoveHtmlTagsPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           An HTML tag remover strips all HTML and XML tags from text while preserving the readable content. Paste your HTML below to remove tags and get clean plain text instantly.
         </p>
+
+        <ToolAnswerBlock slug="remove-html-tags" />
 
         <div className="mt-3">
           <ToolActions />

@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { RomanNumeralConverterTool } from "@/components/tools/roman-numeral-converter";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("roman-numeral-converter")!;
 const pageUrl = buildUrl("/roman-numeral-converter");
@@ -100,6 +101,8 @@ export default function RomanNumeralConverterPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A Roman numeral converter transforms numbers into Roman numerals (I, V, X, L, C, D, M) and back. Enter a number or Roman numeral below to convert instantly.
         </p>
+
+        <ToolAnswerBlock slug="roman-numeral-converter" />
 
         <div className="mt-3">
           <ToolActions />

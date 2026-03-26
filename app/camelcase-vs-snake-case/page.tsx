@@ -3,6 +3,7 @@ import Link from "next/link";
 import { SITE_URL } from "@/lib/config";
 import { ArticleSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
 import { AdSlot } from "@/components/ui/ad-slot";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const pageUrl = `${SITE_URL}/camelcase-vs-snake-case`;
 
@@ -90,6 +91,8 @@ export default function CamelCaseVsSnakeCasePage() {
         <AdSlot slot="after-tool" page="camelcase-vs-snake-case" />
 
         <section className="mt-10">
+          <ToolAnswerBlock slug="camelcase-vs-snake-case" />
+
           <h2 className="text-lg sm:text-xl font-semibold">What Is the camelCase Convention?</h2>
           <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>

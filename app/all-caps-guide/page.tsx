@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { AllCapsGuideTool } from "@/components/tools/all-caps-guide";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("all-caps-guide")!;
 const pageUrl = buildUrl("/all-caps-guide");
@@ -98,6 +99,8 @@ export default function AllCapsGuidePage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           This guide explains when ALL CAPS text is appropriate in emails, social media, and code, and when it can come across as rude. Read on to learn the etiquette and best practices for uppercase text.
         </p>
+
+        <ToolAnswerBlock slug="all-caps-guide" />
 
         <div className="mt-3">
           <ToolActions />

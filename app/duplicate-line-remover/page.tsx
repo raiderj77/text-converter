@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { DuplicateRemoverTool } from "@/components/tools/duplicate-remover";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("duplicate-line-remover")!;
 const pageUrl = buildUrl("/duplicate-line-remover");
@@ -96,6 +97,8 @@ export default function DuplicateRemoverPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A duplicate line remover finds and removes repeated lines from any block of text. Paste your text below and click remove duplicates to get a clean, unique list instantly.
         </p>
+
+        <ToolAnswerBlock slug="duplicate-line-remover" />
 
         <div className="mt-3">
           <ToolActions />

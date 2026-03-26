@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { SnakeKebabConverterTool } from "@/components/tools/snake-kebab-converter";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("snake-kebab-converter")!;
 const pageUrl = buildUrl("/snake-kebab-converter");
@@ -98,6 +99,8 @@ export default function SnakeKebabConverterPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A snake_case to kebab-case converter transforms text between underscore and hyphen naming conventions. Paste your text below to convert between snake_case and kebab-case instantly.
         </p>
+
+        <ToolAnswerBlock slug="snake-kebab-converter" />
 
         <div className="mt-3">
           <ToolActions />

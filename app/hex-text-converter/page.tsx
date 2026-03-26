@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { HexTextConverterTool } from "@/components/tools/hex-text-converter";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("hex-text-converter")!;
 const pageUrl = buildUrl("/hex-text-converter");
@@ -104,6 +105,8 @@ export default function HexTextConverterPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A hex text converter transforms text into hexadecimal representation and hex back into readable text. Enter your text or hex string below to convert instantly with a per-character breakdown.
         </p>
+
+        <ToolAnswerBlock slug="hex-text-converter" />
 
         <div className="mt-3">
           <ToolActions />

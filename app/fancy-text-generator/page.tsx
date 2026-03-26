@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { FancyTextGeneratorTool } from "@/components/tools/fancy-text-generator";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("fancy-text-generator")!;
 const pageUrl = buildUrl("/fancy-text-generator");
@@ -99,6 +100,8 @@ export default function FancyTextGeneratorPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A fancy text generator transforms plain text into 12+ Unicode font styles including bold, italic, script, bubble, and more. Type your text below to see all available styles and copy any of them instantly.
         </p>
+
+        <ToolAnswerBlock slug="fancy-text-generator" />
 
         <div className="mt-3">
           <ToolActions />

@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { JavascriptFormatterTool } from "@/components/tools/javascript-formatter";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("javascript-formatter")!;
 const pageUrl = buildUrl("/javascript-formatter");
@@ -102,6 +103,8 @@ export default function JavascriptFormatterPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A JavaScript formatter and beautifier formats JS code with proper indentation, or minifies it for production. Paste your JavaScript below to format, beautify, or minify it instantly.
         </p>
+
+        <ToolAnswerBlock slug="javascript-formatter" />
 
         <div className="mt-3">
           <ToolActions />

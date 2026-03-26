@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { PigLatinConverterTool } from "@/components/tools/pig-latin-converter";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("pig-latin-converter")!;
 const pageUrl = buildUrl("/pig-latin-converter");
@@ -105,6 +106,8 @@ export default function PigLatinConverterPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A Pig Latin translator converts English text to Pig Latin and Pig Latin back to English. Enter your text below to translate to Pig Latin instantly with preserved punctuation and capitalization.
         </p>
+
+        <ToolAnswerBlock slug="pig-latin-converter" />
 
         <div className="mt-3">
           <ToolActions />

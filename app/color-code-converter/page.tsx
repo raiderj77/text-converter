@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { ColorCodeConverterTool } from "@/components/tools/color-code-converter";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("color-code-converter")!;
 const pageUrl = buildUrl("/color-code-converter");
@@ -99,6 +100,8 @@ export default function ColorCodeConverterPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A color code converter transforms colors between HEX, RGB, HSL, and CMYK formats with a WCAG contrast checker. Enter a color value below to convert between formats and check accessibility instantly.
         </p>
+
+        <ToolAnswerBlock slug="color-code-converter" />
 
         <div className="mt-3">
           <ToolActions />

@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { PlainTextConverterTool } from "@/components/tools/plain-text-converter";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("plain-text-converter")!;
 const pageUrl = buildUrl("/plain-text-converter");
@@ -87,6 +88,8 @@ export default function PlainTextConverterPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A plain text converter strips all formatting, HTML tags, smart quotes, and special characters from rich text. Paste your formatted text below to get clean plain text instantly.
         </p>
+
+        <ToolAnswerBlock slug="plain-text-converter" />
 
         <div className="mt-3">
           <ToolActions />

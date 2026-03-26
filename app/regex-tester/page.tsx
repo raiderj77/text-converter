@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { RegexTesterTool } from "@/components/tools/regex-tester";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("regex-tester")!;
 const pageUrl = buildUrl("/regex-tester");
@@ -119,6 +120,8 @@ export default function RegexTesterPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A regex tester lets you write, test, and debug regular expressions against sample text in real time. Enter your pattern and test string below to see matches highlighted instantly.
         </p>
+
+        <ToolAnswerBlock slug="regex-tester" />
 
         <div className="mt-3">
           <ToolActions />

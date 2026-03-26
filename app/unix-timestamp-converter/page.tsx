@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { UnixTimestampConverterTool } from "@/components/tools/unix-timestamp-converter";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("unix-timestamp-converter")!;
 const pageUrl = buildUrl("/unix-timestamp-converter");
@@ -103,6 +104,8 @@ export default function UnixTimestampConverterPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A Unix timestamp converter transforms epoch time to human-readable dates and dates to Unix timestamps. Enter a timestamp or date below to convert instantly.
         </p>
+
+        <ToolAnswerBlock slug="unix-timestamp-converter" />
 
         <div className="mt-3">
           <ToolActions />

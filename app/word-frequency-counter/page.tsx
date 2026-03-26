@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { WordFrequencyCounterTool } from "@/components/tools/word-frequency-counter";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("word-frequency-counter")!;
 const pageUrl = buildUrl("/word-frequency-counter");
@@ -103,6 +104,8 @@ export default function WordFrequencyCounterPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A word frequency counter analyzes text to show how often each word appears, with bigram and trigram analysis. Paste your text below to see word frequency statistics instantly.
         </p>
+
+        <ToolAnswerBlock slug="word-frequency-counter" />
 
         <div className="mt-3">
           <ToolActions />

@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { SmartQuotesConverterTool } from "@/components/tools/smart-quotes-converter";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("smart-quotes-converter")!;
 const pageUrl = buildUrl("/smart-quotes-converter");
@@ -94,6 +95,8 @@ export default function SmartQuotesConverterPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A smart quotes converter transforms curly typographic quotes into straight quotes or straight quotes into curly ones. Paste your text below to convert quote styles instantly.
         </p>
+
+        <ToolAnswerBlock slug="smart-quotes-converter" />
 
         <div className="mt-3">
           <ToolActions />

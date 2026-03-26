@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { TextCleanerTool } from "@/components/tools/text-cleaner";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("text-cleaner")!;
 const pageUrl = buildUrl("/text-cleaner");
@@ -97,6 +98,8 @@ export default function TextCleanerPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A text cleaner removes extra spaces, line breaks, special characters, and formatting from any text. Paste your text below to clean and normalize it instantly.
         </p>
+
+        <ToolAnswerBlock slug="text-cleaner" />
 
         <div className="mt-3">
           <ToolActions />

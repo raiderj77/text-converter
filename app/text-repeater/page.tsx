@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { TextRepeaterTool } from "@/components/tools/text-repeater";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("text-repeater")!;
 const pageUrl = buildUrl("/text-repeater");
@@ -87,6 +88,8 @@ export default function TextRepeaterPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A text repeater duplicates any text a specified number of times with custom separators between repetitions. Enter your text and repeat count below to generate repeated text instantly.
         </p>
+
+        <ToolAnswerBlock slug="text-repeater" />
 
         <div className="mt-3">
           <ToolActions />

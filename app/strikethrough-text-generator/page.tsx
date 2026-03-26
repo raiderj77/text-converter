@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { StrikethroughTextGeneratorTool } from "@/components/tools/strikethrough-text-generator";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("strikethrough-text-generator")!;
 const pageUrl = buildUrl("/strikethrough-text-generator");
@@ -91,6 +92,8 @@ export default function StrikethroughTextGeneratorPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A strikethrough text generator adds a line through your text using Unicode combining characters. Type your text below to generate strikethrough text you can copy and paste anywhere.
         </p>
+
+        <ToolAnswerBlock slug="strikethrough-text-generator" />
 
         <div className="mt-3">
           <ToolActions />

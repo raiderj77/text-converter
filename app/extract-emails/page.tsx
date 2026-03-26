@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { ExtractEmailsTool } from "@/components/tools/extract-emails";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("extract-emails")!;
 const pageUrl = buildUrl("/extract-emails");
@@ -95,6 +96,8 @@ export default function ExtractEmailsPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           An email extractor finds and pulls all email addresses from any block of text. Paste your text below to extract, deduplicate, and copy all email addresses instantly.
         </p>
+
+        <ToolAnswerBlock slug="extract-emails" />
 
         <div className="mt-3">
           <ToolActions />

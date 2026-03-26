@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { Rot13EncoderDecoderTool } from "@/components/tools/rot13-encoder-decoder";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("rot13-encoder-decoder")!;
 const pageUrl = buildUrl("/rot13-encoder-decoder");
@@ -103,6 +104,8 @@ export default function Rot13EncoderDecoderPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A ROT13 encoder and decoder applies Caesar cipher rotation to text, with support for ROT5, ROT47, and custom shifts. Enter your text below to encode or decode with ROT13 instantly.
         </p>
+
+        <ToolAnswerBlock slug="rot13-encoder-decoder" />
 
         <div className="mt-3">
           <ToolActions />

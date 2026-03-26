@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { MarkdownPreviewTool } from "@/components/tools/markdown-preview";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("markdown-preview")!;
 const pageUrl = buildUrl("/markdown-preview");
@@ -103,6 +104,8 @@ export default function MarkdownPreviewPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A Markdown preview editor lets you write Markdown and see a live rendered preview side by side. Type or paste your Markdown below to see it rendered instantly.
         </p>
+
+        <ToolAnswerBlock slug="markdown-preview" />
 
         <div className="mt-3">
           <ToolActions />

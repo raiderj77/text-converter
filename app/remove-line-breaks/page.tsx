@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { RemoveLineBreaksTool } from "@/components/tools/remove-line-breaks";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("remove-line-breaks")!;
 const pageUrl = buildUrl("/remove-line-breaks");
@@ -95,6 +96,8 @@ export default function RemoveLineBreaksPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A line break remover joins multiple lines of text into a single line using spaces, commas, or custom separators. Paste your text below to remove line breaks and join lines instantly.
         </p>
+
+        <ToolAnswerBlock slug="remove-line-breaks" />
 
         <div className="mt-3">
           <ToolActions />

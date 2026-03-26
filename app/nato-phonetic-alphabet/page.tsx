@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { NatoPhoneticAlphabetTool } from "@/components/tools/nato-phonetic-alphabet";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("nato-phonetic-alphabet")!;
 const pageUrl = buildUrl("/nato-phonetic-alphabet");
@@ -104,6 +105,8 @@ export default function NatoPhoneticAlphabetPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A NATO phonetic alphabet converter spells out text using the military alphabet (Alpha, Bravo, Charlie). Enter your text below to convert it to NATO phonetic spelling instantly.
         </p>
+
+        <ToolAnswerBlock slug="nato-phonetic-alphabet" />
 
         <div className="mt-3">
           <ToolActions />

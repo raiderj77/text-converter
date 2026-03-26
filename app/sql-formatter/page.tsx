@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { SqlFormatterTool } from "@/components/tools/sql-formatter";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("sql-formatter")!;
 const pageUrl = buildUrl("/sql-formatter");
@@ -103,6 +104,8 @@ export default function SqlFormatterPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           An SQL formatter and beautifier formats SQL queries with proper indentation, uppercase keywords, and readable structure. Paste your SQL below to format or minify it instantly.
         </p>
+
+        <ToolAnswerBlock slug="sql-formatter" />
 
         <div className="mt-3">
           <ToolActions />

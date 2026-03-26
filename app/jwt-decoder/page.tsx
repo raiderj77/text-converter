@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { JwtDecoderTool } from "@/components/tools/jwt-decoder";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("jwt-decoder")!;
 const pageUrl = buildUrl("/jwt-decoder");
@@ -103,6 +104,8 @@ export default function JwtDecoderPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A JWT decoder parses JSON Web Tokens to reveal the header and payload data, including expiration status. Paste your JWT below to decode and inspect its contents instantly.
         </p>
+
+        <ToolAnswerBlock slug="jwt-decoder" />
 
         <div className="mt-3">
           <ToolActions />

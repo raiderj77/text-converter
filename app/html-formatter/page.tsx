@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { HtmlFormatterTool } from "@/components/tools/html-formatter";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("html-formatter")!;
 const pageUrl = buildUrl("/html-formatter");
@@ -102,6 +103,8 @@ export default function HtmlFormatterPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           An HTML formatter and beautifier formats HTML with proper indentation and tag structure, or minifies it for production. Paste your HTML below to format, beautify, or minify it instantly.
         </p>
+
+        <ToolAnswerBlock slug="html-formatter" />
 
         <div className="mt-3">
           <ToolActions />

@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { ToggleCaseConverterTool } from "@/components/tools/toggle-case-converter";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("toggle-case-converter")!;
 const pageUrl = buildUrl("/toggle-case-converter");
@@ -97,6 +98,8 @@ export default function ToggleCaseConverterPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A toggle case converter transforms text into alternating uppercase and lowercase letters (tOgGlE cAsE). Paste your text below to create alternating caps text instantly.
         </p>
+
+        <ToolAnswerBlock slug="toggle-case-converter" />
 
         <div className="mt-3">
           <ToolActions />

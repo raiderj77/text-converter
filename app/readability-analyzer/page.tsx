@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { ReadabilityAnalyzerTool } from "@/components/tools/readability-analyzer";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("readability-analyzer")!;
 const pageUrl = buildUrl("/readability-analyzer");
@@ -104,6 +105,8 @@ export default function ReadabilityAnalyzerPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A readability analyzer calculates reading level scores using Flesch-Kincaid, Gunning Fog, SMOG, and other formulas. Paste your text below to check its readability grade level instantly.
         </p>
+
+        <ToolAnswerBlock slug="readability-analyzer" />
 
         <div className="mt-3">
           <ToolActions />

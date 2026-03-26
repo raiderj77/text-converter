@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { LineCounterTool } from "@/components/tools/line-counter";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("line-counter")!;
 const pageUrl = buildUrl("/line-counter");
@@ -103,6 +104,8 @@ export default function LineCounterPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A line counter counts the total number of lines, empty lines, and non-empty lines in any block of text. Paste your text below to get line count statistics instantly.
         </p>
+
+        <ToolAnswerBlock slug="line-counter" />
 
         <div className="mt-3">
           <ToolActions />

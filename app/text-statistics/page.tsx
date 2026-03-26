@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { TextStatisticsTool } from "@/components/tools/text-statistics";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("text-statistics")!;
 const pageUrl = buildUrl("/text-statistics");
@@ -103,6 +104,8 @@ export default function TextStatisticsPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A text statistics dashboard provides detailed analysis of any text, including word frequency, vocabulary richness, lexical density, and sentence structure. Paste your text below to see comprehensive text statistics instantly.
         </p>
+
+        <ToolAnswerBlock slug="text-statistics" />
 
         <div className="mt-3">
           <ToolActions />

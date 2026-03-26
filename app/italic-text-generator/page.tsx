@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { ItalicTextGeneratorTool } from "@/components/tools/italic-text-generator";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("italic-text-generator")!;
 const pageUrl = buildUrl("/italic-text-generator");
@@ -88,6 +89,8 @@ export default function ItalicTextGeneratorPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           An italic text generator converts regular text into Unicode italic characters that can be copied and pasted anywhere. Type your text below to generate italic text you can use on social media and bios.
         </p>
+
+        <ToolAnswerBlock slug="italic-text-generator" />
 
         <div className="mt-3">
           <ToolActions />

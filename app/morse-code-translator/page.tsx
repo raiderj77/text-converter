@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { MorseCodeTranslatorTool } from "@/components/tools/morse-code-translator";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("morse-code-translator")!;
 const pageUrl = buildUrl("/morse-code-translator");
@@ -104,6 +105,8 @@ export default function MorseCodeTranslatorPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A Morse code translator converts text to Morse code and Morse code back to text with audio playback. Enter your text or Morse code below to translate instantly.
         </p>
+
+        <ToolAnswerBlock slug="morse-code-translator" />
 
         <div className="mt-3">
           <ToolActions />

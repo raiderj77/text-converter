@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { HashGeneratorTool } from "@/components/tools/hash-generator";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("hash-generator")!;
 const pageUrl = buildUrl("/hash-generator");
@@ -119,6 +120,8 @@ export default function HashGeneratorPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A hash generator creates MD5, SHA-1, SHA-256, and SHA-512 cryptographic hashes from any text or file. Enter your text below and select a hash algorithm to generate the hash instantly.
         </p>
+
+        <ToolAnswerBlock slug="hash-generator" />
 
         <div className="mt-3">
           <ToolActions />

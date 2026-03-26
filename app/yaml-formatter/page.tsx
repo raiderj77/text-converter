@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { YamlFormatterTool } from "@/components/tools/yaml-formatter";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("yaml-formatter")!;
 const pageUrl = buildUrl("/yaml-formatter");
@@ -103,6 +104,8 @@ export default function YamlFormatterPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A YAML formatter instantly validates and beautifies YAML files with proper indentation. Paste your YAML below to format it and convert between YAML and JSON.
         </p>
+
+        <ToolAnswerBlock slug="yaml-formatter" />
 
         <div className="mt-3">
           <ToolActions />

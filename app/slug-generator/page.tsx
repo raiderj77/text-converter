@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getToolBySlug, buildUrl } from "@/lib/config";
 import { SlugGeneratorTool } from "@/components/tools/slug-generator";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("slug-generator")!;
 const pageUrl = buildUrl("/slug-generator");
@@ -41,6 +42,8 @@ export default function SlugGeneratorPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A URL slug generator converts any title or phrase into a clean, SEO-friendly URL slug. Enter your text below to generate a lowercase, hyphenated slug instantly.
         </p>
+
+        <ToolAnswerBlock slug="slug-generator" />
 
         {/* Descriptive headings for screen readers */}
         <div className="sr-only">

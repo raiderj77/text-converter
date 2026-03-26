@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { BubbleTextGeneratorTool } from "@/components/tools/bubble-text-generator";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("bubble-text-generator")!;
 const pageUrl = buildUrl("/bubble-text-generator");
@@ -87,6 +88,8 @@ export default function BubbleTextGeneratorPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A bubble text generator converts regular text into circled Unicode characters. Type your text below to generate bubble text you can copy and paste anywhere.
         </p>
+
+        <ToolAnswerBlock slug="bubble-text-generator" />
 
         <div className="mt-3">
           <ToolActions />

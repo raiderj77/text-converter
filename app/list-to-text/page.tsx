@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { ListToTextTool } from "@/components/tools/list-to-text";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("list-to-text")!;
 const pageUrl = buildUrl("/list-to-text");
@@ -95,6 +96,8 @@ export default function ListToTextPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A list to text converter removes bullets, numbers, and list markers to create flowing paragraph text. Paste your list below to convert it to plain text instantly.
         </p>
+
+        <ToolAnswerBlock slug="list-to-text" />
 
         <div className="mt-3">
           <ToolActions />

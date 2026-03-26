@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { SpongeBobCaseConverterTool } from "@/components/tools/spongebob-case-converter";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("spongebob-case-converter")!;
 const pageUrl = buildUrl("/spongebob-case-converter");
@@ -99,6 +100,8 @@ export default function SpongeBobCaseConverterPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A SpongeBob case converter transforms text into alternating caps (sPoNgEbOb CaSe) for mocking memes and sarcastic social media posts. Paste your text below to create mocking text instantly.
         </p>
+
+        <ToolAnswerBlock slug="spongebob-case-converter" />
 
         <div className="mt-3">
           <ToolActions />

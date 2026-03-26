@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { EmojiPickerTool } from "@/components/tools/emoji-picker";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("emoji-picker")!;
 const pageUrl = buildUrl("/emoji-picker");
@@ -103,6 +104,8 @@ export default function EmojiPickerPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           An emoji picker lets you search, browse, and copy emojis by name or category with code points and shortcodes. Search or browse below to find and copy any emoji instantly.
         </p>
+
+        <ToolAnswerBlock slug="emoji-picker" />
 
         <div className="mt-3">
           <ToolActions />

@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { TextToListTool } from "@/components/tools/text-to-list";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("text-to-list")!;
 const pageUrl = buildUrl("/text-to-list");
@@ -89,6 +90,8 @@ export default function TextToListPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A text to list converter transforms paragraphs and sentences into bullet points, numbered lists, or Markdown lists. Paste your text below to convert it to a formatted list instantly.
         </p>
+
+        <ToolAnswerBlock slug="text-to-list" />
 
         <div className="mt-3">
           <ToolActions />

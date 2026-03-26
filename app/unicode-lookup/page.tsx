@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { UnicodeLookupTool } from "@/components/tools/unicode-lookup";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("unicode-lookup")!;
 const pageUrl = buildUrl("/unicode-lookup");
@@ -99,6 +100,8 @@ export default function UnicodeLookupPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A Unicode character lookup tool lets you search for any Unicode symbol by name, category, or code point. Search below to find, preview, and copy any Unicode character instantly.
         </p>
+
+        <ToolAnswerBlock slug="unicode-lookup" />
 
         <div className="mt-3">
           <ToolActions />

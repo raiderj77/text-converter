@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { WordCounterTool } from "@/components/tools/word-counter";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("word-counter")!;
 const pageUrl = buildUrl("/word-counter");
@@ -97,6 +98,8 @@ export default function WordCounterPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A word counter instantly counts the number of words, characters, sentences, and paragraphs in any text. Paste or type your text below to get an instant word count with detailed statistics.
         </p>
+
+        <ToolAnswerBlock slug="word-counter" />
 
         <div className="mt-3">
           <ToolActions />

@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { RandomNumberGeneratorTool } from "@/components/tools/random-number-generator";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("random-number-generator")!;
 const pageUrl = buildUrl("/random-number-generator");
@@ -100,6 +101,8 @@ export default function RandomNumberGeneratorPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A random number generator creates random numbers within a custom range with options for bulk generation and no duplicates. Set your range and count below to generate random numbers instantly.
         </p>
+
+        <ToolAnswerBlock slug="random-number-generator" />
 
         <div className="mt-3">
           <ToolActions />

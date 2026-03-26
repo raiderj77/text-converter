@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { UuidGeneratorTool } from "@/components/tools/uuid-generator";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("uuid-generator")!;
 const pageUrl = buildUrl("/uuid-generator");
@@ -103,6 +104,8 @@ export default function UuidGeneratorPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A UUID generator creates random v4 universally unique identifiers for use in databases, APIs, and applications. Click generate to create one or more UUIDs instantly.
         </p>
+
+        <ToolAnswerBlock slug="uuid-generator" />
 
         <div className="mt-3">
           <ToolActions />

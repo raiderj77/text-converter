@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { HtmlToMarkdownTool } from "@/components/tools/html-to-markdown";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("html-to-markdown")!;
 const pageUrl = buildUrl("/html-to-markdown");
@@ -103,6 +104,8 @@ export default function HtmlToMarkdownPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           An HTML to Markdown converter transforms HTML into clean Markdown and Markdown back into HTML. Paste your HTML or Markdown below to convert between formats instantly.
         </p>
+
+        <ToolAnswerBlock slug="html-to-markdown" />
 
         <div className="mt-3">
           <ToolActions />

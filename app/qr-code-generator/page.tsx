@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { QrCodeGeneratorTool } from "@/components/tools/qr-code-generator";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("qr-code-generator")!;
 const pageUrl = buildUrl("/qr-code-generator");
@@ -99,6 +100,8 @@ export default function QrCodeGeneratorPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A QR code generator creates scannable QR codes for URLs, text, email, phone numbers, and WiFi networks. Enter your content below and download the QR code as a PNG image.
         </p>
+
+        <ToolAnswerBlock slug="qr-code-generator" />
 
         <div className="mt-3">
           <ToolActions />

@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { ExtractUrlsTool } from "@/components/tools/extract-urls";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("extract-urls")!;
 const pageUrl = buildUrl("/extract-urls");
@@ -89,6 +90,8 @@ export default function ExtractUrlsPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A URL extractor finds and pulls all web addresses from any block of text. Paste your text below to extract, deduplicate, and copy all URLs instantly.
         </p>
+
+        <ToolAnswerBlock slug="extract-urls" />
 
         <div className="mt-3">
           <ToolActions />

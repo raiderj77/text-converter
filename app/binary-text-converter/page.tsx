@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { BinaryTextConverterTool } from "@/components/tools/binary-text-converter";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("binary-text-converter")!;
 const pageUrl = buildUrl("/binary-text-converter");
@@ -104,6 +105,8 @@ export default function BinaryTextConverterPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A binary text converter transforms text into binary code and binary back into readable text. Enter your text or binary string below to convert instantly with a per-character breakdown.
         </p>
+
+        <ToolAnswerBlock slug="binary-text-converter" />
 
         <div className="mt-3">
           <ToolActions />

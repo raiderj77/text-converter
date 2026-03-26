@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { WideTextGeneratorTool } from "@/components/tools/wide-text-generator";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("wide-text-generator")!;
 const pageUrl = buildUrl("/wide-text-generator");
@@ -87,6 +88,8 @@ export default function WideTextGeneratorPage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A wide text generator converts regular text into fullwidth characters for a vaporwave aesthetic. Type your text below to generate wide text you can copy and paste anywhere.
         </p>
+
+        <ToolAnswerBlock slug="wide-text-generator" />
 
         <div className="mt-3">
           <ToolActions />

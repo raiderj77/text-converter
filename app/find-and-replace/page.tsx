@@ -5,6 +5,7 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { FindAndReplaceTool } from "@/components/tools/find-and-replace";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
+import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("find-and-replace")!;
 const pageUrl = buildUrl("/find-and-replace");
@@ -91,6 +92,8 @@ export default function FindAndReplacePage() {
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A find and replace tool searches for text patterns and replaces them with new text, with support for regex and case matching. Enter your text and search pattern below to find and replace matches instantly.
         </p>
+
+        <ToolAnswerBlock slug="find-and-replace" />
 
         <div className="mt-3">
           <ToolActions />
