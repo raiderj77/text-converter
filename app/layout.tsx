@@ -65,6 +65,7 @@ export const metadata: Metadata = {
     google: "IsORzVfj_Gdxpqo1OjGqr7LpWKxBqlQN3XoTGabG_KI",
     other: {
       "msvalidate.01": "C4C9B6256BDEDED169E4DE01CA953390",
+      "google-adsense-account": "ca-pub-7171402107622932",
     },
   },
   manifest: "/manifest.json",
