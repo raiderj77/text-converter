@@ -13,32 +13,57 @@ export default function ContactPage() {
         <h1>Contact</h1>
 
       <p>
-        Use this page to send feedback, request a new format, or report a bug. Include a small example
-        input and the output you expected.
+        Have a question, suggestion, or found something that doesn&apos;t work right?
+        We appreciate hearing from users and strive to respond to all inquiries promptly.
       </p>
 
-      <h2>Best way to reach the owner</h2>
+      <h2>How to Reach Us</h2>
       <p>
-        This project is maintained through GitHub. Use the repository issues page for requests and bug
-        reports so the history stays organized.
+        The best way to get in touch is by email. We aim to respond within 2&ndash;3 business days.
+      </p>
+      <p>
+        <strong>Email:</strong>{" "}
+        <a href="mailto:hello@flipmycase.com" style={{ color: "#2563eb" }}>
+          hello@flipmycase.com
+        </a>
       </p>
 
-      <h2>What to include in a bug report</h2>
+      <h2>What We Can Help With</h2>
       <ul>
-        <li>The exact text you pasted, keep it short if possible.</li>
-        <li>The format you clicked, for example snake_case or Title Case.</li>
-        <li>The output you expected.</li>
-        <li>The output you received.</li>
-        <li>Your device type, desktop or phone, and your browser name.</li>
+        <li><strong>Bug reports</strong> &mdash; Something not converting correctly? Let us know with an example.</li>
+        <li><strong>Feature requests</strong> &mdash; Need a text format or tool we don&apos;t have yet? We&apos;re always adding new ones.</li>
+        <li><strong>General feedback</strong> &mdash; Suggestions for improving the tools, the site layout, or anything else.</li>
+        <li><strong>Privacy requests</strong> &mdash; Data access, deletion, or opt-out requests under CCPA, GDPR, or other regulations.</li>
+        <li><strong>Partnerships</strong> &mdash; Interested in linking to or integrating with FlipMyCase? Reach out.</li>
       </ul>
 
-      <h2>Privacy</h2>
+      <h2>What to Include in a Bug Report</h2>
       <p>
-        Do not send sensitive information. This is a public tool site and a public repo workflow. If your
-        text is private, replace it with a similar example that shows the same formatting problem.
+        To help us reproduce and fix the issue quickly, please include:
+      </p>
+      <ul>
+        <li>The exact text you pasted (keep it short if possible, or use a similar example).</li>
+        <li>The tool or format you selected (for example, snake_case or Title Case).</li>
+        <li>The output you expected.</li>
+        <li>The output you actually received.</li>
+        <li>Your device type (desktop or mobile) and browser name (Chrome, Safari, Firefox, etc.).</li>
+      </ul>
+
+      <h2>Response Times</h2>
+      <p>
+        We read every message and do our best to respond within 2&ndash;3 business days. Bug reports
+        and feature requests that include specific examples are typically addressed faster.
       </p>
 
-        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
+      <h2>Privacy Note</h2>
+      <p>
+        Please do not send sensitive or confidential information via email. If the text
+        you are having trouble with is private, replace it with a similar example that
+        demonstrates the same formatting issue. All text processing on FlipMyCase happens
+        in your browser and is never stored on our servers.
+      </p>
+
+        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 25, 2026</p>
       </main>
     </>
   );
