@@ -63,12 +63,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.75,
   }));
 
+  // Tools listing page
+  const toolsIndex: MetadataRoute.Sitemap = [
+    {
+      url: `${SITE_URL}/tools`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    },
+  ];
+
   // Legal/info pages
   const legalPages: MetadataRoute.Sitemap = [
     "about",
     "contact",
     "privacy",
-    "privacy-policy",
     "terms",
     "cookies",
     "accessibility",
@@ -79,5 +88,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.3,
   }));
 
-  return [...toolPages, ...blogIndex, ...blogPosts, ...contentPages, ...legalPages];
+  return [...toolPages, ...toolsIndex, ...blogIndex, ...blogPosts, ...contentPages, ...legalPages];
 }

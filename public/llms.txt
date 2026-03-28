@@ -2,7 +2,7 @@
 
 > https://flipmycase.com
 
-FlipMyCase is a suite of 77 free, browser-based text tools for developers and writers, with 87 in-depth blog guides. All processing happens client-side — no text is sent to any server. No signup required, no limits.
+FlipMyCase is a suite of 78 free, browser-based text tools for developers and writers, with 88 in-depth blog guides. All processing happens client-side — no text is sent to any server. No signup required, no limits.
 
 ## Tools
 
@@ -100,7 +100,7 @@ FlipMyCase is a suite of 77 free, browser-based text tools for developers and wr
 - [Text Tools for Developers](https://flipmycase.com/text-tools-for-developers): Directory of 20+ free browser-based developer tools — JSON formatter, regex tester, hash generator, UUID, JWT decoder, and more.
 - [JSON vs YAML vs XML](https://flipmycase.com/json-vs-yaml-vs-xml): Syntax differences, use cases, and performance comparison to help you choose the right data format.
 
-## Blog Guides (87 posts)
+## Blog Guides (88 posts)
 
 In-depth guides with code examples covering every tool on the site: https://flipmycase.com/blog
 
