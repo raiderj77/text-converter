@@ -9,11 +9,13 @@ jobs:
       - uses: actions/checkout@v4
       - name: Submit to IndexNow
         run: |
-          curl -X POST "https://api.indexnow.org/indexnow" \
+          RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -X POST "https://api.indexnow.org/indexnow" \
             -H "Content-Type: application/json" \
             -d '{
               "host": "flipmycase.com",
               "key": "897a8e18c052107999a8cf5602a4a157",
               "keyLocation": "https://flipmycase.com/897a8e18c052107999a8cf5602a4a157.txt",
               "urlList": ["https://flipmycase.com/"]
-            }'
+            }')
+          echo "IndexNow response: $RESPONSE"
+          exit 0
