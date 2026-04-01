@@ -12,7 +12,7 @@ faq:
   - question: "Why use text art instead of regular emoji?"
     answer: "Text art is often more unique, carries nostalgic or subcultural weight, works on every system without rendering issues, and allows for greater creativity and personalization than standardized Unicode emoji."
   - question: "How do I make my own kaomoji?"
-    answer: "Start with the eyes using characters like ^, T, ;, or . . Then add a mouth like _, o, v, or ω. Finally, consider adding arms, hair, or other details with characters like /, \, |, or ﾉ."
+    answer: "Start with the eyes using characters like ^, T, ;, or . . Then add a mouth like _, o, v, or ω. Finally, consider adding arms, hair, or other details with characters like /, , |, or ."
 ---
 
 Emoji text art covers three distinct traditions: Western emoticons like :-) built from standard keyboard symbols, Japanese kaomoji like (^_^) that form expressive faces reading left-to-right, and decorative multi-character art scenes. All three styles copy and paste into any Unicode-capable app &mdash; Discord, Reddit, Twitter/X, messaging apps, and social media bios. Each tradition has its own character, history, and best use context.
