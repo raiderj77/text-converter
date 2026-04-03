@@ -7,6 +7,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Fetch sitemap URLs
+        id: sitemap
+        run: |
+          SITEMAP=$(curl -sf "https://flipmycase.com/sitemap.xml" || true)
+          # grep exits non-zero when no matches found — use || true to make non-fatal
+          URLS=$(echo "$SITEMAP" | grep -oP '(?<=<loc>)[^<]+' || true)
+          if [ -z "$URLS" ]; then
+            echo "Sitemap returned no URLs or was unreachable, falling back to homepage"
+            URLS="https://flipmycase.com/"
+          fi
+          echo "Submitting URLs:"
+          echo "$URLS"
+          # Build JSON array (one URL per line → quoted comma-separated)
+          URL_JSON=$(echo "$URLS" | awk '{printf "%s\"%s\"", (NR>1?",":""), $0} END {print ""}')
+          echo "url_json=[$URL_JSON]" >> "$GITHUB_OUTPUT"
       - name: Submit to IndexNow
         run: |
           RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -X POST "https://api.indexnow.org/indexnow" \
@@ -15,7 +30,6 @@ jobs:
               "host": "flipmycase.com",
               "key": "897a8e18c052107999a8cf5602a4a157",
               "keyLocation": "https://flipmycase.com/897a8e18c052107999a8cf5602a4a157.txt",
-              "urlList": ["https://flipmycase.com/"]
+              "urlList": ${{ steps.sitemap.outputs.url_json }}
             }')
           echo "IndexNow response: $RESPONSE"
-          exit 0
