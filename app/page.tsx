@@ -35,39 +35,29 @@ export const metadata: Metadata = {
  */
 const faqItems = [
   {
-    question: "Is this text case converter really free?",
+    question: "What is a text case converter?",
     answer:
-      "Yes. The tool is completely free with no signup, no account, and no usage limits. It runs in your browser.",
+      "A text case converter is a free online tool that instantly transforms your text between formats including UPPERCASE, lowercase, Title Case, Sentence case, camelCase, PascalCase, snake_case, and kebab-case. No software installation required.",
   },
   {
-    question: "Does this tool store or send my text anywhere?",
+    question: "How do I convert text to title case?",
     answer:
-      "No. All conversions happen in your browser using JavaScript. Your text never leaves your device. The tool saves your input to localStorage so refreshing the page does not lose your work.",
+      "Paste your text into the converter, then click the Title Case button. The tool capitalizes the first letter of each major word and lowercases articles, conjunctions, and prepositions following standard title case rules.",
   },
   {
     question: "What is the difference between camelCase and PascalCase?",
     answer:
-      "camelCase starts with a lowercase letter (userName), while PascalCase starts with an uppercase letter (UserName). camelCase is common for JavaScript variables. PascalCase is common for class names and React components.",
+      "camelCase starts with a lowercase letter and capitalizes each subsequent word (e.g., myVariableName). PascalCase capitalizes the first letter of every word including the first (e.g., MyVariableName). Developers use camelCase for variables and PascalCase for class names.",
   },
   {
-    question: "What is a slug and when should I use one?",
+    question: "Is this text case converter free to use?",
     answer:
-      "A slug is a URL-friendly version of a string. It uses lowercase letters, numbers, and hyphens. Use slugs for blog post URLs, product page URLs, and any web address that needs to be human-readable.",
+      "Yes, FlipMyCase is completely free with no account required. All text conversions happen instantly in your browser — your text is never sent to any server.",
   },
   {
-    question: "What is the difference between kebab-case and snake_case?",
+    question: "What is snake_case used for?",
     answer:
-      "kebab-case uses hyphens between words (my-variable) and is common in URLs and CSS class names. snake_case uses underscores (my_variable) and is common in Python, Ruby, and database column names.",
-  },
-  {
-    question: "Can I use this tool on my phone?",
-    answer:
-      "Yes. The tool is fully responsive and works on any device with a modern browser. Paste text, tap a copy button, and paste the result into your app.",
-  },
-  {
-    question: "What is CONSTANT_CASE used for?",
-    answer:
-      "CONSTANT_CASE (also called SCREAMING_SNAKE_CASE) uses all uppercase letters with underscores. It is the standard convention for constants in languages like JavaScript, Python, Java, and C.",
+      "snake_case uses underscores between words with all letters in lowercase (e.g., my_variable_name). It is the standard naming convention in Python, Ruby, and SQL, and is commonly used for file names, database columns, and API parameters.",
   },
 ];
 
@@ -79,7 +69,7 @@ export default function HomePage() {
         name="Free Text Case Converter"
         description={tool.description}
         url={SITE_URL}
-        dateModified="2026-03-07"
+        dateModified="2026-04-07"
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema items={[{ name: "Home", href: "/" }]} />
@@ -90,7 +80,7 @@ export default function HomePage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Text Case Converter
         </h1>
-        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
+        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: April 7, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           FlipMyCase is a free online text converter with 73+ text transformation tools including case converters, text cleaners, encoders, generators, and formatters. Select any tool below to transform your text instantly — no signup required.
         </p>
