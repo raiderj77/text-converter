@@ -69,8 +69,19 @@ export default function PrivacyPage() {
         performance, and improve relevance.
       </p>
       <p>
+        We work with third-party advertising partners, including Google, who may use cookies
+        and similar technologies to serve ads based on your prior visits to this website or
+        other websites.
+      </p>
+      <p>
+        You can opt out of personalized advertising by visiting{" "}
+        <a href="https://ads.google.com/settings" rel="noopener noreferrer">Google&apos;s Ad Settings</a>{" "}
+        or{" "}
+        <a href="https://optout.aboutads.info" rel="noopener noreferrer">aboutads.info</a>.
+      </p>
+      <p>
         You can learn more about how Google uses data from sites that use its services by
-        visiting Google’s privacy documentation.
+        visiting Google&apos;s privacy documentation.
       </p>
 
       <h2>Third-Party Services</h2>

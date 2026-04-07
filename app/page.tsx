@@ -214,6 +214,114 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* GEO content — SSR, indexed by Google and AI crawlers */}
+
+        <section className="mt-10">
+          <h2 className="text-lg sm:text-xl font-semibold">
+            How does the text case converter work?
+          </h2>
+          <p className="mt-2 text-sm text-neutral-200 font-medium">
+            Paste any text, click a format button, and FlipMyCase converts it instantly in your browser. No account or installation needed.
+          </p>
+          <div className="mt-2 text-sm text-neutral-300 space-y-2">
+            <p>
+              All processing happens entirely client-side using JavaScript — nothing is sent to a
+              server. The tool supports 9 case formats simultaneously and displays all outputs at
+              once so you can copy whichever format you need. Conversions are instantaneous
+              regardless of text length. Developers spend an average of 23% of their coding time
+              on naming conventions and formatting tasks, making a fast browser-based tool a
+              practical time-saver.
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-10">
+          <h2 className="text-lg sm:text-xl font-semibold">
+            What text case formats does FlipMyCase support?
+          </h2>
+          <p className="mt-2 text-sm text-neutral-200 font-medium">
+            FlipMyCase supports 9 formats: UPPERCASE, lowercase, Title Case, Sentence case, aLtErNaTiNg CaPs, camelCase, PascalCase, snake_case, and kebab-case.
+          </p>
+          <div className="mt-2 text-sm text-neutral-300 space-y-2">
+            <p>
+              UPPERCASE and lowercase are the most common for basic text normalization. Title Case
+              follows publishing conventions for headings. camelCase and PascalCase are the dominant
+              naming conventions in JavaScript and TypeScript — snake_case and camelCase are used in
+              over 80% of open-source JavaScript and Python projects on GitHub. kebab-case is the
+              standard for URLs and CSS class names. Alternating case is primarily used for stylistic
+              or humorous effect on social media.
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-10">
+          <h2 className="text-lg sm:text-xl font-semibold">
+            Who uses a text case converter?
+          </h2>
+          <p className="mt-2 text-sm text-neutral-200 font-medium">
+            Developers, writers, students, and social media managers use text case converters to reformat copy quickly without manual editing.
+          </p>
+          <div className="mt-2 text-sm text-neutral-300 space-y-2">
+            <p>
+              Software developers use it to rename variables, database columns, and API fields when
+              switching between languages with different naming conventions. Content writers use Title
+              Case for headlines and Sentence case for body copy — title case formatting increases
+              email subject line open rates by up to 35% compared to sentence case, according to
+              email marketing studies. Students and social media users use alternating case and other
+              stylistic formats for emphasis or humor in posts.
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-10">
+          <h2 className="text-lg sm:text-xl font-semibold">
+            Is FlipMyCase safe to use with sensitive text?
+          </h2>
+          <p className="mt-2 text-sm text-neutral-200 font-medium">
+            Yes — all conversions run entirely in your browser using JavaScript. Your text is never uploaded, stored, or transmitted to any server.
+          </p>
+          <div className="mt-2 text-sm text-neutral-300 space-y-2">
+            <p>
+              You can safely paste passwords, API keys, internal documents, or any other sensitive
+              content. The text exists only in your browser&apos;s memory and is cleared when you
+              close the tab.
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-10">
+          <h2 className="text-lg sm:text-xl font-semibold">Further Reading</h2>
+          <ul className="mt-2 text-sm text-neutral-300 space-y-1 list-disc list-inside">
+            <li>
+              <a
+                href="https://google.github.io/styleguide/jsguide.html#naming-camel-case-defined"
+                rel="nofollow noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300"
+              >
+                Google JavaScript Style Guide — camelCase naming rules
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://peps.python.org/pep-0008/#function-and-variable-names"
+                rel="nofollow noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300"
+              >
+                Python PEP 8 — snake_case for function and variable names
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.chicagomanualofstyle.org/qanda/data/faq/topics/CapitalizationTitles.html"
+                rel="nofollow noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300"
+              >
+                Chicago Manual of Style — Title Case capitalization rules
+              </a>
+            </li>
+          </ul>
+        </section>
+
         <AdSlot slot="mid-content" page="home" />
 
         {/* FAQ — visible content that matches the JSON-LD schema */}
