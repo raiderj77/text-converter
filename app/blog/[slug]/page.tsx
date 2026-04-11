@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getAllSlugs, getAllPosts, getPost } from "@/lib/blog-md";
+import { getAllMarkdownPosts, getMarkdownPost } from "@/lib/blog-markdown";
 import { SITE_URL, getLiveTools } from "@/lib/config";
 import { notFound } from "next/navigation";
 import { AdSlot } from "@/components/ui/ad-slot";
@@ -11,27 +11,34 @@ function cx(...parts: Array<string | false | null | undefined>) {
 }
 
 export async function generateStaticParams() {
-  return getAllSlugs().map((slug) => ({ slug }));
+  return getAllMarkdownPosts().map((post) => ({ slug: post.slug }));
 }
 
 export async function generateMetadata(props: { params: ParamsPromise }) {
   const { slug } = await props.params;
-  const post = await getPost(slug);
+  const post = await getMarkdownPost(slug);
 
   if (!post) return {};
 
   return {
     title: post.title,
-    description: post.description,
-    keywords: post.keywords,
+    description: post.description || undefined,
+    keywords: post.keywords.length ? post.keywords : undefined,
+    robots: { index: true, follow: true, googleBot: { "max-snippet": -1 } },
     alternates: {
       canonical: `${SITE_URL}/blog/${post.slug}`,
     },
     openGraph: {
       title: post.title,
-      description: post.description,
+      description: post.description || undefined,
       url: `${SITE_URL}/blog/${post.slug}`,
       type: "article",
+      publishedTime: post.date,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description || undefined,
     },
   };
 }
@@ -48,44 +55,64 @@ function buildFaqSchema(faq: Array<{ question: string; answer: string }>) {
   };
 }
 
-function buildArticleSchema(
-  title: string,
-  description: string,
-  url: string,
-  date: string
-) {
-  return {
+export default async function BlogPostPage(props: { params: ParamsPromise }) {
+  const { slug } = await props.params;
+  const post = await getMarkdownPost(slug);
+
+  if (!post) return notFound();
+
+  const url = `${SITE_URL}/blog/${post.slug}`;
+  const tools = getLiveTools();
+  const allPosts = getAllMarkdownPosts();
+
+  const blogPostingSchema = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: title,
-    description,
-    datePublished: date,
-    dateModified: date,
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.description || undefined,
+    datePublished: post.date,
+    dateModified: post.date,
+    url,
     mainEntityOfPage: url,
+    author: {
+      "@type": "Organization",
+      name: "FlipMyCase",
+      url: SITE_URL,
+    },
     publisher: {
       "@type": "Organization",
       name: "FlipMyCase",
       url: SITE_URL,
     },
+    keywords: post.keywords.join(", "),
   };
-}
 
-export default async function BlogPostPage(props: { params: ParamsPromise }) {
-  const { slug } = await props.params;
-  const post = await getPost(slug);
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: SITE_URL,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Guides",
+        item: `${SITE_URL}/blog`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: post.title,
+        item: url,
+      },
+    ],
+  };
 
-  if (!post) return notFound();
-
-  const url = `${SITE_URL}/blog/${post.slug}`;
-  const faqSchema = buildFaqSchema(post.faq);
-  const articleSchema = buildArticleSchema(
-    post.title,
-    post.description,
-    url,
-    post.date
-  );
-  const tools = getLiveTools();
-  const allPosts = getAllPosts();
+  const faqSchema = post.faq.length ? buildFaqSchema(post.faq) : null;
 
   // Related posts: use explicit list, or fall back to latest posts
   const related = post.related.length
@@ -95,19 +122,21 @@ export default async function BlogPostPage(props: { params: ParamsPromise }) {
     : allPosts.filter((p) => p.slug !== post.slug).slice(0, 4);
 
   // Find the linked tool for CTA
-  const linkedTool = tools.find((t) =>
-    post.toolSlug !== undefined
-      ? t.slug === post.toolSlug
-      : false
-  );
+  const linkedTool = post.toolSlug
+    ? tools.find((t) => t.slug === post.toolSlug)
+    : undefined;
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
       />
-      {post.faq.length > 0 && (
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      {faqSchema && (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -116,7 +145,7 @@ export default async function BlogPostPage(props: { params: ParamsPromise }) {
 
       <div className="mx-auto max-w-6xl px-4 py-8">
         {/* Breadcrumb */}
-        <div className="text-sm text-neutral-300">
+        <nav aria-label="Breadcrumb" className="text-sm text-neutral-300">
           <Link href="/" className="hover:text-neutral-200">
             Home
           </Link>
@@ -126,13 +155,13 @@ export default async function BlogPostPage(props: { params: ParamsPromise }) {
           </Link>
           <span className="mx-2 text-neutral-600">/</span>
           <span className="text-neutral-300">{post.title}</span>
-        </div>
+        </nav>
 
         <div className="mt-6 grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-6">
           {/* Main content */}
           <div>
             <article className="rounded-2xl border border-white/10 bg-neutral-900 p-6">
-              <div className="flex items-center gap-3 text-xs text-neutral-400">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-neutral-400 mb-3">
                 <span className="uppercase tracking-wide">Guide</span>
                 {post.date && (
                   <>
@@ -146,11 +175,13 @@ export default async function BlogPostPage(props: { params: ParamsPromise }) {
                     </time>
                   </>
                 )}
+                <span className="text-neutral-600">·</span>
+                <span>Built by an experienced web developer</span>
               </div>
 
               <div
                 className={cx(
-                  "mt-3 text-neutral-100",
+                  "mt-3 text-neutral-100 prose-blog",
                   "prose prose-invert prose-sm max-w-none",
                   "[&>h1]:text-2xl [&>h1]:sm:text-3xl [&>h1]:font-bold [&>h1]:tracking-tight",
                   "[&>h2]:mt-7 [&>h2]:text-lg [&>h2]:font-semibold",
@@ -164,9 +195,9 @@ export default async function BlogPostPage(props: { params: ParamsPromise }) {
                   "[&>pre]:bg-neutral-950 [&>pre]:rounded-xl [&>pre]:p-4 [&>pre]:text-sm [&>pre]:overflow-x-auto",
                   "[&_code]:text-emerald-400 [&_code]:text-xs",
                   "[&>blockquote]:border-l-2 [&>blockquote]:border-emerald-500 [&>blockquote]:pl-4 [&>blockquote]:text-neutral-300",
-                  "[&>a]:underline [&_a]:text-emerald-400 [&_a]:underline"
+                  "[&_a]:text-emerald-400 [&_a]:underline"
                 )}
-                dangerouslySetInnerHTML={{ __html: post.contentHtml }}
+                dangerouslySetInnerHTML={{ __html: post.htmlContent }}
               />
             </article>
 
@@ -242,15 +273,15 @@ export default async function BlogPostPage(props: { params: ParamsPromise }) {
             <div className="rounded-2xl border border-white/10 bg-neutral-900 p-5">
               <div className="text-sm font-semibold">More guides</div>
               <div className="mt-4 space-y-2">
-                {(related as any[]).map((p) => (
+                {(related as NonNullable<typeof related[number]>[]).map((p) => (
                   <Link
                     key={p.slug}
                     href={`/blog/${p.slug}`}
                     className="block rounded-xl border border-white/10 bg-neutral-950 p-3 hover:bg-white/5 transition-colors"
                   >
                     <div className="text-sm font-semibold">{p.title}</div>
-                    <div className="mt-1 text-xs text-neutral-400">
-                      {p.description}
+                    <div className="mt-1 text-xs text-neutral-400 line-clamp-2">
+                      {p.excerpt}
                     </div>
                   </Link>
                 ))}

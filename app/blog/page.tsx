@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { getAllPosts } from "@/lib/blog-md";
+import { getAllMarkdownPosts } from "@/lib/blog-markdown";
 import { getLiveTools, buildUrl } from "@/lib/config";
 import { BreadcrumbSchema } from "@/components/seo/schema";
 import { AdSlot } from "@/components/ui/ad-slot";
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 };
 
 export default function BlogIndex() {
-  const allPosts = getAllPosts();
+  const allPosts = getAllMarkdownPosts();
   const tools = getLiveTools();
 
   return (

@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL, tools } from "@/lib/config";
-import { getAllPosts } from "@/lib/blog-md";
+import { getAllMarkdownPosts } from "@/lib/blog-markdown";
 
 /**
  * Auto-generated sitemap.
@@ -30,7 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }));
 
   // Blog posts
-  const blogPosts: MetadataRoute.Sitemap = getAllPosts().map((post) => ({
+  const blogPosts: MetadataRoute.Sitemap = getAllMarkdownPosts().map((post) => ({
     url: `${SITE_URL}/blog/${post.slug}`,
     lastModified: new Date(post.date),
     changeFrequency: "monthly" as const,
