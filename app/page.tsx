@@ -188,14 +188,10 @@ export default function HomePage() {
           </h2>
           <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
-              <strong className="text-neutral-200">Writing and blogging:</strong> Convert
-              headings to Title Case for blog posts, articles, and landing pages. Generate
-              URL-friendly slugs from titles for SEO.
+              <strong className="text-neutral-200">Writing and blogging:</strong> Over 600 million blogs exist worldwide (Demand Sage, 2024), and consistent heading capitalization is a basic readability requirement. Convert headings to Title Case for blog posts, articles, and landing pages. Generate URL-friendly slugs from titles for SEO.
             </p>
             <p>
-              <strong className="text-neutral-200">Software development:</strong> Convert
-              variable names between camelCase, snake_case, PascalCase, and CONSTANT_CASE when
-              switching between JavaScript, Python, SQL, and other languages.
+              <strong className="text-neutral-200">Software development:</strong> With tens of millions of software developers worldwide working across languages with different naming conventions, case conversion is a daily need. Convert variable names between camelCase, snake_case, PascalCase, and CONSTANT_CASE when switching between JavaScript, Python, SQL, and other languages.
             </p>
             <p>
               <strong className="text-neutral-200">Data cleanup:</strong> Normalize messy text
