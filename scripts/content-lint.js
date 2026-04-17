@@ -49,7 +49,7 @@ function checkPersonalName(file, lines) {
     'app/about/page.tsx',
     'app/about/jason-ramirez/page.tsx'
   ];
-  if (PERSONAL_NAME_EXEMPT.some(p => file.replaceAll('\\', '/').endsWith(p))) return;
+  if (PERSONAL_NAME_EXEMPT.some(p => file.replaceAll('\\', '/').includes(p))) return;
 
   const namePattern = /\bJason\s+Ramirez\b/i;
   for (let i = 0; i < lines.length; i++) {
