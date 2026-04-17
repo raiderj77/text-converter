@@ -95,11 +95,17 @@ export function Footer() {
             {" · "}
             <a href="https://mindchecktools.com" className="hover:underline">MindCheck Tools</a>
             {" · "}
+            <a href="https://flipmycase.com" className="hover:underline">FlipMyCase</a>
+            {" · "}
             <a href="https://contractextract.com" className="hover:underline">ContractExtract</a>
             {" · "}
             <a href="https://medicalbillreader.com" className="hover:underline">Medical Bill Reader</a>
             {" · "}
+            <a href="https://taxbreaktools.com" className="hover:underline">TaxBreakTools</a>
+            {" · "}
             <a href="https://524tracker.com" className="hover:underline">524 Tracker</a>
+            {" · "}
+            <a href="https://aibusinessalternative.com" className="hover:underline">AI Business Alternative</a>
           </p>
         </div>
       </div>
