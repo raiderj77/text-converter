@@ -44,6 +44,13 @@ function getFiles(dir, extensions) {
  * The site owner's name must never appear in public content or code.
  */
 function checkPersonalName(file, lines) {
+  // About pages exempt — real name required for AdSense E-E-A-T compliance per April 2026 decision.
+  const PERSONAL_NAME_EXEMPT = [
+    'app/about/page.tsx',
+    'app/about/jason-ramirez/page.tsx'
+  ];
+  if (PERSONAL_NAME_EXEMPT.some(p => file.replaceAll('\\', '/').endsWith(p))) return;
+
   const namePattern = /\bJason\s+Ramirez\b/i;
   for (let i = 0; i < lines.length; i++) {
     if (namePattern.test(lines[i])) {
