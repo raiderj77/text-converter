@@ -1,5 +1,6 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
+import { headers } from "next/headers";
 import Script from "next/script";
 import { Inter, JetBrains_Mono } from "next/font/google";
 
@@ -98,11 +99,14 @@ export const viewport: Viewport = {
   ],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const headersList = await headers();
+  const gpcHeader = headersList.get('sec-gpc') === '1';
+
   return (
     <html lang="en" suppressHydrationWarning className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <head>
@@ -115,13 +119,33 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="FlipMyCase" />
 
         {/* Cookiebot CMP — deferred; consent mode v2 defaults above protect GA */}
-        <Script
-          id="Cookiebot"
-          src="https://consent.cookiebot.com/uc.js"
-          data-cbid="a9a99ccb-4863-4e33-a895-a6d5642f408d"
-          data-blockingmode="auto"
-          strategy="afterInteractive"
-        />
+        {!gpcHeader && (
+          <Script
+            id="Cookiebot"
+            src="https://consent.cookiebot.com/uc.js"
+            data-cbid="a9a99ccb-4863-4e33-a895-a6d5642f408d"
+            data-blockingmode="auto"
+            strategy="afterInteractive"
+          />
+        )}
+
+        {/* GPC auto-decline script — runs when Cookiebot loads */}
+        {!gpcHeader && (
+          <Script
+            id="gpc-auto-decline"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.addEventListener('CookiebotOnLoad', function () {
+                  try {
+                    var gpcActive = !!navigator.globalPrivacyControl || document.cookie.indexOf('empire_gpc=1') !== -1;
+                    if (gpcActive && window.Cookiebot) window.Cookiebot.decline();
+                  } catch(e) {}
+                });
+              `,
+            }}
+          />
+        )}
 
         {/* Preconnect hints for third-party scripts */}
         <link rel="preconnect" href="https://pagead2.googlesyndication.com" />

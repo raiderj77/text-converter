@@ -219,7 +219,7 @@ export default function PrivacyPage() {
         </p>
 
         <h3>How to Submit a Request</h3>
-        <p>Contact us via the <a href="/contact">Contact page</a>. We will respond within 45 days.</p>
+        <p>Contact us via the <a href="/contact">Contact page</a>. We will respond within 45 days (or as required by your state law, e.g., 45 days for Maryland MODPA, 30 days for GDPR).</p>
 
         <h3>Data Retention</h3>
         <p>Analytics data is retained for 26 months. Server logs are retained for 90 days. Text entered into tools is never stored beyond your browser session.</p>
@@ -251,7 +251,7 @@ export default function PrivacyPage() {
             <tr><td>Oregon</td><td>OCPA</td><td>Jul 2024</td><td>Access, delete, correct, opt-out, portability</td></tr>
             <tr><td>Tennessee</td><td>TIPA</td><td>Jul 2025</td><td>Access, delete, correct, opt-out</td></tr>
             <tr><td>Minnesota</td><td>MNDPA</td><td>Jul 2025</td><td>Access, delete, correct, opt-out, portability</td></tr>
-            <tr><td>Maryland</td><td>MODPA</td><td>Oct 2025</td><td>Access, delete, correct, opt-out; bans sale of sensitive data</td></tr>
+            <tr><td>Maryland</td><td>MODPA</td><td>Apr 2026</td><td>Access, delete, correct, opt-out, portability; bans sale of sensitive data</td></tr>
             <tr><td>Indiana</td><td>IDCPA</td><td>Jan 2026</td><td>Access, delete, correct, opt-out</td></tr>
             <tr><td>Kentucky</td><td>KYCPA</td><td>Jan 2026</td><td>Access, delete, correct, opt-out</td></tr>
             <tr><td>Rhode Island</td><td>RIDPA</td><td>Jan 2026</td><td>Access, delete, correct, opt-out</td></tr>
@@ -261,6 +261,23 @@ export default function PrivacyPage() {
           We honor Global Privacy Control (GPC) signals from all states that require it.
           We do not sell personal information to third parties. We do not engage in targeted
           advertising using sensitive personal information.
+        </p>
+      </section>
+
+      <section id="global-privacy-control" aria-labelledby="gpc-heading">
+        <h2 id="gpc-heading">Global Privacy Control (GPC)</h2>
+        <p>
+          We honor Global Privacy Control (GPC) signals transmitted via the <code>Sec-GPC</code> HTTP header
+          or the <code>navigator.globalPrivacyControl</code> JavaScript property. When GPC is active, we:
+        </p>
+        <ul>
+          <li>Decline all non-essential cookies and tracking technologies</li>
+          <li>Disable personalized advertising and analytics data collection</li>
+          <li>Skip consent collection prompts and use GPC signal as a do-not-track instruction</li>
+        </ul>
+        <p>
+          GPC acts as an opt-out signal equivalent to a user exercising their California CPRA &ldquo;Opt-Out&rdquo; or
+          Maryland MODPA &ldquo;Opt-Out&rdquo; right. All U.S. state privacy laws that recognize GPC are honored accordingly.
         </p>
       </section>
 
