@@ -14,6 +14,11 @@ export const SITE_DESCRIPTION =
 
 export const SITE_TWITTER = "@flipmycase"; // Update when you create the account
 
+// Author identity (per Empire policy: named author for E-E-A-T across all sites)
+export const AUTHOR_NAME = "Your Friendly Developer";
+export const AUTHOR_URL = `${SITE_URL}/about`;
+export const AUTHOR_JOB_TITLE = "Web Developer";
+
 export const GA_ID = "G-JQHRPJ9YLF";
 
 /**
