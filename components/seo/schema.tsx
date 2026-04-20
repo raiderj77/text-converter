@@ -44,6 +44,12 @@ export function WebAppSchema({
         url,
         applicationCategory: "UtilityApplication",
         operatingSystem: "All",
+        author: {
+          "@type": "Person",
+          name: "Built by an experienced web developer",
+          jobTitle: "Web Developer",
+          url: `${SITE_URL}/about`,
+        },
         offers: {
           "@type": "Offer",
           price: "0",
