@@ -3,8 +3,13 @@
  * Server components — output <script type="application/ld+json"> tags.
  * Google uses these for rich snippets, knowledge panels, answer boxes.
  */
-
-import { SITE_NAME, SITE_URL } from "@/lib/config";
+import {
+  SITE_NAME,
+  SITE_URL,
+  AUTHOR_NAME,
+  AUTHOR_URL,
+  AUTHOR_JOB_TITLE,
+} from "@/lib/config";
 
 type SchemaProps = {
   data: Record<string, unknown>;
@@ -20,8 +25,45 @@ function JsonLd({ data }: SchemaProps) {
 }
 
 /**
+ * Reusable author block — embedded inside WebApp/Article schemas.
+ * Keeps Person identity consistent across the site for Google author resolution.
+ */
+function authorPerson() {
+  return {
+    "@type": "Person",
+    name: AUTHOR_NAME,
+    jobTitle: AUTHOR_JOB_TITLE,
+    url: AUTHOR_URL,
+  };
+}
+
+/**
+ * Standalone Person schema — for the about page or any page that wants
+ * to emit the named-author Person directly.
+ */
+export function PersonSchema() {
+  return (
+    <JsonLd
+      data={{
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: AUTHOR_NAME,
+        url: AUTHOR_URL,
+        jobTitle: AUTHOR_JOB_TITLE,
+        worksFor: {
+          "@type": "Organization",
+          name: SITE_NAME,
+          url: SITE_URL,
+        },
+      }}
+    />
+  );
+}
+
+/**
  * WebApplication schema — for tool pages.
  * Tells Google this page is a web app, not just a blog post.
+ * Embeds named-author Person for E-E-A-T attribution.
  */
 export function WebAppSchema({
   name,
@@ -44,12 +86,7 @@ export function WebAppSchema({
         url,
         applicationCategory: "UtilityApplication",
         operatingSystem: "All",
-        author: {
-          "@type": "Person",
-          name: "Built by an experienced web developer",
-          jobTitle: "Web Developer",
-          url: `${SITE_URL}/about`,
-        },
+        author: authorPerson(),
         offers: {
           "@type": "Offer",
           price: "0",
@@ -76,7 +113,6 @@ export function FaqSchema({
   items: Array<{ question: string; answer: string }>;
 }) {
   if (!items.length) return null;
-
   return (
     <JsonLd
       data={{
@@ -126,6 +162,7 @@ export function BreadcrumbSchema({
 
 /**
  * Article schema — for blog posts.
+ * Includes named-author Person + Organization publisher.
  */
 export function ArticleSchema({
   title,
@@ -148,6 +185,7 @@ export function ArticleSchema({
         headline: title,
         description,
         mainEntityOfPage: url,
+        author: authorPerson(),
         publisher: {
           "@type": "Organization",
           name: SITE_NAME,
