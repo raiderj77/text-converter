@@ -78,7 +78,7 @@ export default function HtmlToMarkdownPage() {
         name="Free HTML to Markdown Converter"
         description={tool.description}
         url={pageUrl}
-        dateModified="2026-03-07"
+        dateModified={new Date().toISOString().substring(0,10)}
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema

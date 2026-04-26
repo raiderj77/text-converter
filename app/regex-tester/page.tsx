@@ -102,7 +102,7 @@ export default function RegexTesterPage() {
         name="Free Regex Tester — Test Regular Expressions Online"
         description={tool.description}
         url={pageUrl}
-        dateModified="2026-03-07"
+        dateModified={new Date().toISOString().substring(0,10)}
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema

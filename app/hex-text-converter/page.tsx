@@ -79,7 +79,7 @@ export default function HexTextConverterPage() {
         name="Free Hex Text Converter"
         description={tool.description}
         url={pageUrl}
-        dateModified="2026-03-07"
+        dateModified={new Date().toISOString().substring(0,10)}
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema

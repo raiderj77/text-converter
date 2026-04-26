@@ -72,7 +72,7 @@ export default function RemoveHtmlTagsPage() {
         name="Remove HTML Tags — Strip Tags Online Free"
         description={tool.description}
         url={pageUrl}
-        dateModified="2026-03-07"
+        dateModified={new Date().toISOString().substring(0,10)}
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema

@@ -102,7 +102,7 @@ export default function HashGeneratorPage() {
         name="Free Hash Generator — MD5, SHA-1, SHA-256, SHA-512 Online"
         description={tool.description}
         url={pageUrl}
-        dateModified="2026-03-07"
+        dateModified={new Date().toISOString().substring(0,10)}
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema

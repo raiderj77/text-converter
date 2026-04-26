@@ -69,7 +69,7 @@ export default function HomePage() {
         name="Free Text Case Converter"
         description={tool.description}
         url={SITE_URL}
-        dateModified="2026-04-07"
+        dateModified={new Date().toISOString().substring(0,10)}
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema items={[{ name: "Home", href: "/" }]} />

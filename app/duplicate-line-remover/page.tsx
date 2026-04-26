@@ -79,7 +79,7 @@ export default function DuplicateRemoverPage() {
         name="Free Duplicate Line Remover"
         description={tool.description}
         url={pageUrl}
-        dateModified="2026-03-07"
+        dateModified={new Date().toISOString().substring(0,10)}
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema

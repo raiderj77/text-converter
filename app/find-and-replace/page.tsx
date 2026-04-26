@@ -74,7 +74,7 @@ export default function FindAndReplacePage() {
         name="Find and Replace Text Online — Free Tool"
         description={tool.description}
         url={pageUrl}
-        dateModified="2026-03-07"
+        dateModified={new Date().toISOString().substring(0,10)}
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
