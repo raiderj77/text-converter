@@ -280,6 +280,11 @@ export function ColorCodeConverterTool() {
       <div className={cx("rounded-xl border p-4 space-y-3", base)}>
         <h3 className="text-sm font-semibold">Color Codes</h3>
 
+        {/* Crawler-visible result mirror — sr-only so it does not duplicate visually */}
+        <output aria-live="polite" className="sr-only">
+          {`HEX ${hexInput.toUpperCase()}, RGB(${rgbInput}), HSL(${hslInput}), CMYK(${cmykInput})`}
+        </output>
+
         {/* HEX */}
         <div className="flex items-center gap-2">
           <label htmlFor="hex-input" className="text-xs font-semibold w-12 shrink-0">HEX</label>

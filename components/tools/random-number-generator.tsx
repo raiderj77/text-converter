@@ -221,9 +221,9 @@ export function RandomNumberGeneratorTool() {
           </div>
           {!isBulk ? (
             <div className="text-center py-4">
-              <span className={cx("text-5xl font-bold font-mono", isDark ? "text-emerald-400" : "text-emerald-600")}>
+              <output aria-live="polite" aria-label="Generated random number" className={cx("block text-5xl font-bold font-mono", isDark ? "text-emerald-400" : "text-emerald-600")}>
                 {results[0]}
-              </span>
+              </output>
             </div>
           ) : (
             <div className="flex flex-wrap gap-2 max-h-64 overflow-y-auto">

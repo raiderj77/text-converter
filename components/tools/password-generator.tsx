@@ -413,9 +413,9 @@ export function PasswordGeneratorTool() {
           <div className="p-3 space-y-2">
             {(showHistory ? history : passwords).map((pw, i) => (
               <div key={`${pw}-${i}`} className="flex items-center gap-2">
-                <code className={cx("flex-1 rounded-xl border px-3 py-2 text-sm font-mono break-all leading-6", isDark ? "bg-neutral-950 border-white/10" : "bg-neutral-50 border-black/10")}>
-                  {pw}
-                </code>
+                <output aria-live="polite" aria-label="Generated password" className={cx("flex-1 block rounded-xl border px-3 py-2 text-sm font-mono break-all leading-6", isDark ? "bg-neutral-950 border-white/10" : "bg-neutral-50 border-black/10")}>
+                  <code>{pw}</code>
+                </output>
                 <button type="button" onClick={() => copyPw(pw)} className={cx(
                   "shrink-0 rounded-xl px-3 py-2 text-sm border transition-colors",
                   isDark ? "border-emerald-500/30 bg-emerald-500/10 hover:bg-emerald-500/20" : "border-emerald-500/30 bg-emerald-50 hover:bg-emerald-100"

@@ -352,6 +352,9 @@ export function QrCodeGeneratorTool() {
             </div>
           )}
         </div>
+        <output aria-live="polite" className="sr-only">
+          {generated ? `Generated QR code for the provided ${inputType} input` : "QR code will appear after generation"}
+        </output>
         <div className="flex justify-center">
           <div
             ref={qrRef}

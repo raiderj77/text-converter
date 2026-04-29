@@ -589,7 +589,7 @@ export function JsonFormatterTool() {
                   isDark ? "text-neutral-200" : "text-neutral-700"
                 )}
               >
-                {result.formatted}
+                <code>{result.formatted}</code>
               </output>
             ) : (
               <div className="max-h-[500px] overflow-y-auto">

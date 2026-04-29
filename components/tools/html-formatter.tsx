@@ -268,7 +268,7 @@ export function HtmlFormatterTool() {
                 : "border-black/5 bg-neutral-50"
             )}
           >
-            {output}
+            <code>{output}</code>
           </output>
         </div>
       )}

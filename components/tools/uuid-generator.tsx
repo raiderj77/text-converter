@@ -138,7 +138,7 @@ export function UuidGeneratorTool() {
                   key={i}
                   className={cx("flex items-center justify-between rounded-lg border p-3 gap-2", isDark ? "border-white/5 bg-neutral-950" : "border-black/5 bg-neutral-50")}
                 >
-                  <code className="font-mono text-sm break-all select-all flex-1">{formatted}</code>
+                  <output aria-live="polite" aria-label={`Generated UUID ${i + 1}`} className="block font-mono text-sm break-all select-all flex-1"><code>{formatted}</code></output>
                   <button
                     onClick={() => copyText(formatted, label)}
                     className={cx("rounded-md border px-2 py-0.5 text-xs transition-colors min-h-[44px] min-w-[44px] shrink-0", btnBase)}
