@@ -182,15 +182,15 @@ export function ExtractUrlsTool() {
               )}
             </label>
           </div>
-          <div
+          <output
             aria-live="polite"
             className={cx(
-              "rounded-lg border p-3 font-mono text-sm whitespace-pre-wrap break-all leading-relaxed max-h-[400px] overflow-y-auto",
+              "block rounded-lg border p-3 font-mono text-sm whitespace-pre-wrap break-all leading-relaxed max-h-[400px] overflow-y-auto",
               inputBase
             )}
           >
             {urls.join("\n")}
-          </div>
+          </output>
         </div>
       )}
 

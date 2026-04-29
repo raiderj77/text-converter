@@ -167,10 +167,10 @@ export function BoldItalicTextGeneratorTool() {
               </button>
             )}
           </div>
-          <div
+          <output
             aria-live="polite"
             className={cx(
-              "w-full rounded-lg border px-3 py-2 text-sm whitespace-pre-wrap break-words overflow-auto",
+              "block w-full rounded-lg border px-3 py-2 text-sm whitespace-pre-wrap break-words overflow-auto",
               inputBase
             )}
             style={{ minHeight: "280px" }}
@@ -180,7 +180,7 @@ export function BoldItalicTextGeneratorTool() {
                 Bold italic text appears here as you type...
               </span>
             )}
-          </div>
+          </output>
           <div className={cx("mt-2 text-xs", muted)}>
             {output.length} character{output.length !== 1 ? "s" : ""}
           </div>

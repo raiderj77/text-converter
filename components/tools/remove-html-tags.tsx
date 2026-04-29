@@ -207,15 +207,15 @@ export function RemoveHtmlTagsTool() {
               {output.length.toLocaleString()} char{output.length !== 1 ? "s" : ""}
             </span>
           </div>
-          <div
+          <output
             aria-live="polite"
             className={cx(
-              "rounded-lg border p-3 text-sm whitespace-pre-wrap break-words leading-relaxed max-h-[400px] overflow-y-auto",
+              "block rounded-lg border p-3 text-sm whitespace-pre-wrap break-words leading-relaxed max-h-[400px] overflow-y-auto",
               inputBase
             )}
           >
             {output || "\u00A0"}
-          </div>
+          </output>
         </div>
       )}
 

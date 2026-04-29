@@ -234,12 +234,12 @@ export function PigLatinConverterTool() {
               {copied ? "Copied!" : "Copy"}
             </button>
           </div>
-          <div className={cx(
-            "rounded-lg border p-3 font-mono text-sm break-all leading-relaxed whitespace-pre-wrap select-all",
+          <output aria-live="polite" className={cx(
+            "block rounded-lg border p-3 font-mono text-sm break-all leading-relaxed whitespace-pre-wrap select-all",
             isDark ? "border-white/5 bg-neutral-950" : "border-black/5 bg-neutral-50"
           )}>
             {output}
-          </div>
+          </output>
           {direction === "from-pig" && (
             <p className={cx("text-xs mt-2", muted)}>
               Reverse Pig Latin is best-effort. Some words may not convert perfectly.

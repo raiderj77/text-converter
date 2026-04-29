@@ -285,10 +285,10 @@ export function FindAndReplaceTool() {
             <label className="text-sm font-semibold">Match Preview</label>
             <span className={cx("text-xs", muted)}>Matches highlighted in yellow</span>
           </div>
-          <div
+          <output
             aria-live="polite"
             className={cx(
-              "rounded-lg border p-3 font-mono text-sm whitespace-pre-wrap break-words leading-relaxed max-h-[400px] overflow-y-auto",
+              "block rounded-lg border p-3 font-mono text-sm whitespace-pre-wrap break-words leading-relaxed max-h-[400px] overflow-y-auto",
               inputBase
             )}
           >
@@ -307,7 +307,7 @@ export function FindAndReplaceTool() {
                 <span key={i}>{part.text}</span>
               )
             )}
-          </div>
+          </output>
         </div>
       )}
 
@@ -326,15 +326,15 @@ export function FindAndReplaceTool() {
               Copy
             </button>
           </div>
-          <div
+          <output
             aria-live="polite"
             className={cx(
-              "rounded-lg border p-3 font-mono text-sm whitespace-pre-wrap break-words leading-relaxed max-h-[400px] overflow-y-auto",
+              "block rounded-lg border p-3 font-mono text-sm whitespace-pre-wrap break-words leading-relaxed max-h-[400px] overflow-y-auto",
               inputBase
             )}
           >
             {text || "\u00A0"}
-          </div>
+          </output>
         </div>
       )}
 

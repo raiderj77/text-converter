@@ -307,15 +307,15 @@ export function SmartQuotesConverterTool() {
           </button>
         </div>
         <div className="p-3">
-          <pre
+          <output
             aria-live="polite"
             className={cx(
-              "whitespace-pre-wrap break-words text-sm leading-6 font-mono min-h-[96px]",
+              "block whitespace-pre-wrap break-words text-sm leading-6 font-mono min-h-[96px]",
               isDark ? "text-neutral-200" : "text-neutral-700"
             )}
           >
             {converted || "\u00A0"}
-          </pre>
+          </output>
         </div>
       </div>
 

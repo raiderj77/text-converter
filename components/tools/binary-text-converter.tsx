@@ -180,9 +180,9 @@ export function BinaryTextConverterTool() {
               {copied === "output" ? "Copied!" : "Copy"}
             </button>
           </div>
-          <div className="font-mono text-sm break-all leading-relaxed select-all whitespace-pre-wrap">
+          <output aria-live="polite" className="block font-mono text-sm break-all leading-relaxed select-all whitespace-pre-wrap">
             {output}
-          </div>
+          </output>
         </div>
       )}
 

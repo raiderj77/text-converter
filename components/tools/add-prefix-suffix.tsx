@@ -213,9 +213,9 @@ export function AddPrefixSuffixTool() {
               </button>
             )}
           </div>
-          <div
+          <output
             aria-live="polite"
-            className={cx("w-full rounded-lg border px-3 py-2 text-sm font-mono whitespace-pre-wrap break-words overflow-auto", inputBase)}
+            className={cx("block w-full rounded-lg border px-3 py-2 text-sm font-mono whitespace-pre-wrap break-words overflow-auto", inputBase)}
             style={{ minHeight: "280px" }}
           >
             {output || (
@@ -223,7 +223,7 @@ export function AddPrefixSuffixTool() {
                 Output appears here as you type...
               </span>
             )}
-          </div>
+          </output>
           <div className={cx("mt-2 text-xs", muted)}>
             {stats.outputLines} line{stats.outputLines !== 1 ? "s" : ""} · {stats.outputChars} char{stats.outputChars !== 1 ? "s" : ""}
           </div>

@@ -209,10 +209,10 @@ export function BubbleTextGeneratorTool() {
               </button>
             )}
           </div>
-          <div
+          <output
             aria-live="polite"
             className={cx(
-              "w-full rounded-lg border px-3 py-2 text-sm whitespace-pre-wrap break-words overflow-auto",
+              "block w-full rounded-lg border px-3 py-2 text-sm whitespace-pre-wrap break-words overflow-auto",
               inputBase
             )}
             style={{ minHeight: "280px" }}
@@ -222,7 +222,7 @@ export function BubbleTextGeneratorTool() {
                 Bubble text appears here as you type...
               </span>
             )}
-          </div>
+          </output>
           <div className={cx("mt-2 text-xs", muted)}>
             {stats.outputChars} character{stats.outputChars !== 1 ? "s" : ""} &middot;{" "}
             {filled ? "Filled/negative circled" : "Empty/outlined circled"}

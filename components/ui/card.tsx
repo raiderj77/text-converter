@@ -42,9 +42,13 @@ export function Card({ label, value, onCopy }: CardProps) {
       </div>
 
       <div className="p-3">
-        <pre className="whitespace-pre-wrap break-words text-sm leading-6">
+        <output
+          aria-live="polite"
+          aria-label={label}
+          className="block whitespace-pre-wrap break-words text-sm leading-6"
+        >
           {value || "\u00A0"}
-        </pre>
+        </output>
       </div>
     </div>
   );

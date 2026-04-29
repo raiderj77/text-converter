@@ -181,14 +181,15 @@ export function ListToTextTool() {
               {copied ? "Copied!" : "Copy"}
             </button>
           </div>
-          <div
+          <output
+            aria-live="polite"
             className={cx(
-              "rounded-lg border p-3 text-sm whitespace-pre-wrap break-words font-mono",
+              "block rounded-lg border p-3 text-sm whitespace-pre-wrap break-words font-mono",
               inputBase
             )}
           >
             {output}
-          </div>
+          </output>
           <p className={cx("mt-2 text-xs", muted)}>
             {output.length.toLocaleString()} character{output.length !== 1 ? "s" : ""}
           </p>

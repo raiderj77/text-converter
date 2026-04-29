@@ -120,7 +120,7 @@ function StatBox({
         isDark ? "border-white/10 bg-neutral-900" : "border-black/10 bg-white"
       )}
     >
-      <div className="text-xl sm:text-2xl font-bold tabular-nums">{value}</div>
+      <output aria-live="polite" aria-label={label} className="block text-xl sm:text-2xl font-bold tabular-nums">{value}</output>
       <div
         className={cx(
           "mt-1 text-xs",

@@ -196,9 +196,9 @@ export function RomanNumeralConverterTool() {
             </button>
           </div>
           <div className="text-center py-4">
-            <span className={cx("text-4xl sm:text-5xl font-bold font-mono", isDark ? "text-emerald-400" : "text-emerald-600")}>
+            <output aria-live="polite" className={cx("block text-4xl sm:text-5xl font-bold font-mono", isDark ? "text-emerald-400" : "text-emerald-600")}>
               {output}
-            </span>
+            </output>
             {mode === "date" && (
               <p className={cx("mt-2 text-sm", muted)}>
                 Year {input} = {output}
