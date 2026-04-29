@@ -9,6 +9,8 @@ import {
   AUTHOR_NAME,
   AUTHOR_URL,
   AUTHOR_JOB_TITLE,
+  getToolBySlug,
+  buildUrl,
 } from "@/lib/config";
 
 type SchemaProps = {
@@ -61,9 +63,13 @@ export function PersonSchema() {
 }
 
 /**
- * WebApplication schema — for tool pages.
- * Tells Google this page is a web app, not just a blog post.
- * Embeds named-author Person for E-E-A-T attribution.
+ * WebApplication + SoftwareApplication graph — for tool pages.
+ *
+ * Emits a single JSON-LD `@graph` containing both schema types so Google's
+ * AI Overviews and SERP rich results can pick the most appropriate match.
+ * `applicationCategory: "UtilitiesApplication"` and `operatingSystem: "Any"`
+ * are the schema.org-canonical enum values (the prior `UtilityApplication`
+ * / `All` were close-but-non-canonical).
  */
 export function WebAppSchema({
   name,
@@ -76,29 +82,75 @@ export function WebAppSchema({
   url: string;
   dateModified?: string;
 }) {
+  const offers = {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  } as const;
+
+  const sharedAppFields = {
+    name,
+    description,
+    url,
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    author: authorPerson(),
+    offers,
+    browserRequirements: "Requires JavaScript",
+    softwareHelp: {
+      "@type": "CreativeWork",
+      url: `${SITE_URL}/learn`,
+    },
+    ...(dateModified && { dateModified }),
+  };
+
   return (
     <JsonLd
       data={{
         "@context": "https://schema.org",
-        "@type": "WebApplication",
-        name,
-        description,
-        url,
-        applicationCategory: "UtilityApplication",
-        operatingSystem: "All",
-        author: authorPerson(),
-        offers: {
-          "@type": "Offer",
-          price: "0",
-          priceCurrency: "USD",
-        },
-        browserRequirements: "Requires JavaScript",
-        softwareHelp: {
-          "@type": "CreativeWork",
-          url: `${SITE_URL}/learn`,
-        },
-        ...(dateModified && { dateModified }),
+        "@graph": [
+          {
+            "@type": "WebApplication",
+            "@id": `${url}#webapp`,
+            ...sharedAppFields,
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": `${url}#softwareapp`,
+            ...sharedAppFields,
+          },
+        ],
       }}
+    />
+  );
+}
+
+/**
+ * Slug-driven convenience wrapper.
+ *
+ * Reads the tool's title/description from the central `tools` registry in
+ * `lib/config.ts` and emits the WebApplication + SoftwareApplication graph.
+ * Use this on any tool route to guarantee schema fields stay in sync with
+ * the registry — no per-page copy-paste of name/description strings.
+ *
+ * Usage: `<ToolSchema slug="bold-text-generator" />`
+ */
+export function ToolSchema({
+  slug,
+  dateModified,
+}: {
+  slug: string;
+  dateModified?: string;
+}) {
+  const tool = getToolBySlug(slug);
+  if (!tool) return null;
+  const url = buildUrl(slug === "" ? "/" : `/${slug}`);
+  return (
+    <WebAppSchema
+      name={tool.title}
+      description={tool.description}
+      url={url}
+      dateModified={dateModified}
     />
   );
 }

@@ -8,26 +8,29 @@ interface AnswerBlockProps {
 export default function AnswerBlock({ what, who, bottomLine, lastUpdated }: AnswerBlockProps) {
   return (
     <section
-      aria-label="Quick Answer"
+      aria-labelledby="quick-answer-heading"
       className="answer-block border-l-4 border-blue-600 bg-neutral-900/50 rounded-r-lg p-5 mb-6"
     >
+      <h2 id="quick-answer-heading" className="sr-only">
+        Quick Answer
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-3">
         <div>
-          <span className="block text-xs font-semibold uppercase tracking-widest text-neutral-500 mb-1">
+          <h3 className="block text-xs font-semibold uppercase tracking-widest text-neutral-500 mb-1">
             What is this?
-          </span>
+          </h3>
           <p className="text-sm leading-relaxed text-neutral-300 m-0">{what}</p>
         </div>
         <div>
-          <span className="block text-xs font-semibold uppercase tracking-widest text-neutral-500 mb-1">
+          <h3 className="block text-xs font-semibold uppercase tracking-widest text-neutral-500 mb-1">
             Who needs it?
-          </span>
+          </h3>
           <p className="text-sm leading-relaxed text-neutral-300 m-0">{who}</p>
         </div>
         <div>
-          <span className="block text-xs font-semibold uppercase tracking-widest text-neutral-500 mb-1">
+          <h3 className="block text-xs font-semibold uppercase tracking-widest text-neutral-500 mb-1">
             Bottom line
-          </span>
+          </h3>
           <p className="text-sm leading-relaxed text-neutral-300 m-0">{bottomLine}</p>
         </div>
       </div>

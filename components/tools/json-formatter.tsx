@@ -582,14 +582,15 @@ export function JsonFormatterTool() {
           </div>
           <div className="p-3">
             {viewMode === "formatted" ? (
-              <pre
+              <output
+                aria-live="polite"
                 className={cx(
-                  "whitespace-pre-wrap break-words text-sm leading-6 font-mono max-h-[500px] overflow-y-auto",
+                  "block whitespace-pre-wrap break-words text-sm leading-6 font-mono max-h-[500px] overflow-y-auto",
                   isDark ? "text-neutral-200" : "text-neutral-700"
                 )}
               >
                 {result.formatted}
-              </pre>
+              </output>
             ) : (
               <div className="max-h-[500px] overflow-y-auto">
                 <TreeNode value={result.data} depth={0} />

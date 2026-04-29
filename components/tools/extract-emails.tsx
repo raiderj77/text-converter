@@ -148,9 +148,9 @@ More contacts: info@startup.io, hello@world.co.uk, admin@test-domain.net`);
               </button>
             </div>
           </div>
-          <pre className={cx("w-full rounded-lg border px-3 py-2 text-sm font-mono overflow-x-auto whitespace-pre", inputBase)}>
+          <output aria-live="polite" className={cx("block w-full rounded-lg border px-3 py-2 text-sm font-mono overflow-x-auto whitespace-pre", inputBase)}>
             {newlineSeparated}
-          </pre>
+          </output>
         </div>
       )}
 

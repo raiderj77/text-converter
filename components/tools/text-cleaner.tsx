@@ -235,6 +235,7 @@ export function TextCleanerTool() {
             value={text}
             onChange={(e) => setText(e.target.value)}
             rows={6}
+            aria-label="Input text to clean"
             placeholder={"Paste text with extra   spaces,\n\n\n\nmultiple blank lines,\n\tor tabs here…"}
             className={cx(
               "w-full resize-y rounded-2xl border px-3 py-2 text-sm leading-6 outline-none font-mono",
@@ -374,7 +375,7 @@ export function TextCleanerTool() {
             isDark ? "border-white/10" : "border-black/5"
           )}
         >
-          <div className="text-sm font-semibold">Cleaned Output</div>
+          <h3 id="text-cleaner-output-heading" className="text-sm font-semibold">Cleaned Output</h3>
           <div className="flex items-center gap-2">
             <button
               type="button"
@@ -403,14 +404,16 @@ export function TextCleanerTool() {
           </div>
         </div>
         <div className="p-3">
-          <pre
+          <output
+            aria-live="polite"
+            aria-labelledby="text-cleaner-output-heading"
             className={cx(
-              "whitespace-pre-wrap break-words text-sm leading-6 font-mono min-h-[96px]",
+              "block whitespace-pre-wrap break-words text-sm leading-6 font-mono min-h-[96px]",
               isDark ? "text-neutral-200" : "text-neutral-700"
             )}
           >
             {cleaned || "\u00A0"}
-          </pre>
+          </output>
         </div>
       </div>
 

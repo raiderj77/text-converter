@@ -255,9 +255,9 @@ export function LineCounterTool() {
                   {copied === "numbered" ? "Copied!" : "Copy"}
                 </button>
               </div>
-              <pre className={cx("w-full rounded-lg border px-3 py-2 text-sm font-mono overflow-x-auto whitespace-pre", inputBase)}>
+              <output aria-live="polite" className={cx("block w-full rounded-lg border px-3 py-2 text-sm font-mono overflow-x-auto whitespace-pre", inputBase)}>
                 {numberedOutput}
-              </pre>
+              </output>
             </div>
           )}
 

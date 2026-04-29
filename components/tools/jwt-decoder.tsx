@@ -243,9 +243,9 @@ export function JwtDecoderTool() {
                 {copied === "header" ? "Copied!" : "Copy Header"}
               </button>
             </div>
-            <pre className={cx("rounded-lg border p-3 text-sm font-mono overflow-x-auto whitespace-pre-wrap break-all", isDark ? "bg-neutral-950 border-white/10" : "bg-neutral-50 border-black/10")}>
+            <output aria-live="polite" className={cx("block rounded-lg border p-3 text-sm font-mono overflow-x-auto whitespace-pre-wrap break-all", isDark ? "bg-neutral-950 border-white/10" : "bg-neutral-50 border-black/10")}>
               {decoded.headerRaw}
-            </pre>
+            </output>
           </div>
 
           {/* Payload */}
@@ -259,9 +259,9 @@ export function JwtDecoderTool() {
                 {copied === "payload" ? "Copied!" : "Copy Payload"}
               </button>
             </div>
-            <pre className={cx("rounded-lg border p-3 text-sm font-mono overflow-x-auto whitespace-pre-wrap break-all", isDark ? "bg-neutral-950 border-white/10" : "bg-neutral-50 border-black/10")}>
+            <output aria-live="polite" className={cx("block rounded-lg border p-3 text-sm font-mono overflow-x-auto whitespace-pre-wrap break-all", isDark ? "bg-neutral-950 border-white/10" : "bg-neutral-50 border-black/10")}>
               {decoded.payloadRaw}
-            </pre>
+            </output>
           </div>
 
           {/* Copy Full Decoded */}

@@ -173,10 +173,11 @@ export function BoldTextGeneratorTool() {
               </button>
             )}
           </div>
-          <div
+          <output
+            htmlFor="bold-input"
             aria-live="polite"
             className={cx(
-              "w-full rounded-lg border px-3 py-2 text-sm whitespace-pre-wrap break-words overflow-auto",
+              "block w-full rounded-lg border px-3 py-2 text-sm whitespace-pre-wrap break-words overflow-auto",
               inputBase
             )}
             style={{ minHeight: "100px" }}
@@ -186,7 +187,7 @@ export function BoldTextGeneratorTool() {
                 Bold serif output appears here...
               </span>
             )}
-          </div>
+          </output>
           <div className={cx("mt-2 text-xs", muted)}>
             Mathematical Bold &middot; Works on social media, bios &amp; more
           </div>
@@ -206,10 +207,11 @@ export function BoldTextGeneratorTool() {
               </button>
             )}
           </div>
-          <div
+          <output
+            htmlFor="bold-input"
             aria-live="polite"
             className={cx(
-              "w-full rounded-lg border px-3 py-2 text-sm whitespace-pre-wrap break-words overflow-auto",
+              "block w-full rounded-lg border px-3 py-2 text-sm whitespace-pre-wrap break-words overflow-auto",
               inputBase
             )}
             style={{ minHeight: "100px" }}
@@ -219,7 +221,7 @@ export function BoldTextGeneratorTool() {
                 Bold sans-serif output appears here...
               </span>
             )}
-          </div>
+          </output>
           <div className={cx("mt-2 text-xs", muted)}>
             Sans-Serif Bold &middot; Cleaner look for modern platforms
           </div>

@@ -323,9 +323,9 @@ export function HtmlToMarkdownTool() {
               {copied === "output" ? "Copied!" : "Copy"}
             </button>
           </div>
-          <pre className={cx("rounded-lg border p-3 text-xs font-mono overflow-x-auto whitespace-pre-wrap", isDark ? "border-white/5 bg-neutral-950" : "border-black/5 bg-neutral-50")}>
+          <output aria-live="polite" className={cx("block rounded-lg border p-3 text-xs font-mono overflow-x-auto whitespace-pre-wrap", isDark ? "border-white/5 bg-neutral-950" : "border-black/5 bg-neutral-50")}>
             {output}
-          </pre>
+          </output>
         </div>
       )}
 

@@ -178,9 +178,9 @@ paragraph for testing.`);
               {copied === "output" ? "Copied!" : "Copy"}
             </button>
           </div>
-          <pre className={cx("w-full rounded-lg border px-3 py-2 text-sm font-mono overflow-x-auto whitespace-pre-wrap", inputBase)}>
+          <output aria-live="polite" className={cx("block w-full rounded-lg border px-3 py-2 text-sm font-mono overflow-x-auto whitespace-pre-wrap", inputBase)}>
             {output}
-          </pre>
+          </output>
           <div className={cx("mt-2 text-xs", muted)}>
             {output.length} character{output.length !== 1 ? "s" : ""}
           </div>
