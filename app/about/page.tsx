@@ -6,12 +6,12 @@ import { BreadcrumbSchema } from "@/components/seo/schema";
 export const metadata: Metadata = {
   title: "About — Your Friendly Developer",
   description:
-    "The real story behind FlipMyCase. Built by Jason Ramirez, a self-taught developer and CADC-II counselor from Prunedale, California.",
+    "The real story behind FlipMyCase — built by an experienced web developer and CADC-II counselor with over a decade of self-taught development.",
   alternates: { canonical: `${SITE_URL}/about` },
   openGraph: {
     title: "About — Your Friendly Developer",
     description:
-      "The real story behind FlipMyCase. Built by Jason Ramirez, a self-taught developer and CADC-II counselor from Prunedale, California.",
+      "The real story behind FlipMyCase — built by an experienced web developer and CADC-II counselor with over a decade of self-taught development.",
     url: `${SITE_URL}/about`,
     type: "website",
   },
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Jason Ramirez",
+  name: "Your Friendly Developer",
   jobTitle: "Web Developer, CADC-II Counselor",
   worksFor: {
     "@type": "Organization",
@@ -48,7 +48,7 @@ export default function AboutPage() {
         </h1>
 
         <div className="mt-6 text-sm text-neutral-300 space-y-4">
-          <p>Hi. I'm Jason Ramirez. This is why I built this.</p>
+          <p>This is why I built this.</p>
 
           <p>
             I'm not going to pretend this started with a vision board or a business plan. It started
@@ -151,7 +151,7 @@ export default function AboutPage() {
         </section>
 
         <p className="mt-10 text-sm text-neutral-400 border-t border-neutral-700 pt-6">
-          Jason Ramirez / Your Friendly Developer LLC / Prunedale, California
+          Your Friendly Developer LLC / Prunedale, California
         </p>
 
         <p className="mt-6 text-xs text-neutral-500">
