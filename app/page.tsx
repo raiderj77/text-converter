@@ -80,7 +80,7 @@ export default function HomePage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Text Case Converter
         </h1>
-        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: April 7, 2026</p>
+        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: May 7, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           FlipMyCase is a free online text converter with 73+ text transformation tools including case converters, text cleaners, encoders, generators, and formatters. Select any tool below to transform your text instantly — no signup required.
         </p>
