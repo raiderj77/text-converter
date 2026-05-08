@@ -291,9 +291,6 @@ export function OrganizationSchema() {
         url: SITE_URL,
         description:
           "Free browser-based text tools for developers and writers. No signup, no limits.",
-        sameAs: [
-          "https://github.com/raiderj77/text-converter",
-        ],
       }}
     />
   );
