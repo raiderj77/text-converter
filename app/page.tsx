@@ -224,9 +224,18 @@ export default function HomePage() {
               All processing happens entirely client-side using JavaScript — nothing is sent to a
               server. The tool supports 9 case formats simultaneously and displays all outputs at
               once so you can copy whichever format you need. Conversions are instantaneous
-              regardless of text length. Developers spend an average of 23% of their coding time
-              on naming conventions and formatting tasks, making a fast browser-based tool a
-              practical time-saver.
+              regardless of text length. According to{" "}
+              <a
+                href="https://stripe.com/files/reports/the-developer-coefficient.pdf"
+                target="_blank"
+                rel="noopener"
+                className="text-blue-400 hover:text-blue-300 transition-colors"
+              >
+                Stripe&apos;s Developer Coefficient Report
+              </a>
+              , engineers spend up to 42% of their time maintaining unclear or &ldquo;bad&rdquo;
+              code instead of building new features — making a fast browser-based formatting tool
+              a practical time-saver.
             </p>
           </div>
         </section>
@@ -261,10 +270,9 @@ export default function HomePage() {
             <p>
               Software developers use it to rename variables, database columns, and API fields when
               switching between languages with different naming conventions. Content writers use Title
-              Case for headlines and Sentence case for body copy — title case formatting increases
-              email subject line open rates by up to 35% compared to sentence case, according to
-              email marketing studies. Students and social media users use alternating case and other
-              stylistic formats for emphasis or humor in posts.
+              Case for headlines, document titles, and formal headings where capitalization
+              conventions signal professionalism and readability. Students and social media users use
+              alternating case and other stylistic formats for emphasis or humor in posts.
             </p>
           </div>
         </section>
