@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Roman Numerals Converter — Convert Numbers to Roman Numerals Online"
 description: "Convert numbers to Roman numerals instantly. Complete Roman numeral chart, rules, common uses on clocks and Super Bowl, and mistakes to avoid."
 date: "2026-03-31"

@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "XML Formatter — How to Format, Validate, and Beautify XML Online"
 description: "Format messy XML into readable, properly indented markup. Free online XML beautifier with validation, minification, and syntax highlighting. No signup required."
 date: "2026-03-16"

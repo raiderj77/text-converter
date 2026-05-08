@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Subscript Generator — How to Create Subscript Text Online"
 description: "Generate subscript Unicode text for chemical formulas, math notation, and footnotes. Free online tool creates subscript numbers and available letters. Copy and paste anywhere."
 date: "2026-03-17"

@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "How to Clean and Format Text Online — Remove Extra Spaces, Line Breaks, and More"
 description: "Clean messy text instantly. Remove extra spaces, blank lines, duplicate whitespace, HTML tags, and special characters. Free online text cleaner tool."
 date: "2025-02-05"

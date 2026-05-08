@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Password Generator — Strong Passwords, Passphrases, and PINs (Free Tool)"
 description: "Generate strong random passwords, memorable passphrases, and secure PINs. See crack time estimates and entropy. Free tool, no signup, runs in your browser."
 date: "2025-02-18"

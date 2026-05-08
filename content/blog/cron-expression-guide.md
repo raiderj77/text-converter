@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Cron Expression Builder — How to Write and Test Cron Schedules Online"
 description: "Build and test cron expressions with a visual editor. Free tool shows next run times in plain English. Covers cron syntax for Linux, AWS, and Kubernetes."
 date: "2026-03-16"

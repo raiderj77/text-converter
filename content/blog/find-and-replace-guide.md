@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Find and Replace — How to Search and Replace Text Online"
 description: "Find and replace text instantly with literal or regex matching. Free online tool with case sensitivity, whole-word matching, and multi-line support. No signup required."
 date: "2026-03-16"

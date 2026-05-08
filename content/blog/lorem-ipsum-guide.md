@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Lorem Ipsum Generator — Free Placeholder Text for Designers and Developers"
 description: "Generate lorem ipsum placeholder text by paragraphs, sentences, or words. Free tool for mockups, wireframes, and layout testing."
 date: "2025-02-08"

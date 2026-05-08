@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "How to Convert Text to Snake_case and Kebab-case: Complete Naming Convention Guide"
 description: "Learn how to convert text to snake_case and kebab-case formats. Step-by-step guide with online tools, code examples, and best practices for programming, URLs, and file naming."
 date: "2026-02-27"

@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Color Code Converter — Convert Between HEX, RGB, HSL, and More Online"
 description: "Convert color codes between HEX, RGB, HSL, and other formats instantly. Free online tool for designers and developers. Preview colors and copy code-ready values."
 date: "2026-03-16"

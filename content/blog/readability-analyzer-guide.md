@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Readability Analyzer — How to Check Reading Level and Text Complexity Online"
 description: "Analyze text readability with Flesch-Kincaid, Gunning Fog, and Coleman-Liau scores. Free online tool shows reading grade level, sentence length, and syllable counts."
 date: "2026-03-16"

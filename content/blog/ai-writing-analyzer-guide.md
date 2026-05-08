@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "AI Writing Analyzer — How to Detect AI-Generated Text Online"
 description: "Analyze text for signs of AI generation. Free online tool checks writing patterns, sentence structure, and vocabulary distribution to estimate whether text was human or AI written."
 date: "2026-03-16"

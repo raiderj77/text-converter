@@ -29,13 +29,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: tool.slug === "" ? 1.0 : 0.9,
     }));
 
-  // Blog posts
-  const blogPosts: MetadataRoute.Sitemap = getAllMarkdownPosts().map((post) => ({
-    url: `${SITE_URL}/blog/${post.slug}`,
-    lastModified: new Date(post.date),
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
-  }));
+  // Blog posts — exclude noindexed posts (tool duplicates)
+  const blogPosts: MetadataRoute.Sitemap = getAllMarkdownPosts()
+    .filter((post) => !post.noindex)
+    .map((post) => ({
+      url: `${SITE_URL}/blog/${post.slug}`,
+      lastModified: new Date(post.date),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    }));
 
   // Blog index
   const blogIndex: MetadataRoute.Sitemap = [

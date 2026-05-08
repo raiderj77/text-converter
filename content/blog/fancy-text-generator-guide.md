@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Fancy Text Generator — How to Create Styled Unicode Text Online"
 description: "Generate bold, italic, script, gothic, bubble, and 12+ other Unicode text styles. Free online tool for social media bios, posts, and usernames. No signup required."
 date: "2026-03-17"

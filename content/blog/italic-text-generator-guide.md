@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Italic Text Generator — How to Create Italic Unicode Text Online"
 description: "Generate italic Unicode text you can copy and paste into social media bios, posts, and messages. Free online tool creates italic serif and sans-serif styles."
 date: "2026-03-17"

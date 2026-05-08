@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "How to Convert Text to Lowercase Online (Free Tool + Guide)"
 description: "Convert any text to lowercase instantly. Free online tool, no signup. Learn when to use lowercase, keyboard shortcuts, and how to normalize text data."
 date: "2025-01-20"

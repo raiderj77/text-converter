@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Upside Down Text Generator — Flip Text Online"
 description: "Generate upside down text online. Flipped Unicode characters copy and paste into Instagram, Discord, and TikTok bios. No font install needed."
 date: "2026-03-31"

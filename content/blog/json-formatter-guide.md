@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "JSON Formatter and Validator — Pretty Print, Minify, and Fix JSON Online"
 description: "Format, validate, minify, and fix JSON online. Free tool with syntax highlighting, error detection, tree view, and path copying. No signup required."
 date: "2025-02-14"

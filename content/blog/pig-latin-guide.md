@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Pig Latin Translator — How to Convert Text to Pig Latin Online"
 description: "Convert English text to Pig Latin and back instantly. Free online tool preserves punctuation and capitalization. Perfect for word games and language education."
 date: "2026-03-17"

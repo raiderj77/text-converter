@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Unicode Lookup — How to Search and Find Unicode Characters Online"
 description: "Search for Unicode characters by name, code point, or category. Free online tool for finding special characters, symbols, emojis, and diacritics. No signup required."
 date: "2026-03-17"

@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Base64, URL, and HTML Encoder/Decoder — Free Online String Encoding Tool"
 description: "Encode and decode strings in Base64, URL encoding, and HTML entities. Free online tool for developers. No signup, runs in your browser."
 date: "2025-02-12"

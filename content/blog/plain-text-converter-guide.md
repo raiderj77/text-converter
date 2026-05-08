@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Plain Text Converter — How to Convert Rich Text to Plain Text Online"
 description: "Strip all formatting from text instantly — remove bold, italic, links, fonts, and styles. Free online tool converts rich text, HTML, and Word content to clean plain text."
 date: "2026-03-16"

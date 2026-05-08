@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Number Base Converter — Convert Between Binary, Octal, Decimal, and Hex Online"
 description: "Convert numbers between binary, octal, decimal, and hexadecimal instantly. Free online base converter for developers and students. No signup required."
 date: "2026-03-16"

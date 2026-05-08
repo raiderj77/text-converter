@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Slug Generator — How to Create URL-Friendly Slugs Online"
 description: "Generate clean URL slugs from titles and text instantly. Free online tool converts spaces, special characters, and diacritics to SEO-friendly kebab-case URLs. No signup."
 date: "2026-03-16"

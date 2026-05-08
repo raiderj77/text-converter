@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Morse Code Translator — Convert Text to Morse Code Online"
 description: "Instantly translate text to Morse code and decode Morse code back to text. Learn the history, rules, and modern uses of this classic communication system."
 date: "2026-04-01"

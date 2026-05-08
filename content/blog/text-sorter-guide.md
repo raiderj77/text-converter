@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Text Sorter — How to Sort Lines Alphabetically Online"
 description: "Sort text lines alphabetically, numerically, by length, or in reverse order. Free online tool with case-insensitive sorting and duplicate removal. No signup required."
 date: "2026-03-16"

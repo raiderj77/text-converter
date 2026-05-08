@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "YAML Formatter and Validator — Format, Validate, and Fix YAML Online"
 description: "Format, validate, and fix YAML online. Free tool with syntax highlighting, error detection, and JSON conversion. Perfect for Kubernetes, Docker, and CI/CD configs."
 date: "2026-03-16"

@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Binary Text Converter — Encode and Decode Text to Binary Online"
 description: "Convert text to binary and binary back to text instantly. Free online tool shows the 8-bit binary representation of every character. No signup required."
 date: "2026-03-16"

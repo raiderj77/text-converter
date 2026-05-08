@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "NATO Phonetic Alphabet — How to Spell Words Using Alpha Bravo Charlie"
 description: "Convert text to NATO phonetic alphabet instantly. Free online tool translates letters to Alpha, Bravo, Charlie code words. Perfect for phone calls and radio communication."
 date: "2026-03-17"

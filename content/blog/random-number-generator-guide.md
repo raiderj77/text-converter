@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Random Number Generator — How to Generate Random Numbers Online"
 description: "Generate random numbers, integers, decimals, and sequences instantly. Free online tool with custom ranges, multiple outputs, and cryptographic randomness. No signup."
 date: "2026-03-16"

@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Smart Quotes Converter — How to Convert Curly Quotes to Straight Quotes Online"
 description: "Convert smart (curly) quotes to straight quotes and vice versa. Free online tool fixes typographic quotes from Word, Google Docs, and macOS. No signup required."
 date: "2026-03-17"

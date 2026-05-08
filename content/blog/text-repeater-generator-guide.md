@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Text Repeater Generator — Repeat Text Online"
 description: "Repeat any text online instantly. Generate repeated words, sentences, or characters with custom separators. Copy and paste for social media or testing."
 date: "2026-03-31"

@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Small Caps Generator — How to Create Small Capital Text Online"
 description: "Generate small caps Unicode text you can copy and paste anywhere. Free online tool converts lowercase to small capital letters for typography and design."
 date: "2026-03-17"

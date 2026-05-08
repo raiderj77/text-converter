@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Strikethrough Text Generator — How to Create Crossed-Out Text Online"
 description: "Generate strikethrough Unicode text you can copy and paste anywhere. Free online tool creates crossed-out text for social media, messaging, and creative emphasis."
 date: "2026-03-17"

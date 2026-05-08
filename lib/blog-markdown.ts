@@ -12,6 +12,7 @@ export interface MarkdownPost {
   description: string;
   keywords: string[];
   toolSlug?: string;
+  noindex?: boolean;
   faq: { question: string; answer: string }[];
   related: string[];
   excerpt: string;
@@ -60,6 +61,7 @@ export function getAllMarkdownPosts(): MarkdownPost[] {
       description: (data.description as string) || "",
       keywords: parseKeywords(data.keywords),
       toolSlug: data.toolSlug as string | undefined,
+      noindex: data.noindex === true,
       faq: (data.faq as { question: string; answer: string }[]) || [],
       related: (data.related as string[]) || [],
       excerpt: getExcerpt(content, (data.description as string) || ""),
@@ -110,6 +112,7 @@ export async function getMarkdownPost(
     description: (data.description as string) || "",
     keywords: parseKeywords(data.keywords),
     toolSlug: data.toolSlug as string | undefined,
+    noindex: data.noindex === true,
     faq: (data.faq as { question: string; answer: string }[]) || [],
     related: (data.related as string[]) || [],
     excerpt: getExcerpt(content, (data.description as string) || ""),

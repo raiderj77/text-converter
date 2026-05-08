@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "JavaScript Formatter — How to Format and Beautify JS Code Online"
 description: "Format messy JavaScript into readable, properly indented code. Free online JS beautifier with minification, syntax highlighting, and ES6+ support. No signup required."
 date: "2026-03-16"

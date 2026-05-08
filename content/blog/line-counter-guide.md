@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Line Counter — How to Count Lines in Text Online"
 description: "Count total lines, non-empty lines, and blank lines in any text instantly. Free online tool for developers, writers, and data analysts. No signup required."
 date: "2026-03-17"

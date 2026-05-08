@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "JWT Decoder — How to Decode and Inspect JSON Web Tokens Online"
 description: "Decode JWT tokens to inspect headers, payloads, and claims. Free online tool for debugging authentication, checking expiration, and verifying token structure."
 date: "2026-03-16"

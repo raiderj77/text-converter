@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "List to Text — How to Convert Bullet Points to Paragraphs Online"
 description: "Convert bullet lists, numbered lists, and HTML lists to flowing paragraph text instantly. Free online tool removes list formatting and joins items. No signup required."
 date: "2026-03-17"

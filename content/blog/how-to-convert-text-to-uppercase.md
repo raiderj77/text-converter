@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "How to Convert Text to Uppercase: Quick & Easy Methods"
 description: "Learn how to convert text to UPPERCASE online, in software, and with code. Perfect for headings, emphasis, and programming needs."
 date: "2026-02-25"

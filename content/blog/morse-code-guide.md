@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Morse Code Translator — How to Convert Text to Morse Code Online"
 description: "Translate text to Morse code and Morse code back to text instantly. Free online tool with audio playback and visual dots-and-dashes output. No signup required."
 date: "2026-03-17"

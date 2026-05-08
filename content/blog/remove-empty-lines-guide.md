@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Remove Empty Lines — How to Delete Blank Lines from Text Online"
 description: "Remove blank and empty lines from text instantly. Free online tool strips extra whitespace lines from code, data, and documents. No signup required."
 date: "2026-03-17"

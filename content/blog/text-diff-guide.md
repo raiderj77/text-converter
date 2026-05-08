@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "How to Compare Two Texts and Find Differences Online (Free Diff Tool)"
 description: "Compare two texts side by side and find every difference. Free online diff tool with word-level highlighting, inline view, and navigation. No signup."
 date: "2025-02-16"

@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Hash Generator — How to Generate MD5, SHA-256, SHA-512 Hashes and Verify File Checksums Online"
 date: "2025-02-14"
 summary: "Learn how to generate MD5, SHA-1, SHA-256, SHA-384, and SHA-512 hashes from text or files. Verify download integrity with checksums, generate HMAC signatures, and compare hashes — all in your browser."

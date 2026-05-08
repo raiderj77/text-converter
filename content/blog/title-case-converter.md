@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Title Case Converter — Rules, Examples, and Free Online Tool"
 description: "Convert text to Title Case with correct capitalization rules. Free online tool handles articles, prepositions, and conjunctions automatically."
 date: "2025-01-25"

@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Free Word Counter — Count Words, Characters, Sentences, and Reading Time"
 description: "Count words, characters, sentences, paragraphs, and estimated reading time instantly. Free online tool for writers, students, and marketers."
 date: "2025-02-01"

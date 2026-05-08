@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Upside Down Text Generator — How to Flip Text Upside Down Online"
 description: "Flip text upside down using Unicode characters. Free online tool creates inverted text you can copy and paste into social media, messages, and bios."
 date: "2026-03-17"

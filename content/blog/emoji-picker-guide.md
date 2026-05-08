@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Emoji Picker — How to Search, Browse, and Copy Emojis Online"
 description: "Find and copy any emoji instantly. Free online emoji picker with search by name, category browsing, and Unicode code point display. No signup required."
 date: "2026-03-17"

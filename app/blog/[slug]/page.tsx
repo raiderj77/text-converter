@@ -24,7 +24,9 @@ export async function generateMetadata(props: { params: ParamsPromise }) {
     title: post.title,
     description: post.description || undefined,
     keywords: post.keywords.length ? post.keywords : undefined,
-    robots: { index: true, follow: true, googleBot: { "max-snippet": -1 } },
+    robots: post.noindex
+      ? { index: false, follow: true }
+      : { index: true, follow: true, googleBot: { "max-snippet": -1 } },
     alternates: {
       canonical: `${SITE_URL}/blog/${post.slug}`,
     },

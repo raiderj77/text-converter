@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "QR Code Generator — How to Create QR Codes Online for Free"
 description: "Generate QR codes for URLs, text, WiFi, and contact cards instantly. Free online tool with customizable size and download options. No signup required."
 date: "2026-03-16"

@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Superscript Generator — How to Create Superscript Text Online"
 description: "Generate superscript Unicode text for math notation, footnotes, and ordinal indicators. Free online tool creates superscript numbers and letters. Copy and paste anywhere."
 date: "2026-03-17"

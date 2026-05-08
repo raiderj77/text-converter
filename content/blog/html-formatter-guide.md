@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "HTML Formatter — How to Format and Beautify HTML Code Online"
 description: "Format messy HTML into readable, properly indented markup. Free online HTML beautifier with tag validation, minification, and attribute sorting. No signup required."
 date: "2026-03-16"

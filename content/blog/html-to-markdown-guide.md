@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "HTML to Markdown Converter — How to Convert HTML to Markdown Online"
 description: "Convert HTML to clean Markdown instantly. Free online tool handles headings, links, images, lists, tables, and code blocks. Perfect for CMS migration and documentation."
 date: "2026-03-16"

@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Add Line Numbers — How to Number Lines of Text Online"
 description: "Add line numbers to any text instantly. Free online tool with customizable start number, padding, and separator. Perfect for code, documentation, and legal text."
 date: "2026-03-17"

@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "SQL Formatter — How to Format and Beautify SQL Queries Online"
 description: "Format messy SQL into readable, properly indented queries. Free online SQL beautifier with keyword uppercasing, indentation control, and minification."
 date: "2026-03-16"

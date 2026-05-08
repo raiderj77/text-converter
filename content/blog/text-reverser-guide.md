@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Text Reverser — How to Reverse Text, Words, and Lines Online"
 description: "Reverse text character by character, word by word, or line by line. Free online tool for palindromes, coding challenges, and creative writing. No signup required."
 date: "2026-03-17"

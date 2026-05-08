@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Extract Emails — How to Pull Email Addresses from Text Online"
 description: "Extract all email addresses from any text instantly. Free online tool finds emails in documents, web pages, log files, and messy data. No signup required."
 date: "2026-03-16"

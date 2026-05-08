@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "How to Remove Duplicate Lines from Text Online (Free Tool)"
 description: "Remove duplicate lines from text, CSV data, lists, and log files instantly. Free online tool with case-sensitive and trimming options."
 date: "2025-02-10"

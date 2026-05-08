@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "CSS Formatter and Beautifier — Format, Minify, and Clean CSS Online"
 description: "Format messy CSS into readable, properly indented stylesheets. Free online CSS beautifier with minification, property sorting, and syntax validation."
 date: "2026-03-16"

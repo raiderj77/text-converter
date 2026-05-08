@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Toggle Case Converter — How to Create aLtErNaTiNg CaSe Text Online"
 description: "Convert text to alternating case (tOgGlE cAsE) instantly. Free online tool for mocking text memes, sarcastic emphasis, and creative formatting. No signup required."
 date: "2026-03-17"

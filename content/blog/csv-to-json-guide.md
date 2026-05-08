@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "CSV to JSON Converter — How to Convert CSV Data to JSON Online"
 description: "Convert CSV files and spreadsheet data to JSON instantly. Free online tool with header detection, nested object support, and array output. No signup required."
 date: "2026-03-16"

@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Strikethrough Text Generator — Copy & Paste Strikethrough Online"
 description: "Generate Unicode strikethrough text for Instagram, Discord, and TikTok. Cross-out text works anywhere you paste. No app needed — copy and paste instantly."
 date: "2026-03-31"

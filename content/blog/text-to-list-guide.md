@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Text to List — How to Convert Paragraphs to Bullet Points Online"
 description: "Convert text paragraphs to bullet points, numbered lists, HTML lists, or Markdown lists instantly. Free online tool for formatting content. No signup required."
 date: "2026-03-17"

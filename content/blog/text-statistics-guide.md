@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Text Statistics — How to Analyze Character, Word, and Sentence Metrics Online"
 description: "Get detailed text statistics including character count, word count, sentence count, average word length, and vocabulary richness. Free online text analysis tool."
 date: "2026-03-16"

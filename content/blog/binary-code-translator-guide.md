@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Binary Code Translator — Convert Text to Binary Online"
 description: "Convert text to binary code and decode binary to text online. Learn ASCII encoding, read binary patterns, and solve binary puzzles instantly."
 date: "2026-04-01"

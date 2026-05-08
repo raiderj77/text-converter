@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Remove HTML Tags — How to Strip HTML from Text Online"
 description: "Remove all HTML tags from text instantly, leaving only the plain text content. Free online tool for cleaning HTML markup from web content, emails, and CMS output."
 date: "2026-03-16"

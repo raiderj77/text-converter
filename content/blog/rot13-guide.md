@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "ROT13 Encoder/Decoder — How to Encode and Decode ROT13 Cipher Online"
 description: "Encode and decode ROT13 cipher instantly. Free online tool rotates letters by 13 positions. Used for spoiler hiding, CTF challenges, and basic text obfuscation."
 date: "2026-03-17"

@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Remove Line Breaks — How to Join Lines and Remove Newlines from Text Online"
 description: "Remove line breaks and newlines from text instantly. Free online tool joins broken lines into paragraphs, removes carriage returns, and fixes PDF text. No signup required."
 date: "2026-03-17"

@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Hex Text Converter — Encode and Decode Text to Hexadecimal Online"
 description: "Convert text to hexadecimal and hex back to text instantly. Free online tool shows hex encoding of every character. Perfect for debugging and data analysis."
 date: "2026-03-16"

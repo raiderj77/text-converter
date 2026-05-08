@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Wide Text Generator — How to Create Fullwidth Vaporwave Text Online"
 description: "Generate fullwidth (wide/vaporwave) text you can copy and paste into social media, bios, and messages. Free online tool creates aesthetic spaced-out text."
 date: "2026-03-17"

@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Add Prefix and Suffix — How to Prepend or Append Text to Every Line Online"
 description: "Add a prefix, suffix, or both to every line of text instantly. Free online tool for batch text formatting, CSV wrapping, SQL generation, and data preparation."
 date: "2026-03-17"

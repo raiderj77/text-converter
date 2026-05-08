@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "SpongeBob Case Converter — How to Create Mocking Text Online"
 description: "Convert text to sPoNgEbOb mocking case instantly. Free online tool creates the viral sarcasm text from the Mocking SpongeBob meme. Copy and paste anywhere."
 date: "2026-03-17"

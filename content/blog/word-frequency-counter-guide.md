@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Word Frequency Counter — How to Count Word Occurrences in Text Online"
 description: "Count how often each word appears in your text. Free online word frequency analyzer with sorting, filtering, and stop word removal. Perfect for SEO and content analysis."
 date: "2026-03-16"

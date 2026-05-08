@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Text Repeater — How to Repeat Text Multiple Times Online"
 description: "Repeat any text or string multiple times with custom separators. Free online tool for testing, design, data generation, and load testing preparation. No signup."
 date: "2026-03-17"

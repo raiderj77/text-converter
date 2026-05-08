@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "How to Convert Text to Uppercase Online (Free Tool + Guide)"
 description: "Need text in ALL CAPS? Convert any text to uppercase instantly with our free online tool. No signup required. Learn keyboard shortcuts, use cases, and when uppercase beats title case."
 date: "2025-01-15"

@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Underline Text Generator — How to Create Underlined Text Online"
 description: "Generate underlined Unicode text you can copy and paste into social media, bios, and messages. Free online tool uses combining underline characters."
 date: "2026-03-17"

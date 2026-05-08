@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Bubble Text Generator — How to Create Circled Text Online"
 description: "Generate bubble (circled) Unicode text you can copy and paste into social media, bios, and messages. Free online tool creates enclosed letter styles."
 date: "2026-03-17"

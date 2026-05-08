@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Extract URLs — How to Pull All Links from Text Online"
 description: "Extract all URLs and links from any text, HTML, or document instantly. Free online tool finds http, https, and mailto links. No signup required."
 date: "2026-03-16"

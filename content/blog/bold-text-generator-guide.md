@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Bold Text Generator — How to Make Bold Unicode Text for Social Media"
 description: "Generate bold Unicode text you can copy and paste into social media bios, posts, and messages. Free online tool creates bold serif and bold sans-serif styles."
 date: "2026-03-17"

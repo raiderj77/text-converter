@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Bold Italic Text Generator — How to Create Bold Italic Unicode Text Online"
 description: "Generate bold italic Unicode text you can copy and paste into social media bios, posts, and messages. Free online tool creates maximum-emphasis styled text."
 date: "2026-03-17"

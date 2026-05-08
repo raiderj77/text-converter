@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "UUID Generator — How to Generate UUIDs (v4) Online and in Code"
 description: "Generate random UUIDs (v4) instantly. Free online tool plus code examples in JavaScript, Python, and Go. Learn when to use UUIDs vs auto-increment IDs."
 date: "2026-03-16"
