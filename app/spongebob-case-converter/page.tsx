@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL, getToolBySlug, buildUrl } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
@@ -96,7 +96,6 @@ export default function SpongeBobCaseConverterPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           SpongeBob Case Generator — Create Mocking sPoNgEbOb Text
         </h1>
-        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A SpongeBob case converter transforms text into alternating caps (sPoNgEbOb CaSe) for mocking memes and sarcastic social media posts. Paste your text below to create mocking text instantly.
         </p>

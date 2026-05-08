@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { getToolBySlug, buildUrl } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
@@ -94,7 +94,6 @@ export default function ToggleCaseConverterPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Toggle Case Converter: Alternating Caps & SpongeBob Text Generator
         </h1>
-        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A toggle case converter transforms text into alternating uppercase and lowercase letters (tOgGlE cAsE). Paste your text below to create alternating caps text instantly.
         </p>

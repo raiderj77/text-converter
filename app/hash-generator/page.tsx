@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { getToolBySlug, buildUrl, getLiveTools } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
@@ -116,7 +116,6 @@ export default function HashGeneratorPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Hash Generator — MD5, SHA-1, SHA-256, SHA-512 Online
         </h1>
-        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A hash generator creates MD5, SHA-1, SHA-256, and SHA-512 cryptographic hashes from any text or file. Enter your text below and select a hash algorithm to generate the hash instantly.
         </p>

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { getToolBySlug, buildUrl } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
@@ -97,7 +97,6 @@ export default function RandomNumberGeneratorPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Random Number Generator
         </h1>
-        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A random number generator creates random numbers within a custom range with options for bulk generation and no duplicates. Set your range and count below to generate random numbers instantly.
         </p>

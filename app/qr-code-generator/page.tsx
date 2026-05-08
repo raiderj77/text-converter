@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { getToolBySlug, buildUrl } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
@@ -96,7 +96,6 @@ export default function QrCodeGeneratorPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free QR Code Generator
         </h1>
-        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A QR code generator creates scannable QR codes for URLs, text, email, phone numbers, and WiFi networks. Enter your content below and download the QR code as a PNG image.
         </p>

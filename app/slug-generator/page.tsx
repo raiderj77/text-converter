@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { getToolBySlug, buildUrl } from "@/lib/config";
 import { SlugGeneratorTool } from "@/components/tools/slug-generator";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
@@ -38,7 +38,6 @@ export default function SlugGeneratorPage() {
 
       <div className="mx-auto max-w-6xl px-4 py-6">
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">Free URL Slug Generator</h1>
-        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A URL slug generator converts any title or phrase into a clean, SEO-friendly URL slug. Enter your text below to generate a lowercase, hyphenated slug instantly.
         </p>

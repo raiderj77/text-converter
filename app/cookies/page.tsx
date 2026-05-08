@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { ManageCookiePreferences } from "@/components/ui/cookie-consent";
 import { BreadcrumbSchema } from "@/components/seo/schema";
 
@@ -14,7 +14,6 @@ export default function CookiesPage() {
       <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "Cookie Policy", href: "/cookies" }]} />
       <main style={{ maxWidth: 800, margin: "0 auto", padding: 24, lineHeight: 1.6 }}>
         <h1>Cookie Policy</h1>
-        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
 
       <p>
         This Cookie Policy explains how FlipMyCase ("we", "our", or "us") uses cookies and similar tracking technologies when you visit our website.

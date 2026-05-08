@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL } from "@/lib/config";
 import { ArticleSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
@@ -81,7 +81,6 @@ export default function CamelCaseVsSnakeCasePage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           camelCase vs snake_case vs kebab-case: Which to Use
         </h1>
-        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           This guide compares camelCase, snake_case, and kebab-case naming conventions and explains which to use in each programming language. Read on to learn the conventions and try the free converter tool.
         </p>

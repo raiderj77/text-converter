@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { getToolBySlug, buildUrl } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
@@ -95,7 +95,6 @@ export default function AllCapsGuidePage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           All Caps in Writing: When It's Rude vs Necessary
         </h1>
-        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           This guide explains when ALL CAPS text is appropriate in emails, social media, and code, and when it can come across as rude. Read on to learn the etiquette and best practices for uppercase text.
         </p>

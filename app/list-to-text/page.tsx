@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { getToolBySlug, buildUrl } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
@@ -92,7 +92,6 @@ export default function ListToTextPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free List to Text Converter
         </h1>
-        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A list to text converter removes bullets, numbers, and list markers to create flowing paragraph text. Paste your list below to convert it to plain text instantly.
         </p>

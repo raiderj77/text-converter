@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL } from "@/lib/config";
 import { FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
@@ -88,7 +88,6 @@ export default function TextToolsForDevelopersPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Text Tools for Developers
         </h1>
-        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           This page lists free browser-based text tools built for developers, including JSON formatter, regex tester, hash generator, and 20+ more utilities. Browse the tools below and start using them instantly — no signup required.
         </p>

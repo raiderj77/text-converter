@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { getToolBySlug, buildUrl, getLiveTools } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
@@ -116,7 +116,6 @@ export default function TextDiffPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Text Diff — Compare Two Texts Side by Side Online
         </h1>
-        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A text diff tool compares two blocks of text and highlights the differences between them. Paste your original and modified text to see exactly what changed.
         </p>

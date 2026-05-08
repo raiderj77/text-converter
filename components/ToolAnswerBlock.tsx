@@ -15,7 +15,7 @@ interface ToolAnswerBlockProps {
   lastUpdated?: string
 }
 
-export default function ToolAnswerBlock({ slug, lastUpdated = '2026-03-25' }: ToolAnswerBlockProps) {
+export default function ToolAnswerBlock({ slug, lastUpdated = '2026-05-07' }: ToolAnswerBlockProps) {
   const tool = getToolBySlug(slug)
   if (!tool) return null
 

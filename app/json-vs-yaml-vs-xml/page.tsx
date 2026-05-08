@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL } from "@/lib/config";
 import { ArticleSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
@@ -84,7 +84,6 @@ export default function JsonVsYamlVsXmlPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           JSON vs YAML vs XML: Which Format Should You Use?
         </h1>
-        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
 
         <div className="mt-3 rounded-xl border border-white/10 bg-neutral-900 p-4 text-sm text-neutral-300">
           <p>

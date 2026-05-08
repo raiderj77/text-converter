@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { getToolBySlug, buildUrl } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
@@ -96,7 +96,6 @@ export default function ColorCodeConverterPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Color Code Converter
         </h1>
-        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A color code converter transforms colors between HEX, RGB, HSL, and CMYK formats with a WCAG contrast checker. Enter a color value below to convert between formats and check accessibility instantly.
         </p>

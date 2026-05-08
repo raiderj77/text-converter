@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL, getToolsByCategory } from "@/lib/config";
 import { WebAppSchema, BreadcrumbSchema } from "@/components/seo/schema";
@@ -74,7 +74,6 @@ export default function ToolsPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           All Free Text Tools
         </h1>
-        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="mt-2 text-sm text-neutral-300">
           {totalTools} free browser-based tools for developers and writers. No signup, no
           limits — everything runs in your browser.

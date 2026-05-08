@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { getToolBySlug, buildUrl } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
@@ -100,7 +100,6 @@ export default function MarkdownPreviewPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Markdown Preview — Live Editor Online
         </h1>
-        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A Markdown preview editor lets you write Markdown and see a live rendered preview side by side. Type or paste your Markdown below to see it rendered instantly.
         </p>

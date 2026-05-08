@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { getToolBySlug, buildUrl } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
@@ -101,7 +101,6 @@ export default function AiWritingAnalyzerPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           AI Writing Pattern Analyzer
         </h1>
-        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           An AI writing pattern analyzer examines text for statistical patterns common in AI-generated content, including sentence uniformity and vocabulary diversity. Paste your text below to analyze its writing patterns instantly.
         </p>

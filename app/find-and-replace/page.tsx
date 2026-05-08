@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { getToolBySlug, buildUrl, getLiveTools } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
@@ -88,7 +88,6 @@ export default function FindAndReplacePage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Find and Replace Text Online — Free Tool
         </h1>
-        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A find and replace tool searches for text patterns and replaces them with new text, with support for regex and case matching. Enter your text and search pattern below to find and replace matches instantly.
         </p>

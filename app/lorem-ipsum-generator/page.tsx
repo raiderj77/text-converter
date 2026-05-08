@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { getToolBySlug, buildUrl } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
@@ -105,7 +105,6 @@ export default function LoremIpsumPage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Lorem Ipsum Generator
         </h1>
-        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           A Lorem Ipsum generator creates placeholder text for design mockups, wireframes, and development projects. Choose your paragraph count and click generate to get instant dummy text.
         </p>

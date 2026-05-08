@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import type { Metadata } from "next";
 import { getAllMarkdownPosts } from "@/lib/blog-markdown";
 import { getLiveTools, buildUrl } from "@/lib/config";
@@ -38,7 +38,6 @@ export default function BlogIndex() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Guides & Tutorials
         </h1>
-        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 16, 2026</p>
         <p className="mt-2 text-sm text-neutral-300">
           Practical guides for every text tool. Learn when and how to use each
           with real-world examples, keyboard shortcuts, and best practices.
