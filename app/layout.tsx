@@ -21,7 +21,7 @@ import { ThemeProvider } from "@/components/layout/theme-provider";
 import { Nav } from "@/components/layout/nav";
 import { Footer } from "@/components/layout/footer";
 import { OrganizationSchema } from "@/components/seo/schema";
-import { CookieConsent } from "@/components/ui/cookie-consent";
+import ConsentBanner from "@/components/ConsentBanner";
 
 /**
  * Root metadata — applies to every page unless overridden.
@@ -118,35 +118,6 @@ export default async function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="FlipMyCase" />
 
-        {/* Cookiebot CMP — deferred; consent mode v2 defaults above protect GA */}
-        {!gpcHeader && (
-          <Script
-            id="Cookiebot"
-            src="https://consent.cookiebot.com/uc.js"
-            data-cbid="a9a99ccb-4863-4e33-a895-a6d5642f408d"
-            data-blockingmode="auto"
-            strategy="afterInteractive"
-          />
-        )}
-
-        {/* GPC auto-decline script — runs when Cookiebot loads */}
-        {!gpcHeader && (
-          <Script
-            id="gpc-auto-decline"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `
-                window.addEventListener('CookiebotOnLoad', function () {
-                  try {
-                    var gpcActive = !!navigator.globalPrivacyControl || document.cookie.indexOf('empire_gpc=1') !== -1;
-                    if (gpcActive && window.Cookiebot) window.Cookiebot.decline();
-                  } catch(e) {}
-                });
-              `,
-            }}
-          />
-        )}
-
         {/* Preconnect hints for third-party scripts */}
         <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
@@ -199,7 +170,7 @@ if ('serviceWorker' in navigator) {
           <Nav />
           <main id="main-content" className="flex-1">{children}</main>
           <Footer />
-          <CookieConsent />
+          <ConsentBanner />
         </ThemeProvider>
 
         {/* Google Analytics — deferred to after interactive */}

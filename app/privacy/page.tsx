@@ -54,6 +54,25 @@ export default function PrivacyPage() {
         so your session persists after refresh. This data does not leave your device.
       </p>
 
+      <h2>Cookie Consent</h2>
+      <p>
+        When you first visit FlipMyCase, a consent banner asks whether you accept or reject
+        non-essential cookies (analytics and advertising). Your choice is stored in your
+        browser&apos;s local storage under the key <code>flipmycase-consent</code> with a
+        value of <code>accepted</code> or <code>rejected</code>. No consent choice is
+        transmitted to our servers.
+      </p>
+      <p>
+        If your browser sends a Global Privacy Control (GPC) signal, we treat that as a
+        rejection of non-essential cookies automatically — no banner is shown.
+      </p>
+      <p>
+        To revoke or change your consent choice at any time, clear the site data for
+        flipmycase.com in your browser settings (Settings → Privacy → Site Data → remove
+        flipmycase.com), or visit our{" "}
+        <a href="/cookies">Cookie Policy page</a> to reset your preference directly.
+      </p>
+
       <h2>Analytics</h2>
       <p>
         We use Google Analytics to understand aggregate traffic patterns such as page views,

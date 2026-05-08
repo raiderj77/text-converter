@@ -1,5 +1,4 @@
 ﻿import Link from "next/link";
-import { ManageCookiePreferences } from "@/components/ui/cookie-consent";
 import { BreadcrumbSchema } from "@/components/seo/schema";
 
 export const metadata = {
@@ -60,11 +59,17 @@ export default function CookiesPage() {
       </p>
       <ul>
         <li><strong>Browser Settings:</strong> Most web browsers allow you to control cookies through their settings preferences. However, limiting cookies may affect your experience on our site.</li>
-        <li><strong>Cookie Consent Banner:</strong> When you first visit our site, you'll see a cookie consent banner where you can choose which types of cookies to accept.</li>
+        <li><strong>Cookie Consent Banner:</strong> When you first visit our site, you&apos;ll see a consent banner where you can accept all cookies or reject non-essential ones. Your choice is saved in browser local storage under the key <code>flipmycase-consent</code>.</li>
         <li><strong>Opt-Out Tools:</strong> You can opt out of personalized advertising by visiting <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer">YourAdChoices</a> or <a href="https://youradchoices.com/" target="_blank" rel="noopener noreferrer">NAI Consumer Opt-Out</a>.</li>
       </ul>
 
-      <ManageCookiePreferences />
+      <p style={{ marginTop: 16 }}>
+        <strong>Reset your consent choice:</strong> To change your cookie preference,
+        clear site data for flipmycase.com in your browser settings (Settings → Privacy →
+        Site Data → remove flipmycase.com). The consent banner will reappear on your next
+        visit. Alternatively, open browser DevTools → Application → Local Storage →
+        flipmycase.com and delete the <code>flipmycase-consent</code> key.
+      </p>
 
       <h2>Third-party cookies</h2>
       <p>
