@@ -45,6 +45,16 @@ const nextConfig: NextConfig = {
         destination: "/privacy",
         permanent: true,
       },
+      {
+        source: "/blog/2026-04-06-when-to-use-title-case-vs-sentence-case-in-writing",
+        destination: "/blog/when-to-use-title-case-vs-sentence-case-in-writing",
+        permanent: true,
+      },
+      {
+        source: "/blog/2026-04-03-when-to-use-title-case-vs-sentence-case-in-writing",
+        destination: "/blog/when-to-use-title-case-vs-sentence-case-in-writing",
+        permanent: true,
+      },
     ];
   },
   eslint: {
