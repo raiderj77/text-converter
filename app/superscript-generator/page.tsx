@@ -259,8 +259,7 @@ export default function SuperscriptGeneratorPage() {
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
-            FlipMyCase offers a suite of free browser-based text tools. Generate superscript text
-            here, then explore more Unicode and text conversion tools.
+            Exponents and subscript numbers often appear together in the same formula, so the subscript generator is the logical follow-on. The Unicode lookup is worth checking if a specific symbol you need falls outside the standard superscript range.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link

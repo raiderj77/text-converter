@@ -352,8 +352,7 @@ export default function HomePage() {
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
-            FlipMyCase is building a suite of free browser-based text tools. All tools are free,
-            require no signup, and process text entirely in your browser.
+            Most people who convert case also need to clean up extra spaces or check how long the result is. The text cleaner removes spacing artifacts from copy-pasted text, and the word counter shows length, reading time, and keyword density.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link

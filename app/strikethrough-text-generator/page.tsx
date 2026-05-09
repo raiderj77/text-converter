@@ -263,8 +263,7 @@ export default function StrikethroughTextGeneratorPage() {
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
-            FlipMyCase offers a suite of free browser-based text tools. Generate strikethrough text
-            here, then explore other Unicode text effects and formatting tools.
+            Strikethrough gets more visual impact when the struck-out text is bold, making it easier to read while clearly crossed out. The bold text generator and underline text generator cover the other common Unicode emphasis styles.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link

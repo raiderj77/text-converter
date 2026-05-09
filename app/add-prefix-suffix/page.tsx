@@ -38,7 +38,7 @@ const faqItems = [
   {
     question: "How does this prefix/suffix tool work?",
     answer:
-      "Paste your text with one item per line, then type a prefix (text added before each line) and/or a suffix (text added after each line). The output updates live as you type. Empty lines are preserved but not modified. All processing happens in your browser — nothing is sent to a server.",
+      "Paste your text with one item per line, enter your prefix and suffix in the fields, and the output updates with each keystroke. Each non-empty line gets the prefix prepended and the suffix appended. Empty lines pass through unchanged. The tool works entirely inside your browser and does not send your text anywhere.",
   },
   {
     question: "Can I add both a prefix and suffix at the same time?",
@@ -294,8 +294,7 @@ export default function AddPrefixSuffixPage() {
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
-            FlipMyCase offers a suite of free browser-based text tools. Add prefixes and suffixes here,
-            then use other tools for additional text processing.
+            If the list you're wrapping needs sorting or deduplication first, do that before applying the prefix and suffix. The text sorter and duplicate line remover both prepare a clean list that this tool can then process.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link

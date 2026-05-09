@@ -450,8 +450,7 @@ export default function TextToolsForDevelopersPage() {
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
-            Explore our full collection of free browser-based text tools for developers
-            and writers.
+            The JSON formatter, regex tester, and hash generator are the three reached for most often. If you are here because you need to convert between formats, the CSV to JSON, YAML formatter, and XML formatter all live in the Developer category too.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link

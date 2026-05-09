@@ -244,8 +244,7 @@ export default function TextRepeaterPage() {
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
-            Repeat text here, then use our other tools to clean, sort, deduplicate, or generate
-            placeholder content. All tools are free and run in your browser.
+            If the repeated output needs line numbers added or duplicates removed, those are quick follow-up steps. The add-line-numbers and duplicate line remover tools handle both without requiring you to copy to another editor.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link

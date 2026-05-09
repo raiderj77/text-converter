@@ -35,7 +35,7 @@ const faqItems = [
   {
     question: "How does the bold text generator work?",
     answer:
-      "This tool maps regular Latin letters (A-Z, a-z) and digits (0-9) to their Unicode Mathematical Bold or Sans-Serif Bold equivalents. These are real Unicode characters, not HTML formatting, so they work anywhere you can paste text — social media, bios, messages, and more. All processing happens in your browser.",
+      "The tool looks up each character you type in a Unicode mapping table that links standard Latin letters and digits to their Mathematical Bold or Sans-Serif Bold counterparts. The result is a string of real Unicode characters, not styled text, so you can paste it into any app, bio, or message field that accepts Unicode. The entire conversion runs locally in your browser.",
   },
   {
     question: "What is the difference between Serif Bold and Sans-Serif Bold?",
@@ -265,8 +265,7 @@ export default function BoldTextGeneratorPage() {
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
-            FlipMyCase offers a suite of free browser-based text tools. Generate bold text here,
-            then explore other text conversion and formatting tools.
+            If you want to layer bold with strikethrough or italic, each of those styles has its own generator. The fancy text generator shows all 12 Unicode styles side by side if you&apos;re still deciding which one fits the post.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link

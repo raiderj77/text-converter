@@ -266,8 +266,7 @@ export default function ItalicTextGeneratorPage() {
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
-            FlipMyCase offers a suite of free browser-based text tools. Generate italic text here,
-            then explore other tools for case conversion, text formatting, and more.
+            Bold handles strong emphasis while italic suggests a softer stress, and they combine cleanly when you paste both into a social bio field. The bold text and strikethrough text generators cover the other two common Unicode emphasis styles.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link

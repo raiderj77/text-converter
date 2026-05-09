@@ -69,7 +69,7 @@ const faqItems = [
   {
     question: "Is my text sent to a server?",
     answer:
-      "No. All processing happens in your browser using JavaScript. Your text never leaves your device.",
+      "No server is involved at any point. The converter walks through your text character by character and flips the case of each letter inside your browser using JavaScript. The result appears instantly with no network request and no data logged anywhere.",
   },
 ];
 
@@ -294,8 +294,7 @@ export default function ToggleCaseConverterPage() {
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
-            Convert to toggle case here, then use our other tools for different case styles,
-            text cleaning, or word counting.
+            SpongeBob case and toggle case both alternate caps, but they start on different characters, producing subtly different visual rhythms in the output. The SpongeBob case converter and the main case converter cover the rest of the case spectrum.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link

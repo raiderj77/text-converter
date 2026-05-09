@@ -266,8 +266,7 @@ export default function BoldItalicTextGeneratorPage() {
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
-            FlipMyCase offers a full suite of free browser-based text tools. Generate bold italic
-            text here, then explore other converters and formatters.
+            Bold italic covers the strongest emphasis available in plain-text fields, but the fancy text generator displays all 11 other Unicode styles at once if you want to compare options before committing.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link

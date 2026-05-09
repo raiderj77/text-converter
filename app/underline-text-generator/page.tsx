@@ -268,8 +268,7 @@ export default function UnderlineTextGeneratorPage() {
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
-            FlipMyCase offers a suite of free browser-based text tools. Generate underlined text
-            here, then explore other Unicode text effects and formatting tools.
+            Underline Unicode combines with bold or italic for layered styling in plain-text environments. The fancy text generator is worth a quick visit if you want to browse all 12 Unicode styles before committing to just one.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link

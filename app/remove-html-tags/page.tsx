@@ -249,8 +249,7 @@ export default function RemoveHtmlTagsPage() {
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
-            Strip HTML here, then use our other free tools to convert, format,
-            encode, or analyze your content.
+            After the tags are stripped, the remaining text often has inconsistent spacing and mixed case left over from the original markup. The text cleaner handles the spacing, and the case converter handles the rest.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             {tools.map((t) => (

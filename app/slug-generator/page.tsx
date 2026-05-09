@@ -93,6 +93,7 @@ export default function SlugGeneratorPage() {
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
+          <p className="mt-2 text-sm text-neutral-300">A well-formed title usually needs spacing cleaned up before the slug gets generated. The text cleaner strips double spaces and stray line breaks, and the case converter handles Title Case formatting before you bring the result here.</p>
           <div className="mt-4 flex flex-wrap gap-2">
             {[
               { href: "/", label: "🔄 Case Converter" },

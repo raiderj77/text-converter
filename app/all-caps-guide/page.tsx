@@ -360,8 +360,7 @@ export default function AllCapsGuidePage() {
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
-            Learn about all caps usage here, then use our other tools for text conversion,
-            cleaning, and analysis.
+            The case converter applies the transformation once you know which format is appropriate. The toggle case converter handles alternating caps when you want emphasis without going full uppercase.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link

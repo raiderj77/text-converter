@@ -70,7 +70,7 @@ const faqItems = [
   {
     question: "Is my text sent to a server?",
     answer:
-      "No. All processing happens in your browser using JavaScript. Your text never leaves your device.",
+      "No. The conversion is a string operation that runs entirely inside your browser. Every underscore swaps for a hyphen (or vice versa) using JavaScript, with no network request made and no data leaving your device at any point in the process.",
   },
 ];
 
@@ -362,8 +362,7 @@ export default function SnakeKebabConverterPage() {
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
-            Convert between naming conventions here, then use our other tools for different
-            case styles, text cleaning, or code formatting.
+            If the output is going into a URL, the slug generator formats it further by lowercasing, stripping special characters, and adding hyphens where spaces appear. The full case converter handles camelCase and PascalCase if you need those formats too.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link

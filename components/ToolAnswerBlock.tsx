@@ -19,13 +19,13 @@ export default function ToolAnswerBlock({ slug, lastUpdated = '2026-05-07' }: To
   const tool = getToolBySlug(slug)
   if (!tool) return null
 
-  const who = audienceMap[tool.category] || 'Anyone who works with text and needs a fast, free browser-based tool.'
+  const who = tool.audience ?? audienceMap[tool.category] ?? 'Anyone who works with text and needs a fast, free browser-based tool.'
 
   return (
     <AnswerBlock
       what={tool.description}
       who={who}
-      bottomLine="100% free, runs entirely in your browser — no signup, no data sent to any server."
+      bottomLine={tool.bottomLine ?? "100% free, runs entirely in your browser — no signup, no data sent to any server."}
       lastUpdated={lastUpdated}
     />
   )

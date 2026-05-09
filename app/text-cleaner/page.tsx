@@ -273,8 +273,7 @@ export default function TextCleanerPage() {
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
-            Clean your text here, then convert the case with our converter or check the word
-            count. All tools are free and process text in your browser.
+            Cleaning up spacing is typically the first step in a text workflow, not the last. The case converter and word counter are the two tools that most often come next once the junk characters are gone.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link

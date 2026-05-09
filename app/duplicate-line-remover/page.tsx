@@ -68,7 +68,7 @@ const faqItems = [
   {
     question: "Is my data sent to a server?",
     answer:
-      "No. All processing happens in your browser using JavaScript. Your text never leaves your device.",
+      "No. Every line in your input is compared locally using JavaScript inside your browser tab. The deduplication logic builds the output without sending your list data anywhere. Nothing leaves your device at any step.",
   },
 ];
 
@@ -261,8 +261,7 @@ export default function DuplicateRemoverPage() {
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
-            Deduplicate your list here, then use our other tools to convert case, count
-            words, clean up formatting, or generate placeholder text.
+            After removing duplicates, sort the result with the text sorter to get a clean alphabetized list. The add-prefix-suffix tool is useful at that point for wrapping each item in quotes, HTML tags, or whatever delimiter your use case needs.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link

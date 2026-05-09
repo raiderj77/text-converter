@@ -35,7 +35,7 @@ const faqItems = [
   {
     question: "How does this text sorter work?",
     answer:
-      "Paste your text with one item per line. The tool instantly sorts lines alphabetically (A-Z or Z-A), numerically, by length, or randomly shuffles them. You can remove duplicates, trim whitespace, ignore case, and handle empty lines. All processing happens in your browser — nothing is sent to a server.",
+      "Paste your text with one item per line. The tool splits the input on newlines, applies your chosen sort method (alphabetical, numeric, by length, or random), optionally removes duplicates and trims whitespace, then outputs the result. The entire sort runs in your browser the moment you click. No data is sent anywhere.",
   },
   {
     question: "What's the difference between alphabetical and numerical sorting?",
@@ -298,8 +298,7 @@ export default function TextSorterPage() {
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
-            FlipMyCase offers a suite of free browser-based text tools. Sort lists here, then use other tools
-            for additional text processing.
+            Run the duplicate line remover before sorting to get a cleaner input, then return here to alphabetize. The add-prefix-suffix tool is useful afterward for wrapping each sorted item in quotes or markup.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link

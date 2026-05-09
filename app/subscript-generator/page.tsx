@@ -255,8 +255,7 @@ export default function SubscriptGeneratorPage() {
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
-            FlipMyCase offers a suite of free browser-based text tools. Generate subscript text
-            here, then explore more Unicode and text conversion tools.
+            For chemistry or math notation, you likely need subscript and superscript on the same expression. The superscript generator handles exponents, and the Unicode lookup covers any specific character the subscript set does not include.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link

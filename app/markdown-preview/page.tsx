@@ -190,10 +190,7 @@ export default function MarkdownPreviewPage() {
               be pasted anywhere.
             </p>
             <p>
-              All processing happens in your browser. Your text is never sent to
-              a server, so this tool is safe for sensitive documentation, private
-              project notes, and unreleased content. The parsed HTML can be
-              copied directly or downloaded as a standalone file for offline use.
+              Your Markdown stays inside your browser the entire time. The parser converts it to HTML using JavaScript on your device, which means draft documentation, private project notes, and unreleased content never leave your machine. The rendered HTML can be copied inline or downloaded as a standalone file whenever you are ready.
             </p>
           </div>
         </section>

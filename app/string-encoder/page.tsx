@@ -266,8 +266,7 @@ export default function StringEncoderPage() {
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
-            Encode strings here, then use our other tools to convert case, count words, clean
-            text, or remove duplicates.
+            After encoding a string for a URL or API, testing it against a pattern often comes next. The regex tester handles that, and the hash generator is useful when you need to verify the encoded value checksums correctly.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link

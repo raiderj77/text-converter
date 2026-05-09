@@ -258,8 +258,7 @@ export default function FindAndReplacePage() {
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
-            Find and replace text here, then use our other free tools to convert, format,
-            encode, or analyze your content.
+            Case conversion and whitespace cleanup often happen before targeted replacements. Run the case converter or text cleaner first to normalize the input, then swap specific patterns here.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             {tools.map((t) => (

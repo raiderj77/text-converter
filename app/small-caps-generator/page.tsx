@@ -266,8 +266,7 @@ export default function SmallCapsGeneratorPage() {
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
-            FlipMyCase offers a suite of free browser-based text tools. Generate small caps text
-            here, then explore other Unicode text effects and formatting tools.
+            Small caps suits display names and bio headers better than body text, where it can read as overly formal. The fancy text generator shows it alongside 11 other styles if you want a side-by-side comparison before deciding.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link

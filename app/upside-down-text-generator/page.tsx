@@ -35,7 +35,7 @@ const faqItems = [
   {
     question: "How does the upside down text generator work?",
     answer:
-      "The tool maps each character in your text to its Unicode upside-down equivalent (for example, a becomes \u0250, e becomes \u01DD, T becomes \u22A5) and then reverses the entire string order. This creates the illusion that the text has been physically rotated 180 degrees. All processing happens in your browser \u2014 nothing is sent to a server.",
+      "Each character in your input is matched against a Unicode mapping table that pairs standard Latin letters with their visually rotated counterparts. After the character substitution, the whole string is reversed so the reading direction also flips, completing the 180-degree illusion. The lookup and reversal both run inside your browser with no network call involved.",
   },
   {
     question: "Can I copy and paste upside down text anywhere?",
@@ -223,8 +223,7 @@ export default function UpsideDownTextGeneratorPage() {
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
-            FlipMyCase offers a suite of free browser-based text tools. Generate upside down
-            text here, then explore more Unicode text effects and converters.
+            Reversing characters changes order; flipping orientation changes how each letter reads. The text reverser handles order-reversal specifically, producing a distinct visual effect when you combine the two outputs.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link

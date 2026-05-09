@@ -254,8 +254,7 @@ export default function TextToListPage() {
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
-            Convert text to lists here, then use our other free tools to convert,
-            format, encode, or analyze your content.
+            After converting to a list, sorting and deduplication are common next steps. The text sorter alphabetizes it, the duplicate line remover clears repeats, and the add-prefix-suffix tool wraps each item in whatever syntax your target format needs.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             {tools.map((t) => (

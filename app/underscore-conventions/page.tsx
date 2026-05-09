@@ -355,8 +355,7 @@ class UserAccount {
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
-            Learn about underscore conventions here, then use our other tools for text conversion,
-            cleaning, and analysis.
+            The case converter lets you practice converting between snake_case, camelCase, and PascalCase after reading the guide. For snake-to-kebab specifically, the snake-kebab converter does that conversion in one step.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link

@@ -297,8 +297,7 @@ export default function TextReverserPage() {
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
-            FlipMyCase offers a suite of free browser-based text tools. Reverse text here, then use other tools
-            for additional transformations.
+            Once you have reversed text, the word counter tells you how long the output is, and the text repeater can loop it for filling a patterned layout. Both work well as follow-on steps here.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link

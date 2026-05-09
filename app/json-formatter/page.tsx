@@ -78,7 +78,7 @@ const faqItems = [
   {
     question: "Does this tool handle large JSON files?",
     answer:
-      "Yes. All processing happens in your browser using native JavaScript parsing, which handles files up to several megabytes without issue. There is no file upload or server processing, so performance depends only on your device.",
+      "Yes. JSON parsing uses the browser's native JSON.parse, which handles files several megabytes in size without noticeable delay. Nothing is uploaded or sent to a server. The only limit is your device's available memory, which is typically several hundred megabytes for a browser tab.",
   },
   {
     question: "Is my JSON data sent to a server?",
@@ -237,7 +237,7 @@ export default function JsonFormatterPage() {
               },
               {
                 title: "100% Private — No Server",
-                desc: "All processing happens in your browser. Your JSON never leaves your device. No data is logged, stored, or transmitted. Zero server calls.",
+                desc: "Your JSON is parsed entirely inside your browser. Nothing is uploaded, logged, or transmitted at any point. The formatting and validation logic runs locally, so API keys, credentials, and private data in your JSON stay on your machine.",
               },
             ].map((item) => (
               <div

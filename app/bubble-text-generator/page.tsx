@@ -258,8 +258,7 @@ export default function BubbleTextGeneratorPage() {
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
-            FlipMyCase offers a suite of free browser-based text tools. Generate bubble text
-            here, then explore more Unicode and text styling tools.
+            Wide text and upside down text produce different aesthetics from bubble text, and the fancy text generator previews all three alongside nine other styles so you can compare before copying.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link

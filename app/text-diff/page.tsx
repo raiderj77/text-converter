@@ -283,7 +283,7 @@ export default function TextDiffPage() {
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
-            Compare text here, then clean, convert, format, or encode it with our other free tools.
+            Spotting what changed is one task; fixing it across a larger document is another. Use find-and-replace after the diff to make bulk corrections without touching lines that stayed the same.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             {tools.map((t) => (

@@ -267,8 +267,7 @@ export default function LoremIpsumPage() {
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
-            Generate placeholder text here, then use our other tools to convert case, count
-            words, or clean up formatting. All tools are free and run in your browser.
+            For presentation mockups, knowing how many words a slide section holds is half the battle. The word counter confirms whether the generated placeholder text fills the target length before you hand the mockup off.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link

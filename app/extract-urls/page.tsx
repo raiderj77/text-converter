@@ -254,8 +254,7 @@ export default function ExtractUrlsPage() {
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
-            Extract URLs here, then use our other free tools to convert, format,
-            encode, or analyze your content.
+            A list of extracted URLs often contains the same link repeated from multiple paragraphs. The duplicate line remover clears those, and the text sorter groups them by domain when sorted alphabetically.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             {tools.map((t) => (

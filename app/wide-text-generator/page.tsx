@@ -261,8 +261,7 @@ export default function WideTextGeneratorPage() {
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
-            FlipMyCase offers a suite of free browser-based text tools. Generate wide/vaporwave text
-            here, then explore more Unicode and text styling tools.
+            Bubble text circles each letter while wide text stretches it, so the two aesthetics are different enough to combine in a single bio. The upside down text generator rounds out the three most popular abstract Unicode effects.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link

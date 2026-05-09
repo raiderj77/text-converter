@@ -291,7 +291,7 @@ export default function CamelCaseVsSnakeCasePage() {
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
-            Explore naming conventions and convert text with our other free tools.
+            Once you know which convention your project uses, the case converter handles the transformation and the snake-kebab converter covers the specific snake-to-kebab transition. The slug generator is useful when the output is going into a URL path.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link

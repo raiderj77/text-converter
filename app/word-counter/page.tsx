@@ -34,7 +34,7 @@ const faqItems = [
   {
     question: "How does this word counter work?",
     answer:
-      "Paste or type your text into the input box. The tool instantly counts words, characters (with and without spaces), sentences, paragraphs, and lines. It also calculates reading time, speaking time, average word length, and keyword density. All processing happens in your browser — nothing is sent to a server.",
+      "Paste or type your text and all counts update instantly. The tool splits on whitespace to count words, counts every character individually, detects sentence boundaries using punctuation, and estimates reading time at 200 words per minute and speaking time at 150. Your text stays in your browser tab the entire time and nothing touches a server.",
   },
   {
     question: "Is the character count accurate for social media posts?",
@@ -312,8 +312,7 @@ export default function WordCounterPage() {
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
-            FlipMyCase offers a suite of free browser-based text tools. Count words here,
-            then convert text case with our case converter.
+            Writers who track word count often discover they're overusing the same vocabulary. Run the word frequency counter to see a ranked word list, then the readability analyzer to confirm the draft reads at the right grade level.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link

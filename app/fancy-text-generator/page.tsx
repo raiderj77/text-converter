@@ -36,7 +36,7 @@ const faqItems = [
   {
     question: "How does the fancy text generator work?",
     answer:
-      "The tool converts your text into 12+ Unicode text styles using mathematical symbols, combining characters, and special Unicode blocks. These are real Unicode characters, not images or custom fonts, so they work anywhere you can paste text. All processing happens in your browser.",
+      "The tool maps each letter you type to its Unicode equivalent across 12 different mathematical and decorative character blocks. The resulting characters are real Unicode code points, not images or custom fonts, so they render correctly in any app that supports Unicode. The mapping runs entirely in your browser with no server involved.",
   },
   {
     question: "Can I use fancy text on social media?",
@@ -278,8 +278,7 @@ export default function FancyTextGeneratorPage() {
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">More Free Text Tools</h2>
           <p className="mt-2 text-sm text-neutral-300">
-            FlipMyCase offers a suite of free browser-based text tools. Generate fancy text
-            here, then explore individual style tools and other text utilities.
+            Each style shown here has its own dedicated generator — bold, italic, bubble, wide, and small caps all go deeper than the preview above. Reach for those if you need multiple copy variants of one specific style.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link
