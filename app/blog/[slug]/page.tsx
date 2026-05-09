@@ -20,6 +20,11 @@ export async function generateMetadata(props: { params: ParamsPromise }) {
 
   if (!post) return {};
 
+  const canonicalUrl =
+    post.noindex && post.toolSlug
+      ? `${SITE_URL}/${post.toolSlug}`
+      : `${SITE_URL}/blog/${post.slug}`;
+
   return {
     title: post.title,
     description: post.description || undefined,
@@ -28,12 +33,12 @@ export async function generateMetadata(props: { params: ParamsPromise }) {
       ? { index: false, follow: true }
       : { index: true, follow: true, googleBot: { "max-snippet": -1 } },
     alternates: {
-      canonical: `${SITE_URL}/blog/${post.slug}`,
+      canonical: canonicalUrl,
     },
     openGraph: {
       title: post.title,
       description: post.description || undefined,
-      url: `${SITE_URL}/blog/${post.slug}`,
+      url: canonicalUrl,
       type: "article",
       publishedTime: post.date,
     },

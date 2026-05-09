@@ -1,5 +1,6 @@
 ---
 noindex: true
+toolSlug: regex-tester
 title: "Regex Tester Online — How to Test Regular Expressions with Real-Time Highlighting"
 date: "2025-02-14"
 summary: "Learn how to test, debug, and build regular expressions online with real-time match highlighting, capture groups, replace mode, and a built-in cheat sheet. Free regex tester for JavaScript, Python, and more."
