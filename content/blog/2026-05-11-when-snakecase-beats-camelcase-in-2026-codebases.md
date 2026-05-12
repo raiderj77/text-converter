@@ -10,7 +10,7 @@ reviewer: "Jason Ramirez, CADC-II"
 
 # When snake_case Beats camelCase in 2026 Codebases
 
-**Short answer:** snake_case wins in Python, Rust (for variables/functions), SQL, environment variables, CLI flags, and most data serialization contexts. camelCase wins in JavaScript/TypeScript, Java, and C#. The fight is mostly already settled by language convention -- the interesting cases are cross-language boundaries, ML pipelines, and config-heavy infrastructure code.
+**Short answer:** [snake_case wins in Python, Rust (for variables/functions), SQL](/blog/camelcase-vs-snakecase-which-should-you-use/), environment variables, CLI flags, and most data serialization contexts. camelCase wins in JavaScript/TypeScript, Java, and C#. The fight is mostly already settled by language convention -- the interesting cases are cross-language boundaries, ML pipelines, and config-heavy infrastructure code.
 
 ---
 
@@ -112,7 +112,7 @@ export databaseUrl="postgres://localhost/mydb"
 
 ## Does readability research actually support one over the other?
 
-There is research here, and it's more nuanced than most blog posts admit. A [2010 study by Sharif and Maletic](https://ieeexplore.ieee.org/document/5521745) found that camelCase identifiers were recognized 20% faster in search tasks by experienced developers. However, that study used short identifiers. A [2009 study by Binkley et al.](https://dl.acm.org/doi/10.1145/1570433.1570437) found that for longer, multi-word identifiers, underscore-separated names (snake_case) improved comprehension.
+There is research here, and it's more nuanced than most blog posts admit. A [2010 study by Sharif and Maletic](https://ieeexplore.ieee.org/document/5521745) found that [camelCase identifiers were recognized 20% faster in search tasks](/blog/the-relationship-between-code-readability-and-the-use-of-cam/) by experienced developers. However, that study used short identifiers. A [2009 study by Binkley et al.](https://dl.acm.org/doi/10.1145/1570433.1570437) found that for longer, multi-word identifiers, underscore-separated names (snake_case) improved comprehension.
 
 The practical takeaway: for short identifiers (`userId`, `user_id`), camelCase has a slight edge. For longer compound names (`maximum_retry_interval_seconds` vs `maximumRetryIntervalSeconds`), snake_case is easier to parse. Data and config code tends to have longer, more descriptive names. Application logic tends to have shorter ones. This maps almost perfectly onto where each convention already dominates.
 
@@ -120,7 +120,7 @@ The practical takeaway: for short identifiers (`userId`, `user_id`), camelCase h
 
 ## What does this mean for cross-language projects in practice?
 
-Pick your transformation points and enforce them. Don't let case conventions bleed across language boundaries informally.
+Pick your transformation points and enforce them. Don't let [case conventions bleed across language boundaries informally](/blog/the-impact-of-variable-naming-conventions-on-code-quality-ca/).
 
 Three rules that work:
 
