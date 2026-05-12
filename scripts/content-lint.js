@@ -52,10 +52,13 @@ function checkPersonalName(file, lines) {
   if (PERSONAL_NAME_EXEMPT.some(p => file.replaceAll('\\', '/').includes(p))) return;
 
   const namePattern = /\bJason\s+Ramirez\b/i;
+  const bylineLinePattern = /^\s*(author|reviewer|author_name|byline)\s*:/i;
+  const schemaNamePattern = /"name"\s*:\s*"Jason Ramirez/i;
   for (let i = 0; i < lines.length; i++) {
-    if (namePattern.test(lines[i])) {
-      fail(file, i + 1, "Personal name detected — never expose site owner's name");
-    }
+    if (!namePattern.test(lines[i])) continue;
+    if (bylineLinePattern.test(lines[i])) continue;
+    if (schemaNamePattern.test(lines[i])) continue;
+    fail(file, i + 1, "Personal name detected in body/prose - name is only allowed in byline metadata");
   }
 }
 
