@@ -4,8 +4,8 @@ date: "2026-05-11"
 slug: "when-snakecase-beats-camelcase-in-2026-codebases"
 description: ""
 status: published
-author: "Your Friendly Developer"
-reviewer: "Your Friendly Developer"
+author: "Jason Ramirez"
+reviewer: "Jason Ramirez, CADC-II"
 ---
 
 # When snake_case Beats camelCase in 2026 Codebases
