@@ -120,6 +120,9 @@ The practical takeaway: for short identifiers (`userId`, `user_id`), camelCase h
 
 ## What does this mean for cross-language projects in practice?
 
+Pick your transformation points and enforce them with tooling, not convention. Each language uses its own native casing internally. At serialization boundaries, transform explicitly: a Python service serializes snake_case to camelCase JSON for a TypeScript consumer. Linters on both sides catch drift before it reaches code review.
+
+
 Pick your transformation points and enforce them. Don't let [case conventions bleed across language boundaries informally](/blog/the-impact-of-variable-naming-conventions-on-code-quality-ca/).
 
 Three rules that work:
@@ -147,6 +150,9 @@ class UserProfile(BaseModel):
 ---
 
 ## The actual decision tree
+
+Your language's official style guide makes the decision for you. Python, Rust, SQL, and env vars get snake_case. JavaScript, TypeScript, Java, and C# get camelCase. At language boundaries, transform explicitly and lint both sides. The right codebase enforces context-aware conventions, not a single global winner.
+
 
 - Writing Python, Rust functions, SQL, env vars, or config files: use snake_case.
 - Writing JavaScript, TypeScript, Java, or C#: use camelCase.
