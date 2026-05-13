@@ -16,6 +16,9 @@ reviewer: "Jason Ramirez, CADC-II"
 
 ## Why does SQL default behavior matter here?
 
+SQL identifiers are case-insensitive by default, so the engine folds unquoted names to lowercase. PostgreSQL stores UserId as userid, forcing double quotes everywhere you reference it. One missing quote in a migration or reporting tool silently breaks queries. snake_case sidesteps the problem entirely by matching what the engine stores natively.
+
+
 SQL identifiers are case-insensitive unless quoted. That single fact makes PascalCase columns a liability, not a preference.
 
 When you create a column named `UserId` in PostgreSQL, the engine stores it as `userid`. To actually get `UserId` back, you need double quotes everywhere: `SELECT "UserId" FROM "Users"`. Miss one quote in a raw query, a migration script, or a reporting tool, and you silently get the wrong column or an error. [PostgreSQL's documentation on identifier folding](https://www.postgresql.org/docs/current/sql-syntax-lexical.html#SQL-SYNTAX-IDENTIFIERS) is explicit: unquoted identifiers are folded to lowercase.
@@ -28,6 +31,9 @@ MySQL on Windows folds identifiers differently than MySQL on Linux because of fi
 
 ## What do the actual style guides say?
 
+Every major SQL style guide recommends snake_case. GitLab's internal SQL guide mandates it, and Simon Holywell's widely referenced SQL Style Guide explicitly requires lowercase with underscores. No mainstream style guide recommends PascalCase for column names. The consensus is not ambiguous, it is just frequently ignored in ORM-heavy ecosystems.
+
+
 The major references converge on snake_case for relational databases.
 
 [GitLab's SQL style guide](https://about.gitlab.com/handbook/business-technology/data-team/platform/sql-style-guide/) mandates snake_case for all identifiers. [Simon Holywell's SQL Style Guide](https://www.sqlstyle.guide/), one of the most-referenced community standards, explicitly recommends lowercase with underscores and warns against CamelCase. The [dbt Labs style guide](https://docs.getdbt.com/blog/on-the-importance-of-naming), used by thousands of data teams, standardizes on snake_case throughout.
@@ -39,6 +45,9 @@ PascalCase columns appear most often in SQL Server shops where the Windows-first
 ---
 
 ## Does ORM mapping change the calculus?
+
+No. ORMs exist to translate between database conventions and application conventions, so let them do that job. Django, ActiveRecord, and SQLAlchemy all map snake_case columns to idiomatic application properties with zero configuration. Designing your schema around ORM convenience inverts the responsibility and leaves raw SQL, migrations, and reporting tools worse off.
+
 
 No. ORMs handle the translation; you should not design your schema around it.
 
@@ -73,6 +82,9 @@ The mapping cost is near zero. The cost of managing quoted PascalCase identifier
 
 ## Are there real performance or storage differences?
 
+No meaningful performance or storage differences exist. The real cost is readability in slow query logs, monitoring dashboards, and incident investigations. snake_case column names scan faster in plain text output, and tools like pgBadger or Datadog's query analysis render them without the visual noise that mixed-case identifiers introduce under pressure.
+
+
 No meaningful ones, but there is a readability tax worth naming.
 
 Column name length and character set have negligible storage impact. What does matter is [query readability in logs, slow query analysis, and database monitoring tools](/blog/the-relationship-between-code-readability-and-the-use-of-cam/). A slow query log entry with `SELECT u.firstName, o.orderId FROM Users u JOIN Orders o` requires more cognitive parsing than `SELECT u.first_name, o.order_id FROM users u JOIN orders o`. The underscores make word boundaries unambiguous without relying on case.
@@ -82,6 +94,9 @@ This matters more than it sounds. At scale, you are reading hundreds of query lo
 ---
 
 ## What about SQL Server specifically?
+
+SQL Server's default CI_AS collation makes PascalCase work without quoting, which is why the habit persists in .NET shops. That convenience disappears the moment you run tests against PostgreSQL or SQLite, migrate to a different engine, or share schema definitions across teams. snake_case works correctly on SQL Server and every other engine.
+
 
 SQL Server's case-insensitive collation (the default `SQL_Latin1_General_CP1_CI_AS`) means PascalCase columns work without quoting. That is why the convention persists in .NET and SQL Server ecosystems.
 
@@ -98,6 +113,9 @@ If your stack is permanently SQL Server and never touches another engine, Pascal
 
 ## What about the `id` column specifically?
 
+Use id for primary keys and table_name_id for foreign keys, always lowercase. The Id, ID, and UserId variants are the most common source of minor but annoying schema inconsistencies. Enforce the pattern in your migration linter. Both squawk and sqlfluff support rules that flag non-conforming identifier names before they reach production.
+
+
 Use `id` as a plain integer primary key or `user_id`, `order_id` as foreign keys. Do not use `ID`, `Id`, or `UserId`.
 
 The `Id` vs `id` vs `ID` inconsistency is one of the most common sources of minor schema bugs. Pick `id` for primary keys and `{table_name}_id` for foreign keys, and enforce it in your migration linter. [squawk](https://squawkhq.com/) and [sqlfluff](https://sqlfluff.com/) both support rules for this.
@@ -105,6 +123,9 @@ The `Id` vs `id` vs `ID` inconsistency is one of the most common sources of mino
 ---
 
 ## What is the practical checklist?
+
+Use lowercase snake_case for all tables and columns, plural table names, and no quoted identifiers in new migrations. Foreign keys follow the user_id pattern, booleans use is_ or has_ prefixes, and timestamps are created_at and updated_at. Enforce this with sqlfluff or squawk in CI so the rules outlive any single developer's memory.
+
 
 - All column names: lowercase snake_case
 - All table names: lowercase snake_case, plural (`users`, `order_items`)
