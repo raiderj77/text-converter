@@ -22,7 +22,7 @@ When you create a column named `UserId` in PostgreSQL, the engine stores it as `
 
 MySQL on Windows folds identifiers differently than MySQL on Linux because of filesystem case sensitivity. A schema with `UserName` works on your Windows dev box and breaks in production on Linux unless `lower_case_table_names` is set correctly. That is a real deployment bug waiting to happen, documented in the [MySQL manual on identifier case sensitivity](https://dev.mysql.com/doc/refman/8.0/en/identifier-case-sensitivity.html).
 
-snake_case sidesteps all of this. `user_id` is `user_id` everywhere, quoted or not, on every platform.
+[snake_case sidesteps all of this](/blog/when-snakecase-beats-camelcase-in-2026-codebases/). `user_id` is `user_id` everywhere, quoted or not, on every platform.
 
 ---
 
@@ -75,7 +75,7 @@ The mapping cost is near zero. The cost of managing quoted PascalCase identifier
 
 No meaningful ones, but there is a readability tax worth naming.
 
-Column name length and character set have negligible storage impact. What does matter is query readability in logs, slow query analysis, and database monitoring tools. A slow query log entry with `SELECT u.firstName, o.orderId FROM Users u JOIN Orders o` requires more cognitive parsing than `SELECT u.first_name, o.order_id FROM users u JOIN orders o`. The underscores make word boundaries unambiguous without relying on case.
+Column name length and character set have negligible storage impact. What does matter is [query readability in logs, slow query analysis, and database monitoring tools](/blog/the-relationship-between-code-readability-and-the-use-of-cam/). A slow query log entry with `SELECT u.firstName, o.orderId FROM Users u JOIN Orders o` requires more cognitive parsing than `SELECT u.first_name, o.order_id FROM users u JOIN orders o`. The underscores make word boundaries unambiguous without relying on case.
 
 This matters more than it sounds. At scale, you are reading hundreds of query logs, EXPLAIN outputs, and migration diffs. Reducing parse time per line adds up across a team.
 
