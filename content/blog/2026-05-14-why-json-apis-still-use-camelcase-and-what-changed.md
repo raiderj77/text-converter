@@ -37,6 +37,9 @@ Frontend JavaScript consumed it without a single line of transformation. That fr
 
 ## What does snake_case have going for it?
 
+Snake_case maps directly to Python and Ruby object attributes, so deserialization requires no custom mapper. A Django REST Framework response lands as response.user_name, not response.userName. When your primary consumers write Python, forcing camelCase adds a translation layer that buys nothing and breaks the principle of least surprise.
+
+
 Python and Ruby developers hate camelCase in JSON because their native conventions are snake_case. Automatic deserialization without a custom mapper produces awkward objects.
 
 The [Python requests library](https://docs.python-requests.org/) and [Django REST Framework](https://www.django-rest-framework.org/) both default to snake_case in their documentation examples. When your API is consumed primarily by Python clients, you are forcing every consumer to run a transform layer.
@@ -101,6 +104,9 @@ If your GraphQL schema uses snake_case, you break cache normalization assumption
 ---
 
 ## Are there cases where snake_case won in JSON APIs?
+
+Yes, APIs built for polyglot or Python-heavy ecosystems defaulted to snake_case. Twitter v1 and Slack both shipped snake_case throughout, reflecting an era when Python and Ruby scripting was as common as JavaScript. The deciding factor was the dominant language of the expected consumer, not any technical constraint in JSON itself.
+
 
 Yes, and the pattern is consistent: APIs designed primarily for non-JavaScript consumers.
 
