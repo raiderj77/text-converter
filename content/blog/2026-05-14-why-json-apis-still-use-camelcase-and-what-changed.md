@@ -80,7 +80,7 @@ properties:
     type: string
 ```
 
-The [openapi-generator project](https://github.com/OpenAPITools/openapi-generator) supports over 50 client generators. Each one has language-specific naming logic. This forced API teams to think about naming conventions as a cross-language contract, not just a JavaScript convenience.
+The [openapi-generator project](https://github.com/OpenAPITools/openapi-generator) supports over 50 client generators. Each one has language-specific naming logic. This forced API teams to think about [naming conventions as a cross-language contract](/blog/camelcase-and-snakecase-a-comparative-analysis-of-readabilit/), not just a JavaScript convenience.
 
 ---
 
