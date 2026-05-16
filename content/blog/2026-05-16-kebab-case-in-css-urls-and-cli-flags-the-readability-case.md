@@ -18,7 +18,7 @@ reviewer: "Jason Ramirez, CADC-II"
 
 They share a constraint: spaces are illegal or meaningful, and underscores carry baggage. A hyphen is the neutral separator that reads like a space, costs nothing to type, and doesn't collide with operator syntax in any of the three contexts.
 
-CSS properties have used hyphens since the beginning -- `font-size`, `background-color`, `border-top-left-radius`. URLs treat underscores as part of a word token in some parsers, which breaks word-boundary matching. CLI tools inherited Unix conventions where flags like `--dry-run` and `--output-file` have been standard since the early days of GNU getopt.
+CSS properties have used hyphens since the beginning -- `font-size`, `background-color`, `border-top-left-radius`. [URLs treat underscores as part of a word token](/blog/snake-case-vs-kebab-case-which-to-use-for-urls/) in some parsers, which breaks word-boundary matching. CLI tools inherited Unix conventions where flags like `--dry-run` and `--output-file` have been standard since the early days of GNU getopt.
 
 The pattern isn't a coincidence. It's the same readability constraint solved three times independently, arriving at the same answer.
 
@@ -26,7 +26,7 @@ The pattern isn't a coincidence. It's the same readability constraint solved thr
 
 ## Does Google actually care whether your URL uses hyphens or underscores?
 
-Yes, and they've been explicit about it. [Google's John Mueller confirmed in 2016](https://www.youtube.com/watch?v=AQpqVvxoTAM) that Google treats hyphens as word separators in URLs and underscores as word joiners. So `/web-performance-tips` gets parsed as three separate words. `/web_performance_tips` gets parsed as one token: `webperformancetips`.
+Yes, and they've been explicit about it. [Google's John Mueller confirmed in 2016](https://www.youtube.com/watch?v=AQpqVvxoTAM) that Google treats [hyphens as word separators in URLs and underscores as word joiners](/blog/evaluating-the-effectiveness-of-camel-case-and-snake-case-in/). So `/web-performance-tips` gets parsed as three separate words. `/web_performance_tips` gets parsed as one token: `webperformancetips`.
 
 That distinction affects how your pages surface for individual keyword queries. If someone searches "performance tips," the hyphenated slug is a closer match. The underscore version essentially hides the word boundary from the crawler.
 
