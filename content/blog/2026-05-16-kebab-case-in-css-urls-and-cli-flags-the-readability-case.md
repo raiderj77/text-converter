@@ -106,6 +106,9 @@ You get the right convention on both sides without manual mapping.
 
 ## When is kebab-case actually the wrong choice?
 
+Kebab-case breaks down in three spots: environment variables, Python package internals, and any identifier a programming language must parse as a symbol. Shells like bash reject `export MY-VAR=1`, Python's PEP 8 steers package names toward underscores, and no language lets you write a hyphenated variable without quoting gymnastics.
+
+
 Three clear cases:
 
 **Environment variables.** The convention is `SCREAMING_SNAKE_CASE`. `MY_APP_PORT`, not `my-app-port`. Shells handle hyphens in variable names inconsistently -- bash allows them in some contexts but not others, and `export MY-VAR=1` fails in bash while working in zsh. Don't fight this one.
@@ -117,6 +120,9 @@ Three clear cases:
 ---
 
 ## How do you enforce this in a real project?
+
+Lint it, do not rely on code review. Use stylelint's `custom-property-pattern` rule for CSS custom properties, filesystem routing for URLs if your framework supports it, and a pre-commit grep for CLI flag definitions. Automation catches drift before it hits the main branch.
+
 
 Linting. Not code review comments.
 
