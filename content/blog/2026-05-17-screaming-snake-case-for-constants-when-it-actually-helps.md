@@ -18,7 +18,7 @@ reviewer: "Jason Ramirez, CADC-II"
 
 No. In most languages, SCREAMING_SNAKE_CASE is a pure convention with zero runtime enforcement. The exception is languages like Elixir, where a capitalized first letter denotes a module alias, not a constant. In Python, Ruby, and JavaScript, the interpreter does not care.
 
-What it does change is the cognitive load on the reader. When you see `MAX_RETRIES` in a function body, you immediately know it did not originate in that scope, it is not going to change mid-execution, and hunting for its definition means looking at the top of the module or a dedicated config file. That is three inferences in one token.
+What it does change is [the cognitive load on the reader](/blog/the-psychology-of-typographical-choice-why-uppercase-matters/). When you see `MAX_RETRIES` in a function body, you immediately know it did not originate in that scope, it is not going to change mid-execution, and hunting for its definition means looking at the top of the module or a dedicated config file. That is three inferences in one token.
 
 ```python
 # reader knows immediately: this came from outside, it won't mutate
