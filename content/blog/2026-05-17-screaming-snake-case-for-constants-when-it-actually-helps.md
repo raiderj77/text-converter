@@ -37,6 +37,9 @@ Compare that to `maxRetries` in the same body. Is it a local variable? A paramet
 
 ## Which style guides actually mandate this?
 
+PEP 8, Google's Python Style Guide, and the Ruby community style guide all mandate SCREAMING_SNAKE_CASE for constants. PEP 8 scopes it to module-level names, Google extends it to class-level constants too. Ruby's guide applies it to any constant, including class and module names that hold fixed values.
+
+
 The major ones do, with slightly different scopes. [PEP 8](https://peps.python.org/pep-0008/#constants) says constants should be written in `ALL_CAPS_WITH_UNDERSCORES` and should live at the module level. [Google's Python Style Guide](https://google.github.io/styleguide/pyguide.html#316-naming) follows the same rule and extends it to class-level constants. [The Ruby community style guide](https://rubystyle.guide/#screaming-snake-case) applies it to all constants, which in Ruby includes class and module names -- though those use `PascalCase` by a separate rule, so in practice SCREAMING_SNAKE_CASE lands on non-class constants.
 
 JavaScript and TypeScript have no single canonical guide, but [Airbnb's style guide](https://github.com/airbnb/javascript#naming--uppercase) specifies uppercase for exported constants that are "immutable primitives or frozen objects defined at file-level." That qualifier matters: a `const` that holds a mutable array does not qualify under their rule.
