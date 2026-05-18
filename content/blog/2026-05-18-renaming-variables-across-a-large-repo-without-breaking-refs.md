@@ -16,7 +16,7 @@ reviewer: "Jason Ramirez, CADC-II"
 
 ## Why does find-and-replace keep breaking things?
 
-Regex doesn't understand scope. It matches strings, not symbols, so `userId` in a comment, a string literal, and a variable declaration all look identical to it.
+[Regex doesn't understand scope. It matches strings, not symbols](/blog/evaluating-the-effectiveness-of-camel-case-and-snake-case-in/), so `userId` in a comment, a string literal, and a variable declaration all look identical to it.
 
 The classic failure mode: you rename `count` to `itemCount` across 200 files, and three months later a runtime error surfaces because `count` inside an unrelated SQL template string got rewritten too. Or you miss a shadowed variable in a nested closure that happened to share the name. Regex has no concept of either. The [Language Server Protocol spec](https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#textDocument_rename) defines `textDocument/rename` precisely because this problem needed a structured solution.
 
@@ -51,7 +51,7 @@ Renaming `getUserId` to `fetchUserId` via LSP updates both the source declaratio
 
 When the rename crosses language boundaries or involves generated code. LSP operates within one language server's knowledge graph.
 
-If your Python backend exports a field name that your TypeScript frontend consumes via a REST contract, `pyright` doesn't know about the TypeScript side. Same problem with GraphQL schema field names consumed in multiple client languages, or database column names referenced in both ORM models and raw SQL strings. In those cases you need a broader strategy.
+If your Python backend exports a [field name that your TypeScript frontend consumes via a REST contract](/blog/why-json-apis-still-use-camelcase-and-what-changed/), `pyright` doesn't know about the TypeScript side. Same problem with GraphQL schema field names consumed in multiple client languages, or [database column names referenced in both ORM models and raw SQL strings](/blog/when-snakecase-beats-camelcase-in-2026-codebases/). In those cases you need a broader strategy.
 
 For GraphQL, [graphql-inspector](https://the-guild.dev/graphql/inspector) can detect breaking changes when you rename a field. For database columns, tools like [Flyway](https://flywaydb.org/) or [Liquibase](https://www.liquibase.org/) track schema changes explicitly rather than relying on text search.
 
