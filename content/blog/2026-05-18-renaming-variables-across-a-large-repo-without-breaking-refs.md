@@ -24,6 +24,9 @@ The classic failure mode: you rename `count` to `itemCount` across 200 files, an
 
 ## What's the safest rename path for a single language project?
 
+LSP rename is the safest default. Press F2 in VS Code to trigger a textDocument/rename request, and the language server returns a WorkspaceEdit covering every file and range before anything is written to disk. It resolves imports, re-exports, and type aliases automatically, so you avoid the partial renames that manual find-and-replace produces.
+
+
 LSP rename is the right default. It resolves references through imports, re-exports, and type aliases before touching a single byte.
 
 In VS Code, place your cursor on the symbol and press `F2`. The editor sends a `textDocument/rename` request to the language server, which returns a `WorkspaceEdit` containing every file and range that needs updating. The server has already resolved the full reference graph. In Neovim with `nvim-lspconfig`, the equivalent is `vim.lsp.buf.rename()`, usually bound to `<leader>rn` or `R` in normal mode.
@@ -48,6 +51,9 @@ Renaming `getUserId` to `fetchUserId` via LSP updates both the source declaratio
 ---
 
 ## When does LSP rename fall short?
+
+LSP rename breaks down at language boundaries and generated code. A Python language server has no visibility into the TypeScript client consuming that field over REST, and code generators regenerate from a schema the server never reads. Any rename touching a cross-language contract needs a coordinated, multi-tool approach rather than a single F2 press.
+
 
 When the rename crosses language boundaries or involves generated code. LSP operates within one language server's knowledge graph.
 
@@ -104,6 +110,9 @@ For Python, [LibCST](https://libcst.readthedocs.io/) provides a concrete syntax 
 
 ## How do I handle string-based references that ASTs can't catch?
 
+Run a targeted grep after the automated rename and fix the remaining hits manually. ASTs only see syntax, so reflection calls, dynamic requires, fixture JSON, and log strings are invisible to LSP and codemods. Use git grep -n "oldName" to surface every surviving string reference before you commit.
+
+
 Audit them explicitly with targeted grep after the automated rename. Accept that you'll have some manual work.
 
 Common sources of string-based refs: reflection (`getattr(obj, "user_id")`), dynamic imports (`require(\`./handlers/${name}\`)`), serialized config files, test fixture JSON, and log messages. After running your LSP or codemod rename, run:
@@ -123,6 +132,9 @@ Review each hit manually. String refs in reflection code need case-by-case judgm
 ---
 
 ## What's a practical checklist for a large rename?
+
+Branch first, rename from the declaration site not a usage site, run your test suite immediately after, then grep for the old name and confirm zero results. Each step catches a different failure class: isolation, reference completeness, runtime breakage, and leftover string literals that automated tooling silently skipped.
+
 
 1. **Branch first.** Obvious, but the rename should be an isolated commit or PR, not bundled with feature work.
 2. **Run LSP rename** from the declaration site, not a usage site, to get the full reference graph.
