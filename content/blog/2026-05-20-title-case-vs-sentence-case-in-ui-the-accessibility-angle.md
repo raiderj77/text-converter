@@ -26,6 +26,9 @@ The effect is small per instance and significant at scale. Users with dyslexia, 
 
 ## Where does Title Case still earn its place?
 
+Title case earns its place in navigation landmarks, page titles, and product names. These elements function as document labels, not prose, so users scan them rather than read linearly. Browser tabs, H1 headings, and primary nav items benefit from the visual chunking title case provides, helping users orient themselves quickly within an interface.
+
+
 Navigation landmarks, page titles, and product names. Those are the three defensible zones.
 
 The `<title>` element and H1 headings often use title case because they function as labels for the document, not as prose. Browser tabs, breadcrumbs, and primary nav items are similar -- they're scanned, not read linearly. Title case provides visual chunking that helps users locate themselves in an interface. The [Nielsen Norman Group's research on navigation](https://www.nngroup.com/articles/navigation-cognitive-strain/) notes that users scan nav labels for distinct visual anchors, and title case can support that in dense menus.
@@ -71,6 +74,9 @@ Form labels show the same pattern:
 ---
 
 ## How should design systems encode this rule?
+
+Define it with concrete examples, not just a rule statement. A design system entry should list real component strings under each case variant so contributors can pattern-match without interpretation. Vague rules like 'use sentence case generally' get misapplied. Showing 'Save changes' next to 'Delete account' makes the standard unambiguous and copy-paste ready for implementers.
+
 
 Define it explicitly with examples, not just a rule statement. Vague rules get ignored or misapplied.
 
@@ -124,6 +130,9 @@ The practical answer: follow sentence case as your default, apply title case whe
 ---
 
 ## Quick reference
+
+Sentence case covers almost everything: body copy, button labels, form labels, error messages, and tooltips. Title case applies to page H1 headings, browser tab titles, and product names. Primary navigation is platform-dependent. When in doubt, default to sentence case, since it matches natural reading patterns and reduces cognitive load for screen reader users.
+
 
 | Context | Recommended case | Rationale |
 |---|---|---|
