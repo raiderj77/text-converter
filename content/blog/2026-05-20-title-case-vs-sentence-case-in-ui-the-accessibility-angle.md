@@ -8,7 +8,7 @@ author: "Jason Ramirez"
 reviewer: "Jason Ramirez, CADC-II"
 ---
 
-# Title Case vs Sentence Case in UI: The Accessibility Angle
+# [Title Case vs Sentence Case](/blog/when-to-use-title-case-vs-sentence-case-in-writing/) in UI: The Accessibility Angle
 
 > **Short answer:** Sentence case wins for accessibility in most UI contexts. It reduces cognitive load for readers with dyslexia or low literacy, aligns with how English prose is read, and produces fewer misreadings of proper nouns. Title Case has a legitimate role in navigation landmarks and page titles, but defaulting to it everywhere is a readability tax your users pay silently.
 
@@ -38,7 +38,7 @@ The mistake is scope creep: applying title case to button labels, form field lab
 
 ## What does the data say about error messages and form labels specifically?
 
-Sentence case reduces misreads in instructional text. A [study by the Nielsen Norman Group on form usability](https://www.nngroup.com/articles/web-form-design/) found that labels phrased as natural language improved task completion. Case style is part of that naturalness signal.
+[Sentence case reduces misreads in instructional text](/blog/how-to-use-sentence-case-correctly-in-writing/). A [study by the Nielsen Norman Group on form usability](https://www.nngroup.com/articles/web-form-design/) found that labels phrased as natural language improved task completion. Case style is part of that naturalness signal.
 
 Consider error messages:
 
@@ -91,7 +91,7 @@ A minimal design system entry looks like this:
 - Product and feature names (follow the product's own style)
 
 **All caps** is prohibited in body text and labels.
-Use CSS `text-transform: uppercase` only for decorative
+Use CSS `[text-transform: uppercase` only for decorative](/blog/convert-uppercase-with-precision-the-impact-of-typography-on/)
 short strings (e.g., status badges) and pair with
 `letter-spacing` for legibility.
 ```
