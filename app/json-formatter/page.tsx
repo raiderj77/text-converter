@@ -5,8 +5,6 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { JsonFormatterTool } from "@/components/tools/json-formatter";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
-import ToolAnswerBlock from "@/components/ToolAnswerBlock";
-
 const tool = getToolBySlug("json-formatter")!;
 const pageUrl = buildUrl("/json-formatter");
 
@@ -100,6 +98,21 @@ const faqItems = [
     answer:
       "They are the same thing. Formatting (also called beautifying or pretty printing) adds indentation and line breaks to make JSON human-readable. Minifying is the opposite — it removes all whitespace to reduce file size.",
   },
+  {
+    question: "What is a JSON path?",
+    answer:
+      "A JSON path describes the location of a value in a JSON structure, like $.users[0].name. This tool's tree view lets you click any value and copy its path, which you can then use directly in your code.",
+  },
+  {
+    question: "Should I use 2-space or 4-space indentation?",
+    answer:
+      "Two-space indentation is the most common convention in the JavaScript ecosystem (npm, ESLint, and Prettier all default to it). Four-space is more common in Python-ecosystem tools. Pick one and be consistent across your project.",
+  },
+  {
+    question: "Is JSON the same as a JavaScript object?",
+    answer:
+      "No. JSON is stricter: all keys must be double-quoted, trailing commas are not allowed, comments are not supported, undefined and functions are not valid values, and only double-quoted strings are permitted. JavaScript objects are more flexible but cannot be transmitted as JSON without JSON.stringify().",
+  },
 ];
 
 export default function JsonFormatterPage() {
@@ -127,8 +140,6 @@ export default function JsonFormatterPage() {
           A JSON formatter instantly beautifies minified JSON and validates syntax errors. Paste your JSON below to format it with proper indentation and check its structure.
         </p>
 
-        <ToolAnswerBlock slug="json-formatter" />
-
         <div className="mt-3">
           <ToolActions />
         </div>
@@ -154,14 +165,103 @@ export default function JsonFormatterPage() {
 
         <AdSlot slot="after-tool" page="json-formatter" />
 
-        <div className="mt-4 rounded-xl border border-white/10 bg-neutral-900/50 px-4 py-3">
-          <Link
-            href="/blog/json-formatter-guide"
-            className="text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors"
-          >
-            📖 Full Guide: JSON Formatter and Validator — Pretty Print, Minify, and Fix JSON Online →
-          </Link>
-        </div>
+        <section className="mt-10">
+          <h2 className="text-lg sm:text-xl font-semibold">What Is JSON Formatting?</h2>
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
+            <p>
+              JSON formatting (also called pretty-printing or beautifying) takes compact, minified
+              JSON and adds whitespace, indentation, and line breaks to make it human-readable.
+              Validation checks whether a JSON string conforms to the JSON specification (ECMA-404)
+              — all keys double-quoted, all values valid types, no trailing commas, properly nested.
+            </p>
+            <p>
+              You would use JSON formatting when debugging API responses, inspecting config files
+              like <code className="text-neutral-200">package.json</code> or{" "}
+              <code className="text-neutral-200">tsconfig.json</code>, reviewing MongoDB documents,
+              comparing data structures, or documenting API schemas. Minification is the reverse —
+              removing all whitespace to produce the smallest possible payload for transmission.
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-10">
+          <h2 className="text-lg sm:text-xl font-semibold">Code Examples for JSON Handling</h2>
+          <div className="mt-3 text-sm text-neutral-300 space-y-4">
+            <div>
+              <h3 className="text-base font-semibold">JavaScript</h3>
+              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-javascript">{`// Pretty-print JSON
+const data = { users: [{ id: 1, name: "Alice" }, { id: 2, name: "Bob" }] };
+console.log(JSON.stringify(data, null, 2));
+
+// Minify JSON
+const minified = JSON.stringify(JSON.parse(formatted));
+
+// Validate JSON safely
+function isValidJSON(str) {
+  try {
+    JSON.parse(str);
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+console.log(isValidJSON('{"name": "Alice"}'));  // true
+console.log(isValidJSON('{name: "Alice"}'));     // false (unquoted key)`}</code></pre>
+            </div>
+            <div>
+              <h3 className="text-base font-semibold">Python</h3>
+              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-python">{`import json
+
+# Pretty-print JSON
+data = {"users": [{"id": 1, "name": "Alice"}, {"id": 2, "name": "Bob"}]}
+print(json.dumps(data, indent=2, sort_keys=True))
+
+# Read and format a JSON file
+with open('config.json', 'r') as f:
+    data = json.load(f)
+with open('config_formatted.json', 'w') as f:
+    json.dump(data, f, indent=2)
+
+# Validate JSON with error details
+def is_valid_json(text):
+    try:
+        json.loads(text)
+        return True
+    except json.JSONDecodeError as e:
+        print(f'Invalid JSON at line {e.lineno}: {e.msg}')
+        return False`}</code></pre>
+            </div>
+            <div>
+              <h3 className="text-base font-semibold">Go</h3>
+              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-go">{`package main
+
+import (
+    "bytes"
+    "encoding/json"
+    "fmt"
+)
+
+func main() {
+    // Pretty-print JSON
+    compact := []byte("{\"users\":[{\"id\":1,\"name\":\"Alice\"}]}")
+    var prettyJSON bytes.Buffer
+    json.Indent(&prettyJSON, compact, "", "  ")
+    fmt.Println(prettyJSON.String())
+
+    // Minify JSON
+    var minified bytes.Buffer
+    json.Compact(&minified, prettyJSON.Bytes())
+    fmt.Println(minified.String())
+
+    // Validate JSON
+    var js json.RawMessage
+    if err := json.Unmarshal(compact, &js); err != nil {
+        fmt.Println("Invalid JSON:", err)
+    }
+}`}</code></pre>
+            </div>
+          </div>
+        </section>
 
         {/* Section 1: How to — targets "how to format json online", "how to validate json", "how to pretty print json" */}
         <section className="mt-10">

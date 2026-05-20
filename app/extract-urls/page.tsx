@@ -5,7 +5,6 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { ExtractUrlsTool } from "@/components/tools/extract-urls";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
-import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("extract-urls")!;
 const pageUrl = buildUrl("/extract-urls");
@@ -61,6 +60,16 @@ const faqItems = [
     answer:
       "No. All processing runs entirely in your browser using JavaScript. Your text never leaves your device. Nothing is logged, stored, or transmitted to any server. The tool works offline once loaded.",
   },
+  {
+    question: "How do I extract URLs from text?",
+    answer:
+      "Paste your text into the input area. The tool uses pattern matching to find all valid URLs starting with http://, https://, or ftp:// and outputs them as a clean, deduplicated list — one per line, ready to copy.",
+  },
+  {
+    question: "Can I extract only URLs from specific domains?",
+    answer:
+      "The tool extracts all URLs from the text. To filter for specific domains, copy the full list and use Find & Replace or a text editor to filter by domain name. The Regex Tester tool can help you build a domain-specific pattern for advanced filtering.",
+  },
 ];
 
 export default function ExtractUrlsPage() {
@@ -90,8 +99,6 @@ export default function ExtractUrlsPage() {
           A URL extractor finds and pulls all web addresses from any block of text. Paste your text below to extract, deduplicate, and copy all URLs instantly.
         </p>
 
-        <ToolAnswerBlock slug="extract-urls" />
-
         <div className="mt-3">
           <ToolActions />
         </div>
@@ -114,6 +121,101 @@ export default function ExtractUrlsPage() {
         </div>
 
         <AdSlot slot="after-tool" page="extract-urls" />
+
+        <section className="mt-10">
+          <h2 className="text-lg sm:text-xl font-semibold">What Is URL Extraction?</h2>
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
+            <p>
+              URL extraction scans a body of text and identifies all strings that match URL
+              patterns — primarily <code className="text-xs font-mono bg-white/5 px-1 rounded">http://</code> and{" "}
+              <code className="text-xs font-mono bg-white/5 px-1 rounded">https://</code> prefixed strings, plus{" "}
+              <code className="text-xs font-mono bg-white/5 px-1 rounded">ftp://</code> and bare{" "}
+              <code className="text-xs font-mono bg-white/5 px-1 rounded">www.</code> patterns. The extracted URLs
+              are collected into a deduplicated list. Good extractors handle query strings, fragments,
+              paths with special characters, and URLs embedded in HTML attributes.
+            </p>
+            <p>
+              You would use URL extraction for link auditing (finding all external links in a document),
+              site migration (building a complete URL inventory), SEO analysis (mapping internal link
+              structure), web scraping (extracting resource URLs from HTML), and content review
+              (verifying all referenced links still work).
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-10">
+          <h2 className="text-lg sm:text-xl font-semibold">Code Examples for URL Extraction</h2>
+          <div className="mt-3 text-sm text-neutral-300 space-y-4">
+            <div>
+              <h3 className="text-base font-semibold">JavaScript</h3>
+              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-javascript">{`function extractUrls(text) {
+  const regex = /https?:\\/\\/[^\\s<>"')\\]]+/gi;
+  const matches = text.match(regex) || [];
+  // Remove trailing punctuation
+  const cleaned = matches.map(url => url.replace(/[.,;:!?)}\\]]+$/, ''));
+  // Deduplicate
+  return [...new Set(cleaned)];
+}
+
+const sample = 'See https://example.com. Also http://other.org/page?q=test';
+console.log(extractUrls(sample));
+// ['https://example.com', 'http://other.org/page?q=test']
+
+// Extract href attributes from HTML
+function extractHrefs(html) {
+  const regex = /href=["']([^"']+)["']/gi;
+  const urls = [];
+  let match;
+  while ((match = regex.exec(html)) !== null) {
+    urls.push(match[1]);
+  }
+  return [...new Set(urls)];
+}`}</code></pre>
+            </div>
+            <div>
+              <h3 className="text-base font-semibold">Python</h3>
+              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-python">{`import re
+from urllib.parse import urlparse
+
+def extract_urls(text):
+    pattern = r'https?://[^\\s<>"\\')\\]]+'
+    matches = re.findall(pattern, text)
+    # Remove trailing punctuation
+    cleaned = [re.sub(r'[.,;:!?)\\]]+$', '', url) for url in matches]
+    # Deduplicate preserving order
+    seen = set()
+    unique = []
+    for url in cleaned:
+        if url not in seen:
+            seen.add(url)
+            unique.append(url)
+    return unique
+
+text = "Visit https://example.com. API docs: https://api.example.com/v2?token=xyz"
+urls = extract_urls(text)
+for url in urls:
+    parsed = urlparse(url)
+    print(f'{parsed.netloc:30s} {url}')`}</code></pre>
+            </div>
+            <div>
+              <h3 className="text-base font-semibold">Bash</h3>
+              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-bash">{`# Extract URLs from a file
+grep -oE 'https?://[^ <>]+' document.txt | sort -u
+
+# Extract href values from HTML
+grep -oP 'href="\\K[^"]+' page.html | sort -u
+
+# Check HTTP status of each extracted URL
+while read url; do
+  status=$(curl -o /dev/null -s -w "%{http_code}" "$url")
+  echo "$status $url"
+done < urls.txt
+
+# Count unique domains
+grep -oE 'https?://[^/]+' urls.txt | sort -u | wc -l`}</code></pre>
+            </div>
+          </div>
+        </section>
 
         {/* How to Use */}
         <section className="mt-10">

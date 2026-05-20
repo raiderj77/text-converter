@@ -5,8 +5,6 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { EmojiPickerTool } from "@/components/tools/emoji-picker";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
-import ToolAnswerBlock from "@/components/ToolAnswerBlock";
-
 const tool = getToolBySlug("emoji-picker")!;
 const pageUrl = buildUrl("/emoji-picker");
 
@@ -69,6 +67,26 @@ const faqItems = [
     answer:
       "No. This tool runs entirely in your browser. The emoji data is hardcoded in the page, the search is performed client-side, and the clipboard copy uses the browser Clipboard API. Nothing you search or copy is sent to any server.",
   },
+  {
+    question: "Do emojis look the same on all devices?",
+    answer:
+      "No. Apple, Google, Microsoft, and Samsung each design their own emoji art for the same Unicode code points. A grinning face (U+1F600) looks slightly different on iPhone vs Android vs Windows, though the meaning stays the same.",
+  },
+  {
+    question: "Can I use emojis in code and databases?",
+    answer:
+      "Yes, but ensure your database uses UTF-8 (or utf8mb4 in MySQL). Emojis are multi-byte Unicode characters. Databases using latin1 or basic utf8 encoding will corrupt or reject emoji characters. In JavaScript, note that .length counts UTF-16 code units, not characters — use [...str].length for the true count.",
+  },
+  {
+    question: "How do I open the emoji keyboard on my computer?",
+    answer:
+      "On Windows, press Win+. (period). On Mac, press Ctrl+Cmd+Space. On Linux, it varies by desktop environment. For a browser-based picker with search that works everywhere, use this tool.",
+  },
+  {
+    question: "Can I use emojis in email subject lines?",
+    answer:
+      "Yes, and they can improve open rates. However, some email clients render emojis as squares or question marks. Stick to widely supported emojis (hearts, stars, arrows) and test across Gmail, Outlook, and Apple Mail before sending campaigns.",
+  },
 ];
 
 export default function EmojiPickerPage() {
@@ -104,8 +122,6 @@ export default function EmojiPickerPage() {
           An emoji picker lets you search, browse, and copy emojis by name or category with code points and shortcodes. Search or browse below to find and copy any emoji instantly.
         </p>
 
-        <ToolAnswerBlock slug="emoji-picker" />
-
         <div className="mt-3">
           <ToolActions />
         </div>
@@ -130,6 +146,130 @@ export default function EmojiPickerPage() {
         {/* ========== SEO CONTENT ========== */}
 
         <AdSlot slot="after-tool" page="emoji-picker" />
+
+        <section className="mt-10">
+          <h2 className="text-lg sm:text-xl font-semibold">What Is an Emoji Picker?</h2>
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
+            <p>
+              An emoji picker is a searchable interface for browsing, finding, and copying emoji
+              characters. Unlike image-based emoji references, a proper picker copies the actual
+              Unicode character to your clipboard so you can paste it into any text field — social
+              media, code editors, terminals, documents, and databases. Search by name
+              (&quot;rocket&quot;), browse by category (smileys, animals, food, travel), and see the
+              Unicode code point for each character.
+            </p>
+            <p>
+              You would use an emoji picker when composing social media posts, adding emojis to
+              commit messages and PR descriptions, inserting symbols into documents, finding the exact
+              emoji among thousands of options, and looking up code points for development work.
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-10">
+          <h2 className="text-lg sm:text-xl font-semibold">Code Examples for Working with Emojis</h2>
+          <div className="mt-3 text-sm text-neutral-300 space-y-4">
+            <div>
+              <h3 className="text-base font-semibold">JavaScript</h3>
+              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-javascript">{`// Emoji is a Unicode character
+const rocket = '🚀';
+console.log(rocket.codePointAt(0).toString(16)); // 1f680
+console.log('\\u{1F680}');                       // 🚀
+
+// .length counts UTF-16 code units, not characters
+console.log('🚀'.length);            // 2 (not 1!)
+console.log([...'🚀'].length);       // 1 (correct)
+
+// Detect emojis
+const hasEmoji = (str) => /\\p{Extended_Pictographic}/u.test(str);
+
+// Strip emojis
+const removeEmojis = (str) =>
+  str.replace(/\\p{Extended_Pictographic}/gu, '').trim();`}</code></pre>
+            </div>
+            <div>
+              <h3 className="text-base font-semibold">Python</h3>
+              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-python">{`# Emoji is a Unicode character — Python 3 handles length correctly
+rocket = '🚀'
+print(f'U+{ord(rocket):04X}')   # U+1F680
+print(len('Hello 🚀'))          # 7 (correct)
+
+# pip install emoji
+import emoji
+print(emoji.emojize(':rocket:'))         # 🚀
+print(emoji.demojize('🚀'))             # :rocket:
+print(emoji.emoji_count('Hello 🚀🌍')) # 2`}</code></pre>
+            </div>
+            <div>
+              <h3 className="text-base font-semibold">Go</h3>
+              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-go">{`package main
+
+import (
+    "fmt"
+    "unicode/utf8"
+)
+
+func main() {
+    rocket := "🚀"
+    fmt.Printf("Code point: U+%04X\\n", []rune(rocket)[0]) // U+1F680
+
+    text := "Hello 🚀"
+    fmt.Println("Bytes:", len(text))                    // 10
+    fmt.Println("Runes:", utf8.RuneCountInString(text)) // 7
+}`}</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <section className="mt-10">
+          <h2 className="text-lg sm:text-xl font-semibold">Real-World Emoji Use Cases</h2>
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
+            <p>
+              <strong className="text-neutral-200">Social media content creation.</strong>{" "}
+              Emojis increase engagement by 25–50% according to multiple studies. Use the emoji
+              picker to find the perfect emoji without scrolling through a phone keyboard.
+            </p>
+            <p>
+              <strong className="text-neutral-200">Git commits and PR descriptions.</strong>{" "}
+              Many teams use emoji conventions: 🐛 bug fixes, ✨ new features, 🔧 config changes,
+              📝 documentation. Search by name instead of memorizing code points.
+            </p>
+            <p>
+              <strong className="text-neutral-200">Documentation and README files.</strong>{" "}
+              GitHub renders emojis in Markdown. Adding ✅, ⚠️, and 📌 to READMEs improves
+              scannability.
+            </p>
+            <p>
+              <strong className="text-neutral-200">Database encoding verification.</strong>{" "}
+              MySQL requires <code className="text-neutral-200">utf8mb4</code> charset (not{" "}
+              <code className="text-neutral-200">utf8</code>, which only handles 3-byte characters)
+              to store emoji characters correctly.
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-10">
+          <h2 className="text-lg sm:text-xl font-semibold">Common Emoji Mistakes</h2>
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
+            <p>
+              <strong className="text-neutral-200">JavaScript .length is unreliable for emojis.</strong>{" "}
+              The emoji &apos;🚀&apos; has <code className="text-neutral-200">.length</code> of 2
+              because it uses a UTF-16 surrogate pair. Use{" "}
+              <code className="text-neutral-200">[...str].length</code> for the true character count.
+            </p>
+            <p>
+              <strong className="text-neutral-200">MySQL utf8 does not support emojis.</strong>{" "}
+              Standard MySQL utf8 only handles 3-byte characters. Use{" "}
+              <code className="text-neutral-200">utf8mb4</code> charset and{" "}
+              <code className="text-neutral-200">utf8mb4_unicode_ci</code> collation.
+            </p>
+            <p>
+              <strong className="text-neutral-200">Compound emojis have multiple code points.</strong>{" "}
+              The family emoji 👨‍👩‍👧‍👦 is four people joined by zero-width joiners (ZWJ).
+              Splitting or reversing these strings breaks them into individual components.
+            </p>
+          </div>
+        </section>
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">

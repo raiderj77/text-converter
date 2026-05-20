@@ -5,8 +5,6 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { SqlFormatterTool } from "@/components/tools/sql-formatter";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
-import ToolAnswerBlock from "@/components/ToolAnswerBlock";
-
 const tool = getToolBySlug("sql-formatter")!;
 const pageUrl = buildUrl("/sql-formatter");
 
@@ -69,6 +67,16 @@ const faqItems = [
     answer:
       "Some teams prefer lowercase keywords to match their ORM-generated queries or to reduce visual noise in code editors with syntax highlighting. Both conventions are valid. The important thing is consistency within a project. This formatter defaults to uppercase because it is the most widely used convention in SQL style guides.",
   },
+  {
+    question: "Can the formatter handle complex queries?",
+    answer:
+      "Yes. The SQL formatter handles subqueries, CTEs (WITH clauses), window functions, CASE expressions, multiple JOINs, and nested conditions. Each clause gets proper indentation regardless of query complexity.",
+  },
+  {
+    question: "Does formatting change how a query executes?",
+    answer:
+      "No. SQL formatting is purely cosmetic — whitespace and line breaks have no effect on query execution or performance. A minified query and a beautifully formatted query produce identical results in any SQL database.",
+  },
 ];
 
 export default function SqlFormatterPage() {
@@ -104,8 +112,6 @@ export default function SqlFormatterPage() {
           An SQL formatter and beautifier formats SQL queries with proper indentation, uppercase keywords, and readable structure. Paste your SQL below to format or minify it instantly.
         </p>
 
-        <ToolAnswerBlock slug="sql-formatter" />
-
         <div className="mt-3">
           <ToolActions />
         </div>
@@ -130,6 +136,100 @@ export default function SqlFormatterPage() {
         {/* ========== SEO CONTENT ========== */}
 
         <AdSlot slot="after-tool" page="sql-formatter" />
+
+        <section className="mt-10">
+          <h2 className="text-lg sm:text-xl font-semibold">What Is SQL Formatting?</h2>
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
+            <p>
+              SQL formatting takes a compact or messy query and adds consistent indentation, line
+              breaks, and keyword casing to make it human-readable. Each major clause (SELECT, FROM,
+              WHERE, JOIN, GROUP BY, ORDER BY) starts on its own line. Subqueries are indented.
+              Keywords are uppercased. The result is a query you can read, debug, and review in
+              seconds instead of parsing a wall of text.
+            </p>
+            <p>
+              You would use SQL formatting when debugging queries from application logs, reviewing
+              database migrations, writing documentation with SQL examples, standardizing team
+              code style, and preparing queries for code review.
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-10">
+          <h2 className="text-lg sm:text-xl font-semibold">Code Examples for SQL Formatting</h2>
+          <div className="mt-3 text-sm text-neutral-300 space-y-4">
+            <div>
+              <h3 className="text-base font-semibold">JavaScript (sql-formatter package)</h3>
+              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-javascript">{`// npm install sql-formatter
+const { format } = require('sql-formatter');
+
+const ugly = 'SELECT u.id,u.name,o.total FROM users u ' +
+  'INNER JOIN orders o ON u.id=o.user_id ' +
+  'WHERE o.created_at>2024-01-01 AND u.active=true ' +
+  'ORDER BY o.total DESC LIMIT 10';
+
+const formatted = format(ugly, {
+  language: 'postgresql',
+  keywordCase: 'upper',
+  indentStyle: 'standard',
+  tabWidth: 2,
+});
+console.log(formatted);`}</code></pre>
+            </div>
+            <div>
+              <h3 className="text-base font-semibold">Python (sqlparse)</h3>
+              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-python">{`# pip install sqlparse
+import sqlparse
+
+ugly = "SELECT u.id,u.name FROM users u INNER JOIN orders o ON u.id=o.user_id WHERE u.active=true LIMIT 10"
+
+formatted = sqlparse.format(
+    ugly,
+    reindent=True,
+    keyword_case='upper',
+    indent_width=2,
+)
+print(formatted)
+
+# Parse and analyze SQL tokens
+parsed = sqlparse.parse("SELECT id FROM users WHERE active = true")[0]
+for token in parsed.tokens:
+    if not token.is_whitespace:
+        print(f'{token.ttype}: {token}')`}</code></pre>
+            </div>
+            <div>
+              <h3 className="text-base font-semibold">Go</h3>
+              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-go">{`package main
+
+import (
+    "fmt"
+    "strings"
+)
+
+func uppercaseKeywords(sql string) string {
+    keywords := []string{
+        "SELECT", "FROM", "WHERE", "AND", "OR",
+        "INNER JOIN", "LEFT JOIN", "ORDER BY", "GROUP BY",
+        "HAVING", "LIMIT", "INSERT INTO", "UPDATE", "SET",
+    }
+    result := sql
+    for _, kw := range keywords {
+        result = strings.ReplaceAll(
+            result,
+            strings.ToLower(kw),
+            kw,
+        )
+    }
+    return result
+}
+
+func main() {
+    sql := "select id, name from users where active = true order by name limit 10"
+    fmt.Println(uppercaseKeywords(sql))
+}`}</code></pre>
+            </div>
+          </div>
+        </section>
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">

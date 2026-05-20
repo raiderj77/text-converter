@@ -5,8 +5,6 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { RemoveEmptyLinesTool } from "@/components/tools/remove-empty-lines";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
-import ToolAnswerBlock from "@/components/ToolAnswerBlock";
-
 const tool = getToolBySlug("remove-empty-lines")!;
 const pageUrl = buildUrl("/remove-empty-lines");
 
@@ -61,6 +59,21 @@ const faqItems = [
     answer:
       "Yes. All processing happens entirely in your browser using JavaScript. Your text is never sent to any server, making it safe for confidential documents, source code, and private content.",
   },
+  {
+    question: "Can I keep single blank lines but remove extra ones?",
+    answer:
+      "Yes. Toggle the 'collapse multiple blanks' option to reduce consecutive blank lines to a single blank line. This preserves paragraph spacing while eliminating excess vertical whitespace.",
+  },
+  {
+    question: "How do I remove empty lines in VS Code?",
+    answer:
+      "Open Find and Replace (Ctrl+H), enable regex mode, search for ^\\s*\\n and replace with nothing. This removes all blank lines. For collapsing, search for \\n{3,} and replace with \\n\\n.",
+  },
+  {
+    question: "What causes empty lines in copied text?",
+    answer:
+      "Common sources include: spreadsheet rows with empty cells, HTML with empty <p></p> tags, email clients inserting blank lines between quoted sections, and terminal output with spacing between command results.",
+  },
 ];
 
 export default function RemoveEmptyLinesPage() {
@@ -96,8 +109,6 @@ export default function RemoveEmptyLinesPage() {
           An empty line remover strips blank lines and whitespace-only lines from any block of text. Paste your text below to remove empty lines and clean up your text instantly.
         </p>
 
-        <ToolAnswerBlock slug="remove-empty-lines" />
-
         <div className="mt-3">
           <ToolActions />
         </div>
@@ -122,6 +133,89 @@ export default function RemoveEmptyLinesPage() {
         {/* ========== SEO CONTENT ========== */}
 
         <AdSlot slot="after-tool" page="remove-empty-lines" />
+
+        <section className="mt-10">
+          <h2 className="text-lg sm:text-xl font-semibold">What Is Blank Line Removal?</h2>
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
+            <p>
+              Blank line removal is the process of filtering out empty lines — lines containing
+              no characters at all — from a block of text. Most tools also treat whitespace-only
+              lines (lines with only spaces or tabs) as blank, since they appear visually empty
+              but can trip up text parsers and import tools.
+            </p>
+            <p>
+              There are two common modes. <strong className="text-neutral-200">Remove all blank
+              lines</strong> deletes every empty line so the output has no vertical spacing between
+              content lines. <strong className="text-neutral-200">Collapse multiple blank lines</strong>{" "}
+              reduces runs of two or more consecutive blank lines to a single blank line — preserving
+              paragraph spacing while eliminating excess whitespace.
+            </p>
+            <p>
+              Blank lines accumulate when copying from web pages, exporting from spreadsheets,
+              editing in multiple tools, or converting between document formats. They are harmless
+              to human readers but cause real problems in data pipelines, code formatters, and
+              import tools that treat each line as a record.
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-10">
+          <h2 className="text-lg sm:text-xl font-semibold">Code Examples for Removing Empty Lines</h2>
+          <div className="mt-3 text-sm text-neutral-300 space-y-4">
+            <div>
+              <h3 className="text-base font-semibold">JavaScript</h3>
+              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-javascript">{`// Remove all empty and whitespace-only lines
+function removeEmptyLines(text) {
+  return text.split('\\n').filter(line => line.trim() !== '').join('\\n');
+}
+
+// Collapse multiple blank lines to a single blank line
+function collapseBlankLines(text) {
+  return text.replace(/\\n{3,}/g, '\\n\\n');
+}
+
+// Remove only truly empty lines (keep whitespace-only lines)
+function removeTrulyEmptyLines(text) {
+  return text.split('\\n').filter(line => line !== '').join('\\n');
+}`}</code></pre>
+            </div>
+            <div>
+              <h3 className="text-base font-semibold">Python</h3>
+              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-python">{`import re
+
+# Remove all empty and whitespace-only lines
+def remove_empty_lines(text):
+    return '\\n'.join(line for line in text.split('\\n') if line.strip())
+
+# Collapse multiple blank lines to a single blank line
+def collapse_blank_lines(text):
+    return re.sub(r'\\n{3,}', '\\n\\n', text)
+
+# Process a file
+with open('input.txt', 'r') as f:
+    content = f.read()
+
+cleaned = remove_empty_lines(content)
+
+with open('output.txt', 'w') as f:
+    f.write(cleaned)`}</code></pre>
+            </div>
+            <div>
+              <h3 className="text-base font-semibold">Bash</h3>
+              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-bash">{`# Remove truly empty lines (grep -v inverts match)
+grep -v '^$' input.txt > output.txt
+
+# Remove empty and whitespace-only lines
+grep -v '^\\s*$' input.txt > output.txt
+
+# Collapse multiple blank lines to one (cat -s squeezes blank lines)
+cat -s input.txt > output.txt
+
+# In-place removal with sed
+sed -i '/^\\s*$/d' input.txt`}</code></pre>
+            </div>
+          </div>
+        </section>
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">

@@ -55,6 +55,15 @@ const nextConfig: NextConfig = {
         destination: "/blog/when-to-use-title-case-vs-sentence-case-in-writing",
         permanent: true,
       },
+      { source: "/blog/emoji-picker-guide", destination: "/emoji-picker", permanent: true },
+      { source: "/blog/json-formatter-guide", destination: "/json-formatter", permanent: true },
+      { source: "/blog/sql-formatter-guide", destination: "/sql-formatter", permanent: true },
+      { source: "/blog/extract-emails-guide", destination: "/extract-emails", permanent: true },
+      { source: "/blog/remove-empty-lines-guide", destination: "/remove-empty-lines", permanent: true },
+      { source: "/blog/nato-phonetic-guide", destination: "/nato-phonetic-alphabet", permanent: true },
+      { source: "/blog/extract-urls-guide", destination: "/extract-urls", permanent: true },
+      { source: "/blog/fancy-text-generator-guide", destination: "/fancy-text-generator", permanent: true },
+      { source: "/blog/unicode-lookup-guide", destination: "/unicode-lookup", permanent: true },
     ];
   },
   eslint: {

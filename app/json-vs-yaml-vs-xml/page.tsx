@@ -3,8 +3,6 @@ import Link from "next/link";
 import { SITE_URL } from "@/lib/config";
 import { ArticleSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
 import { AdSlot } from "@/components/ui/ad-slot";
-import ToolAnswerBlock from "@/components/ToolAnswerBlock";
-
 const pageUrl = `${SITE_URL}/json-vs-yaml-vs-xml`;
 
 export const metadata: Metadata = {
@@ -102,8 +100,6 @@ export default function JsonVsYamlVsXmlPage() {
         {/* ========== What Is JSON? ========== */}
 
         <section className="mt-10">
-          <ToolAnswerBlock slug="json-vs-yaml-vs-xml" />
-
           <h2 className="text-lg sm:text-xl font-semibold">What Is JSON Data Format?</h2>
           <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>

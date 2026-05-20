@@ -5,7 +5,6 @@ import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/sche
 import { UnicodeLookupTool } from "@/components/tools/unicode-lookup";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { ToolActions } from "@/components/ui/tool-actions";
-import ToolAnswerBlock from "@/components/ToolAnswerBlock";
 
 const tool = getToolBySlug("unicode-lookup")!;
 const pageUrl = buildUrl("/unicode-lookup");
@@ -65,6 +64,21 @@ const faqItems = [
     answer:
       "This tool includes approximately 200 of the most commonly used Unicode characters across seven categories: Arrows, Math, Currency, Checkmarks, Stars & Shapes, Box Drawing, and Punctuation. These cover the vast majority of symbols that developers, designers, and writers need in everyday work.",
   },
+  {
+    question: "How do I find a Unicode character by name?",
+    answer:
+      "Type a descriptive word in the search box — for example, 'arrow', 'heart', or 'check'. The tool filters results as you type, showing characters whose official Unicode names match your query. You can also browse by category tab.",
+  },
+  {
+    question: "How do I type special characters not on my keyboard?",
+    answer:
+      "Search for the character in the Unicode Lookup tool and copy it by clicking the result card. Alternatively, use the Alt code on Windows, Character Viewer on Mac (Edit > Emoji & Symbols), or Ctrl+Shift+U followed by the hex code point on Linux.",
+  },
+  {
+    question: "What is the difference between Unicode and UTF-8?",
+    answer:
+      "Unicode is the standard that assigns a unique number (code point) to every character. UTF-8 is an encoding that defines how those numbers are stored as bytes on disk or in memory. UTF-8 uses 1–4 bytes per character and is backward-compatible with ASCII. It is the dominant text encoding on the web.",
+  },
 ];
 
 export default function UnicodeLookupPage() {
@@ -100,8 +114,6 @@ export default function UnicodeLookupPage() {
           A Unicode character lookup tool lets you search for any Unicode symbol by name, category, or code point. Search below to find, preview, and copy any Unicode character instantly.
         </p>
 
-        <ToolAnswerBlock slug="unicode-lookup" />
-
         <div className="mt-3">
           <ToolActions />
         </div>
@@ -126,6 +138,133 @@ export default function UnicodeLookupPage() {
         {/* ========== SEO CONTENT ========== */}
 
         <AdSlot slot="after-tool" page="unicode-lookup" />
+
+        <section className="mt-10">
+          <h2 className="text-lg sm:text-xl font-semibold">What Is Unicode?</h2>
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
+            <p>
+              Unicode is the universal character encoding standard that assigns a unique numeric
+              code point to every character in every writing system. Code points are written as
+              U+ followed by hexadecimal digits: U+0041 is &lsquo;A&rsquo;, U+00E9 is &lsquo;&eacute;&rsquo;,
+              U+2764 is &lsquo;&#x2764;&rsquo;, U+1F600 is &lsquo;&#x1F600;&rsquo;. Unicode covers Latin,
+              Cyrillic, Arabic, Chinese, Japanese, Korean, Devanagari, emoji, mathematical symbols,
+              musical notation, and many more scripts &mdash; over 149,000 characters total.
+            </p>
+            <p>
+              You would use Unicode lookup when inserting special characters not on your keyboard,
+              finding the correct arrow or symbol for a design, looking up code points for
+              internationalization work, debugging character encoding issues, and finding HTML
+              entities for web development.
+            </p>
+            <p>
+              Unicode defines characters and their code points, but the bytes stored in a file
+              depend on the encoding. UTF-8, the dominant encoding on the web, uses 1&ndash;4 bytes
+              per character and is backward-compatible with ASCII. Understanding this distinction
+              matters when working with file sizes, database column lengths, and string manipulation.
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-10">
+          <h2 className="text-lg sm:text-xl font-semibold">Code Examples for Working with Unicode</h2>
+          <div className="mt-3 text-sm text-neutral-300 space-y-4">
+            <div>
+              <h3 className="text-base font-semibold">JavaScript</h3>
+              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-javascript">{`// Get code point of a character
+console.log('A'.codePointAt(0));              // 65
+console.log('❤'.codePointAt(0).toString(16)); // 2764
+console.log('😀'.codePointAt(0).toString(16)); // 1f600
+
+// Create character from code point
+console.log(String.fromCodePoint(0x2764));  // ❤
+console.log(String.fromCodePoint(0x1F600)); // 😀
+
+// Unicode escapes in strings
+const arrow = '\\u2192';  // →
+const check = '\\u2713';  // ✓
+const cross = '\\u2717';  // ✗
+console.log('Pass ' + check + ' / Fail ' + cross + ' / Next ' + arrow);
+
+// Iterate correctly over emoji and non-BMP chars
+const text = 'Hello 😀 World';
+for (const char of text) {
+  const cp = char.codePointAt(0).toString(16).toUpperCase().padStart(4, '0');
+  console.log(char + ' = U+' + cp);
+}
+
+// Detect emoji range
+function isEmoji(char) {
+  const cp = char.codePointAt(0);
+  return (cp >= 0x1F600 && cp <= 0x1F64F) ||
+         (cp >= 0x1F300 && cp <= 0x1F5FF) ||
+         (cp >= 0x1F680 && cp <= 0x1F6FF);
+}`}</code></pre>
+            </div>
+            <div>
+              <h3 className="text-base font-semibold">Python</h3>
+              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-python">{`import unicodedata
+
+# Get character info
+char = '❤'
+print(f"Character: {char}")
+print(f"Name: {unicodedata.name(char)}")
+print(f"Code point: U+{ord(char):04X}")
+# Character: ❤  Name: HEAVY BLACK HEART  Code point: U+2764
+
+# Look up character by name
+arrow = unicodedata.lookup('RIGHTWARDS ARROW')
+print(f"Arrow: {arrow} (U+{ord(arrow):04X})")
+# Arrow: → (U+2192)
+
+# Search by partial name
+def search_unicode(query, limit=5):
+    results = []
+    for cp in range(0x10FFFF):
+        try:
+            name = unicodedata.name(chr(cp))
+            if query.upper() in name:
+                results.append((chr(cp), f'U+{cp:04X}', name))
+                if len(results) >= limit:
+                    break
+        except ValueError:
+            continue
+    return results
+
+for char, code, name in search_unicode('check mark'):
+    print(f"  {char}  {code}  {name}")
+# ✓  U+2713  CHECK MARK
+# ✔  U+2714  HEAVY CHECK MARK`}</code></pre>
+            </div>
+            <div>
+              <h3 className="text-base font-semibold">Go</h3>
+              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-go">{`package main
+
+import (
+    "fmt"
+    "unicode/utf8"
+)
+
+func main() {
+    // Character info
+    char := '❤'
+    fmt.Printf("Character: %c\\n", char)
+    fmt.Printf("Code point: U+%04X\\n", char)
+    fmt.Printf("UTF-8 bytes: %d\\n", utf8.RuneLen(char))
+
+    // Create from code point
+    arrow := rune(0x2192)
+    check := rune(0x2713)
+    fmt.Printf("Arrow: %c, Check: %c\\n", arrow, check)
+
+    // Iterate over string (handles multi-byte runes)
+    text := "Hello 😀"
+    for _, r := range text {
+        fmt.Printf("%c = U+%04X\\n", r, r)
+    }
+}`}</code></pre>
+            </div>
+          </div>
+        </section>
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">

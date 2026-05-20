@@ -3,8 +3,6 @@ import Link from "next/link";
 import { SITE_URL } from "@/lib/config";
 import { FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
 import { AdSlot } from "@/components/ui/ad-slot";
-import ToolAnswerBlock from "@/components/ToolAnswerBlock";
-
 const pageUrl = `${SITE_URL}/text-tools-for-developers`;
 
 export const metadata: Metadata = {
@@ -95,8 +93,6 @@ export default function TextToolsForDevelopersPage() {
         {/* ========== Code Formatting Tools ========== */}
 
         <section className="mt-10">
-          <ToolAnswerBlock slug="text-tools-for-developers" />
-
           <h2 className="text-lg sm:text-xl font-semibold">Free Code Formatting Tools</h2>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link
