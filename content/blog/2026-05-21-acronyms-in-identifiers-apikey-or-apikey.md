@@ -21,7 +21,7 @@ All-caps acronyms create ambiguous word boundaries. When you scan `parseHTTPSRes
 This is not a preference argument. Automated tools break on all-caps acronyms in predictable ways:
 
 - **Case converters** produce wrong output. `APIKey` split naively on uppercase transitions gives `A`, `P`, `I`, `Key` -- four tokens instead of two. `ApiKey` splits cleanly to `api`, `key`.
-- **ORM column mappers** that convert camelCase to snake_case output `a_p_i_key` for `APIKey` and `api_key` for `ApiKey`. One is correct.
+- **ORM column mappers** that convert [camelCase to snake_case output](/blog/the-impact-of-variable-naming-conventions-on-code-quality-ca/) `a_p_i_key` for `APIKey` and `api_key` for `ApiKey`. One is correct.
 - **Code generators** from OpenAPI specs that encounter `APIKey` in a schema field name often produce inconsistent output across language targets.
 
 Try this in Python with a naive splitter:
@@ -88,7 +88,7 @@ No. Both formats sidestep the problem entirely.
 
 `API_KEY`, `HTTP_CLIENT` -- all-caps constants use underscores as separators, so the acronym vs word distinction disappears.
 
-The acronym debate is purely a camelCase and PascalCase problem.
+The acronym debate is purely a [camelCase and PascalCase problem](/blog/from-variables-to-functions-why-coders-prefer-camel-case-or-/).
 
 ---
 
@@ -96,7 +96,7 @@ The acronym debate is purely a camelCase and PascalCase problem.
 
 Linters handle it. You do not want this to be a code review conversation.
 
-**ESLint (TypeScript/JS):** The [`@typescript-eslint/naming-convention`](https://typescript-eslint.io/rules/naming-convention/) rule lets you enforce camelCase for variables and PascalCase for types. It does not natively distinguish acronym style, but combined with a custom regex you can block all-caps sequences inside identifiers.
+**ESLint (TypeScript/JS):** The [`@typescript-eslint/naming-convention`](https://typescript-eslint.io/rules/naming-convention/) rule lets you [enforce camelCase for variables and PascalCase for types](/blog/the-relationship-between-code-readability-and-the-use-of-cam/). It does not natively distinguish acronym style, but combined with a custom regex you can block all-caps sequences inside identifiers.
 
 **golangci-lint:** Includes `golint`/`revive` which enforce Go's opposite convention -- all-caps acronyms. If you are in Go, follow Go.
 
