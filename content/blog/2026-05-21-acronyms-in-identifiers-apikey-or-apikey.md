@@ -16,6 +16,9 @@ reviewer: "Jason Ramirez, CADC-II"
 
 ## Why does `APIKey` cause real problems?
 
+All-caps acronyms break automated tooling in predictable ways. A naive snake_case converter turns `APIKey` into `a_p_i_key` instead of `api_key`, and camelCase parsers misread word boundaries. `ApiKey` and `ParseHttpsResponse` give every tool, and every human reader, unambiguous split points without special-case logic.
+
+
 All-caps acronyms create ambiguous word boundaries. When you scan `parseHTTPSResponse`, your brain has to figure out where `HTTPS` ends and `Response` begins. With `ParseHttpsResponse`, the boundary is unambiguous.
 
 This is not a preference argument. Automated tools break on all-caps acronyms in predictable ways:
@@ -45,6 +48,9 @@ The regex is the same one used by [ActiveRecord's `underscore` method](https://a
 
 ## What do the actual style guides say?
 
+Every major style guide that addresses this explicitly recommends treating acronyms as words. Microsoft .NET uses title case for three-plus letter acronyms (`HttpClient`, `XmlDocument`), Google Java follows the same pattern, and Go's `golint` enforces all-caps but is the deliberate outlier. No mainstream guide defends `APIKey` in PascalCase.
+
+
 Every guide that has addressed this explicitly recommends treating acronyms as words.
 
 **Microsoft .NET:** The [capitalization conventions docs](https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/capitalization-conventions) state that two-letter acronyms are both-caps (`IO`, `UI`), but acronyms of three or more letters use title case: `Html`, `Xml`, `Http`. So `HttpClient`, not `HTTPClient`. The BCL has followed this since .NET 2.0.
@@ -58,6 +64,9 @@ Every guide that has addressed this explicitly recommends treating acronyms as w
 ---
 
 ## What about two-letter acronyms like `IO` or `ID`?
+
+Two-letter acronyms stay all-caps when standalone or leading, and drop to title case mid-identifier. So `IOStream` and `UIView` are correct, but `CustomerId` beats `CustomerID`. The .NET capitalization conventions make this explicit, and the rule is consistent enough to apply across most non-Go codebases without ambiguity.
+
 
 Keep them all-caps when they stand alone or sit at the start of an identifier. Lowercase them when they appear mid-word.
 
@@ -82,6 +91,9 @@ For `ID` specifically, the convention varies by language. In .NET you write `Cus
 
 ## Does it matter for snake_case or SCREAMING_SNAKE_CASE?
 
+No. Underscores make word boundaries explicit, so the acronym debate is irrelevant. `api_key` and `http_client` are unambiguous by structure. `API_KEY` and `HTTP_CLIENT` work the same way. The all-caps-versus-title-case question only surfaces in camelCase and PascalCase, where boundaries depend entirely on letter casing.
+
+
 No. Both formats sidestep the problem entirely.
 
 `api_key`, `http_client`, `xml_parser` -- word boundaries are explicit via underscore. There is no ambiguity to resolve.
@@ -93,6 +105,9 @@ The acronym debate is purely a [camelCase and PascalCase problem](/blog/from-var
 ---
 
 ## How do I enforce this in a codebase?
+
+Use a linter, not code review. For TypeScript, pair `@typescript-eslint/naming-convention` with a custom regex that rejects consecutive uppercase letters beyond two. For Go, `golint` enforces its own all-caps convention automatically. For C#, Roslyn analyzers cover .NET naming rules. Pick the tool for your stack and block violations in CI.
+
 
 Linters handle it. You do not want this to be a code review conversation.
 
@@ -114,6 +129,9 @@ This will flag `APIKey`, `HTTPClient`, `XMLParser` and pass `ApiKey`, `HttpClien
 ---
 
 ## What's the practical rule to memorize?
+
+Three rules cover almost everything. In Go, all-caps acronyms everywhere, follow `golint`. Outside Go, two-letter acronyms are both-caps when standalone or leading (`IOStream`), title-cased when trailing (`CustomerId`). Three-plus letter acronyms are always title-cased outside Go: `ApiKey`, `HttpClient`, `XmlDocument`. Proper nouns like `OAuth` and `iOS` are exceptions, not rules.
+
 
 Three rules cover 95% of cases:
 
