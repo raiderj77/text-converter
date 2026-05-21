@@ -6,6 +6,7 @@ description: ""
 status: published
 author: "Your Friendly Developer"
 reviewer: "Your Friendly Developer"
+noindex: true
 ---
 
 # Exploring Uncommon Unicode Characters: Insights into U+1F600 Extended Pictographic Emoji

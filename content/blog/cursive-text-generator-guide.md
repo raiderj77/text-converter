@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Cursive Text Generator — Copy & Paste Cursive Online"
 description: "Generate cursive Unicode text instantly. Type your text, copy the cursive version, paste anywhere — Instagram, TikTok, Discord. Free, no signup required."
 date: "2026-03-29"

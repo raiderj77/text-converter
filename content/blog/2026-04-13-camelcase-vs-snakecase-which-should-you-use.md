@@ -6,6 +6,7 @@ description: ""
 status: published
 author: "Your Friendly Developer"
 reviewer: "Your Friendly Developer"
+noindex: true
 ---
 
 # CamelCase vs Snake_Case: Which Convention Should You Use?

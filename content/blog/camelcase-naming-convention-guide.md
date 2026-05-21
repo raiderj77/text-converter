@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "camelCase Naming Convention — When and How to Use It"
 description: "Complete guide to camelCase naming convention: rules, usage in JavaScript, Java, and TypeScript, comparison with PascalCase and snake_case, and when to use camelCase in your code."
 date: "2026-03-18"

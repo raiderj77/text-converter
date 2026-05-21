@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Sentence Case Rules — When to Capitalize Only the First Word"
 description: "Learn sentence case capitalization rules for UI copy, email subjects, and blog headings. Covers when to capitalize only the first word, proper noun exceptions, and how sentence case differs from title case."
 date: "2026-03-18"

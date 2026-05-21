@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Text Formatting for Social Media — Bold, Italic, and Special Characters That Work Everywhere"
 description: "Learn how to use Unicode bold, italic, and styled text on social media platforms. Generate formatted text that works on Twitter, Instagram, LinkedIn, and Facebook without any special permissions."
 date: "2026-03-18"

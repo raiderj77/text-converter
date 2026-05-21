@@ -6,6 +6,7 @@ description: ""
 status: published
 author: "Your Friendly Developer"
 reviewer: "Your Friendly Developer"
+noindex: true
 ---
 
 # How to Use Sentence Case Correctly in Writing

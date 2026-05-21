@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "How Unicode Text Styles Work — Bold, Italic, Strikethrough, and Beyond"
 description: "Understand how Unicode text styles work: bold, italic, strikethrough, and decorative alphabets using Mathematical Alphanumeric Symbols. Learn why styled Unicode characters work in plain-text environments."
 date: "2026-03-18"

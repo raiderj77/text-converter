@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Gothic Text Generator — Old English & Fraktur Font Online"
 description: "Generate gothic, blackletter, and Old English Unicode text online. Copy and paste Fraktur characters for Discord, Instagram, and TikTok instantly."
 date: "2026-03-31"

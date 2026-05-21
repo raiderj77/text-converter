@@ -6,6 +6,7 @@ description: ""
 status: published
 author: "Your Friendly Developer"
 reviewer: "Your Friendly Developer"
+noindex: true
 ---
 
 # Evaluating the Effectiveness of Camel Case and Snake Case in Real-World Development Projects

@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Base64 Encoder & Decoder — Encode and Decode Online Free"
 description: "Encode text or data to Base64 and decode Base64 strings back to text instantly. Free online Base64 encoder decoder. No signup. Includes code examples."
 date: "2026-03-29"

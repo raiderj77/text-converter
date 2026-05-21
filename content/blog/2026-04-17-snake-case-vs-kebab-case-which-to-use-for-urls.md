@@ -6,6 +6,7 @@ description: ""
 status: published
 author: "Your Friendly Developer"
 reviewer: "Your Friendly Developer"
+noindex: true
 ---
 
 # Snake Case vs Kebab Case: Which to Use for URLs

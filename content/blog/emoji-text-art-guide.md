@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Emoji Text Art — Copy & Paste Emoji Faces and Expressions"
 description: "Emoji text art, kaomoji, and text emoticons copy paste guide. Classic faces, Japanese expressions, and emotion tables for Discord, Reddit, and more."
 date: "2026-04-01"

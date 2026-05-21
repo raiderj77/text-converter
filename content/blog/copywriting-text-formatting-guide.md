@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Text Formatting for Copywriters — Capitalization, Case Styles, and Readability"
 description: "Master capitalization rules for copywriting: title case, sentence case, and ALL CAPS. Learn how case styles affect click-through rates, brand perception, and readability across headlines, emails, and CTAs."
 date: "2026-03-18"

@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "PascalCase — The Naming Convention for Classes, Components, and Types"
 description: "Complete guide to PascalCase naming convention: rules, usage for classes, React components, and TypeScript types, comparison with camelCase, and when PascalCase is required."
 date: "2026-03-18"

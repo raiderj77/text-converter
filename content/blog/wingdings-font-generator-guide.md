@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Wingdings Generator — Copy & Paste Wingdings Symbols Online"
 description: "Wingdings generator online — translate and copy symbols. Learn how Wingdings works, Unicode alternatives, and where Wingdings actually displays today."
 date: "2026-03-31"

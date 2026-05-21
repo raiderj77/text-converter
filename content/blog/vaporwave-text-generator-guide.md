@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Vaporwave Text Generator — Wide Aesthetic Text Online"
 description: "Generate wide vaporwave aesthetic text instantly. Copy & paste fullwidth Unicode characters for Instagram bios, social posts, and retro digital designs."
 date: "2026-03-31"

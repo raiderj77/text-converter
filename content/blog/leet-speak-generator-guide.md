@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Leet Speak Generator — Convert Text to 1337 Online"
 description: "Convert text to leet speak (1337) instantly. Free leet speak generator — classic, advanced, and extreme modes. Copy and paste your 1337 text anywhere."
 date: "2026-03-29"

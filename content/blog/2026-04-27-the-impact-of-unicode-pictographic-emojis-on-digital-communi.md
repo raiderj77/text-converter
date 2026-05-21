@@ -6,6 +6,7 @@ description: ""
 status: published
 author: "Your Friendly Developer"
 reviewer: "Your Friendly Developer"
+noindex: true
 ---
 
 # Decoding U+1F600: How Unicode Pictographic Emojis Reshape Developer Communication

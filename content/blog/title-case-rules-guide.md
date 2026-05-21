@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "How to Write in Title Case — Rules, Examples, and Style Guide Differences"
 description: "Title case capitalizes major words in a heading. Learn the exact rules for AP, APA, Chicago, and MLA styles, plus common mistakes to avoid."
 date: "2026-03-18"

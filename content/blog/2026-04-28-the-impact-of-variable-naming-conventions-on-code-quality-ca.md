@@ -6,6 +6,7 @@ description: ""
 status: published
 author: "Your Friendly Developer"
 reviewer: "Your Friendly Developer"
+noindex: true
 ---
 
 # Camel Case vs. Snake Case: How Variable Naming Impacts Code Quality and Developer Productivity

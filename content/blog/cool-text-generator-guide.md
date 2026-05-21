@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Cool Text Generator — Copy & Paste Cool Fonts Online"
 description: "Generate cool text with Unicode symbols instantly. Fancy fonts, aesthetic letters, glitch text. Copy and paste into Instagram, TikTok, Discord. Free."
 date: "2026-03-31"

@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Glitch Text Generator — Zalgo & Corrupted Text Online"
 description: "Generate Zalgo glitch text online for gaming, horror aesthetics, and social media bios. Corrupted Unicode diacritics copy and paste anywhere instantly."
 date: "2026-03-31"

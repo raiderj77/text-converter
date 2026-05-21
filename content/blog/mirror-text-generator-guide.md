@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Mirror Text Generator — Flip and Reverse Text Online"
 description: "Flip, mirror, and reverse text for Instagram, Discord, TikTok. How Unicode mirror text works and where to use it. Copy and paste the output anywhere."
 date: "2026-03-31"

@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "Tiny Text Generator — Small Caps, Superscript & Subscript"
 description: "Generate tiny text online — small caps, superscript, and subscript Unicode styles. Copy and paste into Instagram, Discord, and TikTok bios instantly."
 date: "2026-03-31"

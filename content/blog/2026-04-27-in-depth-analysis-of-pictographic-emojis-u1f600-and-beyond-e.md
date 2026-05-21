@@ -6,6 +6,7 @@ description: ""
 status: published
 author: "Your Friendly Developer"
 reviewer: "Your Friendly Developer"
+noindex: true
 ---
 
 # Mastering Pictographic Emojis: An In-Depth Analysis of U+1F600 and the Extended Pictographic Block

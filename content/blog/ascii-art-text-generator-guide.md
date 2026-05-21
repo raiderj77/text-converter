@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "ASCII Art Text Generator — Convert Text to ASCII Art Online"
 description: "Convert text to ASCII art online. Generate FIGlet-style banners for Discord, Reddit, GitHub READMEs, and terminals. Copy and paste instantly."
 date: "2026-04-01"

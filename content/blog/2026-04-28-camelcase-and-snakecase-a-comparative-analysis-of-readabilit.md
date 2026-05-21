@@ -6,6 +6,7 @@ description: ""
 status: published
 author: "Your Friendly Developer"
 reviewer: "Your Friendly Developer"
+noindex: true
 ---
 
 # Mastering Naming Conventions: A Practical Comparison of camelCase and snake_case for Code Readability

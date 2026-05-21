@@ -1,4 +1,5 @@
 ---
+noindex: true
 title: "CONSTANT_CASE (Screaming Snake Case) — When to Use All-Caps Underscored Names"
 description: "Complete guide to CONSTANT_CASE (SCREAMING_SNAKE_CASE): when to use all-caps underscored names for constants, environment variables, and configuration values across programming languages."
 date: "2026-03-18"

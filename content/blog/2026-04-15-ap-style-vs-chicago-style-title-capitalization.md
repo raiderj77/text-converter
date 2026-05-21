@@ -6,6 +6,7 @@ description: ""
 status: published
 author: "Your Friendly Developer"
 reviewer: "Your Friendly Developer"
+noindex: true
 ---
 
 # Understanding AP Style vs Chicago Style Title Capitalization: A Guide for the Frustrated
