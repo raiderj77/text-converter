@@ -4,8 +4,6 @@ date: "2026-05-13"
 slug: "database-column-naming-snake-case-vs-pascalcase-debate-settled"
 description: ""
 status: published
-author: "Jason Ramirez"
-reviewer: "Jason Ramirez, CADC-II"
 ---
 
 # Database Column Naming: snake_case vs PascalCase Debate Settled

@@ -4,8 +4,6 @@ date: "2026-05-17"
 slug: "screaming-snake-case-for-constants-when-it-actually-helps"
 description: ""
 status: published
-author: "Jason Ramirez"
-reviewer: "Jason Ramirez, CADC-II"
 ---
 
 # SCREAMING_SNAKE_CASE for Constants: When It Actually Helps

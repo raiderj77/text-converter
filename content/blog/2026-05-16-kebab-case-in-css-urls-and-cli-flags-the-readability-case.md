@@ -4,8 +4,6 @@ date: "2026-05-16"
 slug: "kebab-case-in-css-urls-and-cli-flags-the-readability-case"
 description: ""
 status: published
-author: "Jason Ramirez"
-reviewer: "Jason Ramirez, CADC-II"
 ---
 
 # kebab-case in CSS, URLs, and CLI Flags: The Readability Case

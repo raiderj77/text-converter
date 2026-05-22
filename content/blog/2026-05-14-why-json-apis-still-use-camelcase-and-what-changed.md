@@ -4,8 +4,6 @@ date: "2026-05-14"
 slug: "why-json-apis-still-use-camelcase-and-what-changed"
 description: ""
 status: published
-author: "Jason Ramirez"
-reviewer: "Jason Ramirez, CADC-II"
 ---
 
 # Why JSON APIs Still Use camelCase and What Changed

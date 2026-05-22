@@ -4,8 +4,6 @@ date: "2026-05-18"
 slug: "renaming-variables-across-a-large-repo-without-breaking-refs"
 description: ""
 status: published
-author: "Jason Ramirez"
-reviewer: "Jason Ramirez, CADC-II"
 ---
 
 # Renaming Variables Across a Large Repo Without Breaking Refs

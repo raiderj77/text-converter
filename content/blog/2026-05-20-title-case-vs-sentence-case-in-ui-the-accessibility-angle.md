@@ -4,8 +4,6 @@ date: "2026-05-20"
 slug: "title-case-vs-sentence-case-in-ui-the-accessibility-angle"
 description: ""
 status: published
-author: "Jason Ramirez"
-reviewer: "Jason Ramirez, CADC-II"
 ---
 
 # [Title Case vs Sentence Case](/blog/when-to-use-title-case-vs-sentence-case-in-writing/) in UI: The Accessibility Angle
