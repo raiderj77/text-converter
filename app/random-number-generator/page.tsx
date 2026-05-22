@@ -66,6 +66,16 @@ const faqItems = [
     answer:
       "No. All random number generation happens entirely in your browser using JavaScript. Nothing is sent to any server. Your settings are saved to your browser's local storage for convenience.",
   },
+  {
+    question: "Can I use this for passwords or security tokens?",
+    answer:
+      "No. Math.random() is a pseudo-random generator — its output is deterministic and not suitable for security-sensitive values like passwords, session tokens, API keys, or cryptographic material. For those use cases, your browser's Web Crypto API (crypto.getRandomValues()) is the correct choice. It draws from the operating system's entropy pool and meets cryptographic security standards. This tool is designed for games, simulations, sampling, and general-purpose use only.",
+  },
+  {
+    question: "Why might my random numbers look biased?",
+    answer:
+      "If you map raw random values to a range using the modulo operator (%), you can introduce modulo bias — values at the low end of your range appear slightly more often than the rest. For example, mapping a random byte (0–255) to 1–6 with %6 over-represents 1 through 4 because 256 does not divide evenly by 6. This tool avoids bias by using rejection sampling internally, discarding any draw that falls in the uneven tail and retrying, so every value in your range has equal probability.",
+  },
 ];
 
 export default function RandomNumberGeneratorPage() {
@@ -98,7 +108,7 @@ export default function RandomNumberGeneratorPage() {
           Free Random Number Generator
         </h1>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
-          A random number generator creates random numbers within a custom range with options for bulk generation and no duplicates. Set your range and count below to generate random numbers instantly.
+          This free random number generator instantly produces integers within any range you set — single picks, bulk batches up to 1,000, or dice rolls. It runs entirely in your browser using JavaScript; no data is ever sent to a server.
         </p>
 
         <ToolAnswerBlock slug="random-number-generator" />
@@ -107,17 +117,6 @@ export default function RandomNumberGeneratorPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the Random Number Generator Tool</h2>
-
-          <h2>Random Number Generator Features and Options</h2>
-
-          <h2>About the Free Online Random Number Generator</h2>
-
-        </div>
 
 
         <div className="mt-4">
@@ -130,7 +129,105 @@ export default function RandomNumberGeneratorPage() {
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            How to Generate Random Numbers Online
+            Is Math.random() Actually Random?
+          </h2>
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
+            <p>
+              JavaScript&apos;s <code className="text-neutral-200">Math.random()</code> is a
+              pseudo-random number generator (PRNG), not a true random source. It uses a
+              deterministic algorithm — typically xorshift128+ or a similar design — seeded by
+              engine state at startup. Every call produces a number in [0, 1) by advancing
+              internal state through a fixed mathematical transformation. Given the same starting
+              seed you would get the exact same sequence every time.
+            </p>
+            <p>
+              For the vast majority of everyday uses — games, simulations, random sampling,
+              picking a winner, rolling dice — this is completely fine. The output passes
+              rigorous statistical randomness tests and is indistinguishable from true randomness
+              for those purposes. The determinism only matters if an adversary can observe enough
+              outputs to reconstruct your seed, which is the threat model of cryptography.
+            </p>
+            <p>
+              <strong className="text-neutral-200">Do not use Math.random() for:</strong> passwords,
+              session tokens, API keys, OAuth secrets, cryptographic nonces, or anything where
+              predictability is a security risk.{" "}
+              <strong className="text-neutral-200">Do use it for:</strong> games, dice rolls,
+              random sampling, shuffles, simulations, and test data generation. For
+              security-sensitive values, the browser&apos;s <code className="text-neutral-200">
+              crypto.getRandomValues()</code> draws from the OS entropy pool and is
+              cryptographically secure.
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-10">
+          <h2 className="text-lg sm:text-xl font-semibold">
+            The Modulo Bias Trap
+          </h2>
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
+            <p>
+              A common mistake when mapping random bytes to a custom range is using the modulo
+              operator (<code className="text-neutral-200">%</code>). The problem: modulo
+              produces bias unless your source space divides evenly into your target range.
+              Consider mapping a random byte (0–255, so 256 possible values) to a die face
+              (1–6). You might write{" "}
+              <code className="text-neutral-200">result = (byte % 6) + 1</code>. The byte values
+              0–251 map cleanly across six faces 42 times each. But 252, 253, 254, and 255 map
+              to faces 1, 2, 3, and 4 respectively — giving those four faces one extra hit each.
+              Faces 1–4 appear 43 times per 256 draws; faces 5–6 appear only 42 times. That is
+              modulo bias.
+            </p>
+            <p>
+              The correct fix is rejection sampling: if the drawn byte falls in the biased
+              tail (here, values ≥ 252), discard it and draw again. Repeat until you get a
+              value in the unbiased portion. Each retry is independent, so the expected number
+              of extra draws is tiny — less than one on average for most practical ranges. The
+              result is that every outcome in your target range has exactly equal probability,
+              with no skew toward the low end.
+            </p>
+            <p>
+              This tool handles the bias problem internally so you never have to think about it.
+              Every number in your Min–Max range has equal probability regardless of how the
+              range size aligns with the underlying random source.
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-10">
+          <h2 className="text-lg sm:text-xl font-semibold">
+            Why Retry-on-Collision Fails for No-Duplicates
+          </h2>
+          <div className="mt-3 text-sm text-neutral-300 space-y-2">
+            <p>
+              The obvious way to generate <em>n</em> unique random numbers is to generate one,
+              check if you&apos;ve seen it before, and retry if you have. This works fine when
+              you need a handful of values from a large range — collisions are rare and retries
+              are cheap. But performance degrades sharply as the count approaches the range
+              size, for the same reason the birthday problem surprises people: once you&apos;ve
+              filled roughly 50% of the available slots, about half of all draws are collisions,
+              so you&apos;re doing roughly two draws per accepted value. At 90% fill, nine out
+              of ten draws are wasted. Near 100%, the retry loop runs for an arbitrarily long
+              time and the behavior becomes unpredictable.
+            </p>
+            <p>
+              The Fisher-Yates shuffle sidesteps this entirely. It works by maintaining a
+              virtual pool of all available values and swapping each selected value out of the
+              pool permanently. Each draw is O(1) with zero chance of collision because you
+              are always picking from the remaining unchosen values. The full algorithm runs
+              in O(n) time — linear in the count you want — regardless of how close that count
+              is to the range size. There is no retry logic and no worst-case blowup.
+            </p>
+            <p>
+              This tool uses Fisher-Yates for no-duplicates mode, which is why it handles
+              requests like &quot;999 unique numbers from 1–1000&quot; just as quickly as
+              &quot;5 unique numbers from 1–1000.&quot;
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-10">
+          <h2 className="text-lg sm:text-xl font-semibold">
+            How to Generate Random Numbers Here
           </h2>
           <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
@@ -153,55 +250,6 @@ export default function RandomNumberGeneratorPage() {
               <strong className="text-neutral-200">4. Roll dice.</strong> Use the dice roller
               section to simulate standard RPG dice. Click any die button to roll it, and view
               your complete roll history. Copy or clear results anytime.
-            </p>
-          </div>
-        </section>
-
-        <section className="mt-10">
-          <h2 className="text-lg sm:text-xl font-semibold">
-            Understanding Randomness and Where It Matters
-          </h2>
-          <div className="mt-3 text-sm text-neutral-300 space-y-2">
-            <p>
-              Random numbers are fundamental to many areas of computing, science, and everyday
-              life. From shuffling a playlist to running Monte Carlo simulations, the ability
-              to produce unpredictable values is surprisingly important. But not all randomness
-              is created equal, and understanding the differences helps you choose the right
-              tool for the job.
-            </p>
-            <p>
-              <strong className="text-neutral-200">Pseudo-random number generators (PRNGs)</strong> like
-              the one used in this tool produce sequences that appear random but are actually
-              deterministic. They start from a seed value and use mathematical formulas to
-              generate each subsequent number. Modern PRNGs like those built into JavaScript
-              engines pass rigorous statistical tests and produce output that is indistinguishable
-              from true randomness for practical purposes. They are fast, reproducible (given the
-              same seed), and perfectly suitable for games, simulations, random sampling, and
-              general-purpose tasks.
-            </p>
-            <p>
-              <strong className="text-neutral-200">True random number generators (TRNGs)</strong> derive
-              randomness from physical phenomena like atmospheric noise, radioactive decay, or
-              thermal fluctuations. These are used in cryptography, security tokens, and lottery
-              systems where predictability would be a vulnerability. The Web Crypto API
-              (crypto.getRandomValues) provides cryptographically secure random values in
-              browsers, bridging the gap between speed and security.
-            </p>
-            <p>
-              <strong className="text-neutral-200">Common applications</strong> of random number
-              generation include: statistical sampling and A/B testing, procedural generation in
-              games and art, Monte Carlo methods in physics and finance, randomized algorithms in
-              computer science, lottery and raffle drawings, dice and card game simulations, and
-              creating test data for software development. Each use case has different requirements
-              for speed, reproducibility, and unpredictability.
-            </p>
-            <p>
-              <strong className="text-neutral-200">The no-duplicates problem</strong> is a classic
-              challenge in computer science. When you need unique random numbers from a range, the
-              naive approach of generating and checking for duplicates becomes slow as the count
-              approaches the range size. Efficient algorithms like the Fisher-Yates shuffle solve
-              this by selecting from a shrinking pool of available values, guaranteeing uniqueness
-              in linear time.
             </p>
           </div>
         </section>
