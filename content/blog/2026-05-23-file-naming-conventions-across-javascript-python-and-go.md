@@ -83,7 +83,7 @@ UserService.js
 AuthProvider.jsx
 Button.tsx
 
-// camelCase for utilities and helpers
+// [camelCase for utilities and helpers](/blog/the-relationship-between-code-readability-and-the-use-of-cam/)
 formatDate.js
 parseQuery.js
 httpClient.js
@@ -93,9 +93,9 @@ user-profile.js
 auth-callback.js
 ```
 
-[Next.js](https://nextjs.org/docs/app/building-your-application/routing) uses kebab-case for route segments and encourages it for page files. The npm package registry is case-insensitive but [strongly recommends lowercase with hyphens](https://docs.npmjs.com/cli/v10/configuring-npm/package-json#name) for package names. React projects often use PascalCase for component files because the component name and filename match, and tooling like ESLint's `react/jsx-filename-extension` rule assumes this.
+[Next.js](https://nextjs.org/docs/app/building-your-application/routing) uses [kebab-case for route segments and encourages it for page files](/blog/kebab-case-in-css-urls-and-cli-flags-the-readability-case/). The npm package registry is case-insensitive but [strongly recommends lowercase with hyphens](https://docs.npmjs.com/cli/v10/configuring-npm/package-json#name) for package names. React projects often use PascalCase for component files because the component name and filename match, and tooling like ESLint's `react/jsx-filename-extension` rule assumes this.
 
-The actual risk here: if your team has no agreed convention, you end up with a mix of `UserService.js`, `user-service.js`, and `userService.js` in the same repo. Refactoring tools, barrel file generators, and import sorters all behave inconsistently across these styles.
+The actual risk here: if your team has [no agreed convention, you end up with a mix of](/blog/evaluating-the-effectiveness-of-camel-case-and-snake-case-in/) `UserService.js`, `user-service.js`, and `userService.js` in the same repo. Refactoring tools, barrel file generators, and import sorters all behave inconsistently across these styles.
 
 ---
 
