@@ -73,6 +73,9 @@ Platform-specific build constraints use suffixes like `_linux.go`, `_darwin.go`,
 
 ## What about JavaScript -- is there actually a standard?
 
+No enforced standard exists for JavaScript filenames. Airbnb's style guide ties filename casing to the export type, PascalCase for classes and components, camelCase for default functions. In practice, React projects lean PascalCase for components and kebab-case for everything else, so follow whatever your framework or team already uses consistently.
+
+
 No single enforced standard exists. The ecosystem is fragmented, and the right answer depends on what you are building.
 
 [Airbnb's style guide](https://github.com/airbnb/javascript#naming--filename-matches-export) says: "Use camelCase when you export a default function. Your filename should be identical to your function's name." It also says to use PascalCase when you export a constructor, class, or singleton.
@@ -101,6 +104,9 @@ The actual risk here: if your team has [no agreed convention, you end up with a 
 
 ## How do these conventions interact with imports?
 
+File naming directly controls whether imports resolve. In Python, the filename is the module name, so `from user_service import UserService` requires `user_service.py` on disk. Go imports use directory paths, not filenames, so casing mismatches there are rarer. JavaScript bundlers are usually case-insensitive locally but CI on Linux will break on mismatches.
+
+
 This is where the rubber meets the road.
 
 In Python, the import name is the filename without the extension. `from user_service import UserService` works because the file is `user_service.py`. Rename the file to `UserService.py` on a case-sensitive system and the import breaks.
@@ -120,6 +126,9 @@ Bundlers like webpack and Vite resolve these paths at build time. On case-insens
 ---
 
 ## Quick reference
+
+Python uses snake_case for files and packages, Go uses lowercase with no separators, and JavaScript varies by context but kebab-case dominates npm packages while PascalCase is standard for React components. Test files follow predictable suffixes: `test_module.py`, `file_test.go`, and `file.test.js`. When in doubt, avoid uppercase in filenames entirely.
+
 
 | Language | Files | Packages/Modules | Test files |
 |---|---|---|---|
