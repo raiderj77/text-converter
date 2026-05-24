@@ -4,6 +4,7 @@ date: "2026-05-03"
 slug: "from-flat-files-to-data-streams-a-practitioners-guide-to-csv"
 description: ""
 status: published
+noindex: true
 author: "Your Friendly Developer"
 reviewer: "Your Friendly Developer"
 ---

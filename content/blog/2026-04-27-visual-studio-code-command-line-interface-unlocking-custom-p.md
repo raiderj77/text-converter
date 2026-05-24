@@ -4,6 +4,7 @@ date: "2026-04-27"
 slug: "visual-studio-code-command-line-interface-unlocking-custom-p"
 description: ""
 status: published
+noindex: true
 author: "Your Friendly Developer"
 reviewer: "Your Friendly Developer"
 ---

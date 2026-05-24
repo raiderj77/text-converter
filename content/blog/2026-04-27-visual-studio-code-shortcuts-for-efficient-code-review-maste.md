@@ -4,6 +4,7 @@ date: "2026-04-27"
 slug: "visual-studio-code-shortcuts-for-efficient-code-review-maste"
 description: ""
 status: published
+noindex: true
 author: "Your Friendly Developer"
 reviewer: "Your Friendly Developer"
 ---

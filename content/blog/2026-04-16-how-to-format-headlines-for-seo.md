@@ -4,6 +4,7 @@ date: "2026-04-16"
 slug: "how-to-format-headlines-for-seo"
 description: ""
 status: published
+noindex: true
 author: "Your Friendly Developer"
 reviewer: "Your Friendly Developer"
 ---

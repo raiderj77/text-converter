@@ -4,6 +4,7 @@ description: "Top Grammarly alternatives in 2026: free options like Harper and L
 date: "2026-03-27"
 keywords: ["grammarly alternative", "grammarly alternatives free", "best grammarly alternatives 2026", "languagetool vs grammarly", "harper grammarly alternative", "free grammar checker", "ai writing assistant alternative"]
 toolSlug: ""
+noindex: true
 faq:
   - question: "What is the best free alternative to Grammarly?"
     answer: "LanguageTool is the strongest free alternative to Grammarly. It checks grammar, spelling, and style across 30+ languages and has browser extensions, a desktop app, and API access. The free tier covers most common writing needs without a word limit. Harper is a newer open-source option optimized for English prose clarity."
