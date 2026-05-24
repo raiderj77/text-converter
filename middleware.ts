@@ -1,6 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { NOINDEX_SLUGS } from '@/lib/noindex-slugs'
 
 export function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl
+  const blogMatch = pathname.match(/^\/blog\/([^/]+)\/?$/)
+  if (blogMatch) {
+    const slug = blogMatch[1]
+    if (NOINDEX_SLUGS.has(slug)) {
+      return new Response(null, { status: 410 })
+    }
+  }
+
   const response = NextResponse.next()
   const gpc = request.headers.get('sec-gpc') === '1'
   if (gpc) {

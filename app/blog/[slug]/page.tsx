@@ -10,8 +10,12 @@ function cx(...parts: Array<string | false | null | undefined>) {
   return parts.filter(Boolean).join(" ");
 }
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
-  return getAllMarkdownPosts().map((post) => ({ slug: post.slug }));
+  return getAllMarkdownPosts()
+    .filter((post) => !post.noindex)
+    .map((post) => ({ slug: post.slug }));
 }
 
 export async function generateMetadata(props: { params: ParamsPromise }) {
@@ -66,7 +70,7 @@ export default async function BlogPostPage(props: { params: ParamsPromise }) {
   const { slug } = await props.params;
   const post = await getMarkdownPost(slug);
 
-  if (!post) return notFound();
+  if (!post || post.noindex) return notFound();
 
   const url = `${SITE_URL}/blog/${post.slug}`;
   const tools = getLiveTools();
