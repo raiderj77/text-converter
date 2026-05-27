@@ -107,19 +107,6 @@ export default function RomanNumeralConverterPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the Roman Numeral Converter Tool</h2>
-
-          <h2>Roman Numeral Converter Features and Options</h2>
-
-          <h2>About the Free Online Roman Numeral Converter</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <RomanNumeralConverterTool />
         </div>

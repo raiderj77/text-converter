@@ -94,19 +94,6 @@ export default function WideTextGeneratorPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the Wide Text Generator Tool</h2>
-
-          <h2>Wide Text Generator Features and Options</h2>
-
-          <h2>About the Free Online Wide Text Generator</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <WideTextGeneratorTool />
         </div>

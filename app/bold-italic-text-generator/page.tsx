@@ -98,19 +98,6 @@ export default function BoldItalicTextGeneratorPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the Bold Italic Text Generator Tool</h2>
-
-          <h2>Bold Italic Text Generator Features and Options</h2>
-
-          <h2>About the Free Online Bold Italic Text Generator</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <BoldItalicTextGeneratorTool />
         </div>

@@ -127,19 +127,6 @@ export default function PasswordGeneratorPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the Password Generator Tool</h2>
-
-          <h2>Password Generator Features and Options</h2>
-
-          <h2>About the Free Online Password Generator</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <PasswordGeneratorTool />
         </div>

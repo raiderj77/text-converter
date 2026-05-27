@@ -102,19 +102,6 @@ export default function ListToTextPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the List To Text Tool</h2>
-
-          <h2>List To Text Features and Options</h2>
-
-          <h2>About the Free Online List To Text</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <ListToTextTool />
         </div>

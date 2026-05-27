@@ -109,19 +109,6 @@ export default function XmlFormatterPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the XML Formatter Tool</h2>
-
-          <h2>XML Formatter Features and Options</h2>
-
-          <h2>About the Free Online XML Formatter</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <XmlFormatterTool />
         </div>

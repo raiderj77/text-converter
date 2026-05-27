@@ -126,19 +126,6 @@ export default function RegexTesterPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the Regex Tester Tool</h2>
-
-          <h2>Regex Tester Features and Options</h2>
-
-          <h2>About the Free Online Regex Tester</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <RegexTesterTool />
         </div>

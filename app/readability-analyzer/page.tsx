@@ -111,19 +111,6 @@ export default function ReadabilityAnalyzerPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the Readability Analyzer Tool</h2>
-
-          <h2>Readability Analyzer Features and Options</h2>
-
-          <h2>About the Free Online Readability Analyzer</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <ReadabilityAnalyzerTool />
         </div>

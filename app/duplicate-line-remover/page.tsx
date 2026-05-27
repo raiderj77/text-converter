@@ -103,19 +103,6 @@ export default function DuplicateRemoverPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the Duplicate Line Remover Tool</h2>
-
-          <h2>Duplicate Line Remover Features and Options</h2>
-
-          <h2>About the Free Online Duplicate Line Remover</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <DuplicateRemoverTool />
         </div>

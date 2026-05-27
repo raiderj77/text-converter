@@ -98,19 +98,6 @@ export default function StrikethroughTextGeneratorPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the Strikethrough Text Generator Tool</h2>
-
-          <h2>Strikethrough Text Generator Features and Options</h2>
-
-          <h2>About the Free Online Strikethrough Text Generator</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <StrikethroughTextGeneratorTool />
         </div>

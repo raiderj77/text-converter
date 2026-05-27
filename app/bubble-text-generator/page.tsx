@@ -94,19 +94,6 @@ export default function BubbleTextGeneratorPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the Bubble Text Generator Tool</h2>
-
-          <h2>Bubble Text Generator Features and Options</h2>
-
-          <h2>About the Free Online Bubble Text Generator</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <BubbleTextGeneratorTool />
         </div>

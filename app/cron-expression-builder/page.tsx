@@ -110,19 +110,6 @@ export default function CronExpressionBuilderPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the Cron Expression Builder Tool</h2>
-
-          <h2>Cron Expression Builder Features and Options</h2>
-
-          <h2>About the Free Online Cron Expression Builder</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <CronExpressionBuilderTool />
         </div>

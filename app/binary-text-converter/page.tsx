@@ -111,19 +111,6 @@ export default function BinaryTextConverterPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the Binary Text Converter Tool</h2>
-
-          <h2>Binary Text Converter Features and Options</h2>
-
-          <h2>About the Free Online Binary Text Converter</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <BinaryTextConverterTool />
         </div>

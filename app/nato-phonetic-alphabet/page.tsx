@@ -113,19 +113,6 @@ export default function NatoPhoneticAlphabetPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the NATO Phonetic Alphabet Tool</h2>
-
-          <h2>NATO Phonetic Alphabet Features and Options</h2>
-
-          <h2>About the Free Online NATO Phonetic Alphabet</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <NatoPhoneticAlphabetTool />
         </div>

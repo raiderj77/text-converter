@@ -98,19 +98,6 @@ export default function AddPrefixSuffixPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the Add Prefix Suffix Tool</h2>
-
-          <h2>Add Prefix Suffix Features and Options</h2>
-
-          <h2>About the Free Online Add Prefix Suffix</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <AddPrefixSuffixTool />
         </div>

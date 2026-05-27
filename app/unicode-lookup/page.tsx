@@ -118,19 +118,6 @@ export default function UnicodeLookupPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the Unicode Lookup Tool</h2>
-
-          <h2>Unicode Lookup Features and Options</h2>
-
-          <h2>About the Free Online Unicode Lookup</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <UnicodeLookupTool />
         </div>

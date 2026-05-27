@@ -110,19 +110,6 @@ export default function UuidGeneratorPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the UUID Generator Tool</h2>
-
-          <h2>UUID Generator Features and Options</h2>
-
-          <h2>About the Free Online UUID Generator</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <UuidGeneratorTool />
         </div>

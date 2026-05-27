@@ -102,19 +102,6 @@ export default function AddLineNumbersPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the Add Line Numbers Tool</h2>
-
-          <h2>Add Line Numbers Features and Options</h2>
-
-          <h2>About the Free Online Add Line Numbers</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <AddLineNumbersTool />
         </div>

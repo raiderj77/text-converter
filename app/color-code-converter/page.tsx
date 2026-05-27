@@ -106,19 +106,6 @@ export default function ColorCodeConverterPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the Color Code Converter Tool</h2>
-
-          <h2>Color Code Converter Features and Options</h2>
-
-          <h2>About the Free Online Color Code Converter</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <ColorCodeConverterTool />
         </div>

@@ -94,19 +94,6 @@ export default function SubscriptGeneratorPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the Subscript Generator Tool</h2>
-
-          <h2>Subscript Generator Features and Options</h2>
-
-          <h2>About the Free Online Subscript Generator</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <SubscriptGeneratorTool />
         </div>

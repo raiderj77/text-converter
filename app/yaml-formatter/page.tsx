@@ -110,19 +110,6 @@ export default function YamlFormatterPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the YAML Formatter Tool</h2>
-
-          <h2>YAML Formatter Features and Options</h2>
-
-          <h2>About the Free Online YAML Formatter</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <YamlFormatterTool />
         </div>

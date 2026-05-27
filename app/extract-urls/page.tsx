@@ -103,19 +103,6 @@ export default function ExtractUrlsPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the Extract Urls Tool</h2>
-
-          <h2>Extract Urls Features and Options</h2>
-
-          <h2>About the Free Online Extract Urls</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <ExtractUrlsTool />
         </div>

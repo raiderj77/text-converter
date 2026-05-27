@@ -98,19 +98,6 @@ export default function SmallCapsGeneratorPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the Small Caps Generator Tool</h2>
-
-          <h2>Small Caps Generator Features and Options</h2>
-
-          <h2>About the Free Online Small Caps Generator</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <SmallCapsGeneratorTool />
         </div>

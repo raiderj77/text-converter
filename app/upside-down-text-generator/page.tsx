@@ -95,19 +95,6 @@ export default function UpsideDownTextGeneratorPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the Upside Down Text Generator Tool</h2>
-
-          <h2>Upside Down Text Generator Features and Options</h2>
-
-          <h2>About the Free Online Upside Down Text Generator</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <UpsideDownTextGeneratorTool />
         </div>

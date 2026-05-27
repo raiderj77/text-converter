@@ -110,19 +110,6 @@ export default function MarkdownPreviewPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the Markdown Preview Tool</h2>
-
-          <h2>Markdown Preview Features and Options</h2>
-
-          <h2>About the Free Online Markdown Preview</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <MarkdownPreviewTool />
         </div>

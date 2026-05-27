@@ -44,13 +44,6 @@ export default function SlugGeneratorPage() {
 
         <ToolAnswerBlock slug="slug-generator" />
 
-        {/* Descriptive headings for screen readers */}
-        <div className="sr-only">
-          <h2>How to Use the Slug Generator Tool</h2>
-          <h2>Slug Generator Features and Options</h2>
-          <h2>About the Free Online Slug Generator</h2>
-        </div>
-
         <div className="mt-6"><SlugGeneratorTool /></div>
 
         <section className="mt-10">

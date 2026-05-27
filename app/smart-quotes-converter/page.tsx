@@ -101,19 +101,6 @@ export default function SmartQuotesConverterPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the Smart Quotes Converter Tool</h2>
-
-          <h2>Smart Quotes Converter Features and Options</h2>
-
-          <h2>About the Free Online Smart Quotes Converter</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <SmartQuotesConverterTool />
         </div>

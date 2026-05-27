@@ -95,19 +95,6 @@ export default function BoldTextGeneratorPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the Bold Text Generator Tool</h2>
-
-          <h2>Bold Text Generator Features and Options</h2>
-
-          <h2>About the Free Online Bold Text Generator</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <BoldTextGeneratorTool />
         </div>

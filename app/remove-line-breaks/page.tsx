@@ -102,19 +102,6 @@ export default function RemoveLineBreaksPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the Remove Line Breaks Tool</h2>
-
-          <h2>Remove Line Breaks Features and Options</h2>
-
-          <h2>About the Free Online Remove Line Breaks</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <RemoveLineBreaksTool />
         </div>

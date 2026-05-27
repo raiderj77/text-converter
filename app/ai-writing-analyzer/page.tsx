@@ -111,19 +111,6 @@ export default function AiWritingAnalyzerPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the AI Writing Analyzer Tool</h2>
-
-          <h2>AI Writing Analyzer Features and Options</h2>
-
-          <h2>About the Free Online AI Writing Analyzer</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <AiWritingAnalyzerTool />
         </div>

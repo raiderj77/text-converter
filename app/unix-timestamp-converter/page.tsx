@@ -110,19 +110,6 @@ export default function UnixTimestampConverterPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the Unix Timestamp Converter Tool</h2>
-
-          <h2>Unix Timestamp Converter Features and Options</h2>
-
-          <h2>About the Free Online Unix Timestamp Converter</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <UnixTimestampConverterTool />
         </div>

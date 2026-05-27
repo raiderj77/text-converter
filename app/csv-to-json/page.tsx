@@ -110,19 +110,6 @@ export default function CsvToJsonPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the CSV To JSON Tool</h2>
-
-          <h2>CSV To JSON Features and Options</h2>
-
-          <h2>About the Free Online CSV To JSON</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <CsvToJsonConverterTool />
         </div>

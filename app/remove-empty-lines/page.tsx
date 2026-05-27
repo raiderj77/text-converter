@@ -113,19 +113,6 @@ export default function RemoveEmptyLinesPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the Remove Empty Lines Tool</h2>
-
-          <h2>Remove Empty Lines Features and Options</h2>
-
-          <h2>About the Free Online Remove Empty Lines</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <RemoveEmptyLinesTool />
         </div>

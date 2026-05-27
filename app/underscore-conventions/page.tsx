@@ -105,19 +105,6 @@ export default function UnderscoreConventionsPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the Underscore Conventions Tool</h2>
-
-          <h2>Underscore Conventions Features and Options</h2>
-
-          <h2>About the Free Online Underscore Conventions</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <UnderscoreConventionsTool />
         </div>

@@ -110,19 +110,6 @@ export default function WordFrequencyCounterPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the Word Frequency Counter Tool</h2>
-
-          <h2>Word Frequency Counter Features and Options</h2>
-
-          <h2>About the Free Online Word Frequency Counter</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <WordFrequencyCounterTool />
         </div>

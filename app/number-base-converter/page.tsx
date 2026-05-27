@@ -111,19 +111,6 @@ export default function NumberBaseConverterPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the Number Base Converter Tool</h2>
-
-          <h2>Number Base Converter Features and Options</h2>
-
-          <h2>About the Free Online Number Base Converter</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <NumberBaseConverterTool />
         </div>

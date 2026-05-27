@@ -110,19 +110,6 @@ export default function JwtDecoderPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the JWT Decoder Tool</h2>
-
-          <h2>JWT Decoder Features and Options</h2>
-
-          <h2>About the Free Online JWT Decoder</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <JwtDecoderTool />
         </div>

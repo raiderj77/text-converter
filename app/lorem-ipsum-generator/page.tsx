@@ -115,19 +115,6 @@ export default function LoremIpsumPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the Lorem Ipsum Generator Tool</h2>
-
-          <h2>Lorem Ipsum Generator Features and Options</h2>
-
-          <h2>About the Free Online Lorem Ipsum Generator</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <LoremIpsumTool />
         </div>

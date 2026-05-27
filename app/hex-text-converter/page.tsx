@@ -111,19 +111,6 @@ export default function HexTextConverterPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the Hex Text Converter Tool</h2>
-
-          <h2>Hex Text Converter Features and Options</h2>
-
-          <h2>About the Free Online Hex Text Converter</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <HexTextConverterTool />
         </div>

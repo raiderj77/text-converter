@@ -94,19 +94,6 @@ export default function TextRepeaterPage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the Text Repeater Tool</h2>
-
-          <h2>Text Repeater Features and Options</h2>
-
-          <h2>About the Free Online Text Repeater</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <TextRepeaterTool />
         </div>

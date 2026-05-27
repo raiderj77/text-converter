@@ -98,19 +98,6 @@ export default function FindAndReplacePage() {
           <ToolActions />
         </div>
 
-        {/* Descriptive headings for screen readers */}
-
-        <div className="sr-only">
-
-          <h2>How to Use the Find And Replace Tool</h2>
-
-          <h2>Find And Replace Features and Options</h2>
-
-          <h2>About the Free Online Find And Replace</h2>
-
-        </div>
-
-
         <div className="mt-4">
           <FindAndReplaceTool />
         </div>
