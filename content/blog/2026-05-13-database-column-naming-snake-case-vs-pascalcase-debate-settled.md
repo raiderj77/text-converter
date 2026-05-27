@@ -23,7 +23,7 @@ When you create a column named `UserId` in PostgreSQL, the engine stores it as `
 
 MySQL on Windows folds identifiers differently than MySQL on Linux because of filesystem case sensitivity. A schema with `UserName` works on your Windows dev box and breaks in production on Linux unless `lower_case_table_names` is set correctly. That is a real deployment bug waiting to happen, documented in the [MySQL manual on identifier case sensitivity](https://dev.mysql.com/doc/refman/8.0/en/identifier-case-sensitivity.html).
 
-[snake_case sidesteps all of this](/blog/when-snakecase-beats-camelcase-in-2026-codebases/). `user_id` is `user_id` everywhere, quoted or not, on every platform.
+snake_case sidesteps all of this. `user_id` is `user_id` everywhere, quoted or not, on every platform.
 
 ---
 

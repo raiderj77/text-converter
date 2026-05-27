@@ -55,7 +55,7 @@ LSP rename breaks down at language boundaries and generated code. A Python langu
 
 When the rename crosses language boundaries or involves generated code. LSP operates within one language server's knowledge graph.
 
-If your Python backend exports a [field name that your TypeScript frontend consumes via a REST contract](/blog/why-json-apis-still-use-camelcase-and-what-changed/), `pyright` doesn't know about the TypeScript side. Same problem with GraphQL schema field names consumed in multiple client languages, or [database column names referenced in both ORM models and raw SQL strings](/blog/when-snakecase-beats-camelcase-in-2026-codebases/). In those cases you need a broader strategy.
+If your Python backend exports a field name that your TypeScript frontend consumes via a REST contract, `pyright` doesn't know about the TypeScript side. Same problem with GraphQL schema field names consumed in multiple client languages, or database column names referenced in both ORM models and raw SQL strings. In those cases you need a broader strategy.
 
 For GraphQL, [graphql-inspector](https://the-guild.dev/graphql/inspector) can detect breaking changes when you rename a field. For database columns, tools like [Flyway](https://flywaydb.org/) or [Liquibase](https://www.liquibase.org/) track schema changes explicitly rather than relying on text search.
 

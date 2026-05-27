@@ -1,4 +1,5 @@
 export const NOINDEX_SLUGS = new Set<string>([
+  "acronyms-in-identifiers-apikey-or-apikey",
   "add-line-numbers-guide",
   "add-prefix-suffix-guide",
   "ai-writing-analyzer-guide",
@@ -102,6 +103,7 @@ export const NOINDEX_SLUGS = new Set<string>([
   "tiny-text-generator-guide",
   "title-case-converter",
   "title-case-rules-guide",
+  "title-case-vs-sentence-case-in-ui-the-accessibility-angle",
   "toggle-case-guide",
   "underline-text-generator-guide",
   "unicode-text-styles-guide",
@@ -113,6 +115,9 @@ export const NOINDEX_SLUGS = new Set<string>([
   "vaporwave-text-generator-guide",
   "visual-studio-code-command-line-interface-unlocking-custom-p",
   "visual-studio-code-shortcuts-for-efficient-code-review-maste",
+  "what-is-pascal-case-and-where-is-it-used",
+  "when-snakecase-beats-camelcase-in-2026-codebases",
+  "why-json-apis-still-use-camelcase-and-what-changed",
   "wide-text-generator-guide",
   "wingdings-font-generator-guide",
   "word-counter-guide",
