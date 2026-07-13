@@ -274,17 +274,17 @@ export function Nav() {
                 All Tools
               </Link>
 
-              {/* Guides link */}
+              {/* Learning reference */}
               <Link
-                href="/blog"
+                href="/learn"
                 className={cx(
                   "rounded-xl px-3 py-2 text-sm font-medium transition-colors",
-                  pathname.startsWith("/blog")
+                  pathname === "/learn"
                     ? isDark ? "bg-white/10 text-white" : "bg-black/10 text-black"
                     : isDark ? "hover:bg-white/5 text-neutral-300" : "hover:bg-black/5 text-neutral-600"
                 )}
               >
-                Guides
+                Learn
               </Link>
             </div>
 
@@ -413,17 +413,17 @@ export function Nav() {
               </Link>
 
               <Link
-                href="/blog"
+                href="/learn"
                 onClick={() => setMobileOpen(false)}
                 className={cx(
                   "flex items-center gap-2.5 rounded-xl px-3 py-3",
-                  pathname.startsWith("/blog")
+                  pathname === "/learn"
                     ? isDark ? "bg-white/10" : "bg-black/10"
                     : isDark ? "bg-white/5 hover:bg-white/10" : "bg-black/5 hover:bg-black/10"
                 )}
               >
                 <span className={cx("w-8 h-8 rounded-lg flex items-center justify-center text-sm", isDark ? "bg-white/5" : "bg-black/5")}>📖</span>
-                <span className="text-sm font-medium">Guides</span>
+                <span className="text-sm font-medium">Learn</span>
               </Link>
             </div>
           </div>

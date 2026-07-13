@@ -65,7 +65,7 @@ export default function CamelCaseVsSnakeCasePage() {
         description="When to use camelCase, snake_case, or kebab-case in programming. Language conventions, examples, and a free converter tool."
         url={pageUrl}
         datePublished="2026-03-11"
-        dateModified={new Date().toISOString().substring(0,10)}
+        dateModified={"2026-07-12"}
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema

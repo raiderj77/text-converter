@@ -103,14 +103,13 @@ export default function AboutPage() {
               worth knowing about why FlipMyCase is worth bookmarking:
             </p>
             <p>
-              All 70+ tools are free. No paid plan, no premium tier, no feature gates. The site
-              runs on AdSense. Standard placements, disclosed in the privacy policy, nothing
-              deceptive. That's the only ad network here.
+              All 78 tools are free. No paid plan, no premium tier, and no feature gates.
+              Google AdSense is not currently approved or enabled on this site.
             </p>
             <p>
               Privacy by architecture, not by policy. Because everything runs in your browser, your
-              text is never transmitted anywhere. I run Google Analytics to see which tools people
-              actually use. That's the full extent of data collection on this site.
+              text is not intentionally transmitted to FlipMyCase servers. Optional analytics and
+              session-recording scripts are currently disabled.
             </p>
             <p>
               Accessibility is built in, not added on. WCAG-aware layouts, keyboard navigation that

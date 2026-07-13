@@ -81,7 +81,7 @@ export default function AllCapsGuidePage() {
         name="All Caps Usage Guide"
         description={tool.description}
         url={pageUrl}
-        dateModified={new Date().toISOString().substring(0,10)}
+        dateModified={"2026-07-12"}
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -264,8 +264,8 @@ export default function AllCapsGuidePage() {
                 <div className="flex items-start justify-between">
                   <div className="text-sm font-semibold">{item.category}</div>
                   <span className={`text-xs px-2 py-1 rounded ${
-                    item.severity === "High" 
-                      ? "bg-red-500/20 text-red-400" 
+                    item.severity === "High"
+                      ? "bg-red-500/20 text-red-400"
                       : "bg-yellow-500/20 text-yellow-400"
                   }`}>
                     {item.severity} severity

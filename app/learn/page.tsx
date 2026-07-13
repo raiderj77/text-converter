@@ -233,10 +233,10 @@ export default function LearnPage() {
               </Link>
             ))}
             <Link
-              href="/blog"
+              href="/tools"
               className="rounded-xl border border-white/10 px-3 py-2 text-sm hover:bg-white/5 transition-colors"
             >
-              📖 Read Guides
+              Browse All Tools
             </Link>
           </div>
         </section>

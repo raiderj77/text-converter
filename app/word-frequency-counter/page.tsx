@@ -78,7 +78,7 @@ export default function WordFrequencyCounterPage() {
         name="Free Word Frequency Counter"
         description={tool.description}
         url={pageUrl}
-        dateModified={new Date().toISOString().substring(0,10)}
+        dateModified={"2026-07-12"}
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema

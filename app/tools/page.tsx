@@ -61,7 +61,7 @@ export default function ToolsPage() {
         name="FlipMyCase — All Free Text Tools"
         description="Browse all free browser-based text tools. Case converters, JSON formatter, regex tester, hash generator, text diff, and more."
         url={pageUrl}
-        dateModified={new Date().toISOString().substring(0,10)}
+        dateModified={"2026-07-12"}
       />
       <BreadcrumbSchema
         items={[

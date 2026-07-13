@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useMemo, useState } from "react";
-import yaml from "js-yaml";
+import * as yaml from "js-yaml";
 import { cx } from "@/lib/utils";
 import { useTheme } from "@/components/layout/theme-provider";
 

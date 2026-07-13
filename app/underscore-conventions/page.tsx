@@ -81,7 +81,7 @@ export default function UnderscoreConventionsPage() {
         name="Underscore Conventions Guide"
         description={tool.description}
         url={pageUrl}
-        dateModified={new Date().toISOString().substring(0,10)}
+        dateModified={"2026-07-12"}
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -252,10 +252,10 @@ export default function UnderscoreConventionsPage() {
         self._protected_data = {}          # single underscore: internal use
         self.__private_key = hash(username) # double underscore: name mangling
         self.class_type = class_           # trailing underscore in variable name
-    
+
     def __str__(self):                     # dunder method
         return f"User: {self.username}"
-    
+
     def get_public_info(self):             # snake_case method name
         return {"username": self.username}`}
             </pre>
@@ -268,11 +268,11 @@ class UserAccount {
     #privateBalance = 0;          // True private field
     _legacyPrivate = 0;           // Convention-only private
     PUBLIC_CONSTANT = "USER";     // Constant in UPPER_SNAKE_CASE
-    
+
     constructor(username) {
         this.username = username; // Public property (camelCase)
     }
-    
+
     // Public method (camelCase)
     getPublicInfo() {
         return {

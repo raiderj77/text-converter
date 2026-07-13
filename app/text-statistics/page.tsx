@@ -78,7 +78,7 @@ export default function TextStatisticsPage() {
         name="Free Text Statistics Dashboard"
         description={tool.description}
         url={pageUrl}
-        dateModified={new Date().toISOString().substring(0,10)}
+        dateModified={"2026-07-12"}
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema

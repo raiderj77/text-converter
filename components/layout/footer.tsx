@@ -53,7 +53,7 @@ export function Footer() {
           <div>
             <div className={headingClass}>Resources</div>
             <div className="space-y-2">
-              <Link href="/blog" className={linkClass}>Guides & Blog</Link>
+              <Link href="/learn" className={linkClass}>Learn Text Formats</Link>
               <Link href="/learn" className={linkClass}>Learn Formats</Link>
             </div>
           </div>

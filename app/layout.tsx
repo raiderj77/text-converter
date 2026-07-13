@@ -1,7 +1,5 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
-import { headers } from "next/headers";
-import Script from "next/script";
 import { Inter, JetBrains_Mono } from "next/font/google";
 
 const inter = Inter({
@@ -16,12 +14,11 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono",
   display: "swap",
 });
-import { SITE_NAME, SITE_DESCRIPTION, SITE_URL, GA_ID } from "@/lib/config";
+import { SITE_NAME, SITE_DESCRIPTION, SITE_URL } from "@/lib/config";
 import { ThemeProvider } from "@/components/layout/theme-provider";
 import { Nav } from "@/components/layout/nav";
 import { Footer } from "@/components/layout/footer";
 import { OrganizationSchema } from "@/components/seo/schema";
-import ConsentBanner from "@/components/ConsentBanner";
 
 /**
  * Root metadata — applies to every page unless overridden.
@@ -99,14 +96,11 @@ export const viewport: Viewport = {
   ],
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const headersList = await headers();
-  const gpcHeader = headersList.get('sec-gpc') === '1';
-
   return (
     <html lang="en" suppressHydrationWarning className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <head>
@@ -117,31 +111,6 @@ export default async function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="FlipMyCase" />
-
-        {/* Preconnect hints for third-party scripts */}
-        <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
-        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-
-        {/* Consent Mode v2 defaults — must run before GA loads */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('consent', 'default', {
-  ad_storage: 'denied',
-  ad_user_data: 'denied',
-  ad_personalization: 'denied',
-  analytics_storage: 'denied',
-  functionality_storage: 'denied',
-  personalization_storage: 'denied',
-  wait_for_update: 500
-});
-            `.trim(),
-          }}
-        />
 
         {/* Register Service Worker */}
         <script
@@ -170,38 +139,8 @@ if ('serviceWorker' in navigator) {
           <Nav />
           <main id="main-content" className="flex-1">{children}</main>
           <Footer />
-          <ConsentBanner />
         </ThemeProvider>
 
-        {/* Google Analytics — deferred to after interactive */}
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script id="ga-config" strategy="afterInteractive">
-          {`gtag('js', new Date());
-gtag('config', '${GA_ID}', {
-  anonymize_ip: true,
-  allow_google_signals: false,
-  allow_ad_personalization_signals: false
-});`}
-        </Script>
-
-        {/* Microsoft Clarity — heatmaps & session recordings */}
-        <Script id="ms-clarity" strategy="afterInteractive">
-          {`(function(c,l,a,r,i,t,y){
-  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-})(window,document,"clarity","script","vsqobt7va0");`}
-        </Script>
-
-        {/* Google AdSense — lazy loaded */}
-        <Script
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7171402107622932"
-          crossOrigin="anonymous"
-          strategy="lazyOnload"
-        />
       </body>
     </html>
   );

@@ -68,7 +68,7 @@ export default function JsonVsYamlVsXmlPage() {
         description="JSON vs YAML vs XML comparison — syntax differences, use cases, performance, and when to choose each format for your project."
         url={pageUrl}
         datePublished="2026-03-11"
-        dateModified={new Date().toISOString().substring(0,10)}
+        dateModified={"2026-07-12"}
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
