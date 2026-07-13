@@ -32,7 +32,7 @@ const faqItems = [
 export default function SlugGeneratorPage() {
   return (
     <>
-      <WebAppSchema name="Free URL Slug Generator" description={tool.description} url={pageUrl} dateModified={new Date().toISOString().substring(0,10)} />
+      <WebAppSchema name="Free URL Slug Generator" description={tool.description} url={pageUrl} dateModified={"2026-07-12"} />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "Slug Generator", href: "/slug-generator" }]} />
 

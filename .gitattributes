@@ -1,0 +1,2 @@
+*.tsx whitespace=cr-at-eol
+*.json whitespace=cr-at-eol

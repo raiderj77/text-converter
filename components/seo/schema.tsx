@@ -252,7 +252,7 @@ export function ArticleSchema({
 
 /**
  * WebSite schema — for the homepage.
- * Enables sitelinks searchbox in Google results.
+ * Describes the site without claiming a public search endpoint.
  */
 export function WebSiteSchema() {
   return (
@@ -264,14 +264,6 @@ export function WebSiteSchema() {
         url: SITE_URL,
         description:
           "Free online text conversion and formatting tools",
-        potentialAction: {
-          "@type": "SearchAction",
-          target: {
-            "@type": "EntryPoint",
-            urlTemplate: `${SITE_URL}/tools?q={search_term_string}`,
-          },
-          "query-input": "required name=search_term_string",
-        },
       }}
     />
   );

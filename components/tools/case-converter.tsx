@@ -202,7 +202,7 @@ export function CaseConverterTool() {
       <div
         className={cx(
           "mt-3 text-xs text-center",
-          isDark ? "text-neutral-500" : "text-neutral-400"
+          isDark ? "text-neutral-400" : "text-neutral-500"
         )}
       >
         Ctrl/⌘ + K focuses input · Ctrl/⌘ + L toggles theme

@@ -65,11 +65,9 @@ export default function TermsPage() {
 
       <h2>Third-Party Services and Advertising</h2>
       <p>
-        This website may display advertisements served by Google AdSense and other
-        third-party advertising networks. These services may use cookies and similar
-        technologies to serve ads based on your prior visits. The use of advertising
-        cookies is governed by our <a href="/privacy">Privacy Policy</a>. We are not
-        responsible for the content or practices of any third-party advertisers.
+        Google AdSense, Google Analytics, and Microsoft Clarity are currently disabled.
+        External websites linked from FlipMyCase have their own terms and privacy practices.
+        We are not responsible for external content or services.
       </p>
 
       <h2>Privacy</h2>
