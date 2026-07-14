@@ -98,17 +98,6 @@ export function PlainTextConverterTool() {
   const btnBase = isDark ? "bg-white/10 hover:bg-white/15 border-white/10" : "bg-black/5 hover:bg-black/10 border-black/10";
   const muted = isDark ? "text-neutral-500" : "text-neutral-400";
 
-  // Load saved text
-  useEffect(() => {
-    const saved = localStorage.getItem("fmc_ptc_text");
-    if (saved) setText(saved);
-  }, []);
-
-  // Persist text
-  useEffect(() => {
-    localStorage.setItem("fmc_ptc_text", text);
-  }, [text]);
-
   // Ctrl/Cmd+K focuses input
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {

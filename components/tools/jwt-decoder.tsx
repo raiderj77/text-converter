@@ -111,16 +111,6 @@ export function JwtDecoderTool() {
     setTimeout(() => setCopied(""), 2000);
   }, []);
 
-  // Persist to localStorage
-  useEffect(() => {
-    const saved = localStorage.getItem("fmc_jwt_input");
-    if (saved) handleDecode(saved);
-  }, [handleDecode]);
-
-  useEffect(() => {
-    localStorage.setItem("fmc_jwt_input", input);
-  }, [input]);
-
   // Refresh expiration status every 30s
   const [, setTick] = useState(0);
   useEffect(() => {

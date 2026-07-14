@@ -24,9 +24,11 @@ export default function CookiesPage() {
         <h2 className="mt-8 text-xl font-semibold text-white">Local storage</h2>
         <p className="mt-3">
           LocalStorage is browser storage, not a cookie. FlipMyCase tools use it to remember the
-          selected theme and, for many tools, the most recent input or settings. This information
-          stays in your browser and is not intentionally sent to FlipMyCase servers. It remains until
-          you clear it, reset the tool, or the browser removes it.
+          selected theme and, for some tools, the most recent input or settings. Privacy-sensitive
+          tools such as the case converter, JSON formatter, JWT decoder, QR generator, and text diff
+          do not persist entered content. Current releases remove the legacy storage keys those tools
+          used in older versions. Any remaining browser storage stays on the device until you clear it,
+          reset the tool, or the browser removes it.
         </p>
 
         <h2 className="mt-8 text-xl font-semibold text-white">Offline cache</h2>

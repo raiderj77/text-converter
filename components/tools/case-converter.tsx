@@ -17,17 +17,6 @@ export function CaseConverterTool() {
   const [toast, setToast] = useState("");
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
 
-  // Load saved text on mount
-  useEffect(() => {
-    const saved = localStorage.getItem("fmc_text");
-    if (saved) setText(saved);
-  }, []);
-
-  // Persist text changes
-  useEffect(() => {
-    localStorage.setItem("fmc_text", text);
-  }, [text]);
-
   // Ctrl/Cmd+K focuses input
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 import { cx } from "@/lib/utils";
 import { useTheme } from "@/components/layout/theme-provider";
 
@@ -32,15 +32,6 @@ export function FindAndReplaceTool() {
   const btnBase = isDark ? "bg-white/10 hover:bg-white/15 border-white/10" : "bg-black/5 hover:bg-black/10 border-black/10";
   const btnActive = isDark ? "bg-emerald-500/20 border-emerald-400/40 text-emerald-300" : "bg-emerald-500/20 border-emerald-500/40 text-emerald-700";
   const muted = isDark ? "text-neutral-500" : "text-neutral-400";
-
-  // Persist input to localStorage
-  useEffect(() => {
-    const saved = localStorage.getItem("fmc_find_replace_text");
-    if (saved) setText(saved);
-  }, []);
-  useEffect(() => {
-    localStorage.setItem("fmc_find_replace_text", text);
-  }, [text]);
 
   // Build regex from find string + options
   const { regex, regexError } = useMemo(() => {

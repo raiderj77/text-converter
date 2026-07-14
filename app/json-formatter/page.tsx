@@ -81,7 +81,7 @@ const faqItems = [
   {
     question: "Is my JSON data sent to a server?",
     answer:
-      "No. All formatting, validation, fixing, and conversion happens entirely in your browser. Your data never leaves your device. Nothing is logged, stored, or transmitted.",
+      "No. Formatting, validation, fixing, and conversion run in your browser. The formatter does not send your JSON to FlipMyCase servers or save it in browser storage. Browser extensions, device software, and clipboard history remain outside the site's control, so do not use any website for active credentials or private keys.",
   },
   {
     question: "What JSON errors can the validator detect?",
@@ -323,8 +323,8 @@ func main() {
                 desc: "See total keys, nesting depth, and type counts (objects, arrays, strings, numbers, booleans, nulls). Understand the shape of your data at a glance.",
               },
               {
-                title: "100% Private — No Server",
-                desc: "Your JSON is parsed entirely inside your browser. Nothing is uploaded, logged, or transmitted at any point. The formatting and validation logic runs locally, so API keys, credentials, and private data in your JSON stay on your machine.",
+                title: "Local Processing",
+                desc: "Your JSON is parsed in the browser and is not sent to FlipMyCase servers or saved in browser storage. Avoid pasting active credentials or private keys into any website.",
               },
             ].map((item) => (
               <div

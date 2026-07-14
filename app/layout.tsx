@@ -19,6 +19,7 @@ import { ThemeProvider } from "@/components/layout/theme-provider";
 import { Nav } from "@/components/layout/nav";
 import { Footer } from "@/components/layout/footer";
 import { OrganizationSchema } from "@/components/seo/schema";
+import { PrivacyStorageCleanup } from "@/components/privacy-storage-cleanup";
 
 /**
  * Root metadata — applies to every page unless overridden.
@@ -136,6 +137,7 @@ if ('serviceWorker' in navigator) {
           Skip to content
         </a>
         <ThemeProvider>
+          <PrivacyStorageCleanup />
           <Nav />
           <main id="main-content" className="flex-1">{children}</main>
           <Footer />

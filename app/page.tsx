@@ -273,16 +273,18 @@ export default function HomePage() {
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            Is FlipMyCase safe to use with sensitive text?
+            How does FlipMyCase handle sensitive text?
           </h2>
           <p className="mt-2 text-sm text-neutral-200 font-medium">
-            Yes — all conversions run entirely in your browser using JavaScript. Your text is never uploaded, stored, or transmitted to any server.
+            Case conversion runs in your browser. The case converter does not send pasted text to
+            FlipMyCase servers or save it in browser storage.
           </p>
           <div className="mt-2 text-sm text-neutral-300 space-y-2">
             <p>
-              You can safely paste passwords, API keys, internal documents, or any other sensitive
-              content. The text exists only in your browser&apos;s memory and is cleared when you
-              close the tab.
+              Local processing reduces network exposure, but it cannot protect you from a compromised
+              device, browser extension, shared clipboard, or screen capture. Do not paste passwords,
+              private keys, active access tokens, or other secrets into any website. Use the Clear
+              control when you are finished with ordinary private text.
             </p>
           </div>
         </section>
