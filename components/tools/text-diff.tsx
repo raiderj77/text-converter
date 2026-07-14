@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 import { cx, formatNumber } from "@/lib/utils";
 import { useTheme } from "@/components/layout/theme-provider";
 
@@ -89,15 +89,6 @@ export function TextDiffTool() {
   const [currentDiff, setCurrentDiff] = useState(0);
   const diffRefs = useRef<(HTMLDivElement | null)[]>([]);
   const refA = useRef<HTMLTextAreaElement | null>(null);
-
-  useEffect(() => {
-    const a = localStorage.getItem("fmc_diff_a");
-    const b = localStorage.getItem("fmc_diff_b");
-    if (a) setTextA(a);
-    if (b) setTextB(b);
-  }, []);
-  useEffect(() => { localStorage.setItem("fmc_diff_a", textA); }, [textA]);
-  useEffect(() => { localStorage.setItem("fmc_diff_b", textB); }, [textB]);
 
   const result = useMemo(() => {
     const rawA = textA.split("\n");

@@ -110,17 +110,6 @@ export function TextCleanerTool() {
   });
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
 
-  // Load saved text
-  useEffect(() => {
-    const saved = localStorage.getItem("fmc_tc_text");
-    if (saved) setText(saved);
-  }, []);
-
-  // Persist text
-  useEffect(() => {
-    localStorage.setItem("fmc_tc_text", text);
-  }, [text]);
-
   // Ctrl/Cmd+K focuses input
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {

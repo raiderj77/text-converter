@@ -27,14 +27,17 @@ export default function PrivacyPage() {
         <section className="mt-8">
           <h2 className="text-xl font-semibold text-white">Tool input and local storage</h2>
           <p className="mt-3">
-            Many tools use browser localStorage to preserve input, options, or theme preference on
-            your device. This makes a draft available after refresh. The stored data remains until
-            you clear it, use a tool&apos;s reset control, or the browser removes it. Anyone with access
-            to your browser profile may be able to view it, so do not paste secrets into a shared device.
+            Some tools use browser localStorage to preserve recent input, options, or theme
+            preference on your device. Stored data remains until you clear it, use a tool&apos;s reset
+            control, or the browser removes it. The case converter and privacy-sensitive JSON, JWT,
+            QR, text-diff, text-cleaning, plain-text, URL extraction, find-and-replace, HTML removal,
+            text-to-list, and string-encoding tools keep entered content in page memory instead.
+            Current releases also remove the retired storage keys those tools used previously.
           </p>
           <p className="mt-3">
             Browser extensions, device software, and the browser itself operate outside our control.
-            Browser-local processing should not be treated as a guarantee that a compromised device is secure.
+            Browser-local processing should not be treated as a guarantee that a compromised device
+            is secure. Do not paste passwords, private keys, or active access tokens into the site.
           </p>
         </section>
 

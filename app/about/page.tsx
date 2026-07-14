@@ -62,11 +62,11 @@ export default function AboutPage() {
               you to create an account before you can paste three words of text.
             </p>
             <p>
-              So I built one with a hard constraint: no server round-trips. Every tool on FlipMyCase
-              runs entirely in your browser. Your text never leaves your device. Not as a privacy
-              promise on a marketing page, but as a structural fact: there is no server to send your
-              text to. Paste it, convert it, copy it out. Nothing stored, nothing logged, nothing
-              transmitted.
+              So I built the tools around local processing. Their conversion logic runs in your
+              browser and does not intentionally send tool input to FlipMyCase application servers.
+              The website is still hosted infrastructure, so ordinary page requests can create
+              technical logs; browser extensions and device software also remain outside the site&apos;s
+              control. The privacy policy explains which tools use browser storage.
             </p>
           </div>
         </section>

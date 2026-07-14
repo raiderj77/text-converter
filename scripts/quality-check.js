@@ -25,6 +25,26 @@ const adSlot = read("components/ui/ad-slot.tsx");
 const privacy = read("app/privacy/page.tsx");
 const blogLoader = read("lib/blog-markdown.ts");
 const schema = read("components/seo/schema.tsx");
+const packageJson = read("package.json");
+const homepage = read("app/page.tsx");
+const about = read("app/about/page.tsx");
+const cookies = read("app/cookies/page.tsx");
+const qrPage = read("app/qr-code-generator/page.tsx");
+const qrTool = read("components/tools/qr-code-generator.tsx");
+const storageCleanup = read("components/privacy-storage-cleanup.tsx");
+const privacySensitiveTools = [
+  "case-converter",
+  "json-formatter",
+  "jwt-decoder",
+  "text-diff",
+  "text-cleaner",
+  "plain-text-converter",
+  "extract-urls",
+  "find-and-replace",
+  "remove-html-tags",
+  "text-to-list",
+  "string-encoder",
+].map((name) => read(`components/tools/${name}.tsx`)).join("\n");
 const publicDiscovery = [
   read("components/layout/nav.tsx"),
   read("components/layout/footer.tsx"),
@@ -36,6 +56,7 @@ const publicDiscovery = [
 check(!/(adsbygoogle|googletagmanager|clarity\.ms)/i.test(layout), "third-party monetization and analytics scripts are disabled");
 check(!/(googlesyndication|googletagmanager|google-analytics|clarity\.ms)/i.test(`${config}\n${vercelConfig}`), "deployment security policies do not allow disabled third parties");
 check(config.includes("frame-src 'none'") && vercelConfig.includes("frame-src 'none'"), "all deployment layers block third-party frames");
+check(!config.includes("'unsafe-eval'") && !vercelConfig.includes("'unsafe-eval'"), "production CSP does not permit string evaluation");
 check(!adSlot.includes("NEXT_PUBLIC_"), "deployment variables cannot accidentally enable advertising");
 check(adSlot.includes("return null"), "disabled ads reserve no blank space");
 check(config.includes('source: "/blog/:path*"') && config.includes('destination: "/tools"'), "retired blog routes redirect to the product");
@@ -46,6 +67,15 @@ check(!schema.includes("SearchAction"), "structured data does not claim a nonexi
 check(!layout.includes("new Date()") && !sitemap.includes("new Date()") && !sitemap.includes("toISOString"), "site metadata does not manufacture deployment freshness");
 check(privacy.includes("has not been approved to display Google AdSense ads"), "privacy notice accurately describes AdSense status");
 check(/Google AdSense, Google\s+Analytics, and Microsoft Clarity are currently disabled/.test(privacy), "privacy notice accurately describes analytics status");
+check(!privacySensitiveTools.includes("localStorage"), "privacy-sensitive tools do not persist entered content");
+check(storageCleanup.includes('"fmc_jwt_input"') && storageCleanup.includes('"fmc_qr_code"'), "legacy token and QR storage keys are removed");
+check(!/safely paste passwords|safely paste[^\n]+API keys/i.test(homepage), "homepage does not encourage pasting credentials");
+check(privacy.includes("Do not paste passwords, private keys, or active access tokens"), "privacy notice gives appropriate credential warning");
+check(!about.includes("there is no server to send your text to"), "about page does not make an inaccurate no-server claim");
+check(cookies.includes("do not persist entered content"), "browser storage notice describes memory-only tools");
+check(packageJson.includes('"qrcode"') && qrTool.includes('from "qrcode"'), "QR generation uses the bundled dependency");
+check(!/cdnjs|createElement\("script"\)|localStorage/.test(qrTool), "QR generation avoids external scripts and persistent input storage");
+check(qrPage.includes("code bundled with FlipMyCase"), "QR privacy explanation matches the implementation");
 check(!existsSync(resolve(root, "public/llms-full.txt")), "retired article catalog is not exposed to AI crawlers");
 check(!existsSync(resolve(root, "app/api/indexnow/route.ts")), "unauthenticated IndexNow proxy is not exposed");
 

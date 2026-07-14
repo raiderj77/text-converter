@@ -158,17 +158,6 @@ export function StringEncoderTool() {
   const [toast, setToast] = useState("");
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
 
-  // Load saved text
-  useEffect(() => {
-    const saved = localStorage.getItem("fmc_se_text");
-    if (saved) setText(saved);
-  }, []);
-
-  // Persist text
-  useEffect(() => {
-    localStorage.setItem("fmc_se_text", text);
-  }, [text]);
-
   // Ctrl/Cmd+K focuses input
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
