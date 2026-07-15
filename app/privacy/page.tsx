@@ -1,10 +1,13 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/seo/schema";
+import { SITE_URL } from "@/lib/config";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
     "How FlipMyCase handles browser-local tool input, hosting logs, local storage, and optional services.",
+  alternates: { canonical: `${SITE_URL}/privacy` },
 };
 
 export default function PrivacyPage() {

@@ -1,8 +1,11 @@
+import type { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/seo/schema";
+import { SITE_URL } from "@/lib/config";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Contact",
   description: "Contact the site owner with feedback or bug reports.",
+  alternates: { canonical: `${SITE_URL}/contact` },
 };
 
 export default function ContactPage() {
@@ -14,12 +17,12 @@ export default function ContactPage() {
 
       <p>
         Have a question, suggestion, or found something that doesn&apos;t work right?
-        We appreciate hearing from users and strive to respond to all inquiries promptly.
+        The site owner reviews messages as capacity allows.
       </p>
 
       <h2>How to Reach Us</h2>
       <p>
-        The best way to get in touch is by email. We aim to respond within 2&ndash;3 business days.
+        The best way to get in touch is by email. A response time is not guaranteed.
       </p>
       <p>
         <strong>Email:</strong>{" "}
@@ -48,12 +51,6 @@ export default function ContactPage() {
         <li>The output you actually received.</li>
         <li>Your device type (desktop or mobile) and browser name (Chrome, Safari, Firefox, etc.).</li>
       </ul>
-
-      <h2>Response Times</h2>
-      <p>
-        We read every message and do our best to respond within 2&ndash;3 business days. Bug reports
-        and feature requests that include specific examples are typically addressed faster.
-      </p>
 
       <h2>Privacy Note</h2>
       <p>
