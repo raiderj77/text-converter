@@ -112,9 +112,9 @@ export default function AboutPage() {
               session-recording scripts are currently disabled.
             </p>
             <p>
-              Accessibility is built in, not added on. WCAG-aware layouts, keyboard navigation that
-              works end-to-end, screen reader support. These tools should work for everyone, not
-              just people with fast connections and no assistive tech needs.
+              Accessibility is an ongoing design goal. The site uses semantic structure, visible
+              focus treatment, responsive layouts, and labeled controls, while the accessibility
+              statement records the remaining audit limitations.
             </p>
           </div>
         </section>

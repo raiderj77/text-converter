@@ -1,9 +1,12 @@
+import type { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/seo/schema";
+import { SITE_URL } from "@/lib/config";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Terms of Service",
   description:
     "Terms of Service for the Text Case Converter online tool.",
+  alternates: { canonical: `${SITE_URL}/terms` },
 };
 
 export default function TermsPage() {

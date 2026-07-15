@@ -1,9 +1,12 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/seo/schema";
+import { SITE_URL } from "@/lib/config";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Cookie and Browser Storage Policy",
   description: "How FlipMyCase uses local storage, offline cache, and cookies.",
+  alternates: { canonical: `${SITE_URL}/cookies` },
 };
 
 export default function CookiesPage() {
