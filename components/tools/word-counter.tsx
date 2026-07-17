@@ -349,7 +349,7 @@ export function WordCounterTool() {
             onClick={() => setShowStopWords(!showStopWords)}
             className={cx(
               "ml-2 underline",
-              isDark ? "text-neutral-500 hover:text-neutral-300" : "text-neutral-400 hover:text-neutral-600"
+              isDark ? "text-neutral-400 hover:text-neutral-200" : "text-neutral-600 hover:text-neutral-800"
             )}
           >
             {showStopWords ? "exclude" : "include"}
@@ -402,7 +402,7 @@ export function WordCounterTool() {
           <div
             className={cx(
               "mt-2 text-sm",
-              isDark ? "text-neutral-500" : "text-neutral-400"
+              isDark ? "text-neutral-400" : "text-neutral-600"
             )}
           >
             Start typing to see keyword frequency.
@@ -414,7 +414,7 @@ export function WordCounterTool() {
       <div
         className={cx(
           "mt-4 text-xs text-center",
-          isDark ? "text-neutral-500" : "text-neutral-400"
+          isDark ? "text-neutral-400" : "text-neutral-600"
         )}
       >
         Ctrl/⌘ + K focuses input · Ctrl/⌘ + L toggles theme

@@ -1,4 +1,4 @@
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { resolve } from "node:path";
 
 const root = resolve(import.meta.dirname, "..");
@@ -37,6 +37,10 @@ const aiAnalyzerTool = read("components/tools/ai-writing-analyzer.tsx");
 const qrPage = read("app/qr-code-generator/page.tsx");
 const qrTool = read("components/tools/qr-code-generator.tsx");
 const storageCleanup = read("components/privacy-storage-cleanup.tsx");
+const toolSources = readdirSync(resolve(root, "components/tools"))
+  .filter((name) => name.endsWith(".tsx"))
+  .map((name) => read(`components/tools/${name}`))
+  .join("\n");
 const privacySensitiveTools = [
   "case-converter",
   "json-formatter",
@@ -86,6 +90,8 @@ check(accessibility.includes("`${SITE_URL}/accessibility`"), "/accessibility dec
 check(aiAnalyzerTool.includes("This is an unvalidated heuristic, not an AI detector"), "AI analyzer clearly discloses its validation limit");
 check(!/Human-typical|AI-typical|confidence score indicating likelihood/i.test(`${aiAnalyzerPage}\n${aiAnalyzerTool}`), "public AI analyzer does not label heuristic output as authorship evidence");
 check(!/respond within|solution within/i.test(`${contact}\n${accessibility}`), "trust pages do not promise unverified response times");
+check(!toolSources.includes('isDark ? "text-neutral-500" : "text-neutral-400"'), "tool themes do not use the inaccessible muted-text mapping");
+check(![about, cookies, contact, terms, accessibility, privacy].some((page) => /<main[ >]/.test(page)), "trust pages do not nest main landmarks inside the site layout");
 check(packageJson.includes('"qrcode"') && qrTool.includes('from "qrcode"'), "QR generation uses the bundled dependency");
 check(!/cdnjs|createElement\("script"\)|localStorage/.test(qrTool), "QR generation avoids external scripts and persistent input storage");
 check(qrPage.includes("code bundled with FlipMyCase"), "QR privacy explanation matches the implementation");

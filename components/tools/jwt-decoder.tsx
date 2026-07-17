@@ -122,7 +122,7 @@ export function JwtDecoderTool() {
   const inputBase = isDark ? "bg-neutral-950 border-white/10 text-neutral-100 placeholder:text-neutral-600" : "bg-neutral-50 border-black/10 text-neutral-900 placeholder:text-neutral-400";
   const btnBase = isDark ? "bg-white/10 hover:bg-white/15 border-white/10" : "bg-black/5 hover:bg-black/10 border-black/10";
   const btnPrimary = isDark ? "bg-emerald-600 hover:bg-emerald-500 text-white border-emerald-500" : "bg-emerald-600 hover:bg-emerald-500 text-white border-emerald-600";
-  const muted = isDark ? "text-neutral-500" : "text-neutral-400";
+  const muted = isDark ? "text-neutral-400" : "text-neutral-600";
   const accent = isDark ? "text-emerald-400" : "text-emerald-600";
 
   const alg = decoded?.header?.alg as string | undefined;

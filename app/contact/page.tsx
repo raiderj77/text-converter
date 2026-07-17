@@ -12,7 +12,7 @@ export default function ContactPage() {
   return (
     <>
       <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "Contact", href: "/contact" }]} />
-      <main style={{ maxWidth: 900, margin: "0 auto", padding: 24, lineHeight: 1.7 }}>
+      <div style={{ maxWidth: 900, margin: "0 auto", padding: 24, lineHeight: 1.7 }}>
         <h1>Contact</h1>
 
       <p>
@@ -26,7 +26,7 @@ export default function ContactPage() {
       </p>
       <p>
         <strong>Email:</strong>{" "}
-        <a href="mailto:hello@flipmycase.com" style={{ color: "#2563eb" }}>
+        <a href="mailto:hello@flipmycase.com" className="text-blue-400 underline underline-offset-2 hover:text-blue-300">
           hello@flipmycase.com
         </a>
       </p>
@@ -60,8 +60,8 @@ export default function ContactPage() {
         in your browser and is never stored on our servers.
       </p>
 
-        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 25, 2026</p>
-      </main>
+        <p className="text-sm text-gray-400 mt-1 mb-4 text-center">Last updated: March 25, 2026</p>
+      </div>
     </>
   );
 }

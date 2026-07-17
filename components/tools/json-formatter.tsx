@@ -626,7 +626,7 @@ export function JsonFormatterTool() {
       )}
 
       {/* Keyboard shortcut hint */}
-      <div className={cx("mt-3 text-xs text-center", isDark ? "text-neutral-500" : "text-neutral-400")}>
+      <div className={cx("mt-3 text-xs text-center", isDark ? "text-neutral-400" : "text-neutral-600")}>
         Ctrl/⌘ + K focuses input · Ctrl/⌘ + L toggles theme
       </div>
 

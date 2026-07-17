@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { getToolBySlug, buildUrl, getLiveTools } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
@@ -135,7 +135,7 @@ export default function ExtractUrlsPage() {
           <div className="mt-3 text-sm text-neutral-300 space-y-4">
             <div>
               <h3 className="text-base font-semibold">JavaScript</h3>
-              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-javascript">{`function extractUrls(text) {
+              <pre tabIndex={0} className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-javascript">{`function extractUrls(text) {
   const regex = /https?:\\/\\/[^\\s<>"')\\]]+/gi;
   const matches = text.match(regex) || [];
   // Remove trailing punctuation
@@ -161,7 +161,7 @@ function extractHrefs(html) {
             </div>
             <div>
               <h3 className="text-base font-semibold">Python</h3>
-              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-python">{`import re
+              <pre tabIndex={0} className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-python">{`import re
 from urllib.parse import urlparse
 
 def extract_urls(text):
@@ -186,7 +186,7 @@ for url in urls:
             </div>
             <div>
               <h3 className="text-base font-semibold">Bash</h3>
-              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-bash">{`# Extract URLs from a file
+              <pre tabIndex={0} className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-bash">{`# Extract URLs from a file
 grep -oE 'https?://[^ <>]+' document.txt | sort -u
 
 # Extract href values from HTML

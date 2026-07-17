@@ -260,7 +260,7 @@ export function HashGeneratorTool() {
           spellCheck={false}
         />
         <div className="flex items-center justify-between mt-2">
-          <span className={cx("text-xs", isDark ? "text-neutral-500" : "text-neutral-400")}>
+          <span className={cx("text-xs", isDark ? "text-neutral-400" : "text-neutral-600")}>
             {input.length} character{input.length !== 1 ? "s" : ""} · {new TextEncoder().encode(input).length} bytes
           </span>
         </div>
@@ -279,10 +279,10 @@ export function HashGeneratorTool() {
         ) : fileInfo ? (
           <div className="text-sm">
             <span className="font-semibold">{fileInfo.name}</span>
-            <span className={isDark ? "text-neutral-500" : "text-neutral-400"}> ({formatSize(fileInfo.size)})</span>
+            <span className={isDark ? "text-neutral-400" : "text-neutral-600"}> ({formatSize(fileInfo.size)})</span>
           </div>
         ) : (
-          <div className={cx("text-sm", isDark ? "text-neutral-500" : "text-neutral-400")}>
+          <div className={cx("text-sm", isDark ? "text-neutral-400" : "text-neutral-600")}>
             Drop a file here or click to select — generate checksums for any file
           </div>
         )}

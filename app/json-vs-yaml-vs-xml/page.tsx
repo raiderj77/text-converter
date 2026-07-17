@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL } from "@/lib/config";
 import { ArticleSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
@@ -110,7 +110,7 @@ export default function JsonVsYamlVsXmlPage() {
               default format for web APIs and is natively supported in every major
               programming language.
             </p>
-            <pre className="mt-3 rounded-lg bg-neutral-900 border border-white/10 p-4 text-sm font-mono overflow-x-auto">
+            <pre tabIndex={0} className="mt-3 rounded-lg bg-neutral-900 border border-white/10 p-4 text-sm font-mono overflow-x-auto">
 {`{
   "name": "Alice",
   "age": 30,
@@ -148,7 +148,7 @@ export default function JsonVsYamlVsXmlPage() {
               for configuration files where developers frequently read and edit
               the contents by hand.
             </p>
-            <pre className="mt-3 rounded-lg bg-neutral-900 border border-white/10 p-4 text-sm font-mono overflow-x-auto">
+            <pre tabIndex={0} className="mt-3 rounded-lg bg-neutral-900 border border-white/10 p-4 text-sm font-mono overflow-x-auto">
 {`name: Alice
 age: 30
 active: true
@@ -189,7 +189,7 @@ skills:
               and supports namespaces, attributes, and powerful schema validation
               through XSD and DTD.
             </p>
-            <pre className="mt-3 rounded-lg bg-neutral-900 border border-white/10 p-4 text-sm font-mono overflow-x-auto">
+            <pre tabIndex={0} className="mt-3 rounded-lg bg-neutral-900 border border-white/10 p-4 text-sm font-mono overflow-x-auto">
 {`<person>
   <name>Alice</name>
   <age>30</age>
@@ -227,7 +227,7 @@ skills:
           <h2 className="text-lg sm:text-xl font-semibold">
             Comparison Table: JSON vs YAML vs XML
           </h2>
-          <div className="mt-4 overflow-x-auto">
+          <div tabIndex={0} className="mt-4 overflow-x-auto">
             <table className="w-full border-collapse text-sm">
               <thead>
                 <tr className="border-b border-white/10">

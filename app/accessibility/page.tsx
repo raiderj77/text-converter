@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import type { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/seo/schema";
 import { SITE_URL } from "@/lib/config";
@@ -14,7 +14,7 @@ export default function AccessibilityPage() {
   return (
     <>
       <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "Accessibility", href: "/accessibility" }]} />
-      <main style={{ maxWidth: 800, margin: "0 auto", padding: 24, lineHeight: 1.6 }}>
+      <div style={{ maxWidth: 800, margin: "0 auto", padding: 24, lineHeight: 1.6 }}>
         <h1>Accessibility Statement</h1>
 
       <p>
@@ -88,7 +88,7 @@ export default function AccessibilityPage() {
         <p>
           This statement was created on February 20, 2026.
         </p>
-      </main>
+      </div>
     </>
   );
 }

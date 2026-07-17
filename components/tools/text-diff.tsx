@@ -294,10 +294,10 @@ export function TextDiffTool() {
                       : d.op === "remove" ? isDark ? "bg-red-500/10 border-red-500/10" : "bg-red-50 border-red-100"
                       : isDark ? "border-white/5" : "border-black/5"
                     )}>
-                    <div className={cx("w-10 shrink-0 text-right pr-1 py-0.5 select-none", isDark ? "text-neutral-500" : "text-neutral-400")}>
+                    <div className={cx("w-10 shrink-0 text-right pr-1 py-0.5 select-none", isDark ? "text-neutral-400" : "text-neutral-600")}>
                       {d.lineA ?? ""}
                     </div>
-                    <div className={cx("w-10 shrink-0 text-right pr-1 py-0.5 select-none", isDark ? "text-neutral-500" : "text-neutral-400")}>
+                    <div className={cx("w-10 shrink-0 text-right pr-1 py-0.5 select-none", isDark ? "text-neutral-400" : "text-neutral-600")}>
                       {d.lineB ?? ""}
                     </div>
                     <div className={cx("w-6 shrink-0 text-center py-0.5 select-none",
@@ -364,7 +364,7 @@ export function TextDiffTool() {
         </div>
       )}
 
-      <div className={cx("mt-3 text-xs text-center", isDark ? "text-neutral-500" : "text-neutral-400")}>
+      <div className={cx("mt-3 text-xs text-center", isDark ? "text-neutral-400" : "text-neutral-600")}>
         Word-level highlighting · All processing in your browser · Ctrl/⌘ + L toggles theme
       </div>
 

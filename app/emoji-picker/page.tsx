@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { getToolBySlug, buildUrl } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
@@ -158,7 +158,7 @@ export default function EmojiPickerPage() {
           <div className="mt-3 text-sm text-neutral-300 space-y-4">
             <div>
               <h3 className="text-base font-semibold">JavaScript</h3>
-              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-javascript">{`// Emoji is a Unicode character
+              <pre tabIndex={0} className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-javascript">{`// Emoji is a Unicode character
 const rocket = '🚀';
 console.log(rocket.codePointAt(0).toString(16)); // 1f680
 console.log('\\u{1F680}');                       // 🚀
@@ -176,7 +176,7 @@ const removeEmojis = (str) =>
             </div>
             <div>
               <h3 className="text-base font-semibold">Python</h3>
-              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-python">{`# Emoji is a Unicode character — Python 3 handles length correctly
+              <pre tabIndex={0} className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-python">{`# Emoji is a Unicode character — Python 3 handles length correctly
 rocket = '🚀'
 print(f'U+{ord(rocket):04X}')   # U+1F680
 print(len('Hello 🚀'))          # 7 (correct)
@@ -189,7 +189,7 @@ print(emoji.emoji_count('Hello 🚀🌍')) # 2`}</code></pre>
             </div>
             <div>
               <h3 className="text-base font-semibold">Go</h3>
-              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-go">{`package main
+              <pre tabIndex={0} className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-go">{`package main
 
 import (
     "fmt"

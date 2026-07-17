@@ -16,19 +16,19 @@ export default function AnswerBlock({ what, who, bottomLine, lastUpdated }: Answ
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-3">
         <div>
-          <h3 className="block text-xs font-semibold uppercase tracking-widest text-neutral-500 mb-1">
+          <h3 className="block text-xs font-semibold uppercase tracking-widest text-neutral-400 mb-1">
             What is this?
           </h3>
           <p className="text-sm leading-relaxed text-neutral-300 m-0">{what}</p>
         </div>
         <div>
-          <h3 className="block text-xs font-semibold uppercase tracking-widest text-neutral-500 mb-1">
+          <h3 className="block text-xs font-semibold uppercase tracking-widest text-neutral-400 mb-1">
             Who needs it?
           </h3>
           <p className="text-sm leading-relaxed text-neutral-300 m-0">{who}</p>
         </div>
         <div>
-          <h3 className="block text-xs font-semibold uppercase tracking-widest text-neutral-500 mb-1">
+          <h3 className="block text-xs font-semibold uppercase tracking-widest text-neutral-400 mb-1">
             Bottom line
           </h3>
           <p className="text-sm leading-relaxed text-neutral-300 m-0">{bottomLine}</p>
@@ -36,7 +36,7 @@ export default function AnswerBlock({ what, who, bottomLine, lastUpdated }: Answ
       </div>
       <time
         dateTime={lastUpdated}
-        className="block text-right text-xs text-neutral-500"
+        className="block text-right text-xs text-neutral-400"
       >
         Last updated:{' '}
         {new Date(lastUpdated).toLocaleDateString('en-US', {

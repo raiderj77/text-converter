@@ -272,7 +272,7 @@ export function UnderscoreConventionsTool() {
                   <span className="text-xs px-2 py-1 bg-neutral-800 rounded">
                     {item.language}
                   </span>
-                  <span className="text-xs text-neutral-500">
+                  <span className="text-xs text-neutral-400">
                     Common in: {item.commonIn.join(", ")}
                   </span>
                 </div>

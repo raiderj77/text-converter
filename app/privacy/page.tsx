@@ -14,7 +14,7 @@ export default function PrivacyPage() {
   return (
     <>
       <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "Privacy Policy", href: "/privacy" }]} />
-      <main className="mx-auto max-w-3xl px-4 py-10 text-sm leading-7 text-neutral-300">
+      <div className="mx-auto max-w-3xl px-4 py-10 text-sm leading-7 text-neutral-300">
         <h1 className="text-3xl font-bold text-white">Privacy Policy</h1>
         <p className="mt-2 text-neutral-400">Effective January 1, 2026 | Last reviewed July 12, 2026</p>
 
@@ -87,13 +87,13 @@ export default function PrivacyPage() {
         <section className="mt-8">
           <h2 className="text-xl font-semibold text-white">Contact and policy changes</h2>
           <p className="mt-3">
-            Use the <Link href="/contact" className="text-blue-400 hover:text-blue-300">Contact page</Link>{" "}
+            Use the <Link href="/contact" className="text-blue-400 underline underline-offset-2 hover:text-blue-300">Contact page</Link>{" "}
             for privacy questions. We will update this notice if the site&apos;s data practices or
-            third-party services change. See the <Link href="/cookies" className="text-blue-400 hover:text-blue-300">Cookie Policy</Link>{" "}
+            third-party services change. See the <Link href="/cookies" className="text-blue-400 underline underline-offset-2 hover:text-blue-300">Cookie Policy</Link>{" "}
             for browser-storage details.
           </p>
         </section>
-      </main>
+      </div>
     </>
   );
 }

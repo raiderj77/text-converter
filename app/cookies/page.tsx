@@ -13,7 +13,7 @@ export default function CookiesPage() {
   return (
     <>
       <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "Cookie Policy", href: "/cookies" }]} />
-      <main className="mx-auto max-w-3xl px-4 py-10 text-sm leading-7 text-neutral-300">
+      <div className="mx-auto max-w-3xl px-4 py-10 text-sm leading-7 text-neutral-300">
         <h1 className="text-3xl font-bold text-white">Cookie and Browser Storage Policy</h1>
         <p className="mt-2 text-neutral-400">Last reviewed July 12, 2026</p>
 
@@ -55,9 +55,9 @@ export default function CookiesPage() {
         </p>
 
         <p className="mt-8">
-          Questions? Use the <Link href="/contact" className="text-blue-400 hover:text-blue-300">Contact page</Link>.
+          Questions? Use the <Link href="/contact" className="text-blue-400 underline underline-offset-2 hover:text-blue-300">Contact page</Link>.
         </p>
-      </main>
+      </div>
     </>
   );
 }

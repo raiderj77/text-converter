@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { getToolBySlug, buildUrl } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
@@ -245,7 +245,7 @@ export default function UnderscoreConventionsPage() {
             <p>
               <strong className="text-neutral-200">Python class with all underscore types:</strong>
             </p>
-            <pre className="mt-2 p-3 bg-neutral-950 rounded-lg text-xs font-mono overflow-x-auto">
+            <pre tabIndex={0} className="mt-2 p-3 bg-neutral-950 rounded-lg text-xs font-mono overflow-x-auto">
 {`class UserAccount:
     def __init__(self, username, class_):  # trailing underscore avoids 'class' keyword
         self.username = username
@@ -262,7 +262,7 @@ export default function UnderscoreConventionsPage() {
             <p className="mt-4">
               <strong className="text-neutral-200">JavaScript with modern and legacy conventions:</strong>
             </p>
-            <pre className="mt-2 p-3 bg-neutral-950 rounded-lg text-xs font-mono overflow-x-auto">
+            <pre tabIndex={0} className="mt-2 p-3 bg-neutral-950 rounded-lg text-xs font-mono overflow-x-auto">
 {`// Modern JavaScript (ES2022+)
 class UserAccount {
     #privateBalance = 0;          // True private field
