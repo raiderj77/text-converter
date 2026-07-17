@@ -52,7 +52,7 @@ function Ex(props: { label: string; useFor: string; example: string; notes?: str
         {props.example}
       </div>
       {props.notes ? (
-        <div className="mt-2 text-xs text-neutral-500">{props.notes}</div>
+        <div className="mt-2 text-xs text-neutral-400">{props.notes}</div>
       ) : null}
     </div>
   );

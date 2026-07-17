@@ -37,7 +37,7 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
       <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "About", href: "/about" }]} />
-      <main className="mx-auto max-w-3xl px-4 py-8" style={{ lineHeight: 1.7 }}>
+      <div className="mx-auto max-w-3xl px-4 py-8" style={{ lineHeight: 1.7 }}>
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           About Jason Ramirez
         </h1>
@@ -127,7 +127,7 @@ export default function AboutPage() {
               <li>
                 <a
                   href="https://fibertools.app"
-                  className="text-blue-400 hover:text-blue-300 transition-colors"
+                  className="text-blue-400 underline underline-offset-2 hover:text-blue-300 transition-colors"
                 >
                   FiberTools
                 </a>
@@ -137,7 +137,7 @@ export default function AboutPage() {
               <li>
                 <a
                   href="https://creatorrevenuecalculator.com"
-                  className="text-blue-400 hover:text-blue-300 transition-colors"
+                  className="text-blue-400 underline underline-offset-2 hover:text-blue-300 transition-colors"
                 >
                   Creator Revenue Calculator
                 </a>
@@ -157,17 +157,17 @@ export default function AboutPage() {
           Questions or want to report a bug? Reach me at{" "}
           <a
             href="mailto:hello@flipmycase.com"
-            className="text-blue-400 hover:text-blue-300 transition-colors"
+            className="text-blue-400 underline underline-offset-2 hover:text-blue-300 transition-colors"
           >
             hello@flipmycase.com
           </a>{" "}
           or use the{" "}
-          <Link href="/contact" className="text-blue-400 hover:text-blue-300 transition-colors">
+          <Link href="/contact" className="text-blue-400 underline underline-offset-2 hover:text-blue-300 transition-colors">
             contact form
           </Link>
           .
         </p>
-      </main>
+      </div>
     </>
   );
 }

@@ -172,7 +172,7 @@ export default function PasswordGeneratorPage() {
                 <div className="text-2xl mb-2">{f.emoji}</div>
                 <h3 className="text-sm font-semibold">{f.title}</h3>
                 <p className="mt-1 text-xs text-neutral-400">{f.desc}</p>
-                <p className="mt-2 text-xs text-neutral-500 italic">{f.use}</p>
+                <p className="mt-2 text-xs text-neutral-400 italic">{f.use}</p>
               </div>
             ))}
           </div>

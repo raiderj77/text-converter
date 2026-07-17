@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { getToolBySlug, buildUrl } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
@@ -147,7 +147,7 @@ export default function SqlFormatterPage() {
           <div className="mt-3 text-sm text-neutral-300 space-y-4">
             <div>
               <h3 className="text-base font-semibold">JavaScript (sql-formatter package)</h3>
-              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-javascript">{`// npm install sql-formatter
+              <pre tabIndex={0} className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-javascript">{`// npm install sql-formatter
 const { format } = require('sql-formatter');
 
 const ugly = 'SELECT u.id,u.name,o.total FROM users u ' +
@@ -165,7 +165,7 @@ console.log(formatted);`}</code></pre>
             </div>
             <div>
               <h3 className="text-base font-semibold">Python (sqlparse)</h3>
-              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-python">{`# pip install sqlparse
+              <pre tabIndex={0} className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-python">{`# pip install sqlparse
 import sqlparse
 
 ugly = "SELECT u.id,u.name FROM users u INNER JOIN orders o ON u.id=o.user_id WHERE u.active=true LIMIT 10"
@@ -186,7 +186,7 @@ for token in parsed.tokens:
             </div>
             <div>
               <h3 className="text-base font-semibold">Go</h3>
-              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-go">{`package main
+              <pre tabIndex={0} className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-go">{`package main
 
 import (
     "fmt"

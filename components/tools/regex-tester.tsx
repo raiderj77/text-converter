@@ -194,7 +194,7 @@ export function RegexTesterTool() {
       {/* Pattern input */}
       <div className={cx("rounded-xl border p-4", base)}>
         <div className="flex items-center gap-2 mb-3">
-          <span className={cx("text-lg font-mono", isDark ? "text-neutral-500" : "text-neutral-400")}>/</span>
+          <span className={cx("text-lg font-mono", isDark ? "text-neutral-400" : "text-neutral-600")}>/</span>
           <input
             type="text"
             value={pattern}
@@ -204,11 +204,11 @@ export function RegexTesterTool() {
             spellCheck={false}
             autoComplete="off"
           />
-          <span className={cx("text-lg font-mono", isDark ? "text-neutral-500" : "text-neutral-400")}>/{flagStr}</span>
+          <span className={cx("text-lg font-mono", isDark ? "text-neutral-400" : "text-neutral-600")}>/{flagStr}</span>
         </div>
         {/* Flags */}
         <div className="flex flex-wrap items-center gap-2">
-          <span className={cx("text-xs", isDark ? "text-neutral-500" : "text-neutral-400")}>Flags:</span>
+          <span className={cx("text-xs", isDark ? "text-neutral-400" : "text-neutral-600")}>Flags:</span>
           {(Object.keys(FLAG_LABELS) as Flag[]).map((f) => (
             <button key={f} onClick={() => toggleFlag(f)}
               className={cx("rounded-md border px-2.5 py-1 text-xs font-mono transition-colors", flags.has(f) ? btnActive : btnBase)}
@@ -225,7 +225,7 @@ export function RegexTesterTool() {
 
       {/* Presets */}
       <div className="flex flex-wrap gap-2">
-        <span className={cx("text-xs py-1", isDark ? "text-neutral-500" : "text-neutral-400")}>Presets:</span>
+        <span className={cx("text-xs py-1", isDark ? "text-neutral-400" : "text-neutral-600")}>Presets:</span>
         {PRESETS.map((p) => (
           <button key={p.label} onClick={() => applyPreset(p)}
             className={cx("rounded-lg border px-2.5 py-1 text-xs transition-colors", btnBase)}>{p.label}</button>
@@ -315,7 +315,7 @@ export function RegexTesterTool() {
               <div key={i} className={cx("rounded-lg border p-3 text-xs font-mono", isDark ? "border-white/5 bg-neutral-950" : "border-black/5 bg-neutral-50")}>
                 <div className="flex items-center justify-between mb-1">
                   <span className="font-sans font-semibold text-emerald-400">Match {i + 1}</span>
-                  <span className={isDark ? "text-neutral-500" : "text-neutral-400"}>
+                  <span className={isDark ? "text-neutral-400" : "text-neutral-600"}>
                     Index {m.index}–{m.index + m.length - 1} ({m.length} char{m.length !== 1 ? "s" : ""})
                   </span>
                 </div>
@@ -326,7 +326,7 @@ export function RegexTesterTool() {
                   <div className="mt-2 space-y-1">
                     {m.groups.map((g, gi) => g !== undefined ? (
                       <div key={gi} className="flex gap-2">
-                        <span className={isDark ? "text-neutral-500" : "text-neutral-400"}>Group {gi + 1}:</span>
+                        <span className={isDark ? "text-neutral-400" : "text-neutral-600"}>Group {gi + 1}:</span>
                         <span className="text-sky-400">{g}</span>
                       </div>
                     ) : null)}
@@ -336,7 +336,7 @@ export function RegexTesterTool() {
                   <div className="mt-2 space-y-1">
                     {Object.entries(m.namedGroups).map(([name, val]) => (
                       <div key={name} className="flex gap-2">
-                        <span className={isDark ? "text-neutral-500" : "text-neutral-400"}>&lt;{name}&gt;:</span>
+                        <span className={isDark ? "text-neutral-400" : "text-neutral-600"}>&lt;{name}&gt;:</span>
                         <span className="text-purple-400">{val}</span>
                       </div>
                     ))}

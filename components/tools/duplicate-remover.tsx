@@ -267,7 +267,7 @@ export function DuplicateRemoverTool() {
           <div
             className={cx(
               "text-xs",
-              result.duplicatesRemoved > 0 ? "text-emerald-400" : isDark ? "text-neutral-500" : "text-neutral-400"
+              result.duplicatesRemoved > 0 ? "text-emerald-400" : isDark ? "text-neutral-400" : "text-neutral-600"
             )}
           >
             <span className="font-medium">{formatNumber(result.duplicatesRemoved)}</span> duplicates removed
@@ -364,7 +364,7 @@ export function DuplicateRemoverTool() {
       <div
         className={cx(
           "mt-3 text-xs text-center",
-          isDark ? "text-neutral-500" : "text-neutral-400"
+          isDark ? "text-neutral-400" : "text-neutral-600"
         )}
       >
         Ctrl/⌘ + K focuses input · Ctrl/⌘ + L toggles theme

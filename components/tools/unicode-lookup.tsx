@@ -229,7 +229,7 @@ export function UnicodeLookupTool() {
   const btnBase = isDark
     ? "bg-white/10 hover:bg-white/15 border-white/10"
     : "bg-black/5 hover:bg-black/10 border-black/10";
-  const muted = isDark ? "text-neutral-500" : "text-neutral-400";
+  const muted = isDark ? "text-neutral-400" : "text-neutral-600";
 
   // Ctrl/Cmd+K focuses search
   useEffect(() => {

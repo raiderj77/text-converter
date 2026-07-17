@@ -13,7 +13,7 @@ export default function TermsPage() {
   return (
     <>
       <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "Terms of Service", href: "/terms" }]} />
-      <main style={{ maxWidth: 800, margin: "0 auto", padding: 24, lineHeight: 1.6 }}>
+      <div style={{ maxWidth: 800, margin: "0 auto", padding: 24, lineHeight: 1.6 }}>
         <h1>Terms of Service</h1>
 
       <p>
@@ -101,8 +101,8 @@ export default function TermsPage() {
         <a href="/contact">Contact page</a>.
       </p>
 
-        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 25, 2026</p>
-      </main>
+        <p className="text-sm text-gray-400 mt-1 mb-4 text-center">Last updated: March 25, 2026</p>
+      </div>
     </>
   );
 }

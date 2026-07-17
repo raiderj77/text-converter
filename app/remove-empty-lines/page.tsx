@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { getToolBySlug, buildUrl } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
@@ -151,7 +151,7 @@ export default function RemoveEmptyLinesPage() {
           <div className="mt-3 text-sm text-neutral-300 space-y-4">
             <div>
               <h3 className="text-base font-semibold">JavaScript</h3>
-              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-javascript">{`// Remove all empty and whitespace-only lines
+              <pre tabIndex={0} className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-javascript">{`// Remove all empty and whitespace-only lines
 function removeEmptyLines(text) {
   return text.split('\\n').filter(line => line.trim() !== '').join('\\n');
 }
@@ -168,7 +168,7 @@ function removeTrulyEmptyLines(text) {
             </div>
             <div>
               <h3 className="text-base font-semibold">Python</h3>
-              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-python">{`import re
+              <pre tabIndex={0} className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-python">{`import re
 
 # Remove all empty and whitespace-only lines
 def remove_empty_lines(text):
@@ -189,7 +189,7 @@ with open('output.txt', 'w') as f:
             </div>
             <div>
               <h3 className="text-base font-semibold">Bash</h3>
-              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-bash">{`# Remove truly empty lines (grep -v inverts match)
+              <pre tabIndex={0} className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-bash">{`# Remove truly empty lines (grep -v inverts match)
 grep -v '^$' input.txt > output.txt
 
 # Remove empty and whitespace-only lines

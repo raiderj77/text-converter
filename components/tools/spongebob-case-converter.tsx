@@ -159,6 +159,7 @@ Meme culture`;
           <div className="space-y-2">
             <label className="text-xs font-medium">Case Mode</label>
             <select
+              aria-label="Case mode"
               value={mode}
               onChange={(e) => setMode(e.target.value as CaseMode)}
               className="w-full rounded-lg border border-white/10 bg-neutral-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"

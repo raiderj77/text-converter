@@ -212,7 +212,7 @@ export function ToggleCaseConverterTool() {
                 )}
               >
                 {conv.value || (
-                  <span className="text-neutral-500">Converted text will appear here...</span>
+                  <span className="text-neutral-400">Converted text will appear here...</span>
                 )}
               </div>
             </div>

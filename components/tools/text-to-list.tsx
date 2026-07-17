@@ -67,7 +67,7 @@ export function TextToListTool() {
   const btnActive = isDark
     ? "bg-emerald-500/20 border-emerald-400/40 text-emerald-300"
     : "bg-emerald-500/20 border-emerald-500/40 text-emerald-700";
-  const muted = isDark ? "text-neutral-500" : "text-neutral-400";
+  const muted = isDark ? "text-neutral-400" : "text-neutral-600";
 
   const items = useMemo(
     () => splitText(text, splitMode, customDelimiter),

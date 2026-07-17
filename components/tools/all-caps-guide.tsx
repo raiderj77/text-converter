@@ -220,11 +220,12 @@ export function AllCapsGuideTool() {
     <div className="rounded-xl border border-white/10 bg-neutral-900 p-4">
       {/* Input Section */}
       <div className="mb-6">
-        <label className="block text-sm font-medium mb-2">
+        <label htmlFor="all-caps-analysis-input" className="block text-sm font-medium mb-2">
           Enter text to analyze all caps appropriateness:
         </label>
         <div className="flex gap-2">
           <input
+            id="all-caps-analysis-input"
             type="text"
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
@@ -233,13 +234,13 @@ export function AllCapsGuideTool() {
           />
           <button
             onClick={() => setInputText(inputText.toUpperCase())}
-            className="rounded-lg border border-white/10 px-4 py-2 text-sm hover:bg-white/5 transition-colors"
+            className="rounded-lg border border-white/10 bg-transparent px-4 py-2 text-sm text-white hover:bg-white/5 transition-colors"
           >
             TO UPPERCASE
           </button>
           <button
             onClick={() => setInputText("")}
-            className="rounded-lg border border-white/10 px-4 py-2 text-sm hover:bg-white/5 transition-colors"
+            className="rounded-lg border border-white/10 bg-transparent px-4 py-2 text-sm text-white hover:bg-white/5 transition-colors"
           >
             Clear
           </button>
@@ -253,7 +254,7 @@ export function AllCapsGuideTool() {
               <button
                 key={example}
                 onClick={() => handleExampleClick(example)}
-                className="rounded-lg border border-white/10 px-3 py-1 text-xs hover:bg-white/5 transition-colors"
+                className="rounded-lg border border-white/10 bg-transparent px-3 py-1 text-xs text-white hover:bg-white/5 transition-colors"
               >
                 {example}
               </button>
