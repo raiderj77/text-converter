@@ -36,6 +36,10 @@ const aiAnalyzerPage = read("app/ai-writing-analyzer/page.tsx");
 const aiAnalyzerTool = read("components/tools/ai-writing-analyzer.tsx");
 const qrPage = read("app/qr-code-generator/page.tsx");
 const qrTool = read("components/tools/qr-code-generator.tsx");
+const randomNumberPage = read("app/random-number-generator/page.tsx");
+const randomNumberTool = read("components/tools/random-number-generator.tsx");
+const secureRandom = read("lib/secure-random.ts");
+const randomNumberGuide = read("content/blog/random-number-generator-guide.md");
 const storageCleanup = read("components/privacy-storage-cleanup.tsx");
 const toolSources = readdirSync(resolve(root, "components/tools"))
   .filter((name) => name.endsWith(".tsx"))
@@ -95,6 +99,12 @@ check(![about, cookies, contact, terms, accessibility, privacy].some((page) => /
 check(packageJson.includes('"qrcode"') && qrTool.includes('from "qrcode"'), "QR generation uses the bundled dependency");
 check(!/cdnjs|createElement\("script"\)|localStorage/.test(qrTool), "QR generation avoids external scripts and persistent input storage");
 check(qrPage.includes("code bundled with FlipMyCase"), "QR privacy explanation matches the implementation");
+check(!randomNumberTool.includes("Math.random"), "random number tool does not use the non-cryptographic Math.random API");
+check(randomNumberTool.includes("secureRandomInt") && randomNumberTool.includes("secureUniqueIntegers"), "random number and dice paths use the reviewed secure helpers");
+check(secureRandom.includes("crypto.getRandomValues") && secureRandom.includes("candidate < unbiasedLimit"), "random range mapping uses Web Crypto with rejection sampling");
+check(secureRandom.includes("new Map<bigint, bigint>()"), "unique mode uses a bounded-memory sparse shuffle");
+check(randomNumberPage.includes("www.w3.org/TR/webcrypto-2/#Crypto-method-getRandomValues") && randomNumberPage.includes("csrc.nist.gov/pubs/sp/800/90/c/final"), "random number claims cite primary technical standards");
+check(!/suitable for (?:fair draws|security-sensitive)|true randomness|truly unbiased/i.test(`${randomNumberPage}\n${randomNumberGuide}`), "randomness copy avoids unsupported security and fairness guarantees");
 check(!existsSync(resolve(root, "public/llms-full.txt")), "retired article catalog is not exposed to AI crawlers");
 check(!existsSync(resolve(root, "app/api/indexnow/route.ts")), "unauthenticated IndexNow proxy is not exposed");
 

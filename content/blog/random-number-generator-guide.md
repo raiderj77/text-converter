@@ -1,15 +1,15 @@
 ---
 noindex: true
 title: "Random Number Generator — How to Generate Random Numbers Online"
-description: "Generate random numbers, integers, decimals, and sequences instantly. Free online tool with custom ranges, multiple outputs, and cryptographic randomness. No signup."
+description: "Generate random integers and sequences with custom ranges, bulk output, unique picks, and cryptographically strong browser randomness. No signup."
 date: "2026-03-16"
 keywords: ["random number generator", "generate random number", "random number online", "random integer generator", "random number picker", "rng tool", "random number between"]
 toolSlug: "random-number-generator"
 faq:
   - question: "How do I generate a random number?"
-    answer: "Open the FlipMyCase Random Number Generator, set your minimum and maximum values, and click generate. The tool produces a cryptographically random number within your range. Generate single numbers or batches of hundreds at once."
-  - question: "Are the numbers truly random?"
-    answer: "Yes. The tool uses your browser's crypto.getRandomValues() API, which is a cryptographically secure random number generator. The output is unpredictable and suitable for security-sensitive applications like lottery draws and token generation."
+    answer: "Open the FlipMyCase Random Number Generator, set your minimum and maximum values, and click generate. The tool maps cryptographically strong browser-generated values into the requested range without modulo bias."
+  - question: "What randomness source does the tool use?"
+    answer: "The tool uses your browser's crypto.getRandomValues() API, which the Web Cryptography specification defines as producing cryptographically strong random values. Regulated drawings and credentials still require their own audited processes and security controls."
   - question: "Can I generate random decimals?"
     answer: "Yes. Set the decimal places option to generate numbers like 3.14 or 0.8472. You can control precision from 0 (integers only) to any number of decimal places."
   - question: "Can I generate multiple random numbers at once?"
@@ -19,7 +19,7 @@ related: ["password-generator-guide", "uuid-generator-guide", "number-base-conve
 
 # Random Number Generator — How to Generate Random Numbers Online
 
-Random numbers are one of the most fundamental building blocks in computing. They power lottery draws, A/B tests, game mechanics, statistical simulations, test data generation, cryptographic tokens, and scientific experiments. Yet generating truly random numbers — not just pseudo-random sequences — requires more than `Math.random()`. Understanding the difference between pseudo-random and cryptographic random, and knowing when each is appropriate, is essential for any developer.
+Random numbers are one of the most fundamental building blocks in computing. They power A/B tests, game mechanics, statistical simulations, test data generation, security systems, and scientific experiments. Understanding the difference between general-purpose pseudo-random output and cryptographically strong browser randomness — and mapping either source without bias — is essential for any developer.
 
 This guide covers how random number generation works, the difference between PRNG and CSPRNG, how to generate random numbers in code, and the scenarios that demand each type.
 
@@ -34,10 +34,10 @@ You would use random numbers for generating test data, selecting random samples 
 1. Open the [FlipMyCase Random Number Generator](/random-number-generator).
 2. Set the minimum and maximum values for your range.
 3. Choose integer or decimal output and set the quantity.
-4. Click generate for cryptographically random numbers.
+4. Click Generate for numbers drawn from the browser's cryptographically strong random source.
 5. Copy individual numbers or the entire batch.
 
-The generator uses `crypto.getRandomValues()` for true randomness. For generating random passwords instead of numbers, use the [Password Generator](/password-generator).
+The generator uses `crypto.getRandomValues()` for cryptographically strong random values. For passwords, use a dedicated password generator and appropriate credential-storage controls.
 
 ## Code Examples for Random Number Generation
 
@@ -178,15 +178,15 @@ func main() {
 
 **Test data generation.** Automated tests need randomized inputs to cover edge cases. Generate random IDs, prices, quantities, and dates to populate test databases. The [Random Number Generator](/random-number-generator) produces quick test values; for full datasets, use the code examples above.
 
-**Statistical sampling.** Selecting random records from a database for quality auditing, user surveys, or A/B test assignment requires unbiased random number generation. Use cryptographic randomness to ensure selection is truly unbiased.
+**Statistical sampling.** Selecting random records for quality auditing, user surveys, or A/B test assignment requires both a suitable random source and an unbiased mapping method. Rejection sampling avoids the modulo bias that can occur when converting random bits into a custom range.
 
 **Game development.** Dice rolls, card shuffles, loot drops, and procedural generation all depend on random numbers. Use the Fisher-Yates shuffle algorithm for fair card dealing and uniform random integers for dice simulation.
 
-**Lottery and raffle draws.** Fair draws require cryptographic randomness — `Math.random()` is not sufficient because its output is predictable if the seed is known. The [Random Number Generator](/random-number-generator) uses `crypto.getRandomValues()` which is suitable for fair draws.
+**Lottery and raffle draws.** The [Random Number Generator](/random-number-generator) uses `crypto.getRandomValues()` and unbiased range mapping, but that alone does not make a high-stakes or regulated draw auditable. Those draws also need documented rules, controlled inputs, retained evidence, and any oversight required by the applicable jurisdiction.
 
 ## Common Mistakes and Gotchas
 
-`Math.random()` is not cryptographically secure. Its output is generated by a deterministic algorithm with a seed — if an attacker learns the seed, they can predict all future values. Never use it for security tokens, lottery draws, or any scenario where predictability would be exploitable. Use `crypto.getRandomValues()` in JavaScript or `secrets` in Python.
+`Math.random()` is not specified as cryptographically secure and should not be used when unpredictability is a security requirement. Use the platform's cryptographic APIs, such as `crypto.getRandomValues()` in JavaScript or `secrets` in Python, and follow the application-specific requirements for key length, encoding, storage, and rotation.
 
 Modulo bias produces non-uniform distributions. `randomValue % 6` does not give each outcome equal probability unless the random value's range is a perfect multiple of 6. For small ranges this bias is negligible, but for precise fairness, use rejection sampling (generate, reject if biased, retry).
 
@@ -196,6 +196,6 @@ Seeding PRNGs with predictable values (like the current timestamp) makes the out
 
 ## Conclusion
 
-Random number generation is deceptively simple in concept but critical to get right in implementation. The difference between `Math.random()` and `crypto.getRandomValues()` is the difference between a fun game and a secure application.
+Random number generation is deceptively simple but critical to get right. The source, range-mapping method, surrounding controls, and audit requirements all depend on the use case.
 
 The [FlipMyCase Random Number Generator](/random-number-generator) produces cryptographically secure numbers with custom ranges, batch generation, and unique mode. For generating secure passwords, use the [Password Generator](/password-generator). For unique identifiers, use the [UUID Generator](/uuid-generator). For programmatic generation, the JavaScript, Python, and Go examples above demonstrate both PRNG and CSPRNG approaches.
