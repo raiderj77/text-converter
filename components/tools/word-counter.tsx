@@ -230,6 +230,7 @@ export function WordCounterTool() {
             value={text}
             onChange={(e) => setText(e.target.value)}
             rows={6}
+            aria-label="Text to count"
             placeholder="Paste or type text here to count words, characters, sentences…"
             className={cx(
               "w-full resize-y rounded-2xl border px-3 py-2 text-sm leading-6 outline-none",

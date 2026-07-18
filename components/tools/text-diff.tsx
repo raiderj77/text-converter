@@ -236,6 +236,7 @@ export function TextDiffTool() {
                 onChange={(e) => box.set(e.target.value)}
                 rows={8}
                 spellCheck={false}
+                aria-label={box.label}
                 placeholder={box.placeholder}
                 className={cx("w-full resize-y rounded-2xl border px-3 py-2 text-sm leading-6 outline-none font-mono", isDark ? "border-white/10 bg-neutral-950 focus:ring-2 focus:ring-white/10" : "border-black/10 bg-neutral-50 focus:ring-2 focus:ring-black/10")}
               />

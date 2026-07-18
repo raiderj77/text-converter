@@ -159,6 +159,7 @@ export function DuplicateRemoverTool() {
             value={text}
             onChange={(e) => setText(e.target.value)}
             rows={8}
+            aria-label="Lines to deduplicate"
             placeholder={"apple\nbanana\napple\ncherry\nbanana\napple\n\nPaste your list here, one item per line…"}
             className={cx(
               "w-full resize-y rounded-2xl border px-3 py-2 text-sm leading-6 outline-none font-mono",

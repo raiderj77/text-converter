@@ -212,6 +212,7 @@ export function PlainTextConverterTool() {
             value={text}
             onChange={(e) => setText(e.target.value)}
             rows={6}
+            aria-label="Rich text to convert to plain text"
             placeholder={"Paste text with <b>HTML tags</b>, \u201Csmart quotes\u201D, em dashes \u2014 and more\u2026"}
             className={cx(
               "w-full resize-y rounded-2xl border px-3 py-2 text-sm leading-6 outline-none font-mono",

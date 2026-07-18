@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { cx, formatNumber } from "@/lib/utils";
 import { useTheme } from "@/components/layout/theme-provider";
 
@@ -156,33 +156,44 @@ const STYLES: ContentStyle[] = [
   },
 ];
 
-function randomWordFromPool(words: string[]): string {
-  return words[Math.floor(Math.random() * words.length)];
+function seededRandom(seed: number): () => number {
+  let state = seed + 0x6d2b79f5;
+  return () => {
+    state |= 0;
+    state = (state + 0x6d2b79f5) | 0;
+    let value = Math.imul(state ^ (state >>> 15), 1 | state);
+    value = (value + Math.imul(value ^ (value >>> 7), 61 | value)) ^ value;
+    return ((value ^ (value >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function randomWordFromPool(words: string[], random: () => number): string {
+  return words[Math.floor(random() * words.length)];
 }
 
 function capitalize(s: string): string {
   return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
-function generateSentence(words: string[], minWords: number = 6, maxWords: number = 16): string {
-  const len = minWords + Math.floor(Math.random() * (maxWords - minWords + 1));
+function generateSentence(words: string[], random: () => number, minWords: number = 6, maxWords: number = 16): string {
+  const len = minWords + Math.floor(random() * (maxWords - minWords + 1));
   const result: string[] = [];
   for (let i = 0; i < len; i++) {
-    result.push(randomWordFromPool(words));
+    result.push(randomWordFromPool(words, random));
   }
   // Add a comma somewhere in longer sentences
   if (len > 8) {
-    const commaPos = 3 + Math.floor(Math.random() * (len - 6));
+    const commaPos = 3 + Math.floor(random() * (len - 6));
     result[commaPos] = result[commaPos] + ",";
   }
   return capitalize(result.join(" ")) + ".";
 }
 
-function generateParagraph(words: string[], minSentences: number = 4, maxSentences: number = 8): string {
-  const len = minSentences + Math.floor(Math.random() * (maxSentences - minSentences + 1));
+function generateParagraph(words: string[], random: () => number, minSentences: number = 4, maxSentences: number = 8): string {
+  const len = minSentences + Math.floor(random() * (maxSentences - minSentences + 1));
   const sentences: string[] = [];
   for (let i = 0; i < len; i++) {
-    sentences.push(generateSentence(words));
+    sentences.push(generateSentence(words, random));
   }
   return sentences.join(" ");
 }
@@ -193,16 +204,18 @@ function generateText(
   style: ContentStyle,
   mode: GenMode,
   count: number,
-  startWithOpener: boolean
+  startWithOpener: boolean,
+  seed: number
 ): string {
   if (count <= 0) return "";
 
   const { words, opener } = style;
+  const random = seededRandom(seed);
 
   if (mode === "words") {
     const result: string[] = [];
     for (let i = 0; i < count; i++) {
-      result.push(randomWordFromPool(words));
+      result.push(randomWordFromPool(words, random));
     }
     let text = result.join(" ");
     if (startWithOpener) {
@@ -220,7 +233,7 @@ function generateText(
   if (mode === "sentences") {
     const sentences: string[] = [];
     for (let i = 0; i < count; i++) {
-      sentences.push(generateSentence(words));
+      sentences.push(generateSentence(words, random));
     }
     let text = sentences.join(" ");
     if (startWithOpener) {
@@ -232,7 +245,7 @@ function generateText(
   // paragraphs
   const paragraphs: string[] = [];
   for (let i = 0; i < count; i++) {
-    paragraphs.push(generateParagraph(words));
+    paragraphs.push(generateParagraph(words, random));
   }
   if (startWithOpener) {
     paragraphs[0] = opener + " " + paragraphs[0].split(". ").slice(1).join(". ");
@@ -252,9 +265,8 @@ export function LoremIpsumTool() {
   const activeStyle = STYLES.find((s) => s.id === styleId) || STYLES[0];
 
   const output = useMemo(
-    () => generateText(activeStyle, mode, count, startWithOpener),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [styleId, mode, count, startWithOpener, seed]
+    () => generateText(activeStyle, mode, count, startWithOpener, seed),
+    [activeStyle, mode, count, startWithOpener, seed]
   );
 
   // Stats

@@ -329,6 +329,7 @@ export function StringEncoderTool() {
             value={text}
             onChange={(e) => setText(e.target.value)}
             rows={5}
+            aria-label={direction === "encode" ? "Text to encode" : "Text to decode"}
             placeholder={
               direction === "encode"
                 ? "Type or paste text to encode..."

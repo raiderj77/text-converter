@@ -121,6 +121,7 @@ export function CaseConverterTool() {
             value={text}
             onChange={(e) => setText(e.target.value)}
             rows={4}
+            aria-label="Text to convert"
             placeholder="Paste or type text here…"
             className={cx(
               "w-full resize-y rounded-2xl border px-3 py-2 text-sm leading-6 outline-none",

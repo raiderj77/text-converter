@@ -136,6 +136,7 @@ export function RemoveHtmlTagsTool() {
           onChange={(e) => setText(e.target.value)}
           rows={8}
           spellCheck={false}
+          aria-label="HTML content"
           placeholder="Paste HTML content here..."
           className={cx(
             "w-full resize-y rounded-lg border px-3 py-2 text-sm leading-6 font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500/50",
@@ -153,6 +154,7 @@ export function RemoveHtmlTagsTool() {
           type="text"
           value={keepTagsStr}
           onChange={(e) => setKeepTagsStr(e.target.value)}
+          aria-label="HTML tags to keep"
           placeholder="e.g. a, strong, em, br"
           className={cx(
             "w-full rounded-lg border px-3 py-2.5 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500/50",

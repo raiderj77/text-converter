@@ -281,6 +281,7 @@ export function UnicodeLookupTool() {
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
+            aria-label="Search Unicode characters"
             placeholder='Search by name (e.g., "check mark", "arrow", "heart")...'
             className={cx(
               "w-full rounded-2xl border px-3 py-2 text-sm leading-6 outline-none min-h-[44px]",

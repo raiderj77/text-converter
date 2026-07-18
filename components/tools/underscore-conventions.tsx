@@ -198,6 +198,7 @@ export function UnderscoreConventionsTool() {
             type="text"
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
+            aria-label="Text to convert between underscore conventions"
             placeholder="e.g., userProfilePicture or maxRetryCount"
             className="flex-1 rounded-lg border border-white/10 bg-neutral-950 px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
           />

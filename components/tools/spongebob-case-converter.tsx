@@ -118,6 +118,7 @@ Meme culture`;
           <textarea
             value={input}
             onChange={(e) => setInput(e.target.value)}
+            aria-label="Text to convert to SpongeBob case"
             placeholder="Paste your text here to convert to SpongeBob case..."
             className="w-full min-h-[300px] font-mono text-sm rounded-xl border border-white/10 bg-neutral-900 p-4 resize-y focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
@@ -143,6 +144,7 @@ Meme culture`;
           <textarea
             value={output}
             readOnly
+            aria-label="SpongeBob case output"
             placeholder="SpongeBob case text will appear here..."
             className="w-full min-h-[300px] font-mono text-sm rounded-xl border border-white/10 bg-neutral-900/50 p-4 resize-y focus:outline-none"
           />
