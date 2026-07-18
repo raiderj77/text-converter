@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL, getToolBySlug } from "@/lib/config";
 import { conversions } from "@/lib/conversions";
@@ -69,7 +69,7 @@ export default function HomePage() {
         name="Free Text Case Converter"
         description={tool.description}
         url={SITE_URL}
-        dateModified={new Date().toISOString().substring(0,10)}
+        dateModified={"2026-07-12"}
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema items={[{ name: "Home", href: "/" }]} />
@@ -80,9 +80,9 @@ export default function HomePage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Text Case Converter
         </h1>
-        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: May 7, 2026</p>
+        <p className="text-sm text-gray-400 mt-1 mb-4 text-center">Last reviewed: July 12, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
-          FlipMyCase is a free online text converter with 73+ text transformation tools including case converters, text cleaners, encoders, generators, and formatters. Select any tool below to transform your text instantly — no signup required.
+          FlipMyCase is a free online text converter with 78 browser-based tools including case converters, text cleaners, encoders, generators, and formatters. Select any tool below to transform your text instantly — no signup required.
         </p>
 
         <div className="mt-3">
@@ -101,36 +101,36 @@ export default function HomePage() {
         <AdSlot slot="after-tool" page="home" />
 
         <div className="mt-4 rounded-xl border border-white/10 bg-neutral-900/50 px-4 py-3 space-y-2">
-          <p className="text-xs font-semibold text-neutral-400 uppercase tracking-wide">In-Depth Guides</p>
+          <p className="text-xs font-semibold text-neutral-400 uppercase tracking-wide">Popular Tools</p>
           <Link
-            href="/blog/how-to-convert-text-to-different-formats"
+            href="/text-cleaner"
             className="block text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors"
           >
-            📖 Text Conversion Guide: Uppercase, Lowercase, Title Case &amp; Advanced Formats →
+            Clean extra spaces, line breaks, and hidden characters →
           </Link>
           <Link
-            href="/blog/how-to-convert-text-to-uppercase"
+            href="/word-counter"
             className="block text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors"
           >
-            📖 How to Convert Text to Uppercase: Quick &amp; Easy Methods →
+            Count words, characters, sentences, and reading time →
           </Link>
           <Link
-            href="/blog/uppercase-converter"
+            href="/slug-generator"
             className="block text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors"
           >
-            📖 How to Convert Text to Uppercase Online (Free Tool + Guide) →
+            Create a clean URL slug from any title →
           </Link>
           <Link
-            href="/blog/lowercase-converter"
+            href="/json-formatter"
             className="block text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors"
           >
-            📖 How to Convert Text to Lowercase Online (Free Tool + Guide) →
+            Format, validate, and minify JSON →
           </Link>
           <Link
-            href="/blog/title-case-converter"
+            href="/tools"
             className="block text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors"
           >
-            📖 Title Case Converter — Rules, Examples, and Free Online Tool →
+            Browse every available tool →
           </Link>
         </div>
 
@@ -223,7 +223,7 @@ export default function HomePage() {
                 href="https://stripe.com/files/reports/the-developer-coefficient.pdf"
                 target="_blank"
                 rel="noopener"
-                className="text-blue-400 hover:text-blue-300 transition-colors"
+                className="text-blue-400 underline underline-offset-2 hover:text-blue-300 transition-colors"
               >
                 Stripe&apos;s Developer Coefficient Report
               </a>
@@ -273,16 +273,18 @@ export default function HomePage() {
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            Is FlipMyCase safe to use with sensitive text?
+            How does FlipMyCase handle sensitive text?
           </h2>
           <p className="mt-2 text-sm text-neutral-200 font-medium">
-            Yes — all conversions run entirely in your browser using JavaScript. Your text is never uploaded, stored, or transmitted to any server.
+            Case conversion runs in your browser. The case converter does not send pasted text to
+            FlipMyCase servers or save it in browser storage.
           </p>
           <div className="mt-2 text-sm text-neutral-300 space-y-2">
             <p>
-              You can safely paste passwords, API keys, internal documents, or any other sensitive
-              content. The text exists only in your browser&apos;s memory and is cleared when you
-              close the tab.
+              Local processing reduces network exposure, but it cannot protect you from a compromised
+              device, browser extension, shared clipboard, or screen capture. Do not paste passwords,
+              private keys, active access tokens, or other secrets into any website. Use the Clear
+              control when you are finished with ordinary private text.
             </p>
           </div>
         </section>
@@ -350,10 +352,10 @@ export default function HomePage() {
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link
-              href="/blog"
+              href="/tools"
               className="rounded-xl border border-white/10 px-3 py-2 text-sm hover:bg-white/5 transition-colors"
             >
-              📖 Text Case Guides
+              Browse All Tools
             </Link>
             <Link
               href="/learn"

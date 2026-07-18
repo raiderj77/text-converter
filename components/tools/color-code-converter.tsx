@@ -220,7 +220,7 @@ export function ColorCodeConverterTool() {
   const base = isDark ? "bg-neutral-900 border-white/10 text-neutral-100" : "bg-white border-black/10 text-neutral-900";
   const inputBase = isDark ? "bg-neutral-950 border-white/10 text-neutral-100 placeholder:text-neutral-600" : "bg-neutral-50 border-black/10 text-neutral-900 placeholder:text-neutral-400";
   const btnBase = isDark ? "bg-white/10 hover:bg-white/15 border-white/10" : "bg-black/5 hover:bg-black/10 border-black/10";
-  const muted = isDark ? "text-neutral-500" : "text-neutral-400";
+  const muted = isDark ? "text-neutral-400" : "text-neutral-600";
 
   const PassBadge = ({ pass }: { pass: boolean }) => (
     <span className={cx(
@@ -261,6 +261,7 @@ export function ColorCodeConverterTool() {
             />
           </div>
           <div
+            role="img"
             className="w-24 h-24 rounded-xl border border-white/10 shadow-inner"
             style={{ backgroundColor: rgbToHex(rgb) }}
             aria-label={`Color swatch: ${rgbToHex(rgb)}`}

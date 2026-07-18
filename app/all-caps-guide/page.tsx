@@ -81,7 +81,7 @@ export default function AllCapsGuidePage() {
         name="All Caps Usage Guide"
         description={tool.description}
         url={pageUrl}
-        dateModified={new Date().toISOString().substring(0,10)}
+        dateModified={"2026-07-12"}
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -199,7 +199,7 @@ export default function AllCapsGuidePage() {
                   <span className="text-xs px-2 py-1 bg-green-500/20 text-green-400 rounded">
                     {item.appropriateness}
                   </span>
-                  <span className="text-xs text-neutral-500">Appropriate</span>
+                  <span className="text-xs text-neutral-400">Appropriate</span>
                 </div>
               </div>
             ))}
@@ -264,8 +264,8 @@ export default function AllCapsGuidePage() {
                 <div className="flex items-start justify-between">
                   <div className="text-sm font-semibold">{item.category}</div>
                   <span className={`text-xs px-2 py-1 rounded ${
-                    item.severity === "High" 
-                      ? "bg-red-500/20 text-red-400" 
+                    item.severity === "High"
+                      ? "bg-red-500/20 text-red-400"
                       : "bg-yellow-500/20 text-yellow-400"
                   }`}>
                     {item.severity} severity
@@ -274,13 +274,13 @@ export default function AllCapsGuidePage() {
                 <p className="mt-2 text-xs text-neutral-400">{item.problem}</p>
                 <div className="mt-3 space-y-2">
                   <div>
-                    <span className="text-xs text-neutral-500">Problematic:</span>
+                    <span className="text-xs text-neutral-400">Problematic:</span>
                     <div className="mt-1 p-2 bg-red-500/10 rounded text-sm font-mono tracking-wider">
                       {item.example}
                     </div>
                   </div>
                   <div>
-                    <span className="text-xs text-neutral-500">Better:</span>
+                    <span className="text-xs text-neutral-400">Better:</span>
                     <div className="mt-1 p-2 bg-green-500/10 rounded text-sm">
                       {item.better}
                     </div>

@@ -1,29 +1,32 @@
+import type { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/seo/schema";
+import { SITE_URL } from "@/lib/config";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Contact",
   description: "Contact the site owner with feedback or bug reports.",
+  alternates: { canonical: `${SITE_URL}/contact` },
 };
 
 export default function ContactPage() {
   return (
     <>
       <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "Contact", href: "/contact" }]} />
-      <main style={{ maxWidth: 900, margin: "0 auto", padding: 24, lineHeight: 1.7 }}>
+      <div style={{ maxWidth: 900, margin: "0 auto", padding: 24, lineHeight: 1.7 }}>
         <h1>Contact</h1>
 
       <p>
         Have a question, suggestion, or found something that doesn&apos;t work right?
-        We appreciate hearing from users and strive to respond to all inquiries promptly.
+        The site owner reviews messages as capacity allows.
       </p>
 
       <h2>How to Reach Us</h2>
       <p>
-        The best way to get in touch is by email. We aim to respond within 2&ndash;3 business days.
+        The best way to get in touch is by email. A response time is not guaranteed.
       </p>
       <p>
         <strong>Email:</strong>{" "}
-        <a href="mailto:hello@flipmycase.com" style={{ color: "#2563eb" }}>
+        <a href="mailto:hello@flipmycase.com" className="text-blue-400 underline underline-offset-2 hover:text-blue-300">
           hello@flipmycase.com
         </a>
       </p>
@@ -49,12 +52,6 @@ export default function ContactPage() {
         <li>Your device type (desktop or mobile) and browser name (Chrome, Safari, Firefox, etc.).</li>
       </ul>
 
-      <h2>Response Times</h2>
-      <p>
-        We read every message and do our best to respond within 2&ndash;3 business days. Bug reports
-        and feature requests that include specific examples are typically addressed faster.
-      </p>
-
       <h2>Privacy Note</h2>
       <p>
         Please do not send sensitive or confidential information via email. If the text
@@ -63,8 +60,8 @@ export default function ContactPage() {
         in your browser and is never stored on our servers.
       </p>
 
-        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 25, 2026</p>
-      </main>
+        <p className="text-sm text-gray-400 mt-1 mb-4 text-center">Last updated: March 25, 2026</p>
+      </div>
     </>
   );
 }

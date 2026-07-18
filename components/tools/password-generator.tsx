@@ -275,13 +275,13 @@ export function PasswordGeneratorTool() {
             <div>
               <div className="flex items-center justify-between mb-2">
                 <label className="text-sm font-semibold">Password Length</label>
-                <input type="number" min={4} max={128} value={length}
+                <input type="number" min={4} max={128} value={length} aria-label="Password length"
                   onChange={(e) => setLength(Math.max(4, Math.min(128, parseInt(e.target.value) || 4)))}
                   className={cx("w-16 rounded-lg border px-2 py-1 text-sm text-center font-mono", isDark ? "bg-neutral-950 border-white/10" : "bg-neutral-50 border-black/10")}
                 />
               </div>
-              <input type="range" min={4} max={128} value={length} onChange={(e) => setLength(parseInt(e.target.value))} className="w-full accent-emerald-500" />
-              <div className={cx("flex justify-between text-xs mt-1", isDark ? "text-neutral-500" : "text-neutral-400")}><span>4</span><span>128</span></div>
+              <input type="range" min={4} max={128} value={length} aria-label="Password length" onChange={(e) => setLength(parseInt(e.target.value))} className="w-full accent-emerald-500" />
+              <div className={cx("flex justify-between text-xs mt-1", isDark ? "text-neutral-400" : "text-neutral-600")}><span>4</span><span>128</span></div>
             </div>
             {/* Character sets */}
             <div>
@@ -302,7 +302,7 @@ export function PasswordGeneratorTool() {
               <label className="text-sm font-semibold block mb-1">Exclude Characters</label>
               <input type="text" value={exclude} onChange={(e) => setExclude(e.target.value)} aria-label="Characters to exclude" placeholder="e.g. 0OlI1"
                 className={cx("w-full rounded-xl border px-3 py-2 text-sm font-mono", isDark ? "bg-neutral-950 border-white/10" : "bg-neutral-50 border-black/10")} />
-              <p className={cx("text-xs mt-1", isDark ? "text-neutral-500" : "text-neutral-400")}>Remove ambiguous characters (0/O, l/1/I) or restricted symbols</p>
+              <p className={cx("text-xs mt-1", isDark ? "text-neutral-400" : "text-neutral-600")}>Remove ambiguous characters (0/O, l/1/I) or restricted symbols</p>
             </div>
           </>
         )}
@@ -426,7 +426,7 @@ export function PasswordGeneratorTool() {
         </div>
       )}
 
-      <div className={cx("mt-3 text-xs text-center", isDark ? "text-neutral-500" : "text-neutral-400")}>
+      <div className={cx("mt-3 text-xs text-center", isDark ? "text-neutral-400" : "text-neutral-600")}>
         Generated using crypto.getRandomValues() · Nothing leaves your browser · Ctrl/⌘ + L toggles theme
       </div>
 

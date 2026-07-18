@@ -33,7 +33,7 @@ const faqItems = [
   {
     question: "What does this tool actually measure?",
     answer:
-      "This tool calculates statistical patterns in your text: sentence length uniformity, vocabulary diversity, transition word density, repeated phrases, paragraph structure, passive voice usage, punctuation frequency, and the presence of common AI filler phrases. Each metric is compared to typical ranges observed in AI-generated and human-written text.",
+      "This tool calculates sentence-length variation, vocabulary diversity, transition-word density, repeated phrases, paragraph structure, a passive-voice estimate, punctuation frequency, and matches against a fixed phrase list. Its color bands are product heuristics, not validated authorship thresholds.",
   },
   {
     question: "Can this tool detect AI-written text?",
@@ -43,22 +43,22 @@ const faqItems = [
   {
     question: "What does the Writing Pattern Score mean?",
     answer:
-      "The score ranges from 0 to 100. Lower scores indicate writing patterns that are statistically more common in human-written text. Higher scores indicate patterns more commonly seen in AI-generated text. The score reflects statistical tendencies, not definitive classification.",
+      "The score ranges from 0 to 100 and summarizes how many of the tool's fixed heuristic bands were triggered. It is not a probability, confidence score, or measure of whether a human or AI wrote the text.",
   },
   {
-    question: "Why is sentence length uniformity important?",
+    question: "What does sentence length uniformity show?",
     answer:
-      "AI language models tend to generate sentences of similar length, resulting in a low standard deviation. Human writers naturally vary their sentence structure more — mixing short, punchy sentences with longer, complex ones — which produces a higher standard deviation.",
+      "It describes how much sentence length varies within the sample. Genre, editing style, language fluency, and many other factors can change this measurement, so it cannot establish authorship.",
   },
   {
-    question: "What are AI filler phrases?",
+    question: "What does the phrase-list check do?",
     answer:
-      "These are phrases that appear disproportionately often in AI-generated text compared to human writing. Examples include 'in today's world', 'it's crucial to', 'plays a vital role', 'when it comes to', and 'a wide range of'. Their presence does not prove AI authorship, but high concentrations are statistically unusual in human writing.",
+      "It counts matches from a short, fixed list including 'in today's world', 'it's crucial to', and 'plays a vital role'. The list is transparent but not a validated detector; people and software can both use these phrases.",
   },
   {
     question: "Can ESL writers get flagged unfairly?",
     answer:
-      "Yes, this is a known limitation. Writers using English as a second language may naturally have lower vocabulary diversity or more uniform sentence structures. Academic writers and technical authors may also produce patterns that overlap with AI-typical ranges. This is why the tool clearly states it analyzes patterns, not authorship.",
+      "Yes. Vocabulary diversity, sentence structure, and phrase choice vary with language background, genre, subject, and editing. The same heuristic band can therefore describe many unrelated kinds of writing and must not be treated as an authorship judgment.",
   },
   {
     question: "Is my text sent to a server?",
@@ -66,9 +66,9 @@ const faqItems = [
       "No. All analysis happens entirely in your browser using JavaScript. Your text never leaves your device. No data is stored, transmitted, or logged.",
   },
   {
-    question: "How many words do I need for accurate results?",
+    question: "Why does the tool require 100 words?",
     answer:
-      "The tool requires a minimum of 100 words. For more statistically meaningful results, paste 300+ words. Short text samples produce less reliable metrics because there is not enough data to calculate meaningful standard deviations and frequency ratios.",
+      "The product requires 100 words so its descriptive measurements are not based on only a few sentences. This minimum does not make the authorship interpretation accurate or validated.",
   },
 ];
 
@@ -79,7 +79,7 @@ export default function AiWritingAnalyzerPage() {
         name="Free AI Writing Pattern Analyzer"
         description={tool.description}
         url={pageUrl}
-        dateModified={new Date().toISOString().substring(0,10)}
+        dateModified={"2026-07-12"}
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -102,7 +102,7 @@ export default function AiWritingAnalyzerPage() {
           AI Writing Pattern Analyzer
         </h1>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
-          An AI writing pattern analyzer examines text for statistical patterns common in AI-generated content, including sentence uniformity and vocabulary diversity. Paste your text below to analyze its writing patterns instantly.
+          This browser-only tool reports writing statistics and transparent heuristic flags. It does not determine whether a human or AI wrote the text.
         </p>
 
         <ToolAnswerBlock slug="ai-writing-analyzer" />
@@ -131,9 +131,8 @@ export default function AiWritingAnalyzerPage() {
             </p>
             <p>
               <strong className="text-neutral-200">2. Review the dashboard.</strong> Each
-              metric is color-coded: green indicates patterns typical of human writing,
-              yellow is ambiguous, and red indicates patterns more common in AI-generated
-              text.
+              metric is color-coded using the product&apos;s fixed lower, middle, and higher
+              heuristic bands.
             </p>
             <p>
               <strong className="text-neutral-200">3. Read the explanations.</strong> Each
@@ -157,32 +156,23 @@ export default function AiWritingAnalyzerPage() {
               Statistical writing analysis examines measurable properties of text —
               sentence structure, word choice diversity, phrase repetition, and
               punctuation habits — to characterize writing style. These techniques
-              have been used in computational linguistics and forensic stylometry
-              long before AI-generated text existed. What has changed is that
-              large language models produce text with statistically distinctive
-              patterns that differ from typical human writing.
+              can characterize a sample&apos;s style. This implementation does not use a
+              trained classification model or a validation dataset.
             </p>
             <p>
               <strong className="text-neutral-200">Sentence length variation</strong> is
-              one of the most studied metrics. Human writers naturally alternate between
-              short, emphatic sentences and longer, more complex constructions. This
-              creates a high standard deviation in sentence length. AI models tend to
-              generate sentences of more uniform length, producing a lower standard
-              deviation.
+              reported as a standard deviation. A lower value means sentence lengths are
+              more similar within this sample; a higher value means they vary more.
             </p>
             <p>
               <strong className="text-neutral-200">Vocabulary diversity</strong> measures
-              the ratio of unique words to total words. AI models often reuse the same
-              vocabulary across a text, while human writers tend to introduce more
-              synonyms and varied word choices, especially in longer passages.
+              the ratio of unique words to total words. The result changes with sample
+              length, subject, genre, quotations, and editing style.
             </p>
             <p>
               <strong className="text-neutral-200">Transition words and filler phrases</strong> are
-              connective words like &quot;furthermore,&quot; &quot;moreover,&quot; and
-              &quot;additionally&quot; that AI models use at higher rates than most human
-              writers. Similarly, certain filler phrases like &quot;in today&apos;s world&quot;
-              and &quot;it&apos;s crucial to&quot; appear in AI text far more frequently
-              than in human writing samples.
+              counted from fixed lists included in the tool. The counts can help an editor
+              notice repetitive language, but they do not identify who or what wrote it.
             </p>
             <p>
               It is critical to understand that none of these metrics can prove AI

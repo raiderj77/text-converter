@@ -170,12 +170,13 @@ export function Nav() {
                     {/* Search box */}
                     <div className={cx("px-3 pt-3 pb-2 border-b", isDark ? "border-white/5" : "border-black/5")}>
                       <div className="relative">
-                        <svg className={cx("absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4", isDark ? "text-neutral-500" : "text-neutral-400")} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <svg className={cx("absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4", isDark ? "text-neutral-400" : "text-neutral-600")} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                         </svg>
                         <input
                           ref={searchRef}
                           type="text"
+                          aria-label="Search tools"
                           value={search}
                           onChange={(e) => setSearch(e.target.value)}
                           placeholder="Search tools..."
@@ -193,7 +194,7 @@ export function Nav() {
                       /* Search results */
                       <div className="p-2 max-h-[400px] overflow-y-auto">
                         {searchResults.length === 0 ? (
-                          <div className={cx("text-sm text-center py-6", isDark ? "text-neutral-500" : "text-neutral-400")}>
+                          <div className={cx("text-sm text-center py-6", isDark ? "text-neutral-400" : "text-neutral-600")}>
                             No tools found for &ldquo;{search}&rdquo;
                           </div>
                         ) : (
@@ -274,17 +275,17 @@ export function Nav() {
                 All Tools
               </Link>
 
-              {/* Guides link */}
+              {/* Learning reference */}
               <Link
-                href="/blog"
+                href="/learn"
                 className={cx(
                   "rounded-xl px-3 py-2 text-sm font-medium transition-colors",
-                  pathname.startsWith("/blog")
+                  pathname === "/learn"
                     ? isDark ? "bg-white/10 text-white" : "bg-black/10 text-black"
                     : isDark ? "hover:bg-white/5 text-neutral-300" : "hover:bg-black/5 text-neutral-600"
                 )}
               >
-                Guides
+                Learn
               </Link>
             </div>
 
@@ -346,11 +347,12 @@ export function Nav() {
             <div className="p-4 space-y-2">
               {/* Mobile search */}
               <div className="relative mb-3">
-                <svg className={cx("absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4", isDark ? "text-neutral-500" : "text-neutral-400")} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <svg className={cx("absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4", isDark ? "text-neutral-400" : "text-neutral-600")} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                 </svg>
                 <input
                   type="text"
+                  aria-label="Search tools"
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                   placeholder="Search tools..."
@@ -366,7 +368,7 @@ export function Nav() {
               {searchResults ? (
                 /* Mobile search results */
                 searchResults.length === 0 ? (
-                  <div className={cx("text-sm text-center py-6", isDark ? "text-neutral-500" : "text-neutral-400")}>
+                  <div className={cx("text-sm text-center py-6", isDark ? "text-neutral-400" : "text-neutral-600")}>
                     No tools found for &ldquo;{search}&rdquo;
                   </div>
                 ) : (
@@ -413,17 +415,17 @@ export function Nav() {
               </Link>
 
               <Link
-                href="/blog"
+                href="/learn"
                 onClick={() => setMobileOpen(false)}
                 className={cx(
                   "flex items-center gap-2.5 rounded-xl px-3 py-3",
-                  pathname.startsWith("/blog")
+                  pathname === "/learn"
                     ? isDark ? "bg-white/10" : "bg-black/10"
                     : isDark ? "bg-white/5 hover:bg-white/10" : "bg-black/5 hover:bg-black/10"
                 )}
               >
                 <span className={cx("w-8 h-8 rounded-lg flex items-center justify-center text-sm", isDark ? "bg-white/5" : "bg-black/5")}>📖</span>
-                <span className="text-sm font-medium">Guides</span>
+                <span className="text-sm font-medium">Learn</span>
               </Link>
             </div>
           </div>
@@ -461,7 +463,7 @@ function MobileCategory({
       >
         <span>{label}</span>
         <span className="flex items-center gap-2">
-          <span className={cx("text-xs", isDark ? "text-neutral-500" : "text-neutral-400")}>{count}</span>
+          <span className={cx("text-xs", isDark ? "text-neutral-400" : "text-neutral-600")}>{count}</span>
           <svg
             className={cx("w-3.5 h-3.5 transition-transform", open ? "rotate-180" : "")}
             fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}

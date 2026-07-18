@@ -37,7 +37,7 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
       <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "About", href: "/about" }]} />
-      <main className="mx-auto max-w-3xl px-4 py-8" style={{ lineHeight: 1.7 }}>
+      <div className="mx-auto max-w-3xl px-4 py-8" style={{ lineHeight: 1.7 }}>
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           About Jason Ramirez
         </h1>
@@ -62,11 +62,11 @@ export default function AboutPage() {
               you to create an account before you can paste three words of text.
             </p>
             <p>
-              So I built one with a hard constraint: no server round-trips. Every tool on FlipMyCase
-              runs entirely in your browser. Your text never leaves your device. Not as a privacy
-              promise on a marketing page, but as a structural fact: there is no server to send your
-              text to. Paste it, convert it, copy it out. Nothing stored, nothing logged, nothing
-              transmitted.
+              So I built the tools around local processing. Their conversion logic runs in your
+              browser and does not intentionally send tool input to FlipMyCase application servers.
+              The website is still hosted infrastructure, so ordinary page requests can create
+              technical logs; browser extensions and device software also remain outside the site&apos;s
+              control. The privacy policy explains which tools use browser storage.
             </p>
           </div>
         </section>
@@ -103,19 +103,18 @@ export default function AboutPage() {
               worth knowing about why FlipMyCase is worth bookmarking:
             </p>
             <p>
-              All 70+ tools are free. No paid plan, no premium tier, no feature gates. The site
-              runs on AdSense. Standard placements, disclosed in the privacy policy, nothing
-              deceptive. That's the only ad network here.
+              All 78 tools are free. No paid plan, no premium tier, and no feature gates.
+              Google AdSense is not currently approved or enabled on this site.
             </p>
             <p>
               Privacy by architecture, not by policy. Because everything runs in your browser, your
-              text is never transmitted anywhere. I run Google Analytics to see which tools people
-              actually use. That's the full extent of data collection on this site.
+              text is not intentionally transmitted to FlipMyCase servers. Optional analytics and
+              session-recording scripts are currently disabled.
             </p>
             <p>
-              Accessibility is built in, not added on. WCAG-aware layouts, keyboard navigation that
-              works end-to-end, screen reader support. These tools should work for everyone, not
-              just people with fast connections and no assistive tech needs.
+              Accessibility is an ongoing design goal. The site uses semantic structure, visible
+              focus treatment, responsive layouts, and labeled controls, while the accessibility
+              statement records the remaining audit limitations.
             </p>
           </div>
         </section>
@@ -128,7 +127,7 @@ export default function AboutPage() {
               <li>
                 <a
                   href="https://fibertools.app"
-                  className="text-blue-400 hover:text-blue-300 transition-colors"
+                  className="text-blue-400 underline underline-offset-2 hover:text-blue-300 transition-colors"
                 >
                   FiberTools
                 </a>
@@ -138,7 +137,7 @@ export default function AboutPage() {
               <li>
                 <a
                   href="https://creatorrevenuecalculator.com"
-                  className="text-blue-400 hover:text-blue-300 transition-colors"
+                  className="text-blue-400 underline underline-offset-2 hover:text-blue-300 transition-colors"
                 >
                   Creator Revenue Calculator
                 </a>
@@ -158,17 +157,17 @@ export default function AboutPage() {
           Questions or want to report a bug? Reach me at{" "}
           <a
             href="mailto:hello@flipmycase.com"
-            className="text-blue-400 hover:text-blue-300 transition-colors"
+            className="text-blue-400 underline underline-offset-2 hover:text-blue-300 transition-colors"
           >
             hello@flipmycase.com
           </a>{" "}
           or use the{" "}
-          <Link href="/contact" className="text-blue-400 hover:text-blue-300 transition-colors">
+          <Link href="/contact" className="text-blue-400 underline underline-offset-2 hover:text-blue-300 transition-colors">
             contact form
           </Link>
           .
         </p>
-      </main>
+      </div>
     </>
   );
 }

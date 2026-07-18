@@ -58,7 +58,7 @@ const faqItems = [
   {
     question: "Is my data sent to a server?",
     answer:
-      "The QR code is generated client-side using a JavaScript library loaded from a CDN. Your input data is never sent to any server. The library runs entirely in your browser, and your settings are saved to local storage for convenience.",
+      "The QR code is generated in your browser by code bundled with FlipMyCase. The generator does not send your input to FlipMyCase servers or save QR contents in browser storage. Anyone who can scan the finished QR code can read its payload, so share WiFi and contact QR codes carefully.",
   },
   {
     question: "What is the maximum content length for a QR code?",
@@ -74,7 +74,7 @@ export default function QrCodeGeneratorPage() {
         name="Free QR Code Generator"
         description={tool.description}
         url={pageUrl}
-        dateModified={new Date().toISOString().substring(0,10)}
+        dateModified={"2026-07-12"}
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema

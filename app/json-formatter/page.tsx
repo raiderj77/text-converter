@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { getToolBySlug, buildUrl } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
@@ -81,7 +81,7 @@ const faqItems = [
   {
     question: "Is my JSON data sent to a server?",
     answer:
-      "No. All formatting, validation, fixing, and conversion happens entirely in your browser. Your data never leaves your device. Nothing is logged, stored, or transmitted.",
+      "No. Formatting, validation, fixing, and conversion run in your browser. The formatter does not send your JSON to FlipMyCase servers or save it in browser storage. Browser extensions, device software, and clipboard history remain outside the site's control, so do not use any website for active credentials or private keys.",
   },
   {
     question: "What JSON errors can the validator detect?",
@@ -122,7 +122,7 @@ export default function JsonFormatterPage() {
         name="Free JSON Formatter, Validator & Beautifier"
         description={tool.description}
         url={pageUrl}
-        dateModified={new Date().toISOString().substring(0,10)}
+        dateModified={"2026-07-12"}
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -176,7 +176,7 @@ export default function JsonFormatterPage() {
           <div className="mt-3 text-sm text-neutral-300 space-y-4">
             <div>
               <h3 className="text-base font-semibold">JavaScript</h3>
-              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-javascript">{`// Pretty-print JSON
+              <pre tabIndex={0} className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-javascript">{`// Pretty-print JSON
 const data = { users: [{ id: 1, name: "Alice" }, { id: 2, name: "Bob" }] };
 console.log(JSON.stringify(data, null, 2));
 
@@ -197,7 +197,7 @@ console.log(isValidJSON('{name: "Alice"}'));     // false (unquoted key)`}</code
             </div>
             <div>
               <h3 className="text-base font-semibold">Python</h3>
-              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-python">{`import json
+              <pre tabIndex={0} className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-python">{`import json
 
 # Pretty-print JSON
 data = {"users": [{"id": 1, "name": "Alice"}, {"id": 2, "name": "Bob"}]}
@@ -220,7 +220,7 @@ def is_valid_json(text):
             </div>
             <div>
               <h3 className="text-base font-semibold">Go</h3>
-              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-go">{`package main
+              <pre tabIndex={0} className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-go">{`package main
 
 import (
     "bytes"
@@ -323,8 +323,8 @@ func main() {
                 desc: "See total keys, nesting depth, and type counts (objects, arrays, strings, numbers, booleans, nulls). Understand the shape of your data at a glance.",
               },
               {
-                title: "100% Private — No Server",
-                desc: "Your JSON is parsed entirely inside your browser. Nothing is uploaded, logged, or transmitted at any point. The formatting and validation logic runs locally, so API keys, credentials, and private data in your JSON stay on your machine.",
+                title: "Local Processing",
+                desc: "Your JSON is parsed in the browser and is not sent to FlipMyCase servers or saved in browser storage. Avoid pasting active credentials or private keys into any website.",
               },
             ].map((item) => (
               <div

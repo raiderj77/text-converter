@@ -79,7 +79,7 @@ export default function ReadabilityAnalyzerPage() {
         name="Free Readability Score Analyzer"
         description={tool.description}
         url={pageUrl}
-        dateModified={new Date().toISOString().substring(0,10)}
+        dateModified={"2026-07-12"}
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema

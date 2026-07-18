@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { getToolBySlug, buildUrl } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
@@ -81,7 +81,7 @@ export default function UnderscoreConventionsPage() {
         name="Underscore Conventions Guide"
         description={tool.description}
         url={pageUrl}
-        dateModified={new Date().toISOString().substring(0,10)}
+        dateModified={"2026-07-12"}
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -245,34 +245,34 @@ export default function UnderscoreConventionsPage() {
             <p>
               <strong className="text-neutral-200">Python class with all underscore types:</strong>
             </p>
-            <pre className="mt-2 p-3 bg-neutral-950 rounded-lg text-xs font-mono overflow-x-auto">
+            <pre tabIndex={0} className="mt-2 p-3 bg-neutral-950 rounded-lg text-xs font-mono overflow-x-auto">
 {`class UserAccount:
     def __init__(self, username, class_):  # trailing underscore avoids 'class' keyword
         self.username = username
         self._protected_data = {}          # single underscore: internal use
         self.__private_key = hash(username) # double underscore: name mangling
         self.class_type = class_           # trailing underscore in variable name
-    
+
     def __str__(self):                     # dunder method
         return f"User: {self.username}"
-    
+
     def get_public_info(self):             # snake_case method name
         return {"username": self.username}`}
             </pre>
             <p className="mt-4">
               <strong className="text-neutral-200">JavaScript with modern and legacy conventions:</strong>
             </p>
-            <pre className="mt-2 p-3 bg-neutral-950 rounded-lg text-xs font-mono overflow-x-auto">
+            <pre tabIndex={0} className="mt-2 p-3 bg-neutral-950 rounded-lg text-xs font-mono overflow-x-auto">
 {`// Modern JavaScript (ES2022+)
 class UserAccount {
     #privateBalance = 0;          // True private field
     _legacyPrivate = 0;           // Convention-only private
     PUBLIC_CONSTANT = "USER";     // Constant in UPPER_SNAKE_CASE
-    
+
     constructor(username) {
         this.username = username; // Public property (camelCase)
     }
-    
+
     // Public method (camelCase)
     getPublicInfo() {
         return {

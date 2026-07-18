@@ -69,10 +69,10 @@ export function BubbleTextGeneratorTool() {
   const btnBase = isDark
     ? "bg-white/10 hover:bg-white/15 border-white/10"
     : "bg-black/5 hover:bg-black/10 border-black/10";
-  const muted = isDark ? "text-neutral-500" : "text-neutral-400";
+  const muted = isDark ? "text-neutral-400" : "text-neutral-600";
   const activeBtn = isDark
-    ? "bg-emerald-600 hover:bg-emerald-500 border-emerald-500 text-white"
-    : "bg-emerald-600 hover:bg-emerald-500 border-emerald-500 text-white";
+    ? "bg-emerald-700 hover:bg-emerald-600 border-emerald-600 text-white"
+    : "bg-emerald-700 hover:bg-emerald-600 border-emerald-700 text-white";
 
   // Load from localStorage
   useEffect(() => {

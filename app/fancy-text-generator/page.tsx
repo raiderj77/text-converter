@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { getToolBySlug, buildUrl } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
@@ -81,7 +81,7 @@ export default function FancyTextGeneratorPage() {
         name="Free Fancy Text Generator"
         description={tool.description}
         url={pageUrl}
-        dateModified={new Date().toISOString().substring(0,10)}
+        dateModified={"2026-07-12"}
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -143,7 +143,7 @@ export default function FancyTextGeneratorPage() {
           <div className="mt-3 text-sm text-neutral-300 space-y-4">
             <div>
               <h3 className="text-base font-semibold">JavaScript</h3>
-              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-javascript">{`function toBoldUnicode(text) {
+              <pre tabIndex={0} className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-javascript">{`function toBoldUnicode(text) {
   return [...text].map(char => {
     const code = char.codePointAt(0);
     if (code >= 65 && code <= 90)  return String.fromCodePoint(code - 65 + 0x1D400); // A-Z
@@ -177,7 +177,7 @@ console.log(transform('Hello', 'monospace'));  // 𝙷𝚎𝚕𝚕𝚘`}</code><
             </div>
             <div>
               <h3 className="text-base font-semibold">Python</h3>
-              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-python">{`def to_bold(text):
+              <pre tabIndex={0} className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-python">{`def to_bold(text):
     result = []
     for char in text:
         code = ord(char)
@@ -208,7 +208,7 @@ print(to_bubble('Hello World'))  # Ⓗⓔⓛⓛⓞ Ⓦⓞⓡⓛⓓ`}</code></pre
             </div>
             <div>
               <h3 className="text-base font-semibold">Go</h3>
-              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-go">{`package main
+              <pre tabIndex={0} className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-go">{`package main
 
 import (
     "fmt"

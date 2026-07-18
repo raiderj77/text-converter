@@ -1,17 +1,20 @@
-﻿import Link from "next/link";
+import Link from "next/link";
+import type { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/seo/schema";
+import { SITE_URL } from "@/lib/config";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Accessibility Statement",
   description:
     "Accessibility statement for FlipMyCase outlining our commitment to making our text tools usable by everyone.",
+  alternates: { canonical: `${SITE_URL}/accessibility` },
 };
 
 export default function AccessibilityPage() {
   return (
     <>
       <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "Accessibility", href: "/accessibility" }]} />
-      <main style={{ maxWidth: 800, margin: "0 auto", padding: 24, lineHeight: 1.6 }}>
+      <div style={{ maxWidth: 800, margin: "0 auto", padding: 24, lineHeight: 1.6 }}>
         <h1>Accessibility Statement</h1>
 
       <p>
@@ -20,19 +23,19 @@ export default function AccessibilityPage() {
 
       <h2>Our Commitment</h2>
       <p>
-        We aim to conform to the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA. These guidelines explain how to make web content more accessible for people with disabilities, and user‑friendly for everyone.
+        We use WCAG 2.1 Level AA as a design target. This statement is not a certification that every route or interaction currently conforms.
       </p>
 
       <h2>Measures Taken</h2>
       <p>To support accessibility, we have taken the following measures:</p>
       <ul>
         <li><strong>Semantic HTML:</strong> Using proper heading structure, landmarks, and ARIA attributes where appropriate.</li>
-        <li><strong>Keyboard Navigation:</strong> All interactive elements can be operated using a keyboard.</li>
-        <li><strong>Color Contrast:</strong> Ensuring sufficient contrast between text and background colors.</li>
+        <li><strong>Keyboard Navigation:</strong> Core navigation and tool controls are designed for keyboard use.</li>
+        <li><strong>Color Contrast:</strong> The interface uses high-contrast light and dark themes.</li>
         <li><strong>Responsive Design:</strong> The site works on mobile, tablet, and desktop screens.</li>
         <li><strong>Focus Indicators:</strong> Visible focus styles for keyboard users.</li>
-        <li><strong>Alternative Text:</strong> Providing alt text for meaningful images.</li>
-        <li><strong>Form Labels:</strong> All form controls have associated labels.</li>
+        <li><strong>Alternative Text:</strong> Meaningful images should include text alternatives.</li>
+        <li><strong>Form Labels:</strong> Tool controls should expose accessible labels.</li>
       </ul>
 
       <h2>Areas for Improvement</h2>
@@ -54,7 +57,7 @@ export default function AccessibilityPage() {
         <li>By email (if provided on the contact page)</li>
       </ul>
       <p>
-        We try to respond to accessibility feedback within 5 business days and to propose a solution within 10 business days when applicable.
+        Accessibility reports are reviewed as capacity allows. A response or remediation time is not guaranteed.
       </p>
 
       <h2>Technical Specifications</h2>
@@ -73,24 +76,19 @@ export default function AccessibilityPage() {
 
       <h2>Assessment Approach</h2>
       <p>
-        FlipMyCase assessed the accessibility of this website by the following approaches:
+        Current checks include source review and automated build safeguards. A complete independent accessibility audit and full assistive-technology test matrix have not been completed.
       </p>
       <ul>
-        <li>Self‑evaluation using automated testing tools (axe, Lighthouse)</li>
-        <li>Manual testing with keyboard‑only navigation</li>
-        <li>Manual testing with browser zoom and high‑contrast modes</li>
+        <li>Semantic source and metadata review</li>
+        <li>Responsive production checks</li>
+        <li>Build-time quality and lint checks</li>
       </ul>
-
-      <h2>Formal Approval</h2>
-      <p>
-        This accessibility statement is approved by the site owner.
-      </p>
 
       <h2>Date</h2>
         <p>
           This statement was created on February 20, 2026.
         </p>
-      </main>
+      </div>
     </>
   );
 }

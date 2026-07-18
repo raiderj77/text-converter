@@ -52,7 +52,7 @@ function Ex(props: { label: string; useFor: string; example: string; notes?: str
         {props.example}
       </div>
       {props.notes ? (
-        <div className="mt-2 text-xs text-neutral-500">{props.notes}</div>
+        <div className="mt-2 text-xs text-neutral-400">{props.notes}</div>
       ) : null}
     </div>
   );
@@ -233,10 +233,10 @@ export default function LearnPage() {
               </Link>
             ))}
             <Link
-              href="/blog"
+              href="/tools"
               className="rounded-xl border border-white/10 px-3 py-2 text-sm hover:bg-white/5 transition-colors"
             >
-              📖 Read Guides
+              Browse All Tools
             </Link>
           </div>
         </section>

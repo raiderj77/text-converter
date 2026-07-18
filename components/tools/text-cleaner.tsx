@@ -110,17 +110,6 @@ export function TextCleanerTool() {
   });
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
 
-  // Load saved text
-  useEffect(() => {
-    const saved = localStorage.getItem("fmc_tc_text");
-    if (saved) setText(saved);
-  }, []);
-
-  // Persist text
-  useEffect(() => {
-    localStorage.setItem("fmc_tc_text", text);
-  }, [text]);
-
   // Ctrl/Cmd+K focuses input
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -351,7 +340,7 @@ export function TextCleanerTool() {
             <div
               className={cx(
                 "text-xs",
-                removed > 0 ? "text-emerald-400" : isDark ? "text-neutral-500" : "text-neutral-400"
+                removed > 0 ? "text-emerald-400" : isDark ? "text-neutral-400" : "text-neutral-600"
               )}
             >
               {removed > 0
@@ -421,7 +410,7 @@ export function TextCleanerTool() {
       <div
         className={cx(
           "mt-3 text-xs text-center",
-          isDark ? "text-neutral-500" : "text-neutral-400"
+          isDark ? "text-neutral-400" : "text-neutral-600"
         )}
       >
         Ctrl/⌘ + K focuses input · Ctrl/⌘ + L toggles theme

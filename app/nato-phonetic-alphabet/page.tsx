@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { getToolBySlug, buildUrl } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
@@ -83,7 +83,7 @@ export default function NatoPhoneticAlphabetPage() {
         name="Free NATO Phonetic Alphabet Converter"
         description={tool.description}
         url={pageUrl}
-        dateModified={new Date().toISOString().substring(0,10)}
+        dateModified={"2026-07-12"}
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -153,7 +153,7 @@ export default function NatoPhoneticAlphabetPage() {
           <div className="mt-3 text-sm text-neutral-300 space-y-4">
             <div>
               <h3 className="text-base font-semibold">JavaScript</h3>
-              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-javascript">{`const NATO = {
+              <pre tabIndex={0} className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-javascript">{`const NATO = {
   A:'Alpha', B:'Bravo', C:'Charlie', D:'Delta', E:'Echo',
   F:'Foxtrot', G:'Golf', H:'Hotel', I:'India', J:'Juliet',
   K:'Kilo', L:'Lima', M:'Mike', N:'November', O:'Oscar',
@@ -174,7 +174,7 @@ console.log(toNATO('SOS'));    // Sierra Oscar Sierra`}</code></pre>
             </div>
             <div>
               <h3 className="text-base font-semibold">Python</h3>
-              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-python">{`NATO = {
+              <pre tabIndex={0} className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-python">{`NATO = {
     'A':'Alpha','B':'Bravo','C':'Charlie','D':'Delta','E':'Echo',
     'F':'Foxtrot','G':'Golf','H':'Hotel','I':'India','J':'Juliet',
     'K':'Kilo','L':'Lima','M':'Mike','N':'November','O':'Oscar',
@@ -198,7 +198,7 @@ print(to_nato('Hello World'))
             </div>
             <div>
               <h3 className="text-base font-semibold">Bash</h3>
-              <pre className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-bash">{`nato() {
+              <pre tabIndex={0} className="mt-2 rounded-lg bg-neutral-950 border border-white/10 p-4 text-xs font-mono overflow-x-auto"><code className="language-bash">{`nato() {
   echo "$1" | tr '[:lower:]' '[:upper:]' | fold -w1 | while read c; do
     case $c in
       A) echo -n "Alpha ";; B) echo -n "Bravo ";;

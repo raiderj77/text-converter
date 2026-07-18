@@ -208,6 +208,7 @@ cherry`;
           <div className="space-y-2">
             <label className="text-xs font-medium">Sort Order</label>
             <select
+              aria-label="Sort order"
               value={sortOrder}
               onChange={(e) => setSortOrder(e.target.value as SortOrder)}
               className="w-full rounded-lg border border-white/10 bg-neutral-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -221,6 +222,7 @@ cherry`;
           <div className="space-y-2">
             <label className="text-xs font-medium">Sort By</label>
             <select
+              aria-label="Sort by"
               value={sortType}
               onChange={(e) => setSortType(e.target.value as SortType)}
               className="w-full rounded-lg border border-white/10 bg-neutral-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -234,6 +236,7 @@ cherry`;
           <div className="space-y-2">
             <label className="text-xs font-medium">Empty Lines</label>
             <select
+              aria-label="Empty line handling"
               value={emptyLines}
               onChange={(e) => setEmptyLines(e.target.value)}
               className="w-full rounded-lg border border-white/10 bg-neutral-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"

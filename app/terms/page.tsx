@@ -1,16 +1,19 @@
+import type { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/seo/schema";
+import { SITE_URL } from "@/lib/config";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Terms of Service",
   description:
     "Terms of Service for the Text Case Converter online tool.",
+  alternates: { canonical: `${SITE_URL}/terms` },
 };
 
 export default function TermsPage() {
   return (
     <>
       <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "Terms of Service", href: "/terms" }]} />
-      <main style={{ maxWidth: 800, margin: "0 auto", padding: 24, lineHeight: 1.6 }}>
+      <div style={{ maxWidth: 800, margin: "0 auto", padding: 24, lineHeight: 1.6 }}>
         <h1>Terms of Service</h1>
 
       <p>
@@ -65,11 +68,9 @@ export default function TermsPage() {
 
       <h2>Third-Party Services and Advertising</h2>
       <p>
-        This website may display advertisements served by Google AdSense and other
-        third-party advertising networks. These services may use cookies and similar
-        technologies to serve ads based on your prior visits. The use of advertising
-        cookies is governed by our <a href="/privacy">Privacy Policy</a>. We are not
-        responsible for the content or practices of any third-party advertisers.
+        Google AdSense, Google Analytics, and Microsoft Clarity are currently disabled.
+        External websites linked from FlipMyCase have their own terms and privacy practices.
+        We are not responsible for external content or services.
       </p>
 
       <h2>Privacy</h2>
@@ -100,8 +101,8 @@ export default function TermsPage() {
         <a href="/contact">Contact page</a>.
       </p>
 
-        <p className="text-sm text-gray-500 mt-1 mb-4 text-center">Last updated: March 25, 2026</p>
-      </main>
+        <p className="text-sm text-gray-400 mt-1 mb-4 text-center">Last updated: March 25, 2026</p>
+      </div>
     </>
   );
 }

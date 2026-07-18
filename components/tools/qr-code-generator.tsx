@@ -1,6 +1,8 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useState } from "react";
+import Image from "next/image";
+import QRCode from "qrcode";
 import { cx } from "@/lib/utils";
 import { useTheme } from "@/components/layout/theme-provider";
 
@@ -10,35 +12,7 @@ type InputType = "url" | "text" | "email" | "phone" | "wifi";
 type ErrorLevel = "L" | "M" | "Q" | "H";
 type QRSize = 128 | 256 | 512;
 
-const STORAGE_KEY = "fmc_qr_code";
-
 /* ── QR Code generation via CDN library ─────────────── */
-
-let qrLibLoaded = false;
-let qrLibLoading = false;
-let qrLibCallbacks: (() => void)[] = [];
-
-function loadQRLib(): Promise<void> {
-  return new Promise((resolve) => {
-    if (qrLibLoaded) { resolve(); return; }
-    qrLibCallbacks.push(resolve);
-    if (qrLibLoading) return;
-    qrLibLoading = true;
-    const script = document.createElement("script");
-    script.src = "https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js";
-    script.onload = () => {
-      qrLibLoaded = true;
-      qrLibCallbacks.forEach((cb) => cb());
-      qrLibCallbacks = [];
-    };
-    script.onerror = () => {
-      qrLibLoading = false;
-      qrLibCallbacks.forEach((cb) => cb());
-      qrLibCallbacks = [];
-    };
-    document.head.appendChild(script);
-  });
-}
 
 function buildPayload(type: InputType, fields: Record<string, string>): string {
   switch (type) {
@@ -61,8 +35,6 @@ function buildPayload(type: InputType, fields: Record<string, string>): string {
   }
 }
 
-const ERROR_LEVELS: Record<ErrorLevel, number> = { L: 1, M: 0, Q: 3, H: 2 };
-
 export function QrCodeGeneratorTool() {
   const { isDark } = useTheme();
 
@@ -70,99 +42,60 @@ export function QrCodeGeneratorTool() {
   const [fields, setFields] = useState<Record<string, string>>({ url: "", text: "", email: "", phone: "", ssid: "", password: "", security: "WPA" });
   const [size, setSize] = useState<QRSize>(256);
   const [errorLevel, setErrorLevel] = useState<ErrorLevel>("M");
-  const [generated, setGenerated] = useState(false);
+  const [qrDataUrl, setQrDataUrl] = useState("");
+  const [error, setError] = useState("");
   const [copied, setCopied] = useState(false);
-  const [libReady, setLibReady] = useState(false);
-  const qrRef = useRef<HTMLDivElement>(null);
-  const qrInstance = useRef<unknown>(null);
-
-  // Load lib on mount
-  useEffect(() => {
-    loadQRLib().then(() => setLibReady(true));
-  }, []);
-
-  // Load from localStorage
-  useEffect(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        const data = JSON.parse(saved);
-        if (typeof data.inputType === "string") setInputType(data.inputType);
-        if (typeof data.size === "number") setSize(data.size as QRSize);
-        if (typeof data.errorLevel === "string") setErrorLevel(data.errorLevel);
-        if (data.fields && typeof data.fields === "object") setFields((prev) => ({ ...prev, ...data.fields }));
-      }
-    } catch { /* ignore */ }
-  }, []);
-
-  useEffect(() => {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({ inputType, size, errorLevel, fields }));
-    } catch { /* ignore */ }
-  }, [inputType, size, errorLevel, fields]);
 
   const updateField = useCallback((key: string, value: string) => {
     setFields((prev) => ({ ...prev, [key]: value }));
+    setQrDataUrl("");
+    setError("");
   }, []);
 
-  const generateQR = useCallback(() => {
-    if (!qrRef.current || !libReady) return;
+  const generateQR = useCallback(async () => {
     const payload = buildPayload(inputType, fields);
     if (!payload.trim()) return;
 
-    // Clear previous
-    qrRef.current.innerHTML = "";
-
     try {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const QRCode = (window as any).QRCode;
-      if (!QRCode) return;
-
-      qrInstance.current = new QRCode(qrRef.current, {
-        text: payload,
+      const dataUrl = await QRCode.toDataURL(payload, {
         width: size,
-        height: size,
-        correctLevel: ERROR_LEVELS[errorLevel],
-        colorDark: "#000000",
-        colorLight: "#ffffff",
+        margin: 1,
+        errorCorrectionLevel: errorLevel,
+        color: { dark: "#000000", light: "#ffffff" },
       });
-      setGenerated(true);
+      setQrDataUrl(dataUrl);
+      setError("");
       setCopied(false);
     } catch {
-      if (qrRef.current) qrRef.current.innerHTML = "<p class='text-red-400 text-sm'>Failed to generate QR code. Input may be too long.</p>";
+      setQrDataUrl("");
+      setError("Unable to generate a QR code. The input may be too long for the selected error-correction level.");
     }
-  }, [inputType, fields, size, errorLevel, libReady]);
+  }, [inputType, fields, size, errorLevel]);
 
   const downloadPNG = useCallback(() => {
-    if (!qrRef.current) return;
-    const canvas = qrRef.current.querySelector("canvas");
-    if (!canvas) return;
+    if (!qrDataUrl) return;
 
     const link = document.createElement("a");
     link.download = `qrcode-${size}px.png`;
-    link.href = canvas.toDataURL("image/png");
+    link.href = qrDataUrl;
     link.click();
-  }, [size]);
+  }, [qrDataUrl, size]);
 
   const copyImage = useCallback(async () => {
-    if (!qrRef.current) return;
-    const canvas = qrRef.current.querySelector("canvas");
-    if (!canvas) return;
+    if (!qrDataUrl) return;
 
     try {
-      const blob = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, "image/png"));
-      if (blob) {
-        await navigator.clipboard.write([new ClipboardItem({ "image/png": blob })]);
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
-      }
+      const blob = await fetch(qrDataUrl).then((response) => response.blob());
+      await navigator.clipboard.write([new ClipboardItem({ "image/png": blob })]);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
     } catch {
       // Fallback: copy data URL as text
-      navigator.clipboard.writeText(canvas.toDataURL("image/png"));
+      await navigator.clipboard.writeText(qrDataUrl);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     }
-  }, []);
+  }, [qrDataUrl]);
 
   // Theme styles
   const base = isDark ? "bg-neutral-900 border-white/10 text-neutral-100" : "bg-white border-black/10 text-neutral-900";
@@ -170,11 +103,12 @@ export function QrCodeGeneratorTool() {
   const btnBase = isDark ? "bg-white/10 hover:bg-white/15 border-white/10" : "bg-black/5 hover:bg-black/10 border-black/10";
   const btnActive = isDark ? "bg-emerald-500/20 border-emerald-400/40 text-emerald-300" : "bg-emerald-500/20 border-emerald-500/40 text-emerald-700";
   const btnPrimary = isDark ? "bg-emerald-600 hover:bg-emerald-500 text-white border-emerald-500" : "bg-emerald-600 hover:bg-emerald-500 text-white border-emerald-600";
-  const muted = isDark ? "text-neutral-500" : "text-neutral-400";
+  const muted = isDark ? "text-neutral-400" : "text-neutral-600";
   const selectBase = isDark ? "bg-neutral-950 border-white/10 text-neutral-100" : "bg-neutral-50 border-black/10 text-neutral-900";
 
   const payload = buildPayload(inputType, fields);
-  const canGenerate = payload.trim().length > 0 && libReady;
+  const canGenerate = payload.trim().length > 0;
+  const generated = Boolean(qrDataUrl);
 
   return (
     <div className="space-y-4">
@@ -183,7 +117,11 @@ export function QrCodeGeneratorTool() {
         {(["url", "text", "email", "phone", "wifi"] as InputType[]).map((t) => (
           <button
             key={t}
-            onClick={() => setInputType(t)}
+            onClick={() => {
+              setInputType(t);
+              setQrDataUrl("");
+              setError("");
+            }}
             className={cx("rounded-lg border px-3 py-1.5 text-xs transition-colors min-h-[44px] capitalize", inputType === t ? btnActive : btnBase)}
           >
             {t === "wifi" ? "WiFi" : t === "url" ? "URL" : t.charAt(0).toUpperCase() + t.slice(1)}
@@ -294,7 +232,10 @@ export function QrCodeGeneratorTool() {
             <select
               id="qr-size"
               value={size}
-              onChange={(e) => setSize(parseInt(e.target.value) as QRSize)}
+              onChange={(e) => {
+                setSize(parseInt(e.target.value) as QRSize);
+                setQrDataUrl("");
+              }}
               className={cx("w-full rounded-lg border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/50 min-h-[44px]", selectBase)}
             >
               <option value={128}>128 x 128</option>
@@ -307,7 +248,10 @@ export function QrCodeGeneratorTool() {
             <select
               id="qr-error"
               value={errorLevel}
-              onChange={(e) => setErrorLevel(e.target.value as ErrorLevel)}
+              onChange={(e) => {
+                setErrorLevel(e.target.value as ErrorLevel);
+                setQrDataUrl("");
+              }}
               className={cx("w-full rounded-lg border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/50 min-h-[44px]", selectBase)}
             >
               <option value="L">Low (7%)</option>
@@ -325,7 +269,7 @@ export function QrCodeGeneratorTool() {
                 canGenerate ? btnPrimary : "opacity-50 cursor-not-allowed bg-neutral-600 border-neutral-600 text-neutral-300"
               )}
             >
-              {libReady ? "Generate QR Code" : "Loading..."}
+              Generate QR Code
             </button>
           </div>
         </div>
@@ -357,18 +301,26 @@ export function QrCodeGeneratorTool() {
         </output>
         <div className="flex justify-center">
           <div
-            ref={qrRef}
             className={cx(
               "inline-flex items-center justify-center rounded-lg p-4",
               !generated && muted
             )}
             style={{ minHeight: generated ? undefined : 128 }}
           >
-            {!generated && (
+            {generated ? (
+              <Image
+                src={qrDataUrl}
+                width={size}
+                height={size}
+                alt={`Generated QR code for ${inputType} input`}
+                unoptimized
+              />
+            ) : (
               <span className="text-sm">Enter content and click Generate</span>
             )}
           </div>
         </div>
+        {error && <p role="alert" className="mt-3 text-center text-sm text-red-400">{error}</p>}
       </div>
     </div>
   );

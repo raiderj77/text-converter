@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { cx } from "@/lib/utils";
 import { useTheme } from "@/components/layout/theme-provider";
 
@@ -67,16 +67,7 @@ export function TextToListTool() {
   const btnActive = isDark
     ? "bg-emerald-500/20 border-emerald-400/40 text-emerald-300"
     : "bg-emerald-500/20 border-emerald-500/40 text-emerald-700";
-  const muted = isDark ? "text-neutral-500" : "text-neutral-400";
-
-  // Persist input
-  useEffect(() => {
-    const saved = localStorage.getItem("fmc_text_to_list_text");
-    if (saved) setText(saved);
-  }, []);
-  useEffect(() => {
-    localStorage.setItem("fmc_text_to_list_text", text);
-  }, [text]);
+  const muted = isDark ? "text-neutral-400" : "text-neutral-600";
 
   const items = useMemo(
     () => splitText(text, splitMode, customDelimiter),

@@ -115,7 +115,7 @@ export function TextRepeaterTool() {
   const base = isDark ? "bg-neutral-900 border-white/10 text-neutral-100" : "bg-white border-black/10 text-neutral-900";
   const inputBase = isDark ? "bg-neutral-950 border-white/10 text-neutral-100 placeholder:text-neutral-600" : "bg-neutral-50 border-black/10 text-neutral-900 placeholder:text-neutral-400";
   const btnBase = isDark ? "bg-white/10 hover:bg-white/15 border-white/10" : "bg-black/5 hover:bg-black/10 border-black/10";
-  const muted = isDark ? "text-neutral-500" : "text-neutral-400";
+  const muted = isDark ? "text-neutral-400" : "text-neutral-600";
 
   const btnActive = isDark
     ? "bg-emerald-500/20 border-emerald-400/40 text-emerald-300"
@@ -154,6 +154,7 @@ export function TextRepeaterTool() {
           <div className="flex items-center gap-3">
             <input
               type="range"
+              aria-label="Repetitions"
               min={1}
               max={1000}
               value={count}
@@ -218,6 +219,8 @@ export function TextRepeaterTool() {
         <div className="flex items-center gap-3">
           <button
             type="button"
+            aria-label="Number repeated lines"
+            aria-pressed={numbered}
             onClick={() => setNumbered(!numbered)}
             className={cx(
               "w-5 h-5 rounded border flex items-center justify-center text-xs shrink-0",

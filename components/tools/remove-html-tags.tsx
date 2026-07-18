@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { cx } from "@/lib/utils";
 import { useTheme } from "@/components/layout/theme-provider";
 
@@ -73,16 +73,7 @@ export function RemoveHtmlTagsTool() {
   const btnBase = isDark
     ? "bg-white/10 hover:bg-white/15 border-white/10"
     : "bg-black/5 hover:bg-black/10 border-black/10";
-  const muted = isDark ? "text-neutral-500" : "text-neutral-400";
-
-  // Persist input
-  useEffect(() => {
-    const saved = localStorage.getItem("fmc_remove_html_text");
-    if (saved) setText(saved);
-  }, []);
-  useEffect(() => {
-    localStorage.setItem("fmc_remove_html_text", text);
-  }, [text]);
+  const muted = isDark ? "text-neutral-400" : "text-neutral-600";
 
   const keepTags = useMemo(() => {
     if (!keepTagsStr.trim()) return [];

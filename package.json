@@ -2,6 +2,7 @@
   "name": "text-case-converter",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,31 +10,32 @@
     "lint": "eslint",
     "lint:content": "node scripts/content-lint.js",
     "lint:predeploy": "node scripts/predeploy-check.js",
+    "test:quality": "node scripts/quality-check.js",
     "test:regressions": "node --test tests/audit-regressions.test.mjs",
-    "prebuild": "npm run lint:predeploy && npm run lint:content"
+    "prebuild": "npm run lint:predeploy && npm run lint:content && npm run test:quality"
   },
   "dependencies": {
     "critters": "^0.0.23",
-    "gray-matter": "^4.0.3",
-    "js-yaml": "^4.1.1",
-    "lightningcss-linux-x64-gnu": "^1.32.0",
-    "next": "15.5.12",
+    "js-yaml": "5.2.1",
+    "next": "16.2.10",
+    "qrcode": "^1.5.4",
     "react": "19.2.3",
-    "react-dom": "19.2.3",
-    "remark": "^15.0.1",
-    "remark-gfm": "^4.0.1",
-    "remark-html": "^16.0.1"
+    "react-dom": "19.2.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^20",
+    "@types/qrcode": "^1.5.6",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "autoprefixer": "^10.4.24",
     "eslint": "^9",
-    "eslint-config-next": "15.5.12",
+    "eslint-config-next": "16.2.10",
     "tailwindcss": "^4",
     "typescript": "5.9.3"
+  },
+  "overrides": {
+    "postcss": "8.5.18"
   }
 }

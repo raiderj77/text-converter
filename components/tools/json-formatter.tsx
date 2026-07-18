@@ -219,17 +219,6 @@ export function JsonFormatterTool() {
   const [toast, setToast] = useState("");
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
 
-  // Load saved text
-  useEffect(() => {
-    const saved = localStorage.getItem("fmc_jf_text");
-    if (saved) setText(saved);
-  }, []);
-
-  // Persist text
-  useEffect(() => {
-    localStorage.setItem("fmc_jf_text", text);
-  }, [text]);
-
   // Ctrl/Cmd+K focuses input
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -638,7 +627,7 @@ export function JsonFormatterTool() {
       )}
 
       {/* Keyboard shortcut hint */}
-      <div className={cx("mt-3 text-xs text-center", isDark ? "text-neutral-500" : "text-neutral-400")}>
+      <div className={cx("mt-3 text-xs text-center", isDark ? "text-neutral-400" : "text-neutral-600")}>
         Ctrl/⌘ + K focuses input · Ctrl/⌘ + L toggles theme
       </div>
 

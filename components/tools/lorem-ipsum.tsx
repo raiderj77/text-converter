@@ -392,6 +392,7 @@ export function LoremIpsumTool() {
             <div className="flex items-center gap-3">
               <input
                 type="range"
+                aria-label={`Number of ${mode}`}
                 min={mode === "words" ? 5 : 1}
                 max={mode === "words" ? 500 : mode === "sentences" ? 50 : 20}
                 value={count}
@@ -400,6 +401,7 @@ export function LoremIpsumTool() {
               />
               <input
                 type="number"
+                aria-label={`Number of ${mode}`}
                 min={1}
                 max={mode === "words" ? 500 : mode === "sentences" ? 50 : 20}
                 value={count}
@@ -528,7 +530,7 @@ export function LoremIpsumTool() {
       <div
         className={cx(
           "mt-3 text-xs text-center",
-          isDark ? "text-neutral-500" : "text-neutral-400"
+          isDark ? "text-neutral-400" : "text-neutral-600"
         )}
       >
         Ctrl/Cmd + L toggles theme

@@ -81,7 +81,7 @@ export default function SnakeKebabConverterPage() {
         name="Free Snake_case vs Kebab-case Converter"
         description={tool.description}
         url={pageUrl}
-        dateModified={new Date().toISOString().substring(0,10)}
+        dateModified={"2026-07-12"}
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -219,7 +219,7 @@ export default function SnakeKebabConverterPage() {
           <h2 className="text-lg sm:text-xl font-semibold">
             Comparison Table: Naming Conventions Across Technologies
           </h2>
-          <div className="mt-4 overflow-x-auto">
+          <div tabIndex={0} className="mt-4 overflow-x-auto">
             <table className="w-full border-collapse text-sm">
               <thead>
                 <tr className="border-b border-white/10">

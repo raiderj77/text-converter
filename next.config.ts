@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: "Content-Security-Policy",
-            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://pagead2.googlesyndication.com https://partner.googleadservices.com https://tpc.googlesyndication.com https://www.googletagmanager.com https://www.google-analytics.com https://adservice.google.com https://fundingchoicesmessages.google.com https://www.clarity.ms; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.google.com https://fundingchoicesmessages.google.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://pagead2.googlesyndication.com https://adservice.google.com https://fundingchoicesmessages.google.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google; object-src 'none'; base-uri 'self'",
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; frame-src 'none'; connect-src 'self'; object-src 'none'; base-uri 'self'",
           },
           {
             key: "Permissions-Policy",
@@ -46,28 +46,12 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/blog/2026-04-06-when-to-use-title-case-vs-sentence-case-in-writing",
-        destination: "/blog/when-to-use-title-case-vs-sentence-case-in-writing",
+        source: "/blog",
+        destination: "/tools",
         permanent: true,
       },
-      {
-        source: "/blog/2026-04-03-when-to-use-title-case-vs-sentence-case-in-writing",
-        destination: "/blog/when-to-use-title-case-vs-sentence-case-in-writing",
-        permanent: true,
-      },
-      { source: "/blog/emoji-picker-guide", destination: "/emoji-picker", permanent: true },
-      { source: "/blog/json-formatter-guide", destination: "/json-formatter", permanent: true },
-      { source: "/blog/sql-formatter-guide", destination: "/sql-formatter", permanent: true },
-      { source: "/blog/extract-emails-guide", destination: "/extract-emails", permanent: true },
-      { source: "/blog/remove-empty-lines-guide", destination: "/remove-empty-lines", permanent: true },
-      { source: "/blog/nato-phonetic-guide", destination: "/nato-phonetic-alphabet", permanent: true },
-      { source: "/blog/extract-urls-guide", destination: "/extract-urls", permanent: true },
-      { source: "/blog/fancy-text-generator-guide", destination: "/fancy-text-generator", permanent: true },
-      { source: "/blog/unicode-lookup-guide", destination: "/unicode-lookup", permanent: true },
+      { source: "/blog/:path*", destination: "/tools", permanent: true },
     ];
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
   },
   experimental: {
     optimizeCss: true,

@@ -251,6 +251,7 @@ Madam I'm Adam`;
           <div className="space-y-2">
             <label className="text-xs font-medium">Reverse Mode</label>
             <select
+              aria-label="Reverse mode"
               value={mode}
               onChange={(e) => setMode(e.target.value as ReverseMode)}
               className="w-full rounded-lg border border-white/10 bg-neutral-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"

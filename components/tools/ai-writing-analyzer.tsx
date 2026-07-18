@@ -95,7 +95,7 @@ function analyze(text: string): { metrics: Metric[]; overallScore: number } {
     label: "Sentence Length Uniformity",
     value: `SD = ${sentSD.toFixed(1)} words`,
     rating: sentRating,
-    explanation: "Standard deviation of sentence lengths. AI text tends to have uniform sentence lengths (SD < 5). Human text is more varied (SD > 8).",
+    explanation: "Standard deviation of sentence lengths. This tool flags SD below 4 as low variation and SD of 7 or more as high variation. These are product heuristics, not validated authorship thresholds.",
   });
   scoreSum += sentRating === "green" ? 0 : sentRating === "yellow" ? 0.5 : 1;
   scoreCount++;
@@ -108,7 +108,7 @@ function analyze(text: string): { metrics: Metric[]; overallScore: number } {
     label: "Vocabulary Diversity",
     value: `${(ttr * 100).toFixed(1)}% unique words`,
     rating: ttrRating,
-    explanation: "Type-token ratio (unique words / total words). AI typically produces 40–60% diversity. Human writing usually exceeds 50%.",
+    explanation: "Type-token ratio (unique words / total words). This tool flags ratios below 45% as lower diversity and 55% or more as higher diversity. Text length and genre materially affect this ratio.",
   });
   scoreSum += ttrRating === "green" ? 0 : ttrRating === "yellow" ? 0.5 : 1;
   scoreCount++;
@@ -127,7 +127,7 @@ function analyze(text: string): { metrics: Metric[]; overallScore: number } {
     label: "Transition Word Density",
     value: `${transDensity.toFixed(2)}% (${transCount} found)`,
     rating: transRating,
-    explanation: "Percentage of transition words like 'furthermore', 'moreover', 'additionally'. AI text often overuses these connectors.",
+    explanation: "Percentage of a fixed list of transition words such as 'furthermore', 'moreover', and 'additionally'. The built-in thresholds are descriptive heuristics only.",
   });
   scoreSum += transRating === "green" ? 0 : transRating === "yellow" ? 0.5 : 1;
   scoreCount++;
@@ -146,7 +146,7 @@ function analyze(text: string): { metrics: Metric[]; overallScore: number } {
     label: "Repeated Phrases (3+ words)",
     value: `${repeatCount} phrase${repeatCount !== 1 ? "s" : ""} repeated 2+ times`,
     rating: repeatRating,
-    explanation: "Three-word phrases appearing multiple times. AI text tends to repeat structural phrases. Human writers vary phrasing more naturally.",
+    explanation: "Counts three-word phrases that appear at least twice. Repetition can reflect topic, genre, editing, or authorship and should be interpreted in context.",
   });
   scoreSum += repeatRating === "green" ? 0 : repeatRating === "yellow" ? 0.5 : 1;
   scoreCount++;
@@ -159,7 +159,7 @@ function analyze(text: string): { metrics: Metric[]; overallScore: number } {
     label: "Paragraph Length Variance",
     value: `SD = ${paraSD.toFixed(1)} sentences`,
     rating: paraRating,
-    explanation: "Standard deviation of paragraph lengths. AI tends to produce paragraphs of similar size. Human writing has more varied paragraph structure.",
+    explanation: "Standard deviation of paragraph lengths. The color bands show relative variation using this tool's built-in thresholds; they do not identify an author.",
   });
   scoreSum += paraRating === "green" ? 0 : paraRating === "yellow" ? 0.5 : 1;
   scoreCount++;
@@ -186,7 +186,7 @@ function analyze(text: string): { metrics: Metric[]; overallScore: number } {
     label: "Average Word Length",
     value: `${avgWordLen.toFixed(1)} chars · ${avgSyllables.toFixed(2)} syllables/word`,
     rating: wordLenRating,
-    explanation: "Average characters and syllables per word. This is an informational metric — both AI and human writing vary widely here.",
+    explanation: "Average characters and estimated syllables per word. This is an informational measurement and does not identify authorship.",
   });
 
   // 8. Em dash & semicolon frequency
@@ -200,7 +200,7 @@ function analyze(text: string): { metrics: Metric[]; overallScore: number } {
     label: "Em Dash & Semicolon Frequency",
     value: `${emDashPer100.toFixed(2)} em dashes · ${semiPer100.toFixed(2)} semicolons per 100 words`,
     rating: punctRating,
-    explanation: "AI text rarely uses em dashes and semicolons. Human writers tend to use these punctuation marks more freely.",
+    explanation: "Counts em dashes and semicolons. Punctuation frequency varies by writer, genre, language, and editing style.",
   });
   scoreSum += punctRating === "green" ? 0 : punctRating === "yellow" ? 0.5 : 1;
   scoreCount++;
@@ -217,12 +217,12 @@ function analyze(text: string): { metrics: Metric[]; overallScore: number } {
     label: "AI Filler Phrase Count",
     value: `${fillerCount} phrase${fillerCount !== 1 ? "s" : ""} detected`,
     rating: fillerRating,
-    explanation: `Phrases like "in today's world", "it's crucial to", "plays a vital role" are statistically overrepresented in AI-generated text.`,
+    explanation: `Counts a fixed list of phrases such as "in today's world", "it's crucial to", and "plays a vital role". Their presence does not establish authorship.`,
   });
   scoreSum += fillerRating === "green" ? 0 : fillerRating === "yellow" ? 0.5 : 1;
   scoreCount++;
 
-  // Overall score: 0 = very human-like patterns, 100 = very AI-like patterns
+  // Overall score: a weighted count of this product's fixed heuristic bands.
   const overallScore = scoreCount > 0 ? Math.round((scoreSum / scoreCount) * 100) : 0;
 
   return { metrics, overallScore };
@@ -246,7 +246,7 @@ export function AiWritingAnalyzerTool() {
   const base = isDark ? "bg-neutral-900 border-white/10 text-neutral-100" : "bg-white border-black/10 text-neutral-900";
   const inputBase = isDark ? "bg-neutral-950 border-white/10 text-neutral-100 placeholder:text-neutral-600" : "bg-neutral-50 border-black/10 text-neutral-900 placeholder:text-neutral-400";
   const btnBase = isDark ? "bg-white/10 hover:bg-white/15 border-white/10" : "bg-black/5 hover:bg-black/10 border-black/10";
-  const muted = isDark ? "text-neutral-500" : "text-neutral-400";
+  const muted = isDark ? "text-neutral-400" : "text-neutral-600";
   const warnBg = isDark ? "bg-amber-950/40 border-amber-500/30 text-amber-200" : "bg-amber-50 border-amber-400/40 text-amber-800";
 
   const ratingColors: Record<Rating, string> = {
@@ -256,19 +256,19 @@ export function AiWritingAnalyzerTool() {
   };
 
   const ratingLabels: Record<Rating, string> = {
-    green: "Human-typical",
-    yellow: "Ambiguous",
-    red: "AI-typical",
+    green: "Lower flag",
+    yellow: "Middle flag",
+    red: "Higher flag",
   };
 
-  const scoreLabel = overallScore <= 25 ? "Human-typical patterns" : overallScore <= 55 ? "Mixed patterns" : "AI-typical patterns";
+  const scoreLabel = overallScore <= 25 ? "Fewer heuristic flags" : overallScore <= 55 ? "Mixed heuristic flags" : "More heuristic flags";
   const scoreColor = overallScore <= 25 ? "text-emerald-400" : overallScore <= 55 ? "text-amber-400" : "text-red-400";
 
   return (
     <div className="space-y-4">
       {/* Disclaimer — TOP */}
       <div className={cx("rounded-xl border p-4 text-xs", warnBg)}>
-        <strong>Disclaimer:</strong> This tool analyzes statistical writing patterns only. It cannot determine whether text was written by AI or a human. Writing patterns are affected by many factors including ESL status, editing, and individual style. Use as one data point only — never as proof.
+        <strong>Important:</strong> This is an unvalidated heuristic, not an AI detector. It applies fixed rules to writing statistics and cannot determine authorship. Do not use the score for academic discipline, hiring, or other consequential decisions.
       </div>
 
       {/* Actions */}
@@ -313,9 +313,9 @@ export function AiWritingAnalyzerTool() {
             <div className={cx("text-4xl font-bold", scoreColor)}>{overallScore}</div>
             <div className={cx("text-sm mt-1", muted)}>{scoreLabel}</div>
             <div className={cx("flex items-center justify-center gap-4 mt-3 text-xs", muted)}>
-              <span>0 = Human-typical</span>
-              <span>50 = Mixed</span>
-              <span>100 = AI-typical</span>
+              <span>0 = fewer flags</span>
+              <span>50 = mixed flags</span>
+              <span>100 = more flags</span>
             </div>
           </div>
 
@@ -353,7 +353,7 @@ export function AiWritingAnalyzerTool() {
       {/* Disclaimer — BOTTOM */}
       {metrics.length > 0 && (
         <div className={cx("rounded-xl border p-4 text-xs", warnBg)}>
-          <strong>Disclaimer:</strong> This tool analyzes statistical writing patterns only. It cannot determine whether text was written by AI or a human. Writing patterns are affected by many factors including ESL status, editing, and individual style. Use as one data point only — never as proof.
+          <strong>Important:</strong> This is an unvalidated heuristic, not an AI detector. The score is not a probability or confidence level and should not be used for consequential decisions.
         </div>
       )}
     </div>
