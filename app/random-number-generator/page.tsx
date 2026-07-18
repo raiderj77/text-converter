@@ -34,7 +34,7 @@ const faqItems = [
   {
     question: "How does this random number generator work?",
     answer:
-      "This tool uses JavaScript's Math.random() function, which produces pseudo-random numbers. For most uses like games, simulations, and picking random values, this provides excellent randomness. It should not be used for cryptographic purposes where true randomness is required.",
+      "This tool uses the browser Web Crypto API's crypto.getRandomValues() method. It maps 64 random bits into your requested range with rejection sampling so every integer has the same probability.",
   },
   {
     question: "Can I generate numbers without duplicates?",
@@ -54,7 +54,7 @@ const faqItems = [
   {
     question: "Is this truly random?",
     answer:
-      "Math.random() produces pseudo-random numbers using a deterministic algorithm seeded by the system. For games, drawings, and general-purpose randomness, it is more than sufficient. For security-sensitive applications like encryption keys, use a cryptographically secure random number generator instead.",
+      "It uses the cryptographically strong random values supplied by your browser and operating system. That is stronger than Math.random(), but no website can independently prove the quality of a device's underlying entropy source.",
   },
   {
     question: "Can I use negative numbers?",
@@ -69,7 +69,7 @@ const faqItems = [
   {
     question: "Can I use this for passwords or security tokens?",
     answer:
-      "No. Math.random() is a pseudo-random generator — its output is deterministic and not suitable for security-sensitive values like passwords, session tokens, API keys, or cryptographic material. For those use cases, your browser's Web Crypto API (crypto.getRandomValues()) is the correct choice. It draws from the operating system's entropy pool and meets cryptographic security standards. This tool is designed for games, simulations, sampling, and general-purpose use only.",
+      "Use a dedicated password or key generator instead. This tool uses the Web Crypto API, but its integer output, visible history, and copy workflow are not a substitute for the correct length, format, storage, rotation, and handling required for credentials or cryptographic keys.",
   },
   {
     question: "Why might my random numbers look biased?",
@@ -85,7 +85,7 @@ export default function RandomNumberGeneratorPage() {
         name="Free Random Number Generator"
         description={tool.description}
         url={pageUrl}
-        dateModified={"2026-07-12"}
+        dateModified={"2026-07-18"}
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema
@@ -108,10 +108,10 @@ export default function RandomNumberGeneratorPage() {
           Free Random Number Generator
         </h1>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
-          This free random number generator instantly produces integers within any range you set — single picks, bulk batches up to 1,000, or dice rolls. It runs entirely in your browser using JavaScript; no data is ever sent to a server.
+          This free random number generator instantly produces unbiased integers within any range you set — single picks, bulk batches up to 1,000, unique picks, or dice rolls. It uses your browser&apos;s Web Crypto API locally; the numbers and settings are not sent to FlipMyCase.
         </p>
 
-        <ToolAnswerBlock slug="random-number-generator" />
+        <ToolAnswerBlock slug="random-number-generator" lastUpdated="2026-07-18" />
 
         <div className="mt-3">
           <ToolActions />
@@ -129,33 +129,26 @@ export default function RandomNumberGeneratorPage() {
 
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
-            Is Math.random() Actually Random?
+            What Randomness Source Does This Tool Use?
           </h2>
           <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
-              JavaScript&apos;s <code className="text-neutral-200">Math.random()</code> is a
-              pseudo-random number generator (PRNG), not a true random source. It uses a
-              deterministic algorithm — typically xorshift128+ or a similar design — seeded by
-              engine state at startup. Every call produces a number in [0, 1) by advancing
-              internal state through a fixed mathematical transformation. Given the same starting
-              seed you would get the exact same sequence every time.
+              This tool uses <code className="text-neutral-200">crypto.getRandomValues()</code>,
+              the browser Web Crypto API method defined to return cryptographically strong random
+              values. Browsers typically seed their generator from a high-quality operating-system
+              entropy source. FlipMyCase does not receive the generated numbers.
             </p>
             <p>
-              For the vast majority of everyday uses — games, simulations, random sampling,
-              picking a winner, rolling dice — this is completely fine. The output passes
-              rigorous statistical randomness tests and is indistinguishable from true randomness
-              for those purposes. The determinism only matters if an adversary can observe enough
-              outputs to reconstruct your seed, which is the threat model of cryptography.
+              The tool reads 64 random bits and uses rejection sampling before mapping the accepted
+              value into your inclusive Min–Max range. Discarding the uneven tail avoids modulo
+              bias, so a range such as 1–6 does not favor any die face.
             </p>
             <p>
-              <strong className="text-neutral-200">Do not use Math.random() for:</strong> passwords,
-              session tokens, API keys, OAuth secrets, cryptographic nonces, or anything where
-              predictability is a security risk.{" "}
-              <strong className="text-neutral-200">Do use it for:</strong> games, dice rolls,
-              random sampling, shuffles, simulations, and test data generation. For
-              security-sensitive values, the browser&apos;s <code className="text-neutral-200">
-              crypto.getRandomValues()</code> draws from the OS entropy pool and is
-              cryptographically secure.
+              It is appropriate for games, dice rolls, classroom picks, sampling, shuffles,
+              simulations, and test data. A regulated drawing still needs its own documented rules,
+              independent oversight, and auditable process. For passwords, API keys, tokens, or
+              encryption keys, use a dedicated generator and the security controls required for
+              that credential type.
             </p>
           </div>
         </section>
@@ -255,6 +248,26 @@ export default function RandomNumberGeneratorPage() {
         </section>
 
         <AdSlot slot="mid-content" page="random-number-generator" />
+
+        <section className="mt-10" aria-labelledby="rng-sources">
+          <h2 id="rng-sources" className="text-lg sm:text-xl font-semibold">Technical Sources</h2>
+          <p className="mt-2 text-sm text-neutral-300">
+            The implementation and explanations above are checked against these primary standards:
+          </p>
+          <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-neutral-300">
+            <li>
+              <a className="text-emerald-300 underline underline-offset-2 hover:text-emerald-200" href="https://www.w3.org/TR/webcrypto-2/#Crypto-method-getRandomValues" rel="noopener noreferrer" target="_blank">
+                W3C Web Cryptography Level 2 — getRandomValues
+              </a>
+            </li>
+            <li>
+              <a className="text-emerald-300 underline underline-offset-2 hover:text-emerald-200" href="https://csrc.nist.gov/pubs/sp/800/90/c/final" rel="noopener noreferrer" target="_blank">
+                NIST SP 800-90C — Random Bit Generator Constructions
+              </a>
+            </li>
+          </ul>
+          <p className="mt-3 text-xs text-neutral-400">Implementation and sources last reviewed July 18, 2026.</p>
+        </section>
 
         {/* FAQ */}
         <section className="mt-10">

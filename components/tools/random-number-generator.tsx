@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { cx } from "@/lib/utils";
 import { useTheme } from "@/components/layout/theme-provider";
+import { secureRandomInt, secureUniqueIntegers } from "@/lib/secure-random";
 
 /* ── Helpers ──────────────────────────────────────────────── */
 
@@ -12,27 +13,19 @@ function generateNumbers(
   count: number,
   allowDuplicates: boolean,
 ): number[] {
-  const range = max - min + 1;
-  if (!allowDuplicates && count > range) count = range;
-
   if (!allowDuplicates) {
-    // Fisher-Yates on the full range for small ranges, or set-based for large
-    const results = new Set<number>();
-    while (results.size < count) {
-      results.add(Math.floor(Math.random() * range) + min);
-    }
-    return Array.from(results);
+    return secureUniqueIntegers(min, max, count);
   }
 
   const results: number[] = [];
   for (let i = 0; i < count; i++) {
-    results.push(Math.floor(Math.random() * range) + min);
+    results.push(secureRandomInt(min, max));
   }
   return results;
 }
 
 function rollDice(sides: number): number {
-  return Math.floor(Math.random() * sides) + 1;
+  return secureRandomInt(1, sides);
 }
 
 type SortMode = "unsorted" | "ascending" | "descending";
@@ -111,9 +104,10 @@ export function RandomNumberGeneratorTool() {
   const muted = isDark ? "text-neutral-400" : "text-neutral-600";
 
   const isBulk = count > 1;
-  const rangeValid = min <= max;
-  const uniqueCount = max - min + 1;
-  const canGenerate = rangeValid && (allowDuplicates || count <= uniqueCount);
+  const inputsAreSafeIntegers = Number.isSafeInteger(min) && Number.isSafeInteger(max);
+  const rangeValid = inputsAreSafeIntegers && min <= max;
+  const uniqueCount = rangeValid ? BigInt(max) - BigInt(min) + BigInt(1) : BigInt(0);
+  const canGenerate = rangeValid && (allowDuplicates || BigInt(count) <= uniqueCount);
 
   return (
     <div className="space-y-4">
@@ -168,12 +162,15 @@ export function RandomNumberGeneratorTool() {
           </div>
         </div>
 
-        {!rangeValid && (
+        {!inputsAreSafeIntegers && (
+          <p className="mt-2 text-xs text-red-400">Min and Max must be whole numbers within JavaScript&apos;s safe integer range.</p>
+        )}
+        {inputsAreSafeIntegers && !rangeValid && (
           <p className="mt-2 text-xs text-red-400">Min must be less than or equal to Max.</p>
         )}
-        {rangeValid && !allowDuplicates && count > uniqueCount && (
+        {rangeValid && !allowDuplicates && BigInt(count) > uniqueCount && (
           <p className="mt-2 text-xs text-amber-400">
-            Only {uniqueCount.toLocaleString()} unique number{uniqueCount !== 1 ? "s" : ""} possible in this range. Count will be capped.
+            Only {uniqueCount.toLocaleString()} unique number{uniqueCount !== BigInt(1) ? "s" : ""} possible in this range. Reduce Count to generate without duplicates.
           </p>
         )}
       </div>
