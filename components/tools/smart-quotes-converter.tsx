@@ -230,6 +230,7 @@ export function SmartQuotesConverterTool() {
             value={text}
             onChange={(e) => setText(e.target.value)}
             rows={6}
+            aria-label="Text with quotes to convert"
             placeholder={
               mode === "straighten"
                 ? "Paste text with \u201Csmart quotes\u201D and em dashes \u2014 here\u2026"

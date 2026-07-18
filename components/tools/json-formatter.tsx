@@ -512,6 +512,7 @@ export function JsonFormatterTool() {
             onChange={(e) => setText(e.target.value)}
             rows={10}
             spellCheck={false}
+            aria-label="JSON input"
             placeholder={'{\n  "name": "FlipMyCase",\n  "tools": 7,\n  "free": true\n}'}
             className={cx(
               "w-full resize-y rounded-2xl border px-3 py-2 text-sm leading-6 outline-none font-mono",

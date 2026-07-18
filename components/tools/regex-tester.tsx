@@ -199,6 +199,7 @@ export function RegexTesterTool() {
             type="text"
             value={pattern}
             onChange={(e) => setPattern(e.target.value)}
+            aria-label="Regular expression pattern"
             placeholder="Enter regex pattern..."
             className={cx("flex-1 rounded-lg border px-3 py-2.5 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500/50", inputBase)}
             spellCheck={false}
@@ -253,6 +254,7 @@ export function RegexTesterTool() {
         <textarea
           value={testStr}
           onChange={(e) => setTestStr(e.target.value)}
+          aria-label="Test string"
           placeholder="Enter test string to match against..."
           rows={6}
           className={cx("w-full rounded-lg border px-3 py-2 text-sm font-mono resize-y focus:outline-none focus:ring-2 focus:ring-emerald-500/50", inputBase)}

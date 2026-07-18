@@ -110,7 +110,7 @@ export function SlugGeneratorTool() {
             <button onClick={() => { setInput(sampleTexts[sampleIndex % sampleTexts.length]); setSampleIndex(sampleIndex + 1); }} className="text-xs text-emerald-400/70 hover:text-emerald-400 transition-colors">Try a sample →</button>
           </div>
           <div className="rounded-xl border border-slate-700/80 bg-slate-900/80">
-            <textarea value={input} onChange={(e) => setInput(e.target.value)} placeholder="Type or paste your title, heading, or any text..." rows={3} className="w-full bg-transparent text-white placeholder-slate-600 p-4 rounded-xl resize-none text-base" style={{ lineHeight: 1.6, outline: "none", fontFamily: "monospace" }} />
+            <textarea value={input} onChange={(e) => setInput(e.target.value)} aria-label="Text to convert to a URL slug" placeholder="Type or paste your title, heading, or any text..." rows={3} className="w-full bg-transparent text-white placeholder-slate-600 p-4 rounded-xl resize-none text-base" style={{ lineHeight: 1.6, outline: "none", fontFamily: "monospace" }} />
           </div>
         </div>
 

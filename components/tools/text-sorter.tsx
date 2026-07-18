@@ -165,6 +165,7 @@ cherry`;
           <textarea
             value={input}
             onChange={(e) => setInput(e.target.value)}
+            aria-label="Text to sort"
             placeholder="Paste your text here, one item per line..."
             className="w-full min-h-[300px] font-mono text-sm rounded-xl border border-white/10 bg-neutral-900 p-4 resize-y focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
@@ -190,6 +191,7 @@ cherry`;
           <textarea
             value={output}
             readOnly
+            aria-label="Sorted text output"
             placeholder="Sorted text will appear here..."
             className="w-full min-h-[300px] font-mono text-sm rounded-xl border border-white/10 bg-neutral-900/50 p-4 resize-y focus:outline-none"
           />

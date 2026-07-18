@@ -220,6 +220,7 @@ export function CronExpressionBuilderTool() {
     FIELD_DEFS.map((def) => defaultField(def))
   );
   const [copied, setCopied] = useState(false);
+  const [nextRuns, setNextRuns] = useState<Date[]>([]);
 
   const expression = useMemo(
     () => fields.map((f) => fieldToExpression(f)).join(" "),
@@ -228,7 +229,9 @@ export function CronExpressionBuilderTool() {
 
   const parts = useMemo(() => expression.split(" "), [expression]);
   const description = useMemo(() => describeExpression(parts), [parts]);
-  const nextRuns = useMemo(() => getNextExecutions(expression, 5), [expression]);
+  useEffect(() => {
+    setNextRuns(getNextExecutions(expression, 5));
+  }, [expression]);
 
   const updateField = useCallback((index: number, update: Partial<FieldState>) => {
     setFields((prev) => {

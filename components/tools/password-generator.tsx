@@ -300,7 +300,7 @@ export function PasswordGeneratorTool() {
             {/* Exclude */}
             <div>
               <label className="text-sm font-semibold block mb-1">Exclude Characters</label>
-              <input type="text" value={exclude} onChange={(e) => setExclude(e.target.value)} placeholder="e.g. 0OlI1"
+              <input type="text" value={exclude} onChange={(e) => setExclude(e.target.value)} aria-label="Characters to exclude" placeholder="e.g. 0OlI1"
                 className={cx("w-full rounded-xl border px-3 py-2 text-sm font-mono", isDark ? "bg-neutral-950 border-white/10" : "bg-neutral-50 border-black/10")} />
               <p className={cx("text-xs mt-1", isDark ? "text-neutral-400" : "text-neutral-600")}>Remove ambiguous characters (0/O, l/1/I) or restricted symbols</p>
             </div>

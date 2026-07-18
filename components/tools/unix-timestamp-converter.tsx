@@ -37,7 +37,7 @@ function toLocalDatetimeValue(d: Date): string {
 
 export function UnixTimestampConverterTool() {
   const { isDark } = useTheme();
-  const [now, setNow] = useState<number>(Math.floor(Date.now() / 1000));
+  const [now, setNow] = useState<number | null>(null);
   const [timestampInput, setTimestampInput] = useState("");
   const [dateInput, setDateInput] = useState("");
   const [unit, setUnit] = useState<"seconds" | "milliseconds">("seconds");
@@ -45,6 +45,7 @@ export function UnixTimestampConverterTool() {
 
   // Live clock
   useEffect(() => {
+    setNow(Math.floor(Date.now() / 1000));
     const interval = setInterval(() => {
       setNow(Math.floor(Date.now() / 1000));
     }, 1000);
@@ -90,7 +91,7 @@ export function UnixTimestampConverterTool() {
   const muted = isDark ? "text-neutral-400" : "text-neutral-600";
   const accent = isDark ? "text-emerald-400" : "text-emerald-600";
 
-  const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const tz = now === null ? "" : Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   return (
     <div className="space-y-4">
@@ -98,13 +99,14 @@ export function UnixTimestampConverterTool() {
       <div className={cx("rounded-xl border p-4 text-center", base)}>
         <div className={cx("text-xs font-semibold mb-1", accent)}>Current Unix Timestamp</div>
         <div className="font-mono text-3xl sm:text-4xl font-bold tracking-tight tabular-nums">
-          {now}
+          {now ?? "—"}
         </div>
         <div className={cx("text-xs mt-1", muted)}>
-          {formatDate(new Date(now * 1000))} ({tz})
+          {now === null ? "Loading current time…" : `${formatDate(new Date(now * 1000))} (${tz})`}
         </div>
         <button
-          onClick={() => copyText(String(now), "now")}
+          onClick={() => now !== null && copyText(String(now), "now")}
+          disabled={now === null}
           className={cx("mt-2 rounded-lg border px-3 py-1.5 text-xs transition-colors min-h-[44px]", btnBase)}
         >
           {copied === "now" ? "Copied!" : "Copy Timestamp"}
@@ -145,8 +147,10 @@ export function UnixTimestampConverterTool() {
           />
           <button
             onClick={() => {
+              if (now === null) return;
               setTimestampInput(unit === "seconds" ? String(now) : String(now * 1000));
             }}
+            disabled={now === null}
             className={cx("rounded-lg border px-3 py-1.5 text-xs transition-colors min-h-[44px] shrink-0", btnBase)}
           >
             Now

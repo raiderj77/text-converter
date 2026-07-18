@@ -149,6 +149,7 @@ export function FindAndReplaceTool() {
           onChange={(e) => { setText(e.target.value); setPreviousText(null); setLastReplaceCount(0); }}
           rows={8}
           spellCheck={false}
+          aria-label="Text to search"
           placeholder="Paste or type your text here..."
           className={cx("w-full resize-y rounded-lg border px-3 py-2 text-sm leading-6 font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500/50", inputBase)}
         />
@@ -163,6 +164,7 @@ export function FindAndReplaceTool() {
               type="text"
               value={findStr}
               onChange={(e) => setFindStr(e.target.value)}
+              aria-label={regexMode ? "Regular expression to find" : "Text to find"}
               placeholder={regexMode ? "Enter regex pattern..." : "Text to find..."}
               className={cx("w-full rounded-lg border px-3 py-2.5 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500/50", inputBase)}
               spellCheck={false}
@@ -175,6 +177,7 @@ export function FindAndReplaceTool() {
               type="text"
               value={replaceStr}
               onChange={(e) => setReplaceStr(e.target.value)}
+              aria-label="Replacement text"
               placeholder={regexMode ? "Replacement ($1, $2 for groups)..." : "Replacement text..."}
               className={cx("w-full rounded-lg border px-3 py-2.5 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500/50", inputBase)}
               spellCheck={false}

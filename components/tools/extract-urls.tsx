@@ -97,6 +97,7 @@ export function ExtractUrlsTool() {
           onChange={(e) => setText(e.target.value)}
           rows={8}
           spellCheck={false}
+          aria-label="Text containing URLs"
           placeholder="Paste text containing URLs here..."
           className={cx(
             "w-full resize-y rounded-lg border px-3 py-2 text-sm leading-6 font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500/50",

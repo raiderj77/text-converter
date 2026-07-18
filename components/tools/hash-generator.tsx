@@ -254,6 +254,7 @@ export function HashGeneratorTool() {
         <textarea
           value={input}
           onChange={(e) => setInput(e.target.value)}
+          aria-label="Text to hash"
           placeholder="Enter text to hash..."
           rows={4}
           className={cx("w-full rounded-lg border px-3 py-2 text-sm font-mono resize-y focus:outline-none focus:ring-2 focus:ring-emerald-500/50", inputBase)}

@@ -208,6 +208,7 @@ Madam I'm Adam`;
           <textarea
             value={input}
             onChange={(e) => setInput(e.target.value)}
+            aria-label="Text to reverse"
             placeholder="Paste your text here to reverse it..."
             className="w-full min-h-[300px] font-mono text-sm rounded-xl border border-white/10 bg-neutral-900 p-4 resize-y focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
@@ -233,6 +234,7 @@ Madam I'm Adam`;
           <textarea
             value={output}
             readOnly
+            aria-label="Reversed text output"
             placeholder="Reversed text will appear here..."
             className="w-full min-h-[300px] font-mono text-sm rounded-xl border border-white/10 bg-neutral-900/50 p-4 resize-y focus:outline-none"
           />
