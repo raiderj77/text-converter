@@ -20,6 +20,7 @@ import { Nav } from "@/components/layout/nav";
 import { Footer } from "@/components/layout/footer";
 import { OrganizationSchema } from "@/components/seo/schema";
 import { PrivacyStorageCleanup } from "@/components/privacy-storage-cleanup";
+import { AnalyticsConsent } from "@/components/analytics-consent";
 
 /**
  * Root metadata — applies to every page unless overridden.
@@ -141,6 +142,7 @@ if ('serviceWorker' in navigator) {
           <Nav />
           <main id="main-content" className="flex-1">{children}</main>
           <Footer />
+          <AnalyticsConsent />
         </ThemeProvider>
 
       </body>

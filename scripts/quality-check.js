@@ -18,6 +18,7 @@ function check(condition, message) {
 }
 
 const layout = read("app/layout.tsx");
+const analytics = read("components/analytics-consent.tsx");
 const sitemap = read("app/sitemap.ts");
 const config = read("next.config.ts");
 const vercelConfig = read("vercel.json");
@@ -66,8 +67,11 @@ const publicDiscovery = [
   read("public/llms.txt"),
 ].join("\n");
 
-check(!/(adsbygoogle|googletagmanager|clarity\.ms)/i.test(layout), "third-party monetization and analytics scripts are disabled");
-check(!/(googlesyndication|googletagmanager|google-analytics|clarity\.ms)/i.test(`${config}\n${vercelConfig}`), "deployment security policies do not allow disabled third parties");
+check(!/(adsbygoogle|googletagmanager|clarity\.ms)/i.test(layout), "root layout does not load third parties before consent");
+check(analytics.includes('consent !== "granted"') && analytics.includes("send_page_view: false"), "analytics requires opt-in and disables automatic page views");
+check(analytics.includes("window.location.pathname") && !analytics.includes("window.location.search"), "analytics strips URL query strings");
+check(!/FormData|FileReader|sessionStorage/.test(analytics), "analytics cannot read tool input or generated output");
+check(/googletagmanager\.com/.test(`${config}\n${vercelConfig}`) && /google-analytics\.com/.test(`${config}\n${vercelConfig}`), "deployment security policies allow the approved analytics hosts");
 check(config.includes("frame-src 'none'") && vercelConfig.includes("frame-src 'none'"), "all deployment layers block third-party frames");
 check(!config.includes("'unsafe-eval'") && !vercelConfig.includes("'unsafe-eval'"), "production CSP does not permit string evaluation");
 check(!adSlot.includes("NEXT_PUBLIC_"), "deployment variables cannot accidentally enable advertising");
@@ -79,7 +83,7 @@ check(blogLoader.includes("return []") && blogLoader.includes("return null"), "r
 check(!schema.includes("SearchAction"), "structured data does not claim a nonexistent search action");
 check(!layout.includes("new Date()") && !sitemap.includes("new Date()") && !sitemap.includes("toISOString"), "site metadata does not manufacture deployment freshness");
 check(privacy.includes("has not been approved to display Google AdSense ads"), "privacy notice accurately describes AdSense status");
-check(/Google AdSense, Google\s+Analytics, and Microsoft Clarity are currently disabled/.test(privacy), "privacy notice accurately describes analytics status");
+check(privacy.includes("blocked until you explicitly allow it") && privacy.includes("URL query string is removed"), "privacy notice accurately describes opt-in analytics");
 check(!privacySensitiveTools.includes("localStorage"), "privacy-sensitive tools do not persist entered content");
 check(storageCleanup.includes('"fmc_jwt_input"') && storageCleanup.includes('"fmc_qr_code"'), "legacy token and QR storage keys are removed");
 check(!/safely paste passwords|safely paste[^\n]+API keys/i.test(homepage), "homepage does not encourage pasting credentials");
