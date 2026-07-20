@@ -15,13 +15,14 @@ export default function CookiesPage() {
       <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "Cookie Policy", href: "/cookies" }]} />
       <div className="mx-auto max-w-3xl px-4 py-10 text-sm leading-7 text-neutral-300">
         <h1 className="text-3xl font-bold text-white">Cookie and Browser Storage Policy</h1>
-        <p className="mt-2 text-neutral-400">Last reviewed July 12, 2026</p>
+        <p className="mt-2 text-neutral-400">Last reviewed July 19, 2026</p>
 
         <h2 className="mt-8 text-xl font-semibold text-white">Current cookie status</h2>
         <p className="mt-3">
-          FlipMyCase does not currently load Google AdSense, Google Analytics, Microsoft Clarity,
-          or a third-party consent platform. The current site does not intentionally set optional
-          analytics or advertising cookies.
+          FlipMyCase does not currently load Google AdSense or Microsoft Clarity. Google Analytics
+          remains blocked until you select &quot;Allow analytics.&quot; If allowed, it may set analytics
+          cookies after receiving only a sanitized page title and path. Text, files, generated output,
+          tool settings, and URL query strings are not included in these page views.
         </p>
 
         <h2 className="mt-8 text-xl font-semibold text-white">Local storage</h2>
@@ -47,11 +48,11 @@ export default function CookiesPage() {
           cached files for flipmycase.com. This can erase saved drafts and preferences permanently.
         </p>
 
-        <h2 className="mt-8 text-xl font-semibold text-white">Future changes</h2>
+        <h2 className="mt-8 text-xl font-semibold text-white">Analytics choices</h2>
         <p className="mt-3">
-          If optional analytics or advertising is enabled later, this policy and the privacy notice
-          will be updated and an appropriate consent control will be implemented before those
-          services load.
+          Your analytics choice is stored in localStorage so it can be honored on later visits. Use
+          the persistent Privacy choices button to change it. With analytics denied, the Google
+          Analytics script is not downloaded. You can also clear site data in your browser.
         </p>
 
         <p className="mt-8">

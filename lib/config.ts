@@ -19,7 +19,7 @@ export const AUTHOR_NAME = "Your Friendly Developer";
 export const AUTHOR_URL = `${SITE_URL}/about`;
 export const AUTHOR_JOB_TITLE = "Web Developer";
 
-export const GA_ID = "G-JQHRPJ9YLF";
+export const GA_ID = "G-3X4SDLV60C";
 
 /**
  * Tool registry. Every tool in the suite is defined here.

@@ -16,14 +16,15 @@ export default function PrivacyPage() {
       <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "Privacy Policy", href: "/privacy" }]} />
       <div className="mx-auto max-w-3xl px-4 py-10 text-sm leading-7 text-neutral-300">
         <h1 className="text-3xl font-bold text-white">Privacy Policy</h1>
-        <p className="mt-2 text-neutral-400">Effective January 1, 2026 | Last reviewed July 12, 2026</p>
+        <p className="mt-2 text-neutral-400">Effective January 1, 2026 | Last reviewed July 19, 2026</p>
 
         <section className="mt-8">
           <h2 className="text-xl font-semibold text-white">The short version</h2>
           <p className="mt-3">
             Text and files you enter into FlipMyCase tools are processed in your browser. FlipMyCase
-            does not intentionally transmit that tool input to its servers. Google AdSense, Google
-            Analytics, and Microsoft Clarity are currently disabled.
+            does not intentionally transmit that tool input to its servers. Google AdSense and
+            Microsoft Clarity are currently disabled. Google Analytics is optional and remains
+            blocked until you explicitly allow it.
           </p>
         </section>
 
@@ -47,10 +48,13 @@ export default function PrivacyPage() {
         <section className="mt-8">
           <h2 className="text-xl font-semibold text-white">Advertising and analytics status</h2>
           <p className="mt-3">
-            FlipMyCase has not been approved to display Google AdSense ads. AdSense, Google Analytics,
-            and Microsoft Clarity scripts are not loaded. Empty advertising placeholders are also
-            suppressed. These services must not be enabled until the public notice and consent setup
-            are reviewed and, for AdSense, the site is approved.
+            FlipMyCase has not been approved to display Google AdSense ads. AdSense and Microsoft
+            Clarity scripts are not loaded, and empty advertising placeholders are suppressed.
+            Google Analytics loads only after you select &quot;Allow analytics.&quot; If allowed, it receives
+            only the page title and path after the URL query string is removed. Text, files, generated
+            output, and tool settings are not sent. Advertising storage, ad personalization, Google
+            Signals, and enhanced measurement are disabled. You can withdraw permission through the
+            persistent Privacy choices button; without permission, the analytics script is not downloaded.
           </p>
         </section>
 
