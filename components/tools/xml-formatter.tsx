@@ -2,6 +2,7 @@
 
 import { useCallback, useMemo, useState } from "react";
 import { cx } from "@/lib/utils";
+import { getMarkupTagName, tokenizeMarkup, validateXml } from "@/lib/markup-text";
 import { useTheme } from "@/components/layout/theme-provider";
 
 type IndentStyle = "2" | "4" | "tab";
@@ -9,39 +10,15 @@ type IndentStyle = "2" | "4" | "tab";
 function formatXml(xml: string, indentStyle: IndentStyle): { result: string; error: string | null } {
   const indent = indentStyle === "tab" ? "\t" : " ".repeat(Number(indentStyle));
 
-  // Try parsing with DOMParser first for validation
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(xml, "application/xml");
-  const parseError = doc.querySelector("parsererror");
-
-  if (parseError) {
-    // Extract error message
-    const errorText = parseError.textContent || "Invalid XML";
-    // Still try manual formatting for display
-    return { result: "", error: errorText };
-  }
+  const error = validateXml(xml);
+  if (error) return { result: "", error };
 
   // Manual formatting for clean output
   let formatted = "";
   let depth = 0;
-  const trimmed = xml.replace(/>\s+</g, "><").trim();
-
-  // Tokenize
-  const tokens: string[] = [];
-  let i = 0;
-  while (i < trimmed.length) {
-    if (trimmed[i] === "<") {
-      const end = trimmed.indexOf(">", i);
-      if (end === -1) break;
-      tokens.push(trimmed.slice(i, end + 1));
-      i = end + 1;
-    } else {
-      const end = trimmed.indexOf("<", i);
-      const text = end === -1 ? trimmed.slice(i) : trimmed.slice(i, end);
-      if (text.trim()) tokens.push(text.trim());
-      i = end === -1 ? trimmed.length : end;
-    }
-  }
+  const tokens = tokenizeMarkup(xml)
+    .map((token) => (token.type === "text" ? token.value.trim() : token.value))
+    .filter(Boolean);
 
   for (let t = 0; t < tokens.length; t++) {
     const token = tokens[t];
@@ -58,11 +35,12 @@ function formatXml(xml: string, indentStyle: IndentStyle): { result: string; err
       formatted += indent.repeat(depth) + token + "\n";
     } else if (token.startsWith("<")) {
       // Opening tag — check if next token is text followed by closing tag (inline)
-      const tagName = token.match(/^<(\S+)/)?.[1] || "";
+      const tagName = getMarkupTagName(token);
       if (
         t + 2 < tokens.length &&
         !tokens[t + 1].startsWith("<") &&
-        tokens[t + 2] === `</${tagName}>`
+        /^<\s*\//.test(tokens[t + 2]) &&
+        getMarkupTagName(tokens[t + 2]) === tagName
       ) {
         formatted += indent.repeat(depth) + token + tokens[t + 1] + tokens[t + 2] + "\n";
         t += 2;
@@ -80,20 +58,13 @@ function formatXml(xml: string, indentStyle: IndentStyle): { result: string; err
 }
 
 function minifyXml(xml: string): { result: string; error: string | null } {
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(xml, "application/xml");
-  const parseError = doc.querySelector("parsererror");
+  const error = validateXml(xml);
+  if (error) return { result: "", error };
 
-  if (parseError) {
-    return { result: "", error: parseError.textContent || "Invalid XML" };
-  }
-
-  const minified = xml
-    .replace(/>\s+</g, "><")
-    .replace(/\s*\n\s*/g, "")
-    .trim();
-
-  return { result: minified, error: null };
+  const result = tokenizeMarkup(xml)
+    .map((token) => (token.type === "text" ? token.value.trim() : token.value))
+    .join("");
+  return { result, error: null };
 }
 
 export function XmlFormatterTool() {

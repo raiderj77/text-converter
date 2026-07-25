@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { cx, formatNumber } from "@/lib/utils";
+import { stripMarkupTags } from "@/lib/markup-text";
 import { useTheme } from "@/components/layout/theme-provider";
 
 type ConvertOption = {
@@ -17,7 +18,7 @@ const CONVERT_OPTIONS: ConvertOption[] = [
     id: "strip-html",
     label: "Remove HTML tags",
     description: "Strip all HTML and XML tags from the text",
-    fn: (t) => t.replace(/<[^>]*>/g, ""),
+    fn: (text) => stripMarkupTags(text),
     defaultOn: true,
   },
   {
