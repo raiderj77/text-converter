@@ -2,11 +2,28 @@ name: IndexNow Submit
 on:
   push:
     branches: [main]
+    paths:
+      - "app/**"
+      - "components/**"
+      - "content/**"
+      - "public/**"
+      - "next.config.ts"
+      - "vercel.json"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexnow-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   submit:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Fetch sitemap URLs
         id: sitemap
         run: |
@@ -33,3 +50,7 @@ jobs:
               "urlList": ${{ steps.sitemap.outputs.url_json }}
             }')
           echo "IndexNow response: $RESPONSE"
+          case "$RESPONSE" in
+            200|202) ;;
+            *) echo "::error::IndexNow rejected the submission with HTTP $RESPONSE"; exit 1 ;;
+          esac

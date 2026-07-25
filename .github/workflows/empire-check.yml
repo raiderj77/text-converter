@@ -1,12 +1,15 @@
 name: Empire Compliance Check
 
 on:
-  push:
-    branches: [main]
   pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: read
+
+concurrency:
+  group: empire-check-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   # ────────────────────────────────────────────────────────────────
@@ -15,19 +18,20 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - name: Setup Node 20
-        uses: actions/setup-node@v4
+      - name: Setup Node 22
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
-          node-version: '20'
+          node-version: "22"
           cache: 'npm'
 
-      - name: Install and build
-        run: |
-          npm ci
-          npm run build
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build
 
   # ────────────────────────────────────────────────────────────────
   # Job 2 — Empire compliance gates (no Node required)
@@ -35,8 +39,9 @@ jobs:
   compliance:
     name: Compliance Gates
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       # ── Check 2: Required public files ──────────────────────────
       - name: Required public files exist
