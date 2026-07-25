@@ -2,6 +2,7 @@
 
 import { useCallback, useMemo, useState } from "react";
 import { cx } from "@/lib/utils";
+import { removeMarkupComments, tokenizeMarkup } from "@/lib/markup-text";
 import { useTheme } from "@/components/layout/theme-provider";
 
 type IndentStyle = "2" | "4" | "tab";
@@ -12,36 +13,9 @@ const VOID_ELEMENTS = new Set([
 ]);
 
 function tokenizeHtml(html: string): string[] {
-  const tokens: string[] = [];
-  let i = 0;
-  while (i < html.length) {
-    if (html[i] === "<") {
-      // Comment
-      if (html.slice(i, i + 4) === "<!--") {
-        const end = html.indexOf("-->", i + 4);
-        if (end === -1) {
-          tokens.push(html.slice(i));
-          break;
-        }
-        tokens.push(html.slice(i, end + 3));
-        i = end + 3;
-      } else {
-        const end = html.indexOf(">", i);
-        if (end === -1) {
-          tokens.push(html.slice(i));
-          break;
-        }
-        tokens.push(html.slice(i, end + 1));
-        i = end + 1;
-      }
-    } else {
-      const end = html.indexOf("<", i);
-      const text = end === -1 ? html.slice(i) : html.slice(i, end);
-      if (text.trim()) tokens.push(text.trim());
-      i = end === -1 ? html.length : end;
-    }
-  }
-  return tokens;
+  return tokenizeMarkup(html)
+    .map((token) => (token.type === "text" ? token.value.trim() : token.value))
+    .filter(Boolean);
 }
 
 function getTagName(token: string): string {
@@ -110,8 +84,7 @@ function formatHtml(html: string, indentStyle: IndentStyle): string {
 }
 
 function minifyHtml(html: string): string {
-  // Remove comments
-  let src = html.replace(/<!--[\s\S]*?-->/g, "");
+  let src = removeMarkupComments(html);
   // Collapse whitespace between tags
   src = src.replace(/>\s+</g, "><");
   // Collapse remaining whitespace

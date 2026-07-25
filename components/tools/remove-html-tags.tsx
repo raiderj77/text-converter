@@ -2,61 +2,8 @@
 
 import { useCallback, useMemo, useState } from "react";
 import { cx } from "@/lib/utils";
+import { decodeHtmlEntitiesOnce, stripMarkupTags, tokenizeMarkup } from "@/lib/markup-text";
 import { useTheme } from "@/components/layout/theme-provider";
-
-const HTML_ENTITIES: Record<string, string> = {
-  "&amp;": "&",
-  "&lt;": "<",
-  "&gt;": ">",
-  "&quot;": '"',
-  "&#39;": "'",
-  "&apos;": "'",
-  "&nbsp;": " ",
-  "&copy;": "\u00A9",
-  "&reg;": "\u00AE",
-  "&trade;": "\u2122",
-  "&mdash;": "\u2014",
-  "&ndash;": "\u2013",
-  "&laquo;": "\u00AB",
-  "&raquo;": "\u00BB",
-  "&hellip;": "\u2026",
-  "&bull;": "\u2022",
-  "&euro;": "\u20AC",
-  "&pound;": "\u00A3",
-  "&yen;": "\u00A5",
-  "&cent;": "\u00A2",
-};
-
-function decodeEntities(text: string): string {
-  // Named entities
-  let decoded = text.replace(/&[a-zA-Z]+;/g, (entity) => {
-    const lower = entity.toLowerCase();
-    return HTML_ENTITIES[lower] ?? entity;
-  });
-  // Numeric entities (decimal)
-  decoded = decoded.replace(/&#(\d+);/g, (_, num) => {
-    const code = parseInt(num, 10);
-    return code > 0 && code < 0x10ffff ? String.fromCodePoint(code) : _;
-  });
-  // Numeric entities (hex)
-  decoded = decoded.replace(/&#x([0-9a-fA-F]+);/g, (_, hex) => {
-    const code = parseInt(hex, 16);
-    return code > 0 && code < 0x10ffff ? String.fromCodePoint(code) : _;
-  });
-  return decoded;
-}
-
-function stripHtml(text: string, keepTags: string[]): string {
-  if (keepTags.length === 0) {
-    return text.replace(/<[^>]*>/g, "");
-  }
-  // Build regex that matches tags NOT in the keep list
-  const keepSet = new Set(keepTags.map((t) => t.toLowerCase().trim()));
-  return text.replace(/<\/?([a-zA-Z][a-zA-Z0-9]*)\b[^>]*>/g, (match, tagName) => {
-    if (keepSet.has(tagName.toLowerCase())) return match;
-    return "";
-  });
-}
 
 export function RemoveHtmlTagsTool() {
   const { isDark } = useTheme();
@@ -79,19 +26,17 @@ export function RemoveHtmlTagsTool() {
     if (!keepTagsStr.trim()) return [];
     return keepTagsStr
       .split(",")
-      .map((t) => t.trim().replace(/^<\/?|\/?>$/g, ""))
-      .filter(Boolean);
+      .map((tag) => tag.trim().toLowerCase())
+      .filter((tag) => /^[a-z][a-z0-9]*$/.test(tag));
   }, [keepTagsStr]);
 
   const output = useMemo(() => {
     if (!text) return "";
-    const stripped = stripHtml(text, keepTags);
-    return decodeEntities(stripped);
+    return decodeHtmlEntitiesOnce(stripMarkupTags(text, keepTags));
   }, [text, keepTags]);
 
   const tagCount = useMemo(() => {
-    const matches = text.match(/<[^>]*>/g);
-    return matches ? matches.length : 0;
+    return tokenizeMarkup(text).filter((token) => token.type === "tag").length;
   }, [text]);
 
   const showToast = useCallback((msg: string) => {

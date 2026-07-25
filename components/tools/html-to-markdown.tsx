@@ -2,6 +2,7 @@
 
 import { useCallback, useMemo, useState } from "react";
 import { cx } from "@/lib/utils";
+import { decodeHtmlEntitiesOnce, stripMarkupTags } from "@/lib/markup-text";
 import { useTheme } from "@/components/layout/theme-provider";
 
 /* ===== HTML → Markdown ===== */
@@ -31,13 +32,13 @@ function htmlToMarkdown(html: string): string {
   // Code blocks (pre > code)
   md = md.replace(/<pre[^>]*>\s*<code[^>]*(?:\s+class="language-(\w+)")?[^>]*>([\s\S]*?)<\/code>\s*<\/pre>/gi,
     (_m, lang, code) => {
-      const decoded = decodeHtmlEntities(code.trim());
+      const decoded = decodeHtmlEntitiesOnce(code.trim());
       return `\n\`\`\`${lang || ""}\n${decoded}\n\`\`\`\n`;
     }
   );
   // pre without code
   md = md.replace(/<pre[^>]*>([\s\S]*?)<\/pre>/gi, (_m, code) => {
-    const decoded = decodeHtmlEntities(code.trim());
+    const decoded = decodeHtmlEntitiesOnce(code.trim());
     return `\n\`\`\`\n${decoded}\n\`\`\`\n`;
   });
 
@@ -100,25 +101,15 @@ function htmlToMarkdown(html: string): string {
   md = md.replace(/<br\s*\/?>/gi, "  \n");
 
   // Strip remaining tags
-  md = md.replace(/<[^>]+>/g, "");
+  md = stripMarkupTags(md);
 
   // Decode common HTML entities
-  md = decodeHtmlEntities(md);
+  md = decodeHtmlEntitiesOnce(md);
 
   // Clean up extra blank lines
   md = md.replace(/\n{3,}/g, "\n\n").trim();
 
   return md;
-}
-
-function decodeHtmlEntities(text: string): string {
-  return text
-    .replace(/&amp;/g, "&")
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&nbsp;/g, " ");
 }
 
 /* ===== Markdown → HTML ===== */

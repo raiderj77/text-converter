@@ -2,6 +2,13 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import {
+  decodeHtmlEntitiesOnce,
+  removeMarkupComments,
+  stripMarkupTags,
+  tokenizeMarkup,
+  validateXml,
+} from "../lib/markup-text.js";
 
 const root = path.resolve(import.meta.dirname, "..");
 const read = (file) => fs.readFileSync(path.join(root, file), "utf8");
@@ -49,4 +56,32 @@ test("fields flagged by the rendered audit have accessible names", () => {
     const source = read(file);
     for (const name of names) assert.ok(source.includes(name), `${file} is missing ${name}`);
   }
+});
+
+test("markup removal handles quoted delimiters and malformed nested tag text", () => {
+  const source =
+    '<div title="1 > 0">Hello <strong>world</strong><!-- hidden --><scr<script>ipt>alert(1)</script></div>';
+
+  assert.equal(stripMarkupTags(source), "Hello worldipt>alert(1)");
+  assert.equal(
+    stripMarkupTags('<p>Hello <strong data-label="1 > 0">world</strong></p>', ["strong"]),
+    'Hello <strong data-label="1 > 0">world</strong>'
+  );
+  assert.equal(removeMarkupComments("before<!-- private -->after"), "beforeafter");
+  assert.equal(tokenizeMarkup('<a title="1 > 0">x</a>').filter((token) => token.type === "tag").length, 2);
+});
+
+test("HTML entities are decoded exactly once", () => {
+  assert.equal(decodeHtmlEntitiesOnce("&lt;b&gt;"), "<b>");
+  assert.equal(decodeHtmlEntitiesOnce("&amp;lt;b&amp;gt;"), "&lt;b&gt;");
+  assert.equal(decodeHtmlEntitiesOnce("&#60;b&#x3e;"), "<b>");
+});
+
+test("XML validation is structural and does not create a browser DOM", () => {
+  assert.equal(validateXml('<?xml version="1.0"?><root label="1 > 0"><item /></root>'), null);
+  assert.equal(validateXml("<root><![CDATA[<safe>]]><item>value</item></root>"), null);
+  assert.match(validateXml("<root><item></root>"), /Expected <\/item>/);
+  assert.match(validateXml("<one /><two />"), /exactly one root element/);
+  assert.match(validateXml("<root attr=nope />"), /must use quotes/);
+  assert.match(validateXml("<root>1 < 2</root>"), /unescaped/);
 });
