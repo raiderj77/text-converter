@@ -16,7 +16,6 @@
     "prebuild": "npm run lint:predeploy && npm run lint:content && npm run test:quality"
   },
   "dependencies": {
-    "critters": "^0.0.25",
     "js-yaml": "5.2.2",
     "next": "16.2.11",
     "qrcode": "^1.5.4",

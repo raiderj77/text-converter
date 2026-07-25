@@ -53,9 +53,6 @@ const nextConfig: NextConfig = {
       { source: "/blog/:path*", destination: "/tools", permanent: true },
     ];
   },
-  experimental: {
-    optimizeCss: true,
-  },
   compiler: {
     removeConsole: process.env.NODE_ENV === "production",
   },
