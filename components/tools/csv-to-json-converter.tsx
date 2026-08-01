@@ -160,8 +160,6 @@ export function CsvToJsonConverterTool() {
   const btnBase = isDark ? "bg-white/10 hover:bg-white/15 border-white/10" : "bg-black/5 hover:bg-black/10 border-black/10";
   const btnActive = isDark ? "bg-emerald-500/20 border-emerald-400/40 text-emerald-300" : "bg-emerald-500/20 border-emerald-500/40 text-emerald-700";
   const muted = isDark ? "text-neutral-400" : "text-neutral-600";
-  const accent = isDark ? "text-emerald-400" : "text-emerald-600";
-
   return (
     <div className="space-y-4">
       {/* Direction & options */}

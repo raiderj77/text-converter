@@ -1,8 +1,9 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { cx } from "@/lib/utils";
 import { useTheme } from "@/components/layout/theme-provider";
+import { deferStorageHydration, persistAfterStorageHydration, useStorageHydrationGate } from "@/lib/storage-hydration";
 
 type JoinMode = "space" | "comma" | "custom";
 
@@ -33,38 +34,37 @@ export function ListToTextTool() {
   const { isDark } = useTheme();
 
   const [input, setInput] = useState("");
-  const [output, setOutput] = useState("");
   const [joinMode, setJoinMode] = useState<JoinMode>("space");
   const [customSep, setCustomSep] = useState("; ");
   const [copied, setCopied] = useState(false);
+  const storageHydration = useStorageHydrationGate();
 
   // Load from localStorage
   useEffect(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        const data = JSON.parse(saved);
-        if (typeof data.input === "string") setInput(data.input);
-        if (typeof data.joinMode === "string") setJoinMode(data.joinMode);
-        if (typeof data.customSep === "string") setCustomSep(data.customSep);
-      }
-    } catch { /* ignore */ }
-  }, []);
+    const saved = localStorage.getItem(STORAGE_KEY);
+    return deferStorageHydration(storageHydration, () => {
+      try {
+        if (saved) {
+          const data = JSON.parse(saved);
+          if (typeof data.input === "string") setInput(data.input);
+          if (data.joinMode === "space" || data.joinMode === "comma" || data.joinMode === "custom") {
+            setJoinMode(data.joinMode);
+          }
+          if (typeof data.customSep === "string") setCustomSep(data.customSep);
+        }
+      } catch { /* ignore */ }
+    });
+  }, [storageHydration]);
 
   useEffect(() => {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({ input, joinMode, customSep }));
-    } catch { /* ignore */ }
-  }, [input, joinMode, customSep]);
+    persistAfterStorageHydration(storageHydration, () => {
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ input, joinMode, customSep })); } catch { /* ignore */ }
+    });
+  }, [input, joinMode, customSep, storageHydration]);
 
-  // Convert on input/settings change
-  useEffect(() => {
-    if (!input.trim()) {
-      setOutput("");
-      return;
-    }
-    const lines = stripBullets(input);
-    setOutput(joinLines(lines, joinMode, customSep));
+  const output = useMemo(() => {
+    if (!input.trim()) return "";
+    return joinLines(stripBullets(input), joinMode, customSep);
   }, [input, joinMode, customSep]);
 
   const copyOutput = useCallback(() => {
@@ -75,7 +75,6 @@ export function ListToTextTool() {
 
   const clear = useCallback(() => {
     setInput("");
-    setOutput("");
     setCopied(false);
   }, []);
 

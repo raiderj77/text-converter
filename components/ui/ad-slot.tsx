@@ -14,6 +14,7 @@ type AdSlotProps = {
   adFormat?: "rectangle" | "leaderboard" | "skyscraper" | "auto";
 };
 
-export function AdSlot(_props: AdSlotProps) {
+export function AdSlot(props: AdSlotProps) {
+  void props;
   return null;
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { cx, formatNumber } from "@/lib/utils";
 import { useTheme } from "@/components/layout/theme-provider";
 
@@ -35,6 +35,7 @@ function diffLines(a: string[], b: string[]): DiffLine[] {
 
 /* ─── Word-level diff within a line ─── */
 type WordSpan = { text: string; changed: boolean };
+type RichDiffLine = DiffLine & { wordsA?: WordSpan[]; wordsB?: WordSpan[] };
 
 function diffWords(a: string, b: string): { wordsA: WordSpan[]; wordsB: WordSpan[] } {
   const tokA = a.split(/(\s+)/);
@@ -77,6 +78,30 @@ function normLine(line: string, ic: boolean, iw: boolean): string {
 
 type ViewMode = "split" | "inline";
 
+function OptionCheckbox({
+  checked,
+  toggle,
+  label,
+  isDark,
+}: {
+  checked: boolean;
+  toggle: () => void;
+  label: string;
+  isDark: boolean;
+}) {
+  return (
+    <button type="button" onClick={toggle} className={cx(
+      "flex items-center gap-2 rounded-xl border px-3 py-2 text-sm transition-colors",
+      checked ? isDark ? "border-emerald-500/40 bg-emerald-500/10" : "border-emerald-500/40 bg-emerald-50" : isDark ? "border-white/10 hover:bg-white/5" : "border-black/10 hover:bg-black/5"
+    )}>
+      <div className={cx("w-4 h-4 rounded border flex items-center justify-center text-xs shrink-0", checked ? "bg-emerald-500 border-emerald-500 text-white" : isDark ? "border-white/20" : "border-black/20")}>
+        {checked ? "✓" : ""}
+      </div>
+      {label}
+    </button>
+  );
+}
+
 export function TextDiffTool() {
   const { isDark } = useTheme();
   const [textA, setTextA] = useState("");
@@ -89,6 +114,7 @@ export function TextDiffTool() {
   const [currentDiff, setCurrentDiff] = useState(0);
   const diffRefs = useRef<(HTMLDivElement | null)[]>([]);
   const refA = useRef<HTMLTextAreaElement | null>(null);
+  const refB = useRef<HTMLTextAreaElement | null>(null);
 
   const result = useMemo(() => {
     const rawA = textA.split("\n");
@@ -105,7 +131,7 @@ export function TextDiffTool() {
     });
 
     // Pair adjacent remove+add for word-level diff
-    const paired: (DiffLine & { wordsA?: WordSpan[]; wordsB?: WordSpan[] })[] = [];
+    const paired: RichDiffLine[] = [];
     for (let k = 0; k < mapped.length; k++) {
       if (mapped[k].op === "remove" && k + 1 < mapped.length && mapped[k + 1].op === "add") {
         const wd = diffWords(mapped[k].textA, mapped[k + 1].textB);
@@ -170,42 +196,31 @@ export function TextDiffTool() {
   }
 
   // Collapse logic: group consecutive equal lines
+  const diff = result.diff;
   const displayLines = useMemo(() => {
-    if (!collapseUnchanged) return result.diff.map((d, i) => ({ type: "line" as const, line: d, idx: i }));
+    if (!collapseUnchanged) return diff.map((d, i) => ({ type: "line" as const, line: d, idx: i }));
 
-    const items: ({ type: "line"; line: typeof result.diff[0]; idx: number } | { type: "collapsed"; count: number })[] = [];
+    const items: ({ type: "line"; line: RichDiffLine; idx: number } | { type: "collapsed"; count: number })[] = [];
     let equalRun = 0;
-    for (let i = 0; i < result.diff.length; i++) {
-      if (result.diff[i].op === "equal") {
+    for (let i = 0; i < diff.length; i++) {
+      if (diff[i].op === "equal") {
         equalRun++;
       } else {
         if (equalRun > 3) {
           items.push({ type: "collapsed", count: equalRun });
         } else {
           for (let k = i - equalRun; k < i; k++)
-            items.push({ type: "line", line: result.diff[k], idx: k });
+            items.push({ type: "line", line: diff[k], idx: k });
         }
         equalRun = 0;
-        items.push({ type: "line", line: result.diff[i], idx: i });
+        items.push({ type: "line", line: diff[i], idx: i });
       }
     }
     if (equalRun > 3) items.push({ type: "collapsed", count: equalRun });
-    else for (let k = result.diff.length - equalRun; k < result.diff.length; k++)
-      items.push({ type: "line", line: result.diff[k], idx: k });
+    else for (let k = diff.length - equalRun; k < diff.length; k++)
+      items.push({ type: "line", line: diff[k], idx: k });
     return items;
-  }, [result.diff, collapseUnchanged]);
-
-  const Checkbox = ({ checked, toggle, label }: { checked: boolean; toggle: () => void; label: string }) => (
-    <button type="button" onClick={toggle} className={cx(
-      "flex items-center gap-2 rounded-xl border px-3 py-2 text-sm transition-colors",
-      checked ? isDark ? "border-emerald-500/40 bg-emerald-500/10" : "border-emerald-500/40 bg-emerald-50" : isDark ? "border-white/10 hover:bg-white/5" : "border-black/10 hover:bg-black/5"
-    )}>
-      <div className={cx("w-4 h-4 rounded border flex items-center justify-center text-xs shrink-0", checked ? "bg-emerald-500 border-emerald-500 text-white" : isDark ? "border-white/20" : "border-black/20")}>
-        {checked ? "✓" : ""}
-      </div>
-      {label}
-    </button>
-  );
+  }, [diff, collapseUnchanged]);
 
   return (
     <div>
@@ -213,7 +228,7 @@ export function TextDiffTool() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {[
           { label: "Original Text", val: textA, set: setTextA, ref: refA, placeholder: "Paste original text here..." },
-          { label: "Modified Text", val: textB, set: setTextB, ref: null as any, placeholder: "Paste modified text here..." },
+          { label: "Modified Text", val: textB, set: setTextB, ref: refB, placeholder: "Paste modified text here..." },
         ].map((box) => (
           <div key={box.label} className={cx("rounded-2xl border shadow-sm", isDark ? "bg-neutral-900 border-white/10" : "bg-white border-black/10")}>
             <div className={cx("flex items-center justify-between px-3 py-2 border-b", isDark ? "border-white/10" : "border-black/5")}>
@@ -238,9 +253,9 @@ export function TextDiffTool() {
 
       {/* Options */}
       <div className="mt-4 flex flex-wrap items-center gap-2">
-        <Checkbox checked={ignoreCase} toggle={() => setIgnoreCase(!ignoreCase)} label="Ignore case" />
-        <Checkbox checked={ignoreWhitespace} toggle={() => setIgnoreWhitespace(!ignoreWhitespace)} label="Ignore whitespace" />
-        <Checkbox checked={collapseUnchanged} toggle={() => setCollapseUnchanged(!collapseUnchanged)} label="Focus changes" />
+        <OptionCheckbox checked={ignoreCase} toggle={() => setIgnoreCase(!ignoreCase)} label="Ignore case" isDark={isDark} />
+        <OptionCheckbox checked={ignoreWhitespace} toggle={() => setIgnoreWhitespace(!ignoreWhitespace)} label="Ignore whitespace" isDark={isDark} />
+        <OptionCheckbox checked={collapseUnchanged} toggle={() => setCollapseUnchanged(!collapseUnchanged)} label="Focus changes" isDark={isDark} />
 
         {/* View mode */}
         {(["split", "inline"] as ViewMode[]).map((m) => (
@@ -309,8 +324,8 @@ export function TextDiffTool() {
                       : d.op === "remove" ? isDark ? "text-red-300" : "text-red-800"
                       : isDark ? "text-neutral-300" : "text-neutral-700"
                     )}>
-                      {d.op === "add" ? renderWordSpans((d as any).wordsB, d.textB, "add")
-                       : d.op === "remove" ? renderWordSpans((d as any).wordsA, d.textA, "remove")
+                      {d.op === "add" ? renderWordSpans(d.wordsB, d.textB, "add")
+                       : d.op === "remove" ? renderWordSpans(d.wordsA, d.textA, "remove")
                        : (d.textA || "\u00A0")}
                     </div>
                   </div>
@@ -339,7 +354,7 @@ export function TextDiffTool() {
                       <div className={cx("flex-1 px-2 py-0.5 whitespace-pre-wrap break-words",
                         d.op === "remove" ? isDark ? "text-red-300" : "text-red-800" : isDark ? "text-neutral-300" : "text-neutral-700"
                       )}>
-                        {d.op === "remove" ? renderWordSpans((d as any).wordsA, d.textA, "remove") : d.op === "equal" ? (d.textA || "\u00A0") : "\u00A0"}
+                        {d.op === "remove" ? renderWordSpans(d.wordsA, d.textA, "remove") : d.op === "equal" ? (d.textA || "\u00A0") : "\u00A0"}
                       </div>
                     </div>
                     {/* Right (modified) */}
@@ -354,7 +369,7 @@ export function TextDiffTool() {
                       <div className={cx("flex-1 px-2 py-0.5 whitespace-pre-wrap break-words",
                         d.op === "add" ? isDark ? "text-emerald-300" : "text-emerald-800" : isDark ? "text-neutral-300" : "text-neutral-700"
                       )}>
-                        {d.op === "add" ? renderWordSpans((d as any).wordsB, d.textB, "add") : d.op === "equal" ? (d.textB || "\u00A0") : "\u00A0"}
+                        {d.op === "add" ? renderWordSpans(d.wordsB, d.textB, "add") : d.op === "equal" ? (d.textB || "\u00A0") : "\u00A0"}
                       </div>
                     </div>
                   </div>

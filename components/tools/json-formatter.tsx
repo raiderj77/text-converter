@@ -37,26 +37,27 @@ function parseJson(raw: string): ParseResult {
   try {
     const data = JSON.parse(raw);
     return { ok: true, data, json: raw };
-  } catch (e: any) {
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : "Invalid JSON";
     // try to extract line number from error
-    const lineMatch = e.message?.match(/position (\d+)/i);
+    const lineMatch = message.match(/position (\d+)/i);
     let line: number | null = null;
     if (lineMatch) {
       const pos = parseInt(lineMatch[1]);
       line = raw.substring(0, pos).split("\n").length;
     }
-    return { ok: false, error: e.message || "Invalid JSON", line };
+    return { ok: false, error: message, line };
   }
 }
 
 /** Flatten JSON for CSV export */
-function flattenObject(obj: any, prefix = ""): Record<string, string> {
+function flattenObject(obj: Record<string, unknown>, prefix = ""): Record<string, string> {
   const result: Record<string, string> = {};
   for (const key of Object.keys(obj)) {
     const fullKey = prefix ? `${prefix}.${key}` : key;
     const val = obj[key];
     if (val !== null && typeof val === "object" && !Array.isArray(val)) {
-      Object.assign(result, flattenObject(val, fullKey));
+      Object.assign(result, flattenObject(val as Record<string, unknown>, fullKey));
     } else {
       result[fullKey] = val === null ? "" : String(val);
     }
@@ -66,7 +67,7 @@ function flattenObject(obj: any, prefix = ""): Record<string, string> {
 
 function jsonToCsv(data: unknown): string | null {
   // must be an array of objects
-  let rows: any[];
+  let rows: unknown[];
   if (Array.isArray(data)) {
     rows = data;
   } else if (typeof data === "object" && data !== null) {
@@ -79,7 +80,9 @@ function jsonToCsv(data: unknown): string | null {
   if (rows.length === 0) return "";
 
   const flattened = rows.map((r) =>
-    typeof r === "object" && r !== null ? flattenObject(r) : { value: String(r) }
+    typeof r === "object" && r !== null
+      ? flattenObject(r as Record<string, unknown>)
+      : { value: String(r) }
   );
   const headers = Array.from(new Set(flattened.flatMap((r) => Object.keys(r))));
 

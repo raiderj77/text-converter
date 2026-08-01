@@ -58,7 +58,7 @@ function buildFrequencyTable(
   }
 
   const totalCounted = Object.values(freq).reduce((a, b) => a + b, 0);
-  let entries: WordEntry[] = Object.entries(freq).map(([word, count]) => ({
+  const entries: WordEntry[] = Object.entries(freq).map(([word, count]) => ({
     word,
     count,
     percentage: totalCounted > 0 ? (count / totalCounted) * 100 : 0,

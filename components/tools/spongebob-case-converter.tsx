@@ -1,19 +1,17 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { toSpongeBobCase, toToggleCase, toRandomCase } from "@/lib/conversions";
-import { useTheme } from "@/components/layout/theme-provider";
 
 type CaseMode = "spongebob" | "toggle" | "random";
 
 export function SpongeBobCaseConverterTool() {
-  const { isDark } = useTheme();
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
   const [mode, setMode] = useState<CaseMode>("spongebob");
 
   // Conversion functions
-  const convertText = () => {
+  const convertText = useCallback(() => {
     if (!input.trim()) {
       setOutput("");
       return;
@@ -34,13 +32,13 @@ export function SpongeBobCaseConverterTool() {
     }
     
     setOutput(result);
-  };
+  }, [input, mode]);
 
   // Auto-convert when input or options change
   useEffect(() => {
     const timeout = setTimeout(convertText, 300);
     return () => clearTimeout(timeout);
-  }, [input, mode]);
+  }, [convertText]);
 
   const handleSpongeBobExample = () => {
     const example = `how original

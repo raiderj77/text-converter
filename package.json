@@ -3,11 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
+    "lint": "eslint --max-warnings=0",
     "lint:content": "node scripts/content-lint.js",
     "lint:predeploy": "node scripts/predeploy-check.js",
     "test": "npm run test:regressions",
@@ -37,6 +40,6 @@
   },
   "overrides": {
     "postcss": "8.5.18",
-    "sharp": "0.35.0"
+    "sharp": "0.35.3"
   }
 }

@@ -32,7 +32,7 @@ function getSentences(text: string): string[] {
 function countSyllables(word: string): number {
   const w = word.toLowerCase().replace(/[^a-z]/g, "");
   if (w.length <= 3) return 1;
-  let count = w.replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, "")
+  const count = w.replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, "")
     .replace(/^y/, "")
     .match(/[aeiouy]{1,2}/g)?.length || 1;
   return Math.max(1, count);
@@ -182,7 +182,6 @@ function BarChart({ data, maxBars, isDark }: { data: [string, number][]; maxBars
 function Histogram({ data, isDark }: { data: number[]; isDark: boolean }) {
   if (data.length === 0) return null;
   // Bucket sentence lengths into groups of 5
-  const maxLen = Math.max(...data);
   const bucketSize = 5;
   const buckets: Record<string, number> = {};
   for (const len of data) {

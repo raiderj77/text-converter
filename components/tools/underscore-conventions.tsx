@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useMemo, useState } from "react";
 
 type UnderscoreType = "single_prefix" | "double_prefix" | "dunder" | "trailing" | "snake_case" | "constant";
 
@@ -114,15 +114,12 @@ const languageConventions = [
 
 export function UnderscoreConventionsTool() {
   const [inputText, setInputText] = useState("userProfilePicture");
-  const [convertedExamples, setConvertedExamples] = useState<UnderscoreExample[]>(initialExamples);
   const [copiedType, setCopiedType] = useState<UnderscoreType | null>(null);
   const [selectedLanguage, setSelectedLanguage] = useState<string>("Python");
 
-  // Update examples when input changes
-  useEffect(() => {
+  const convertedExamples = useMemo<UnderscoreExample[]>(() => {
     if (!inputText.trim()) {
-      setConvertedExamples(initialExamples);
-      return;
+      return initialExamples;
     }
 
     const baseName = inputText.trim();
@@ -130,7 +127,7 @@ export function UnderscoreConventionsTool() {
     const snakeCase = words.join("_");
     const upperSnake = words.join("_").toUpperCase();
 
-    const updated = initialExamples.map(example => {
+    return initialExamples.map(example => {
       let newExample = example.example;
       
       switch (example.type) {
@@ -159,8 +156,6 @@ export function UnderscoreConventionsTool() {
         example: newExample,
       };
     });
-
-    setConvertedExamples(updated);
   }, [inputText]);
 
   const handleCopy = async (text: string, type: UnderscoreType) => {

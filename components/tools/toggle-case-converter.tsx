@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { cx } from "@/lib/utils";
 import { toInverseCase, toSpongeBobCase } from "@/lib/conversions";
 import { useTheme } from "@/components/layout/theme-provider";
+import { deferStorageHydration, persistAfterStorageHydration, useStorageHydrationGate } from "@/lib/storage-hydration";
 
 export function ToggleCaseConverterTool() {
   const { isDark } = useTheme();
@@ -12,17 +13,20 @@ export function ToggleCaseConverterTool() {
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
   const [startWithUpper, setStartWithUpper] = useState(false);
   const [includeSpaces, setIncludeSpaces] = useState(true);
+  const storageHydration = useStorageHydrationGate();
 
   // Load saved text on mount
   useEffect(() => {
     const saved = localStorage.getItem("fmc_toggle_text");
-    if (saved) setText(saved);
-  }, []);
+    return deferStorageHydration(storageHydration, () => {
+      if (saved) setText(saved);
+    });
+  }, [storageHydration]);
 
   // Persist text changes
   useEffect(() => {
-    localStorage.setItem("fmc_toggle_text", text);
-  }, [text]);
+    persistAfterStorageHydration(storageHydration, () => localStorage.setItem("fmc_toggle_text", text));
+  }, [text, storageHydration]);
 
   // Ctrl/Cmd+K focuses input
   useEffect(() => {

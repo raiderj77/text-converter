@@ -40,7 +40,7 @@ const faqItems = [
   {
     question: "What is a passphrase and why is it better?",
     answer:
-      "A passphrase is a sequence of random words like 'Lamp-Frog-Quilt-Mist-Arrow' that is both long and easy to remember. Because it is much longer than a typical password, it has extremely high entropy. A 5-word passphrase from our 1,000+ word list has over 50 bits of entropy, and each additional word adds roughly 10 more bits. Passphrases are ideal for master passwords, WiFi keys, and any login you need to type manually.",
+      "A passphrase is a sequence of random words like 'Lamp-Frog-Quilt-Mist-Arrow' that is both long and easy to remember. Five words from this tool's 928-word list provide about 49 bits of entropy before the optional random number; each additional word adds about 9.9 bits. Passphrases are ideal for master passwords, WiFi keys, and any login you need to type manually.",
   },
   {
     question: "What is the PIN generator for?",
@@ -159,7 +159,7 @@ export default function PasswordGeneratorPage() {
               },
               {
                 emoji: "📝", title: "Passphrase",
-                desc: "Random words from a 1,000+ word list connected by your choice of separator. Customize word count (3-8), capitalization, and optional numbers. Easy to type and remember.",
+                desc: "Random words from a 928-word list connected by your choice of separator. Customize word count (3-8), capitalization, and optional numbers. Easy to type and remember.",
                 use: "Best for: Master passwords, WiFi keys, SSH passphrases, any password you type manually",
               },
               {

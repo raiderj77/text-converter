@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { cx, formatNumber } from "@/lib/utils";
 import { useTheme } from "@/components/layout/theme-provider";
+import { deferStorageHydration, persistAfterStorageHydration, useStorageHydrationGate } from "@/lib/storage-hydration";
 
 type Mode = "straighten" | "typeset";
 
@@ -16,13 +17,13 @@ function straighten(text: string) {
   const counts = { quotes: 0, apostrophes: 0, emDashes: 0, enDashes: 0 };
 
   // Curly double quotes -> straight
-  result = result.replace(/[\u201C\u201D\u201E\u00AB\u00BB]/g, (m) => {
+  result = result.replace(/[\u201C\u201D\u201E\u00AB\u00BB]/g, () => {
     counts.quotes++;
     return '"';
   });
 
   // Curly single quotes / apostrophes -> straight
-  result = result.replace(/[\u2018\u2019\u201A\u2039\u203A]/g, (m) => {
+  result = result.replace(/[\u2018\u2019\u201A\u2039\u203A]/g, () => {
     counts.apostrophes++;
     return "'";
   });
@@ -69,7 +70,7 @@ function typeset(text: string) {
   });
 
   // Better approach: replace all straight single quotes context-aware
-  let parts = result.split("");
+  const parts = result.split("");
   for (let i = 0; i < parts.length; i++) {
     if (parts[i] === "'") {
       counts.apostrophes++;
@@ -93,6 +94,7 @@ export function SmartQuotesConverterTool() {
   const [mode, setMode] = useState<Mode>("straighten");
   const [toast, setToast] = useState("");
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
+  const storageHydration = useStorageHydrationGate();
 
   const base = isDark
     ? "bg-neutral-900 border-white/10 text-neutral-100"
@@ -108,18 +110,20 @@ export function SmartQuotesConverterTool() {
   // Load saved text
   useEffect(() => {
     const saved = localStorage.getItem("fmc_sqc_text");
-    if (saved) setText(saved);
     const savedMode = localStorage.getItem("fmc_sqc_mode") as Mode | null;
-    if (savedMode) setMode(savedMode);
-  }, []);
+    return deferStorageHydration(storageHydration, () => {
+      if (saved) setText(saved);
+      if (savedMode === "straighten" || savedMode === "typeset") setMode(savedMode);
+    });
+  }, [storageHydration]);
 
   // Persist
   useEffect(() => {
-    localStorage.setItem("fmc_sqc_text", text);
-  }, [text]);
+    persistAfterStorageHydration(storageHydration, () => localStorage.setItem("fmc_sqc_text", text));
+  }, [text, storageHydration]);
   useEffect(() => {
-    localStorage.setItem("fmc_sqc_mode", mode);
-  }, [mode]);
+    persistAfterStorageHydration(storageHydration, () => localStorage.setItem("fmc_sqc_mode", mode));
+  }, [mode, storageHydration]);
 
   // Ctrl/Cmd+K focuses input
   useEffect(() => {

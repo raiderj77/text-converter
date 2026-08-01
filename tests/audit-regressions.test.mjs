@@ -1,7 +1,9 @@
 import assert from "node:assert/strict";
 import fs from "node:fs";
+import { createRequire } from "node:module";
 import path from "node:path";
 import test from "node:test";
+import ts from "typescript";
 import {
   decodeHtmlEntitiesOnce,
   removeMarkupComments,
@@ -9,9 +11,130 @@ import {
   tokenizeMarkup,
   validateXml,
 } from "../lib/markup-text.js";
+import {
+  deferStorageHydration,
+  persistAfterStorageHydration,
+} from "../lib/storage-hydration.js";
 
 const root = path.resolve(import.meta.dirname, "..");
 const read = (file) => fs.readFileSync(path.join(root, file), "utf8");
+
+test("saved browser values are restored before persistence is allowed", async () => {
+  const gate = { current: false };
+  let browserValue = "saved value";
+  let restoredValue = "default value";
+  const capturedValue = browserValue;
+
+  deferStorageHydration(gate, () => {
+    restoredValue = capturedValue;
+  });
+
+  const wroteDefault = persistAfterStorageHydration(gate, () => {
+    browserValue = restoredValue;
+  });
+  assert.equal(wroteDefault, false);
+  assert.equal(browserValue, "saved value");
+
+  await new Promise((resolve) => setTimeout(resolve, 5));
+  assert.equal(gate.current, true);
+  assert.equal(restoredValue, "saved value");
+
+  const wroteUserChange = persistAfterStorageHydration(gate, () => {
+    browserValue = "new user value";
+  });
+  assert.equal(wroteUserChange, true);
+  assert.equal(browserValue, "new user value");
+});
+
+test("persisted components use the hydration gate for reads and writes", () => {
+  const persistedComponents = [
+    "components/layout/theme-provider.tsx",
+    "components/tools/add-prefix-suffix.tsx",
+    "components/tools/bold-italic-text-generator.tsx",
+    "components/tools/bold-text-generator.tsx",
+    "components/tools/bubble-text-generator.tsx",
+    "components/tools/color-code-converter.tsx",
+    "components/tools/cron-expression-builder.tsx",
+    "components/tools/duplicate-remover.tsx",
+    "components/tools/fancy-text-generator.tsx",
+    "components/tools/italic-text-generator.tsx",
+    "components/tools/list-to-text.tsx",
+    "components/tools/morse-code-translator.tsx",
+    "components/tools/random-number-generator.tsx",
+    "components/tools/roman-numeral-converter.tsx",
+    "components/tools/small-caps-generator.tsx",
+    "components/tools/smart-quotes-converter.tsx",
+    "components/tools/snake-kebab-converter.tsx",
+    "components/tools/strikethrough-text-generator.tsx",
+    "components/tools/subscript-generator.tsx",
+    "components/tools/superscript-generator.tsx",
+    "components/tools/text-repeater.tsx",
+    "components/tools/toggle-case-converter.tsx",
+    "components/tools/underline-text-generator.tsx",
+    "components/tools/upside-down-text-generator.tsx",
+    "components/tools/wide-text-generator.tsx",
+    "components/tools/word-counter.tsx",
+  ];
+
+  for (const file of persistedComponents) {
+    const source = read(file);
+    assert.match(source, /deferStorageHydration\(storageHydration,/);
+    assert.match(source, /persistAfterStorageHydration\(storageHydration,/);
+  }
+});
+
+test("password generation is unbiased and entropy copy matches its settings", () => {
+  const tool = read("components/tools/password-generator.tsx");
+  const page = read("app/password-generator/page.tsx");
+
+  assert.match(tool, /import \{ secureRandomInt \} from "@\/lib\/secure-random"/);
+  assert.match(tool, /passwordCharacterPool\(sets, exclude\)\.length/);
+  assert.match(tool, /passphraseWordCount \* Math\.log2\(WORDS\.length\)/);
+  assert.doesNotMatch(tool, /cryptoRand|% chars\.length|% 10/);
+  assert.match(page, /928-word list/);
+  assert.match(page, /about 49 bits of entropy/);
+  assert.doesNotMatch(page, /1,000\+ word list|over 50 bits of entropy/);
+});
+
+function loadTsxExports(file) {
+  const filePath = path.join(root, file);
+  const output = ts.transpileModule(fs.readFileSync(filePath, "utf8"), {
+    compilerOptions: {
+      jsx: ts.JsxEmit.ReactJSX,
+      module: ts.ModuleKind.CommonJS,
+      target: ts.ScriptTarget.ES2022,
+    },
+  }).outputText;
+  const testModule = { exports: {} };
+  const requireFromSource = createRequire(filePath);
+  new Function("require", "module", "exports", output)(
+    requireFromSource,
+    testModule,
+    testModule.exports
+  );
+  return testModule.exports;
+}
+
+test("slug generation safely handles empty and regex-special separators", () => {
+  const { generateSlug } = loadTsxExports("components/tools/slug-generator.tsx");
+
+  assert.equal(generateSlug("  H\u00e9llo, World!  ", { separator: "-" }), "hello-world");
+  assert.equal(generateSlug("  Hello  World  ", { separator: "" }), "helloworld");
+  assert.equal(generateSlug("abcdefghijk", { separator: "", maxLength: 5 }), "abcde");
+
+  for (const separator of [".", "*", "+", "?", "^", "$", "{", "}", "(", ")", "|", "[", "]", "\\"]) {
+    assert.equal(
+      generateSlug("  Hello  World  ", { separator }),
+      `hello${separator}world`,
+      `separator ${JSON.stringify(separator)} should be treated literally`
+    );
+  }
+
+  assert.equal(
+    generateSlug("Hello World", { separator: "_", lowercase: false, uppercase: true }),
+    "HELLO_WORLD"
+  );
+});
 
 test("time and random output are stable during initial hydration", () => {
   const lorem = read("components/tools/lorem-ipsum.tsx");

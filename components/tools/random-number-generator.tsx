@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { cx } from "@/lib/utils";
 import { useTheme } from "@/components/layout/theme-provider";
 import { secureRandomInt, secureUniqueIntegers } from "@/lib/secure-random";
+import { deferStorageHydration, persistAfterStorageHydration, useStorageHydrationGate } from "@/lib/storage-hydration";
 
 /* ── Helpers ──────────────────────────────────────────────── */
 
@@ -52,31 +53,36 @@ export function RandomNumberGeneratorTool() {
   const [results, setResults] = useState<number[]>([]);
   const [diceResults, setDiceResults] = useState<{ die: string; value: number }[]>([]);
   const [copied, setCopied] = useState("");
+  const storageHydration = useStorageHydrationGate();
 
   // Load from localStorage
   useEffect(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        const data = JSON.parse(saved);
-        if (typeof data.min === "number") setMin(data.min);
-        if (typeof data.max === "number") setMax(data.max);
-        if (typeof data.count === "number") setCount(data.count);
-        if (typeof data.allowDuplicates === "boolean") setAllowDuplicates(data.allowDuplicates);
-        if (typeof data.sortMode === "string") setSortMode(data.sortMode);
-      }
-    } catch { /* ignore */ }
-  }, []);
+    const saved = localStorage.getItem(STORAGE_KEY);
+    return deferStorageHydration(storageHydration, () => {
+      try {
+        if (saved) {
+          const data = JSON.parse(saved);
+          if (typeof data.min === "number") setMin(data.min);
+          if (typeof data.max === "number") setMax(data.max);
+          if (typeof data.count === "number") setCount(data.count);
+          if (typeof data.allowDuplicates === "boolean") setAllowDuplicates(data.allowDuplicates);
+          if (data.sortMode === "unsorted" || data.sortMode === "ascending" || data.sortMode === "descending") {
+            setSortMode(data.sortMode);
+          }
+        }
+      } catch { /* ignore */ }
+    });
+  }, [storageHydration]);
 
   useEffect(() => {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({ min, max, count, allowDuplicates, sortMode }));
-    } catch { /* ignore */ }
-  }, [min, max, count, allowDuplicates, sortMode]);
+    persistAfterStorageHydration(storageHydration, () => {
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ min, max, count, allowDuplicates, sortMode })); } catch { /* ignore */ }
+    });
+  }, [min, max, count, allowDuplicates, sortMode, storageHydration]);
 
   const generate = useCallback(() => {
     if (min > max) return;
-    let nums = generateNumbers(min, max, count, allowDuplicates);
+    const nums = generateNumbers(min, max, count, allowDuplicates);
     if (sortMode === "ascending") nums.sort((a, b) => a - b);
     else if (sortMode === "descending") nums.sort((a, b) => b - a);
     setResults(nums);

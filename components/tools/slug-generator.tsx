@@ -10,20 +10,32 @@ const PRESETS = [
   { label: "Constant", separator: "_", lowercase: false, maxLength: 100, uppercase: true },
 ];
 
-function generateSlug(text: string, options: any = {}) {
+type SlugOptions = {
+  separator?: string;
+  lowercase?: boolean;
+  uppercase?: boolean;
+  maxLength?: number;
+};
+
+export function generateSlug(text: string, options: SlugOptions = {}): string {
   const { separator = "-", lowercase = true, uppercase = false, maxLength = 80 } = options;
   let slug = text
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .replace(/[^\w\s-]/g, "")
-    .replace(/[\s_-]+/g, separator)
-    .replace(new RegExp(`^${separator === "-" ? "\\-" : separator}+|${separator === "-" ? "\\-" : separator}+$`, "g"), "");
+    .replace(/[\s_-]+/g, separator);
+  if (separator) {
+    while (slug.startsWith(separator)) slug = slug.slice(separator.length);
+    while (slug.endsWith(separator)) slug = slug.slice(0, -separator.length);
+  }
   if (uppercase) slug = slug.toUpperCase();
   else if (lowercase) slug = slug.toLowerCase();
   if (slug.length > maxLength) {
     slug = slug.substring(0, maxLength);
-    const lastSep = slug.lastIndexOf(separator);
-    if (lastSep > maxLength * 0.6) slug = slug.substring(0, lastSep);
+    if (separator) {
+      const lastSep = slug.lastIndexOf(separator);
+      if (lastSep > maxLength * 0.6) slug = slug.substring(0, lastSep);
+    }
   }
   return slug;
 }

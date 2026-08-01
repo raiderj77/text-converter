@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { cx } from "@/lib/utils";
 import { useTheme } from "@/components/layout/theme-provider";
+import { deferStorageHydration, persistAfterStorageHydration, useStorageHydrationGate } from "@/lib/storage-hydration";
 
 type Direction = "text-to-morse" | "morse-to-text";
 
@@ -65,22 +66,25 @@ export function MorseCodeTranslatorTool() {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioCtxRef = useRef<AudioContext | null>(null);
   const stopRef = useRef(false);
+  const storageHydration = useStorageHydrationGate();
 
   // localStorage persistence
   useEffect(() => {
     const saved = localStorage.getItem("fmc_morse_input");
-    if (saved) setInput(saved);
     const savedDir = localStorage.getItem("fmc_morse_direction");
-    if (savedDir === "text-to-morse" || savedDir === "morse-to-text") setDirection(savedDir);
-  }, []);
+    return deferStorageHydration(storageHydration, () => {
+      if (saved) setInput(saved);
+      if (savedDir === "text-to-morse" || savedDir === "morse-to-text") setDirection(savedDir);
+    });
+  }, [storageHydration]);
 
   useEffect(() => {
-    localStorage.setItem("fmc_morse_input", input);
-  }, [input]);
+    persistAfterStorageHydration(storageHydration, () => localStorage.setItem("fmc_morse_input", input));
+  }, [input, storageHydration]);
 
   useEffect(() => {
-    localStorage.setItem("fmc_morse_direction", direction);
-  }, [direction]);
+    persistAfterStorageHydration(storageHydration, () => localStorage.setItem("fmc_morse_direction", direction));
+  }, [direction, storageHydration]);
 
   const output =
     direction === "text-to-morse"

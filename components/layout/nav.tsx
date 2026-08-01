@@ -55,9 +55,12 @@ export function Nav() {
 
   // Close menus on route change
   useEffect(() => {
-    setMobileOpen(false);
-    setToolsOpen(false);
-    setSearch("");
+    const timeout = window.setTimeout(() => {
+      setMobileOpen(false);
+      setToolsOpen(false);
+      setSearch("");
+    }, 0);
+    return () => window.clearTimeout(timeout);
   }, [pathname]);
 
   // Prevent body scroll when mobile menu is open

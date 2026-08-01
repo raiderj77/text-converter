@@ -45,11 +45,13 @@ export function UnixTimestampConverterTool() {
 
   // Live clock
   useEffect(() => {
-    setNow(Math.floor(Date.now() / 1000));
-    const interval = setInterval(() => {
-      setNow(Math.floor(Date.now() / 1000));
-    }, 1000);
-    return () => clearInterval(interval);
+    const tick = () => setNow(Math.floor(Date.now() / 1000));
+    const frame = window.requestAnimationFrame(tick);
+    const interval = window.setInterval(tick, 1000);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.clearInterval(interval);
+    };
   }, []);
 
   const copyText = useCallback((text: string, label: string) => {

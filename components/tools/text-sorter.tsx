@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { cx } from "@/lib/utils";
+import { useCallback, useEffect, useState } from "react";
 
 type SortOrder = "asc" | "desc" | "random";
 type SortType = "alphabetical" | "numerical" | "length";
@@ -17,7 +16,7 @@ export function TextSorterTool() {
   const [emptyLines, setEmptyLines] = useState("keep"); // "keep", "remove", "separate"
 
   // Sort functions
-  const sortText = () => {
+  const sortText = useCallback(() => {
     if (!input.trim()) {
       setOutput("");
       return;
@@ -97,13 +96,13 @@ export function TextSorterTool() {
     }
     
     setOutput(sortedLines.join("\n"));
-  };
+  }, [input, sortOrder, sortType, removeDuplicates, trimLines, ignoreCase, emptyLines]);
 
   // Auto-sort when input or options change
   useEffect(() => {
     const timeout = setTimeout(sortText, 300);
     return () => clearTimeout(timeout);
-  }, [input, sortOrder, sortType, removeDuplicates, trimLines, ignoreCase, emptyLines]);
+  }, [sortText]);
 
   const handleExample = () => {
     const example = `Apple

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { getToolsByCategory, SITE_NAME } from "@/lib/config";
+import { getToolsByCategory } from "@/lib/config";
 import { cx } from "@/lib/utils";
 import { useTheme } from "./theme-provider";
 import { useMemo } from "react";

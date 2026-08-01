@@ -1,8 +1,9 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { cx, formatNumber } from "@/lib/utils";
+import { cx } from "@/lib/utils";
 import { useTheme } from "@/components/layout/theme-provider";
+import { secureRandomInt } from "@/lib/secure-random";
 
 /* ─── Character sets ─── */
 const CHAR_SETS = {
@@ -13,7 +14,7 @@ const CHAR_SETS = {
 };
 type CharSetKey = keyof typeof CHAR_SETS;
 
-/* ─── Wordlist for passphrases (EFF short list subset — 1296 words) ─── */
+/* ─── Curated 928-word list for memorable passphrases ─── */
 const WORDS = [
   "acid","acme","aged","also","arch","area","army","away","baby","back","bail","bake","bald","ball",
   "band","bank","barn","base","bash","bath","bead","beam","bean","bear","beat","been","beer","bell",
@@ -85,63 +86,72 @@ const WORDS = [
 ];
 
 /* ─── Password generation ─── */
-function cryptoRand(max: number): number {
-  const arr = new Uint32Array(1);
-  crypto.getRandomValues(arr);
-  return arr[0] % max;
+function passwordCharacterPool(sets: Record<CharSetKey, boolean>, exclude: string): string {
+  let chars = "";
+  for (const [key, enabled] of Object.entries(sets) as [CharSetKey, boolean][]) {
+    if (enabled) chars += CHAR_SETS[key];
+  }
+  if (!exclude) return chars;
+  const excluded = new Set(exclude);
+  return [...chars].filter((character) => !excluded.has(character)).join("");
 }
 
 function genPassword(length: number, sets: Record<CharSetKey, boolean>, exclude: string): string {
-  let chars = "";
-  for (const [key, enabled] of Object.entries(sets) as [CharSetKey, boolean][])
-    if (enabled) chars += CHAR_SETS[key];
-  if (exclude) { const ex = new Set(exclude); chars = [...chars].filter((c) => !ex.has(c)).join(""); }
+  const chars = passwordCharacterPool(sets, exclude);
   if (!chars) return "";
-  const arr = new Uint32Array(length);
-  crypto.getRandomValues(arr);
-  return Array.from(arr, (v) => chars[v % chars.length]).join("");
+  return Array.from(
+    { length },
+    () => chars[secureRandomInt(0, chars.length - 1)],
+  ).join("");
 }
 
 function genPassphrase(wordCount: number, separator: string, capitalize: boolean, includeNumber: boolean): string {
   const words: string[] = [];
   for (let i = 0; i < wordCount; i++) {
-    let w = WORDS[cryptoRand(WORDS.length)];
+    let w = WORDS[secureRandomInt(0, WORDS.length - 1)];
     if (capitalize) w = w[0].toUpperCase() + w.slice(1);
     words.push(w);
   }
   let result = words.join(separator);
   if (includeNumber) {
-    const pos = cryptoRand(words.length);
+    const pos = secureRandomInt(0, words.length - 1);
     const parts = result.split(separator);
-    parts[pos] += cryptoRand(100).toString();
+    parts[pos] += secureRandomInt(0, 99).toString();
     result = parts.join(separator);
   }
   return result;
 }
 
 function genPin(length: number): string {
-  const arr = new Uint32Array(length);
-  crypto.getRandomValues(arr);
-  return Array.from(arr, (v) => (v % 10).toString()).join("");
+  return Array.from(
+    { length },
+    () => secureRandomInt(0, 9).toString(),
+  ).join("");
 }
 
 /* ─── Strength / crack time ─── */
-function calcStrength(pw: string, mode: Mode): { score: number; label: string; color: string; bits: number; crackTime: string } {
-  let poolSize = 0;
-  if (mode === "pin") {
-    poolSize = 10;
+function calcStrength(
+  mode: Mode,
+  options: {
+    passwordLength: number;
+    passwordPoolSize: number;
+    passphraseWordCount: number;
+    passphraseIncludesNumber: boolean;
+    pinLength: number;
+  },
+): { score: number; label: string; color: string; bits: number; crackTime: string } {
+  let entropy = 0;
+  if (mode === "password" && options.passwordPoolSize > 0) {
+    entropy = options.passwordLength * Math.log2(options.passwordPoolSize);
   } else if (mode === "passphrase") {
-    poolSize = WORDS.length;
-    const wordCount = pw.split(/[-_.\s]/).filter(Boolean).length;
-    const bits = Math.floor(wordCount * Math.log2(poolSize));
-    return { ...strengthFromBits(bits), bits };
-  } else {
-    if (/[a-z]/.test(pw)) poolSize += 26;
-    if (/[A-Z]/.test(pw)) poolSize += 26;
-    if (/[0-9]/.test(pw)) poolSize += 10;
-    if (/[^a-zA-Z0-9]/.test(pw)) poolSize += 30;
+    entropy = options.passphraseWordCount * Math.log2(WORDS.length);
+    if (options.passphraseIncludesNumber) {
+      entropy += Math.log2(options.passphraseWordCount * 100);
+    }
+  } else if (mode === "pin") {
+    entropy = options.pinLength * Math.log2(10);
   }
-  const bits = poolSize > 0 ? Math.floor(pw.length * Math.log2(poolSize)) : 0;
+  const bits = Math.floor(entropy);
   return { ...strengthFromBits(bits), bits };
 }
 
@@ -173,6 +183,30 @@ function formatCrackTime(seconds: number): string {
 
 type Mode = "password" | "passphrase" | "pin";
 
+function OptionCheckbox({
+  checked,
+  toggle,
+  label,
+  isDark,
+}: {
+  checked: boolean;
+  toggle: () => void;
+  label: string;
+  isDark: boolean;
+}) {
+  return (
+    <button type="button" onClick={toggle} className={cx(
+      "flex items-center gap-2 rounded-xl border px-3 py-2 text-sm transition-colors",
+      checked ? isDark ? "border-emerald-500/40 bg-emerald-500/10" : "border-emerald-500/40 bg-emerald-50" : isDark ? "border-white/10 hover:bg-white/5" : "border-black/10 hover:bg-black/5"
+    )}>
+      <div className={cx("w-4 h-4 rounded border flex items-center justify-center text-xs shrink-0", checked ? "bg-emerald-500 border-emerald-500 text-white" : isDark ? "border-white/20" : "border-black/20")}>
+        {checked ? "✓" : ""}
+      </div>
+      {label}
+    </button>
+  );
+}
+
 export function PasswordGeneratorTool() {
   const { isDark } = useTheme();
   const [mode, setMode] = useState<Mode>("password");
@@ -198,20 +232,34 @@ export function PasswordGeneratorTool() {
   const [showHistory, setShowHistory] = useState(false);
   const [toast, setToast] = useState("");
 
-  const generate = useCallback(() => {
+  const createPasswords = useCallback(() => {
     const result: string[] = [];
     for (let i = 0; i < count; i++) {
       if (mode === "password") result.push(genPassword(length, sets, exclude));
       else if (mode === "passphrase") result.push(genPassphrase(wordCount, separator, capitalize, includeNumber));
       else result.push(genPin(pinLength));
     }
-    setPasswords(result);
-    setHistory((h) => [...result, ...h].slice(0, 50));
+    return result;
   }, [mode, length, sets, exclude, wordCount, separator, capitalize, includeNumber, pinLength, count]);
 
-  useEffect(() => { generate(); }, [generate]);
+  const generate = useCallback(() => {
+    const result = createPasswords();
+    setPasswords(result);
+    setHistory((historyEntries) => [...result, ...historyEntries].slice(0, 50));
+  }, [createPasswords]);
 
-  const strength = useMemo(() => passwords[0] ? calcStrength(passwords[0], mode) : null, [passwords, mode]);
+  useEffect(() => {
+    const timeout = window.setTimeout(() => setPasswords(createPasswords()), 0);
+    return () => window.clearTimeout(timeout);
+  }, [createPasswords]);
+
+  const strength = useMemo(() => passwords[0] ? calcStrength(mode, {
+    passwordLength: length,
+    passwordPoolSize: passwordCharacterPool(sets, exclude).length,
+    passphraseWordCount: wordCount,
+    passphraseIncludesNumber: includeNumber,
+    pinLength,
+  }) : null, [passwords, mode, length, sets, exclude, wordCount, includeNumber, pinLength]);
 
   function toggleSet(key: CharSetKey) {
     const next = { ...sets, [key]: !sets[key] };
@@ -236,18 +284,6 @@ export function PasswordGeneratorTool() {
     green: { bg: isDark ? "bg-green-500/10" : "bg-green-50", bar: "bg-green-500", text: isDark ? "text-green-400" : "text-green-600" },
     emerald: { bg: isDark ? "bg-emerald-500/10" : "bg-emerald-50", bar: "bg-emerald-500", text: isDark ? "text-emerald-400" : "text-emerald-600" },
   };
-
-  const Checkbox = ({ checked, toggle, label }: { checked: boolean; toggle: () => void; label: string }) => (
-    <button type="button" onClick={toggle} className={cx(
-      "flex items-center gap-2 rounded-xl border px-3 py-2 text-sm transition-colors",
-      checked ? isDark ? "border-emerald-500/40 bg-emerald-500/10" : "border-emerald-500/40 bg-emerald-50" : isDark ? "border-white/10 hover:bg-white/5" : "border-black/10 hover:bg-black/5"
-    )}>
-      <div className={cx("w-4 h-4 rounded border flex items-center justify-center text-xs shrink-0", checked ? "bg-emerald-500 border-emerald-500 text-white" : isDark ? "border-white/20" : "border-black/20")}>
-        {checked ? "✓" : ""}
-      </div>
-      {label}
-    </button>
-  );
 
   return (
     <div>
@@ -293,7 +329,7 @@ export function PasswordGeneratorTool() {
                   { k: "numbers" as CharSetKey, l: "0-9" },
                   { k: "symbols" as CharSetKey, l: "!@#$%" },
                 ]).map(({ k, l }) => (
-                  <Checkbox key={k} checked={sets[k]} toggle={() => toggleSet(k)} label={l} />
+                  <OptionCheckbox key={k} checked={sets[k]} toggle={() => toggleSet(k)} label={l} isDark={isDark} />
                 ))}
               </div>
             </div>
@@ -334,8 +370,8 @@ export function PasswordGeneratorTool() {
               </div>
             </div>
             <div className="flex flex-wrap gap-2">
-              <Checkbox checked={capitalize} toggle={() => setCapitalize(!capitalize)} label="Capitalize words" />
-              <Checkbox checked={includeNumber} toggle={() => setIncludeNumber(!includeNumber)} label="Include a number" />
+              <OptionCheckbox checked={capitalize} toggle={() => setCapitalize(!capitalize)} label="Capitalize words" isDark={isDark} />
+              <OptionCheckbox checked={includeNumber} toggle={() => setIncludeNumber(!includeNumber)} label="Include a number" isDark={isDark} />
             </div>
           </>
         )}

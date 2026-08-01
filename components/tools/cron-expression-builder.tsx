@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { cx } from "@/lib/utils";
 import { useTheme } from "@/components/layout/theme-provider";
+import { deferStorageHydration, persistAfterStorageHydration, useStorageHydrationGate } from "@/lib/storage-hydration";
 
 type FieldMode = "every" | "specific" | "range" | "step";
 
@@ -51,7 +52,7 @@ function fieldToExpression(field: FieldState): string {
     case "every":
       return "*";
     case "specific":
-      return field.specific.sort((a, b) => a - b).join(",");
+      return [...field.specific].sort((a, b) => a - b).join(",");
     case "range":
       return `${field.rangeStart}-${field.rangeEnd}`;
     case "step":
@@ -221,6 +222,7 @@ export function CronExpressionBuilderTool() {
   );
   const [copied, setCopied] = useState(false);
   const [nextRuns, setNextRuns] = useState<Date[]>([]);
+  const storageHydration = useStorageHydrationGate();
 
   const expression = useMemo(
     () => fields.map((f) => fieldToExpression(f)).join(" "),
@@ -230,7 +232,10 @@ export function CronExpressionBuilderTool() {
   const parts = useMemo(() => expression.split(" "), [expression]);
   const description = useMemo(() => describeExpression(parts), [parts]);
   useEffect(() => {
-    setNextRuns(getNextExecutions(expression, 5));
+    const timeout = window.setTimeout(() => {
+      setNextRuns(getNextExecutions(expression, 5));
+    }, 0);
+    return () => window.clearTimeout(timeout);
   }, [expression]);
 
   const updateField = useCallback((index: number, update: Partial<FieldState>) => {
@@ -255,19 +260,21 @@ export function CronExpressionBuilderTool() {
   // Persist to localStorage
   useEffect(() => {
     const saved = localStorage.getItem("fmc_cron_expression");
-    if (saved) {
+    return deferStorageHydration(storageHydration, () => {
       try {
-        const p = saved.split(" ");
-        if (p.length === 5) {
-          setFields(FIELD_DEFS.map((def, i) => parseExpressionField(p[i], def)));
+        if (saved) {
+          const p = saved.split(" ");
+          if (p.length === 5) {
+            setFields(FIELD_DEFS.map((def, i) => parseExpressionField(p[i], def)));
+          }
         }
       } catch { /* ignore */ }
-    }
-  }, []);
+    });
+  }, [storageHydration]);
 
   useEffect(() => {
-    localStorage.setItem("fmc_cron_expression", expression);
-  }, [expression]);
+    persistAfterStorageHydration(storageHydration, () => localStorage.setItem("fmc_cron_expression", expression));
+  }, [expression, storageHydration]);
 
   const base = isDark ? "bg-neutral-900 border-white/10 text-neutral-100" : "bg-white border-black/10 text-neutral-900";
   const inputBase = isDark ? "bg-neutral-950 border-white/10 text-neutral-100 placeholder:text-neutral-600" : "bg-neutral-50 border-black/10 text-neutral-900 placeholder:text-neutral-400";

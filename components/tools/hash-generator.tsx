@@ -5,6 +5,7 @@ import { cx } from "@/lib/utils";
 import { useTheme } from "@/components/layout/theme-provider";
 
 type Algorithm = "MD5" | "SHA-1" | "SHA-256" | "SHA-384" | "SHA-512";
+type HashResults = Partial<Record<Algorithm, string>>;
 
 const ALGORITHMS: Algorithm[] = ["MD5", "SHA-1", "SHA-256", "SHA-384", "SHA-512"];
 
@@ -160,7 +161,7 @@ async function hashFile(algo: string, file: File): Promise<string> {
 export function HashGeneratorTool() {
   const { isDark } = useTheme();
   const [input, setInput] = useState("");
-  const [hashes, setHashes] = useState<Record<Algorithm, string>>({} as any);
+  const [hashes, setHashes] = useState<HashResults>({});
   const [hmacKey, setHmacKey] = useState("");
   const [hmacMode, setHmacMode] = useState(false);
   const [uppercase, setUppercase] = useState(false);
@@ -168,15 +169,15 @@ export function HashGeneratorTool() {
   const [compareHash, setCompareHash] = useState("");
   const [showCompare, setShowCompare] = useState(false);
   const [fileInfo, setFileInfo] = useState<{ name: string; size: number } | null>(null);
-  const [fileHashes, setFileHashes] = useState<Record<Algorithm, string>>({} as any);
+  const [fileHashes, setFileHashes] = useState<HashResults>({});
   const [hashing, setHashing] = useState(false);
 
   // Hash text input
   useEffect(() => {
-    if (!input) { setHashes({} as any); return; }
     let cancelled = false;
-    async function run() {
-      const results: Partial<Record<Algorithm, string>> = {};
+    async function run(): Promise<HashResults> {
+      if (!input || (hmacMode && !hmacKey)) return {};
+      const results: HashResults = {};
       if (hmacMode && hmacKey) {
         results["MD5"] = hmacMd5(hmacKey, input);
         for (const algo of ["SHA-1", "SHA-256", "SHA-384", "SHA-512"] as Algorithm[]) {
@@ -188,21 +189,26 @@ export function HashGeneratorTool() {
           results[algo] = await cryptoHash(algo, input);
         }
       }
-      if (!cancelled) setHashes(results as Record<Algorithm, string>);
+      return results;
     }
-    run();
+    void run().then((results) => {
+      if (!cancelled) setHashes(results);
+    });
     return () => { cancelled = true; };
   }, [input, hmacMode, hmacKey]);
 
   const handleFile = useCallback(async (file: File) => {
     setFileInfo({ name: file.name, size: file.size });
     setHashing(true);
-    const results: Partial<Record<Algorithm, string>> = {};
-    for (const algo of ALGORITHMS) {
-      results[algo] = await hashFile(algo === "MD5" ? "MD5" : algo, file);
+    try {
+      const results: HashResults = {};
+      for (const algo of ALGORITHMS) {
+        results[algo] = await hashFile(algo === "MD5" ? "MD5" : algo, file);
+      }
+      setFileHashes(results);
+    } finally {
+      setHashing(false);
     }
-    setFileHashes(results as Record<Algorithm, string>);
-    setHashing(false);
   }, []);
 
   const onDrop = useCallback((e: React.DragEvent) => {
@@ -231,7 +237,10 @@ export function HashGeneratorTool() {
 
   const copyAll = () => {
     const activeHashes = Object.keys(hashes).length > 0 ? hashes : fileHashes;
-    const text = ALGORITHMS.filter((a) => activeHashes[a]).map((a) => `${a}: ${formatHash(activeHashes[a])}`).join("\n");
+    const text = ALGORITHMS.flatMap((algorithm) => {
+      const hash = activeHashes[algorithm];
+      return hash ? [`${algorithm}: ${formatHash(hash)}`] : [];
+    }).join("\n");
     copyText(text, "all");
   };
 
@@ -309,7 +318,7 @@ export function HashGeneratorTool() {
             {copied === "all" ? "✓ Copied All!" : "Copy All"}
           </button>
         )}
-        <button onClick={() => { setInput(""); setHashes({} as any); setFileInfo(null); setFileHashes({} as any); setCompareHash(""); setHmacKey(""); }}
+        <button onClick={() => { setInput(""); setHashes({}); setFileInfo(null); setFileHashes({}); setCompareHash(""); setHmacKey(""); }}
           className={cx("rounded-lg border px-3 py-1.5 text-xs transition-colors", btnBase)}>
           Clear All
         </button>

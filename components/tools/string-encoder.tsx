@@ -177,7 +177,7 @@ export function StringEncoderTool() {
     return direction === "encode"
       ? encoding.encode(text)
       : encoding.decode(text);
-  }, [text, selected, direction, encoding]);
+  }, [text, direction, encoding]);
 
   async function copyOutput() {
     try {
