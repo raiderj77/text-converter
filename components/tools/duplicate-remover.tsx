@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { cx, formatNumber } from "@/lib/utils";
 import { useTheme } from "@/components/layout/theme-provider";
-import { deferStorageHydration, persistAfterStorageHydration, useStorageHydrationGate } from "@/lib/storage-hydration";
+import { deferStorageHydration, persistAfterStorageHydration, safeGetLocalStorage, useStorageHydrationGate } from "@/lib/storage-hydration";
 
 type SortMode = "original" | "asc" | "desc";
 
@@ -20,7 +20,7 @@ export function DuplicateRemoverTool() {
 
   // Load saved text
   useEffect(() => {
-    const saved = localStorage.getItem("fmc_dr_text");
+    const saved = safeGetLocalStorage("fmc_dr_text");
     return deferStorageHydration(storageHydration, () => {
       if (saved) setText(saved);
     });

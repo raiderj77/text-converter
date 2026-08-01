@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
-import { deferStorageHydration, persistAfterStorageHydration, useStorageHydrationGate } from "@/lib/storage-hydration";
+import { deferStorageHydration, persistAfterStorageHydration, safeGetLocalStorage, useStorageHydrationGate } from "@/lib/storage-hydration";
 
 export type Mode = "light" | "dark";
 
@@ -27,7 +27,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
   // Load saved theme on mount
   useEffect(() => {
-    const saved = localStorage.getItem("fmc_mode") as Mode | null;
+    const saved = safeGetLocalStorage("fmc_mode") as Mode | null;
     return deferStorageHydration(storageHydration, () => {
       if (saved === "light" || saved === "dark") setMode(saved);
     });

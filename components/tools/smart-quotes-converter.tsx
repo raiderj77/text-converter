@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { cx, formatNumber } from "@/lib/utils";
 import { useTheme } from "@/components/layout/theme-provider";
-import { deferStorageHydration, persistAfterStorageHydration, useStorageHydrationGate } from "@/lib/storage-hydration";
+import { deferStorageHydration, persistAfterStorageHydration, safeGetLocalStorage, useStorageHydrationGate } from "@/lib/storage-hydration";
 
 type Mode = "straighten" | "typeset";
 
@@ -12,18 +12,18 @@ type Mode = "straighten" | "typeset";
  * Typeset: straight -> curly quotes, double hyphens -> em dash
  */
 
-function straighten(text: string) {
+export function straighten(text: string) {
   let result = text;
   const counts = { quotes: 0, apostrophes: 0, emDashes: 0, enDashes: 0 };
 
   // Curly double quotes -> straight
-  result = result.replace(/[\u201C\u201D\u201E\u00AB\u00BB]/g, () => {
+  result = result.replace(/[\u201C\u201D\u201E\u00AB\u00BB\u2033]/g, () => {
     counts.quotes++;
     return '"';
   });
 
   // Curly single quotes / apostrophes -> straight
-  result = result.replace(/[\u2018\u2019\u201A\u2039\u203A]/g, () => {
+  result = result.replace(/[\u2018\u2019\u201A\u2032\u2039\u203A]/g, () => {
     counts.apostrophes++;
     return "'";
   });
@@ -43,7 +43,49 @@ function straighten(text: string) {
   return { result, counts };
 }
 
-function typeset(text: string) {
+const WORD_CHARACTER = /[\p{L}\p{N}]/u;
+const OPENING_CONTEXT = /[\s([{<\-\u2013\u2014\u2018\u201C]/u;
+const CLOSING_CONTEXT = /['.!?,)\]}>\u2019\u201D]/u;
+const LEADING_ELISION = /^(?:\d{2}s?|tis|twas|twere|twill|twould|cause|em|n|round|bout|neath|gainst|til|nuff|scuse)\b/i;
+
+function characterAt(text: string, index: number): string | undefined {
+  return index >= 0 && index < text.length ? text[index] : undefined;
+}
+
+function isWordCharacter(character: string | undefined): boolean {
+  return character !== undefined && WORD_CHARACTER.test(character);
+}
+
+function shouldOpenDoubleQuote(text: string, index: number): boolean {
+  const previous = characterAt(text, index - 1);
+  const next = characterAt(text, index + 1);
+
+  if (next === undefined) return false;
+  if (previous === undefined || OPENING_CONTEXT.test(previous)) return true;
+  if ((previous === ":" || previous === ";") && isWordCharacter(next)) return true;
+  if (isWordCharacter(previous) || CLOSING_CONTEXT.test(previous)) return false;
+  return true;
+}
+
+function isLeadingElision(text: string, index: number): boolean {
+  const previous = characterAt(text, index - 1);
+  if (previous !== undefined && !OPENING_CONTEXT.test(previous)) return false;
+  return LEADING_ELISION.test(text.slice(index + 1));
+}
+
+function shouldOpenSingleQuote(text: string, index: number): boolean {
+  if (isLeadingElision(text, index)) return false;
+
+  const previous = characterAt(text, index - 1);
+  const next = characterAt(text, index + 1);
+  if (isWordCharacter(previous)) return false;
+  if (next === undefined) return false;
+  if (previous === undefined || OPENING_CONTEXT.test(previous)) return true;
+  if ((previous === ":" || previous === ";") && isWordCharacter(next)) return true;
+  return false;
+}
+
+export function typeset(text: string) {
   let result = text;
   const counts = { quotes: 0, apostrophes: 0, emDashes: 0 };
 
@@ -53,37 +95,35 @@ function typeset(text: string) {
     return "\u2014";
   });
 
-  // Straight double quotes -> curly (context-aware)
-  let openDouble = true;
-  result = result.replace(/"/g, () => {
+  // Convert a common feet-and-inches form before interpreting quote context.
+  result = result.replace(/(\d+)(\s*)'(\s*)(\d+(?:[.,]\d+)?)(\s*)"/g, (
+    _match,
+    feet: string,
+    beforeFeetMark: string,
+    afterFeetMark: string,
+    inches: string,
+    beforeInchMark: string,
+  ) => {
+    counts.apostrophes++;
     counts.quotes++;
-    const ch = openDouble ? "\u201C" : "\u201D";
-    openDouble = !openDouble;
-    return ch;
+    return `${feet}${beforeFeetMark}\u2032${afterFeetMark}${inches}${beforeInchMark}\u2033`;
   });
 
-  // Straight single quotes / apostrophes -> curly (context-aware)
-  // After a word character = closing/apostrophe, otherwise opening
-  result = result.replace(/(^|[\s([\-—])'|'(?=\w)/g, (match) => {
-    // Determine based on position
-    return match;
+  // Decide each double quote from its neighboring characters rather than
+  // alternating globally, so independent and nested quotations stay balanced.
+  const doubleSource = result;
+  result = doubleSource.replace(/"/g, (_mark, index: number) => {
+    counts.quotes++;
+    return shouldOpenDoubleQuote(doubleSource, index) ? "\u201C" : "\u201D";
   });
 
-  // Better approach: replace all straight single quotes context-aware
-  const parts = result.split("");
-  for (let i = 0; i < parts.length; i++) {
-    if (parts[i] === "'") {
-      counts.apostrophes++;
-      // Opening: after whitespace, start of string, or opening punctuation
-      const prev = i > 0 ? parts[i - 1] : " ";
-      if (/[\s(\[{—\u2014]/.test(prev) || i === 0) {
-        parts[i] = "\u2018"; // opening single quote
-      } else {
-        parts[i] = "\u2019"; // closing single quote / apostrophe
-      }
-    }
-  }
-  result = parts.join("");
+  // Apostrophes and single quotes share U+0027. Common English elisions and
+  // word-internal marks close; marks before quoted words open.
+  const singleSource = result;
+  result = singleSource.replace(/'/g, (_mark, index: number) => {
+    counts.apostrophes++;
+    return shouldOpenSingleQuote(singleSource, index) ? "\u2018" : "\u2019";
+  });
 
   return { result, counts };
 }
@@ -109,8 +149,8 @@ export function SmartQuotesConverterTool() {
 
   // Load saved text
   useEffect(() => {
-    const saved = localStorage.getItem("fmc_sqc_text");
-    const savedMode = localStorage.getItem("fmc_sqc_mode") as Mode | null;
+    const saved = safeGetLocalStorage("fmc_sqc_text");
+    const savedMode = safeGetLocalStorage("fmc_sqc_mode") as Mode | null;
     return deferStorageHydration(storageHydration, () => {
       if (saved) setText(saved);
       if (savedMode === "straighten" || savedMode === "typeset") setMode(savedMode);

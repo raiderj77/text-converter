@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { cx } from "@/lib/utils";
 import { useTheme } from "@/components/layout/theme-provider";
-import { deferStorageHydration, persistAfterStorageHydration, useStorageHydrationGate } from "@/lib/storage-hydration";
+import { deferStorageHydration, persistAfterStorageHydration, safeGetLocalStorage, useStorageHydrationGate } from "@/lib/storage-hydration";
 
 const STORAGE_KEY = "fmc_italic_text_generator";
 
@@ -54,7 +54,7 @@ export function ItalicTextGeneratorTool() {
 
   // Load from localStorage
   useEffect(() => {
-    const saved = localStorage.getItem(STORAGE_KEY);
+    const saved = safeGetLocalStorage(STORAGE_KEY);
     return deferStorageHydration(storageHydration, () => {
       try {
         if (saved) {

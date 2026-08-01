@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { cx } from "@/lib/utils";
 import { useTheme } from "@/components/layout/theme-provider";
 import { secureRandomInt } from "@/lib/secure-random";
@@ -12,7 +12,8 @@ const CHAR_SETS = {
   numbers: "0123456789",
   symbols: "!@#$%^&*()_+-=[]{}|;:,.<>?/~`",
 };
-type CharSetKey = keyof typeof CHAR_SETS;
+export type CharSetKey = keyof typeof CHAR_SETS;
+export type Mode = "password" | "passphrase" | "pin";
 
 /* ─── Curated 928-word list for memorable passphrases ─── */
 const WORDS = [
@@ -86,7 +87,7 @@ const WORDS = [
 ];
 
 /* ─── Password generation ─── */
-function passwordCharacterPool(sets: Record<CharSetKey, boolean>, exclude: string): string {
+export function passwordCharacterPool(sets: Record<CharSetKey, boolean>, exclude: string): string {
   let chars = "";
   for (const [key, enabled] of Object.entries(sets) as [CharSetKey, boolean][]) {
     if (enabled) chars += CHAR_SETS[key];
@@ -96,9 +97,11 @@ function passwordCharacterPool(sets: Record<CharSetKey, boolean>, exclude: strin
   return [...chars].filter((character) => !excluded.has(character)).join("");
 }
 
-function genPassword(length: number, sets: Record<CharSetKey, boolean>, exclude: string): string {
+export function generatePassword(length: number, sets: Record<CharSetKey, boolean>, exclude: string): string {
   const chars = passwordCharacterPool(sets, exclude);
-  if (!chars) return "";
+  if (!chars) {
+    throw new RangeError("At least one character must remain after exclusions.");
+  }
   return Array.from(
     { length },
     () => chars[secureRandomInt(0, chars.length - 1)],
@@ -130,7 +133,7 @@ function genPin(length: number): string {
 }
 
 /* ─── Strength / crack time ─── */
-function calcStrength(
+export function calculateStrength(
   mode: Mode,
   options: {
     passwordLength: number;
@@ -151,37 +154,67 @@ function calcStrength(
   } else if (mode === "pin") {
     entropy = options.pinLength * Math.log2(10);
   }
-  const bits = Math.floor(entropy);
-  return { ...strengthFromBits(bits), bits };
+  return strengthFromEntropy(entropy);
 }
 
-function strengthFromBits(bits: number): { score: number; label: string; color: string; crackTime: string } {
-  // Assume 10 billion guesses/sec
-  const combos = Math.pow(2, bits);
+function strengthFromEntropy(entropy: number): { score: number; label: string; color: string; bits: number; crackTime: string } {
+  const bits = Math.floor(entropy);
+  // Maximum exhaustive-search time at an illustrative 10 billion guesses/sec.
+  const combos = Math.pow(2, entropy);
   const seconds = combos / 10_000_000_000;
   const crackTime = formatCrackTime(seconds);
-  if (bits >= 128) return { score: 4, label: "Very Strong", color: "emerald", crackTime };
-  if (bits >= 80) return { score: 3, label: "Strong", color: "green", crackTime };
-  if (bits >= 50) return { score: 2, label: "Medium", color: "amber", crackTime };
-  if (bits >= 30) return { score: 1, label: "Weak", color: "orange", crackTime };
-  return { score: 0, label: "Very Weak", color: "red", crackTime };
+  if (bits >= 128) return { score: 4, label: "Very Strong", color: "emerald", bits, crackTime };
+  if (bits >= 80) return { score: 3, label: "Strong", color: "green", bits, crackTime };
+  if (bits >= 50) return { score: 2, label: "Medium", color: "amber", bits, crackTime };
+  if (bits >= 30) return { score: 1, label: "Weak", color: "orange", bits, crackTime };
+  return { score: 0, label: "Very Weak", color: "red", bits, crackTime };
 }
 
-function formatCrackTime(seconds: number): string {
+function formatQuantity(value: number): string {
+  if (value < 10) return value.toFixed(1).replace(/\.0$/, "");
+  return Math.round(value).toLocaleString("en-US");
+}
+
+export function formatCrackTime(seconds: number): string {
   if (seconds < 0.001) return "Instant";
   if (seconds < 1) return "< 1 second";
   if (seconds < 60) return `${Math.round(seconds)} seconds`;
   if (seconds < 3600) return `${Math.round(seconds / 60)} minutes`;
   if (seconds < 86400) return `${Math.round(seconds / 3600)} hours`;
-  if (seconds < 86400 * 365) return `${Math.round(seconds / 86400)} days`;
-  if (seconds < 86400 * 365 * 1000) return `${Math.round(seconds / (86400 * 365))} years`;
-  if (seconds < 86400 * 365 * 1e6) return `${Math.round(seconds / (86400 * 365 * 1000))}k years`;
-  if (seconds < 86400 * 365 * 1e9) return `${Math.round(seconds / (86400 * 365 * 1e6))}M years`;
-  if (seconds < 86400 * 365 * 1e12) return `${Math.round(seconds / (86400 * 365 * 1e9))}B years`;
-  return `${(seconds / (86400 * 365 * 1e12)).toExponential(1)} T years`;
+  if (seconds < 86400 * 365.25) return `${formatQuantity(seconds / 86400)} days`;
+
+  const years = seconds / (86400 * 365.25);
+  const scales = [
+    { size: 1e21, name: "sextillion" },
+    { size: 1e18, name: "quintillion" },
+    { size: 1e15, name: "quadrillion" },
+    { size: 1e12, name: "trillion" },
+    { size: 1e9, name: "billion" },
+    { size: 1e6, name: "million" },
+    { size: 1e3, name: "thousand" },
+  ];
+  for (const scale of scales) {
+    if (years >= scale.size && years < scale.size * 1000) {
+      return `${formatQuantity(years / scale.size)} ${scale.name} years`;
+    }
+  }
+  if (years < 1000) return `${formatQuantity(years)} years`;
+  return `${years.toExponential(1)} years`;
 }
 
-type Mode = "password" | "passphrase" | "pin";
+type GeneratedBatch = { passwords: string[]; settingsKey: string };
+
+export function passwordsForSettings(batch: GeneratedBatch | null, settingsKey: string): string[] {
+  return batch?.settingsKey === settingsKey ? batch.passwords : [];
+}
+
+export function passwordsForView(
+  showHistory: boolean,
+  currentPasswords: string[],
+  history: string[],
+): string[] {
+  return showHistory ? history : currentPasswords;
+}
 
 function OptionCheckbox({
   checked,
@@ -227,33 +260,72 @@ export function PasswordGeneratorTool() {
 
   // Shared
   const [count, setCount] = useState(1);
-  const [passwords, setPasswords] = useState<string[]>([]);
+  const [generatedBatch, setGeneratedBatch] = useState<GeneratedBatch | null>(null);
   const [history, setHistory] = useState<string[]>([]);
   const [showHistory, setShowHistory] = useState(false);
   const [toast, setToast] = useState("");
+  const autoGenerationId = useRef(0);
+  const manualGenerationKey = useRef<string | null>(null);
+
+  const passwordPool = useMemo(() => passwordCharacterPool(sets, exclude), [sets, exclude]);
+  const passwordPoolEmpty = mode === "password" && passwordPool.length === 0;
+  const settingsKey = useMemo(() => JSON.stringify([
+    mode,
+    length,
+    sets.uppercase,
+    sets.lowercase,
+    sets.numbers,
+    sets.symbols,
+    exclude,
+    wordCount,
+    separator,
+    capitalize,
+    includeNumber,
+    pinLength,
+    count,
+  ]), [mode, length, sets, exclude, wordCount, separator, capitalize, includeNumber, pinLength, count]);
+  const passwords = useMemo(
+    () => passwordsForSettings(generatedBatch, settingsKey),
+    [generatedBatch, settingsKey],
+  );
+  const displayedPasswords = passwordsForView(showHistory, passwords, history);
 
   const createPasswords = useCallback(() => {
+    if (passwordPoolEmpty) return [];
     const result: string[] = [];
     for (let i = 0; i < count; i++) {
-      if (mode === "password") result.push(genPassword(length, sets, exclude));
+      if (mode === "password") result.push(generatePassword(length, sets, exclude));
       else if (mode === "passphrase") result.push(genPassphrase(wordCount, separator, capitalize, includeNumber));
       else result.push(genPin(pinLength));
     }
     return result;
-  }, [mode, length, sets, exclude, wordCount, separator, capitalize, includeNumber, pinLength, count]);
+  }, [mode, length, sets, exclude, wordCount, separator, capitalize, includeNumber, pinLength, count, passwordPoolEmpty]);
 
   const generate = useCallback(() => {
+    if (passwordPoolEmpty) return;
+    autoGenerationId.current += 1;
+    manualGenerationKey.current = settingsKey;
     const result = createPasswords();
-    setPasswords(result);
+    setGeneratedBatch({ passwords: result, settingsKey });
     setHistory((historyEntries) => [...result, ...historyEntries].slice(0, 50));
-  }, [createPasswords]);
+    setShowHistory(false);
+  }, [createPasswords, passwordPoolEmpty, settingsKey]);
 
   useEffect(() => {
-    const timeout = window.setTimeout(() => setPasswords(createPasswords()), 0);
+    const generationId = ++autoGenerationId.current;
+    if (passwordPoolEmpty) return;
+    if (manualGenerationKey.current === settingsKey) {
+      manualGenerationKey.current = null;
+      return;
+    }
+    const timeout = window.setTimeout(() => {
+      if (autoGenerationId.current !== generationId) return;
+      setGeneratedBatch({ passwords: createPasswords(), settingsKey });
+    }, 0);
     return () => window.clearTimeout(timeout);
-  }, [createPasswords]);
+  }, [createPasswords, passwordPoolEmpty, settingsKey]);
 
-  const strength = useMemo(() => passwords[0] ? calcStrength(mode, {
+  const strength = useMemo(() => passwords[0] ? calculateStrength(mode, {
     passwordLength: length,
     passwordPoolSize: passwordCharacterPool(sets, exclude).length,
     passphraseWordCount: wordCount,
@@ -273,7 +345,7 @@ export function PasswordGeneratorTool() {
   }
 
   async function copyAll() {
-    try { await navigator.clipboard.writeText(passwords.join("\n")); setToast(`Copied ${passwords.length}!`); } catch { setToast("Failed"); }
+    try { await navigator.clipboard.writeText(displayedPasswords.join("\n")); setToast(`Copied ${displayedPasswords.length}!`); } catch { setToast("Failed"); }
     setTimeout(() => setToast(""), 1200);
   }
 
@@ -337,8 +409,14 @@ export function PasswordGeneratorTool() {
             <div>
               <label className="text-sm font-semibold block mb-1">Exclude Characters</label>
               <input type="text" value={exclude} onChange={(e) => setExclude(e.target.value)} aria-label="Characters to exclude" placeholder="e.g. 0OlI1"
+                aria-invalid={passwordPoolEmpty}
+                aria-describedby="password-exclusion-help"
                 className={cx("w-full rounded-xl border px-3 py-2 text-sm font-mono", isDark ? "bg-neutral-950 border-white/10" : "bg-neutral-50 border-black/10")} />
-              <p className={cx("text-xs mt-1", isDark ? "text-neutral-400" : "text-neutral-600")}>Remove ambiguous characters (0/O, l/1/I) or restricted symbols</p>
+              <p id="password-exclusion-help" role={passwordPoolEmpty ? "alert" : undefined} className={cx("text-xs mt-1", passwordPoolEmpty ? "text-red-400 font-medium" : isDark ? "text-neutral-400" : "text-neutral-600")}>
+                {passwordPoolEmpty
+                  ? "All enabled characters are excluded. Remove at least one exclusion before generating."
+                  : "Remove ambiguous characters (0/O, l/1/I) or restricted symbols"}
+              </p>
             </div>
           </>
         )}
@@ -408,16 +486,18 @@ export function PasswordGeneratorTool() {
         </div>
 
         {/* Generate */}
-        <button type="button" onClick={generate} className={cx(
+        <button type="button" onClick={generate} disabled={passwordPoolEmpty} className={cx(
           "w-full rounded-xl px-4 py-3 text-sm font-semibold border transition-colors",
-          isDark ? "border-emerald-500/40 bg-emerald-500/10 hover:bg-emerald-500/20" : "border-emerald-500/40 bg-emerald-50 hover:bg-emerald-100"
+          passwordPoolEmpty
+            ? "cursor-not-allowed border-red-500/30 bg-red-500/10 text-red-300 opacity-70"
+            : isDark ? "border-emerald-500/40 bg-emerald-500/10 hover:bg-emerald-500/20" : "border-emerald-500/40 bg-emerald-50 hover:bg-emerald-100"
         )}>
           🔑 Generate {mode === "pin" ? "PIN" : mode === "passphrase" ? "Passphrase" : "Password"}{count > 1 ? `s (${count})` : ""}
         </button>
       </div>
 
       {/* Strength meter + crack time */}
-      {strength && passwords[0] && (
+      {!showHistory && strength && passwords[0] && (
         <div className={cx("mt-4 rounded-xl border p-3", isDark ? "border-white/10" : "border-black/10", sColors[strength.color].bg)}>
           <div className="flex items-center justify-between mb-2">
             <span className={cx("text-sm font-semibold", sColors[strength.color].text)}>{strength.label}</span>
@@ -427,18 +507,26 @@ export function PasswordGeneratorTool() {
             <div className={cx("h-full rounded-full transition-all", sColors[strength.color].bar)} style={{ width: `${Math.min(100, (strength.score + 1) * 20)}%` }} />
           </div>
           <div className={cx("mt-2 text-xs", isDark ? "text-neutral-400" : "text-neutral-500")}>
-            Estimated crack time at 10B guesses/sec: <span className={cx("font-medium", sColors[strength.color].text)}>{strength.crackTime}</span>
+            Maximum exhaustive-search time at 10B guesses/sec (average is about half): <span className={cx("font-medium", sColors[strength.color].text)}>{strength.crackTime}</span>
           </div>
         </div>
       )}
 
       {/* Password output */}
-      {passwords.length > 0 && (
+      {(passwords.length > 0 || history.length > 0) && (
         <div className={cx("mt-4 rounded-2xl border shadow-sm", isDark ? "bg-neutral-900 border-white/10" : "bg-white border-black/10")}>
           <div className={cx("flex items-center justify-between px-3 py-2 border-b", isDark ? "border-white/10" : "border-black/5")}>
-            <div className="text-sm font-semibold">{passwords.length === 1 ? `Your ${mode === "pin" ? "PIN" : mode === "passphrase" ? "Passphrase" : "Password"}` : `${passwords.length} Results`}</div>
+            <div className="text-sm font-semibold">
+              {showHistory
+                ? `History (${history.length})`
+                : passwords.length === 0
+                  ? "Current Results"
+                  : passwords.length === 1
+                    ? `Your ${mode === "pin" ? "PIN" : mode === "passphrase" ? "Passphrase" : "Password"}`
+                    : `${passwords.length} Results`}
+            </div>
             <div className="flex items-center gap-2">
-              {passwords.length > 1 && (
+              {displayedPasswords.length > 1 && (
                 <button type="button" onClick={copyAll} className={cx("text-xs rounded-xl px-3 py-1.5 border transition-colors", isDark ? "border-white/10 hover:bg-white/10" : "border-black/10 hover:bg-black/5")}>Copy All</button>
               )}
               <button type="button" onClick={() => setShowHistory(!showHistory)} className={cx("text-xs rounded-xl px-3 py-1.5 border transition-colors", showHistory ? isDark ? "border-blue-500/40 bg-blue-500/10" : "border-blue-500/40 bg-blue-50" : isDark ? "border-white/10 hover:bg-white/10" : "border-black/10 hover:bg-black/5")}>
@@ -447,9 +535,13 @@ export function PasswordGeneratorTool() {
             </div>
           </div>
           <div className="p-3 space-y-2">
-            {(showHistory ? history : passwords).map((pw, i) => (
+            {displayedPasswords.length === 0 ? (
+              <p className={cx("text-sm", isDark ? "text-neutral-400" : "text-neutral-600")}>
+                No result matches the current settings. Open History to view earlier generated values.
+              </p>
+            ) : displayedPasswords.map((pw, i) => (
               <div key={`${pw}-${i}`} className="flex items-center gap-2">
-                <output aria-live="polite" aria-label="Generated password" className={cx("flex-1 block rounded-xl border px-3 py-2 text-sm font-mono break-all leading-6", isDark ? "bg-neutral-950 border-white/10" : "bg-neutral-50 border-black/10")}>
+                <output aria-live="polite" aria-label="Generated value" className={cx("flex-1 block rounded-xl border px-3 py-2 text-sm font-mono break-all leading-6", isDark ? "bg-neutral-950 border-white/10" : "bg-neutral-50 border-black/10")}>
                   <code>{pw}</code>
                 </output>
                 <button type="button" onClick={() => copyPw(pw)} className={cx(
@@ -463,7 +555,7 @@ export function PasswordGeneratorTool() {
       )}
 
       <div className={cx("mt-3 text-xs text-center", isDark ? "text-neutral-400" : "text-neutral-600")}>
-        Generated using crypto.getRandomValues() · Nothing leaves your browser · Ctrl/⌘ + L toggles theme
+        Generated with cryptographically strong pseudorandom values from crypto.getRandomValues() · Output is not sent by this tool · Ctrl/⌘ + L toggles theme
       </div>
 
       {toast && <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 rounded-2xl bg-neutral-900 text-white px-4 py-2 text-sm shadow-lg">{toast}</div>}

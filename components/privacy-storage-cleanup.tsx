@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { safeRemoveLocalStorage } from "@/lib/storage-hydration";
 
 // Older releases saved pasted text and generated credentials in localStorage.
 // Current privacy-sensitive tools keep that content in memory only. Remove the
@@ -24,7 +25,7 @@ const RETIRED_CONTENT_KEYS = [
 export function PrivacyStorageCleanup() {
   useEffect(() => {
     for (const key of RETIRED_CONTENT_KEYS) {
-      localStorage.removeItem(key);
+      safeRemoveLocalStorage(key);
     }
   }, []);
 

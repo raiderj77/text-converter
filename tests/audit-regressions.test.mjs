@@ -14,7 +14,10 @@ import {
 import {
   deferStorageHydration,
   persistAfterStorageHydration,
+  safeGetLocalStorage,
+  safeRemoveLocalStorage,
 } from "../lib/storage-hydration.js";
+import { hmacMd5, md5 } from "../lib/md5.js";
 
 const root = path.resolve(import.meta.dirname, "..");
 const read = (file) => fs.readFileSync(path.join(root, file), "utf8");
@@ -46,6 +49,58 @@ test("saved browser values are restored before persistence is allowed", async ()
   assert.equal(browserValue, "new user value");
 });
 
+test("unavailable browser storage is treated as having no saved value", () => {
+  assert.equal(
+    safeGetLocalStorage("saved-key", () => ({ getItem: () => "saved value" })),
+    "saved value"
+  );
+  assert.equal(
+    safeGetLocalStorage("blocked-key", () => {
+      throw new DOMException("Storage is blocked", "SecurityError");
+    }),
+    null
+  );
+  assert.equal(
+    safeGetLocalStorage("blocked-key", () => ({
+      getItem: () => {
+        throw new DOMException("Storage is blocked", "SecurityError");
+      },
+    })),
+    null
+  );
+
+  const blockedStorage = {
+    getItem: () => null,
+    removeItem: () => {
+      throw new DOMException("Storage is blocked", "SecurityError");
+    },
+  };
+  assert.equal(safeRemoveLocalStorage("retired-key", () => blockedStorage), false);
+
+  const openStorage = new Map([["retired-key", "saved value"]]);
+  assert.equal(
+    safeRemoveLocalStorage("retired-key", () => ({
+      removeItem: (key) => openStorage.delete(key),
+    })),
+    true
+  );
+  assert.equal(openStorage.has("retired-key"), false);
+});
+
+test("blocked browser-storage writes fall back without throwing", () => {
+  const gate = { current: true };
+  assert.equal(
+    persistAfterStorageHydration(gate, () => {
+      throw new DOMException("Storage quota exceeded", "QuotaExceededError");
+    }),
+    false
+  );
+
+  const cleanup = read("components/privacy-storage-cleanup.tsx");
+  assert.match(cleanup, /safeRemoveLocalStorage\(key\)/);
+  assert.doesNotMatch(cleanup, /localStorage\.removeItem/);
+});
+
 test("persisted components use the hydration gate for reads and writes", () => {
   const persistedComponents = [
     "components/layout/theme-provider.tsx",
@@ -75,11 +130,11 @@ test("persisted components use the hydration gate for reads and writes", () => {
     "components/tools/wide-text-generator.tsx",
     "components/tools/word-counter.tsx",
   ];
-
   for (const file of persistedComponents) {
     const source = read(file);
     assert.match(source, /deferStorageHydration\(storageHydration,/);
     assert.match(source, /persistAfterStorageHydration\(storageHydration,/);
+    assert.match(source, /safeGetLocalStorage\(/);
   }
 });
 
@@ -94,6 +149,104 @@ test("password generation is unbiased and entropy copy matches its settings", ()
   assert.match(page, /928-word list/);
   assert.match(page, /about 49 bits of entropy/);
   assert.doesNotMatch(page, /1,000\+ word list|over 50 bits of entropy/);
+});
+
+test("MD5 and HMAC-MD5 preserve UTF-8 and raw file bytes", () => {
+  assert.equal(md5(""), "d41d8cd98f00b204e9800998ecf8427e");
+  assert.equal(md5("abc"), "900150983cd24fb0d6963f7d28e17f72");
+  assert.equal(md5("\u{1f600}"), "2a02eac39d716a70ecf37579185927b6");
+  assert.equal(
+    md5(Uint8Array.from([0xff, 0x00, 0x80, 0x41])),
+    "6033ea5290a344c63a4ce59caad33de9"
+  );
+
+  // RFC 2202 HMAC-MD5 vectors, including a key longer than one MD5 block.
+  assert.equal(
+    hmacMd5(Uint8Array.from({ length: 16 }, () => 0x0b), "Hi There"),
+    "9294727a3638bb1c13f48ef8158bfc9d"
+  );
+  assert.equal(
+    hmacMd5("Jefe", "what do ya want for nothing?"),
+    "750c783e6ab0b503eaa86e310a5db738"
+  );
+  assert.equal(
+    hmacMd5(
+      Uint8Array.from({ length: 80 }, () => 0xaa),
+      "Test Using Larger Than Block-Size Key - Hash Key First"
+    ),
+    "6b1ab7fe4bd7bf8f0b62e6ce61b9d0cd"
+  );
+
+  const tool = read("components/tools/hash-generator.tsx");
+  assert.match(tool, /md5\(new Uint8Array\(buffer\)\)/);
+  assert.doesNotMatch(tool, /String\.fromCharCode\(bytes\[i\]\)/);
+});
+
+test("file hashing only commits the latest active request", () => {
+  const tool = read("components/tools/hash-generator.tsx");
+  const page = read("app/hash-generator/page.tsx");
+  const handleFile = tool.slice(
+    tool.indexOf("const handleFile"),
+    tool.indexOf("const onDrop")
+  );
+  const clearAll = tool.slice(
+    tool.indexOf("const clearAll"),
+    tool.indexOf("const onDrop")
+  );
+
+  assert.match(tool, /const fileRequestGeneration = useRef\(0\)/);
+  assert.match(handleFile, /const requestId = \+\+fileRequestGeneration\.current/);
+  assert.equal((handleFile.match(/file\.arrayBuffer\(\)/g) ?? []).length, 1);
+  assert.match(handleFile, /hashBytes\(algo, buffer, activeHmacKey\)/);
+  assert.match(handleFile, /if \(requestId !== fileRequestGeneration\.current\) return/);
+  assert.match(
+    handleFile,
+    /if \(requestId === fileRequestGeneration\.current\) \{\s+setFileHashes\(results\)/
+  );
+  assert.match(
+    handleFile,
+    /if \(requestId === fileRequestGeneration\.current\) \{\s+setHashing\(false\)/
+  );
+  assert.match(clearAll, /fileRequestGeneration\.current \+= 1/);
+  assert.match(clearAll, /setFileHashes\(\{\}\)/);
+  assert.match(clearAll, /setHashing\(false\)/);
+  assert.match(clearAll, /setFileError\(""\)/);
+  assert.match(tool, /role="alert"/);
+  assert.doesNotMatch(page, /No file size limit|any format, any size|1 GB\+|hundred(?:s)? of MB in seconds/i);
+});
+
+test("hash comparison keeps text and file matches distinct", () => {
+  const source = read("components/tools/hash-generator.tsx");
+  const snippet = source.slice(
+    source.indexOf("type Algorithm"),
+    source.indexOf("function arrayBufferToHex")
+  );
+  const output = ts.transpileModule(snippet, {
+    compilerOptions: {
+      module: ts.ModuleKind.CommonJS,
+      target: ts.ScriptTarget.ES2022,
+    },
+  }).outputText;
+  const testModule = { exports: {} };
+  new Function("module", "exports", output)(testModule, testModule.exports);
+  const { findHashMatches } = testModule.exports;
+
+  const textMd5 = "900150983cd24fb0d6963f7d28e17f72";
+  const fileMd5 = "9dd4e461268c8034f5c8564e155c67a6";
+  assert.deepEqual(
+    findHashMatches(textMd5.toUpperCase(), { MD5: textMd5 }, { MD5: fileMd5 }),
+    ["Text MD5"]
+  );
+  assert.deepEqual(
+    findHashMatches(textMd5, { MD5: textMd5 }, { MD5: textMd5 }),
+    ["Text MD5", "File MD5"]
+  );
+  assert.deepEqual(
+    findHashMatches(fileMd5, { MD5: textMd5 }, { MD5: fileMd5 }),
+    ["File MD5"]
+  );
+  assert.doesNotMatch(source, /const allHashes = \{ \.\.\.hashes, \.\.\.fileHashes \}/);
+  assert.match(source, /compareMatches\.join\(", "\)/);
 });
 
 function loadTsxExports(file) {

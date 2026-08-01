@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { cx } from "@/lib/utils";
 import { toInverseCase, toSpongeBobCase } from "@/lib/conversions";
 import { useTheme } from "@/components/layout/theme-provider";
-import { deferStorageHydration, persistAfterStorageHydration, useStorageHydrationGate } from "@/lib/storage-hydration";
+import { deferStorageHydration, persistAfterStorageHydration, safeGetLocalStorage, useStorageHydrationGate } from "@/lib/storage-hydration";
 
 export function ToggleCaseConverterTool() {
   const { isDark } = useTheme();
@@ -17,7 +17,7 @@ export function ToggleCaseConverterTool() {
 
   // Load saved text on mount
   useEffect(() => {
-    const saved = localStorage.getItem("fmc_toggle_text");
+    const saved = safeGetLocalStorage("fmc_toggle_text");
     return deferStorageHydration(storageHydration, () => {
       if (saved) setText(saved);
     });

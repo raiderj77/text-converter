@@ -49,7 +49,7 @@ const faqItems = [
   {
     question: "How do I verify a file checksum?",
     answer:
-      "Drop or select a file using the file upload area. The tool generates all five hash algorithms for the file. Then enable Compare Hash mode, paste the checksum provided by the file's publisher, and the tool will tell you if it matches any of the generated hashes. A match confirms the file has not been altered.",
+      "Drop or select a file using the file upload area. The tool generates all five supported hashes for the file. Then enable Compare Hash mode and paste a checksum from a trusted publisher. A match means the local bytes match that checksum; it does not by itself prove who published the file.",
   },
   {
     question: "What is HMAC and when should I use it?",
@@ -69,7 +69,7 @@ const faqItems = [
   {
     question: "Can I hash a large file?",
     answer:
-      "Yes. File hashing runs entirely in your browser using the Web Crypto API. Performance depends on your device — modern browsers can hash files of several hundred MB in seconds. For very large files (1 GB+), there may be a brief delay. No file data is uploaded to any server.",
+      "File hashing runs entirely in your browser and no file data is uploaded. The file must fit in available browser memory, so the practical size limit and processing time depend on your device. For very large files, use a trusted streaming checksum utility on your computer.",
   },
   {
     question: "What is the uppercase/lowercase toggle for?",
@@ -152,8 +152,8 @@ export default function HashGeneratorPage() {
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {[
               { emoji: "#️⃣", title: "5 Algorithms Simultaneously", desc: "MD5, SHA-1, SHA-256, SHA-384, and SHA-512 all computed at once. Copy individual hashes or all five with one click." },
-              { emoji: "📁", title: "File Checksums", desc: "Drop any file to generate checksums. Verify downloads by comparing against the publisher's hash. No file size limit — runs locally." },
-              { emoji: "🔑", title: "HMAC Mode", desc: "Generate keyed hashes (HMAC) with a secret key for API authentication, webhook verification, and JWT signing." },
+              { emoji: "📁", title: "File Checksums", desc: "Drop a file to generate checksums locally. Practical file-size limits depend on your browser and available device memory." },
+              { emoji: "🔑", title: "HMAC Mode", desc: "Generate keyed hashes (HMAC) for test vectors and message-authentication workflows. Follow the exact encoding and canonicalization rules of your protocol." },
               { emoji: "🔍", title: "Compare Hash", desc: "Paste a hash to check it against all generated values. Instantly know if your file or text matches the expected checksum." },
               { emoji: "🔠", title: "Case Toggle", desc: "Switch between lowercase and UPPERCASE hex output to match whatever format your system expects." },
               { emoji: "🔒", title: "100% Client-Side", desc: "Uses the Web Crypto API for SHA hashes. Your text and files never leave your device. Works offline as a PWA." },
@@ -175,7 +175,7 @@ export default function HashGeneratorPage() {
             <p>
               <strong className="text-neutral-200">1. Enter text or drop a file.</strong> Type
               or paste text into the input field — hashes generate in real time as you type.
-              Or drop a file (any format, any size) to generate file checksums.
+              Or drop a file in any format to generate file checksums. Very large files may require a desktop checksum utility.
             </p>
             <p>
               <strong className="text-neutral-200">2. Copy the hash you need.</strong> Click
@@ -242,8 +242,8 @@ export default function HashGeneratorPage() {
             </p>
             <p>
               <strong className="text-neutral-200">Data deduplication:</strong> Hash files or content
-              to generate unique identifiers. If two files produce the same SHA-256 hash, they are
-              identical — no need to compare byte-by-byte.
+              to identify likely duplicates efficiently. Matching SHA-256 values are a strong practical
+              signal for routine deduplication; compare bytes when absolute identity must be established.
             </p>
             <p>
               <strong className="text-neutral-200">Content integrity:</strong> Store a SHA-256 hash

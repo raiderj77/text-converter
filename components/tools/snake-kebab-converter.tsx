@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { cx } from "@/lib/utils";
 import { toSnakeCase, toKebabCase, toCamelCase, toPascalCase, toConstantCase } from "@/lib/conversions";
 import { useTheme } from "@/components/layout/theme-provider";
-import { deferStorageHydration, persistAfterStorageHydration, useStorageHydrationGate } from "@/lib/storage-hydration";
+import { deferStorageHydration, persistAfterStorageHydration, safeGetLocalStorage, useStorageHydrationGate } from "@/lib/storage-hydration";
 
 export function SnakeKebabConverterTool() {
   const { isDark } = useTheme();
@@ -16,7 +16,7 @@ export function SnakeKebabConverterTool() {
 
   // Load saved text on mount
   useEffect(() => {
-    const saved = localStorage.getItem("fmc_snake_kebab_text");
+    const saved = safeGetLocalStorage("fmc_snake_kebab_text");
     return deferStorageHydration(storageHydration, () => {
       if (saved) setText(saved);
     });

@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { cx } from "@/lib/utils";
 import { useTheme } from "@/components/layout/theme-provider";
-import { deferStorageHydration, persistAfterStorageHydration, useStorageHydrationGate } from "@/lib/storage-hydration";
+import { deferStorageHydration, persistAfterStorageHydration, safeGetLocalStorage, useStorageHydrationGate } from "@/lib/storage-hydration";
 
 type Direction = "text-to-morse" | "morse-to-text";
 
@@ -70,8 +70,8 @@ export function MorseCodeTranslatorTool() {
 
   // localStorage persistence
   useEffect(() => {
-    const saved = localStorage.getItem("fmc_morse_input");
-    const savedDir = localStorage.getItem("fmc_morse_direction");
+    const saved = safeGetLocalStorage("fmc_morse_input");
+    const savedDir = safeGetLocalStorage("fmc_morse_direction");
     return deferStorageHydration(storageHydration, () => {
       if (saved) setInput(saved);
       if (savedDir === "text-to-morse" || savedDir === "morse-to-text") setDirection(savedDir);

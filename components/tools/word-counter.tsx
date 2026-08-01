@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { cx, formatNumber, readingTime, speakingTime } from "@/lib/utils";
 import { useTheme } from "@/components/layout/theme-provider";
-import { deferStorageHydration, persistAfterStorageHydration, useStorageHydrationGate } from "@/lib/storage-hydration";
+import { deferStorageHydration, persistAfterStorageHydration, safeGetLocalStorage, useStorageHydrationGate } from "@/lib/storage-hydration";
 
 /** Social media character limits */
 const SOCIAL_LIMITS = [
@@ -143,7 +143,7 @@ export function WordCounterTool() {
 
   // Load saved text
   useEffect(() => {
-    const saved = localStorage.getItem("fmc_wc_text");
+    const saved = safeGetLocalStorage("fmc_wc_text");
     return deferStorageHydration(storageHydration, () => {
       if (saved) setText(saved);
     });

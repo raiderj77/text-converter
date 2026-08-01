@@ -15,7 +15,7 @@
     "lint:predeploy": "node scripts/predeploy-check.js",
     "test": "npm run test:regressions",
     "test:quality": "node scripts/quality-check.js",
-    "test:regressions": "node --test tests/audit-regressions.test.mjs",
+    "test:regressions": "node --test",
     "prebuild": "npm run lint:predeploy && npm run lint:content && npm run test:quality"
   },
   "dependencies": {
