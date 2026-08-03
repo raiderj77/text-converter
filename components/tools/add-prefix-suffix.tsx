@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { cx } from "@/lib/utils";
 import { useTheme } from "@/components/layout/theme-provider";
+import { deferStorageHydration, persistAfterStorageHydration, safeGetLocalStorage, useStorageHydrationGate } from "@/lib/storage-hydration";
 
 const STORAGE_KEY = "fmc_add_prefix_suffix";
 
@@ -32,29 +33,31 @@ export function AddPrefixSuffixTool() {
   const btnBase = isDark ? "bg-white/10 hover:bg-white/15 border-white/10" : "bg-black/5 hover:bg-black/10 border-black/10";
   const muted = isDark ? "text-neutral-400" : "text-neutral-600";
 
+  const storageHydration = useStorageHydrationGate();
+
   // Load from localStorage
   useEffect(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        if (parsed.input) setInput(parsed.input);
-        if (parsed.prefix) setPrefix(parsed.prefix);
-        if (parsed.suffix) setSuffix(parsed.suffix);
+    const saved = safeGetLocalStorage(STORAGE_KEY);
+    return deferStorageHydration(storageHydration, () => {
+      try {
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          if (typeof parsed.input === "string") setInput(parsed.input);
+          if (typeof parsed.prefix === "string") setPrefix(parsed.prefix);
+          if (typeof parsed.suffix === "string") setSuffix(parsed.suffix);
+        }
+      } catch {
+        // ignore
       }
-    } catch {
-      // ignore
-    }
-  }, []);
+    });
+  }, [storageHydration]);
 
   // Save to localStorage
   useEffect(() => {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({ input, prefix, suffix }));
-    } catch {
-      // ignore
-    }
-  }, [input, prefix, suffix]);
+    persistAfterStorageHydration(storageHydration, () => {
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ input, prefix, suffix })); } catch { /* ignore */ }
+    });
+  }, [input, prefix, suffix, storageHydration]);
 
   const output = (() => {
     if (!input) return "";

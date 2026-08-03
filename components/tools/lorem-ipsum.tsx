@@ -533,7 +533,7 @@ export function LoremIpsumTool() {
           isDark ? "text-neutral-400" : "text-neutral-600"
         )}
       >
-        Ctrl/Cmd + L toggles theme
+        Use the theme button in the site header to change appearance.
       </div>
 
       {/* Toast */}

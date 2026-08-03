@@ -52,7 +52,7 @@ const faqItems = [
   {
     question: "Is this text case converter free to use?",
     answer:
-      "Yes, FlipMyCase is completely free with no account required. All text conversions happen instantly in your browser — your text is never sent to any server.",
+      "Yes. FlipMyCase is free and requires no account. The converter processes text in your browser and does not intentionally send tool input to FlipMyCase or analytics.",
   },
   {
     question: "What is snake_case used for?",
@@ -69,7 +69,7 @@ export default function HomePage() {
         name="Free Text Case Converter"
         description={tool.description}
         url={SITE_URL}
-        dateModified={"2026-07-12"}
+        dateModified={"2026-08-02"}
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema items={[{ name: "Home", href: "/" }]} />
@@ -80,7 +80,7 @@ export default function HomePage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Text Case Converter
         </h1>
-        <p className="text-sm text-gray-400 mt-1 mb-4 text-center">Last reviewed: July 12, 2026</p>
+        <p className="text-sm text-gray-400 mt-1 mb-4 text-center">Last reviewed: August 2, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           FlipMyCase is a free online text converter with 78 browser-based tools including case converters, text cleaners, encoders, generators, and formatters. Select any tool below to transform your text instantly — no signup required.
         </p>
@@ -175,17 +175,20 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Use cases — long-tail keyword content */}
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
             When to Use a Case Converter
           </h2>
           <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
-              <strong className="text-neutral-200">Writing and blogging:</strong> Over 600 million blogs exist worldwide (Demand Sage, 2024), and consistent heading capitalization is a basic readability requirement. Convert headings to Title Case for blog posts, articles, and landing pages. Generate URL-friendly slugs from titles for SEO.
+              <strong className="text-neutral-200">Writing and blogging:</strong> Convert headings
+              to Title Case for articles and landing pages, normalize inconsistent capitalization,
+              or generate a URL-friendly slug from a draft title.
             </p>
             <p>
-              <strong className="text-neutral-200">Software development:</strong> With tens of millions of software developers worldwide working across languages with different naming conventions, case conversion is a daily need. Convert variable names between camelCase, snake_case, PascalCase, and CONSTANT_CASE when switching between JavaScript, Python, SQL, and other languages.
+              <strong className="text-neutral-200">Software development:</strong> Convert identifiers
+              between camelCase, snake_case, PascalCase, and CONSTANT_CASE when moving between
+              JavaScript, Python, SQL, and other naming conventions.
             </p>
             <p>
               <strong className="text-neutral-200">Data cleanup:</strong> Normalize messy text
@@ -204,8 +207,6 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* GEO content — SSR, indexed by Google and AI crawlers */}
-
         <section className="mt-10">
           <h2 className="text-lg sm:text-xl font-semibold">
             How does the text case converter work?
@@ -215,21 +216,10 @@ export default function HomePage() {
           </p>
           <div className="mt-2 text-sm text-neutral-300 space-y-2">
             <p>
-              All processing happens entirely client-side using JavaScript — nothing is sent to a
-              server. The tool supports 9 case formats simultaneously and displays all outputs at
-              once so you can copy whichever format you need. Conversions are instantaneous
-              regardless of text length. According to{" "}
-              <a
-                href="https://stripe.com/files/reports/the-developer-coefficient.pdf"
-                target="_blank"
-                rel="noopener"
-                className="text-blue-400 underline underline-offset-2 hover:text-blue-300 transition-colors"
-              >
-                Stripe&apos;s Developer Coefficient Report
-              </a>
-              , engineers spend up to 42% of their time maintaining unclear or &ldquo;bad&rdquo;
-              code instead of building new features — making a fast browser-based formatting tool
-              a practical time-saver.
+              The converter applies 16 deterministic JavaScript transformations in the page and
+              shows every result together, so you can compare formats before copying one. Tool input
+              is not intentionally sent to FlipMyCase or analytics. Very large text can take longer
+              to render, depending on the device and browser.
             </p>
           </div>
         </section>
@@ -239,16 +229,17 @@ export default function HomePage() {
             What text case formats does FlipMyCase support?
           </h2>
           <p className="mt-2 text-sm text-neutral-200 font-medium">
-            FlipMyCase supports 9 formats: UPPERCASE, lowercase, Title Case, Sentence case, aLtErNaTiNg CaPs, camelCase, PascalCase, snake_case, and kebab-case.
+            FlipMyCase supports 16 outputs, including UPPERCASE, lowercase, Title Case, Sentence
+            case, camelCase, PascalCase, snake_case, kebab-case, CONSTANT_CASE, dot.case, inverse
+            case, alternating styles, and a URL slug.
           </p>
           <div className="mt-2 text-sm text-neutral-300 space-y-2">
             <p>
               UPPERCASE and lowercase are the most common for basic text normalization. Title Case
-              follows publishing conventions for headings. camelCase and PascalCase are the dominant
-              naming conventions in JavaScript and TypeScript — snake_case and camelCase are used in
-              over 80% of open-source JavaScript and Python projects on GitHub. kebab-case is the
-              standard for URLs and CSS class names. Alternating case is primarily used for stylistic
-              or humorous effect on social media.
+              follows common heading conventions. camelCase and PascalCase are widely used in
+              JavaScript and TypeScript, snake_case is common in Python and SQL, and kebab-case is
+              common in URLs and CSS class names. Alternating and random-looking styles are primarily
+              useful for informal or decorative text.
             </p>
           </div>
         </section>

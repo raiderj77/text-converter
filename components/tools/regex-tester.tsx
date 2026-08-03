@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useMemo, useState } from "react";
 import { cx } from "@/lib/utils";
 import { useTheme } from "@/components/layout/theme-provider";
 
@@ -148,8 +148,13 @@ export function RegexTesterTool() {
         }
       }
       return { regex: re, error: null, matches: results, matchCount: results.length };
-    } catch (e: any) {
-      return { regex: null, error: e.message || "Invalid regex", matches: [] as MatchInfo[], matchCount: 0 };
+    } catch (error: unknown) {
+      return {
+        regex: null,
+        error: error instanceof Error ? error.message : "Invalid regex",
+        matches: [] as MatchInfo[],
+        matchCount: 0,
+      };
     }
   }, [pattern, flagStr, testStr]);
 

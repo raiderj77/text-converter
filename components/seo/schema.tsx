@@ -6,9 +6,6 @@
 import {
   SITE_NAME,
   SITE_URL,
-  AUTHOR_NAME,
-  AUTHOR_URL,
-  AUTHOR_JOB_TITLE,
   getToolBySlug,
   buildUrl,
 } from "@/lib/config";
@@ -27,39 +24,15 @@ function JsonLd({ data }: SchemaProps) {
 }
 
 /**
- * Reusable author block — embedded inside WebApp/Article schemas.
- * Keeps Person identity consistent across the site for Google author resolution.
+ * Reusable site-author block for product and reference schema.
  */
-function authorPerson() {
+function siteOrganization() {
   return {
-    "@type": "Person",
-    name: AUTHOR_NAME,
-    jobTitle: AUTHOR_JOB_TITLE,
-    url: AUTHOR_URL,
+    "@type": "Organization",
+    "@id": `${SITE_URL}#organization`,
+    name: SITE_NAME,
+    url: SITE_URL,
   };
-}
-
-/**
- * Standalone Person schema — for the about page or any page that wants
- * to emit the named-author Person directly.
- */
-export function PersonSchema() {
-  return (
-    <JsonLd
-      data={{
-        "@context": "https://schema.org",
-        "@type": "Person",
-        name: AUTHOR_NAME,
-        url: AUTHOR_URL,
-        jobTitle: AUTHOR_JOB_TITLE,
-        worksFor: {
-          "@type": "Organization",
-          name: SITE_NAME,
-          url: SITE_URL,
-        },
-      }}
-    />
-  );
 }
 
 /**
@@ -94,7 +67,7 @@ export function WebAppSchema({
     url,
     applicationCategory: "UtilitiesApplication",
     operatingSystem: "Any",
-    author: authorPerson(),
+    author: siteOrganization(),
     offers,
     browserRequirements: "Requires JavaScript",
     softwareHelp: {
@@ -213,8 +186,8 @@ export function BreadcrumbSchema({
 }
 
 /**
- * Article schema — for blog posts.
- * Includes named-author Person + Organization publisher.
+ * Article schema — for reviewed reference content.
+ * Uses the same site organization identity as the product schema.
  */
 export function ArticleSchema({
   title,
@@ -237,12 +210,8 @@ export function ArticleSchema({
         headline: title,
         description,
         mainEntityOfPage: url,
-        author: authorPerson(),
-        publisher: {
-          "@type": "Organization",
-          name: SITE_NAME,
-          url: SITE_URL,
-        },
+        author: siteOrganization(),
+        publisher: siteOrganization(),
         ...(datePublished && { datePublished }),
         ...(dateModified && { dateModified }),
       }}
@@ -260,8 +229,10 @@ export function WebSiteSchema() {
       data={{
         "@context": "https://schema.org",
         "@type": "WebSite",
+        "@id": `${SITE_URL}#website`,
         name: SITE_NAME,
         url: SITE_URL,
+        publisher: { "@id": `${SITE_URL}#organization` },
         description:
           "Free online text conversion and formatting tools",
       }}
@@ -279,6 +250,7 @@ export function OrganizationSchema() {
       data={{
         "@context": "https://schema.org",
         "@type": "Organization",
+        "@id": `${SITE_URL}#organization`,
         name: SITE_NAME,
         url: SITE_URL,
         description:

@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL, tools } from "@/lib/config";
 
-const reviewed = new Date("2026-07-12");
+const reviewed = new Date("2026-08-02");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const contentSlugSet = new Set([

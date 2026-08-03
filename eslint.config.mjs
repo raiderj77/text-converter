@@ -7,17 +7,14 @@ const eslintConfig = defineConfig([
   ...nextTs,
   {
     rules: {
-      // Existing tool components predate React 19's compiler-oriented rules.
-      // Keep these visible during the migration without blocking security and
-      // content-quality releases that do not alter the affected behavior.
       "react/no-unescaped-entities": "off",
-      "react-hooks/set-state-in-effect": "warn",
-      "react-hooks/immutability": "warn",
-      "react-hooks/preserve-manual-memoization": "warn",
-      "react-hooks/static-components": "warn",
-      "react-hooks/purity": "warn",
-      "@typescript-eslint/no-explicit-any": "warn",
-      "prefer-const": "warn",
+      "react-hooks/set-state-in-effect": "error",
+      "react-hooks/immutability": "error",
+      "react-hooks/preserve-manual-memoization": "error",
+      "react-hooks/static-components": "error",
+      "react-hooks/purity": "error",
+      "@typescript-eslint/no-explicit-any": "error",
+      "prefer-const": "error",
     },
   },
   // Override default ignores of eslint-config-next.

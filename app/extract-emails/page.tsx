@@ -57,7 +57,7 @@ const faqItems = [
   {
     question: "Is my text processed securely?",
     answer:
-      "Yes. All processing happens entirely in your browser using JavaScript. Your text is never sent to any server. No emails are stored, logged, or transmitted — making it safe for confidential documents and sensitive data.",
+      "Yes. The extractor processes text in your browser and does not intentionally send or log the email addresses. A website cannot protect input from a compromised device, browser, extension, clipboard, or screen capture, so do not paste secrets.",
   },
   {
     question: "Does the tool extract emails from HTML?",

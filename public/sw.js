@@ -1,9 +1,12 @@
-// FlipMyCase Service Worker v1
-// Cache-first for static assets, network-first for pages
+// FlipMyCase service worker: bounded static caching and privacy-safe page fallback.
 
-const CACHE_NAME = "fmc-v1";
+const CACHE_VERSION = "v2";
+const CORE_CACHE = `fmc-core-${CACHE_VERSION}`;
+const STATIC_CACHE = `fmc-static-${CACHE_VERSION}`;
+const PAGE_CACHE = `fmc-pages-${CACHE_VERSION}`;
+const STATIC_CACHE_LIMIT = 80;
+const PAGE_CACHE_LIMIT = 20;
 
-// Core assets to precache on install
 const PRECACHE_ASSETS = [
   "/",
   "/manifest.json",
@@ -11,74 +14,80 @@ const PRECACHE_ASSETS = [
   "/apple-touch-icon.png",
 ];
 
-// Install: precache core assets
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(PRECACHE_ASSETS))
+    caches.open(CORE_CACHE).then((cache) => cache.addAll(PRECACHE_ASSETS))
   );
   self.skipWaiting();
 });
 
-// Activate: clean old caches
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((keys) =>
       Promise.all(
-        keys.filter((k) => k !== CACHE_NAME).map((k) => caches.delete(k))
+        keys
+          .filter((key) => key.startsWith("fmc-") && ![CORE_CACHE, STATIC_CACHE, PAGE_CACHE].includes(key))
+          .map((key) => caches.delete(key))
       )
     )
   );
   self.clients.claim();
 });
 
-// Fetch strategy
 self.addEventListener("fetch", (event) => {
   const { request } = event;
   const url = new URL(request.url);
 
-  // Skip non-GET requests
-  if (request.method !== "GET") return;
-
-  // Skip external requests (analytics, CDNs we don't control)
-  if (url.origin !== self.location.origin) return;
-
-  // Skip API routes
+  if (request.method !== "GET" || url.origin !== self.location.origin) return;
   if (url.pathname.startsWith("/api/")) return;
 
-  // Static assets (JS, CSS, images, fonts) → Cache-first
-  if (isStaticAsset(url.pathname)) {
-    event.respondWith(cacheFirst(request));
+  if (request.mode === "navigate") {
+    // Query strings can contain private or one-time values. Never retain them.
+    if (url.search) {
+      event.respondWith(fetch(request));
+      return;
+    }
+    event.respondWith(networkFirstPage(request));
     return;
   }
 
-  // HTML pages → Network-first with cache fallback
-  event.respondWith(networkFirst(request));
+  if (isStaticAsset(url.pathname)) {
+    event.respondWith(cacheFirstStatic(request));
+  }
 });
 
 function isStaticAsset(pathname) {
   return (
     pathname.startsWith("/_next/static/") ||
     pathname.startsWith("/icons/") ||
-    pathname.endsWith(".js") ||
-    pathname.endsWith(".css") ||
-    pathname.endsWith(".png") ||
-    pathname.endsWith(".jpg") ||
-    pathname.endsWith(".svg") ||
-    pathname.endsWith(".woff") ||
-    pathname.endsWith(".woff2")
+    /\.(?:js|css|png|jpe?g|svg|webp|avif|woff2?)$/i.test(pathname)
   );
 }
 
-// Cache-first: return cached version, fall back to network and cache the response
-async function cacheFirst(request) {
+function canCache(response) {
+  return (
+    response.ok &&
+    response.type === "basic" &&
+    !/no-store/i.test(response.headers.get("Cache-Control") || "")
+  );
+}
+
+async function trimCache(cacheName, limit) {
+  const cache = await caches.open(cacheName);
+  const keys = await cache.keys();
+  await Promise.all(keys.slice(0, Math.max(0, keys.length - limit)).map((key) => cache.delete(key)));
+}
+
+async function cacheFirstStatic(request) {
   const cached = await caches.match(request);
   if (cached) return cached;
 
   try {
     const response = await fetch(request);
-    if (response.ok) {
-      const cache = await caches.open(CACHE_NAME);
-      cache.put(request, response.clone());
+    if (canCache(response)) {
+      const cache = await caches.open(STATIC_CACHE);
+      await cache.put(request, response.clone());
+      await trimCache(STATIC_CACHE, STATIC_CACHE_LIMIT);
     }
     return response;
   } catch {
@@ -86,26 +95,26 @@ async function cacheFirst(request) {
   }
 }
 
-// Network-first: try network, fall back to cache
-async function networkFirst(request) {
+async function networkFirstPage(request) {
   try {
     const response = await fetch(request);
-    if (response.ok) {
-      const cache = await caches.open(CACHE_NAME);
-      cache.put(request, response.clone());
+    if (canCache(response) && /text\/html/i.test(response.headers.get("Content-Type") || "")) {
+      const cacheName = new URL(request.url).pathname === "/" ? CORE_CACHE : PAGE_CACHE;
+      const cache = await caches.open(cacheName);
+      await cache.put(request, response.clone());
+      if (cacheName === PAGE_CACHE) await trimCache(PAGE_CACHE, PAGE_CACHE_LIMIT);
     }
     return response;
   } catch {
     const cached = await caches.match(request);
     if (cached) return cached;
 
-    // Offline fallback: return cached homepage
     const fallback = await caches.match("/");
     if (fallback) return fallback;
 
     return new Response("Offline", {
       status: 503,
-      headers: { "Content-Type": "text/html" },
+      headers: { "Content-Type": "text/plain; charset=utf-8" },
     });
   }
 }

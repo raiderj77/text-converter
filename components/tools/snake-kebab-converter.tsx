@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { cx } from "@/lib/utils";
 import { toSnakeCase, toKebabCase, toCamelCase, toPascalCase, toConstantCase } from "@/lib/conversions";
 import { useTheme } from "@/components/layout/theme-provider";
+import { deferStorageHydration, persistAfterStorageHydration, safeGetLocalStorage, useStorageHydrationGate } from "@/lib/storage-hydration";
 
 export function SnakeKebabConverterTool() {
   const { isDark } = useTheme();
@@ -11,17 +12,20 @@ export function SnakeKebabConverterTool() {
   const [toast, setToast] = useState("");
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
   const [preserveCase, setPreserveCase] = useState(false);
+  const storageHydration = useStorageHydrationGate();
 
   // Load saved text on mount
   useEffect(() => {
-    const saved = localStorage.getItem("fmc_snake_kebab_text");
-    if (saved) setText(saved);
-  }, []);
+    const saved = safeGetLocalStorage("fmc_snake_kebab_text");
+    return deferStorageHydration(storageHydration, () => {
+      if (saved) setText(saved);
+    });
+  }, [storageHydration]);
 
   // Persist text changes
   useEffect(() => {
-    localStorage.setItem("fmc_snake_kebab_text", text);
-  }, [text]);
+    persistAfterStorageHydration(storageHydration, () => localStorage.setItem("fmc_snake_kebab_text", text));
+  }, [text, storageHydration]);
 
   // Ctrl/Cmd+K focuses input
   useEffect(() => {
@@ -66,7 +70,7 @@ export function SnakeKebabConverterTool() {
       await navigator.clipboard.writeText(content);
       setToast(`Copied ${label} to clipboard`);
       setTimeout(() => setToast(""), 2000);
-    } catch (err) {
+    } catch {
       setToast("Failed to copy");
       setTimeout(() => setToast(""), 2000);
     }

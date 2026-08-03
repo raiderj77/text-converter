@@ -53,7 +53,7 @@ const faqItems = [
   {
     question: "Does this tool handle apostrophes?",
     answer:
-      "Yes. In Straighten mode, curly apostrophes (\u2019) are converted to straight apostrophes ('). In Typeset mode, straight apostrophes are intelligently converted to curly ones based on context\u2014after a letter it becomes a closing/apostrophe mark, and at the start of a word it becomes an opening single quote.",
+      "Yes. Straighten mode converts curly apostrophes to straight marks. Typeset mode uses deterministic rules for common English contractions, leading elisions such as \u2019tis and the \u201990s, nested single quotations, and feet-and-inches measurements such as 6\u20322\u2033. Ambiguous or language-specific quote styles may still need editorial review.",
   },
   {
     question: "Is my text sent to a server?",
@@ -167,16 +167,18 @@ export default function SmartQuotesConverterPage() {
               distinct Unicode characters that look similar to hyphens but behave differently.
               An em dash copied from a Word document into a URL, filename, or command-line
               argument can cause silent failures. This tool converts em dashes to double
-              hyphens (--) and en dashes to regular hyphens (-) in Straighten mode, and
-              reverses the process in Typeset mode.
+              hyphens (--) and en dashes to regular hyphens (-) in Straighten mode.
+              Typeset mode converts double hyphens to em dashes; it does not infer en
+              dashes from ordinary hyphens.
             </p>
             <p>
               <strong className="text-neutral-200">When to typeset.</strong> If you are
               preparing content for publication\u2014a blog post, newsletter, book manuscript,
               or marketing copy\u2014typographic quotes and proper em dashes signal attention
-              to detail and professionalism. The Typeset mode converts your plain-text drafts
-              into publication-ready text with proper curly quotes and em dashes, saving you
-              from manually inserting special characters.
+              to detail and professionalism. Typeset mode handles common English quote and
+              apostrophe patterns and converts double hyphens to em dashes, giving you a cleaner
+              draft. Because quotation style can depend on language and context, review the
+              result before publishing.
             </p>
             <p>
               <strong className="text-neutral-200">Best practice.</strong> Write in whatever

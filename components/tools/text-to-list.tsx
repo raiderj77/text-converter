@@ -262,7 +262,7 @@ export function TextToListTool() {
 
       <div className={cx("text-xs text-center", muted)}>
         Split by line, sentence, comma, or custom delimiter · All processing in
-        your browser · Ctrl/⌘ + L toggles theme
+        your browser
       </div>
 
       {toast && (

@@ -4,8 +4,10 @@
  * stable integration points without rendering empty space or allowing a stale
  * deployment environment variable to activate advertising accidentally.
  *
- * A future advertising release must replace this no-op only after approval,
- * policy review, and a certified consent platform are all verified.
+ * A future advertising release must replace this no-op only after the site is
+ * Ready in AdSense, ads.txt is authorized, a current certified CMP is live,
+ * and the production CSP has passed the strict-CSP migration gate documented
+ * in docs/ADSENSE_READINESS.md.
  */
 
 type AdSlotProps = {
@@ -14,6 +16,7 @@ type AdSlotProps = {
   adFormat?: "rectangle" | "leaderboard" | "skyscraper" | "auto";
 };
 
-export function AdSlot(_props: AdSlotProps) {
+export function AdSlot(props: AdSlotProps) {
+  void props;
   return null;
 }

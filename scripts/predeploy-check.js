@@ -1,6 +1,6 @@
 /**
  * predeploy-check.js — Empire Build Standards compliance check for flipmycase.com
- * Validates: ads.txt, robots.txt, llms.txt, legal pages, cross-site links, security headers
+ * Validates: ads.txt, robots.txt, llms.txt, legal pages, navigation, security headers
  * Exit code 1 on failure, 0 on pass.
  */
 
@@ -43,6 +43,16 @@ check("ads.txt", () => {
     pass("OWNERDOMAIN directive present");
   } else {
     fail("OWNERDOMAIN directive missing from ads.txt");
+  }
+  if (/^OWNERDOMAIN=flipmycase\.com\s*$/im.test(content)) {
+    pass("OWNERDOMAIN identifies the site owner");
+  } else {
+    fail("OWNERDOMAIN must be flipmycase.com");
+  }
+  if (/^MANAGERDOMAIN=/im.test(content)) {
+    fail("MANAGERDOMAIN must be omitted unless an external monetization manager is verified");
+  } else {
+    pass("No unverified MANAGERDOMAIN directive");
   }
 });
 
@@ -124,26 +134,22 @@ check("Legal pages", () => {
 });
 
 // ---------------------------------------------------------------------------
-// 5. Cross-site sister links
+// 5. Navigation integrity
 // ---------------------------------------------------------------------------
-check("Cross-site links", () => {
+check("Navigation integrity", () => {
   const footerPath = resolve(ROOT, "components/layout/footer.tsx");
   if (!existsSync(footerPath)) return fail("components/layout/footer.tsx not found");
   const footer = readFileSync(footerPath, "utf-8");
-
-  const sisterSites = [
-    "fibertools.app",
-    "mindchecktools.com",
-    "creatorrevenuecalculator.com",
-    "contractextract.com",
-    "medicalbillreader.com",
-    "524tracker.com",
-  ];
-  for (const site of sisterSites) {
-    if (footer.includes(site)) {
-      pass(`Link to ${site}`);
+  if (/https?:\/\//i.test(footer)) {
+    fail("Footer must not contain a reciprocal portfolio-wide external link scheme");
+  } else {
+    pass("Footer contains only first-party navigation");
+  }
+  for (const route of ["/tools", "/about", "/contact", "/privacy", "/terms", "/cookies", "/accessibility"]) {
+    if (footer.includes(`href=\"${route}\"`)) {
+      pass(`Footer links to ${route}`);
     } else {
-      fail(`Missing cross-site link to ${site} in Footer`);
+      fail(`Footer is missing ${route}`);
     }
   }
 });

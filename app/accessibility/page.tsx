@@ -23,7 +23,7 @@ export default function AccessibilityPage() {
 
       <h2>Our Commitment</h2>
       <p>
-        We use WCAG 2.1 Level AA as a design target. This statement is not a certification that every route or interaction currently conforms.
+        We use WCAG 2.2 Level AA as a design target. This statement is not a certification that every route or interaction currently conforms.
       </p>
 
       <h2>Measures Taken</h2>
@@ -86,7 +86,7 @@ export default function AccessibilityPage() {
 
       <h2>Date</h2>
         <p>
-          This statement was created on February 20, 2026.
+          This statement was created on February 20, 2026 and last reviewed on August 2, 2026.
         </p>
       </div>
     </>

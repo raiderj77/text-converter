@@ -276,7 +276,7 @@ export function QrCodeGeneratorTool() {
       </div>
 
       {/* QR Output */}
-      <div className={cx("rounded-xl border p-4", base)} aria-live="polite">
+      <div className={cx("rounded-xl border p-4", base)}>
         <div className="flex items-center justify-between mb-3">
           <h3 className="text-sm font-semibold">QR Code</h3>
           {generated && (

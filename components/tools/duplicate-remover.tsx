@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { cx, formatNumber } from "@/lib/utils";
 import { useTheme } from "@/components/layout/theme-provider";
+import { deferStorageHydration, persistAfterStorageHydration, safeGetLocalStorage, useStorageHydrationGate } from "@/lib/storage-hydration";
 
 type SortMode = "original" | "asc" | "desc";
 
@@ -15,17 +16,20 @@ export function DuplicateRemoverTool() {
   const [sortMode, setSortMode] = useState<SortMode>("original");
   const [toast, setToast] = useState("");
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
+  const storageHydration = useStorageHydrationGate();
 
   // Load saved text
   useEffect(() => {
-    const saved = localStorage.getItem("fmc_dr_text");
-    if (saved) setText(saved);
-  }, []);
+    const saved = safeGetLocalStorage("fmc_dr_text");
+    return deferStorageHydration(storageHydration, () => {
+      if (saved) setText(saved);
+    });
+  }, [storageHydration]);
 
   // Persist text
   useEffect(() => {
-    localStorage.setItem("fmc_dr_text", text);
-  }, [text]);
+    persistAfterStorageHydration(storageHydration, () => localStorage.setItem("fmc_dr_text", text));
+  }, [text, storageHydration]);
 
   // Ctrl/Cmd+K focuses input
   useEffect(() => {
@@ -71,7 +75,7 @@ export function DuplicateRemoverTool() {
     }
 
     // Sort
-    let sorted = [...unique];
+    const sorted = [...unique];
     if (sortMode === "asc") {
       sorted.sort((a, b) => a.localeCompare(b));
     } else if (sortMode === "desc") {
@@ -368,7 +372,7 @@ export function DuplicateRemoverTool() {
           isDark ? "text-neutral-400" : "text-neutral-600"
         )}
       >
-        Ctrl/⌘ + K focuses input · Ctrl/⌘ + L toggles theme
+        Ctrl/⌘ + K focuses input
       </div>
 
       {/* Toast */}

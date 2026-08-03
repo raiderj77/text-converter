@@ -8,7 +8,7 @@ import { useTheme } from "@/components/layout/theme-provider";
 function countSyllables(word: string): number {
   const w = word.toLowerCase().replace(/[^a-z]/g, "");
   if (w.length <= 3) return 1;
-  let count = w.replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, "")
+  const count = w.replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, "")
     .replace(/^y/, "")
     .match(/[aeiouy]{1,2}/g)?.length || 1;
   return Math.max(1, count);

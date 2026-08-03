@@ -1,6 +1,6 @@
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
-import { SITE_URL, getToolBySlug, buildUrl } from "@/lib/config";
+import { getToolBySlug, buildUrl } from "@/lib/config";
 import { WebAppSchema, FaqSchema, BreadcrumbSchema } from "@/components/seo/schema";
 import { TextSorterTool } from "@/components/tools/text-sorter";
 import { AdSlot } from "@/components/ui/ad-slot";

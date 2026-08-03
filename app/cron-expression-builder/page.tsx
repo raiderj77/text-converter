@@ -42,7 +42,7 @@ const faqItems = [
   {
     question: "What does the slash (/) mean in cron?",
     answer:
-      "The slash (/) defines step values. For example, */5 in the minute field means \"every 5 minutes\" (0, 5, 10, 15...). You can also combine it with a starting value: 3/10 in the minute field means \"every 10 minutes starting at minute 3\" (3, 13, 23, 33, 43, 53).",
+      "The slash (/) defines step values. For example, */5 in the minute field means \"every 5 minutes\" (0, 5, 10, 15...). To start at minute 3, use the standard range/step form 3-59/10, which runs at minutes 3, 13, 23, 33, 43, and 53.",
   },
   {
     question: "How do I schedule a job for weekdays only?",
@@ -57,7 +57,7 @@ const faqItems = [
   {
     question: "Can I use cron expressions in cloud services?",
     answer:
-      "Yes. AWS EventBridge (CloudWatch Events), Google Cloud Scheduler, Azure Functions, GitHub Actions, Vercel Cron, and most CI/CD platforms support cron expressions for scheduling. Some services use a slightly modified syntax, but the 5-field format built by this tool is the standard that most platforms accept.",
+      "Many services support cron-style schedules, but their formats differ. Google Cloud Scheduler, GitHub Actions, and Vercel Cron accept five-field expressions. AWS EventBridge uses a six-field variant, Azure Functions uses a six-field NCRONTAB variant, and Azure Logic Apps uses recurrence-trigger settings rather than this same five-field format. Check the provider's documentation before deploying a schedule.",
   },
   {
     question: "What does 0 0 1 * * mean?",
@@ -171,12 +171,13 @@ export default function CronExpressionBuilderPage() {
             </p>
             <p>
               <strong className="text-neutral-200">Modern cloud platforms</strong> have
-              adopted cron syntax as the standard for scheduled triggers. AWS
-              EventBridge uses cron expressions to trigger Lambda functions.
-              Google Cloud Scheduler and Azure Logic Apps accept the same format.
-              GitHub Actions, GitLab CI, and Vercel all support cron-based
-              scheduling for workflows and serverless functions. Learning cron
-              once gives you scheduling capability across all major platforms.
+              adopted cron-style schedules for automated triggers. Google Cloud
+              Scheduler, GitHub Actions, GitLab CI, and Vercel use five-field
+              schedules. AWS EventBridge uses a six-field cron variant, Azure
+              Functions uses six-field NCRONTAB, and Azure Logic Apps uses
+              recurrence-trigger settings instead of this same format. Cron
+              concepts transfer between platforms, but you should verify each
+              provider&apos;s syntax before deploying a schedule.
             </p>
             <p>
               <strong className="text-neutral-200">Common pitfalls</strong> include

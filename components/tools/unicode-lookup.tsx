@@ -365,7 +365,7 @@ export function UnicodeLookupTool() {
 
       {/* Keyboard shortcut hint */}
       <div className={cx("mt-6 text-xs text-center", muted)}>
-        Click any character to copy &middot; Ctrl/Cmd + K focuses search &middot; Ctrl/Cmd + L toggles theme
+        Click any character to copy &middot; Ctrl/Cmd + K focuses search
       </div>
 
       {/* Toast */}

@@ -24,5 +24,5 @@
 ## Important limitations
 - Browser-local processing does not make a device or browser extension inherently secure.
 - Results should be reviewed before use in production code, legal documents, or security-sensitive workflows.
-- Google AdSense, Google Analytics, and Microsoft Clarity are currently disabled.
+- Google AdSense and Microsoft Clarity are disabled. Optional Google Analytics loads only after opt-in; tool input is not intentionally included in analytics events.
 - The former scaled article archive is not part of the reviewed public site.

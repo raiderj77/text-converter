@@ -42,8 +42,11 @@ export function FindAndReplaceTool() {
       const flags = caseSensitive ? "g" : "gi";
       const re = new RegExp(pattern, flags);
       return { regex: re, regexError: null };
-    } catch (e: any) {
-      return { regex: null, regexError: e.message || "Invalid regex" };
+    } catch (error: unknown) {
+      return {
+        regex: null,
+        regexError: error instanceof Error ? error.message : "Invalid regex",
+      };
     }
   }, [findStr, caseSensitive, wholeWord, regexMode]);
 
@@ -333,7 +336,7 @@ export function FindAndReplaceTool() {
       )}
 
       <div className={cx("text-xs text-center", muted)}>
-        Live match highlighting · Regex support · All processing in your browser · Ctrl/⌘ + L toggles theme
+        Live match highlighting · Regex support · All processing in your browser
       </div>
 
       {toast && (

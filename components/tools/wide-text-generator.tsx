@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { cx } from "@/lib/utils";
 import { useTheme } from "@/components/layout/theme-provider";
+import { deferStorageHydration, persistAfterStorageHydration, safeGetLocalStorage, useStorageHydrationGate } from "@/lib/storage-hydration";
 
 const STORAGE_KEY = "fmc_wide_text_generator";
 
@@ -41,27 +42,29 @@ export function WideTextGeneratorTool() {
     : "bg-black/5 hover:bg-black/10 border-black/10";
   const muted = isDark ? "text-neutral-400" : "text-neutral-600";
 
+  const storageHydration = useStorageHydrationGate();
+
   // Load from localStorage
   useEffect(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        if (parsed.input) setInput(parsed.input);
+    const saved = safeGetLocalStorage(STORAGE_KEY);
+    return deferStorageHydration(storageHydration, () => {
+      try {
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          if (typeof parsed.input === "string") setInput(parsed.input);
+        }
+      } catch {
+        // ignore
       }
-    } catch {
-      // ignore
-    }
-  }, []);
+    });
+  }, [storageHydration]);
 
   // Save to localStorage
   useEffect(() => {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({ input }));
-    } catch {
-      // ignore
-    }
-  }, [input]);
+    persistAfterStorageHydration(storageHydration, () => {
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ input })); } catch { /* ignore */ }
+    });
+  }, [input, storageHydration]);
 
   const output = toFullwidth(input);
 

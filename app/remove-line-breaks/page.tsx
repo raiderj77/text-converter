@@ -59,7 +59,7 @@ const faqItems = [
   {
     question: "Is my text processed securely?",
     answer:
-      "Yes. All processing happens entirely in your browser using JavaScript. Your text is never sent to any server, making it safe for confidential documents, emails, and private content.",
+      "Yes. The tool processes text in your browser and does not intentionally send it to FlipMyCase or analytics. Browser-local processing cannot protect input from a compromised device or extension, so do not paste credentials or other secrets.",
   },
 ];
 

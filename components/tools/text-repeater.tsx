@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { cx } from "@/lib/utils";
 import { useTheme } from "@/components/layout/theme-provider";
+import { deferStorageHydration, persistAfterStorageHydration, safeGetLocalStorage, useStorageHydrationGate } from "@/lib/storage-hydration";
 
 type SeparatorType = "newline" | "space" | "comma" | "tab" | "custom";
 
@@ -53,34 +54,45 @@ export function TextRepeaterTool() {
   const [customSeparator, setCustomSeparator] = useState(" | ");
   const [numbered, setNumbered] = useState(false);
   const [toast, setToast] = useState("");
+  const storageHydration = useStorageHydrationGate();
 
   // Persist input to localStorage
   useEffect(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        if (parsed.input) setInput(parsed.input);
-        if (parsed.count) setCount(parsed.count);
-        if (parsed.separatorType) setSeparatorType(parsed.separatorType);
-        if (parsed.customSeparator !== undefined) setCustomSeparator(parsed.customSeparator);
-        if (parsed.numbered !== undefined) setNumbered(parsed.numbered);
+    const saved = safeGetLocalStorage(STORAGE_KEY);
+    return deferStorageHydration(storageHydration, () => {
+      try {
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          if (typeof parsed.input === "string") setInput(parsed.input);
+          if (typeof parsed.count === "number") setCount(parsed.count);
+          if (
+            parsed.separatorType === "newline" ||
+            parsed.separatorType === "space" ||
+            parsed.separatorType === "comma" ||
+            parsed.separatorType === "tab" ||
+            parsed.separatorType === "custom"
+          ) {
+            setSeparatorType(parsed.separatorType);
+          }
+          if (typeof parsed.customSeparator === "string") setCustomSeparator(parsed.customSeparator);
+          if (typeof parsed.numbered === "boolean") setNumbered(parsed.numbered);
+        }
+      } catch {
+        // ignore
       }
-    } catch {
-      // ignore
-    }
-  }, []);
+    });
+  }, [storageHydration]);
 
   useEffect(() => {
-    try {
-      localStorage.setItem(
-        STORAGE_KEY,
-        JSON.stringify({ input, count, separatorType, customSeparator, numbered })
-      );
-    } catch {
-      // ignore
-    }
-  }, [input, count, separatorType, customSeparator, numbered]);
+    persistAfterStorageHydration(storageHydration, () => {
+      try {
+        localStorage.setItem(
+          STORAGE_KEY,
+          JSON.stringify({ input, count, separatorType, customSeparator, numbered })
+        );
+      } catch { /* ignore */ }
+    });
+  }, [input, count, separatorType, customSeparator, numbered, storageHydration]);
 
   const separator = getSeparator(separatorType, customSeparator);
   const fullOutput = useMemo(

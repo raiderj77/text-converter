@@ -159,7 +159,7 @@ export default function TextDiffPage() {
               { emoji: "⬆️⬇️", title: "Diff Navigation", desc: "Prev/Next buttons jump between changes with a counter showing your position." },
               { emoji: "🔠", title: "Ignore Case & Whitespace", desc: "Filter out capitalization and spacing differences to focus on real content changes." },
               { emoji: "📋", title: "Copy Unified Diff", desc: "Export the comparison in standard unified diff format — paste into PRs, docs, or emails." },
-              { emoji: "🔒", title: "100% Private", desc: "All processing in your browser. No uploads, no server, no tracking. Your text never leaves your device." },
+              { emoji: "🔒", title: "Browser-local comparison", desc: "The diff tool does not intentionally upload or log either text block. Optional analytics receives only a sanitized page path." },
             ].map((f) => (
               <div key={f.title} className="rounded-xl border border-white/10 bg-neutral-900 p-4">
                 <div className="text-lg mb-1">{f.emoji}</div>

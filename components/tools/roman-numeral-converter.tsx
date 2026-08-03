@@ -1,8 +1,9 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { cx } from "@/lib/utils";
 import { useTheme } from "@/components/layout/theme-provider";
+import { deferStorageHydration, persistAfterStorageHydration, safeGetLocalStorage, useStorageHydrationGate } from "@/lib/storage-hydration";
 
 /* ── Conversion logic ──────────────────────────────── */
 
@@ -62,59 +63,51 @@ export function RomanNumeralConverterTool() {
 
   const [mode, setMode] = useState<Mode>("to-roman");
   const [input, setInput] = useState("");
-  const [output, setOutput] = useState("");
-  const [error, setError] = useState("");
   const [copied, setCopied] = useState(false);
+  const storageHydration = useStorageHydrationGate();
 
   // Load from localStorage
   useEffect(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        const data = JSON.parse(saved);
-        if (typeof data.mode === "string") setMode(data.mode);
-        if (typeof data.input === "string") setInput(data.input);
-      }
-    } catch { /* ignore */ }
-  }, []);
+    const saved = safeGetLocalStorage(STORAGE_KEY);
+    return deferStorageHydration(storageHydration, () => {
+      try {
+        if (saved) {
+          const data = JSON.parse(saved);
+          if (data.mode === "to-roman" || data.mode === "to-decimal" || data.mode === "date") {
+            setMode(data.mode);
+          }
+          if (typeof data.input === "string") setInput(data.input);
+        }
+      } catch { /* ignore */ }
+    });
+  }, [storageHydration]);
 
   useEffect(() => {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({ mode, input }));
-    } catch { /* ignore */ }
-  }, [mode, input]);
+    persistAfterStorageHydration(storageHydration, () => {
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ mode, input })); } catch { /* ignore */ }
+    });
+  }, [mode, input, storageHydration]);
 
-  // Convert on change
-  useEffect(() => {
-    setError("");
-    setCopied(false);
+  const { output, error } = useMemo(() => {
     if (!input.trim()) {
-      setOutput("");
-      return;
+      return { output: "", error: "" };
     }
 
     if (mode === "to-roman" || mode === "date") {
       const num = parseInt(input, 10);
       if (isNaN(num)) {
-        setError("Enter a valid number.");
-        setOutput("");
-        return;
+        return { output: "", error: "Enter a valid number." };
       }
       if (num < 1 || num > 3999) {
-        setError("Number must be between 1 and 3999.");
-        setOutput("");
-        return;
+        return { output: "", error: "Number must be between 1 and 3999." };
       }
-      setOutput(toRoman(num));
-    } else {
-      const result = fromRoman(input);
-      if (result === 0) {
-        setError("Invalid Roman numeral.");
-        setOutput("");
-        return;
-      }
-      setOutput(result.toString());
+      return { output: toRoman(num), error: "" };
     }
+
+    const result = fromRoman(input);
+    return result === 0
+      ? { output: "", error: "Invalid Roman numeral." }
+      : { output: result.toString(), error: "" };
   }, [input, mode]);
 
   const copyOutput = useCallback(() => {
@@ -126,8 +119,7 @@ export function RomanNumeralConverterTool() {
   const handleModeChange = useCallback((newMode: Mode) => {
     setMode(newMode);
     setInput("");
-    setOutput("");
-    setError("");
+    setCopied(false);
   }, []);
 
   // Theme styles

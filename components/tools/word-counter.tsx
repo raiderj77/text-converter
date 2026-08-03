@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { cx, formatNumber, readingTime, speakingTime } from "@/lib/utils";
 import { useTheme } from "@/components/layout/theme-provider";
+import { deferStorageHydration, persistAfterStorageHydration, safeGetLocalStorage, useStorageHydrationGate } from "@/lib/storage-hydration";
 
 /** Social media character limits */
 const SOCIAL_LIMITS = [
@@ -138,17 +139,20 @@ export function WordCounterTool() {
   const [text, setText] = useState("");
   const [showStopWords, setShowStopWords] = useState(false);
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
+  const storageHydration = useStorageHydrationGate();
 
   // Load saved text
   useEffect(() => {
-    const saved = localStorage.getItem("fmc_wc_text");
-    if (saved) setText(saved);
-  }, []);
+    const saved = safeGetLocalStorage("fmc_wc_text");
+    return deferStorageHydration(storageHydration, () => {
+      if (saved) setText(saved);
+    });
+  }, [storageHydration]);
 
   // Persist text
   useEffect(() => {
-    localStorage.setItem("fmc_wc_text", text);
-  }, [text]);
+    persistAfterStorageHydration(storageHydration, () => localStorage.setItem("fmc_wc_text", text));
+  }, [text, storageHydration]);
 
   // Ctrl/Cmd+K focuses input
   useEffect(() => {
@@ -358,7 +362,7 @@ export function WordCounterTool() {
         </div>
         {topWords.length > 0 ? (
           <div className="mt-2 grid grid-cols-2 sm:grid-cols-5 gap-2">
-            {topWords.map(({ word, count }, i) => {
+            {topWords.map(({ word, count }) => {
               const maxCount = topWords[0].count;
               const barPct = (count / maxCount) * 100;
               const density =
@@ -418,7 +422,7 @@ export function WordCounterTool() {
           isDark ? "text-neutral-400" : "text-neutral-600"
         )}
       >
-        Ctrl/⌘ + K focuses input · Ctrl/⌘ + L toggles theme
+        Ctrl/⌘ + K focuses input
       </div>
     </div>
   );

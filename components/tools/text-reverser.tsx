@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { cx } from "@/lib/utils";
+import { useCallback, useEffect, useState } from "react";
 
 type ReverseMode = "characters" | "words" | "lines" | "mirror";
 
@@ -14,7 +13,7 @@ export function TextReverserTool() {
   const [preservePunctuation, setPreservePunctuation] = useState(true);
 
   // Reverse functions
-  const reverseText = () => {
+  const reverseText = useCallback(() => {
     if (!input.trim()) {
       setOutput("");
       return;
@@ -130,13 +129,13 @@ export function TextReverserTool() {
     }
     
     setOutput(result);
-  };
+  }, [input, mode, preserveSpacing, preserveLineBreaks, preservePunctuation]);
 
   // Auto-reverse when input or options change
   useEffect(() => {
     const timeout = setTimeout(reverseText, 300);
     return () => clearTimeout(timeout);
-  }, [input, mode, preserveSpacing, preserveLineBreaks, preservePunctuation]);
+  }, [reverseText]);
 
   const handleExample = () => {
     const example = `Hello world!

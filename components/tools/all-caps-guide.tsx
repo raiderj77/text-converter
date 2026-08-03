@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useMemo, useState } from "react";
 
 type ContextType = "email" | "social" | "code" | "legal" | "design" | "safety";
 
@@ -109,43 +109,30 @@ const contextRules = [
 
 export function AllCapsGuideTool() {
   const [inputText, setInputText] = useState("This is important information");
-  const [convertedExamples, setConvertedExamples] = useState<ContextExample[]>(initialExamples);
   const [copiedType, setCopiedType] = useState<ContextType | null>(null);
-  const [analysisResult, setAnalysisResult] = useState({
-    score: 0,
-    recommendation: "Analyzing...",
-    reasoning: "",
-  });
 
-  // Update examples when input changes
-  useEffect(() => {
+  const convertedExamples = useMemo<ContextExample[]>(() => {
     if (!inputText.trim()) {
-      setConvertedExamples(initialExamples);
-      return;
+      return initialExamples;
     }
 
-    const updated = initialExamples.map(example => ({
+    return initialExamples.map(example => ({
       ...example,
       example: inputText.toUpperCase(),
     }));
-
-    setConvertedExamples(updated);
   }, [inputText]);
 
-  // Analyze the input text
-  useEffect(() => {
+  const analysisResult = useMemo(() => {
     if (!inputText.trim()) {
-      setAnalysisResult({
+      return {
         score: 0,
         recommendation: "Enter text to analyze",
         reasoning: "",
-      });
-      return;
+      };
     }
 
     const text = inputText;
     const wordCount = text.split(/\s+/).length;
-    const charCount = text.length;
     const capsRatio = (text.match(/[A-Z]/g) || []).length / Math.max(1, text.match(/[a-zA-Z]/g)?.length || 1);
     
     let score = 5;
@@ -174,11 +161,11 @@ export function AllCapsGuideTool() {
     else if (score >= 5) recommendation = "Use Caution";
     else recommendation = "Avoid";
 
-    setAnalysisResult({
+    return {
       score,
       recommendation,
       reasoning,
-    });
+    };
   }, [inputText]);
 
   const handleCopy = async (text: string, type: ContextType) => {
@@ -354,7 +341,7 @@ export function AllCapsGuideTool() {
                     )}
                   </button>
                 </div>
-                <div className="p-3 bg-black rounded-lg text-sm font-mono tracking-wider overflow-x-auto">
+                <div className="keep-dark-surface p-3 rounded-lg text-sm font-mono tracking-wider overflow-x-auto">
                   {item.example}
                 </div>
               </div>

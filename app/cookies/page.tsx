@@ -21,8 +21,9 @@ export default function CookiesPage() {
         <p className="mt-3">
           FlipMyCase does not currently load Google AdSense or Microsoft Clarity. Google Analytics
           remains blocked until you select &quot;Allow analytics.&quot; If allowed, it may set analytics
-          cookies after receiving only a sanitized page title and path. Text, files, generated output,
-          tool settings, and URL query strings are not included in these page views.
+          cookies and process a sanitized page title and path together with standard technical,
+          device, engagement, and analytics-identifier data. Text, files, generated output, tool
+          settings, and URL query strings are not intentionally included in analytics events.
         </p>
 
         <h2 className="mt-8 text-xl font-semibold text-white">Local storage</h2>
@@ -38,8 +39,8 @@ export default function CookiesPage() {
         <h2 className="mt-8 text-xl font-semibold text-white">Offline cache</h2>
         <p className="mt-3">
           A service worker may cache site code, styles, and other public files for performance and
-          offline use. The cache is stored on your device and does not contain a server copy of your
-          tool input.
+          offline use. Local caches are bounded, and navigations with URL query strings are not cached.
+          The cache is stored on your device and does not contain a server copy of your tool input.
         </p>
 
         <h2 className="mt-8 text-xl font-semibold text-white">How to clear site data</h2>

@@ -68,7 +68,8 @@ export default function TermsPage() {
 
       <h2>Third-Party Services and Advertising</h2>
       <p>
-        Google AdSense, Google Analytics, and Microsoft Clarity are currently disabled.
+        Google AdSense and Microsoft Clarity are currently disabled. Google Analytics loads only
+        after a visitor explicitly allows the optional analytics described in the Privacy Policy.
         External websites linked from FlipMyCase have their own terms and privacy practices.
         We are not responsible for external content or services.
       </p>
@@ -101,7 +102,7 @@ export default function TermsPage() {
         <a href="/contact">Contact page</a>.
       </p>
 
-        <p className="text-sm text-gray-400 mt-1 mb-4 text-center">Last updated: March 25, 2026</p>
+        <p className="text-sm text-gray-400 mt-1 mb-4 text-center">Last updated: August 2, 2026</p>
       </div>
     </>
   );

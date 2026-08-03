@@ -177,7 +177,7 @@ export function StringEncoderTool() {
     return direction === "encode"
       ? encoding.encode(text)
       : encoding.decode(text);
-  }, [text, selected, direction, encoding]);
+  }, [text, direction, encoding]);
 
   async function copyOutput() {
     try {
@@ -392,7 +392,7 @@ export function StringEncoderTool() {
           isDark ? "text-neutral-400" : "text-neutral-600"
         )}
       >
-        Ctrl/⌘ + K focuses input · Ctrl/⌘ + L toggles theme
+        Ctrl/⌘ + K focuses input
       </div>
 
       {/* Toast */}

@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { cx } from "@/lib/utils";
 import { useTheme } from "@/components/layout/theme-provider";
+import { deferStorageHydration, persistAfterStorageHydration, safeGetLocalStorage, useStorageHydrationGate } from "@/lib/storage-hydration";
 
 const STORAGE_KEY = "fmc_bubble_text_generator";
 
@@ -74,28 +75,30 @@ export function BubbleTextGeneratorTool() {
     ? "bg-emerald-700 hover:bg-emerald-600 border-emerald-600 text-white"
     : "bg-emerald-700 hover:bg-emerald-600 border-emerald-700 text-white";
 
+  const storageHydration = useStorageHydrationGate();
+
   // Load from localStorage
   useEffect(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        if (parsed.input) setInput(parsed.input);
-        if (typeof parsed.filled === "boolean") setFilled(parsed.filled);
+    const saved = safeGetLocalStorage(STORAGE_KEY);
+    return deferStorageHydration(storageHydration, () => {
+      try {
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          if (typeof parsed.input === "string") setInput(parsed.input);
+          if (typeof parsed.filled === "boolean") setFilled(parsed.filled);
+        }
+      } catch {
+        // ignore
       }
-    } catch {
-      // ignore
-    }
-  }, []);
+    });
+  }, [storageHydration]);
 
   // Save to localStorage
   useEffect(() => {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({ input, filled }));
-    } catch {
-      // ignore
-    }
-  }, [input, filled]);
+    persistAfterStorageHydration(storageHydration, () => {
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ input, filled })); } catch { /* ignore */ }
+    });
+  }, [input, filled, storageHydration]);
 
   const output = filled ? toCircledFilled(input) : toCircledEmpty(input);
 

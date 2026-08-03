@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { cx } from "@/lib/utils";
 import { useTheme } from "@/components/layout/theme-provider";
+import { deferStorageHydration, persistAfterStorageHydration, safeGetLocalStorage, useStorageHydrationGate } from "@/lib/storage-hydration";
 
 /* ── Color conversion helpers ─────────────────────────────── */
 
@@ -108,9 +109,64 @@ function wcagLabel(ratio: number, level: "AA" | "AAA", size: "normal" | "large")
   return size === "normal" ? ratio >= 7 : ratio >= 4.5;
 }
 
+function normalizeRgb(rgb: RGB) {
+  const normalized: RGB = {
+    r: clamp(Math.round(rgb.r), 0, 255),
+    g: clamp(Math.round(rgb.g), 0, 255),
+    b: clamp(Math.round(rgb.b), 0, 255),
+  };
+  const hsl = rgbToHsl(normalized);
+  const cmyk = rgbToCmyk(normalized);
+  return {
+    rgb: normalized,
+    hexInput: rgbToHex(normalized),
+    rgbInput: `${normalized.r}, ${normalized.g}, ${normalized.b}`,
+    hslInput: `${hsl.h}, ${hsl.s}%, ${hsl.l}%`,
+    cmykInput: `${cmyk.c}, ${cmyk.m}, ${cmyk.y}, ${cmyk.k}`,
+  };
+}
+
 /* ── Component ────────────────────────────────────────────── */
 
 const STORAGE_KEY = "fmc_color_converter";
+
+function PassBadge({ pass, isDark }: { pass: boolean; isDark: boolean }) {
+  return (
+    <span className={cx(
+      "inline-block rounded px-1.5 py-0.5 text-xs font-bold",
+      pass
+        ? isDark ? "bg-emerald-500/20 text-emerald-400" : "bg-emerald-100 text-emerald-700"
+        : isDark ? "bg-red-500/20 text-red-400" : "bg-red-100 text-red-700"
+    )}>
+      {pass ? "Pass" : "Fail"}
+    </span>
+  );
+}
+
+function CopyButton({
+  value,
+  label,
+  copied,
+  buttonClass,
+  onCopy,
+}: {
+  value: string;
+  label: string;
+  copied: string;
+  buttonClass: string;
+  onCopy: (value: string, label: string) => void;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={() => onCopy(value, label)}
+      className={cx("rounded-md border px-2 py-0.5 text-xs transition-colors min-h-[44px] min-w-[44px] shrink-0", buttonClass)}
+      aria-label={`Copy ${label}`}
+    >
+      {copied === label ? "Copied!" : "Copy"}
+    </button>
+  );
+}
 
 export function ColorCodeConverterTool() {
   const { isDark } = useTheme();
@@ -121,39 +177,46 @@ export function ColorCodeConverterTool() {
   const [hslInput, setHslInput] = useState("217, 91%, 60%");
   const [cmykInput, setCmykInput] = useState("76, 47, 0, 4");
   const [copied, setCopied] = useState("");
+  const storageHydration = useStorageHydrationGate();
 
-  // Persist to localStorage
+  function updateFromRgb(newRgb: RGB) {
+    const values = normalizeRgb(newRgb);
+    setRgb(values.rgb);
+    setHexInput(values.hexInput);
+    setRgbInput(values.rgbInput);
+    setHslInput(values.hslInput);
+    setCmykInput(values.cmykInput);
+  }
+
+  // Restore the last valid color after hydration.
   useEffect(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        const parsed = JSON.parse(saved) as RGB;
-        if (typeof parsed.r === "number") {
-          updateFromRgb(parsed);
+    const saved = safeGetLocalStorage(STORAGE_KEY);
+    return deferStorageHydration(storageHydration, () => {
+      try {
+        if (saved) {
+          const parsed = JSON.parse(saved) as Partial<RGB>;
+          if (
+            typeof parsed.r === "number" &&
+            typeof parsed.g === "number" &&
+            typeof parsed.b === "number"
+          ) {
+            const values = normalizeRgb(parsed as RGB);
+            setRgb(values.rgb);
+            setHexInput(values.hexInput);
+            setRgbInput(values.rgbInput);
+            setHslInput(values.hslInput);
+            setCmykInput(values.cmykInput);
+          }
         }
-      }
-    } catch { /* ignore */ }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+      } catch { /* ignore */ }
+    });
+  }, [storageHydration]);
 
   useEffect(() => {
-    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(rgb)); } catch { /* ignore */ }
-  }, [rgb]);
-
-  const updateFromRgb = useCallback((newRgb: RGB) => {
-    const clamped: RGB = {
-      r: clamp(Math.round(newRgb.r), 0, 255),
-      g: clamp(Math.round(newRgb.g), 0, 255),
-      b: clamp(Math.round(newRgb.b), 0, 255),
-    };
-    setRgb(clamped);
-    setHexInput(rgbToHex(clamped));
-    setRgbInput(`${clamped.r}, ${clamped.g}, ${clamped.b}`);
-    const hsl = rgbToHsl(clamped);
-    setHslInput(`${hsl.h}, ${hsl.s}%, ${hsl.l}%`);
-    const cmyk = rgbToCmyk(clamped);
-    setCmykInput(`${cmyk.c}, ${cmyk.m}, ${cmyk.y}, ${cmyk.k}`);
-  }, []);
+    persistAfterStorageHydration(storageHydration, () => {
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(rgb)); } catch { /* ignore */ }
+    });
+  }, [rgb, storageHydration]);
 
   const handleHexChange = (val: string) => {
     setHexInput(val);
@@ -222,27 +285,6 @@ export function ColorCodeConverterTool() {
   const btnBase = isDark ? "bg-white/10 hover:bg-white/15 border-white/10" : "bg-black/5 hover:bg-black/10 border-black/10";
   const muted = isDark ? "text-neutral-400" : "text-neutral-600";
 
-  const PassBadge = ({ pass }: { pass: boolean }) => (
-    <span className={cx(
-      "inline-block rounded px-1.5 py-0.5 text-xs font-bold",
-      pass
-        ? isDark ? "bg-emerald-500/20 text-emerald-400" : "bg-emerald-100 text-emerald-700"
-        : isDark ? "bg-red-500/20 text-red-400" : "bg-red-100 text-red-700"
-    )}>
-      {pass ? "Pass" : "Fail"}
-    </span>
-  );
-
-  const CopyBtn = ({ value, label }: { value: string; label: string }) => (
-    <button
-      onClick={() => copyText(value, label)}
-      className={cx("rounded-md border px-2 py-0.5 text-xs transition-colors min-h-[44px] min-w-[44px] shrink-0", btnBase)}
-      aria-label={`Copy ${label}`}
-    >
-      {copied === label ? "Copied!" : "Copy"}
-    </button>
-  );
-
   return (
     <div className="space-y-4" aria-live="polite">
       {/* Color picker + swatch */}
@@ -281,7 +323,7 @@ export function ColorCodeConverterTool() {
       <div className={cx("rounded-xl border p-4 space-y-3", base)}>
         <h3 className="text-sm font-semibold">Color Codes</h3>
 
-        {/* Crawler-visible result mirror — sr-only so it does not duplicate visually */}
+        {/* Concise live-region summary for screen-reader users. */}
         <output aria-live="polite" className="sr-only">
           {`HEX ${hexInput.toUpperCase()}, RGB(${rgbInput}), HSL(${hslInput}), CMYK(${cmykInput})`}
         </output>
@@ -297,7 +339,7 @@ export function ColorCodeConverterTool() {
             className={cx("flex-1 rounded-lg border px-3 py-2 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500/50 min-h-[44px]", inputBase)}
             placeholder="#3b82f6"
           />
-          <CopyBtn value={hexInput.toUpperCase()} label="hex" />
+          <CopyButton value={hexInput.toUpperCase()} label="hex" copied={copied} buttonClass={btnBase} onCopy={copyText} />
         </div>
 
         {/* RGB */}
@@ -311,7 +353,7 @@ export function ColorCodeConverterTool() {
             className={cx("flex-1 rounded-lg border px-3 py-2 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500/50 min-h-[44px]", inputBase)}
             placeholder="59, 130, 246"
           />
-          <CopyBtn value={`rgb(${rgbInput})`} label="rgb" />
+          <CopyButton value={`rgb(${rgbInput})`} label="rgb" copied={copied} buttonClass={btnBase} onCopy={copyText} />
         </div>
 
         {/* HSL */}
@@ -325,7 +367,7 @@ export function ColorCodeConverterTool() {
             className={cx("flex-1 rounded-lg border px-3 py-2 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500/50 min-h-[44px]", inputBase)}
             placeholder="217, 91%, 60%"
           />
-          <CopyBtn value={`hsl(${hslInput})`} label="hsl" />
+          <CopyButton value={`hsl(${hslInput})`} label="hsl" copied={copied} buttonClass={btnBase} onCopy={copyText} />
         </div>
 
         {/* CMYK */}
@@ -339,7 +381,7 @@ export function ColorCodeConverterTool() {
             className={cx("flex-1 rounded-lg border px-3 py-2 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500/50 min-h-[44px]", inputBase)}
             placeholder="76, 47, 0, 4"
           />
-          <CopyBtn value={`cmyk(${cmykInput})`} label="cmyk" />
+          <CopyButton value={`cmyk(${cmykInput})`} label="cmyk" copied={copied} buttonClass={btnBase} onCopy={copyText} />
         </div>
       </div>
 
@@ -359,19 +401,19 @@ export function ColorCodeConverterTool() {
             <div className="grid grid-cols-2 gap-2 text-xs">
               <div className="flex items-center justify-between">
                 <span className={muted}>AA Normal</span>
-                <PassBadge pass={wcagLabel(ratioWhite, "AA", "normal")} />
+                <PassBadge pass={wcagLabel(ratioWhite, "AA", "normal")} isDark={isDark} />
               </div>
               <div className="flex items-center justify-between">
                 <span className={muted}>AA Large</span>
-                <PassBadge pass={wcagLabel(ratioWhite, "AA", "large")} />
+                <PassBadge pass={wcagLabel(ratioWhite, "AA", "large")} isDark={isDark} />
               </div>
               <div className="flex items-center justify-between">
                 <span className={muted}>AAA Normal</span>
-                <PassBadge pass={wcagLabel(ratioWhite, "AAA", "normal")} />
+                <PassBadge pass={wcagLabel(ratioWhite, "AAA", "normal")} isDark={isDark} />
               </div>
               <div className="flex items-center justify-between">
                 <span className={muted}>AAA Large</span>
-                <PassBadge pass={wcagLabel(ratioWhite, "AAA", "large")} />
+                <PassBadge pass={wcagLabel(ratioWhite, "AAA", "large")} isDark={isDark} />
               </div>
             </div>
           </div>
@@ -387,19 +429,19 @@ export function ColorCodeConverterTool() {
             <div className="grid grid-cols-2 gap-2 text-xs">
               <div className="flex items-center justify-between">
                 <span className={muted}>AA Normal</span>
-                <PassBadge pass={wcagLabel(ratioBlack, "AA", "normal")} />
+                <PassBadge pass={wcagLabel(ratioBlack, "AA", "normal")} isDark={isDark} />
               </div>
               <div className="flex items-center justify-between">
                 <span className={muted}>AA Large</span>
-                <PassBadge pass={wcagLabel(ratioBlack, "AA", "large")} />
+                <PassBadge pass={wcagLabel(ratioBlack, "AA", "large")} isDark={isDark} />
               </div>
               <div className="flex items-center justify-between">
                 <span className={muted}>AAA Normal</span>
-                <PassBadge pass={wcagLabel(ratioBlack, "AAA", "normal")} />
+                <PassBadge pass={wcagLabel(ratioBlack, "AAA", "normal")} isDark={isDark} />
               </div>
               <div className="flex items-center justify-between">
                 <span className={muted}>AAA Large</span>
-                <PassBadge pass={wcagLabel(ratioBlack, "AAA", "large")} />
+                <PassBadge pass={wcagLabel(ratioBlack, "AAA", "large")} isDark={isDark} />
               </div>
             </div>
           </div>

@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { cx } from "@/lib/utils";
 import { useTheme } from "@/components/layout/theme-provider";
+import { deferStorageHydration, persistAfterStorageHydration, safeGetLocalStorage, useStorageHydrationGate } from "@/lib/storage-hydration";
 
 const STORAGE_KEY = "fmc_fancy_text";
 
@@ -82,7 +83,6 @@ function mathItalic(text: string): string {
     if (c >= 97 && c <= 122) {
       // h is special: italic h is U+210E
       if (c === 104) return "\u210E";
-      const offset = c < 104 ? c - 97 : c - 97 - 1;
       return String.fromCodePoint(0x1D44E + (c < 104 ? c - 97 : c - 97));
     }
     return ch;
@@ -177,27 +177,29 @@ export function FancyTextGeneratorTool() {
     : "bg-black/5 hover:bg-black/10 border-black/10";
   const muted = isDark ? "text-neutral-400" : "text-neutral-600";
 
+  const storageHydration = useStorageHydrationGate();
+
   // Load from localStorage
   useEffect(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        if (parsed.input) setInput(parsed.input);
+    const saved = safeGetLocalStorage(STORAGE_KEY);
+    return deferStorageHydration(storageHydration, () => {
+      try {
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          if (typeof parsed.input === "string") setInput(parsed.input);
+        }
+      } catch {
+        // ignore
       }
-    } catch {
-      // ignore
-    }
-  }, []);
+    });
+  }, [storageHydration]);
 
   // Save to localStorage
   useEffect(() => {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({ input }));
-    } catch {
-      // ignore
-    }
-  }, [input]);
+    persistAfterStorageHydration(storageHydration, () => {
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ input })); } catch { /* ignore */ }
+    });
+  }, [input, storageHydration]);
 
   const copyStyle = useCallback(async (text: string, idx: number) => {
     try {

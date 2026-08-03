@@ -271,7 +271,7 @@ export const conversions: Conversion[] = [
     label: "rAnDoM cAsE",
     fn: toRandomCase,
     category: "other",
-    description: "Truly random uppercase/lowercase for each letter.",
+    description: "Randomly chooses uppercase or lowercase for each letter.",
   },
   {
     id: "inverse",

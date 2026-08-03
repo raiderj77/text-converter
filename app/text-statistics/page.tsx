@@ -178,9 +178,9 @@ export default function TextStatisticsPage() {
               patterns, leading to fresher, more varied prose.
             </p>
             <p>
-              This tool processes all text locally in your browser. No data is
-              sent to any server, making it safe for analyzing confidential
-              documents, unpublished manuscripts, or private communications.
+              This tool processes text locally in your browser and does not intentionally
+              send it to FlipMyCase or analytics. Browser-local processing cannot protect
+              input from a compromised device or extension, so do not paste secrets.
             </p>
           </div>
         </section>
