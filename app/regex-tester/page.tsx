@@ -79,7 +79,7 @@ const faqItems = [
   {
     question: "Is my data sent to a server?",
     answer:
-      "No. Everything runs entirely in your browser using JavaScript's built-in RegExp. Your patterns and test strings never leave your device. The tool works offline as a PWA — no server, no tracking, no data collection.",
+      "No. The tester runs in your browser with JavaScript's built-in RegExp and does not intentionally transmit patterns or test strings. Optional analytics, if allowed, receives only a sanitized page path and not tool input.",
   },
   {
     question: "How does this compare to regex101?",

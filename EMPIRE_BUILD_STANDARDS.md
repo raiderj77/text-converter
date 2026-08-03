@@ -173,14 +173,10 @@ Every Empire site must have these pages:
 
 ### Cross-Site Links
 
-Every site footer links to the other 6 sister sites (never to itself):
-- [FiberTools](https://fibertools.app)
-- [MindCheck Tools](https://mindchecktools.com)
-- [FlipMyCase](https://flipmycase.com)
-- [Creator Revenue Calculator](https://creatorrevenuecalculator.com)
-- [ContractExtract](https://contractextract.com)
-- [Medical Bill Reader](https://medicalbillreader.com)
-- [524 Tracker](https://524tracker.com)
+Do not create a reciprocal portfolio-wide footer link scheme. Cross-site links are
+allowed only when they give the visitor useful context, such as a relevant tool on an
+About or resource page. Keep anchor text natural. Qualify paid placements with
+`rel="sponsored"`; qualify untrusted user-generated links with `rel="ugc"`.
 
 ---
 
@@ -230,7 +226,10 @@ public/
 ### ads.txt (CRITICAL — incorrect ads.txt breaks ALL revenue)
 - Serve at root: `https://domain.com/ads.txt`
 - Content: `google.com, pub-7171402107622932, DIRECT, f08c47fec0942fa0`
-- Include `OWNERDOMAIN` and `MANAGERDOMAIN` directives per IAB ads.txt v1.1 spec
+- Include `OWNERDOMAIN` for the business that owns the site. Include `MANAGERDOMAIN`
+  only when an external company is the publisher's primary or exclusive monetization
+  manager. A directly managed AdSense site MUST NOT repeat its own domain as
+  `MANAGERDOMAIN`.
 - Must be accessible via HTTPS with 200 status code
 - Validate in AdSense dashboard ads.txt management tool after any changes
 
@@ -250,11 +249,11 @@ public/
 - Required pages for AdSense: About Us, Privacy Policy, Contact
 - Health pages must not contain medical misinformation
 
-### 2025-2026 Requirements
+### Current Requirements
 - **Referrer Ad Creative (RAC)**: Mandatory from November 1, 2025 for Related Search publishers. Must provide `referrerAdCreative` parameter with exact creative text when traffic arrives from controlled sources.
-- **Google Consent Mode v2**: Mandatory for all sites. Configure all 6 parameters: `ad_storage`, `ad_user_data`, `ad_personalization`, `analytics_storage`, `functionality_storage`, `personalization_storage`.
-- **Google-certified CMP with IAB TCF v2.2**: Required for serving personalized ads to EEA/UK/Switzerland users. Without it, Google stops serving personalized ads entirely.
-- **GPP National v2**: Supported since September 2025 for US state privacy compliance across AdSense (covers CA, CO, CT, FL, VA).
+- **Google Consent Mode v2**: This is a signal framework, not a CMP or substitute for consent. Configure every applicable consent signal before a Google tag loads when a site uses consent mode.
+- **Google-certified CMP with IAB TCF v2.3**: Required for AdSense publishers serving ads in the EEA/UK/Switzerland. Verify the currently published CMP and TCF string before calling an ad tag.
+- **GPP**: AdSense supports specified US state sections, but Google does not make GPP or a CMP universally mandatory for US states. Use it only as part of a reviewed privacy implementation.
 - **YMYL sites**: Consider implementing non-personalized ads on health screening and medical bill analysis pages to avoid privacy concerns with sensitive health data.
 
 ### Amazon Associates
@@ -619,8 +618,8 @@ Also create `/llms-full.txt` with full site documentation in Markdown — reduce
 - **EU/EEA/UK**: Opt-in model — prior affirmative consent REQUIRED before any tracking cookies fire. Pre-checked boxes do NOT qualify.
 - **California**: Opt-out model — tracking permitted by default, but must honor Global Privacy Control (GPC) signals
 - **15+ US states**: Must honor universal opt-out mechanisms and GPC signals
-- Use Google-certified CMP with IAB TCF v2.2 integration for AdSense in EEA/UK/Switzerland
-- TCF v2.2 requires: consent-only legal basis for personalization, total vendor count on initial banner, easy withdrawal
+- Use a Google-certified CMP with current IAB TCF v2.3 integration for AdSense in EEA/UK/Switzerland
+- Treat the certified CMP's current TCF implementation and account configuration as release gates; do not rely on a stale hand-built banner checklist
 
 ### Health Data Privacy (Tier 3 YMYL Sites)
 - Treat ALL health screening data as **sensitive data** requiring explicit consent
@@ -855,7 +854,7 @@ Run through this EVERY time before deploying:
 4. `robots.txt` present at `public/robots.txt` with AI crawler rules
 5. `llms.txt` present at `public/llms.txt` and current
 6. All legal pages render: `/privacy`, `/terms`, `/about`, `/contact`
-7. Cross-site links present in footer (5 sister sites)
+7. Navigation and internal links are useful to visitors; no reciprocal portfolio-wide footer link scheme
 8. Security headers configured in `vercel.json` or `next.config.js`
 9. Structured data validates (spot-check with Rich Results Test)
 10. No personal name exposed anywhere in public-facing content
@@ -873,7 +872,7 @@ Things Claude Code must NEVER do on ANY Empire site:
 3. **Never remove legal pages** (privacy policy, terms of service) — creates legal exposure
 4. **Never hardcode API keys** in any file — use environment variables exclusively
 5. **Never push directly to main** without testing that `npm run build` succeeds
-6. **Never remove sister site cross-links** from the footer
+6. **Never add a reciprocal portfolio-wide footer link scheme.** Cross-site links belong only where they are contextually useful to visitors, and paid placements must use `rel="sponsored"`.
 7. **Never remove or weaken security headers** (HSTS, CSP, X-Frame-Options, etc.)
 8. **Never remove accessibility features** (alt text, ARIA attributes, focus indicators, skip nav links, lang attribute)
 9. **Never remove llms.txt** or AI crawler rules from robots.txt

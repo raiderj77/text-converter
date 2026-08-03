@@ -57,7 +57,7 @@ const faqItems = [
   {
     question: "Is my text sent to a server?",
     answer:
-      "No. All word frequency analysis happens entirely in your browser using JavaScript. Your text never leaves your device, making it safe for confidential or private content.",
+      "No. Word-frequency analysis runs in your browser and does not intentionally send tool input to FlipMyCase or analytics. Browser-local processing cannot protect input from a compromised device or extension, so do not paste secrets.",
   },
   {
     question: "How is word percentage calculated?",
@@ -191,9 +191,9 @@ export default function WordFrequencyCounterPage() {
               quick content summaries.
             </p>
             <p>
-              This tool processes everything locally in your browser. No text is sent
-              to any server, so you can safely analyze confidential documents,
-              unpublished work, or sensitive communications.
+              This tool processes text locally in your browser and does not intentionally
+              send it to FlipMyCase or analytics. Browser-local processing cannot protect
+              input from a compromised device or extension, so do not paste secrets.
             </p>
           </div>
         </section>

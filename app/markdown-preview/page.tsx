@@ -52,7 +52,7 @@ const faqItems = [
   {
     question: "Is my text processed on a server?",
     answer:
-      "No. All Markdown parsing and HTML rendering happens entirely in your browser. Your text never leaves your device, making this tool safe for sensitive content like private documentation or unreleased project notes.",
+      "No. Markdown parsing and preview rendering happen in your browser, and the tool does not intentionally transmit the Markdown to FlipMyCase or analytics. Browser-local processing is not a guarantee against a compromised device or extension, so do not paste secrets.",
   },
   {
     question: "What is the difference between Markdown and HTML?",

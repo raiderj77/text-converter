@@ -22,6 +22,44 @@ import { hmacMd5, md5 } from "../lib/md5.js";
 const root = path.resolve(import.meta.dirname, "..");
 const read = (file) => fs.readFileSync(path.join(root, file), "utf8");
 
+test("advertising remains fail-closed until external readiness gates are verified", () => {
+  const adSlot = read("components/ui/ad-slot.tsx");
+  const adsTxt = read("public/ads.txt");
+  const standards = read("EMPIRE_BUILD_STANDARDS.md");
+  const readiness = read("docs/ADSENSE_READINESS.md");
+
+  assert.match(adSlot, /return null/);
+  assert.doesNotMatch(adSlot, /NEXT_PUBLIC_|adsbygoogle|pagead2/);
+  assert.match(adsTxt, /^google\.com, pub-7171402107622932, DIRECT, f08c47fec0942fa0$/m);
+  assert.match(adsTxt, /^OWNERDOMAIN=flipmycase\.com$/m);
+  assert.doesNotMatch(adsTxt, /^MANAGERDOMAIN=/m);
+  assert.doesNotMatch(standards, /Include `OWNERDOMAIN` and `MANAGERDOMAIN`/);
+  assert.match(readiness, /AdSense lists `flipmycase\.com` as \*\*Ready\*\*/);
+  assert.match(readiness, /Google-certified CMP/);
+  assert.match(readiness, /strict-CSP implementation/);
+});
+
+test("sitewide navigation avoids reciprocal portfolio links", () => {
+  const footer = read("components/layout/footer.tsx");
+  const predeploy = read("scripts/predeploy-check.js");
+
+  assert.doesNotMatch(footer, /https?:\/\//i);
+  assert.doesNotMatch(predeploy, /sisterSites|Missing cross-site link/);
+  for (const route of ["/tools", "/about", "/privacy", "/accessibility"]) {
+    assert.ok(footer.includes(`href=\"${route}\"`), `footer is missing ${route}`);
+  }
+});
+
+test("offline caches are bounded and never retain query-string navigations", () => {
+  const worker = read("public/sw.js");
+
+  assert.match(worker, /STATIC_CACHE_LIMIT = 80/);
+  assert.match(worker, /PAGE_CACHE_LIMIT = 20/);
+  assert.match(worker, /request\.mode === "navigate"/);
+  assert.match(worker, /if \(url\.search\)/);
+  assert.match(worker, /event\.respondWith\(fetch\(request\)\)/);
+});
+
 test("saved browser values are restored before persistence is allowed", async () => {
   const gate = { current: false };
   let browserValue = "saved value";

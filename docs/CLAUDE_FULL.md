@@ -33,8 +33,8 @@
 - Ads must never exceed content volume on any page
 - Reserve explicit width/height on ad containers (prevents CLS)
 - Mobile: follow Better Ads Standard
-- Google Consent Mode v2: configure all 6 parameters (ad_storage, ad_user_data, ad_personalization, analytics_storage, functionality_storage, personalization_storage)
-- For EEA/UK visitors: Google-certified CMP with IAB TCF v2.2 required
+- Google Consent Mode v2 is a signal framework, not a CMP or substitute for consent; configure all applicable signals before Google tags load
+- For AdSense in the EEA/UK/Switzerland: verify a Google-certified CMP with current IAB TCF v2.3 before calling an ad tag
 - Standard AdSense.
 
 ## 2. SEO — Google Search Essentials
@@ -151,9 +151,9 @@ Configure in `public/robots.txt`. Allow all search-facing AI crawlers:
 
 - EU/EEA/UK: Opt-in model (consent before tracking)
 - US: Opt-out model (honor GPC)
-- Use Google-certified CMP with IAB TCF v2.2 for EEA/UK
+- Use a Google-certified CMP with current IAB TCF v2.3 for AdSense in the EEA/UK/Switzerland
 
-## 10. Accessibility (WCAG 2.1 AA)
+## 10. Accessibility (WCAG 2.2 AA)
 
 - Alt text on all images (alt="" for decorative)
 - Color contrast: 4.5:1 normal text, 3:1 large text
@@ -209,13 +209,10 @@ Do NOT enable strict COEP/COOP on pages with ads (breaks ad rendering).
 
 ## Cross-Site Links
 
-Footer links to all sister sites (exclude self):
-
-- [FiberTools](https://fibertools.app)
-- [MindCheck Tools](https://mindchecktools.com)
-- [Creator Revenue Calculator](https://creatorrevenuecalculator.com)
-- [ContractExtract](https://contractextract.com)
-- [Medical Bill Reader](https://medicalbillreader.com)
+Do not create a reciprocal portfolio-wide footer link scheme. Link to another
+portfolio property only when it gives visitors useful context on a relevant
+About or resource page. Use natural anchor text and qualify paid placements
+with `rel="sponsored"`.
 
 ## Deployment
 
@@ -242,7 +239,7 @@ Footer links to all sister sites (exclude self):
 3. Never remove legal pages (privacy, terms)
 4. Never hardcode API keys — use environment variables
 5. Never push to main without testing build
-6. Never remove sister site cross-links
+6. Never add a reciprocal portfolio-wide footer link scheme
 7. Never remove or weaken security headers
 8. Never remove accessibility features (alt text, ARIA, focus indicators)
 9. Never remove llms.txt or AI crawler rules from robots.txt

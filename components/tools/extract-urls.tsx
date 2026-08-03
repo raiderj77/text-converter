@@ -219,7 +219,7 @@ export function ExtractUrlsTool() {
 
       <div className={cx("text-xs text-center", muted)}>
         Extracts http, https, ftp & www URLs · All processing in your browser ·
-        Ctrl/⌘ + L toggles theme
+        Use the theme button in the site header to change appearance.
       </div>
 
       {toast && (

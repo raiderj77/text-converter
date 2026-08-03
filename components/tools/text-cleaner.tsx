@@ -413,7 +413,7 @@ export function TextCleanerTool() {
           isDark ? "text-neutral-400" : "text-neutral-600"
         )}
       >
-        Ctrl/⌘ + K focuses input · Ctrl/⌘ + L toggles theme
+        Ctrl/⌘ + K focuses input
       </div>
 
       {/* Toast */}

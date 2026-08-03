@@ -336,7 +336,7 @@ export function FindAndReplaceTool() {
       )}
 
       <div className={cx("text-xs text-center", muted)}>
-        Live match highlighting · Regex support · All processing in your browser · Ctrl/⌘ + L toggles theme
+        Live match highlighting · Regex support · All processing in your browser
       </div>
 
       {toast && (

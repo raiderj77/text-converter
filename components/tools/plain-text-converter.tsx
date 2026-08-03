@@ -368,7 +368,7 @@ export function PlainTextConverterTool() {
 
       {/* Keyboard shortcut hint */}
       <div className={cx("mt-3 text-xs text-center", muted)}>
-        Ctrl/Cmd + K focuses input &middot; Ctrl/Cmd + L toggles theme
+        Ctrl/Cmd + K focuses input
       </div>
 
       {/* Toast */}

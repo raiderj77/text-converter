@@ -51,6 +51,8 @@ function enableAnalytics() {
     send_page_view: false,
     allow_google_signals: false,
     allow_ad_personalization_signals: false,
+    page_referrer: "",
+    cookie_flags: "SameSite=Lax;Secure",
   });
 
   if (!document.getElementById(SCRIPT_ID)) {
@@ -78,6 +80,8 @@ export function AnalyticsConsent() {
   const [consent, setConsent] = useState<Consent | null | "loading">("loading");
   const [showChoices, setShowChoices] = useState(false);
   const lastPath = useRef<string | null>(null);
+  const privacyButtonRef = useRef<HTMLButtonElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const frame = window.requestAnimationFrame(() => {
@@ -109,6 +113,14 @@ export function AnalyticsConsent() {
     if (next === "denied") disableAnalytics();
     setConsent(next);
     setShowChoices(false);
+    window.setTimeout(() => privacyButtonRef.current?.focus(), 0);
+  }
+
+  function openChoices() {
+    setShowChoices(true);
+    window.setTimeout(() => {
+      dialogRef.current?.querySelector<HTMLButtonElement>("button")?.focus();
+    }, 0);
   }
 
   if (consent === "loading") return null;
@@ -116,9 +128,10 @@ export function AnalyticsConsent() {
   if (consent !== null && !showChoices) {
     return (
       <button
+        ref={privacyButtonRef}
         type="button"
-        onClick={() => setShowChoices(true)}
-        className="fixed bottom-4 left-4 z-50 rounded-full border border-white/20 bg-neutral-950 px-4 py-2 text-sm font-semibold text-white shadow-lg hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-emerald-400"
+        onClick={openChoices}
+        className="fixed bottom-4 left-4 z-50 min-h-11 rounded-full border border-white/20 bg-neutral-950 px-4 py-2 text-sm font-semibold text-white shadow-lg hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-emerald-400"
       >
         Privacy choices
       </button>
@@ -127,31 +140,34 @@ export function AnalyticsConsent() {
 
   return (
     <div
+      ref={dialogRef}
       role="dialog"
-      aria-label="Analytics choices"
+      aria-labelledby="analytics-choices-title"
+      aria-describedby="analytics-choices-description"
       className="fixed inset-x-4 bottom-4 z-50 mx-auto max-w-2xl rounded-2xl border border-white/20 bg-neutral-950 p-5 text-white shadow-2xl"
     >
-      <p className="font-bold">Optional, privacy-limited analytics</p>
-      <p className="mt-2 text-sm leading-relaxed text-neutral-300">
-        If you allow it, Google Analytics receives only this page&apos;s title and path after the URL
-        query string is removed. Text, files, generated output, and tool settings stay out of analytics.
+      <p id="analytics-choices-title" className="font-bold">Optional, privacy-limited analytics</p>
+      <p id="analytics-choices-description" className="mt-2 text-sm leading-relaxed text-neutral-300">
+        If you allow it, Google Analytics receives a page title and path with the query string removed,
+        plus standard analytics data such as browser, device, engagement, and analytics identifiers.
+        Text, files, generated output, and tool settings are not intentionally included.
       </p>
       <div className="mt-4 flex flex-wrap gap-3">
         <button
           type="button"
           onClick={() => choose("denied")}
-          className="rounded-lg border border-white/30 bg-neutral-950 px-4 py-2 text-sm font-semibold hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-emerald-400"
+          className="min-h-11 rounded-lg border border-white/30 bg-neutral-950 px-4 py-2 text-sm font-semibold hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-emerald-400"
         >
           Continue without analytics
         </button>
         <button
           type="button"
           onClick={() => choose("granted")}
-          className="rounded-lg bg-emerald-500 px-4 py-2 text-sm font-semibold text-neutral-950 hover:bg-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-300"
+          className="min-h-11 rounded-lg bg-emerald-500 px-4 py-2 text-sm font-semibold text-neutral-950 hover:bg-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-300"
         >
           Allow analytics
         </button>
-        <a className="self-center text-sm font-semibold underline" href="/privacy">
+        <a className="inline-flex min-h-11 items-center self-center text-sm font-semibold underline" href="/privacy">
           Privacy details
         </a>
       </div>

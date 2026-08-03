@@ -341,7 +341,7 @@ export function AllCapsGuideTool() {
                     )}
                   </button>
                 </div>
-                <div className="p-3 bg-black rounded-lg text-sm font-mono tracking-wider overflow-x-auto">
+                <div className="keep-dark-surface p-3 rounded-lg text-sm font-mono tracking-wider overflow-x-auto">
                   {item.example}
                 </div>
               </div>

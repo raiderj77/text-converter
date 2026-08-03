@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState, useMemo } from "react";
+import { useEffect, useId, useRef, useState, useMemo } from "react";
 import { getLiveTools, getToolsByCategory, TOOL_CATEGORIES, SITE_NAME } from "@/lib/config";
 import type { ToolCategory } from "@/lib/config";
 import { cx } from "@/lib/utils";
@@ -19,6 +19,8 @@ export function Nav() {
   const [search, setSearch] = useState("");
   const dropdownRef = useRef<HTMLDivElement>(null);
   const searchRef = useRef<HTMLInputElement>(null);
+  const toolsButtonRef = useRef<HTMLButtonElement>(null);
+  const mobileButtonRef = useRef<HTMLButtonElement>(null);
 
   function isActive(slug: string) {
     if (slug === "") return pathname === "/";
@@ -68,6 +70,26 @@ export function Nav() {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [mobileOpen]);
+
+  useEffect(() => {
+    if (!toolsOpen && !mobileOpen) return;
+
+    function handleEscape(event: KeyboardEvent) {
+      if (event.key !== "Escape") return;
+      event.preventDefault();
+      if (mobileOpen) {
+        setMobileOpen(false);
+        mobileButtonRef.current?.focus();
+      } else {
+        setToolsOpen(false);
+        setSearch("");
+        toolsButtonRef.current?.focus();
+      }
+    }
+
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, [mobileOpen, toolsOpen]);
 
   // Active category tools (desktop)
   const activeCategoryTools = grouped.find((g) => g.name === activeCategory)?.tools ?? [];
@@ -139,8 +161,12 @@ export function Nav() {
               {/* Tools dropdown */}
               <div ref={dropdownRef} className="relative">
                 <button
+                  ref={toolsButtonRef}
                   type="button"
                   onClick={() => setToolsOpen(!toolsOpen)}
+                  aria-expanded={toolsOpen}
+                  aria-controls="desktop-tools-directory"
+                  aria-haspopup="dialog"
                   className={cx(
                     "flex items-center gap-1.5 rounded-xl px-3 py-2 text-sm font-medium transition-colors",
                     toolsOpen || activeTool
@@ -166,10 +192,16 @@ export function Nav() {
 
                 {/* Mega menu dropdown */}
                 {toolsOpen && (
-                  <div className={cx(
-                    "absolute top-full right-0 mt-2 rounded-2xl border shadow-xl overflow-hidden",
-                    isDark ? "bg-neutral-900 border-white/10" : "bg-white border-black/10"
-                  )} style={{ width: "720px" }}>
+                  <div
+                    id="desktop-tools-directory"
+                    role="dialog"
+                    aria-label="Tools directory"
+                    className={cx(
+                     "absolute top-full right-0 mt-2 rounded-2xl border shadow-xl overflow-hidden",
+                     isDark ? "bg-neutral-900 border-white/10" : "bg-white border-black/10"
+                    )}
+                    style={{ width: "720px" }}
+                  >
                     {/* Search box */}
                     <div className={cx("px-3 pt-3 pb-2 border-b", isDark ? "border-white/5" : "border-black/5")}>
                       <div className="relative">
@@ -218,6 +250,7 @@ export function Nav() {
                               key={cat.name}
                               type="button"
                               onClick={() => setActiveCategory(cat.name)}
+                              aria-pressed={activeCategory === cat.name}
                               className={cx(
                                 "w-full flex items-center gap-2 rounded-xl px-3 py-2.5 text-left text-sm font-medium transition-colors",
                                 activeCategory === cat.name
@@ -309,6 +342,7 @@ export function Nav() {
 
               {/* Mobile hamburger */}
               <button
+                ref={mobileButtonRef}
                 type="button"
                 onClick={() => setMobileOpen(!mobileOpen)}
                 className={cx(
@@ -317,7 +351,9 @@ export function Nav() {
                     ? isDark ? "border-emerald-500/40 bg-emerald-500/10" : "border-emerald-500/40 bg-emerald-50"
                     : isDark ? "border-white/10 hover:bg-white/10" : "border-black/10 hover:bg-black/5"
                 )}
-                aria-label="Toggle menu"
+                aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
+                aria-expanded={mobileOpen}
+                aria-controls="mobile-site-navigation"
               >
                 {mobileOpen ? (
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -336,9 +372,14 @@ export function Nav() {
 
       {/* Mobile menu overlay */}
       {mobileOpen && (
-        <div className="md:hidden fixed inset-0 top-14 z-40">
+        <div
+          id="mobile-site-navigation"
+          aria-label="Site tools and navigation"
+          className="md:hidden fixed inset-0 top-14 z-40"
+        >
           {/* Backdrop */}
           <div
+            aria-hidden="true"
             className="absolute inset-0 bg-black/50 backdrop-blur-sm"
             onClick={() => setMobileOpen(false)}
           />
@@ -451,12 +492,15 @@ function MobileCategory({
   children: React.ReactNode;
 }) {
   const [open, setOpen] = useState(false);
+  const panelId = useId();
 
   return (
     <div>
       <button
         type="button"
         onClick={() => setOpen(!open)}
+        aria-expanded={open}
+        aria-controls={panelId}
         className={cx(
           "w-full flex items-center justify-between rounded-xl px-3 py-3 text-sm font-semibold transition-colors min-h-[44px]",
           open
@@ -475,7 +519,7 @@ function MobileCategory({
           </svg>
         </span>
       </button>
-      {open && <div className="mt-1.5">{children}</div>}
+      {open && <div id={panelId} className="mt-1.5">{children}</div>}
     </div>
   );
 }

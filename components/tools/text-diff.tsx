@@ -381,7 +381,7 @@ export function TextDiffTool() {
       )}
 
       <div className={cx("mt-3 text-xs text-center", isDark ? "text-neutral-400" : "text-neutral-600")}>
-        Word-level highlighting · All processing in your browser · Ctrl/⌘ + L toggles theme
+        Word-level highlighting · All processing in your browser
       </div>
 
       {toast && <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 rounded-2xl bg-neutral-900 text-white px-4 py-2 text-sm shadow-lg">{toast}</div>}

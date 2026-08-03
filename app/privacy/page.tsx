@@ -50,11 +50,13 @@ export default function PrivacyPage() {
           <p className="mt-3">
             FlipMyCase has not been approved to display Google AdSense ads. AdSense and Microsoft
             Clarity scripts are not loaded, and empty advertising placeholders are suppressed.
-            Google Analytics loads only after you select &quot;Allow analytics.&quot; If allowed, it receives
-            only the page title and path after the URL query string is removed. Text, files, generated
-            output, and tool settings are not sent. Advertising storage, ad personalization, Google
-            Signals, and enhanced measurement are disabled. You can withdraw permission through the
-            persistent Privacy choices button; without permission, the analytics script is not downloaded.
+            Google Analytics loads only after you select &quot;Allow analytics.&quot; If allowed, the site sends
+            a page title and path after removing the URL query string. Google Analytics can also process
+            standard technical and analytics data such as IP-derived location, browser and device details,
+            engagement information, analytics identifiers, and cookies. Text, files, generated output,
+            and tool settings are not intentionally included. Advertising storage, ad personalization,
+            and Google Signals are disabled in the site configuration. You can withdraw permission through
+            the persistent Privacy choices button; without permission, the analytics script is not downloaded.
           </p>
         </section>
 
@@ -72,7 +74,8 @@ export default function PrivacyPage() {
           <h2 className="text-xl font-semibold text-white">Offline cache and external links</h2>
           <p className="mt-3">
             A service worker may cache site files on your device so pages load faster or continue to
-            work offline. Clear site data in your browser to remove the cache. External links open
+            work offline. The cache is bounded, and navigations with URL query strings are not cached.
+            Clear site data in your browser to remove the cache. External links open
             services with their own privacy practices; the destination can receive ordinary request
             and referral information after you choose to visit it.
           </p>

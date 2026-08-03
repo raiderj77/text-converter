@@ -555,7 +555,7 @@ export function PasswordGeneratorTool() {
       )}
 
       <div className={cx("mt-3 text-xs text-center", isDark ? "text-neutral-400" : "text-neutral-600")}>
-        Generated with cryptographically strong pseudorandom values from crypto.getRandomValues() · Output is not sent by this tool · Ctrl/⌘ + L toggles theme
+        Generated with cryptographically strong pseudorandom values from crypto.getRandomValues() · Output is not sent by this tool
       </div>
 
       {toast && <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 rounded-2xl bg-neutral-900 text-white px-4 py-2 text-sm shadow-lg">{toast}</div>}

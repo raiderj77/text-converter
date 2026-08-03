@@ -19,8 +19,143 @@ body {
   font-family: var(--font-inter), Inter, system-ui, sans-serif;
 }
 
+/*
+ * Server-rendered reference copy predates the theme-aware tool components and
+ * uses dark-palette utility classes. Keep that content readable when a visitor
+ * selects the light theme instead of leaving low-contrast gray text on white.
+ */
+[data-theme="light"] .text-white,
+[data-theme="light"] .text-neutral-100 {
+  color: #171717;
+}
+
+[data-theme="light"] .text-neutral-200 {
+  color: #262626;
+}
+
+[data-theme="light"] .text-neutral-300 {
+  color: #404040;
+}
+
+[data-theme="light"] .text-neutral-400 {
+  color: #525252;
+}
+
+[data-theme="light"] .text-blue-400 {
+  color: #1d4ed8;
+}
+
+[data-theme="light"] .text-amber-400 {
+  color: #b45309;
+}
+
+[data-theme="light"] .text-red-400 {
+  color: #b91c1c;
+}
+
+[data-theme="light"] .text-green-400,
+[data-theme="light"] .text-emerald-400 {
+  color: #047857;
+}
+
+[data-theme="light"] .text-yellow-400 {
+  color: #a16207;
+}
+
+[data-theme="light"] .text-sky-400 {
+  color: #0369a1;
+}
+
+[data-theme="light"] .text-purple-400 {
+  color: #7e22ce;
+}
+
+[data-theme="light"] .text-orange-400 {
+  color: #c2410c;
+}
+
+[data-theme="light"] .text-pink-400 {
+  color: #be185d;
+}
+
+[data-theme="light"] .text-gray-400,
+[data-theme="light"] .text-slate-400 {
+  color: #4b5563;
+}
+
+[data-theme="light"] .bg-neutral-950,
+[data-theme="light"] .bg-neutral-900,
+[data-theme="light"] .bg-neutral-800 {
+  background-color: #ffffff;
+}
+
+[data-theme="light"] .bg-neutral-900\/50,
+[data-theme="light"] .bg-neutral-950\/50 {
+  background-color: rgb(255 255 255 / 0.82);
+}
+
+[data-theme="light"] .bg-white\/5 {
+  background-color: rgb(0 0 0 / 0.04);
+}
+
+[data-theme="light"] .bg-white\/10 {
+  background-color: rgb(0 0 0 / 0.08);
+}
+
+[data-theme="light"] .bg-white\/15,
+[data-theme="light"] .bg-white\/20 {
+  background-color: rgb(0 0 0 / 0.12);
+}
+
+[data-theme="light"] .border-white\/5 {
+  border-color: rgb(0 0 0 / 0.08);
+}
+
+[data-theme="light"] .border-white\/10 {
+  border-color: rgb(0 0 0 / 0.14);
+}
+
+[data-theme="light"] .border-white\/20 {
+  border-color: rgb(0 0 0 / 0.24);
+}
+
+[data-theme="light"] .hover\:text-blue-300:hover {
+  color: #1e40af;
+}
+
+[data-theme="light"] .hover\:bg-neutral-800:hover {
+  background-color: #e5e5e5;
+}
+
+[data-theme="light"] .hover\:bg-white\/5:hover,
+[data-theme="light"] .hover\:bg-white\/10:hover,
+[data-theme="light"] .hover\:bg-white\/15:hover {
+  background-color: rgb(0 0 0 / 0.08);
+}
+
+.keep-dark-surface {
+  background-color: #000000 !important;
+  color: #f5f5f5 !important;
+}
+
+:focus-visible {
+  scroll-margin-block: 5rem 12rem;
+}
+
 textarea, input, pre, code {
   font-family: var(--font-mono), 'JetBrains Mono', monospace;
+}
+
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder {
+  color: #a3a3a3;
+  opacity: 1;
+}
+
+[data-theme="light"] input::placeholder,
+[data-theme="light"] textarea::placeholder {
+  color: #737373;
+  opacity: 1;
 }
 
 /* ── Blog prose styles ─────────────────────────────────────── */

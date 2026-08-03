@@ -91,12 +91,13 @@ export function CaseConverterTool() {
             <button
               type="button"
               className={cx(
-                "text-sm rounded-xl px-3 py-1.5 border transition-colors",
+                "text-sm rounded-xl px-3 py-1.5 border transition-colors disabled:cursor-not-allowed disabled:opacity-50",
                 isDark
                   ? "border-white/10 hover:bg-white/10"
                   : "border-black/10 hover:bg-black/5"
               )}
               onClick={clearAll}
+              disabled={!text}
               aria-label="Clear input text"
             >
               Clear
@@ -194,7 +195,7 @@ export function CaseConverterTool() {
           isDark ? "text-neutral-400" : "text-neutral-500"
         )}
       >
-        Ctrl/⌘ + K focuses input · Ctrl/⌘ + L toggles theme
+        Ctrl/⌘ + K focuses input
       </div>
 
       {/* Toast notification */}

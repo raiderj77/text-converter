@@ -56,11 +56,11 @@ export default function ContactPage() {
       <p>
         Please do not send sensitive or confidential information via email. If the text
         you are having trouble with is private, replace it with a similar example that
-        demonstrates the same formatting issue. All text processing on FlipMyCase happens
-        in your browser and is never stored on our servers.
+        demonstrates the same formatting issue. FlipMyCase tools process input in your browser and
+        do not intentionally transmit or store that input on FlipMyCase application servers.
       </p>
 
-        <p className="text-sm text-gray-400 mt-1 mb-4 text-center">Last updated: March 25, 2026</p>
+        <p className="text-sm text-gray-400 mt-1 mb-4 text-center">Last updated: August 2, 2026</p>
       </div>
     </>
   );

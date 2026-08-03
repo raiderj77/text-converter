@@ -192,9 +192,9 @@ export default function LineCounterPage() {
               these patterns helps you understand and clean your data faster.
             </p>
             <p>
-              This tool processes everything locally in your browser. No data is
-              transmitted to any server, making it safe for proprietary code,
-              confidential logs, and sensitive data files.
+              This tool processes text locally in your browser and does not intentionally
+              send it to FlipMyCase or analytics. Browser-local processing cannot protect
+              input from a compromised device or extension, so do not paste secrets.
             </p>
           </div>
         </section>

@@ -38,28 +38,17 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     persistAfterStorageHydration(storageHydration, () => localStorage.setItem("fmc_mode", mode));
   }, [mode, storageHydration]);
 
-  // Global keyboard shortcut: Ctrl/Cmd + L toggles theme
-  useEffect(() => {
-    const handler = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "l") {
-        e.preventDefault();
-        setMode((m) => (m === "dark" ? "light" : "dark"));
-      }
-    };
-    window.addEventListener("keydown", handler);
-    return () => window.removeEventListener("keydown", handler);
-  }, []);
-
   const toggle = () => setMode((m) => (m === "dark" ? "light" : "dark"));
   const isDark = mode === "dark";
 
   return (
     <ThemeContext.Provider value={{ mode, isDark, toggle }}>
       <div
+        data-theme={mode}
         className={
           isDark
-            ? "bg-neutral-950 text-neutral-100"
-            : "bg-neutral-50 text-neutral-900"
+            ? "min-h-screen bg-neutral-950 text-neutral-100"
+            : "min-h-screen bg-neutral-50 text-neutral-900"
         }
       >
         {children}

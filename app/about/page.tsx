@@ -6,12 +6,12 @@ import { BreadcrumbSchema } from "@/components/seo/schema";
 export const metadata: Metadata = {
   title: "About Jason Ramirez — Your Friendly Developer LLC",
   description:
-    "Jason Ramirez is a California-based web developer and the person behind FlipMyCase — 70+ free browser-based text tools, no signup, no tracking.",
+    "Jason Ramirez is the web developer behind FlipMyCase, a suite of 78 free browser-based text tools with no signup.",
   alternates: { canonical: `${SITE_URL}/about` },
   openGraph: {
     title: "About Jason Ramirez — Your Friendly Developer LLC",
     description:
-      "Jason Ramirez is a California-based web developer and the person behind FlipMyCase — 70+ free browser-based text tools, no signup, no tracking.",
+      "Jason Ramirez is the web developer behind FlipMyCase, a suite of 78 free browser-based text tools with no signup.",
     url: `${SITE_URL}/about`,
     type: "website",
   },
@@ -108,8 +108,10 @@ export default function AboutPage() {
             </p>
             <p>
               Privacy by architecture, not by policy. Because everything runs in your browser, your
-              text is not intentionally transmitted to FlipMyCase servers. Optional analytics and
-              session-recording scripts are currently disabled.
+              text is not intentionally transmitted to FlipMyCase servers. Optional Google Analytics
+              loads only after a visitor allows it. It receives a sanitized page path and standard
+              technical analytics data, but tool input is not intentionally included. Session-recording
+              scripts are disabled.
             </p>
             <p>
               Accessibility is an ongoing design goal. The site uses semantic structure, visible
@@ -161,9 +163,9 @@ export default function AboutPage() {
           >
             hello@flipmycase.com
           </a>{" "}
-          or use the{" "}
+          or visit the{" "}
           <Link href="/contact" className="text-blue-400 underline underline-offset-2 hover:text-blue-300 transition-colors">
-            contact form
+            Contact page
           </Link>
           .
         </p>

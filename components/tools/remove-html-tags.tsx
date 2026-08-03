@@ -159,7 +159,6 @@ export function RemoveHtmlTagsTool() {
 
       <div className={cx("text-xs text-center", muted)}>
         Strips HTML/XML tags · Decodes entities · All processing in your browser
-        · Ctrl/⌘ + L toggles theme
       </div>
 
       {toast && (
