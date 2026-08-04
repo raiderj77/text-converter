@@ -16,7 +16,7 @@
     "test": "npm run test:regressions",
     "test:quality": "node scripts/quality-check.js",
     "test:regressions": "node --test",
-    "prebuild": "npm run lint:predeploy && npm run lint:content && npm run test:quality"
+    "prebuild": "npm run lint:predeploy && npm run lint:content && npm run test:quality && npm run test:regressions"
   },
   "dependencies": {
     "js-yaml": "5.2.2",

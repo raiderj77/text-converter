@@ -1,7 +1,8 @@
 # FlipMyCase
 
-FlipMyCase is a Next.js utility site with 78 browser-based text, formatting,
-encoding, analysis, and developer tools. Production: <https://flipmycase.com>.
+FlipMyCase is a Next.js utility site with 75 interactive text, formatting,
+encoding, analysis, and developer tools plus 3 reference guides. Production:
+<https://flipmycase.com>.
 
 ## Local development
 

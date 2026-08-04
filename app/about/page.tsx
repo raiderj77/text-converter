@@ -6,12 +6,12 @@ import { BreadcrumbSchema } from "@/components/seo/schema";
 export const metadata: Metadata = {
   title: "About Jason Ramirez — Your Friendly Developer LLC",
   description:
-    "Jason Ramirez is the web developer behind FlipMyCase, a suite of 78 free browser-based text tools with no signup.",
+    "Jason Ramirez is the web developer behind FlipMyCase, with 75 free interactive tools and 3 reference guides.",
   alternates: { canonical: `${SITE_URL}/about` },
   openGraph: {
     title: "About Jason Ramirez — Your Friendly Developer LLC",
     description:
-      "Jason Ramirez is the web developer behind FlipMyCase, a suite of 78 free browser-based text tools with no signup.",
+      "Jason Ramirez is the web developer behind FlipMyCase, with 75 free interactive tools and 3 reference guides.",
     url: `${SITE_URL}/about`,
     type: "website",
   },
@@ -103,7 +103,8 @@ export default function AboutPage() {
               worth knowing about why FlipMyCase is worth bookmarking:
             </p>
             <p>
-              All 78 tools are free. No paid plan, no premium tier, and no feature gates.
+              All 75 interactive tools are free, and 3 reference guides are available without a
+              paid plan, premium tier, or feature gate.
               Google AdSense is not currently approved or enabled on this site.
             </p>
             <p>

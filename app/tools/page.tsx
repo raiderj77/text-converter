@@ -1,19 +1,20 @@
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
-import { SITE_URL, getToolsByCategory } from "@/lib/config";
+import { SITE_URL } from "@/lib/config";
 import { WebAppSchema, BreadcrumbSchema } from "@/components/seo/schema";
+import { interactiveToolsByCategory, referenceGuides } from "@/lib/tool-inventory";
 
 const pageUrl = `${SITE_URL}/tools`;
 
 export const metadata: Metadata = {
-  title: "All Free Text Tools — FlipMyCase | Developer & Writer Utilities",
+  title: "75 Free Interactive Text Tools & 3 Reference Guides",
   description:
-    "Browse all free browser-based text tools. Case converters, JSON formatter, regex tester, hash generator, text diff, and more. No signup.",
+    "Browse 75 free interactive text tools and 3 reference guides, including case converters, formatters, validators, and developer utilities.",
   alternates: { canonical: pageUrl },
   openGraph: {
-    title: "All Free Text Tools — FlipMyCase",
+    title: "75 Free Interactive Text Tools & 3 Reference Guides | FlipMyCase",
     description:
-      "Browse all free browser-based text tools. Case converters, JSON formatter, regex tester, hash generator, text diff, and more. No signup.",
+      "Browse 75 free interactive text tools and 3 reference guides for developers and writers.",
     url: pageUrl,
     type: "website",
   },
@@ -44,7 +45,7 @@ const DIRECTORY_CATEGORIES = [
 ];
 
 export default function ToolsPage() {
-  const grouped = getToolsByCategory();
+  const grouped = interactiveToolsByCategory;
 
   const directoryGroups = DIRECTORY_CATEGORIES.map((dir) => {
     const tools = grouped
@@ -58,10 +59,10 @@ export default function ToolsPage() {
   return (
     <>
       <WebAppSchema
-        name="FlipMyCase — All Free Text Tools"
-        description="Browse all free browser-based text tools. Case converters, JSON formatter, regex tester, hash generator, text diff, and more."
+        name="FlipMyCase — 75 Interactive Text Tools"
+        description="Browse 75 free interactive text tools and 3 reference guides, including case converters, formatters, validators, and developer utilities."
         url={pageUrl}
-        dateModified={"2026-07-12"}
+        dateModified={"2026-08-03"}
       />
       <BreadcrumbSchema
         items={[
@@ -72,11 +73,11 @@ export default function ToolsPage() {
 
       <div className="mx-auto max-w-6xl px-4 py-6">
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
-          All Free Text Tools
+          Interactive Text Tools &amp; Reference Guides
         </h1>
         <p className="mt-2 text-sm text-neutral-300">
-          {totalTools} free browser-based tools for developers and writers. No signup, no
-          limits — everything runs in your browser.
+          {totalTools} free interactive tools for developers and writers, plus{" "}
+          {referenceGuides.length} reference guides. No signup is required.
         </p>
 
         {directoryGroups.map((group) => (
@@ -107,6 +108,27 @@ export default function ToolsPage() {
             </div>
           </section>
         ))}
+
+        <section className="mt-10" aria-labelledby="reference-guides-heading">
+          <h2 id="reference-guides-heading" className="text-lg sm:text-xl font-semibold">
+            Reference guides
+          </h2>
+          <p className="mt-1 text-sm text-neutral-300">
+            Three reviewed explainers support the interactive developer tools.
+          </p>
+          <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {referenceGuides.map((guide) => (
+              <Link
+                key={guide.slug}
+                href={`/${guide.slug}`}
+                className="rounded-xl border border-white/10 bg-neutral-900 p-4 transition-colors hover:bg-white/5"
+              >
+                <span className="text-sm font-semibold text-white">{guide.name}</span>
+                <p className="mt-1.5 text-xs text-neutral-400">{guide.description}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
       </div>
     </>
   );

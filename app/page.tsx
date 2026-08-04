@@ -69,7 +69,7 @@ export default function HomePage() {
         name="Free Text Case Converter"
         description={tool.description}
         url={SITE_URL}
-        dateModified={"2026-08-02"}
+        dateModified={"2026-08-03"}
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema items={[{ name: "Home", href: "/" }]} />
@@ -80,9 +80,9 @@ export default function HomePage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Text Case Converter
         </h1>
-        <p className="text-sm text-gray-400 mt-1 mb-4 text-center">Last reviewed: August 2, 2026</p>
+        <p className="text-sm text-gray-400 mt-1 mb-4 text-center">Last reviewed: August 3, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
-          FlipMyCase is a free online text converter with 78 browser-based tools including case converters, text cleaners, encoders, generators, and formatters. Select any tool below to transform your text instantly — no signup required.
+          FlipMyCase is a free online text converter with 75 interactive tools and 3 reference guides, including case converters, text cleaners, encoders, generators, and formatters. Select a tool below to transform your text — no signup required.
         </p>
 
         <div className="mt-3">

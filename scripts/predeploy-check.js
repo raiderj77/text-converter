@@ -118,10 +118,10 @@ check("llms.txt", () => {
 });
 
 // ---------------------------------------------------------------------------
-// 4. Legal pages (privacy, terms)
+// 4. Legal and trust pages
 // ---------------------------------------------------------------------------
-check("Legal pages", () => {
-  const pages = ["privacy", "terms"];
+check("Legal and trust pages", () => {
+  const pages = ["privacy", "privacy-and-testing", "terms"];
   for (const page of pages) {
     const tsx = resolve(ROOT, `app/${page}/page.tsx`);
     const jsx = resolve(ROOT, `app/${page}/page.jsx`);
@@ -145,7 +145,7 @@ check("Navigation integrity", () => {
   } else {
     pass("Footer contains only first-party navigation");
   }
-  for (const route of ["/tools", "/about", "/contact", "/privacy", "/terms", "/cookies", "/accessibility"]) {
+  for (const route of ["/tools", "/about", "/contact", "/privacy", "/privacy-and-testing", "/terms", "/cookies", "/accessibility"]) {
     if (footer.includes(`href=\"${route}\"`)) {
       pass(`Footer links to ${route}`);
     } else {

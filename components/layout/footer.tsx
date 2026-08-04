@@ -62,6 +62,7 @@ export function Footer() {
             <div className="space-y-1">
               <Link href="/contact" className={linkClass}>Contact</Link>
               <Link href="/privacy" className={linkClass}>Privacy</Link>
+              <Link href="/privacy-and-testing" className={linkClass}>Privacy &amp; Test Center</Link>
               <Link href="/terms" className={linkClass}>Terms</Link>
               <Link href="/cookies" className={linkClass}>Cookies</Link>
               <Link href="/accessibility" className={linkClass}>Accessibility</Link>

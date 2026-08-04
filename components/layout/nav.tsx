@@ -3,16 +3,17 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState, useMemo } from "react";
-import { getLiveTools, getToolsByCategory, TOOL_CATEGORIES, SITE_NAME } from "@/lib/config";
+import { TOOL_CATEGORIES, SITE_NAME } from "@/lib/config";
 import type { ToolCategory } from "@/lib/config";
+import { interactiveTools, interactiveToolsByCategory } from "@/lib/tool-inventory";
 import { cx } from "@/lib/utils";
 import { useTheme } from "./theme-provider";
 
 export function Nav() {
   const { isDark, toggle } = useTheme();
   const pathname = usePathname();
-  const liveTools = getLiveTools();
-  const grouped = useMemo(() => getToolsByCategory(), []);
+  const liveTools = interactiveTools;
+  const grouped = interactiveToolsByCategory;
   const [toolsOpen, setToolsOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState<ToolCategory>("Text Tools");
@@ -288,7 +289,7 @@ export function Nav() {
                           isDark ? "hover:bg-white/5 text-emerald-400" : "hover:bg-black/5 text-emerald-600"
                         )}
                       >
-                        Browse all {liveTools.length} tools
+                        Browse all {liveTools.length} interactive tools
                         <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                         </svg>
