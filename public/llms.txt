@@ -18,6 +18,7 @@
 - [Learn Text Formats](https://flipmycase.com/learn): Explain common text-case formats and when to use them
 - [About](https://flipmycase.com/about): Who operates the tools and how they are built
 - [Privacy Policy](https://flipmycase.com/privacy): Browser-local processing, hosting logs, and current tracking status
+- [Privacy & Test Center](https://flipmycase.com/privacy-and-testing): Reviewed tool and storage inventory with limited, user-triggered implementation samples
 - [Accessibility](https://flipmycase.com/accessibility): Accessibility commitments and contact information
 - [Terms](https://flipmycase.com/terms): Service limitations and acceptable use
 

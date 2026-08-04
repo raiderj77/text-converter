@@ -25,8 +25,9 @@ export default function TermsPage() {
       <h2>Description of Service</h2>
       <p>
         FlipMyCase provides free online text transformation and developer utility tools.
-        All text processing happens in your browser — your content is never uploaded to
-        our servers. The tools are provided for personal and commercial use at no charge.
+        Interactive tool logic runs in your browser, and FlipMyCase does not intentionally
+        submit entered tool content to its application servers. Ordinary page requests can still
+        create hosting logs. The tools are provided for personal and commercial use at no charge.
       </p>
 
       <h2>Acceptable Use</h2>
@@ -78,7 +79,9 @@ export default function TermsPage() {
       <p>
         Your use of the website is also governed by our <a href="/privacy">Privacy Policy</a>,
         which describes how we handle cookies, analytics, and advertising data. By using the
-        website, you acknowledge that you have read and understand the Privacy Policy.
+        website, you acknowledge that you have read and understand the Privacy Policy. The{" "}
+        <a href="/privacy-and-testing">Privacy &amp; Test Center</a> records the current route and
+        browser-storage inventory and offers limited, user-triggered sample checks.
       </p>
 
       <h2>Modifications to These Terms</h2>
@@ -102,7 +105,7 @@ export default function TermsPage() {
         <a href="/contact">Contact page</a>.
       </p>
 
-        <p className="text-sm text-gray-400 mt-1 mb-4 text-center">Last updated: August 2, 2026</p>
+        <p className="text-sm text-gray-400 mt-1 mb-4 text-center">Last updated: August 3, 2026</p>
       </div>
     </>
   );
