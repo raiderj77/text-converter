@@ -50,6 +50,17 @@ test("sitewide navigation avoids reciprocal portfolio links", () => {
   }
 });
 
+test("the non-home Creator Revenue link is nofollow", () => {
+  const about = read("app/about/page.tsx");
+  const creatorLink = about.match(
+    /<a\s+[^>]*href="https:\/\/creatorrevenuecalculator\.com"[^>]*>/s
+  );
+
+  assert.ok(creatorLink, "the About page Creator Revenue link is missing");
+  assert.match(creatorLink[0], /\brel="nofollow"/);
+  assert.doesNotMatch(creatorLink[0], /\bsponsored\b/);
+});
+
 test("offline caches are bounded and never retain query-string navigations", () => {
   const worker = read("public/sw.js");
 

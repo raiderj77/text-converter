@@ -140,6 +140,7 @@ export default function AboutPage() {
               <li>
                 <a
                   href="https://creatorrevenuecalculator.com"
+                  rel="nofollow"
                   className="text-blue-400 underline underline-offset-2 hover:text-blue-300 transition-colors"
                 >
                   Creator Revenue Calculator
