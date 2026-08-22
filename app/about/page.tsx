@@ -138,13 +138,7 @@ export default function AboutPage() {
                 stitch counts, pattern conversions. Free, browser-based, no login.
               </li>
               <li>
-                <a
-                  href="https://creatorrevenuecalculator.com"
-                  rel="nofollow"
-                  className="text-blue-400 underline underline-offset-2 hover:text-blue-300 transition-colors"
-                >
-                  Creator Revenue Calculator
-                </a>
+                <span className="font-medium text-neutral-100">Creator Revenue Calculator</span>
                 : YouTube and creator income estimations for content producers who want to
                 understand the numbers without the hype.
               </li>
