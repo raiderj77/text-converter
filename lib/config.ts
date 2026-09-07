@@ -54,7 +54,7 @@ export const tools: Tool[] = [
     category: "Text Tools",
     live: true,
     audience: "Writers, students, and coders who need text in a specific case without retyping it from scratch",
-    bottomLine: "Converts to 9 case styles at once including camelCase, snake_case, and Title Case",
+    bottomLine: "Shows 16 outputs at once including camelCase, snake_case, and Title Case",
   },
   {
     slug: "word-counter",

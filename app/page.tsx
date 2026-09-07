@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 
 /**
  * FAQ items — rendered as visible content AND as JSON-LD schema.
- * Google can use these for rich snippets in search results.
+ * Markup describes the visible questions; rich-result display is not promised.
  */
 const faqItems = [
   {
@@ -42,7 +42,7 @@ const faqItems = [
   {
     question: "How do I convert text to title case?",
     answer:
-      "Paste your text into the converter, then click the Title Case button. The tool capitalizes the first letter of each major word and lowercases articles, conjunctions, and prepositions following standard title case rules.",
+      "Paste your text and copy the Title Case output. This is a basic English capitalization heuristic with a fixed minor-word list, not a complete AP or Chicago style implementation. Review names, acronyms and punctuation manually.",
   },
   {
     question: "What is the difference between camelCase and PascalCase?",
@@ -57,7 +57,7 @@ const faqItems = [
   {
     question: "What is snake_case used for?",
     answer:
-      "snake_case uses underscores between words with all letters in lowercase (e.g., my_variable_name). It is the standard naming convention in Python, Ruby, and SQL, and is commonly used for file names, database columns, and API parameters.",
+      "snake_case uses underscores between words with all letters in lowercase (e.g., my_variable_name). Python's PEP 8 recommends this style for function and variable names. Other languages, databases and projects have their own conventions.",
   },
 ];
 
@@ -69,7 +69,7 @@ export default function HomePage() {
         name="Free Text Case Converter"
         description={tool.description}
         url={SITE_URL}
-        dateModified={"2026-08-03"}
+        dateModified={"2026-09-07"}
       />
       <FaqSchema items={faqItems} />
       <BreadcrumbSchema items={[{ name: "Home", href: "/" }]} />
@@ -80,7 +80,7 @@ export default function HomePage() {
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Free Text Case Converter
         </h1>
-        <p className="text-sm text-gray-400 mt-1 mb-4 text-center">Last reviewed: August 3, 2026</p>
+        <p className="text-sm text-gray-400 mt-1 mb-4 text-center">Last reviewed: September 7, 2026</p>
         <p className="tool-answer-capsule mt-2 text-[15px] leading-relaxed text-neutral-400">
           FlipMyCase is a free online text converter with 75 interactive tools and 3 reference guides, including case converters, text cleaners, encoders, generators, and formatters. Select a tool below to transform your text — no signup required.
         </p>
@@ -142,7 +142,7 @@ export default function HomePage() {
           <div className="mt-3 text-sm text-neutral-300 space-y-2">
             <p>
               <strong className="text-neutral-200">1. Paste your text</strong> into the input
-              box above or type directly. The tool accepts any length of text.
+              box above or type directly. Large inputs can slow the browser; work in smaller sections if needed.
             </p>
             <p>
               <strong className="text-neutral-200">2. See all formats at once.</strong> The
@@ -212,15 +212,16 @@ export default function HomePage() {
             How does the text case converter work?
           </h2>
           <p className="mt-2 text-sm text-neutral-200 font-medium">
-            Paste any text, click a format button, and FlipMyCase converts it instantly in your browser. No account or installation needed.
+            Paste or type text and compare all output cards. Use Copy on the format you need. No account or installation needed.
           </p>
           <div className="mt-2 text-sm text-neutral-300 space-y-2">
             <p>
-              The converter applies 16 deterministic JavaScript transformations in the page and
+              The converter provides 16 JavaScript outputs in the page and
               shows every result together, so you can compare formats before copying one. Tool input
               is not intentionally sent to FlipMyCase or analytics. Very large text can take longer
               to render, depending on the device and browser.
             </p>
+            <p>Random case can change when the input is edited. Identifier formats split common ASCII word boundaries, but do not validate programming-language syntax or preserve all Unicode characters. <Link href="/articles/convert-identifiers-without-losing-word-boundaries" className="underline">See tested examples and limitations.</Link></p>
           </div>
         </section>
 
@@ -236,7 +237,7 @@ export default function HomePage() {
           <div className="mt-2 text-sm text-neutral-300 space-y-2">
             <p>
               UPPERCASE and lowercase are the most common for basic text normalization. Title Case
-              follows common heading conventions. camelCase and PascalCase are widely used in
+              uses a basic English heuristic. camelCase and PascalCase are widely used in
               JavaScript and TypeScript, snake_case is common in Python and SQL, and kebab-case is
               common in URLs and CSS class names. Alternating and random-looking styles are primarily
               useful for informal or decorative text.

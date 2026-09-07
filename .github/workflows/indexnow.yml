@@ -1,25 +1,18 @@
 name: IndexNow Submit
 on:
-  push:
-    branches: [main]
-    paths:
-      - "app/**"
-      - "components/**"
-      - "content/**"
-      - "public/**"
-      - "next.config.ts"
-      - "vercel.json"
+  deployment_status:
   workflow_dispatch:
 
 permissions:
   contents: read
 
 concurrency:
-  group: indexnow-${{ github.ref }}
+  group: indexnow-production
   cancel-in-progress: true
 
 jobs:
   submit:
+    if: github.event_name == 'workflow_dispatch' || (github.event.deployment_status.state == 'success' && github.event.deployment.environment == 'Production')
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -27,12 +20,12 @@ jobs:
       - name: Fetch sitemap URLs
         id: sitemap
         run: |
-          SITEMAP=$(curl -sf "https://flipmycase.com/sitemap.xml" || true)
+          SITEMAP=$(curl --retry 2 --max-time 30 -fsS "https://flipmycase.com/sitemap.xml")
           # grep exits non-zero when no matches found — use || true to make non-fatal
           URLS=$(echo "$SITEMAP" | grep -oP '(?<=<loc>)[^<]+' || true)
           if [ -z "$URLS" ]; then
-            echo "Sitemap returned no URLs or was unreachable, falling back to homepage"
-            URLS="https://flipmycase.com/"
+            echo "::error::Production sitemap contains no URLs; no submission made"
+            exit 1
           fi
           echo "Submitting URLs:"
           echo "$URLS"
