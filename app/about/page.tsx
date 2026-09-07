@@ -128,16 +128,6 @@ export default function AboutPage() {
             <p>FlipMyCase is one site in a small portfolio of free utilities I maintain:</p>
             <ul className="list-disc list-inside space-y-2">
               <li>
-                <a
-                  href="https://fibertools.app"
-                  className="text-blue-400 underline underline-offset-2 hover:text-blue-300 transition-colors"
-                >
-                  FiberTools
-                </a>
-                : calculators and conversion tools for knitters and crocheters. Yarn weight, gauge,
-                stitch counts, pattern conversions. Free, browser-based, no login.
-              </li>
-              <li>
                 <span className="font-medium text-neutral-100">Creator Revenue Calculator</span>
                 : YouTube and creator income estimations for content producers who want to
                 understand the numbers without the hype.

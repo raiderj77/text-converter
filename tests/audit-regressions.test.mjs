@@ -55,7 +55,8 @@ test("the About page omits the Creator backlink and retains useful context", () 
 
   assert.doesNotMatch(about, /https:\/\/creatorrevenuecalculator\.com/i);
   assert.match(about, />Creator Revenue Calculator<\/span>/);
-  assert.match(about, /href="https:\/\/fibertools\.app"/);
+  assert.doesNotMatch(about, /https?:\/\/(?:www\.)?fibertools\.app/i);
+  assert.doesNotMatch(about, />\s*FiberTools\s*</i);
 });
 
 test("offline caches are bounded and never retain query-string navigations", () => {
