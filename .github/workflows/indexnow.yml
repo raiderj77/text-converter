@@ -6,13 +6,12 @@ on:
 permissions:
   contents: read
 
-concurrency:
-  group: indexnow-production
-  cancel-in-progress: true
-
 jobs:
   submit:
     if: github.event_name == 'workflow_dispatch' || (github.event.deployment_status.state == 'success' && github.event.deployment.environment == 'Production')
+    concurrency:
+      group: indexnow-production
+      cancel-in-progress: true
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
