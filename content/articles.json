@@ -1,0 +1,60 @@
+[
+  {
+    "slug": "convert-identifiers-without-losing-word-boundaries",
+    "status": "published",
+    "reviewed": true,
+    "title": "Convert camelCase to snake_case: tested examples",
+    "description": "Convert existing identifiers while keeping word boundaries. Test camelCase, acronyms, digits and separators, and learn when an IDE rename is safer.",
+    "answer": "To convert camelCase to snake_case, separate the words before lowercasing them: customerId becomes customer_id. FlipMyCase also separates an acronym from a following word, so HTTPServer becomes http_server. Always review the result before renaming anything in a codebase.",
+    "publishedAt": "2026-09-07",
+    "reviewedAt": "2026-09-07",
+    "reviewNote": "Prepared with AI assistance. The examples below are checked against FlipMyCase's conversion functions by automated regression tests. External naming guidance was checked against PEP 8. This review does not validate every programming language or identifier.",
+    "sections": [
+      {
+        "heading": "How do I convert an existing identifier?",
+        "paragraphs": [
+          "Paste one identifier into the case converter. All outputs appear together; copy the snake_case card to use underscores, or choose camelCase, PascalCase, kebab-case, CONSTANT_CASE or dot.case for another format. Separate words with spaces if the intended boundaries are ambiguous.",
+          "The identifier formats split an ASCII lowercase letter or digit followed by an uppercase letter. They also split a run of uppercase letters before an uppercase letter that starts a lowercase word. Existing spaces, underscores, hyphens and other non-ASCII-alphanumeric characters separate tokens. Casing is applied after this split. The examples table shows the resulting behavior, including its limitations."
+        ]
+      },
+      {
+        "heading": "What happens to acronyms and numbers?",
+        "paragraphs": [
+          "HTTPServer has enough casing information to identify HTTP and Server. XMLHTTP does not indicate where one acronym ends, so it becomes xmlhttp. If you mean XML and HTTP as separate words, enter XML HTTP instead. A converter cannot reliably recover boundaries that are absent from the input.",
+          "Digits stay attached to the preceding token; a following uppercase letter begins another token. Thus version2Value becomes version2_value. This is a formatting choice in this tool, not a universal naming convention. Check your project's examples and linter rules before applying it."
+        ]
+      },
+      {
+        "heading": "Does snake_case make an identifier valid Python?",
+        "paragraphs": [
+          "No. PEP 8 recommends lowercase function and variable names, with underscores between words as needed for readability. It is style guidance, not proof that any converted string is a valid identifier. The converter can output 123_name, which starts with digits, or class, which is a Python keyword. Neither is suitable as an ordinary Python variable name.",
+          "The formatter uses ASCII letters and digits for these identifier formats. Accented letters and other scripts are not preserved as identifier tokens: caféName becomes caf_name, and an input containing only Chinese characters produces an empty result. Preserve the original text and use language-aware tools when your project needs Unicode identifiers. Uppercase and lowercase text conversion are separate functions and have different behavior."
+        ]
+      },
+      {
+        "heading": "How do I rename a variable without breaking references?",
+        "paragraphs": [
+          "Use the converter to decide on the spelling, then use your editor's language-aware rename operation to change the symbol. Inspect the diff and run your project's tests. A text formatter does not understand scope, imports, database migrations, serialized field names or external API consumers.",
+          "Avoid a global text replacement when the same spelling can refer to unrelated symbols. A public API key or database column can require a compatibility plan even when its new spelling follows your preferred style. Formatting a name and safely migrating an interface are different tasks."
+        ]
+      }
+    ],
+    "examples": [
+      { "conversion": "snake-case", "input": "customerId", "output": "customer_id" },
+      { "conversion": "snake-case", "input": "HTTPServer", "output": "http_server" },
+      { "conversion": "snake-case", "input": "version2Value", "output": "version2_value" },
+      { "conversion": "camel-case", "input": "customer_id", "output": "customerId" },
+      { "conversion": "pascal-case", "input": "HTTP_server", "output": "HttpServer" },
+      { "conversion": "constant-case", "input": "apiResponse", "output": "API_RESPONSE" },
+      { "conversion": "snake-case", "input": "XMLHTTP", "output": "xmlhttp" },
+      { "conversion": "snake-case", "input": "XML HTTP", "output": "xml_http" },
+      { "conversion": "snake-case", "input": "123Name", "output": "123_name" },
+      { "conversion": "snake-case", "input": "caféName", "output": "caf_name" },
+      { "conversion": "snake-case", "input": "中文", "output": "" }
+    ],
+    "sources": [
+      { "title": "Python PEP 8: function and variable names", "url": "https://peps.python.org/pep-0008/#function-and-variable-names", "accessedAt": "2026-09-07", "supports": "Python's lowercase-and-underscore naming recommendation; project consistency matters." },
+      { "title": "Python language reference: identifiers and keywords", "url": "https://docs.python.org/3/reference/lexical_analysis.html#identifiers", "accessedAt": "2026-09-07", "supports": "Identifier syntax, Unicode support and reserved keywords are separate from naming style." }
+    ]
+  }
+]

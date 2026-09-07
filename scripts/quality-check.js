@@ -134,7 +134,7 @@ check(!/Ctrl\/?(?:⌘|Cmd).*L toggles theme/i.test(toolSources), "tool hints do 
 check(config.includes("frame-ancestors 'none'") && config.includes("form-action 'self'") && vercelConfig.includes("frame-ancestors 'none'"), "deployment CSP constrains framing and form submissions");
 check(serviceWorker.includes("if (url.search)") && serviceWorker.includes("PAGE_CACHE_LIMIT") && serviceWorker.includes("STATIC_CACHE_LIMIT"), "service worker skips query-string pages and bounds local caches");
 check(!/crawler-visible|crawler-only|hidden[^\n]{0,40}(?:Google|crawler|search engine)/i.test(`${homepage}\n${toolSources}`), "visible content is not implemented as crawler-only copy");
-check(homepage.includes("supports 16 outputs") && homepage.includes("16 deterministic JavaScript transformations"), "homepage describes the actual converter output count");
+check(homepage.includes("supports 16 outputs") && homepage.includes("16 JavaScript outputs") && !homepage.includes("16 deterministic"), "homepage describes the output count without calling random case deterministic");
 check(packageJson.includes('"qrcode"') && qrTool.includes('from "qrcode"'), "QR generation uses the bundled dependency");
 check(!/cdnjs|createElement\("script"\)|localStorage/.test(qrTool), "QR generation avoids external scripts and persistent input storage");
 check(qrPage.includes("code bundled with FlipMyCase"), "QR privacy explanation matches the implementation");

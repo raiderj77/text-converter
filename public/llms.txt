@@ -15,6 +15,8 @@
 - [Hash Generator](https://flipmycase.com/hash-generator): Generate common hashes from text or files in the browser
 
 ## Reference and trust pages
+- [Articles](https://flipmycase.com/articles): Practical workflows with tested examples and sources
+- [Editorial Policy](https://flipmycase.com/editorial-policy): Source checks, AI assistance, publication and corrections
 - [Learn Text Formats](https://flipmycase.com/learn): Explain common text-case formats and when to use them
 - [About](https://flipmycase.com/about): Who operates the tools and how they are built
 - [Privacy Policy](https://flipmycase.com/privacy): Browser-local processing, hosting logs, and current tracking status

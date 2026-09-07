@@ -24,7 +24,7 @@ const faqItems = [
   {
     question: "Why do symbols disappear in camelCase and PascalCase?",
     answer:
-      "Those formats are used for code identifiers. Symbols and extra separators are removed so the result stays valid for variables, classes, and functions.",
+      "These formats keep ASCII letters and digits and split common word boundaries. They do not validate identifiers, protect reserved keywords or preserve all Unicode characters. Review the output against your language and project rules.",
   },
   {
     question: "Why do URLs prefer kebab-case?",

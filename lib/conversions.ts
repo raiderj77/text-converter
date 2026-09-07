@@ -61,7 +61,7 @@ export function toSpongeBobCase(input: string): string {
   for (const ch of input) {
     if (/[a-z]/i.test(ch)) {
       // Simple deterministic "random" based on position
-      seed = (seed + 1) * 31;
+      seed = ((seed + 1) * 31) % 2147483647;
       const random = Math.abs(Math.sin(seed)) * 100;
       out += random % 2 < 1 ? ch.toUpperCase() : ch.toLowerCase();
     } else {
@@ -105,32 +105,25 @@ export function toSlug(input: string): string {
 }
 
 export function toSnakeCase(input: string): string {
-  return input
-    .trim()
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "_")
-    .replace(/^_+|_+$/g, "");
+  return identifierWords(input).join("_").toLowerCase();
 }
 
 export function toKebabCase(input: string): string {
+  return identifierWords(input).join("-").toLowerCase();
+}
+
+// ASCII formatting heuristic, not a parser or a programming-language validator.
+// Split acronym-to-word and lowercase/digit-to-uppercase boundaries before casing.
+function identifierWords(input: string): string[] {
   return input
-    .trim()
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
+    .replace(/([A-Z]+)([A-Z][a-z])/g, "$1 $2")
+    .replace(/([a-z0-9])([A-Z])/g, "$1 $2")
+    .match(/[A-Za-z0-9]+/g) ?? [];
 }
 
 export function toCamelCase(input: string): string {
-  const cleaned = input
-    .trim()
-    .replace(/[_-]/g, " ")
-    .replace(/[^a-zA-Z0-9 ]+/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-
-  if (!cleaned) return "";
-
-  const parts = cleaned.split(" ");
+  const parts = identifierWords(input);
+  if (!parts.length) return "";
   const first = parts[0].toLowerCase();
   const rest = parts
     .slice(1)
@@ -147,19 +140,11 @@ export function toPascalCase(input: string): string {
 }
 
 export function toDotCase(input: string): string {
-  return input
-    .trim()
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, ".")
-    .replace(/^\.+|\.+$/g, "");
+  return identifierWords(input).join(".").toLowerCase();
 }
 
 export function toConstantCase(input: string): string {
-  return input
-    .trim()
-    .toUpperCase()
-    .replace(/[^A-Z0-9]+/g, "_")
-    .replace(/^_+|_+$/g, "");
+  return identifierWords(input).join("_").toUpperCase();
 }
 
 /**

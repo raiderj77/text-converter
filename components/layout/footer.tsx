@@ -53,6 +53,8 @@ export function Footer() {
             <div className="space-y-1">
               <Link href="/tools" className={linkClass}>All Tools</Link>
               <Link href="/learn" className={linkClass}>Learn Text Formats</Link>
+              <Link href="/articles" className={linkClass}>Articles</Link>
+              <Link href="/editorial-policy" className={linkClass}>Editorial Policy</Link>
               <Link href="/about" className={linkClass}>About FlipMyCase</Link>
             </div>
           </div>
