@@ -20,7 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .filter((tool) => tool.live && !contentSlugSet.has(tool.slug))
     .map((tool) => ({
       url: tool.slug === "" ? SITE_URL : `${SITE_URL}/${tool.slug}`,
-      lastModified: ["", "snake-kebab-converter"].includes(tool.slug) ? publishingRelease : reviewed,
+      lastModified: ["", "snake-kebab-converter", "spongebob-case-converter", "yaml-formatter"].includes(tool.slug) ? publishingRelease : reviewed,
       changeFrequency: "monthly" as const,
       priority: tool.slug === "" ? 1 : 0.8,
     }));

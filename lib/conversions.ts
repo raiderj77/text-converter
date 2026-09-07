@@ -61,7 +61,7 @@ export function toSpongeBobCase(input: string): string {
   for (const ch of input) {
     if (/[a-z]/i.test(ch)) {
       // Simple deterministic "random" based on position
-      seed = (seed + 1) * 31;
+      seed = ((seed + 1) * 31) % 2147483647;
       const random = Math.abs(Math.sin(seed)) * 100;
       out += random % 2 < 1 ? ch.toUpperCase() : ch.toLowerCase();
     } else {

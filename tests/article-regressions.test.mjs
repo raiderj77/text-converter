@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import test from 'node:test';
 import ts from 'typescript';
+import * as yaml from 'js-yaml';
 import { selectPublishedArticles, validateArticles } from '../lib/article-validation.js';
 
 const catalog = JSON.parse(fs.readFileSync(new URL('../content/articles.json', import.meta.url), 'utf8'));
@@ -33,6 +34,30 @@ test('identifier conversion preserves common word boundaries across formats', ()
   assert.equal(converters.toCamelCase('customerId'), 'customerId');
   assert.equal(converters.toSnakeCase(''), '');
   assert.equal(converters.toCamelCase('---'), '');
+});
+
+test('SpongeBob styling remains mixed and repeatable on long input', () => {
+  const input = 'a'.repeat(10000);
+  const result = converters.toSpongeBobCase(input);
+  assert.equal(result.length, input.length);
+  assert.equal(result, converters.toSpongeBobCase(input));
+  assert.match(result.slice(9000), /A/);
+  assert.match(result.slice(9000), /a/);
+});
+
+test('updated YAML dependency preserves formatter round trips and error handling', () => {
+  const component = fs.readFileSync(new URL('../components/tools/yaml-formatter.tsx', import.meta.url), 'utf8');
+  const snippet = `export ${component.slice(component.indexOf('function processInput'), component.indexOf('export function YamlFormatterTool'))}`;
+  const transpiled = ts.transpileModule(snippet, { compilerOptions: { module: ts.ModuleKind.CommonJS } }).outputText;
+  const helpers = {};
+  new Function('yaml', 'exports', transpiled)(yaml, helpers);
+  const data = { label: 'café', enabled: false, values: [0, null, '001'], nested: { text: 'a: b' } };
+  const formatted = helpers.processInput(JSON.stringify(data), 'json-to-yaml', '2');
+  assert.equal(formatted.error, null);
+  const restored = helpers.processInput(formatted.result, 'yaml-to-json', '2');
+  assert.equal(restored.error, null);
+  assert.deepEqual(JSON.parse(restored.result), data);
+  assert.ok(helpers.processInput('invalid: [', 'yaml-to-json', '2').error);
 });
 
 test('draft articles are excluded and publication fails closed without evidence', () => {
