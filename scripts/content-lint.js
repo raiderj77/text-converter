@@ -8,6 +8,7 @@
 import { readFileSync, readdirSync, existsSync } from "fs";
 import { resolve, dirname, relative } from "path";
 import { fileURLToPath } from "url";
+import { validateArticles } from "../lib/article-validation.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
@@ -68,7 +69,7 @@ function checkPersonalName(file, lines) {
 
 console.log("🔤 flipmycase.com content lint\n");
 
-const contentFiles = getFiles(resolve(ROOT, "content"), [".md", ".mdx"]);
+const contentFiles = getFiles(resolve(ROOT, "content"), [".md", ".mdx", ".json"]);
 const srcFiles = [
   ...getFiles(resolve(ROOT, "app"), [".tsx", ".ts"]),
   ...getFiles(resolve(ROOT, "components"), [".tsx", ".ts"]),
@@ -83,6 +84,10 @@ for (const file of allFiles) {
   const lines = content.split("\n");
 
   checkPersonalName(file, lines);
+}
+
+for (const error of validateArticles(JSON.parse(readFileSync(resolve(ROOT, "content/articles.json"), "utf8")))) {
+  fail(resolve(ROOT, "content/articles.json"), 1, error);
 }
 
 // ---------------------------------------------------------------------------

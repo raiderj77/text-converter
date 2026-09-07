@@ -28,6 +28,23 @@ npm audit --omit=dev
 
 `npm run build` also runs the predeploy, content, and product-quality gates.
 
+## Article publishing
+
+Use [docs/PUBLISHING.md](docs/PUBLISHING.md) and `content/articles.json` for new
+reviewed articles. The shared `/articles` renderer supplies metadata, schema,
+example tables and sitemap entries; draft records stay out of public routes.
+`npm run build` validates the editorial records and replays published converter
+examples. The historical blog archive remains quarantined.
+
+For a read-only crawl after starting a production build locally:
+
+```bash
+node scripts/site-audit.mjs http://localhost:3107
+```
+
+Use the actual local server port. After release, run the same audit with
+`https://flipmycase.com`. This checks HTTP and metadata, not all tool behavior.
+
 ## Privacy and monetization boundaries
 
 - Tool input is processed in the browser. Do not introduce transmission,
