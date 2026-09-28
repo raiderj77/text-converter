@@ -38,7 +38,11 @@ function queuePageView() {
 function enableAnalytics() {
   setDisabled(false);
   window.dataLayer = window.dataLayer || [];
-  window.gtag = window.gtag || ((...args: unknown[]) => window.dataLayer?.push(args));
+  window.gtag = window.gtag || function gtag() {
+    // gtag.js requires the native arguments object, not a rest-parameter array.
+    // eslint-disable-next-line prefer-rest-params
+    window.dataLayer?.push(arguments);
+  };
   window.gtag("consent", "default", {
     analytics_storage: "granted",
     ad_storage: "denied",
