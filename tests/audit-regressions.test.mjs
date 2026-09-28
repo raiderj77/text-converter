@@ -49,6 +49,9 @@ test("analytics uses the active Google tag while remaining consent-gated", () =>
   assert.match(analytics, /for \(const destinationId of GA_DESTINATION_IDS\)/);
   assert.match(analytics, /`ga-disable-\$\{destinationId\}`/);
   assert.match(analytics, /function disableAnalytics\(\) \{\s+setDisabled\(true\);\s+window\.gtag\?\.\("consent", "update"/);
+  assert.match(analytics, /gtag\.js requires the native arguments object/);
+  assert.match(analytics, /dataLayer\?\.push\(arguments\)/);
+  assert.doesNotMatch(analytics, /dataLayer\?\.push\(args\)/);
   assert.match(analytics, /gtag\/js\?id=\$\{GA_ID\}/);
   assert.match(analytics, /window\.gtag\("config", GA_ID/);
   assert.match(analytics, /send_page_view: false/);
