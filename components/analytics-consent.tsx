@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
-import { GA_ID } from "@/lib/config";
+import { GA_DESTINATION_IDS, GA_ID } from "@/lib/config";
 
 type Consent = "granted" | "denied";
 
@@ -10,7 +10,9 @@ const STORAGE_KEY = "flipmycase:analytics-consent";
 const SCRIPT_ID = "flipmycase-google-analytics";
 
 function setDisabled(disabled: boolean) {
-  (window as typeof window & Record<string, unknown>)[`ga-disable-${GA_ID}`] = disabled;
+  for (const destinationId of GA_DESTINATION_IDS) {
+    (window as typeof window & Record<string, unknown>)[`ga-disable-${destinationId}`] = disabled;
+  }
 }
 
 function clearAnalyticsCookies() {
@@ -65,13 +67,13 @@ function enableAnalytics() {
 }
 
 function disableAnalytics() {
+  setDisabled(true);
   window.gtag?.("consent", "update", {
     analytics_storage: "denied",
     ad_storage: "denied",
     ad_user_data: "denied",
     ad_personalization: "denied",
   });
-  setDisabled(true);
   clearAnalyticsCookies();
 }
 

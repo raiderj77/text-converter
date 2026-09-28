@@ -14,8 +14,11 @@ export const SITE_DESCRIPTION =
 
 export const SITE_TWITTER = "@flipmycase"; // Update when you create the account
 
-// Author identity (per Empire policy: named author for E-E-A-T across all sites)
-export const GA_ID = "G-3X4SDLV60C";
+// Install the primary Google tag shown in Analytics tag settings. The connected
+// GA4 destination has its own measurement ID, but that destination ID is not a
+// valid gtag.js loader ID and must not replace this value.
+export const GA_ID = "G-JQHRPJ9YLF";
+export const GA_DESTINATION_IDS = [GA_ID, "G-3X4SDLV60C"] as const;
 
 /**
  * Tool registry. Every tool in the suite is defined here.
