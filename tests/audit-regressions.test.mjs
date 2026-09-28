@@ -39,6 +39,21 @@ test("advertising remains fail-closed until external readiness gates are verifie
   assert.match(readiness, /strict-CSP implementation/);
 });
 
+test("analytics uses the active Google tag while remaining consent-gated", () => {
+  const config = read("lib/config.ts");
+  const analytics = read("components/analytics-consent.tsx");
+
+  assert.match(config, /export const GA_ID = "G-JQHRPJ9YLF"/);
+  assert.match(config, /GA_DESTINATION_IDS = \[GA_ID, "G-3X4SDLV60C"\] as const/);
+  assert.match(analytics, /consent !== "granted"/);
+  assert.match(analytics, /for \(const destinationId of GA_DESTINATION_IDS\)/);
+  assert.match(analytics, /`ga-disable-\$\{destinationId\}`/);
+  assert.match(analytics, /function disableAnalytics\(\) \{\s+setDisabled\(true\);\s+window\.gtag\?\.\("consent", "update"/);
+  assert.match(analytics, /gtag\/js\?id=\$\{GA_ID\}/);
+  assert.match(analytics, /window\.gtag\("config", GA_ID/);
+  assert.match(analytics, /send_page_view: false/);
+});
+
 test("sitewide navigation avoids reciprocal portfolio links", () => {
   const footer = read("components/layout/footer.tsx");
   const predeploy = read("scripts/predeploy-check.js");
