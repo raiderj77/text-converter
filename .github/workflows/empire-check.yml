@@ -121,9 +121,10 @@ jobs:
           fi
           echo "✓ IndexNow key file: $KEY_FILE"
 
-      # ── Check 6: Author byline policy (updated 2026-05-11) ─────
-      # Policy: "Jason Ramirez" + CADC-II credential is the canonical author
-      # entity across the entire Empire portfolio. One author = stronger EEAT
+      # ── Check 6: Author byline policy (updated 2026-11-02) ─────
+      # Policy: "Jason Ramirez" is the canonical author byline across the
+      # Empire portfolio; the CADC-II credential is MindCheckTools-only and
+      # must not appear on any other site. One author = stronger EEAT
       # and AI-citation signal than 11 anonymous publishers. This check now
       # WARNS if the name is missing rather than failing if present.
       - name: Author byline present (informational)
@@ -142,7 +143,7 @@ jobs:
 
           MATCHES=$(grep -rl "Jason Ramirez" "${SEARCH_DIRS[@]}" 2>/dev/null | wc -l || echo 0)
           if [ "$MATCHES" -eq 0 ]; then
-            echo "::warning::No 'Jason Ramirez' byline found. Per portfolio policy, author byline + CADC-II credential should appear on author pages and in post frontmatter for EEAT."
+            echo "::warning::No 'Jason Ramirez' byline found. Per portfolio policy, the author byline should appear on author pages and in post frontmatter for EEAT. The CADC-II credential is MindCheckTools-only and must not appear on this site."
           else
-            echo "✓ Author byline present in $MATCHES file(s) (portfolio policy: name + credential everywhere)"
+            echo "✓ Author byline present in $MATCHES file(s) (portfolio policy: byline name only; CADC-II credential is MindCheckTools-only)"
           fi
