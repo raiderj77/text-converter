@@ -5,7 +5,7 @@ slug: "file-naming-conventions-across-javascript-python-and-go"
 description: ""
 status: published
 author: "Jason Ramirez"
-reviewer: "Jason Ramirez, CADC-II"
+reviewer: "Jason Ramirez"
 ---
 
 # File Naming Conventions Across JavaScript, Python, and Go
