@@ -5,7 +5,7 @@ slug: "acronyms-in-identifiers-apikey-or-apikey"
 description: ""
 status: published
 author: "Jason Ramirez"
-reviewer: "Jason Ramirez, CADC-II"
+reviewer: "Jason Ramirez"
 ---
 
 # Acronyms in Identifiers: `APIKey` or `ApiKey`?
